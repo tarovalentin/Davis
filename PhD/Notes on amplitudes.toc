@@ -1,3 +1,10 @@
-\contentsline {section}{\numberline {1}Recursion Relations}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}BCFW-recursion}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Example of BCFW-recursion}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {1}3 point amplitudes bootstrapping}{2}{section.1}%
+\contentsline {section}{\numberline {2}Recursion Relations}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}BCFW-recursion}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Example of BCFW-recursion}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Soft limit factorization}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Co-linear limit}{7}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Unitarity}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Loops in general}{7}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Unitarity}{7}{section.4}%
+\contentsline {section}{\numberline {5}Generalized unitarity}{8}{section.5}%

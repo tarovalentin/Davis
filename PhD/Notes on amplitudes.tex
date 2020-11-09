@@ -19,6 +19,28 @@
 \maketitle
 \flushbottom
 \newpage
+\section{3 point amplitudes bootstrapping}
+Three particle amplitudes are special since they can be completely determined by their little group scaling. From momentum conservation as well as on-shell massless kinematics we have
+\begin{equation}
+p_1+p_1+p_3=0\quad \Rightarrow\quad \begin{cases}
+&s_{12}=(p_1+p_2)^2=\langle 12\rangle[21]=p_3^3=0\\
+&s_{13}=(p_1+p_3)^2=\langle 13\rangle[31]=p_2^3=0\\
+&s_{23}=(p_2+p_3)^2=\langle 23\rangle[32]=p_1^3=0\\
+\end{cases}
+\end{equation}
+For complex momenta we can treat $\rangle p|$ and $[p|$ as independent and so for the above relations to be satisfied we need either
+\begin{equation}
+[12]=[23]=[13]=0\qquad\text{or}\qquad \expval{12}=\expval{23}=\expval{13}=0.
+\end{equation}
+Denoting the helicity of the $i$'th particle by $h_i$ the following result for the 3 point amplitude can be obtained by using the fact that under a little group scaling, the amplitudes transforms with weight according to that particles helicity:
+\begin{equation}
+A(1^{h_1},2^{h_2},3^{h_3})
+=\begin{cases}
+&\expval{12}^{h_3-h_2-h_1}\expval{23}^{h_1-h_2-h_3}\expval{13}^{h_2-h_3-h_1},\quad \sum_i h_i\leq 0\\
+&[12]^{h_1+h_2-h_3}[23]^{h_2+h_3-h_1}[13]^{h_1+h_3-h_2},\qquad\: \sum_i h_i\geq 0
+\end{cases}
+\end{equation}
+where the two cases arise because of \textit{locality}, which means that only terms that show up in a local Lagrangian such as $AA\partial A$ (from gauge term $\Tr[F^{\mu\nu}F_{\mu\nu}]$) can contribute. The condition is then there to get the correct mass dimension, meaning only amplitudes with dimensions according to local lagrangian interaction terms.
 \section{Recursion Relations}\label{sec:recursion}
 \textit{On-shell recursion is a systematic procedure for relating an amplitude to its
 values at singular kinematics. In order to probe these kinematic configurations we define a momentum shift, which is a one-parameter deformation of
@@ -136,11 +158,18 @@ A=\sum_I A_L(z_I)\frac{1}{P_I^2}A_R(z_I)=\sum_{\text{Diagrams }I} 	\raisebox{-.5
 A particular recursion technique used often is called BCFW recursion. In four dimensions this can be implemented in the spinor-helicity basis. Denoting the shifted variables by a hat, the shifts that we will employ are
 \begin{equation}
 \begin{aligned}
-|\hat i]=|i]+z|j],~~~~|\hat j]=|j],~~~~|\hat i \rangle = | i \rangle,~~~~|\hat j \rangle =|i\rangle-z|j\rangle
+|\hat i]=|i]+z|j],~~~~|\hat j]=|j],~~~~|\hat i \rangle = | i \rangle,~~~~|\hat j \rangle =|j\rangle-z|i\rangle
 \end{aligned}
 \end{equation}
-
 %
+It can be shown that for Yang-Mills the amplitude vanishes at $z\to \infty$ for the following helicity configurations
+%
+\begin{align}
+[i,j\rangle&~~[-,-\rangle~~[-,+\rangle~~[+,+\rangle~~[+,-\rangle\\
+A_n(z)&\sim ~~\frac{1}{z}~~~~~~~\frac{1}{z}~~~~~~~~\frac{1}{z}~~~~~~~~z^3
+\end{align}
+%
+The first 3 types of shifts will be referred to as \textit{good shifts}.
 \subsection{Example of BCFW-recursion}
 %
 As an example, let us calculate the amplitude $A_5(1_g^+,2_g^-,3_g^+,4_g^-,5_g^-)$
@@ -231,7 +260,7 @@ A_{5}(1^+,2^-,3^+,4^-,5^-)
 &=\frac{[13]^4}{[12][23][34][45][51]}
 \end{align*}
 which is the expected result.
-\subsection*{Part b}
+\subsection{Soft limit factorization}
 The soft-limit factorization for tree amplitudes is that for $k_s\to 0$ we can write an n-point amplitude as
 \begin{equation}
 A_n^{\text{tree}}(1,2,\dots,a,s^\pm,b,\dots,n)=\mathcal{S}(a,s^\pm,b)\times A_{n-1}^{\text{tree}}(1,2,\dots,a,b,\dots,n)
@@ -245,8 +274,8 @@ Here this gets us
 A_{5}(1^+,2^-,3^+,4^-,5^-)=-\frac{[41]}{[45][51]}\times\frac{[13]^4}{[12][23][34][41]}
 \end{align*}
 which is a valid factorization of the full result.
-
-In the collinear limit for leg 1 and 2 we have the two momenta $k_1$ and $k_2$ that become parallel with intermediate momentum $k_P$. The spinors also have the following relations
+\subsection{Co-linear limit}
+In the co-linear limit for leg 1 and 2 we have the two momenta $k_1$ and $k_2$ that become parallel with intermediate momentum $k_P$. The spinors also have the following relations
 \begin{align*}
 &\lambda_a\simeq\sqrt{z}\lambda_P,\qquad \lambda_b\simeq \sqrt{1-z}\lambda_P\\
 &\tilde\lambda_{\dot a}\simeq\sqrt{z}\tilde\lambda_P,\qquad \tilde\lambda_{\dot b}\simeq \sqrt{1-z}\tilde\lambda_P
@@ -264,6 +293,57 @@ where
 \text{Split}_{-}(a^+,b^-)=\frac{z^2}{\sqrt{z(1-z)}[ab]}
 \end{equation}
 %
+\section{Unitarity}
+\subsection{Loops in general}
+\textit{Feynman rules require momentum conservation at each vertex of a Feynman diagram.At tree-level, this fixes all momenta of the internal lines in terms of the external momenta. At loop-level, momentum conservation leaves one momentum undetermined per loop and one must integrate over all such unfixed momenta. Thus in $D$-dimensions, one has a $D$-dimensional loop-integral for each loop}.
+\section{Unitarity}
+Take a general analytic function of some variable $x$
+\begin{equation}
+\begin{aligned}
+f(x)&=\beta(x)+i\alpha (x)
+\end{aligned}
+\end{equation}
+Defining the discontinuity of this function as $\text{Disc}[f(x)]=if(x+i\epsilon)-if(x-i\epsilon)$ we find as we let $\epsilon\to 0$
+\begin{equation}
+\begin{aligned}
+if(x+i\epsilon)-if(x-i\epsilon)&=i\beta(x+i\epsilon)-\alpha(x+i\epsilon)-i\beta(x-i\epsilon)-\alpha(x-i\epsilon)\\
+&=-2\left(\alpha(x)+i\beta(i\epsilon)\right)+\mathcal{O}(\epsilon^2)\\
+&=-2\alpha(x)+\mathcal{O}(\epsilon)\\
+&=-2\Im[f(x)]
+\end{aligned}
+\end{equation}
+The scattering matrix is unitary
+\begin{equation}
+S=\mathds{1}+iT
+\end{equation}
+Taking
+\begin{equation}
+\begin{aligned}
+S^\dagger S&=(\mathds{1}-iT^\dagger)(\mathds{1}-iT)=1\\ &=\mathds{1}-i(T-T^\dagger)-T^\dagger T=1\\
+\Rightarrow T^\dagger T&=i(T^\dagger -T)=i\left[(\Re[T]-i\Im[T])-(\Re[T]+i\Im[T])\right]\\
+&=2\Im[T]=-\text{Disc}[iT]
+\end{aligned}
+\end{equation}
+Expanding this order by order in perturbation theory we have for instance at four and five point
+\begin{equation}
+\begin{aligned}
+T_4&=g^2T_4^{(0)}+g^4T_4^{(1)}+g^6T_4^{(2)}\\
+T_5&=g^3T_5^{(0)}+g^5T_5^{(1)}+g^7T_5^{(2)}\\
+\end{aligned}
+\end{equation}
+with $T_n^{(L)}$ being the $n$-point gluon amplitude at $L$-loop. By inserting these into the equation for the discontinuity we find first to order $g^2$
+\begin{equation}
+\text{Disc}[T_4^{(0)}]=0
+\end{equation}
+Since we cant construct the amplitude from the product of two other amplitudes. This simply states that tree level amplitudes have no branch cuts. At order $g^4$ we have 
+\begin{equation}
+	\text{Disc}[T_4^{(1)}]=T_4^{(0)\,\dagger} T_4^{(0)}
+\end{equation}
+This is equivalent to cutting to lines in the one loop diagram and obtaining two four point tree-level diagrams with an on-shell propagator in between, which momentum obviously must depend on the loop momentum $\ell$.\\
+Using the optical theorem the Discontinuity of a function is related directly to the scattering cross-section.
+\section{Generalized unitarity}
+When we take the momenta in the scattering amplitudes to be complex and use the unitarity method, we get \textit{generalized unitarity}. The inclusion of complex momenta opens up the possibility of cutting more than two lines. e.g. the three-point amplitudes are only non-zero for complex momenta, so for the four-point one-loop amplitude we could cut four lines and end up with a product of four three-point amplitudes.\\
+In general we will in fact only be able to cut up to four lines since we need momentum conservation at the vertices as well as having the cut momentum being on-shell. This imposes one new condition for every cut, and since $\ell^\mu$ has four components we need 4 equations.
 \newpage
 \begin{thebibliography}{99}
 
