@@ -93,16 +93,20 @@ Once again, performing the Gaussian integration we find
 \end{equation}
 Just like we found in \eqref{eq:p-kernel}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Taking
+Now to find the coherent state propagator we insert the identity again, with
 \begin{equation}
 \begin{aligned}
-U(t)\ket{\zeta}=U(t)e^{\zeta a^\dagger(t)}\ket{0}
+\mathds{1}\equiv
 \end{aligned}
 \end{equation}
 \newpage
 \section*{Problem 2}
 \hspace*{-1cm}\includegraphics[width=0.85\pagewidth]{2.png}
-First let us note that
+\underline{Comment about time ordering}. We are calculating a time ordered correlation function and so we if the internal ordering, wasn't consistent with the order $t_1>t_2>t_3$ then we would have to commute the operators through to get the appropriate ordering. 
+
+As an example we could have the order correlation function $\expval{x(t_2)x(t_1)}=\expval{x(t_1)x(t_2)+[x(t_1),x(t_2)]}$. The commutator is non trivial since these are evaluated at different times.
+
+Now let us note that
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{equation}
 	\begin{aligned}
@@ -124,7 +128,7 @@ Then computing
 		=&\sum_{n_2}e^{iE_{n_1}(t_1-t_2)}e^{iE_{n_2}(t_2-t_1)}\mel{n_1}{x\dyad{n_2}{n_2}x}{n_1}
 		\\
 		=&\sum_{n_2} e^{iE_{n_1}(t_1-t_2)}e^{iE_{n_2}(t_2-t_1)}\times \\
-		&\left(\sqrt{n_2}\delta_{n_1\,(n_2-1)}+\sqrt{n_2+1}\delta_{n_1\,(n_2+1)}\right)\left(\sqrt{n_2}\delta_{n_1\,(n_2-1)}+\sqrt{n_2+1}\delta_{n_1\,(n_2+1)}\right)
+		&\left(\sqrt{n_2}\delta_{n_1\,(n_2-1)}+\sqrt{n_2+1}\delta_{n_1\,(n_2+1)}\right)\left(\sqrt{n_2}\delta_{n_1\,(n_2-1)}+\sqrt{n_2+1}\delta_{n_1 \,(n_2+1)}\right)
 		\\
 		=&x_0e^{iE_{n_1}(t_1-t_2)}e^{iE_{n_1+1}(t_2-t_1)}(n_{1}+1)+e^{iE_{n_1}(t_1-t_2)}e^{iE_{n_1-1}(t_2-t_1)}n_1
 		\\
@@ -136,7 +140,7 @@ Then computing
 	\\
 	=&x_0n_{1}\left(e^{-i\omega(t_1-t_2)}+e^{i\omega(t_1-t_2)}\right)+x_0e^{-i\omega(t_1-t_2)}
 		\\
-	=&x_0\left(2n_1\cos{\omega (t_1-t_2)}+e^{-i\omega(t_1-t_2)}\right)
+	=&\frac{x_0^2}{2}\left(2n_1\cos{\omega (t_1-t_2)}+e^{-i\omega(t_1-t_2)}\right)
 	\end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -156,11 +160,12 @@ Also
 \end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%
+where we in the second to last line have summed over the delta-functions.
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 3}
 \hspace*{-1cm}\includegraphics[width=0.85\pagewidth]{2.png}
-First let us note that
+First we recalculate problem 2 for off-diagonal elements, i.e. $\mel{n}{x(t_1)x(t_2)}{m}$. We find
 \begin{equation}
 	\begin{aligned}
 		\mel{n_1}{x(t_1)x(t_2)}{n_4}=&\mel{n}{e^{iHt_1}xe^{iH(t_2-t_1)}xe^{-iHt_2}}{n_4}\\
@@ -180,66 +185,85 @@ First let us note that
 	&+\frac{x_0}{2} e^{i(E_{n_1}-E_{n_1-1})t_1}e^{i(E_{n_4-1}-E_{n_4})t_2} \sqrt{(n+1)(n_1+2)}\delta_{n_1\,n_4-2}\\
 	&+\frac{x_0}{2} e^{i(E_{n_1}-E_{n_1-1})t_1}e^{i(E_{n_4-1}-E_{n_4})t_2}n_1\delta_{n_1\,n_4}
 		\\
-=&\frac{x_0^2}{2}\left( e^{-i\omega (t_1-t_2)}(n_1+1)\delta_{n_1\,n_4}+ e^{i \omega (t_1+t_2)}\sqrt{(n_1-1)n_1}\delta_{n_1\,(n_4+2)}\right.\\
-&\left.+ e^{-i\omega (t_1+t_2)}\sqrt{(n+1)(n_1+2)}\delta_{n_1\,(n_4-2)}+ e^{i\omega (t_1-t_2)}n_1\delta_{n_1\,n_4}\right)\\
+=&\frac{x_0^2}{2}\left( e^{-i\omega (t_1-t_2)}(n_1+1)\delta_{n_1\,n_4}+ e^{i \omega (t_1+t_2)}\sqrt{(n_4+1)n_1}\delta_{n_1\,(n_4+2)}\right.\\
+&\left.+ e^{-i\omega (t_1+t_2)}\sqrt{(n+1)(n_4)}\delta_{n_1\,(n_4-2)}+ e^{i\omega (t_1-t_2)}n_1\delta_{n_1\,n_4}\right)\\
 	\end{aligned}
 \end{equation}
 The diagonal elements here reduce to the same ones we found in problem 2, i.e. we expect this to hold.
 %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Also
+Also the coherent states have the following property, see e.g Shankar.
 \begin{equation}
 \begin{aligned}
-\braket{\zeta}{n}&=\mel{0}{e^{\zeta^* a}}{n}\\
-&=e^{\sqrt{n}\zeta^*}\braket{0}{n-1}\\
-&=e^{\sqrt{n}\zeta^*}\delta_{n\,1}\\
-\Rightarrow\braket{n}{\zeta}&=\left(\braket{\zeta}{n}\right)^{\dagger}=e^{\sqrt{n}\zeta}\delta_{n\,1}\
+\braket{\zeta}{n}&=\frac{(\zeta^*)^n}{\sqrt{n!}}\\
+\braket{n}{\zeta}&=\frac{\zeta^n}{\sqrt{n!}}\\
 \end{aligned}
 \end{equation}
-Then computing
+We then compute  $\mel{\zeta}{x(t_1)x(t_2)}{\zeta}$ by inserting two othonormal basis sets and using the just derived results for $\mel{n}{x(t_1)x(t_2)}{m}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{equation}
 	\begin{aligned}
 		\mel{\zeta}{x(t_1)x(t_2)}{\zeta}=&\sum_{\substack{n_1\\n_4}}\braket{\zeta}{n_1}\hspace*{-0.2cm}\mel{n_1}{x(t_1)x(t_2)}{n_4}\hspace*{-0.15cm}\braket{n_4}{\zeta}
+		\\
+=&\frac{x_0^2}{2}\sum_{\substack{n_1\\n_4}}\frac{(\zeta^*)^{n_1}\zeta^{n_4}}{\sqrt{n_1!n_4!}}\left(  e^{-i\omega (t_1-t_2)}(n_1+1)\delta_{n_1\,n_4}\right.\\
+&\qquad\qquad+ e^{i \omega (t_1+t_2)}\sqrt{(n_4+1)n_1}\delta_{n_1\,(n_4+2)}\\
+&\qquad\qquad+ e^{-i\omega (t_1+t_2)}\sqrt{(n_1+1)n_4}\delta_{n_1\,(n_4-2)}\\
+&\qquad\qquad+ \left.e^{i\omega (t_1-t_2)}n_1\delta_{n_1\,n_4}\right)
+		\\
+=&\frac{x_0^2}{2}\sum_{\substack{n_1}}\frac{|\zeta|^{2n_1}}{n_1!}\left(  e^{-i\omega (t_1-t_2)}(n_1+1)+e^{i\omega (t_1-t_2)}n_1\right)\\
++&\frac{x_0^2}{2}\sum_{\substack{n_1\\ n_4}}\frac{(\zeta^*)^{n_1}\zeta^{n_4}}{(\sqrt{n_1!}\sqrt{n_4!}}\left( e^{-i\omega (t_1+t_2)}\sqrt{(n_1+1)n_4}\delta_{n_1\,(n_4-2)}\right)\\
++&\frac{x_0^2}{2}\sum_{\substack{n_1\\ n_4}}\frac{(\zeta^*)^{n_1}\zeta^{n_4}}{(\sqrt{n_1!}\sqrt{n_4!}}\left(  e^{i \omega (t_1+t_2)}\sqrt{(n_4+1)n_1}\delta_{(n_1-2)\,n_4}\right)
+	\end{aligned}
+\end{equation}
+Then using
+\begin{equation}
+\begin{aligned}
+\sum_{n}\frac{(x^2)^n}{n!}n&=x^2e^{x^2}\\
+\sum_n\frac{(x^2)^n}{n!}&=e^{x^2},
+\end{aligned}
+\end{equation}
+and summing over the deltafunctions, we find
+\begin{equation}
+	\begin{aligned}
+		\mel{\zeta}{x(t_1)x(t_2)}{\zeta}
+		=&\frac{x_0^2}{2}e^{|\zeta|^2}\left((|\zeta|^{2}+1)e^{-i\omega (t_1-t_2)}+|\zeta|^2 e^{i\omega (t_1-t_2)}\right)\\
+		&+\frac{x_0^2}{2}e^{|\zeta|^2}\left(\zeta^2 e^{-i\omega (t_1+t_2)}\right)\\
+	&+\frac{x_0^2}{2}e^{|\zeta|^2}\left((\zeta^*)^2 e^{i\omega (t_1+t_2)}\right)\\
+	=&\frac{x_0^2}{2}e^{|\zeta|^2}\left(2|\zeta|^{2}\cosh[i\omega(t_1-t_2)]+e^{-i\omega (t_1+t_2)}\right)\\
+	&+x_0^2e^{|\zeta|^2}\Re[\zeta^2 e^{-i\omega (t_1+t_2)}]\\
+		=&\frac{x_0^2}{2}e^{|\zeta|^2}\left(2|\zeta|^{2}\cosh[i\omega(t_1-t_2)]+e^{-i\omega (t_1+t_2)}+2\Re[\zeta^2]\cos{\omega (t_1+t_2)}\right)
 	\end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{equation}
-%	\begin{aligned}
-%	)	\mel{\zeta_1}{x}{\zeta_2}&=\frac{x_0}{\sqrt{2}}\mel{\zeta_1}{(a+a^\dagger)}{\zeta_2}\\
-%		&=\frac{x_0}{\sqrt{2}}\mel{\zeta_1}{a}{\zeta_2}+\frac{x_0}{\sqrt{2}}\mel{\zeta_1}{a^\dagger}{\zeta_2}\\
-%		&=\frac{x_0}{\sqrt{2}}\zeta_2\braket{\zeta_1}{\zeta_2}+\frac{x_0}{\sqrt{2}}\zeta_1^{*}\braket{\zeta_1}{\zeta_2}\\
-%		&=\frac{x_0}{\sqrt{2}}(\zeta_1^{*}+\zeta_2)\braket{\zeta_1}{\zeta_2}\\
-%		&=\frac{x_0}{\sqrt{2}}(\zeta_1^{*}+\zeta_2)e^{\zeta_1^{*}\zeta_2}\\
-%		\Rightarrow\mel{\zeta}{x}{\zeta}&=\frac{x_0}{\sqrt{2}}(\zeta^{*}+\zeta)e^{|\zeta|^2}
-%	\end{aligned}
-%\end{equation}
-%Also
-%\begin{equation}
-%	\begin{aligned}
-%		e^{-iHt}\ket{\zeta}=&e^{-i\omega(a^\dagger a+\frac{1}{2})t}\ket{\zeta}\\
-%		=&e^{-\frac{i}{2}\omega t}e^{-i\omega a^\dagger a t}\ket{\zeta}\\
-%		=&e^{-\frac{i}{2}\omega t}\ket{\zeta e^{-i\omega t}}\\
-%	\end{aligned}
-%\end{equation}
-%\begin{equation}
-%	\begin{aligned}
-%\mel{\zeta_1}{x(t_1)x(t_2)}{\zeta_1}=&\mel{\zeta_1}{e^{iHt_1}xe^{iH(t_2-t_1)}xe^{-iHt_2}}{\zeta_1}\\
-%=&\frac{1}{2\pi i}\int \dd \zeta_2\dd\zeta_2^*\:\mel{\zeta_1}{e^{iHt_1}x\dyad{\zeta_2}{\zeta_2}e^{iH(t_2-t_1)}xe^{-iHt_2}}{\zeta_1}
-%\\
-%=&\frac{1}{2\pi i}\int \dd \zeta_2\dd\zeta_2^*\:e^{\frac{i}{2}\omega t_1}e^{\frac{i}{2}\omega(t_2-t_1)}e^{-\frac{i}{2}\omega t_2}\mel{\zeta_1e^{i\omega t_1}}{x\dyad{\zeta_2}{\zeta_2e^{i \omega(t_2-t_1)}}x}{e^{-i\omega t_2}\zeta_1}
-%\\
-%=&\frac{1}{2\pi i}\int \dd \zeta_2\dd\zeta_2^*\:\mel{\zeta_1e^{i\omega t_1}}{x\dyad{\zeta_2}{e^{i \omega(t_2-t_1)}\zeta_2}x}{e^{-i\omega t_2}\zeta_1}
-%\\
-%=&\frac{x_0^2}{4\pi i}\int \dd \zeta_2\dd\zeta_2^*\:\left(\zeta_1^{*}e^{i\omega t_1}+\zeta_2\right)\left(\zeta_2^{*}e^{i\omega (t_2-t_1)}+\zeta_1e^{-i\omega t_2}\right)e^{\zeta_1^{*}\zeta_2 e^{i\omega t_1}}e^{\zeta_2^{*}\zeta_1 e^{i\omega (t_2-t_1)}e^{-i\omega t_2}}
-%\\
-%=&\frac{x_0^2}{4\pi i}\int \dd \zeta_2\dd\zeta_2^*\:\left(|\zeta_1|^2e^{i\omega (t_1-t_2)}+\zeta_2\zeta_2^{*}e^{i\omega (t_2-t_1)}+\zeta_1e^{-i\omega t_2}\right)e^{\zeta_1^{*}\zeta_2 e^{i\omega t_1}}e^{\zeta_2^{*}\zeta_1 e^{i\omega (t_2-t_1)}e^{-i\omega t_2}}
-%	\end{aligned}
-%\end{equation}
+For the second part of the problem:
+\begin{equation}
+\begin{aligned}
+\Tr(e^{-\beta H}x(t_1)x(t_2))&=\sum_n \mel{n}{e^{-\beta H}x(t_1)x(t_2)}{n}\\
+&=\sum_ne^{-\beta E_n} \mel{n}{x(t_1)x(t_2)}{n}\\
+&=\sum_ne^{-\beta\omega (n+\frac{1}{2})}\frac{x_0^2}{2}\left(2n_1\cos{\omega (t_1-t_2)}+e^{-i\omega(t_1-t_2)}\right)\\
+&=x_0^2\cos{\omega (t_1-t_2)}\sum_ne^{-\beta\omega (n+\frac{1}{2})}n_1+\frac{x_0^2}{2}e^{-i\omega(t_1-t_2)}\sum_ne^{-\beta\omega(n+\frac{1}{2})}\\
+\end{aligned}
+\end{equation}
+Then using
+\begin{equation}
+	\begin{aligned}
+		\sum_{n}e^{-k(n+\frac{1}{2})}=&\frac{e^{k/2}}{e^{k}-1}\\
+		\sum_{n}e^{-k(n+\frac{1}{2})}n=&\frac{e^{k/2}}{\left(e^{k}-1\right)^2}
+	\end{aligned}
+\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+we find
+\begin{equation}
+	\begin{aligned}
+		\Tr(e^{-\beta H}x(t_1)x(t_2))&=\sum_n \mel{n}{e^{-\beta H}x(t_1)x(t_2)}{n}\\
+		&=x_0^2\cos{\omega (t_1-t_2)}\frac{e^{\beta \omega /2}}{\left(e^{\beta \omega }-1\right)^2}+\frac{x_0^2}{2}e^{-i\omega(t_1-t_2)}\frac{e^{\beta \omega /2}}{\left(e^{\beta \omega }-1\right)}
+		\\
+		&=\frac{1}{4} x_0^2 \csch\left(\frac{\beta\omega}{2}\right) \left(\cos{\omega (t_1-t_2)} \left[\coth \left(\frac{\beta\omega}{2}\right)-1\right]+e^{-i\omega(t_1-t_2)}\right)
+	\end{aligned}
+\end{equation}
+Where we have converted to hyperbolic functions in the last line in the last line.
 \newpage
 \section*{Problem 4}
-\underline{Note:} There are many approaches than can be taken in this problem. Since I have solved it before in a previous QM class (see problem 5.4.3 in Shankar), I will do the problem in the same manor I have done previously and not the way it was discussed at Mukunds office hour. I have discussed the answer with classmates and checked the literature, see e.g. \footnote{Barry R. Holstein, American Journal of Physics 65, 414 (1997)}, and obtain the same result for the position space propagator, although through different means.\\\\
+\underline{Note:} There are many approaches than can be taken in this problem. Since I have solved it before in a previous QM class (see problem 5.4.3 in Shankar), I will do the problem in the same manor I have done previously and not the way it was discussed at Mukunds office hour. I have checked the literature, see e.g. \footnote{Barry R. Holstein, American Journal of Physics 65, 414 (1997)}, and obtain the same result for the position space propagator, although through different means, so it seems like the method is valid.\\\\
 We have the following Hamiltonian
 \be
 \ham=\kin+fx

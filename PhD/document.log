@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  15 DEC 2020 11:21
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  15 DEC 2020 15:42
  restricted system commands enabled.
 **document.tex
 (./document.tex
@@ -1010,58 +1010,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--33
 
  []
 
-[2<./1.png>] [3]
+[2<./1.png>]
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 99
+.
+
+(C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/latex/doublestroke/udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+)
+[3]
 <2.png, id=31, 729.22438pt x 67.75313pt>
 File: 2.png Graphic file (type png)
 <use 2.png>
 Package luatex.def Info: 2.png  used on input line 104.
 (luatex.def)             Requested size: 507.88533pt x 47.18803pt.
 
-Overfull \hbox (26.46469pt too wide) in paragraph at lines 104--107
+Overfull \hbox (26.46469pt too wide) in paragraph at lines 104--106
 | []
  []
 
 
-Overfull \hbox (24.75171pt too wide) detected at line 141
+Overfull \hbox (41.80153pt too wide) in paragraph at lines 107--108
+[]\T1/lmr/m/n/10.95 As an ex-am-ple we could have the or-der cor-re-la-tion func
+-tion $[] \OT1/cmr/m/n/10.95 = []$\T1/lmr/m/n/10.95 .
+ []
+
+
+Overfull \hbox (24.75171pt too wide) detected at line 145
 [][]
  []
 
 
-Overfull \hbox (49.50517pt too wide) detected at line 157
+Overfull \hbox (49.50517pt too wide) detected at line 161
 [][]
  []
 
-[4<./2.png>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4<./2.png>] [5]
 File: 2.png Graphic file (type png)
 <use 2.png>
-Package luatex.def Info: 2.png  used on input line 162.
+Package luatex.def Info: 2.png  used on input line 167.
 (luatex.def)             Requested size: 507.88533pt x 47.18803pt.
 
-Overfull \hbox (26.46469pt too wide) in paragraph at lines 162--164
+Overfull \hbox (26.46469pt too wide) in paragraph at lines 167--169
 | []
  []
 
 
-Overfull \hbox (11.75803pt too wide) detected at line 186
+Overfull \hbox (11.75803pt too wide) detected at line 191
 [][]
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 243--245
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
 
  []
 
-[6] [7] (./document.aux))
+[9] [10] (./document.aux))
 
 Here is how much of LuaTeX's memory you used:
- 27361 strings out of 480991
+ 27377 strings out of 480991
  100000,1144653 words of node,token memory allocated
- 837 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 1 glyph, 123 attribute, 51 glue_spe
-c, 63 attribute_list, 2 write nodes
-   avail lists: 2:1346,3:139,4:17,5:280,6:16,7:2260,8:94,9:933,10:11,11:102
- 43893 multiletter control sequences out of 65536+200000
- 87 fonts using 7271587 bytes
+ 897 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 1 glyph, 143 attribute, 51 glue_spe
+c, 73 attribute_list, 2 write nodes
+   avail lists: 2:1392,3:139,4:22,5:280,6:16,7:2254,8:94,9:1107,10:12,11:99
+ 43902 multiletter control sequences out of 65536+200000
+ 92 fonts using 7503587 bytes
  71i,15n,102p,748b,245s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fo
@@ -1072,17 +1092,18 @@ cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program 
 Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on document.pdf (7 pages, 362397 bytes).
+nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/tarob/AppData/Roaming/MiKTeX/2.
+9/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
+mr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
+m/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on document.pdf (10 pages, 376343 bytes).
 
-PDF statistics: 108 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
