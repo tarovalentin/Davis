@@ -344,6 +344,56 @@ Using the optical theorem the Discontinuity of a function is related directly to
 \section{Generalized unitarity}
 When we take the momenta in the scattering amplitudes to be complex and use the unitarity method, we get \textit{generalized unitarity}. The inclusion of complex momenta opens up the possibility of cutting more than two lines. e.g. the three-point amplitudes are only non-zero for complex momenta, so for the four-point one-loop amplitude we could cut four lines and end up with a product of four three-point amplitudes.\\
 In general we will in fact only be able to cut up to four lines since we need momentum conservation at the vertices as well as having the cut momentum being on-shell. This imposes one new condition for every cut, and since $\ell^\mu$ has four components we need 4 equations.
+%%%%%%%%%%%%%%%%%%%%%
+\section{Exterior derivatives and forms}
+An $n$-form $F_{(n)}$ is a completely antisymmetric tensor 
+\begin{equation}
+F_{\mu_1\,\mu_2\,\mu_3\,\cdots\,\mu_n}=-F_{\mu_1\,\mu_3\,\mu_2\,\cdots\,\mu_n}=F_{\mu_3\,\mu_1\,\mu_2\,\cdots\,\mu_n}
+\end{equation}
+On this $n$-form, we can define an exterior derivative, which is an $(n+1)$ form:
+\begin{equation}
+\dd F_{\mu_1\,\mu_2\,\mu_3\,\cdots\,\mu_n}=(n+1)\partial_{[\mu_1}F_{\mu_2\,\mu_3\,\cdots\,\mu_n]},
+\end{equation}
+where the square brackets just mean that we antisymmetrize in the indices, e.g.
+\begin{equation}
+\begin{aligned}
+\dd F_{\mu\nu}=&\frac{(1+1)}{2!}\left(\partial_\mu F_\nu-\partial_\nu F_\mu\right)\\
+=&\partial_\mu F_\nu-\partial_\nu F_\mu,\\ \dd F_{\mu\nu\rho}=&\frac{(2+1)}{3!}\left(\partial_\mu F_{\nu\rho}-\partial_\mu F_{\rho\nu}-\partial_\nu F_{\mu\rho}+\partial_\nu F_{\rho\mu}-\partial_\rho F_{\nu\mu}+\partial_\rho F_{\mu\nu}\right)\\
+=&\partial_\mu F_{\nu\rho}+\partial_\nu F_{\rho\mu}+\partial_\rho F_{\mu\nu}
+\end{aligned}
+\end{equation}
+Furthermore we have the property
+\begin{equation}
+\dd^2 F=0
+\end{equation}
+And the following nomenclature
+\begin{itemize}
+\item \textit{Exact form}: if we can write $\qquad F=\dd G$
+\item \textit{Closed form}: if $\qquad \qquad \qquad ~~~ \dd F=0$
+\item $\Rightarrow$ All exact forms are closed.
+\end{itemize}
+We also define the wedge product of forms. Given two forms $F_{(n)}$ and $G_{(m)}$, we can define the $n+m$ form $F\wedge G$
+\begin{equation}
+(F\wedge G)_{\mu_1\,\cdots\,\mu_{n+m}}=\frac{(n+m)!}{n!m!}F_{[\mu_1\,\cdots\,\mu_n}G_{\mu_{n+1}\,\cdots\,\mu_{n+m}]}
+\end{equation}
+For instance
+\begin{equation}
+\begin{aligned}
+F_\mu\wedge G_\nu=&\frac{(1+1)!}{1!1!}\left(F_\mu G_\nu-F_\nu G_\mu\right)\\
+=&2[F_\mu,G_\nu]
+\end{aligned}
+\end{equation}
+Lastly we can define the \textit{Hodge dual}, as the $(D-n)$-form
+\begin{equation}
+^{*}\hspace*{-0.1cm}F^{\mu_{n+1}\,\mu_{n+2}\,\cdots\,\mu_{D}}=\frac{1}{n!}F_{\mu_1\,\mu_2\,\cdots\,\mu_n}\epsilon^{\mu_1\,\mu_2\,\cdots\,\mu_n\,\mu_{n+1}\,\mu_{n+2}\,\cdots\,\mu_D}
+\end{equation}
+Using this notation we can write the source-less Maxwell equations as:
+\begin{equation}
+\begin{aligned}
+\dd F&=0\\
+\dd \hodge F&=0
+\end{aligned}
+\end{equation}
 \newpage
 \begin{thebibliography}{99}
 
