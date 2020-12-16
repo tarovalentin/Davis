@@ -93,10 +93,36 @@ Once again, performing the Gaussian integration we find
 \end{equation}
 Just like we found in \eqref{eq:p-kernel}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Now to find the coherent state propagator we insert the identity again, with
+Now to find the coherent state propagator we write
 \begin{equation}
 \begin{aligned}
-\mathds{1}\equiv
+K(\zeta_f,t_f;\zeta_i,t_i)&=\braket{\zeta_f,t_f}{\zeta_i,t_i}\\
+&=\mel{\zeta_f}{U(t_f,t_i)}{\zeta_i}\\
+&=\iint \dd x_i\, \dd x_f \,\braket{\zeta_f}{x_f}\hspace*{-0.2cm}\mel{x_f}{U(t_f,t_i)}{x_i}\hspace*{-0.15cm}\braket{x_i}{\zeta_i}\\
+&=\iint \dd x_i\, \dd x_f \,\braket{\zeta_f}{x_f}\braket{x_i}{\zeta_i}K(x_f,t_f;x_i,t_i)
+\end{aligned}
+\end{equation}
+We already have the position space propagator, while the wavefunctions in coherent state basis can be readily looked up in e.g. Shankar (eq (21.1.132)) to be
+\begin{equation}
+\braket{x}{\zeta}=\left(\frac{m\omega}{\pi}\right)^{1/4}e^{-\zeta ^2/2}e^{-m\omega x^2/2}e^{\sqrt{m\omega} \zeta x}
+\end{equation}
+so the integration is:
+\begin{equation}
+	\begin{aligned}
+		K(\zeta_f,t_f;\zeta_i,t_i)
+		&=\frac{m\omega}{\pi}\sqrt{\frac{1}{2i\sin{\omega T}}}\iint \dd x_i\, \dd x_f \,e^{-[(\zeta_f^*)^2+(\zeta_i) ^2] /2}e^{-m\omega [x_f^2+x_i^2]/2}e^{\sqrt{m\omega} \zeta^*_f x_f}e^{\sqrt{m\omega} \zeta_i x_i}\\
+		&\qquad\qquad\times\exp[\frac{i m \omega}{2 }\frac{(x_i^2+x_f^2)\cos{\omega T}-2x_i x_f}{\sin{\omega T}}]
+	\end{aligned}
+\end{equation}
+One could then go on to calculate this by performing the two Gaussian integrals, but there is a more efficient way to obtain the propagator, which comes from noticing that a coherent state remains coherent under time evolution,
+\begin{equation}
+U(t)\ket{\zeta}=e^{a^\dagger(t) \zeta}\ket{0}=e^{a^\dagger \zeta \exp(-i\omega t)}\ket{0}=e^{a^\dagger \zeta' }\ket{0}=\ket{\zeta'}=\ket{\zeta e^{-i\omega t}}
+\end{equation}
+where we have used the time evolution of $a^\dagger$, namely $a^\dagger (t)=a^\dagger e^{-i\omega t}$. Using this and the normalization $\braket{\zeta_1}{\zeta_2}=e^{\zeta_1^*\zeta_2}$ we then have
+\begin{equation}
+\begin{aligned}
+K(\zeta_f,t_f;\zeta_i,t_i)&=\mel{\zeta_i}{U(t_f,t_i)}{\zeta_i}\\
+&=\braket{\zeta_i}{\zeta_f'}=e^{\zeta_i^*\zeta_f'}=e^{\zeta_i^*\zeta_fe^{-i\omega(t_f-t_i)}}
 \end{aligned}
 \end{equation}
 \newpage
@@ -104,41 +130,41 @@ Now to find the coherent state propagator we insert the identity again, with
 \hspace*{-1cm}\includegraphics[width=0.85\pagewidth]{2.png}
 \underline{Comment about time ordering}. We are calculating a time ordered correlation function and so we if the internal ordering, wasn't consistent with the order $t_1>t_2>t_3$ then we would have to commute the operators through to get the appropriate ordering. 
 
-As an example we could have the order correlation function $\expval{x(t_2)x(t_1)}=\expval{x(t_1)x(t_2)+[x(t_1),x(t_2)]}$. The commutator is non trivial since these are evaluated at different times.
+As an example we could have the time order correlation function $\expval{x(t_2)x(t_1)}=\expval{x(t_1)x(t_2)+[x(t_2),x(t_1)]}$. The commutator is non trivial since these are evaluated at different times, and so the result would deviate from the one we are trying to obtain in this problem.
 
 Now let us note that
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{equation}
 	\begin{aligned}
 		\mel{n}{x}{m}&=\frac{x_0}{\sqrt{2}}\mel{n}{(a+a^\dagger)}{m}\\
-		&=\mel{n}{a}{m}+\mel{n}{a^\dagger}{m}\\
-		&=\sqrt{m}\braket{n}{m-1}+\sqrt{m+1}\braket{n}{m+1}\\
-		&=\sqrt{m}\delta_{n\,(m-1)}+\sqrt{m+1}\delta_{n\,(m+1)}\\
-		\Rightarrow\sum_m\mel{n}{x}{m}&=\sqrt{n+1}+\sqrt{n}
+		&=\frac{x_0}{\sqrt{2}}\mel{n}{a}{m}+\frac{x_0}{\sqrt{2}}\mel{n}{a^\dagger}{m}\\
+		&=\frac{x_0}{\sqrt{2}}\sqrt{m}\braket{n}{m-1}+\frac{x_0}{\sqrt{2}}\sqrt{m+1}\braket{n}{m+1}\\
+		&=\frac{x_0}{\sqrt{2}}\sqrt{m}\delta_{n\,(m-1)}+\frac{x_0}{\sqrt{2}}\sqrt{m+1}\delta_{n\,(m+1)}\\
+		\Rightarrow\sum_m\mel{n}{x}{m}&=\frac{x_0}{\sqrt{2}}\sqrt{n+1}+\frac{x_0}{\sqrt{2}}\sqrt{n}
 	\end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Then computing
+Then using this, we can compute the first correlation function
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{equation}
 	\begin{aligned}
-		\mel{n_1}{x(t_1)x(t_2)}{n_1}=&\mel{n}{e^{iHt_1}xe^{iH(t_2-t_1)}xe^{-iHt_2}}{n_1}\\
+		\mel{n_1}{x(t_1)x(t_2)}{n_1}=&\mel{n_1}{e^{iHt_1}xe^{iH(t_2-t_1)}xe^{-iHt_2}}{n_1}\\
 		=&\sum_{n_2}\mel{n_1}{e^{iHt_1}x\dyad{n_2}{n_2}e^{iH(t_2-t_1)}xe^{-iHt_2}}{n_1}
 		\\
 		=&\sum_{n_2}e^{iE_{n_1}(t_1-t_2)}e^{iE_{n_2}(t_2-t_1)}\mel{n_1}{x\dyad{n_2}{n_2}x}{n_1}
 		\\
-		=&\sum_{n_2} e^{iE_{n_1}(t_1-t_2)}e^{iE_{n_2}(t_2-t_1)}\times \\
+		=&\frac{x_0^2}{2}\sum_{n_2} e^{iE_{n_1}(t_1-t_2)}e^{iE_{n_2}(t_2-t_1)}\times \\
 		&\left(\sqrt{n_2}\delta_{n_1\,(n_2-1)}+\sqrt{n_2+1}\delta_{n_1\,(n_2+1)}\right)\left(\sqrt{n_2}\delta_{n_1\,(n_2-1)}+\sqrt{n_2+1}\delta_{n_1 \,(n_2+1)}\right)
 		\\
-		=&x_0e^{iE_{n_1}(t_1-t_2)}e^{iE_{n_1+1}(t_2-t_1)}(n_{1}+1)+e^{iE_{n_1}(t_1-t_2)}e^{iE_{n_1-1}(t_2-t_1)}n_1
+		=&\frac{x_0^2}{2}\left(e^{iE_{n_1}(t_1-t_2)}e^{iE_{n_1+1}(t_2-t_1)}(n_{1}+1)+e^{iE_{n_1}(t_1-t_2)}e^{iE_{n_1-1}(t_2-t_1)}n_1\right)
 		\\
-		=&x_0e^{i\omega(n_1+\frac{1}{2})(t_1-t_2)}e^{i\omega(n_1+\frac{3}{2})(t_2-t_1)}(n_{1}+1)+x_0e^{i\omega(n_1+\frac{1}{2})(t_1-t_2)}e^{i\omega(n_1-\frac{1}{2})(t_2-t_1)}n_1
+		=&\frac{x_0^2}{2}\left(e^{i\omega(n_1+\frac{1}{2})(t_1-t_2)}e^{i\omega(n_1+\frac{3}{2})(t_2-t_1)}(n_{1}+1)+e^{i\omega(n_1+\frac{1}{2})(t_1-t_2)}e^{i\omega(n_1-\frac{1}{2})(t_2-t_1)}n_1\right)
 		\\
-		=&x_0e^{i\omega(n_1+\frac{1}{2})(t_1-t_2)}e^{i\omega(-n_1-\frac{3}{2})(t_1-t_2)}(n_{1}+1)+x_0e^{i\omega(n_1+\frac{1}{2})(t_1-t_2)}e^{i\omega(-n_1+\frac{1}{2})(t_1-t_2)}n_1
+		=&\frac{x_0^2}{2}\left(e^{i\omega(n_1+\frac{1}{2})(t_1-t_2)}e^{i\omega(-n_1-\frac{3}{2})(t_1-t_2)}(n_{1}+1)+e^{i\omega(n_1+\frac{1}{2})(t_1-t_2)}e^{i\omega(-n_1+\frac{1}{2})(t_1-t_2)}n_1\right)
 		\\
-		=&x_0e^{-i\omega(t_1-t_2)}(n_{1}+1)+e^{i\omega(t_1-t_2)}n_1
+		=&\frac{x_0^2}{2}\left(e^{-i\omega(t_1-t_2)}(n_{1}+1)+e^{i\omega(t_1-t_2)}n_1\right)
 	\\
-	=&x_0n_{1}\left(e^{-i\omega(t_1-t_2)}+e^{i\omega(t_1-t_2)}\right)+x_0e^{-i\omega(t_1-t_2)}
+	=&\frac{x_0^2}{2}n_{1}\left(e^{-i\omega(t_1-t_2)}+e^{i\omega(t_1-t_2)}\right)+\frac{x_0^2}{2}e^{-i\omega(t_1-t_2)}
 		\\
 	=&\frac{x_0^2}{2}\left(2n_1\cos{\omega (t_1-t_2)}+e^{-i\omega(t_1-t_2)}\right)
 	\end{aligned}
@@ -154,17 +180,16 @@ Also
 \\
 =&\sum_{n_2}\sum_{n_3}\underbrace{e^{iE_{n_1}(t_1-t_3)}e^{iE_{n_2}(t_2-t_1)}e^{iE_{n_3}(t_3-t_2)}}_{F(n_1,n_2,n_3)}\mel{n_1}{x\dyad{n_2}{n_2}x\dyad{n_3}{n_3}x}{n_1}
 \\
-=&\sum_{n_2}\sum_{n_3}F(n_1,n_2,n_3)\left(\sqrt{n_2}\,\delta_{n_1\,(n_2-1)}+\sqrt{n_2+1}\,\delta_{n_1\,(n_2+1)}\right)\mel{n_2}{x}{n_3}\left(\sqrt{n_3}\,\delta_{n_1\,(n_3-1)}+\sqrt{n_3+1}\,\delta_{n_1\,(n_3+1)}\right)\\
+=&\frac{x_0^3}{2^{3/2}}\sum_{n_2}\sum_{n_3}F(n_1,n_2,n_3)\left(\sqrt{n_2}\,\delta_{n_1\,(n_2-1)}+\sqrt{n_2+1}\,\delta_{n_1\,(n_2+1)}\right)\mel{n_2}{x}{n_3}\left(\sqrt{n_3}\,\delta_{n_1\,(n_3-1)}+\sqrt{n_3+1}\,\delta_{n_1\,(n_3+1)}\right)\\
 \propto&\mel{n_2}{x}{n_2}\\
 =&0
 \end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%
-where we in the second to last line have summed over the delta-functions.
+where we in the second to last line have summed over the delta-functions, and we see that the only contributing term vanishes.
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 3}
-\hspace*{-1cm}\includegraphics[width=0.85\pagewidth]{2.png}
 First we recalculate problem 2 for off-diagonal elements, i.e. $\mel{n}{x(t_1)x(t_2)}{m}$. We find
 \begin{equation}
 	\begin{aligned}
@@ -263,7 +288,7 @@ we find
 Where we have converted to hyperbolic functions in the last line in the last line.
 \newpage
 \section*{Problem 4}
-\underline{Note:} There are many approaches than can be taken in this problem. Since I have solved it before in a previous QM class (see problem 5.4.3 in Shankar), I will do the problem in the same manor I have done previously and not the way it was discussed at Mukunds office hour. I have checked the literature, see e.g. \footnote{Barry R. Holstein, American Journal of Physics 65, 414 (1997)}, and obtain the same result for the position space propagator, although through different means, so it seems like the method is valid.\\\\
+\underline{Note:} There are many approaches than can be taken in this problem. Since I have solved it before in a previous QM class (see problem 5.4.3 in Shankar), I will do the problem in the same manor I have done previously and not the way it was discussed at the office hour. The results obtained matches the ones asked for, by Shankar and so should be correct.\\\\
 We have the following Hamiltonian
 \be
 \ham=\kin+fx
@@ -328,7 +353,7 @@ K(x,t|x',0)=\frac{1}{2\pi}\int^{\infty}_{-\infty}\dd p\:\exp[\frac{i}{ f}\frac{(
 \]
 plugging this integral into Mathematica and simplifying we get:
 \[
-K(x,t|x',0)=\sqrt{\frac{m}{2\pi i (t-t')}}\exp[i\left( \frac{m(x-x')^2}{2(t-t')}+\frac{1}{2}f(t-t')(x-x')-\frac{1}{24m}f^2(t-t')^2 \right)]
+K(x,t|x',0)=\sqrt{\frac{m}{2\pi i (t-t')}}\exp[i\left( \frac{m(x-x')^2}{2(t-t')}-\frac{1}{2}f(t-t')(x-x')-\frac{1}{24m}f^2(t-t')^2 \right)]
 \]
 \end{document}
 
