@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  10 DEC 2020 11:51
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  4 FEB 2021 14:15
  restricted system commands enabled.
 **"Notes on amplitudes.tex"
 ("./Notes on amplitudes.tex"
@@ -843,8 +843,36 @@ Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 Package: cases 2020/03/29 ver 3.2
 \numc@numwid=\dimen272
 )
-\pgf@layerbox@bg=\box60
-\pgf@layerboxsaved@bg=\box61
+(C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/latex/listings/listings.sty
+\lst@mode=\count294
+\lst@gtempboxa=\box60
+\lst@token=\toks41
+\lst@length=\count295
+\lst@currlwidth=\dimen273
+\lst@column=\count296
+\lst@pos=\count297
+\lst@lostspace=\dimen274
+\lst@width=\dimen275
+\lst@newlines=\count298
+\lst@lineno=\count299
+\lst@maxwidth=\dimen276
+
+(C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count300
+\lst@skipnumbers=\count301
+\lst@framebox=\box61
+)
+(C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+(C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+\pgf@layerbox@bg=\box62
+\pgf@layerboxsaved@bg=\box63
 
 (C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/latex/isodate/isodate.sty
 Package: isodate 2010/01/03 v2.30 Print dates with different formats (HH)
@@ -854,7 +882,7 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count294
+\c@su@anzahl=\count302
 )
 (C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/latex/isodate/english.idf
 File: english.idf 2010/01/03 v2.30 Language definitions for isodate package (HH)
@@ -862,21 +890,21 @@ File: english.idf 2010/01/03 v2.30 Language definitions for isodate package (HH)
 
 Define commands for English date format
 )
-\c@iso@tmpmonth=\count295
-\c@iso@yeartwo=\count296
-\c@iso@slash=\count297
-\c@iso@minus=\count298
-\c@iso@dot=\count299
-\c@iso@@slash=\count300
-\c@iso@@minus=\count301
-\c@iso@@dot=\count302
+\c@iso@tmpmonth=\count303
+\c@iso@yeartwo=\count304
+\c@iso@slash=\count305
+\c@iso@minus=\count306
+\c@iso@dot=\count307
+\c@iso@@slash=\count308
+\c@iso@@minus=\count309
+\c@iso@@dot=\count310
 ) ("C:/Program Files/MiKTeX 2.9/tex/latex/float/float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count303
-\float@exts=\toks41
-\float@box=\box62
-\@float@everytoks=\toks42
-\@floatcapt=\box63
+\c@float@type=\count311
+\float@exts=\toks42
+\float@box=\box64
+\@float@everytoks=\toks43
+\@floatcapt=\box65
 )
 (C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/generic/pgf/frontendlayer/tikz/l
 ibraries/tikzlibraryshapes.misc.code.tex
@@ -893,7 +921,7 @@ File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/generic/pgf/libraries/pgflibrary
 arrows.code.tex
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen273
+\arrowsize=\dimen277
 ))
 (C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/generic/pgf/frontendlayer/tikz/l
 ibraries/tikzlibrarydecorations.markings.code.tex
@@ -946,17 +974,17 @@ LaTeX Font Info:    ... okay on input line 18.
 
 (C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count304
-\scratchdimen=\dimen274
-\scratchbox=\box64
-\nofMPsegments=\count305
-\nofMParguments=\count306
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count307
-\MPscratchDim=\dimen275
-\MPnumerator=\count308
-\makeMPintoPDFobject=\count309
-\everyMPtoPDFconversion=\toks44
+\scratchcounter=\count312
+\scratchdimen=\dimen278
+\scratchbox=\box66
+\nofMPsegments=\count313
+\nofMParguments=\count314
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count315
+\MPscratchDim=\dimen279
+\MPnumerator=\count316
+\makeMPintoPDFobject=\count317
+\everyMPtoPDFconversion=\toks45
 )
 (C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/latex/epstopdf-pkg/epstopdf-base
 .sty
@@ -964,7 +992,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 5.
 )
-\AtBeginShipoutBox=\box65
+\AtBeginShipoutBox=\box67
 Package hyperref Info: Link coloring ON on input line 18.
  ("C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -976,7 +1004,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 tring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count310
+\c@section@level=\count318
 )
 LaTeX Info: Redefining \ref on input line 18.
 LaTeX Info: Redefining \pageref on input line 18.
@@ -993,6 +1021,7 @@ ck labels; missing features). Consider writing \pgfplotsset{compat=1.17} into yo
 ur preamble.
  on input line 18.
 
+\c@lstlisting=\count319
 isodate: babel.sty, (n)german.sty have not been loaded
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 19
 .
@@ -1039,27 +1068,38 @@ Overfull \hbox (47.24239pt too wide) detected at line 255
 []
  []
 
-[6] [7] [8] [9] [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 411.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 411.
+[6] [7] [8] [9]
+<projec.PNG, id=174, 750.30313pt x 340.77313pt>
+File: projec.PNG Graphic file (type png)
+<use projec.PNG>
+Package luatex.def Info: projec.PNG  used on input line 401.
+(luatex.def)             Requested size: 426.79134pt x 193.84232pt.
+
+Overfull \hbox (13.94092pt too wide) in paragraph at lines 435--437
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[10<./projec.PNG>] [11] [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 467.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 467.
  ("./Notes on amplitudes.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 411.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 411.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 467.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 467.
 Package rerunfilecheck Info: File `"Notes on amplitudes".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 411.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 467.
 )
 
 Here is how much of LuaTeX's memory you used:
- 34146 strings out of 480991
- 100000,1144653 words of node,token memory allocated
- 853 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 89 attribute, 57 glue_spec
-, 89 attribute_list, 2 write nodes
-   avail lists: 2:1170,3:408,4:38,5:214,6:23,7:2397,8:94,9:642,10:12,11:152
- 50425 multiletter control sequences out of 65536+200000
+ 35470 strings out of 480991
+ 100000,1373583 words of node,token memory allocated
+ 869 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 93 attribute, 57 glue_spec
+, 93 attribute_list, 2 write nodes
+   avail lists: 2:1185,3:408,4:40,5:233,6:25,7:2397,8:94,9:819,10:12,11:152
+ 51685 multiletter control sequences out of 65536+200000
  85 fonts using 7316547 bytes
- 71i,12n,102p,741b,705s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,12n,102p,741b,726s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKT
 eX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
@@ -1079,9 +1119,9 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
 lm/lmtt12.pfb>
-Output written on Notes on amplitudes.pdf (11 pages, 393566 bytes).
+Output written on Notes on amplitudes.pdf (13 pages, 455056 bytes).
 
-PDF statistics: 249 PDF objects out of 1000 (max. 8388607)
- 70 named destinations out of 1000 (max. 131072)
- 104 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 285 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 131072)
+ 112 words of extra memory for PDF output out of 10000 (max. 100000000)
 

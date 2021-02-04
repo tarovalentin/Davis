@@ -395,6 +395,62 @@ Using this notation we can write the source-less Maxwell equations as:
 \end{aligned}
 \end{equation}
 \newpage
+\section{Projective spaces}
+We will start by considering $\mathds{P}^2$. Any geometric questions that do not involve distance are best thought of projectively. All lines that intersect the origin in $\mathds{R}^3$ can be though of as points crossing a plane
+\begin{figure}[H]
+\includegraphics[width=15cm]{projec.PNG}
+\end{figure} 
+If we denote the points by $Z_I=\begin{pmatrix}Z_0 \\ Z_1 \\ Z_2
+\end{pmatrix}$ these can always be rescaled by some factor $t$ while still preserving the geometry of the points in the plane. This means that we really have two degrees of freedom per point (which should not surprise since we have a plane), so that $Z_I=\begin{pmatrix} 1\\ x_1 \\ x_2
+\end{pmatrix}$. The space has an SL(3) $=$ Translations + $\underbrace{\text{Rotations}}_{\text{SL}(2)}$ symmetry, meaning all symmetries that map straight lines to straight lines. 
+\\
+The only invariant tensor is $\epsilon_{IJK}$.
+\\
+\textbf{Example: straight line}
+A straight line obeys the following equation
+\begin{equation}
+ax+by+c=0
+\end{equation}
+This can be written using the $Z_I$ variables
+\begin{equation}
+Z_I=\begin{pmatrix}
+	1\\ x\\ y
+\end{pmatrix},\qquad \qquad W^I=\begin{pmatrix}
+c \\ a \\ b
+\end{pmatrix},\qquad \qquad Z_I W^I=0
+\end{equation}
+where $W$ is a line. Take e.g. $Z^1=\{1,x^1,y^2\}=\{1,1,0\}$ and $Z^2=\{1,x^2,y^2\}=\{1,10,10\}$.
+%\begin{equation}
+%\begin{aligned}
+%W_1&=\epsilon_{1JK}Z^1_J Z^2_K=Z^1_2Z^2_3-Z^1_3Z^2_2=x_1y_2-x_2y_1\\
+%W_2&=\epsilon_{2JK}Z^1_J Z^2_K=-Z^1_2Z^2_3+Z^1_3Z^2_1=-y_2+y_1\\
+%W_3&=\epsilon_{3JK}Z^1_J Z^2_K=Z^1_2Z^2_2-Z^1_2Z^2_1=x_2-x_1\\
+%\end{aligned}
+%\end{equation}
+%this gives the following line
+We check that this gives the expected result
+\begin{lstlisting}
+In[403]:= ClearAll["Global`*"]
+
+(*Below we define two points from which we then find the line*)
+
+In[404]:= Z1 = {1, x1, y1};
+Z2 = {1, x2, y2};
+a = (y2 - y1)/(x2 - x1);
+W = Z1 . LeviCivitaTensor[3] . Z2;
+s = Collect[Solve[W . {1, x, y} == 0, y], x][[1]][[1]];
+Equal @@ s;
+y = (x (y1 - y2))/(x1 - x2) + (-x2 y1 + x1 y2)/(x1 - x2);
+
+In[411]:= (*Testing against the usual formula*)
+x1 = 1; x2 = 10; y1 = 0; y2 = 10;
+yy = a x + (y2 - a x2);
+yy == y
+
+Out[413]= True
+\end{lstlisting}
+Similarly the point where to lines cross is given  by $Z_I=\epsilon_{IJK}W_1^JW_2^K$
+\newpage
 \begin{thebibliography}{99}
 
 %\cite{Bjerrum-Bohr:2013bxa}
