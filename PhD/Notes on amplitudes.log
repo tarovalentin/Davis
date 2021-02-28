@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  4 FEB 2021 14:15
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  27 FEB 2021 18:20
  restricted system commands enabled.
 **"Notes on amplitudes.tex"
 ("./Notes on amplitudes.tex"
@@ -1069,7 +1069,7 @@ Overfull \hbox (47.24239pt too wide) detected at line 255
  []
 
 [6] [7] [8] [9]
-<projec.PNG, id=174, 750.30313pt x 340.77313pt>
+<projec.PNG, id=184, 750.30313pt x 340.77313pt>
 File: projec.PNG Graphic file (type png)
 <use projec.PNG>
 Package luatex.def Info: projec.PNG  used on input line 401.
@@ -1079,26 +1079,36 @@ Overfull \hbox (13.94092pt too wide) in paragraph at lines 435--437
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[10<./projec.PNG>] [11] [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 467.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 467.
+[10<./projec.PNG>] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 484--486
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--486
+
+ []
+
+[12] [13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 500.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 500.
  ("./Notes on amplitudes.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 467.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 467.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 500.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 500.
 Package rerunfilecheck Info: File `"Notes on amplitudes".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 467.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 500.
 )
 
 Here is how much of LuaTeX's memory you used:
- 35470 strings out of 480991
+ 35485 strings out of 480991
  100000,1373583 words of node,token memory allocated
- 869 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 93 attribute, 57 glue_spec
-, 93 attribute_list, 2 write nodes
-   avail lists: 2:1185,3:408,4:40,5:233,6:25,7:2397,8:94,9:819,10:12,11:152
- 51685 multiletter control sequences out of 65536+200000
- 85 fonts using 7316547 bytes
+ 917 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 105 attribute, 57 glue_spe
+c, 105 attribute_list, 2 write nodes
+   avail lists: 2:1464,3:408,4:46,5:292,6:29,7:2397,8:109,9:1034,10:12,11:152
+ 51691 multiletter control sequences out of 65536+200000
+ 88 fonts using 7502851 bytes
  71i,12n,102p,741b,726s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKT
 eX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/pu
@@ -1108,20 +1118,21 @@ mmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmsy8.pfb><C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/fonts/typ
-e1/public/doublestroke/dsrom12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-lm/lmtt12.pfb>
-Output written on Notes on amplitudes.pdf (13 pages, 455056 bytes).
+s/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy8.pfb><C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
+/doublestroke/dsrom12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmb
+x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12
+.pfb>
+Output written on Notes on amplitudes.pdf (14 pages, 473220 bytes).
 
-PDF statistics: 285 PDF objects out of 1000 (max. 8388607)
- 94 named destinations out of 1000 (max. 131072)
- 112 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 312 PDF objects out of 1000 (max. 8388607)
+ 103 named destinations out of 1000 (max. 131072)
+ 128 words of extra memory for PDF output out of 10000 (max. 100000000)
 

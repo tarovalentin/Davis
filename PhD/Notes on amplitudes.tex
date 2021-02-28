@@ -449,7 +449,46 @@ yy == y
 
 Out[413]= True
 \end{lstlisting}
-Similarly the point where to lines cross is given  by $Z_I=\epsilon_{IJK}W_1^JW_2^K$
+Similarly the point where two lines cross is given  by \begin{equation}
+Z_I=\epsilon_{IJK}W_1^JW_2^K
+\end{equation}
+\section{Polytopes}
+Let us define the five-bracket
+\begin{equation} \label{eq:fivebracket}
+[i,j,k,l,m]\equiv \frac{\delta^4(\chi_{i\,A}\expval{jklm}+\text{ cyclic })}{\expval{ijkl}\expval{jklm}\expval{klmi}\expval{lmij}\expval{mijk}}
+\end{equation}
+with $\expval{ijkl}\equiv\epsilon_{IJKL}Z^{I}_{i}Z^{J}_{j}Z^{K}_{k}Z^{L}_{l}$ and the $Z_i^I$'s are the bosonic component of the momentum supertwistors $Z_i^I=(\ket{i},[\mu_i|)$. One can write the five-bracket completely in terms of bosonic parts by introducing a five vector $\mathsf{Z}_i^\mathcal{I}$,
+\begin{equation}
+	\mathsf{Z}_i^\mathcal{I}=\begin{pmatrix} Z_i^I\\\chi_i\cdot \psi
+	\end{pmatrix},~~~~~~~\mathcal{I}=1,\dots,5
+\end{equation}
+with the $\psi$ being an auxiliary Grassmann valued field. The five-bracket can then be written only in terms of the five-vectors by integrating out the fermionic auxilary field.
+\begin{equation}
+[i,j,k,l,m]=\frac{1}{4!}\int \dd^4\psi \frac{\expval{ijklm}^4}{\expval{0ijkl}\expval{0jklm}\expval{0klmi}\expval{0lmij}\expval{0mijkl}}
+\end{equation}
+where we have introduced the auxiliary reference spinor 
+\begin{equation}
+	\mathsf{Z}_0^\mathcal{I}=\begin{pmatrix}
+0\\0\\0\\0\\1
+	\end{pmatrix}
+\end{equation} 
+Focusing on the integrand, it is invariant under $	\mathsf{Z}_i^\mathcal{I}\to 	t_i\mathsf{Z}_i^\mathcal{I}$ and hence appear projectively which means they can be thought of as points in $\mathds{CP}^4$ with the reference vector introduced being the only thing that breaks projective invariance. This is similar to the map between the dual momentum coordinates and the momentum twistors
+\begin{equation}
+y^2_{ij}=\frac{\expval{i-1,i,j-1,j}}{\expval{I_0,i-1,i}\expval{I_0,j-1,j}},\qquad I_0^{IJ}=\begin{pmatrix}
+0 & 0 \\
+0 & \epsilon_{\dot a \dot b}
+\end{pmatrix}
+\end{equation}
+where the $I_0$ is known as infinity twistor that is inserted to break SL(4) conformal invariance and gives a definition of distance. The fact that the reference spinor appears five times in equation \eqref{eq:fivebracket} is analogous to how $I_0$ appears twice to give the distance between $i$ and $j$, and can be regarded as giving the volume of a simplices. 
+\subsection{Definitions and examples}
+\textit{Simplex}: Generalization of the notion of a triangle or tetrahedron to arbitrary dimensions
+\\\\
+\textit{Polygon}: Triangle, quadrilateral, pentagon etc.
+\\\\
+\textit{Tetrahedron}: Solids with polygons on each face, e.g. cubes, pyramids etc. 
+\\\\
+\textit{Convex set C}: Has property that any line between two points lies inside the set (a star would not be convex). 
+\textit{Convex hull}
 \newpage
 \begin{thebibliography}{99}
 
