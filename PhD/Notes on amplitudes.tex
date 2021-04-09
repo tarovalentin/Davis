@@ -483,13 +483,77 @@ where the $I_0$ is known as infinity twistor that is inserted to break SL(4) con
 \subsection{Definitions and examples}
 \textit{Simplex}: Generalization of the notion of a triangle or tetrahedron to arbitrary dimensions
 \\\\
+\textit{n-simplex}: Convex hull of a set of $n+1$ points. E.g. 2-simplex is a triangle.
+\\\\
 \textit{Polygon}: Triangle, quadrilateral, pentagon etc.
 \\\\
 \textit{Tetrahedron}: Solids with polygons on each face, e.g. cubes, pyramids etc. 
 \\\\
 \textit{Convex set C}: Has property that any line between two points lies inside the set (a star would not be convex). 
-\textit{Convex hull}
+\\\\
+\textit{Convex hull}: Given a set of points S, the convex hull of S is the intersection of all convex sets containing S. The convex hull of three points is a triangle. One could add one more point. If the added point is inside the triangle the convex hull is the same triangle, while it is a convex quadrilateral if the point is outside the triangle.
 \newpage
+The area of a triangle in a 2 dimensional plane can be computes through the determinant
+\begin{equation}
+\begin{aligned}
+A_{\text{triangle}}&=\frac{1}{2}
+\mdet{x_1 & x_2 & x_3\\ y_1 & y_2 & y_3 \\ 1 & 1 & 1}
+\\
+&=\frac{1}{2}
+\left[-x_2 y_1 + x_3 y_1 + x_1 y_2 - x_3 y_2 - x_1 y_3 + x_2 y_3\right]
+\end{aligned}
+\end{equation}
+using $y_1=y_3$
+\begin{equation}
+	\begin{aligned}
+		A_{\text{triangle}}
+		&=\frac{1}{2}
+		\left[(x_3 - x_1) (y_2 - y_1)\right]\\
+		&=\frac{1}{2}
+		\left[\text{base} \times \text{height}\right]
+	\end{aligned}
+\end{equation}
+The redundancy created by the ones in the determinant can be used as a feature by defining vectors
+\begin{equation}
+	\mathsf{Z}_0^I
+	=
+	\begin{pmatrix}
+	0\\0\\1
+\end{pmatrix},\qquad\qquad	\mathsf{W}_{i\,I}
+=
+\begin{pmatrix}
+x_i\\y_i\\1
+\end{pmatrix}
+\end{equation}
+The triangles area is then computed by
+\begin{equation}
+\begin{aligned}
+A_{\text{triangle}}=&\frac{1}{2}\frac{\expval{1\,2\,3}}{(\mathsf Z_0\cdot \mathsf W_1)(\mathsf Z_0\cdot \mathsf W_2)(\mathsf Z_0\cdot \mathsf W_3)}
+\\
+=&\frac{1}{2}\frac{\epsilon^{IJK}\mathsf W_{1\,I}\mathsf W_{2\,J} \mathsf W_{3\,K}}{(\mathsf Z_0\cdot \mathsf W_1)(\mathsf Z_0\cdot \mathsf W_2)(\mathsf Z_0\cdot \mathsf W_3)}\\
+=&\frac{1}{2}
+\left[-x_2 y_1 + x_3 y_1 + x_1 y_2 - x_3 y_2 - x_1 y_3 + x_2 y_3\right]
+\end{aligned}
+\end{equation}
+This version is projectively invariant. To rewrite everything in terms of angle brackets we define coordinates, $\mathsf{W}$, and lines, $\mathsf{Z}$, that satisfy 
+\begin{equation}
+	 Z^I W_I=0
+\end{equation} 
+with two lines crossing at a point defined by
+\begin{equation}
+	\mathsf{W}_{1,I}=\epsilon_{IJK}\mathsf{Z}_c^J\mathsf{Z}_a^K
+\end{equation}
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.4]{CP2Area2}}}
+~\rightarrow~
+\begin{array}{l} 
+	\mathsf{W}_1=\langle *, \mathsf{Z}_c, \mathsf{Z}_a\rangle \\ 
+	\mathsf{W}_2=\langle *, \mathsf{Z}_a, \mathsf{Z}_b\rangle \\ 
+	\mathsf{W}_3=\langle *, \mathsf{Z}_b, \mathsf{Z}_c\rangle\,,
+	\label{WfromZ}
+\end{array}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{thebibliography}{99}
 
 %\cite{Bjerrum-Bohr:2013bxa}
