@@ -1,4 +1,5 @@
 \documentclass[a4paper,12pt]{article}
+
 \usepackage{jheppub}
 \usepackage{taro}
 
@@ -11,8 +12,6 @@
 
 % e-mail addresses: one for each author, in the same order as the authors
 \emailAdd{taro.brown@nbi.ku.dk}
-
-
 \abstract{}
 \begin{document} 
 \maketitle
@@ -216,7 +215,150 @@ The exponential map takes the complex plane and wraps it into a cylinder.
 	\caption{}
 	\label{fig:4}
 \end{figure}
-%\underline{Example III}
+\begin{itemize}
+\item Conformal maps are angle preserving (generally true in arbitrary dimensions)
+\item In higher dimensions the full set of conformal maps is the group $SO(d,2)$ which is an extension of the Lorentz group (rotations and boost) SO($d-1,1$).
+\item In 2 dimensions the conformal group is much richer: space of analytic maps. So any function $f(z)$ is a conformal transformation. This will be used later to construct interesting domain maps.
+\item Subset of conformal maps: fractional linear transformations:
+\begin{itemize}
+	\item \begin{equation}
+		w=\frac{az+b}{cz+d},~~~~~~ad-bc\neq0
+	\end{equation}
+	\item Translations $w=z+b$ (i.e. $c=0,d=1$)
+	\item Scalings $w=\lambda z$ with $\lambda\in \mathds{R}_+$
+	\item Rotations $w=e^{i\phi}z$
+	\item Inversions $w=\frac{1}{z}$, analytic on $\mathds{C}/\{0\}$ maps interior of punctured disc to its exterior
+ \end{itemize}
+\end{itemize}
+Think of $a,b,c,d$ parameterizing invertable $2\times 2$ matrices living in $GL(2,\mathds{C})$
+\begin{equation}
+A\begin{pmatrix}
+a & b \\c& d
+\end{pmatrix}
+\end{equation}
+If $\det A=ad-bc=1$ them we restrict to $SL(2,\mathds{C})$. \\\\
+\underline{Riemann sphere}
+The tranformations with $\det A=1$ transform the unit sphere onto it self. $\mathds{P}^1=\mathds{C}\cup \infty$. $S^2\subset R^3$, $\{x_1,x_2,x_3\}$. The sphere can be seen as a sterographic projection from the complex plane onto $S^2$
+\begin{equation}
+x_1=\frac{z+\bar z}{|z|^2+1},~~~~x_2=\frac{1}{i}\frac{z-\bar z}{|z|^2+1},~~~~x_3=\frac{|z|^2-1}{|z|^2+1}
+\end{equation}
+\begin{equation}
+z=\frac{x_1+ix_2}{1-x_3}
+\end{equation}\\\\
+\subsection{How to find conformal maps}
+First let us take some examples of maps:
+\underline{Example I}\\\\
+\begin{equation}
+w=\frac{z-1}{z+1},~~~~z=\frac{w+1}{1-w}
+\end{equation}
+This map takes the right half of the $z$-plane to the unit disc in $w$\\\\
+\underline{Example II}\\\\
+\begin{equation}
+\zeta= e^{i\phi}\frac{w-a}{\bar a w-1},~~~~~~|a|<1,~~~\phi\in (-\pi,\pi]
+\end{equation}
+This leaves the unit disc invariant.\\\\
+The general way to find a conformal map is
+\begin{itemize}
+\item $w=f(z)$ are $\zeta=g(w)$ analytic then $\zeta= g\circ f(z)$ is a conformal map from $z\to \zeta$ planes
+\end{itemize}
+\underline{Example}\\\\
+We want to map a strip in the z-plane to the unit disc. We know that the exponential function maps it to the right half plane
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{7}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+Now we can use the map from the half-plane to the unit sphere that we just saw and combine the two maps to get
+\begin{equation}
+\zeta = \frac{e^z-1}{e^z+1}
+\end{equation}
+\underline{Example}\\\\
+To get the map from the UHP to the disc is just a combination of the right half plane map to unit disc, with a rotations:
+\begin{equation}
+\zeta=\frac{iz-1}{iz+1}
+\end{equation}
+\subsection{Applications in fluid dynamics}
+We will focus on inviscid incompressible fluid and irrotational flows
+\begin{equation}
+\nabla\cdot \bm u=0,~~~~~~~~\nabla\times \bm u =0
+\end{equation}
+For 2d flow
+\begin{equation}
+\bm u=u_x(x,y)\hat e_x+u_y(x,y)\hat e_y
+\end{equation}
+The conditions on $\bm u$ imply that $u_x,u_y$ satisfy the CR relations. We can write the 2-dimensional vector field $u$ as a complex scalar $U$ as 
+\begin{equation}
+U(z)=u_x-iu_y
+\end{equation}
+Further we can write $\bm u=\nabla \phi$ and $\bm u=\nabla \times \begin{pmatrix}
+1\\
+1
+\end{pmatrix}\chi$, with $\phi$ and $\chi$ being complex compliments and we can write
+\begin{equation}
+\Phi(z)=\phi(x,y)+i\chi(x,y)
+\end{equation}
+With
+\begin{equation}
+U(z)=\partial_z\Phi
+\end{equation}
+\underline{Example}\\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{8}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+The streamlines are $y=c$ (constant lines) and the equipotentials are $x=c$. Now recall, analyticity of $\Phi(z)$ leads to $\grad \phi\cdot\grad \chi=0 $ since the velocity is the gradient of $\phi$ and it is tangent to $\chi=c$ then these are the level sets. If we were to add obstacles to the flow, these would be characterized by an absence of fluid flux into/out of the obstacle domain. 
+\\\\
+\underline{No flux condition}\\\\
+$U$ is tangent to the boundary of the obstacle. $\phi$ should satisfy neumann bc at obstacle boundary
+\begin{equation}
+\pdv{\phi}{\bm n}
+\end{equation} 
+where $\bm n$ is the normal vector at the boundary.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{9}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+We will focus on flows which are asymptotically uniform, i.e. $\bm\to\hat e_x$ for $r\to \infty$ with some obstacle intermediate. Here are a few examples:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{10}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+where $z(t)$ describes the locus of the plate
+To solve the last example, we start by solving it for $\alpha=0$, so
+\begin{equation}
+z(t)=t,~~~~~~-1\leq t \leq 1
+\end{equation}
+here the solutions is clear since,
+$\Phi(z)=z$. If $\alpha\neq 0$ we can solve it by rotating the plate using a conformal map. In aeronautics $\alpha$ is known as the attack angle. We will in this use the fact that rotations do not modify circular domains, which leads to the following trick:\\\\
+The  Jakouwski map, mapped the unit disc to the real interval $[-1,1]$. Using this map we can go from the flow we know (at $\alpha=0$) to the unit disc, then rotate this using a rotational map, and finally map back to the $\alpha\neq 0$ solution.\\\\
+The flow past a disc has then
+\begin{equation}
+\Phi(z)=\frac{1}{2}\left(z+z^{-1}\right)
+\end{equation}
+ We then rotate the disc by $\alpha$ using e.g. the map $w=e^{i\alpha}z$
+ and so the jarkowski map goes to
+ \begin{equation}
+J(z)\to J(e^{-i\alpha})=\frac{1}{2}\left(e^{-i\alpha}w+\frac{e^{i\alpha}}{w}\right)
+ \end{equation}
+We then recollapse the disc by the inverse Joukoski map ($z(w)=w\pm\sqrt{w^2-1}$) and then finally rotate the solution back so that the streamlines are asymptotically horizontal, we lastly get:
+\begin{equation}
+\Phi(z)=e^{i\alpha}\left(z\cos \alpha -i\sin \alpha \sqrt{z^2-e^{-2i\alpha}}\right)
+\end{equation}
+As a pictorial example see below
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{11}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+ %\underline{Example III}
 %\\\\
 %Two cylinders held at potentials $u$ and $v$ of equal size:
 %\begin{figure}[H]
@@ -227,7 +369,8 @@ The exponential map takes the complex plane and wraps it into a cylinder.
 %\end{figure}
 %We want to find
 \newpage
-\section*{Homework 1}
+\section*{Homework 1\\\\
+Taro V. Brown}\vspace*{1cm}
 \section*{Problem 1}
 \subsection*{Part a}
 We compute
@@ -255,7 +398,7 @@ Similarly
 		=&2\pi i \left\{-e+e^2\right\}\\
 	\end{aligned}
 \end{equation}
-\section{Problem 2}
+\section*{Problem 2}
 \subsection*{Part a}
 Computing
 \begin{equation}
@@ -263,14 +406,26 @@ Computing
 		\int_{0}^{\infty}\dd x\frac{2x^2-1}{x^6+1}
 		=&	\frac{1}{2}\int_{-\infty}^{\infty}\dd x\frac{2x^2-1}{x^6+1}
 		\\
-		=&\frac{1}{2}\oint_{|z|=2} \dd z\frac{2z^2-1}{z^6+1}\\
-		=&\pi i \left\{\Res[\frac{2z^2-1}{z^6+1}]_{z=i}+\Res[\frac{2z^2-1}{z^6+1}]_{z=(-1)^{\frac{1}{6}}}+\Res[\frac{2z^2-1}{z^6+1}]_{z=(-1)^{\frac{5}{6}}}\right\}\\
+		=&\frac{1}{2}\oint_{|z|=2} \dd z\frac{2z^2-1}{z^6+1}
+	\end{aligned}
+\end{equation}
+$z^6+1$ has zero's within the contour at $z=\{i,(-1)^{\frac{1}{6}},(-1)^{\frac{5}{6}}\}$ and the residues can be computed by first factoring out the denominator 
+\begin{equation}
+(x^6+1)=(x-i)(x+i)\left(x-(-1)^{\frac{1}{6}}\right)\left(x+(-1)^{\frac{1}{6}}\right)\left(x-(-1)^{\frac{5}{6}}\right)\left(x+(-1)^{\frac{5}{6}}\right)
+\end{equation}
+and then applying the usual trick for first order poles. We get
+\begin{equation}
+\begin{aligned}
+		\\
+		=&\pi i
+		 \left\{\Res[\frac{2z^2-1}{z^6+1}]_{z=i}+\Res[\frac{2z^2-1}{z^6+1}]_{z=(-1)^{\frac{1}{6}}}+\Res[\frac{2z^2-1}{z^6+1}]_{z=(-1)^{\frac{5}{6}}}\right\}\\
 		=&\pi i \left\{\frac{i}{2}+\frac{1}{6}\left(-2i+(-1)^{\frac{1}{6}}\right)+\frac{1}{6}\left(-2i+(-1)^{\frac{5}{6}}\right)\right\}\\
 		&=0
 	\end{aligned}
 \end{equation}
+
 \subsection*{Part b}
-For this integral we will be using $\sin n\theta =\frac{1}{2i}\left(z^n-z^{-n}\right)$, $\cos n\theta =\frac{1}{2}\left(z^n+z^{-n}\right)$ and $\dd \theta=\frac{1}{iz}\dd z$. Computing
+For this integral we will be using $\sin n\theta =\frac{1}{2i}\left(z^n-z^{-n}\right)$, $\cos n\theta =\frac{1}{2}\left(z^n+z^{-n}\right)$ and $\dd \theta=\frac{1}{iz}\dd z$. We choose the contour $|z|=1$ since this includes all poles that show up. Computing we find
 \begin{equation}
 	\begin{aligned}
 		\int_{0}^{\pi}\dd x\frac{\cos^2(3x)}{5-4\cos(2x)}
@@ -283,7 +438,7 @@ For this integral we will be using $\sin n\theta =\frac{1}{2i}\left(z^n-z^{-n}\r
 	\end{aligned}
 \end{equation}
 \subsection*{Part c}
-The following integral is a little trickier. First we rewrite the outer cosine at the real part of a complex function and combine the exponentials
+The following integral is a little tricky. First we rewrite the outer cosine at the real part of a complex function and combine the exponentials
 \begin{equation}
 \begin{aligned}
 \int_{0}^{\pi}\dd x\, e^{\cos(x)}\cos[nx-i\sin(x)]&=\frac{1}{2}\Re\left[\int_{-\pi}^{\pi}\dd x\, e^{\cos(x)+inx-i\sin(x)}\right]\\
@@ -335,14 +490,14 @@ For the larger contour we, as mentioned, have to include the residue at $i\pi$ a
 where $q(z)$ has a pole at $z=a$ and $p(z)$ does not. Hence taking $q(z)=\sinh(z)$ and $p(z)=z^2$  we have
 \begin{equation}
 \begin{aligned}
-\Res[\frac{1}{z^2}\frac{1}{\sinh}]_{z=i \pi}&=\lim_{z\to i\pi }\left[\frac{1}{z^2}\frac{1}{\cosh}\right]\\
+\Res[\frac{1}{z^2}\frac{1}{\sinh z}]_{z=i \pi}&=\lim_{z\to i\pi }\left[\frac{1}{z^2}\frac{1}{\cosh z}\right]\\
 &=\frac{1}{\pi^2}
 \end{aligned}
 \end{equation}
 and
 \begin{equation}
 	\begin{aligned}
-		\Res[\frac{1}{z^2}\frac{1}{\sinh}]_{z=-i \pi}&=\lim_{z\to -i\pi }\left[\frac{1}{z^2}\frac{1}{\cosh}\right]\\
+		\Res[\frac{1}{z^2}\frac{1}{\sinh z}]_{z=-i \pi}&=\lim_{z\to -i\pi }\left[\frac{1}{z^2}\frac{1}{\cosh z}\right]\\
 		&=\frac{1}{\pi^2}
 	\end{aligned}
 \end{equation}
@@ -357,7 +512,7 @@ So the total contour integral is
 	\end{aligned}
 \end{equation}
 \section*{Problem 3}
-Using Causchy's integral formula
+Using Cauchy's integral formula
 \begin{equation}
 	\begin{aligned}
 f(a)&=\frac{1}{2\pi i}\oint_{z=|R|} \dd z\,\frac{f(z)}{z-a}
@@ -389,6 +544,7 @@ Then letting $a=re^{i\theta}$ and integrating around the contour by setting $z=R
 f(re^{i\theta})&=\frac{1}{2\pi i}\int_{0}^{2\pi} \dd \phi\,f(Re^{i\phi})\frac{R^2-r^2}{R^2-2Rr\cos(\theta-\phi)+r^2}
 	\end{aligned}
 \end{equation}
+Since $f$ was assumed analytic inside the disc, this solves the Laplace equation in this region since it can be written in terms of harmonic functions through the Cauchy-Riemann conditions.
 \section*{Problem 4}
 \subsection*{Part a}
 We have the Navier-Stokes equation:
@@ -438,35 +594,47 @@ is automatically satisfied. This is similar to the gauge potential in electrodyn
 \nabla\cdot u=\nabla^2 \phi=0
 \end{equation}
 \subsection*{Part c}
+First we insert $u=\nabla\phi$ into Navier-Stokes equation. Note that the following terms can be rewritten as:
 \begin{equation}
-	\nabla \partial_t \phi+\frac{1}{2}\nabla u^2=-\nabla \left(\frac{1}{\rho} p+ V\right)
+\begin{aligned}
+\bm u \cdot \nabla\bm u&=\frac{1}{2}\nabla u^2-\bm u\times (\nabla \times \bm u)\\
+&=\frac{1}{2}\nabla u^2-\bm u\times (\nabla \times \nabla\phi)\\
+&=\frac{1}{2}\nabla u^2
+\end{aligned}
 \end{equation}
+So that we after inserting get:
+\begin{equation}
+	\nabla \partial_t \phi+ \frac{1}{2}\nabla \phi^2+=-\nabla \left(\frac{1}{\rho} p+ V\right)
+\end{equation}
+Which we can write as
 \begin{equation}
 	\nabla \left(\partial_t \phi+\frac{1}{2} u^2+\frac{p}{\rho} + V\right)=0
 \end{equation}
+This means that we can write the part in parenthesis as a constant in space but function of time $F(t)$
 \begin{equation}
  \left(\partial_t \phi+\frac{1}{2} u^2+\frac{p}{\rho} + V\right)=F(t)
 \end{equation}
+Finally since we can just absorb the time-dependence through a shift in $\phi(t)\to\phi'$ we can write this as
 \begin{equation} \label{eq:flow}
-	\left(\partial_t \phi+\frac{1}{2} u^2+\frac{p}{\rho} + V\right)=F(t)
+\partial_t \phi'+\frac{1}{2} u^2+\frac{p}{\rho} + V=0
 \end{equation}
 \subsection*{Part d}
 We have already shown that since we have irrotational flow, i.e. $\nabla\times \bm u=0$ we can write the flow field as a gradient
 \begin{equation}
 \begin{aligned}
-	v_x&=\partial_x \phi\\
-	v_y&=\partial_y \phi
+	u_x&=\partial_x \phi\\
+	u_y&=\partial_y \phi
 \end{aligned}
 \end{equation}
-Further, since we have an in-compressible fluid, i.e. $\nabla\cdot u=0$ we can write it as a "curl" of a scalar\footnote{Since there doesn't exist such thing as a curl of scalar function, the use of curl in this case should be taken as meaning \begin{equation}
-\bm v=\nabla\times \begin{pmatrix}
+Further, since we have an incompressible fluid, i.e. $\nabla\cdot\bm  u=0$ we can write it as a "curl" of a scalar\footnote{Since there doesn't exist such thing as a curl of scalar function, the use of curl in this case should be taken as meaning \begin{equation}
+\bm u=\nabla\times \begin{pmatrix}
 1\\1
 \end{pmatrix}\chi
 \end{equation}}
 \begin{equation}
 \begin{aligned}
-v_x&=\partial_y \chi\\
-v_y&=-\partial_x \chi
+u_x&=\partial_y \chi\\
+u_y&=-\partial_x \chi
 \end{aligned}
 \end{equation}
 since it automatically satisfies $\nabla\cdot u=0$. We see that in this case we can use either $\phi$ or $\chi$ to solve \eqref{eq:flow} and that further
@@ -480,15 +648,38 @@ These are just the Cauchy-Riemann relations and so we we can construct an analyt
 \begin{equation}
 \Phi=\phi+i\chi
 \end{equation}
-This stream-function also solves \eqref{eq:flow} since the derivatives act linearly on it as a consequence of the Cauchy-Riemann relations implying $(\nabla\phi)\cdot (\nabla\chi)=0$
+This stream-function also solves \eqref{eq:flow} since the derivatives act linearly on it as a consequence of the Cauchy-Riemann relations. This can be seen by multiplying the two sides
 \begin{equation}
-(\nabla \Phi)^2=(\nabla \phi+i\nabla\chi)(\nabla \phi-i\nabla\chi)=(\nabla\phi)^2+(\nabla\chi)^2
+-\partial_x\phi\partial_x\chi=\partial_y\phi\partial_y\chi
 \end{equation}
-\subsection{Part e}
-Milne–Thomson theorem
+implying $(\nabla\phi)\cdot (\nabla\chi)=0$. This also implies that $\phi$ is tangent to the level sets of $\chi$. As mentioned, the terms with derivatives on $\Phi$ then become linear combinations of $\phi$ and $\chi$ and so $\Phi$ must solve the equation as well:
 \begin{equation}
-\tilde \Phi= \Phi(z)+\bar \Phi(\frac{a^2}{z})
+|\nabla \Phi|^2=(\nabla \phi+i\nabla\chi)(\nabla \phi-i\nabla\chi)=(\nabla\phi)^2+(\nabla\chi)^2
 \end{equation}
-restricting to $z<1$
+\subsection*{Part e}
+Here we refer to the Milne-Thomson theorem which can be used to obtain the stream-function in the case of a cylindrical obstacle through
+\begin{equation}
+\tilde \Phi=\Phi(z)+\bar \Phi\left(\frac{a^2}{z}\right)
+\end{equation}
+In this case we will assume a uniform flow with speed $u=\frac{1}{2}$ in the $x$-direction and so we have the stream-line function $\Phi(z)=\frac{1}{2}z$ and place the cylinder with $a=1$, so we get 
+\begin{equation}
+	\begin{aligned}
+	\tilde \Phi&= \frac{1}{2}\left(z+\frac{1}{z}\right)
+	\end{aligned}
+\end{equation}
+On the curve $|z|=1$, we have $\bar z = \frac{1}{z}$ and so the imaginary part of $\Phi$ is zero. Since $\chi=constant$ represented the constant flow streamlines, the surface of the cylinder has become a streamline and the flow doesn't penetrate this surface. This also means that the solutions holds for $|z|>1$ as prescribed in the problem.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section*{Homework 2\\\\
+	Taro V. Brown}\vspace*{1cm}
+\section*{Problem 1}
+\section*{Problem 2}
+The transformation that takes the unit disc to the unit disc is the linear fractional tranformation
+\begin{equation}
+\zeta= e^{i\phi}\frac{z-\alpha}{\alpha z-1},~~~~~~|\alpha|<1,~~~~~-\pi<\phi < \pi
+\end{equation}
+The rotation part $e^{i\phi}$ obviously just maps points on the disc to other points on the disc, while the linear fraction part moves the origin from $z=0$ to $\zeta=a$. We can show that this maps to the unit disc if $|\zeta|<1$ so that every point in the domain lies within the disc. First we note that
+\begin{equation}
+|z-a|^2=(z-a)(\bar z-\bar a)
+\end{equation}
 \end{document}

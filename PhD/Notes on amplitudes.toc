@@ -12,3 +12,4 @@
 \contentsline {section}{\numberline {7}Projective spaces}{10}{section.7}%
 \contentsline {section}{\numberline {8}Polytopes}{11}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Definitions and examples}{12}{subsection.8.1}%
+\contentsline {section}{\numberline {9}Grassmanian}{13}{section.9}%

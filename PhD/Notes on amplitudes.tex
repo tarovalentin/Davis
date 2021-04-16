@@ -1,6 +1,7 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{jheppub}
 \usepackage{taro}
+\usepackage{booktabs}
 
 \title{Modern amplitude techniques}
 
@@ -553,6 +554,88 @@ with two lines crossing at a point defined by
 	\label{WfromZ}
 \end{array}
 \end{equation}
+\section{Grassmanian}
+The Grassmanian $G(k,n)$ is the space of k-planes going through the origin in $n$ dimensions. It can be though of as a generalization of $P^{n-1}$ which is the space of lines going through the origin in $n$-dimensions since $G(1,n)=P^{n-1}$. One can e.g. take $k$ vectors in $n$ dimensions
+\begin{figure}
+	\centering
+\begin{tikzpicture}
+	\draw[thin,gray!40] (0,0) grid (4,4);
+	\draw[line width=2pt,black,-stealth](0,0)--(2,3) node[anchor=south west]{$\boldsymbol{v_1}$};
+	\node at (2.3,2.3) [circle,fill,inner sep=1pt]{};
+	\node at (2.5,2.0) [circle,fill,inner sep=1pt]{};
+	\node at (2.7,1.7) [circle,fill,inner sep=1pt]{};
+	\draw[line width=2pt,black,-stealth](0,0)--(3.3,1) node[anchor=south west]{$\boldsymbol{v_k}$};
+\end{tikzpicture}
+\end{figure}
+The span of these vectors give me the $k$- plane. If we stack them we get
+\begin{equation}
+\begin{aligned}
+	&~~~~~~~n\\
+	k&
+\begin{bmatrix}
+	~~~~V_1~~~~~\\
+	~~~~\vdots ~~~~~\\
+	~~~~V_k~~~~~\\
+\end{bmatrix}\equiv C_{\alpha a},~~~~~~~~\alpha=1,\dots,k~~~~a=1,\dots,n
+\end{aligned}
+\end{equation}
+These are in general not unique since there is a GL($k$) redundant.
+\begin{equation}
+C_{\alpha a}\sim L^{\beta}_\alpha C_{\beta a}
+\end{equation}
+The dimensionality of the Grassmanian is 
+\begin{equation}
+\dim G(k,n)=\overbrace{k\times n}^{k\times n \text{ matrix}}\underbrace{-k^2}_{GL(k) \text{ red}}
+\end{equation}
+The redudancy means that we can gaugefix the matrix using a linear transformation by setting any $k\times k$ blok to the identity. This is equivalent to the rescaling of vectors in projective space to $\begin{pmatrix}
+1 & v_2 & v_3 & v_4 \cdots
+\end{pmatrix}$. Taking e.g. $G(3,5)$, we have six degrees of freedom:
+\begin{equation}G(3,5) = 
+\left[ \begin{array}{@{}c|c@{}}
+	\begin{matrix}
+		1 & 0 &  0 \\
+		0 & 1 &  0 \\
+		0 & 0 &  1 \\
+	\end{matrix} 
+	& 	\begin{matrix}
+		x_4 & x_5  \\
+		y_4 & y_5  \\
+		z_4 & z_5  \\
+	\end{matrix}  \\
+\end{array} \right]
+\end{equation}
+The dimensionality of the Grassmanian are symmetric under $n\leftrightarrow k$. This is because there is a bijection between the Grassmania: $k$ and $n-k$ planes in $n$ dimensions, since these planes are orthogonal. In the case above $C^{\perp}$ is a $2$-plane in 5 dimensions, so
+\begin{equation}
+	\left[ \begin{array}{@{}c|c@{}}
+		\begin{matrix}
+			1 & 0 &  0 \\
+			0 & 1 &  0 \\
+			0 & 0 &  1 \\
+		\end{matrix} 
+		& 	\begin{matrix}
+			x_4 & x_5  \\
+			y_4 & y_5  \\
+			z_4 & z_5  \\
+		\end{matrix}  \\
+	\cmidrule[0.4pt]{1-2}
+		\begin{matrix}
+		-x_4 & -y_4 & -z_4  \\
+		-x_5 & -y_5 & -z_5 \\
+	\end{matrix} 
+	& 	\begin{matrix}
+	1 & 0  \\
+	0 & 1  \\
+\end{matrix} 
+	\end{array} \right]
+\end{equation}
+With the bottom part just being the negative transpose of the $x,y$ and $z$ coordinates in the upper right corner. \\\\
+SL$(k)$ invariant are determinants of any $k$ coloumns of the matrix (the minors), labeling these by their indices:
+\begin{equation}
+\begin{pmatrix}
+a_1&a_2&\cdots &a_k
+\end{pmatrix}
+\end{equation}
+The
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{thebibliography}{99}
 
