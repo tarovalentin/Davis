@@ -2,3 +2,5 @@
 \contentsline {section}{\numberline {2}Conformal Mapping}{5}{section.2}%
 \contentsline {subsection}{\numberline {2.1}How to find conformal maps}{8}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Applications in fluid dynamics}{9}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Branch structure \& multivalued functions}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Integrating functions with branch-cuts}{15}{subsection.3.1}%

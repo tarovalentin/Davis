@@ -378,7 +378,106 @@ The origin is a branch point of $\log z$ as going around gives a discontinuous j
 \begin{equation}
 \log \frac{1}{z}=-\log z
 \end{equation}
-and hence there is a similar problem at $z=\infty$
+and hence there is a similar problem at $z=\infty$. This means that we can think of $\log z$ as a function in the complex plane with a line cut out of it. This line is the branchcut between the two branch points. This cut "prevents" us from going all the way around the circle, and so we never experience the discontinuity. If we instead restrict $-\pi <\theta<\pi $ on could draw this as
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{13}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+One can also think of this using Riemann sheets. We look at an infinite copy of complex planes and on each sheet we cut out the negative part of the real line.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{14}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+We then define
+\begin{equation}
+f_n(z)=\log |z|+i(\theta +2\pi n),~~~~\theta\in (-\pi,\pi)
+\end{equation}
+Slightly above and below the cut we have
+\begin{equation}
+\begin{aligned}
+	f_n(|z|,\pi-\epsilon)&=\log |z|+i(\pi-epsilon +2\pi n),~~~~\theta\in (-\pi,\pi)\\
+		f_n(|z|,-\pi+\epsilon)&=\log |z|+i(-\pi+epsilon +2\pi n),~~~~\theta\in (-\pi,\pi)\\
+\end{aligned}
+\end{equation}
+across the cur we then have a discontinuiy
+\begin{equation}
+	\begin{aligned}
+		\text{disc} f_n= \lim_{\epsilon\to 0}f_n(|z|,\pi-\epsilon)-f_n(|z|,-\pi+\epsilon)
+		\end{aligned}
+\end{equation}
+We will then identify the "positive" side of the plane $f_{n}^+$ with $f_{n+1}^-$, so that we get the follow stairwell structure:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{15}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+I.e. the $f_n$ value on the n'th sheet above the cut is equal to the $f_n$ value on (n+1)'st sheet below cut.\\\\
+Since the logarithm has the property, exponentials also do. Consider for instance monomials
+\begin{equation}
+z^{\alpha}=e^{\alpha\log z}
+\end{equation}
+We then have the following cases
+\begin{itemize}
+\item $\alpha\in \mathds R / \mathds Q$   irrational: we have the same logarithmic cut
+\item  $\alpha\in \mathds Q$ we have a finite number of sheets
+\begin{itemize}
+\item Example $\sqrt{z}:~~|z|^{1/2}e^{i\arg z/2}$. We can define the two phases
+\begin{equation}
+\sqrt{z}=\begin{cases}
+&|z|^{1/2}e^{i\theta /2}\\
+&|z|^{1/2}e^{i\theta z/2+i\pi}
+\end{cases}
+\end{equation}
+The cut can be placed anywhere in the complex plane, one just has to be consistent in the convention used. 
+\item Cuts can also be finite. The function $(z^2-1)^{1/2}$ e.g. has branchpoints at $z\pm 1$
+\end{itemize}
+\end{itemize}
+Branch cuts show up a lot in 2d CFT's. Since fermions live on the double cover. Another way to put it is that since fermions behave as $\psi^\mu(x)=\psi^\mu(x+2\pi)=-\psi^\mu(x)$, which means it behaves like the squareroot function.
+\subsection{Integrating functions with branch-cuts}
+\underline{Example I:}
+\begin{equation}
+\begin{aligned}
+I=\int_{0}^{\infty}\dd x \frac{x^\alpha}{1+x^2},~~~~~|\alpha|<1
+\end{aligned}
+\end{equation}
+We convert this to a complex function
+\begin{equation}
+	\begin{aligned}
+		I_c=\oint_{C}\dd z \frac{z^\alpha}{1+z^2},~~~~~|\alpha|<1
+	\end{aligned}
+\end{equation}
+We first have to decide where to put the cut. Ideally we want the contour not to jump the cut. If we put the cut along the positive real axis then place our closed contour around the cut in the following way.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{16}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+The contour is then
+\begin{equation}
+C=C_0\cup C_1\cup L\cup U
+\end{equation}
+On $C_0$ we have $z=Re^{i\theta}$
+\begin{equation}
+\begin{aligned}
+	I_{C_0}=\int_{C}\dd z \frac{z^\alpha}{1+z^2}=\int_{0}^{2\pi}\dd \theta \frac{R^{1+\alpha}}{1+R^2e^{2i\theta}}e^{i(\alpha+1)\theta }
+\end{aligned}
+\end{equation}
+This big circle doesn't contribute since
+\begin{equation}
+\frac{R^{\alpha+1}}{R^2}\sim \frac{1}{R^{1-\alpha}}\to 0~~~~\text{as }R\to 0 
+\end{equation}
+Similarly
+\begin{equation}
+	\begin{aligned}
+		I_{C_0}=\int_{C}\dd z \frac{z^\alpha}{1+z^2}=\int_{0}^{2\pi}\dd \theta \frac{R^{1+\alpha}}{1+R^2e^{2i\theta}}e^{i(\alpha+1)\theta }
+	\end{aligned}
+\end{equation}
 \newpage
 \section*{Homework 1\\\\
 Taro V. Brown}\vspace*{1cm}
