@@ -358,16 +358,27 @@ As a pictorial example see below
 	\caption{}
 	\label{fig:4}
 \end{figure}
- %\underline{Example III}
-%\\\\
-%Two cylinders held at potentials $u$ and $v$ of equal size:
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{6}
-%	\caption{}
-%	\label{fig:4}
-%\end{figure}
-%We want to find
+\section{Branch structure \& multivalued functions}
+Some functions are analytic in some domain but do not have poles or essential singularities but rather something known as branchcuts. The canonical example is the function
+\begin{equation}
+f(z)=\log z
+\end{equation}
+If one writes $z=|z|e^{i\arg z}$, with $\arg z=\theta +2\pi n$,  $n\in \mathds Z$ and $\theta \in [-\pi,\pi]$. Hence we get
+\begin{equation}
+	f(z)=\log |z|+i\arg(z)
+\end{equation}
+Because $z$ and $z^{2\pi i n}$ have the same $\theta$ there is an ambiguity and hence $i\arg(z)$ is multivalued.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{12}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+The origin is a branch point of $\log z$ as going around gives a discontinuous jump. Now note that
+\begin{equation}
+\log \frac{1}{z}=-\log z
+\end{equation}
+and hence there is a similar problem at $z=\infty$
 \newpage
 \section*{Homework 1\\\\
 Taro V. Brown}\vspace*{1cm}
@@ -580,7 +591,7 @@ Or in index notation:
 \begin{equation} \label{eq:ns2}
 	\partial_t \omega_i+ u ^j \partial_j\omega_i = \omega^j  \partial_j u_i
 \end{equation}
-\subsection{Part b}
+\subsection*{Part b}
 If $\bm \omega =\nabla\times \bm u =0$, we could write
 \begin{equation}
 \bm u=\nabla \phi
@@ -674,61 +685,74 @@ On the curve $|z|=1$, we have $\bar z = \frac{1}{z}$ and so the imaginary part o
 	Taro V. Brown}\vspace*{1cm}
 \section*{Problem 1}
 \subsection*{Part a}
-We will use the map 
+We will use the map provided in class
 \begin{equation}
-w=(1+z+e^z)
+z=\frac{a}{\pi}(1+w+e^w)
 \end{equation}
-which maps a pair of infinite lines in the z plane to a pair of semi-infinite lines in the $w$ plane. We will consider the line  $z=x+i\pi$, since the equipotentials are straight lines. Inserting into the transformation:
+which maps a pair of infinite lines in the $w$ plane to a pair of semi-infinite lines in the $z$ plane. Note that the normalization in front makes sure the capacitors go from being at $a,-a$ to $-\pi,\pi$. We will analyze the lines  $w=u\pm iv$, since the equipotentials are straight lines. Inserting into the transformation:
 \begin{equation}
 \begin{aligned}
-	w(x+i\pi)&=(1+x+i\pi+e^{x+i\pi})\\
-	&=(1+x+i\pi+e^{x}e^{i\pi})\\
-	&=(1+x+i\pi+e^{x}e^{i\pi})\\
+	z(u+iv)&=\frac{a}{\pi}(1+u+iv+e^{u+iv})\\
+	&=\frac{a}{\pi}(1+u+iv+e^{u}\left[\cos v+i\sin v\right])
+	\\
+	&=\frac{a}{\pi}(\left[1+u+e^{u}\cos v\right]+i\left[v+e^{u}\sin v\right])
 \end{aligned}
 \end{equation}
-Sketching the field lines can be done using the following mathematica code
+From which we can identify $x$ and $y$ by setting $z=x+iy$, so
+\begin{equation}
+\begin{aligned}
+	x&=\frac{a}{\pi}\left[1+u+e^{u}\cos v\right]\\
+	y&=\frac{a}{\pi}\left[v+e^{u}\sin v\right]
+\end{aligned}
+\end{equation}
+The potential in the infinite capacitor is $V\sim V_0v$ between the places. This potential is the imaginary part of the analytic function $\Phi(w)\sim V_0 w$. This means that varying $u$ at constant some constant $v$ will give the the equipotential lines and similarly varying $v$ at constant $u$ values give the electric field lines. We now provide a sketch of this as well as the Mathematica code written to do so. We have chosen $a=\pi$ for convenience.
 \begin{lstlisting}
 Potential = 
-ParametricPlot[{{u + Exp[u] Cos[Pi / 6], 
-		Pi / 6 + Exp[u] Sin[Pi / 6]}, {u + Exp[u], 
-		0}, {u + Exp[u] Cos[Pi / 3], 
-		Pi / 3 + Exp[u] Sin[Pi / 3]}, {u + Exp[u] Cos[Pi / 2], 
-		Pi / 2 + Exp[u] Sin[Pi / 2]}, {u + Exp[u] Cos[2 Pi / 3], 
-		2 Pi / 3 + Exp[u] Sin[2 Pi / 3]}, {u + Exp[u] 
+ParametricPlot[{{1 + u + Exp[u] Cos[Pi / 6], 
+		Pi / 6 + Exp[u] Sin[Pi / 6]}, {1 + u + Exp[u], 
+		0}, {1 + u + Exp[u] Cos[Pi / 3], 
+		Pi / 3 + Exp[u] Sin[Pi / 3]}, {1 + u + Exp[u] 
+		Cos[Pi / 2], 
+		Pi / 2 + Exp[u] Sin[Pi / 2]}, {1 + u + Exp[u]
+		Cos[2 Pi / 3], 
+		2 Pi / 3 + Exp[u] Sin[2 Pi / 3]}, {1 + u + Exp[u] 
 		Cos[5 Pi / 6], 
-		5 Pi / 6 + Exp[u] Sin[5 Pi / 6]}, {u + Exp[u]
-		 Cos[8 Pi / 9], 
-		8 Pi / 9 + Exp[u] Sin[8 Pi / 9]}, {u + Exp[u]
-		 Cos[0.97 Pi], 
+		5 Pi / 6 + Exp[u] Sin[5 Pi / 6]}, {1 + u + Exp[u] 
+		Cos[8 Pi / 9], 
+		8 Pi / 9 + Exp[u] Sin[8 Pi / 9]}, {1 + u + Exp[u] 
+		Cos[0.97 Pi], 
 		0.97 Pi + Exp[u] Sin[0.97 Pi]},
-	{u + Exp[u] Cos[-Pi / 6], -Pi / 6 + Exp[u] Sin[-Pi / 6]}, {u + 
-		Exp[u], 0}, {u + Exp[u] Cos[-Pi / 3], -Pi / 3 + 
-		Exp[u] Sin[-Pi / 3]}, {u + Exp[u] Cos[-Pi / 2],
-		-Pi / 2 + 
-		Exp[u] Sin[-Pi / 2]}, {u + Exp[u] Cos[-2 Pi / 3], 
-		-2 Pi / 3 + 
-		Exp[u] Sin[-2 Pi / 3]}, {u + Exp[u] Cos[-5 Pi / 6], 
-		-5 Pi / 6 + 
-		Exp[u] Sin[-5 Pi / 6]}, {u + Exp[u] Cos[-8 Pi / 9], 
-		-8 Pi / 9 + 
-		Exp[u] Sin[-8 Pi / 9]}, {u + Exp[u] Cos[-0.97 Pi], 
-		-0.97 Pi + 
+	{1 + u + Exp[u] Cos[-Pi / 6], -Pi / 6 + Exp[u] 
+		Sin[-Pi / 6]}, {1 +
+		u + Exp[u], 
+		0}, {1 + u + Exp[u] Cos[-Pi / 3], -Pi / 3 + 
+		Exp[u] Sin[-Pi / 3]}, {1 + u + Exp[u] 
+		Cos[-Pi / 2], -Pi / 2 + 
+		Exp[u] Sin[-Pi / 2]}, {1 + u + 
+		Exp[u] Cos[-2 Pi / 3], -2 Pi / 3 + Exp[u] 
+		Sin[-2 Pi / 3]}, {1 + 
+		u + Exp[u] Cos[-5 Pi / 6], -5 Pi / 6 + 
+		Exp[u] Sin[-5 Pi / 6]}, {1 + u + 
+		Exp[u] Cos[-8 Pi / 9], -8 Pi / 9 + Exp[u] 
+		Sin[-8 Pi / 9]}, {1 + 
+		u + Exp[u] Cos[-0.97 Pi], -0.97 Pi + 
 		Exp[u] Sin[-0.97 Pi]}}, {u, -9, 2.43}, 
 PlotStyle -> {{Gray, Thick}, {Gray, Thick}}];
-Plates = ParametricPlot[{{u + Exp[u] Cos[Pi], 
-		Pi + Exp[u] Sin[Pi]}, {u + Exp[u] Cos[-Pi], -Pi + 
+Plates = ParametricPlot[{{1 + u + Exp[u] Cos[Pi], 
+		Pi + Exp[u] Sin[Pi]}, {1 + u + Exp[u] 
+		Cos[-Pi], -Pi + 
 		Exp[u] Sin[-Pi]}}, {u, -9, 2.43}, 
 PlotStyle -> {{Blue, Thick}, {Blue, Thick}}];
 Electric = 
-ParametricPlot[{{-8. + Exp[-8] Cos[v], 
-		v + Exp[-8] Sin[v]}, {-6. + Exp[-6] Cos[v], 
-		v + Exp[-6] Sin[v]}, {-4 + Exp[-4] Cos[v], 
-		v + Exp[-4] Sin[v]}, {-2 + Exp[-2] Cos[v], 
-		v + Exp[-2] Sin[v]}, {-1 + Exp[-1] Cos[v], 
-		v + Exp[-1] Sin[v]}, {0 + Exp[0] Cos[v], 
-		v + Exp[0] Sin[v]}, {1 + Exp[1] Cos[v], 
-		v + Exp[1] Sin[v]}, {2 + Exp[2] Cos[v], 
-		v + Exp[2] Sin[v]}, {1.5 + Exp[1.5] Cos[v], 
+ParametricPlot[{{1 + -8. + Exp[-8] Cos[v], 
+		v + Exp[-8] Sin[v]}, {1 + -6. + Exp[-6] Cos[v], 
+		v + Exp[-6] Sin[v]}, {1 + -4 + Exp[-4] Cos[v], 
+		v + Exp[-4] Sin[v]}, {1 + -2 + Exp[-2] Cos[v], 
+		v + Exp[-2] Sin[v]}, {1 + -1 + Exp[-1] Cos[v], 
+		v + Exp[-1] Sin[v]}, {1 + 0 + Exp[0] Cos[v], 
+		v + Exp[0] Sin[v]}, {1 + 1 + Exp[1] Cos[v], 
+		v + Exp[1] Sin[v]}, {1 + 2 + Exp[2] Cos[v], 
+		v + Exp[2] Sin[v]}, {1 + 1.5 + Exp[1.5] Cos[v], 
 		v + Exp[1.5] Sin[v]}}, {v, -\[Pi], Pi}, 
 PlotStyle -> {{Red, Dashed}, {Red, Dashed}}];
 Show[Electric, Plates, Potential]
@@ -743,6 +767,58 @@ Which results in the following figure
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Part b}
+We will here use the following map, obtained from the conformal dictionary
+\begin{equation}
+w=\frac{2}{\pi}\asin(z)
+\end{equation}
+This maps two lines to two parallel plates. The inverse, which is the one we are interested in, is
+\begin{equation}
+	z=\sin(\frac{2}{\pi}w)
+\end{equation}
+First we write it in terms of its real and complex parts using a trig identity
+\begin{equation}
+\begin{aligned}
+	x+iy=z=\sin((u+iv)\frac{2}{\pi})=\sin\frac{\pi}{2}u\cosh\frac{\pi}{2}v+i\cos\frac{\pi}{2}u\sinh\frac{\pi}{2}v
+\end{aligned}
+\end{equation}
+Then to find equipotentials we first identity
+\begin{equation}
+\begin{aligned}
+x&=\sin\frac{\pi}{2}u\cosh\frac{\pi}{2}v\\
+y&=\cos\frac{\pi}{2}u\sinh\frac{\pi}{2}v
+\end{aligned}
+\end{equation}
+Then taking $u=constant$ we get
+\begin{equation}
+	\begin{aligned}
+		\left(\frac{x}{\sin\frac{\pi}{2}u}\right)^2-\left(\frac{y}{\cos\frac{\pi}{2}u}\right)^2=\cosh^2\frac{\pi v}{2}-\sinh^2\frac{\pi v}{2}=1
+	\end{aligned}
+\end{equation}
+or a hyperbola. Smiliar holding $v$ constant to find the field lines, we get elipses
+\begin{equation}
+	\begin{aligned}
+		\left(\frac{x}{\cosh\frac{\pi}{2}v}\right)^2+\left(\frac{y}{\sinh\frac{\pi}{2}v}\right)^2=\cos^2\frac{\pi u}{2}+\sin^2\frac{\pi u}{2}=1
+	\end{aligned}
+\end{equation}
+Both hyperboles and elipses are conic sections. Sketching these for different values of $u$ and $v$ we get, using the following mathematica code
+\begin{lstlisting}
+ContourPlot[{x^2/Sin[1]^2 - y^2/Cos[1]^2 == 1, 
+	x^2/Sin[2]^2 - y^2/Cos[2]^2 == 1, 
+	x^2/Sin[2.5]^2 - y^2/Cos[2.5]^2 == 1, 
+	x^2/Sin[3]^2 - y^2/Cos[3]^2 == 1, 
+	x^2/Cosh[1]^2 + y^2/Sinh[1]^2 == 1, 
+	x^2/Cosh[2]^2 + y^2/Sinh[2]^2 == 1, 
+	x^2/Cosh[2.5]^2 + y^2/Sinh[2.5]^2 == 1, 
+	x^2/Cosh[3]^2 + y^2/Sinh[3]^2 == 1},
+ 	{x, -6.5, 6.5}, {y, -6.5, 6.5}]
+\end{lstlisting}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{contour.pdf}
+	\caption{Plot of equipotential lines (parabolas) and field lines (elipses)}
+	\label{fig:4}
+\end{figure}
 \section*{Problem 2}
 The transformation that takes the unit disc to the unit disc is the linear fractional transformation
 \begin{equation}
@@ -780,7 +856,7 @@ First we will use the following map presented in class, namely
 \begin{equation}
 w=\frac{z+1}{z-1}
 \end{equation}
-which maps the half disc $z\in D_+$ to the upper right quadrant (URQ) $w\in 0<\arg w <\frac{1}{2}\pi$. The map that takes the URQ to the unit disc is 
+which maps the half disc $z\in D_+$ to the upper right quadrant (URQ) $w\in 0<\arg w <\frac{1}{2}\pi$. The map that takes the URQ to the unit disc is found in the conformal dictionary
 \begin{equation}
  \zeta(w)=\frac{iw^2+1}{iw^2-1}
 \end{equation}
@@ -832,8 +908,125 @@ r&=f(z=2c)=\frac{2c-\alpha}{2\alpha c-1}\\
 \Rightarrow~~~~&2c-\alpha=-\alpha(2\alpha c-1)\\
 \Rightarrow~~~~&2\alpha^2c-2\alpha+2c=0\\
 \Rightarrow~~~~&\alpha^2c-\alpha+c=0\\
-\Rightarrow~~~~&\alpha_\pm \frac{1\pm\sqrt{1-4c^2}}{2c}\\
+\Rightarrow~~~~&\alpha_\pm =\frac{1\pm\sqrt{1-4c^2}}{2c}\\
 \end{aligned}
 \end{equation}
 The problem states that $0<c<1/2$ and since $|\alpha|<1$ the only valid solution is $\alpha_-$. Inserting this into the map, we find
+\begin{equation}
+\begin{aligned}
+	f(z)&= \frac{z-\frac{1-\sqrt{1-4c^2}}{2c}}{\frac{1-\sqrt{1-4c^2}}{2c} z-1}\\
+	&=\frac{1-\sqrt{1-4c^2}-2cz}{2c+(\sqrt{1-4c^2}-1)z},~~~~~~c<1/2
+\end{aligned}
+\end{equation}
+\section*{Problem 4}
+\subsection*{Part a}
+In this problem we will be using the map from the previous problem. On could do the problem for a general $c$, but we note that (requiring, $c<1/2$) the following values of $c$ simplify the transformation
+\begin{lstlisting}
+In[238]:= Simplify[
+Table[-((-1 + Sqrt[1 - 4 b^2] + 2 b z)/(
+2 b + (-1 + Sqrt[1 - 4 b^2]) z)), {b, {1/3, 1/4, 1/5, 2/5}}]]
+
+Out[238]= {-((-3 + Sqrt[5] + 2 z)/(
+	2 + (-3 + Sqrt[5]) z)), -((-2 + Sqrt[3] + z)/(
+	1 + (-2 + Sqrt[3]) z)), -((-5 + Sqrt[21] + 2 z)/(
+	2 + (-5 + Sqrt[21]) z)), (-1 + 2 z)/(-2 + z)}
+\end{lstlisting}
+The simplest transformation happens at $c=\frac{2}{5}$ meaning the center of the small circle is at $z=\frac{2}{5}$ and the radius is $r=\frac{2}{5}$. In this case we get the simple map
+\begin{equation}
+	\begin{aligned}
+		f(z)
+		&=\frac{2z-1}{z-2}
+	\end{aligned}
+\end{equation}
+The potential doesn't change in the region
+\begin{equation}
+\Delta \phi=0 ~~\text{ in the region }|z| < 1~~\&~~|z-\frac{2}{5}| >\frac{2}{5}
+\end{equation}
+while it must satisfy the following boundary conditions
+\begin{equation}
+\begin{aligned}
+\phi&=\phi_a~~~~\text{ at } |z|=1\\
+\phi&=\phi_b~~~~\text{ at } |z-\frac{5}{2}|=\frac{2}{5}\\
+\end{aligned}
+\end{equation}
+Using the map the boundary conditions on the coaxial cable become
+\begin{equation}
+	\begin{aligned}
+		\Phi&=\phi_a~~~~\text{ at }~~~~ |f|=\frac{1}{2}\\
+		\Phi&=\phi_b~~~~\text{ at } ~~~~|f|=1\\
+	\end{aligned}
+\end{equation}
+In the coaxial domain this solves the Laplace equation in cylindrical coordinates which for radial symmetric setups is
+\begin{equation}
+	\Phi(r)=A_0\log|r|+B_0
+\end{equation}
+Matching at the boundary 
+\begin{equation}
+\begin{aligned}
+\Phi(1)&=A_0\log|1|+B_0=B_0=\phi_b\\
+\Phi(1/2)&=A_0\log|1/2|+\phi_b=\phi_a\Rightarrow A_0=(\phi_a-\phi_b)\log 2
+\end{aligned}
+\end{equation}
+So we get 
+\begin{equation}
+	\begin{aligned}
+	\Phi(f)&=(\phi_a-\phi_b)\log 2\log|f|+\phi_b \\
+	\phi(z)&=(\phi_a-\phi_b)\log 2\log|\frac{2z-1}{z-2}|+\phi_b
+\end{aligned}
+\end{equation}
+To write this in terms of $x$ and $y$ coordinates we insert $z=x+iy$ and write the term in the logarithm in terms of its real and complex parts
+\begin{equation}
+	\begin{aligned}
+		\phi(x,y)&=(\phi_a-\phi_b)\log 2\log|\frac{2(x+iy)-1}{(x+iy)z-2}|+\phi_b\\
+		&=(\phi_a-\phi_b)\log 2\log|\frac{2 x^2-5 x-2 y^2+2}{x^2-4 x+y^2+4}+i\frac{4 x y-5 y}{x^2-4 x+y^2+4}|+\phi_b
+		\\
+		&=(\phi_a-\phi_b)\log 2\log\sqrt{\frac{4 x^2-4 x+4 y^2+1}{x^2-4 x+y^2+4}}+\phi_b
+		\\
+		&=\frac{1}{2}(\phi_a-\phi_b)\log 2\log\frac{4 x^2-4 x+4 y^2+1}{x^2-4 x+y^2+4}+\phi_b
+	\end{aligned}
+\end{equation}
+\subsection*{Part b}
+We saw in class (and partially in the last HW), that the (normalized to unity) fluid streamline function for uniform flow can be written as $\Phi(z)=z$. To get the fluid flowing around a corner, which in this case is the lower left quadrant, we want a map which takes values from the quadrant to UHP. One such map is $f(z)=(iz)^{\frac{2}{3}}$, we note however that this is not necesarilly unique, since e.g. the maps $z^{2n}$, $n=1,2,3,\dots$ do the same job.
+Using this map for our streamline we simply get
+\begin{equation}
+\Phi(f)=\Phi((iz)^{\frac{2}{3}})=(iz)^{\frac{2}{3}}
+\end{equation}
+Or, using the inverse map
+\begin{equation}
+\phi=-iz^{\frac{3}{2}}
+\end{equation}
+using this mapping one can write it in terms of real and complex parts as usual
+\begin{equation}
+\begin{aligned}
+x=&-\left(u^2+v^2\right)^{3/4} \cos \left(\frac{3}{2}  \arg[i u - v]\right)\\
+y=&\left(u^2+v^2\right)^{3/4}  \sin\left(
+\frac{3}{2} \arg[i u - v]
+\right)
+\end{aligned}
+\end{equation}
+Finally the streamlines can be sketched holding $u$ constant and varying $v$ using the following code (see next page for the figure)
+\begin{lstlisting}
+Pot2 = ParametricPlot[{{-(0.5^2 + v^2)^(3/4) Cos[
+		3/2 Arg[I 0.5 - v]], (0.5^2 + v^2)^(3/4)
+		Sin[3/2 Arg[I 0.5 - v]]}, {-(1^2 + v^2)^(3/4) Cos[
+		3/2 Arg[I 1 - v]], (1^2 + v^2)^(3/4)
+		Sin[3/2 Arg[I 1 - v]]}, {-(2^2 + v^2)^(3/4) Cos[
+		3/2 Arg[I 2 - v]], (2^2 + v^2)^(3/4)
+		Sin[3/2 Arg[I 2 - v]]}, {-(3^2 + v^2)^(3/4) Cos[
+		3/2 Arg[I 3 - v]], (3^2 + v^2)^(3/4)
+		Sin[3/2 Arg[I 3 - v]]}, {-(4^2 + v^2)^(3/4) Cos[
+		3/2 Arg[I 4 - v]], (4^2 + v^2)^(3/4) 
+		Sin[3/2 Arg[I 4 - v]]},
+		{-(5^2 + v^2)^(3/4) Cos[3/2 Arg[I 5 - v]], 
+			(5^2 + v^2)^(3/4)
+		Sin[3/2 Arg[I 5 - v]]}}, {v, -10, 10}, 
+PlotStyle -> {{Red, Thick}, {Red, Thick}}];
+Show[Pot2]
+\end{lstlisting}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{contour2.pdf}
+	\caption{Streamlines around corner}
+	\label{fig:4}
+\end{figure}
 \end{document}
