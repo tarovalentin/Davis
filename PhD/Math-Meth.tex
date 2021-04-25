@@ -399,8 +399,8 @@ f_n(z)=\log |z|+i(\theta +2\pi n),~~~~\theta\in (-\pi,\pi)
 Slightly above and below the cut we have
 \begin{equation}
 \begin{aligned}
-	f_n(|z|,\pi-\epsilon)&=\log |z|+i(\pi-epsilon +2\pi n),~~~~\theta\in (-\pi,\pi)\\
-		f_n(|z|,-\pi+\epsilon)&=\log |z|+i(-\pi+epsilon +2\pi n),~~~~\theta\in (-\pi,\pi)\\
+	f_n(|z|,\pi-\epsilon)&=\log |z|+i(\pi-\epsilon +2\pi n),~~~~\theta\in (-\pi,\pi)\\
+		f_n(|z|,-\pi+\epsilon)&=\log |z|+i(-\pi+\epsilon +2\pi n),~~~~\theta\in (-\pi,\pi)\\
 \end{aligned}
 \end{equation}
 across the cur we then have a discontinuiy
@@ -478,6 +478,107 @@ Similarly
 		I_{C_0}=\int_{C}\dd z \frac{z^\alpha}{1+z^2}=\int_{0}^{2\pi}\dd \theta \frac{R^{1+\alpha}}{1+R^2e^{2i\theta}}e^{i(\alpha+1)\theta }
 	\end{aligned}
 \end{equation}
+\section{Analytic continuation}
+Often times one encounters a computation where there are certain limitations using real analysis, e.g. the integral has a part that is diverging. The basic idea of analytic continuation relies on the fact that complex analytic functions are very constrained, i.e. it suffices to them in a small neighborhood. This allow one to extend the definition to a larger domain while maintaining analyticity.
+\\\\
+As an example, let us imagine the following three domains, where we know that $f_1$ is analytic in $D_1$ and that $f_2$ is analytic in $D_2$. Further we know that $f_1=f_2$ in some common domain $D\subset D_1,D_2$. Then we conclude there must be a function which is analytic in the domain $D_1\cup D_2$.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{17}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+\underline{Example I}\\\\
+Take the functions
+\begin{equation}
+\begin{aligned}
+f_2&=\sum_0^{\infty}z^n=\frac{1}{1-z}~~~~|z|<1\\
+f_2&=\sum_0^{\infty}\left(\frac{3}{5}\right)^{n+1}\left(z+\frac{2}{3}\right)^n=\frac{1}{1-z}~~~~|z+2/3|<5/3
+\end{aligned}
+\end{equation}
+These two functions have the same representation but are valid for different domains
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{18}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+The function $f_2$ has been analytically continued and is valid for the much larger domain $D_2$\\\\
+\underline{Example II}\\\\
+We will often encounter integrals which can be analytically continued.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{19}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+If you were given the first integral, one would naively think that for certain values of $z$ we would not be able to perform it, however we see that from the infinite sum one can define a version which is valid in part of the domain that was previously excluded.\\\\
+\underline{Example III}\\\\
+Take $\phi(x)$ to be a test function which decays rapidly enough at infinity. We then take the following integral defining an "inner product"
+\begin{equation}
+(x^{\alpha-1},\phi)=\int_0^\infty x^{\alpha-1}\phi(x)\dd x
+\end{equation}
+Notice there is an IR divergence if $\Re(\alpha)<0$. We then introduce $\epsilon$ which is known as an IR regulator and take the $\epsilon\to 0$ in the end.
+\begin{equation}
+\begin{aligned}
+I&=\int_\epsilon^\infty x^{\alpha-1}\phi(x)\dd x\\
+&=\underbrace{\frac{x^\alpha}{\alpha}\big|^{\infty}_\epsilon}_{0 \text{ for } \alpha > 0}
+-\frac{1}{\alpha}\int_\epsilon^\infty x^{\alpha}\partial_x\phi(x)\dd x\\
+&=-\frac{1}{\alpha}\int_\epsilon^\infty x^{\alpha}\partial_x\phi(x)\dd x
+\end{aligned}
+\end{equation}
+This is convergent even when $-1<\Re \alpha  <0$, so this extends the definition of the original integral $I$ and together with the previous definition gives an analytic function for $\Re \alpha >-1$. There are a few caveat however, as we must assume that also the derivative of $\phi(x)$ must be sufficiently damped. The new function has pole at the origin $\alpha=0$ with residue
+\begin{equation}
+-\int_0^\infty \partial_x\phi(x)=\phi(0)
+\end{equation}
+One could use integration by parts again (and again, and again) to get
+\begin{equation}
+\begin{aligned}
+I(\alpha)&=\frac{1}{\alpha(\alpha+1)}\int_{0}^{\infty}x^{\alpha+1}\phi''(x)\dd x
+\\
+&\vdots
+\end{aligned}
+\end{equation}
+Each iteration pushed the domain one more integer into the negative $x$ axis and has poles at $\alpha=-n$ with residues \\\\
+...\\\\
+\underline{Gamma function}\\\\
+A famous example is the function
+\begin{equation}
+\Gamma(z)=\int_0^{\infty}t^{z-1}e^{-t}\dd t~~~~~\Re(z)>0
+\end{equation}
+Repeating the same steps as before, we can write this as
+\begin{equation}
+	\Gamma(z)= \frac{1}{z}\int_0^{\infty}t^{z}e^{-t}\dd t=\frac{1}{z}\Gamma(z+1)
+\end{equation}
+Iterating this recursion one gets.
+\begin{equation}
+\Gamma(z)=\frac{\Gamma(z+n)}{(z+n-1)!}
+\end{equation}
+The residues are (at $z=-n$) given by $(-1)^n/n!$ and so we have analytically extended the gamma function to the whole complex plane with simple poles. Another definition of the gammafunction is
+\begin{equation}
+\frac{1}{\Gamma(z)}=\frac{1}{2\pi i}\int_C \dd \xi\, \frac{e^\xi}{z^\xi}
+\end{equation}
+This is defined in a very different domain. The contour $C$ is the Hankel (or hairpin) contour, see below
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{20}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+For positive $n$ where is no cut and the integrand can just be evaluated on the poles. By the residue theorem one finds the same as the previous definition of the gamma function.
+\begin{equation}
+	\frac{1}{\Gamma(z)}=\frac{1}{(n-1)!}
+\end{equation}
+ This is not enough to conclude the integrals describe the same function however, so let us integrate by parts
+\begin{equation}
+\begin{aligned}
+	\frac{1}{\Gamma(z)}&=\frac{1}{2\pi i}\frac{e^{\xi}}{(z-1)\xi^{z-1}}\Big|_{-\infty-i\epsilon}^{-\infty+i\epsilon}
++
+\frac{1}{z-1}\frac{1}{2\pi i}\int_C \dd \xi\, \frac{e^\xi}{z^{\xi-1}}\\
+&=\frac{1}{(z-1)\Gamma(z-1)}
+\end{aligned}
+\end{equation}
+And so we see that the recursion formula from before works for this way of expressing the gamma function as well.
 \newpage
 \section*{Homework 1\\\\
 Taro V. Brown}\vspace*{1cm}
@@ -1128,4 +1229,176 @@ Show[Pot2]
 	\caption{Streamlines around corner}
 	\label{fig:4}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section*{Homework 3\\\\
+	Taro V. Brown}\vspace*{1cm}
+\section*{Problem 1}
+\section*{Problem 2}
+\subsection*{Part a}
+We want to show that we can use the following integral
+\begin{equation}
+\begin{aligned}
+I_1=\int_0^\infty \dd z\, f(z)\log z
+\end{aligned}
+\end{equation}
+to compute an integral that isn't symmetric and hence can't be computed emidiatly using Jordan's Lemma.
+\begin{equation}
+	\begin{aligned}
+		I=\int_0^\infty \dd x\, f(x)
+	\end{aligned}
+\end{equation}
+Since our integrand now includes the logarithm we must integrate around a contour that excludes the branch cut, see below:
+\begin{figure}[H]
+	\centering
+  \begin{tikzpicture}
+	% Configurable parameters
+	\def\gap{0.3}
+	\def\bigradius{3}
+	\def\littleradius{0.5}
+	
+	% Axes
+	\draw (-1.1*\bigradius, 0) -- (1.1*\bigradius,0) node[right] {$\Re$}
+	(0, -1.1*\bigradius) -- (0, 1.1*\bigradius) node[above] {$\Im$};
+	% Red path
+	\draw[red, thick,   decoration={ markings,
+		mark=at position 0.17 with {\arrow{latex}}, 
+		mark=at position 0.53 with {\arrow{latex}},
+		mark=at position 0.755 with {\arrow{latex}},  
+		mark=at position 0.955 with {\arrow{latex}}}, 
+	postaction={decorate}]  
+	let
+	\n1 = {asin(\gap/2/\bigradius)},
+	\n2 = {asin(\gap/2/\littleradius)}
+	in (\n1:\bigradius) arc (\n1:360-\n1:\bigradius)
+	-- (-\n2:\littleradius) arc (-\n2:-360+\n2:\littleradius)
+	-- cycle;
+	\draw [thick,decorate, decoration=zigzag] (0, 0) -- (3, 0);
+	\node at (1.5,0.5) {$C_U$};
+	\node at (1.5,-0.5) {$C_L$};
+	\node at (-0.5,0.7) {$C_\epsilon$};
+	\node at (2,2.7) {$C_R$};
+\end{tikzpicture}
+\end{figure}
+The contour segments are
+\begin{equation}
+\begin{aligned}
+C_R:&~~~~~~~~\text{A circle of radius R}\\
+C_\epsilon:&~~~~~~~~\text{A circle of radius }\epsilon\\
+C_U:&~~~~~~~~\text{Line segment from $\epsilon+i\epsilon$ to $R+i\epsilon$}\\
+C_L:&~~~~~~~~\text{Line segment from from $R-i\epsilon$ to $\epsilon-i\epsilon$}
+\end{aligned}
+\end{equation}
+where we take $\epsilon\to 0$ and $R\to \infty$ at the end. This limit should in most cases (but has to be checked) make the contributions from the large and small circles go to zero and so we are left with the discontuniuty over the branch cut. If we look at the two line segments we get two integrals that are restricted along real line (almost)
+\begin{equation}
+\begin{aligned}
+\int_{C_U}\dd z\, f(z)\log z=\int_{\epsilon}^{R} \dd x\, f(x+i \epsilon)\log (x+i\epsilon)\\
+\int_{C_L}\dd z\, f(z)\log z=\int_{R}^{\epsilon} \dd x\, f(x-i \epsilon)\log (x-i\epsilon)
+\end{aligned}
+\end{equation} 
+We then use the fact that because of the branch cut
+\begin{equation}
+\begin{aligned}
+\lim_{\epsilon\to 0}\log(x+i\epsilon)&=\log(x)\\
+\lim_{\epsilon\to 0}\log(x-i\epsilon)&=\log(x)+2\pi i
+\end{aligned}
+\end{equation}
+Taking the limit we get
+\begin{equation}
+	\begin{aligned}
+		\lim_{\substack{\epsilon\to0\\R\to\infty}}\int_{\epsilon}^{R} \dd x\, f(x+i \epsilon)\log (x+i\epsilon)&=\int^{\infty}_{0} \dd x\, f(x)\log (x)\\
+		\lim_{\substack{\epsilon\to0\\R\to\infty}}\int_{R}^{\epsilon} \dd x\, f(x-i \epsilon)\log (x-i\epsilon)&=-\int^{\infty}_{0} \dd x\, f(x)\left(\log (x)+2\pi i\right)\\
+	\end{aligned}
+\end{equation} 
+So that the sum is just
+\begin{equation}
+\begin{aligned}
+\int_{C_U}\dd z\, f(z)\log z+
+\int_{C_L}\dd z\, f(z)\log z
+&=-2\pi i\int^{\infty}_{0} \dd x\, f(x)\\
+&=-2\pi i I
+\end{aligned}
+\end{equation}
+Using this we see that we obtain the integral we wanted provided that the integrals along the large and small circle contours vanish.
+In that case we have
+\begin{equation}
+I=-\sum_{i}\Res[f(z)\log z]_{z=z_i}
+\end{equation}
+ We can now use this to calculate the following integrals
+\begin{equation}
+I_a=\int_0^\infty \dd x \frac{1}{(x+1)(x^2+2x+2)},~~~~I_b=\int_0^\infty\dd x \frac{1}{(x^3+1)}
+\end{equation}
+Performing the firt integral we first check that the contributions from the large and small circles vanish in the appropriate limits by parameterizing $z=Re^{i\theta}$ (large circle) and $z=\epsilon e^{i\theta}$ (small circle). To do this it is convenient to introduce something known as the ML estimate. For an analytic function around some contour $\gamma$ then 
+\begin{equation}
+\left|\int_\gamma\,\dd z\, f(z)\right|\leq M L
+\end{equation}
+with L being the length of the contour and M the maximum value of the function on the contour. Taking the large circle contour we parameterize it
+\begin{equation}
+\begin{aligned}
+\int_{C_R} \dd z \frac{\log z}{(x+1)(x^2+2x+2)}&=\int_{0}^{2\pi} i\dd \theta R e^{i\theta} \frac{\log Re^{i\theta}}{(Re^{i\theta}+1)(R^2e^{2i\theta}+2Re^{i\theta}+2)}
+\end{aligned}
+\end{equation}
+The length of the contour is $2\pi R$ and the maximum value is at $2\pi$, so
+\begin{equation}
+	\begin{aligned}
+	 \left|\int_{C_R} \dd z \frac{\log z}{(x+1)(x^2+2x+2)}\right|&\leq(2\pi R)
+	 \frac{\log R}{(-R+1)(R^2-2R-2)}\leq2\pi \frac{\log R}{R^2}\to 0 \text{ as } R\to\infty
+	\end{aligned}
+\end{equation}
+For the small circle we will have to assume that the function doesn't blow up around $z=0$. Then the leading order behaviour goes as
+\begin{equation}
+	\begin{aligned}
+		\int_{C_\epsilon} \dd z \frac{\log z}{(x+1)(x^2+2x+2)}&=\int_{\epsilon}^{2\pi-\epsilon} i\dd \theta \epsilon e^{i\theta} \frac{\log \epsilon e^{i\theta}}{(\epsilon e^{i\theta}+1)(\epsilon ^2e^{2i\theta}+2\epsilon e^{i\theta}+2)}\\
+			\end{aligned}
+	\end{equation}
+where the integrand goes as
+\begin{equation}
+	\begin{aligned}
+ \epsilon\log \epsilon \to 0 \text{ as }\epsilon\to 0
+	\end{aligned}
+\end{equation}
+We can now use the residue theorem with the logarithm to find the value of the integral. First factor the integrand
+\begin{equation}
+\frac{\log z}{(z+1)(z^2+2z+2)}= \frac{\log z}{[z+1]\times \left[z-(i-1)\right]\times \left[z-(-i-1)\right]}
+\end{equation}
+So we have poles at $\{-1,i-1,-i-1\}$. The exponetial form of these residues are  $\{e^{\pi},\sqrt{2} e^{\frac{3 i \pi }{4}},\sqrt{2} e^{\frac{1}{4} (5 i \pi )}\}$. Taking the residues we then find
+\begin{equation}
+	\begin{aligned}
+	I_a&=-\Res\left[\log z f(z)\right]\Big|_{z=-1}-\Res\left[\log zf(z)\right]\Big|_{z=-1-i}-\Res\left[\log zf(z)\right]\Big|_{z=I-i}\\
+	&=-\frac{\log z}{\left[z-(i-1)\right] \left[z-(-i-1)\right]}\Bigg|_{z=-1}-\frac{\log z}{\left[z+1\right] \left[z-(-i-1)\right]}\Bigg|_{z=i-1}-\frac{\log z}{\left[z+1\right] \left[z-(i-1)\right]}\Bigg|_{z=-i-1}\\
+	&=-i \pi -\frac{1}{2} \log \left(\frac{1}{2}e^{\frac{5 i \pi }{4}}\right)-\frac{1}{2} \log \left(\frac{1}{2} e^{\frac{3 i \pi }{4}}\right)\\
+	&=-i \pi -\frac{1}{2} \log \left(\frac{1}{2}e^{\frac{5 i \pi }{4}}\right)-\frac{1}{2} \log \left(\frac{1}{2} e^{\frac{3 i \pi }{4}}\right)\\
+	&=\log 2	\end{aligned}
+\end{equation}
+For the other integral again use the ML estimate for the large circle contour
+\begin{equation}
+	\begin{aligned}
+		\int_{C_R} \dd z \frac{\log z}{(z^3+1)}&=\int_{0}^{2\pi} i\dd \theta R e^{i\theta} \frac{\log Re^{i\theta}}{(R^3e^{3i\theta}+1)}
+	\end{aligned}
+\end{equation}
+So
+\begin{equation}
+	\begin{aligned}
+		\left|\int_{C_R} \dd z \frac{\log z}{(z^3+1)}\right|&\leq(2\pi R)
+		\frac{\log R}{(R^3+1)}\leq2\pi \frac{\log R}{R^2}\to 0 \text{ as } R\to\infty
+	\end{aligned}
+\end{equation}
+While, for the small circle
+\begin{equation}
+	\begin{aligned}
+		\int_{C_\epsilon} \dd z \frac{\log z}{(x+1)(x^2+2x+2)}&=\int_{\epsilon}^{2\pi-\epsilon} i\dd \theta \epsilon e^{i\theta} \frac{\log \epsilon e^{i\theta}}{(\epsilon e^{i\theta}+1)(\epsilon ^2e^{2i\theta}+2\epsilon e^{i\theta}+2)}\\
+	\end{aligned}
+\end{equation}
+where the integrand goes as
+\begin{equation}
+	\begin{aligned}
+		\epsilon\log \epsilon \to 0 \text{ as }\epsilon\to 0
+	\end{aligned}
+\end{equation}
+Hence contributions from both circles vanish. We then factor the integrand like before
+\begin{equation}
+	\frac{\log z}{(z^3+1)}= \frac{\log z}{[z-(-1)]\times \left[z-(-1)^{1/3}]\right]\times \left[z-(-(-1)^{2/3})\right]}
+\end{equation}
+And evalue the residues at these poles
 \end{document}
