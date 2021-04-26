@@ -1365,7 +1365,7 @@ We can now use the residue theorem with the logarithm to find the value of the i
 So we have poles at $\{-1,i-1,-i-1\}$. The exponetial form of these residues are  $\{e^{\pi},\sqrt{2} e^{\frac{3 i \pi }{4}},\sqrt{2} e^{\frac{1}{4} (5 i \pi )}\}$. Taking the residues we then find
 \begin{equation}
 	\begin{aligned}
-	I_a&=-\Res\left[\log z f(z)\right]\Big|_{z=-1}-\Res\left[\log zf(z)\right]\Big|_{z=-1-i}-\Res\left[\log zf(z)\right]\Big|_{z=I-i}\\
+	I_a&=-\Res\left[\log z f(z)\right]\Big|_{z=-1}-\Res\left[\log zf(z)\right]\Big|_{z=-1-i}-\Res\left[\log zf(z)\right]\Big|_{z=1-i}\\
 	&=-\frac{\log z}{\left[z-(i-1)\right] \left[z-(-i-1)\right]}\Bigg|_{z=-1}-\frac{\log z}{\left[z+1\right] \left[z-(-i-1)\right]}\Bigg|_{z=i-1}-\frac{\log z}{\left[z+1\right] \left[z-(i-1)\right]}\Bigg|_{z=-i-1}\\
 	&=-i \pi -\frac{1}{2} \log \left(\frac{1}{2}e^{\frac{5 i \pi }{4}}\right)-\frac{1}{2} \log \left(\frac{1}{2} e^{\frac{3 i \pi }{4}}\right)\\
 	&=-i \pi -\frac{1}{2} \log \left(\frac{1}{2}e^{\frac{5 i \pi }{4}}\right)-\frac{1}{2} \log \left(\frac{1}{2} e^{\frac{3 i \pi }{4}}\right)\\
@@ -1398,7 +1398,90 @@ where the integrand goes as
 \end{equation}
 Hence contributions from both circles vanish. We then factor the integrand like before
 \begin{equation}
-	\frac{\log z}{(z^3+1)}= \frac{\log z}{[z-(-1)]\times \left[z-(-1)^{1/3}]\right]\times \left[z-(-(-1)^{2/3})\right]}
+\begin{aligned}
+	\frac{\log z}{(z^3+1)}&= \frac{\log z}{[z-(-1)]\times \left[z-(-1)^{1/3}\right]\times \left[z-(-(-1)^{2/3})\right]}\\
+	 &=\frac{\log z}{[z+1)]\times \left[z-(-1)^{1/3}\right]\times \left[z+(-1)^{2/3}\right]}
+\end{aligned}
 \end{equation}
+The residues can also be written as $\{z=e^{i\pi},z=e^{\frac{i \pi }{3}},z=e^{\frac{5 i \pi }{3}}\}$
 And evalue the residues at these poles
+\begin{equation}\hspace*{-1cm}
+	\begin{aligned}
+		I_a&=-\Res\left[\log z f(z)\right]\Big|_{z=-1}-\Res\left[\log zf(z)\right]\Big|_{z=(-1)^{1/3}}-\Res\left[\log zf(z)\right]\Big|_{z=-(-1)^{2/3}}\\
+		&=-\frac{\log z}{\left[z-(-1)^{1/3}\right] \left[z+(-1)^{2/3}\right]}\Bigg|_{z=-1}-\frac{\log z}{[z+1] \left[z+(-1)^{2/3}\right]}\Bigg|_{z=(-1)^{1/3}}-\frac{\log z}{[z+1] \left[z-(-1)^{1/3}\right]}\Bigg|_{z=-(-1)^{2/3}}\\
+		&=-i\pi/3+5/9(-1)^{1/6}+1/9(-1)^{5/6}\pi\\
+		&=\frac{2 \pi }{3 \sqrt{3}}
+	\end{aligned}
+\end{equation}
+\subsection*{Problem 3}
+\subsection*{Part a}
+We want to prove the Mittag-Leffler decomposition
+\begin{equation}
+f(z)=f(0)+\sum_{j=\infty}^{\infty }r_j\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
+\end{equation}
+First we assume that all the poles of $f(z)$ are simple as well as considering a contour enclosing $n$ poles. Then by the residue theorem we can split this into the poles of $f$ and the pole at $w=z$.
+\begin{equation}
+\begin{aligned}
+\frac{1}{2\pi i}\oint_\gamma \frac{f(w)}{w-z}dw&=\Res(\frac{f(w)}{w-z})\Big|_{w=z}+\sum_j\Res(\frac{f(w)}{w-z})\Big|_{w=z_j}\\
+&=\lim_{w\to z}\left(\frac{(w-z)f(w)}{w-z}\right)+\sum_j\lim_{w\to n}\left(\frac{(w-z_j)f(w)}{w-z}\right)\\
+&=f(z)+\sum_j\lim_{w\to z_j}\left[\frac{(w-z_j)f(w)}{w-z}\right]\\
+\end{aligned}
+\end{equation}
+The limit on the rhs can be written as a product of the residues of $f$ at $n$ divided by $z_j-z$. Denoting the residues by $r_j$, we then have
+\begin{equation}
+\begin{aligned}
+\frac{1}{2\pi i}\oint_\gamma \frac{f(w)}{w-z}dw&=f(z)+\sum_j\frac{r_j}{z_j-z}\\
+\end{aligned}
+\end{equation}
+Setting $z=0$ we get
+\begin{equation}
+	\begin{aligned}
+		\frac{1}{2\pi i}\oint_\gamma \frac{f(w)}{w}dw&=f(0)+\sum_j\frac{r_j}{z_j}\\
+	\end{aligned}
+\end{equation}
+So we get
+\begin{equation}
+\frac{1}{2\pi i}\oint_\gamma f(w)\left(\frac{1}{w-z}-\frac{1}{w}\dd w\right)=f(z)-f(0)+\sum_{j=\infty}^{\infty }r_j\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
+\end{equation}
+If we now take $f(z)$ to be bounded within the contour for all poles then we get the expression requested
+\begin{equation}
+f(z)=f(0)+\sum_{j=\infty}^{\infty }r_j\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
+\end{equation}
+\subsection*{Part b}
+If we assume the function $g(z)$ only has simple poles at positions $z_i$, then the function
+\begin{equation}
+f(z)=\dv{\log(g(z))}{z}=\frac{g'(z)}{g(z)}
+\end{equation}
+is meromorphic with the same poles. Residues of these poles can be found using L'Hôpitals rule
+\begin{equation}
+	\begin{aligned}
+\Res(f(z))\big|_{z=z_i}&=\lim_{z\to z_i}(z-z_i)f(z)\\
+&=\lim_{z\to z_i}\frac{zg'(z)-z_ig'(z)}{g(z)}\\
+&=\lim_{z\to z_i}\frac{g'(z)+zg''(z)-z_ig''(z)}{g'(z)}\\
+&=\frac{g'(z_i)}{g'(z_i)}\\
+&=1~~~\forall \,i \text{ inside $\gamma$ }
+	\end{aligned}
+\end{equation}
+
+So 
+\begin{equation}
+\dv{\log(g(z))}{z}=\frac{g'(z)}{g(z)}\Big|_{z=0}+\sum_{j=-\infty}^{\infty }\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
+\end{equation}
+Integrating up on both sides, we get
+\begin{equation}
+\log 
+\end{equation}
+\section*{Problem 4}
+First let us take
+\begin{equation}
+\cot(z\pi)\pi=\frac{1}{z}+\sum_{n=1}^{\infty}\frac{2z}{z^2-n^2}
+\end{equation}
+writing the lhs in terms of exponential functions and using the binomial expansion given $\Im z>0$
+\begin{equation}
+	\cot(z\pi)\pi=-\pi i\frac{e^{2\pi iz}+1}{1-e^{2\pi iz}}=-\pi i\left(e^{2\pi iz}+1\right)\sum_{n=0}^{\infty}e^{2\pi iz}=-2\pi i\left(\frac{1}{2}+\sum_{n=0}^{\infty}e^{2\pi iz}\right)
+\end{equation}
+The rhs can be rewritten by expanding and grouping the sum
+\begin{equation}
+	\cot(z\pi)\pi=\frac{1}{z}+\lim_{N\to\infty}\sum_{n=-N}^{N}\frac{1}{z+n}=\lim_{N\to\infty}\sum_{n=-N}^{N}\frac{1}{z+n}
+\end{equation}
 \end{document}

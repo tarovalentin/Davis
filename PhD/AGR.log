@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  24 APR 2021 00:35
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  25 APR 2021 19:24
  restricted system commands enabled.
 **AGR.tex
 (./AGR.tex
@@ -1078,41 +1078,35 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (./AGR.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
-
-
-Package rerunfilecheck Warning: File `AGR.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `AGR.out':
-(rerunfilecheck)             Before: 09F87BE4EE9A0E3FA9D994A81E622AE2;92
-(rerunfilecheck)             After:  9865C12CFA51867069B0E36DE4FA7134;184.
+Package rerunfilecheck Info: File `AGR.out' has not changed.
+(rerunfilecheck)             Checksum: 9865C12CFA51867069B0E36DE4FA7134;184.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
 )
 
 Here is how much of LuaTeX's memory you used:
- 35427 strings out of 480991
+ 35428 strings out of 480991
  100000,1373583 words of node,token memory allocated
  548 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 15 attribute, 57 glue_spec
 , 15 attribute_list, 2 write nodes
-   avail lists: 2:405,3:155,4:15,5:106,6:8,7:666,8:69,9:220,10:3,11:18
- 51722 multiletter control sequences out of 65536+200000
+   avail lists: 2:403,3:155,4:15,5:104,6:8,7:659,8:69,9:221,10:3,11:18
+ 51723 multiletter control sequences out of 65536+200000
  78 fonts using 6866563 bytes
  71i,7n,102p,744b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
-mri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on AGR.pdf (3 pages, 189134 bytes).
+fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
+Output written on AGR.pdf (3 pages, 197192 bytes).
 
-PDF statistics: 82 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 90 PDF objects out of 1000 (max. 8388607)
  11 named destinations out of 1000 (max. 131072)
- 24 words of extra memory for PDF output out of 10000 (max. 100000000)
+ 32 words of extra memory for PDF output out of 10000 (max. 100000000)
 
