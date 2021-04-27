@@ -1235,6 +1235,122 @@ Show[Pot2]
 \section*{Homework 3\\\\
 	Taro V. Brown}\vspace*{1cm}
 \section*{Problem 1}
+\subsection*{Integral 1}
+We want to calulate the integral
+\begin{equation}
+I_1=\int_{0}^{\infty}\dd x\frac{x^{-a}}{x+1},~~~~~\alpha \in (0,1)
+\end{equation}
+If we extend this to the complex plane we need to specify a contour which avoids the branch cut along the real axis. A suitable contour is the keyhole (Pacman) contour, see figure
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		% Configurable parameters
+		\def\gap{0.3}
+		\def\bigradius{3}
+		\def\littleradius{0.5}
+		
+		% Axes
+		\draw (-1.1*\bigradius, 0) -- (1.1*\bigradius,0) node[right] {$\Re$}
+		(0, -1.1*\bigradius) -- (0, 1.1*\bigradius) node[above] {$\Im$};
+		% Red path
+		\draw[red, thick,   decoration={ markings,
+			mark=at position 0.17 with {\arrow{latex}}, 
+			mark=at position 0.53 with {\arrow{latex}},
+			mark=at position 0.755 with {\arrow{latex}},  
+			mark=at position 0.955 with {\arrow{latex}}}, 
+		postaction={decorate}]  
+		let
+		\n1 = {asin(\gap/2/\bigradius)},
+		\n2 = {asin(\gap/2/\littleradius)}
+		in (\n1:\bigradius) arc (\n1:360-\n1:\bigradius)
+		-- (-\n2:\littleradius) arc (-\n2:-360+\n2:\littleradius)
+		-- cycle;
+		\draw [thick,decorate, decoration=zigzag] (0, 0) -- (3, 0);
+		\node at (1.5,0.5) {$C_U$};
+		\node at (1.5,-0.5) {$C_L$};
+		\node at (-0.5,0.7) {$C_\epsilon$};
+		\node at (2,2.7) {$C_R$};
+	\end{tikzpicture}
+\end{figure}
+We then have the contour integral
+\begin{equation}
+\oint_C\dd z\frac{z^{-a}}{z+1},~~~~~\alpha \in (0,1)
+\end{equation}
+We start of by noting that the large and small circle contours don't contribute since, by parameterizing and assuming there is no residue at $z=0$\footnote{equivalently we can effectively ignore the $\epsilon$ factor in the denominator} we obtain the integrands integrated from $0$ to $2\pi$
+\begin{equation}
+\begin{aligned}
+	iRe^{i\theta}\dd z\frac{e^{-i\alpha\theta }R^{-a}}{e^{i\theta }R+1}\sim R^{-\alpha}\to 0~~~~\text{ as }~~R\to\infty,~~~~~\text{for }\alpha \in (0,1)\\
+	i\epsilon e^{i\theta}\dd z\frac{e^{-i\alpha\theta }\epsilon^{-a}}{e^{i\theta }\epsilon+1}\sim \epsilon^{1-\alpha}\to 0~~~~\text{ as }~~\epsilon\to0,~~~~~\text{for }\alpha \in (0,1)
+\end{aligned}
+\end{equation}
+on the upper contour $z=xe^{0i}$ and on the lower $z=xe^{2\pi i}$, with the only pole inseide the contour being the simple pole at $z=-1=e^{i\pi}$. The residue on this pole is easily seen to be $(-1)^{\alpha}=e^{-i\pi \alpha}$ and so the residue theorem then gives (after flipping the integration ranges one of the contours)
+\begin{equation}
+\begin{aligned}
+2\pi i e^{-i\pi \alpha}&=\int_{0}^{\infty}\dd x\,\frac{x^{-\alpha}}{1+x}-\int_{0}^{\infty}\dd x\,\frac{x^{-\alpha}e^{-2\pi i\alpha}}{1+xe^{-2\pi i}}\\
+&=\left(1-e^{-2\pi i \alpha}\right)\int_{0}^{\infty}\dd x\,\frac{x^{-\alpha}}{1+x}
+\end{aligned}
+\end{equation}
+which gives us the value of the integral we were looking for, since
+\begin{equation}
+	\begin{aligned}
+		\int_{0}^{\infty}\dd x\,\frac{x^{-\alpha}}{1+x}&=\frac{2\pi ie^{-i\pi \alpha}}{1- ie^{-2i\pi \alpha}}=\frac{\pi}{\sin \pi\alpha}
+	\end{aligned}
+	\end{equation}
+\subsection*{Integral 2}
+We now look at the integral
+\begin{equation}
+I_2=\int_{0}^{\pi}\dd x\,\log(\sin x)
+\end{equation}
+For this we consider the complex integral 
+\begin{equation}
+\oint \dd z\,\log(-2ie^{iz}\sin z)
+\end{equation}
+along the following dented rectangle contour
+% TODO: \usepackage{graphicx} required
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{rectangle}
+	\caption{Indented rectangle contour}
+	\label{fig:rectangle}
+\end{figure}
+The integrand is analytic inside this closed contour, and since there are no poles within the contour we get from the residue theorem that the integral along the closed contour vanishes. \\
+We start off by looking at the integrand around the indentations. Here we get parameterizations $\epsilon e^{i\theta}$ and $\epsilon e^{i\theta}+\pi$. So the integrands go as
+\begin{equation}
+\begin{aligned}
+&\epsilon \log(-2ie^{i\epsilon e^{i\theta}}\sin {\epsilon e^{i\theta}})\to 0\text{ as } \epsilon \to 0\\
+&\epsilon \log(-2ie^{i (\pi +\epsilon e^{i\theta})}\sin {(\pi +\epsilon e^{i\theta})})\to 0\text{ as } \epsilon \to 0
+\end{aligned}
+\end{equation}
+We now find the sum of the integrals of the two vertical contours (parameterizing $z=iR$ in the first and $z=iR+\pi$ on the second)
+\begin{equation}
+\begin{aligned}
+&i\int_{\infty}^{0}\log(-2ie^{-R}\sin iR)+i\int_{0}^{\infty}\log(-2ie^{-R+i\pi}\sin iR+\pi)\\
+&=i\int_{\infty}^{0}\log(-2ie^{-R}\sin iR)+i\int_{0}^{\infty}\log(-2ie^{-R}\sin iR)\\
+&=
+-i\int^{\infty}_{0}\log(-2ie^{-R}\sin iR)+i\int_{0}^{\infty}\log(-2ie^{-R}\sin iR)\\
+&=0
+\end{aligned}
+\end{equation}
+For the top of the square we have $z=x+iR$
+\begin{equation}
+\begin{aligned}
+\int_{\pi}^{0}\log(-2ie^{i(x+iR)}\sin (x+iR))
+\end{aligned}
+\end{equation}
+By letting $R\to\infty$ we get that the integrand goes as
+\begin{equation}
+	\begin{aligned}
+\lim_{R\to\infty}\log(-2ie^{i(x+iR)}\sin (x+iR))&=\frac{1}{2} i k e^{i (x+i R)+R-i x}-\frac{1}{2} i k e^{i (x+i R)-R+i x}\\
+&=\lim_{R\to\infty} \log(1+e^{2ix-2R})=0
+	\end{aligned}
+\end{equation}
+Finally we see that only the bottom line segment contributes. Here we get
+\begin{equation}
+	\begin{aligned}
+		\int^{\pi}_{0}\log(-2ie^{i(x+iR)}\sin (x+iR))
+	\end{aligned}
+\end{equation}
+\subsection*{Integral 3}
 \section*{Problem 2}
 \subsection*{Part a}
 We want to show that we can use the following integral
@@ -1443,7 +1559,7 @@ So we get
 \begin{equation}
 \frac{1}{2\pi i}\oint_\gamma f(w)\left(\frac{1}{w-z}-\frac{1}{w}\dd w\right)=f(z)-f(0)+\sum_{j=\infty}^{\infty }r_j\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
 \end{equation}
-If we now take $f(z)$ to be bounded within the contour for all poles then we get the expression requested
+If we now assume $f(z)$ to be bounded within the contour for all poles then we get the expression requested
 \begin{equation}
 f(z)=f(0)+\sum_{j=\infty}^{\infty }r_j\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
 \end{equation}
@@ -1472,16 +1588,71 @@ Integrating up on both sides, we get
 \log 
 \end{equation}
 \section*{Problem 4}
-First let us take
+\subsection*{Part a}
+We consider the function
 \begin{equation}
-\cot(z\pi)\pi=\frac{1}{z}+\sum_{n=1}^{\infty}\frac{2z}{z^2-n^2}
+\cot z=\frac{1}{\tan z}
 \end{equation}
-writing the lhs in terms of exponential functions and using the binomial expansion given $\Im z>0$
+This has zeroes at $\pi n$ with $n\in \mathds {Z}$. The residues evaluate to $1$ since from L'Hôpitals rule
 \begin{equation}
-	\cot(z\pi)\pi=-\pi i\frac{e^{2\pi iz}+1}{1-e^{2\pi iz}}=-\pi i\left(e^{2\pi iz}+1\right)\sum_{n=0}^{\infty}e^{2\pi iz}=-2\pi i\left(\frac{1}{2}+\sum_{n=0}^{\infty}e^{2\pi iz}\right)
+\begin{aligned}
+\Res\left[\cot z\right]\Big|_{z=\pi n}&=\lim_{z\to\pi n}(z-\pi n)\cot( z)\\
+&=\lim_{z\to\pi n}(z-\pi n)\frac{\cos z}{\sin z}\\
+&=\lim_{z\to\pi n}\frac{\cos z-(z-\pi n)\sin z}{\cos z}\\
+&=1
+\end{aligned}
 \end{equation}
-The rhs can be rewritten by expanding and grouping the sum
+Inserting this into the ML expansion, we first subtract the pole at $z=0$
 \begin{equation}
-	\cot(z\pi)\pi=\frac{1}{z}+\lim_{N\to\infty}\sum_{n=-N}^{N}\frac{1}{z+n}=\lim_{N\to\infty}\sum_{n=-N}^{N}\frac{1}{z+n}
+\begin{aligned}
+\cot z-\frac{1}{z}=\sum_{j=\infty}^{~~\infty ~~,}\left(\frac{1}{z-\pi n}+\frac{1}{\pi n}\right)
+\end{aligned}
+\end{equation}
+The negative and postive parts of the sum converge independently and so we can split the sum as follows
+\begin{equation}
+	\begin{aligned}
+		\cot z-\frac{1}{z}
+				&=\sum_{j=1}^{\infty}\left(\frac{1}{z-\pi n}+\frac{1}{\pi n}+\frac{1}{z+\pi n}-\frac{1}{\pi n}\right)\\
+		&=\sum_{j=1}^{\infty}\left(\frac{1}{z-\pi n}+\frac{1}{z+\pi n}\right)\\
+		&=\sum_{j=1}^{\infty}\left(\frac{2z}{z^2-\pi^2 n^2}\right)
+	\end{aligned}
+\end{equation}
+From this we get the requested equation
+\begin{equation} 
+	\cot(z)=\frac{1}{z}+\sum_{n=1}^{\infty}\frac{2z}{z^2-\pi^2 n^2}
+\end{equation}
+Which can also be written in the convention form
+\begin{equation} \label{eq:expansion}
+	\cot(z\pi)\pi=\frac{1}{z}+\sum_{n=1}^{\infty}\frac{2z}{z^2-n^2}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To show the Lipshitz formula we first write the lhs in terms of exponential functions and use the binomial expansion assuming $\Im z>0$
+\begin{equation}
+	\cot(z\pi)\pi=-\pi i\frac{e^{2\pi iz}+1}{1-e^{2\pi iz}}=-\pi i\left(e^{2\pi iz}+1\right)\sum_{n=0}^{\infty}e^{2n\pi iz}=-2\pi i\left(\frac{1}{2}+\sum_{n=1}^{\infty}e^{2n\pi iz}\right)
+\end{equation}
+Taking the derivative of this $k\geq 1$ times we obtain
+\begin{equation} \label{eq:dcot}
+	\dv[k]{\cot(z\pi)\pi}{z}=(-2\pi i)(2\pi i)^{k}\sum_{n=1}^{\infty}n^k e^{2n\pi iz}
+\end{equation}
+The rhs of \eqref{eq:expansion} can be rewritten by expanding and grouping the sum
+\begin{equation}
+\frac{1}{z}+\sum_{n=1}^{\infty}\frac{2z}{z^2-n^2}=\frac{1}{z}+\sum_{n=1}^{\infty}\,\left(\frac{1}{z+n}+\frac{1}{z-n}\right)=\lim_{N\to\infty}\sum_{n=-N}^{N}\frac{1}{z+n}
+\end{equation}
+Now taking the derivative of this $k\geq 1$ times we, while taking the $N\to \infty $ limit, get
+\begin{equation}
+\sum_{n=-\infty}^{\infty}\frac{1}{(z+n)^k}(-1)^k k!
+\end{equation}
+Hence combinging this with \eqref{eq:dcot} we get the requested form
+\begin{equation}
+\sum_{n=-\infty}^{\infty}\frac{1}{(z+n)^k}=\frac{(-2\pi i)^{k+1}}{k!}\sum_{n=1}^{\infty}n^k e^{2\pi iz}
+\end{equation}
+\subsection*{Part b}
+We first note that
+\begin{equation}
+\cot =
+\end{equation}
+We first take the ML expansion of $\frac{1}{\sin(z)}$. The residues are at $z=2\pi$ and as before they have value $r_j=1$, so
+\begin{equation}
+\frac{1}{\sin z}-\frac{1}{z}=\sum_{n=\infty}^{~~\infty ~~,}\left(\frac{1}{z-2\pi n}+\frac{1}{2\pi n}\right)
 \end{equation}
 \end{document}

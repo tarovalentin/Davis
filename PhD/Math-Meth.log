@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  26 APR 2021 13:32
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  26 APR 2021 17:37
  restricted system commands enabled.
 **Math-Meth.tex
 (./Math-Meth.tex
@@ -1585,44 +1585,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 1236--1236
 
  []
 
-[37] [38]
-Overfull \hbox (38.74649pt too wide) detected at line 1348
+[37]
+<rectangle.png, id=617, 506.89375pt x 403.00563pt>
+File: rectangle.png Graphic file (type png)
+<use rectangle.png>
+Package luatex.def Info: rectangle.png  used on input line 1312.
+(luatex.def)             Requested size: 215.1032pt x 171.01378pt.
+ [38
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.22'
+
+<./rectangle.png>] [39] [40]
+Overfull \hbox (38.74649pt too wide) detected at line 1458
 [][][]
  []
 
 
-Overfull \hbox (66.76062pt too wide) detected at line 1373
+Overfull \hbox (66.76062pt too wide) detected at line 1483
 [][][]
  []
 
-[39]
-Overfull \hbox (65.6537pt too wide) detected at line 1415
+[41]
+Overfull \hbox (65.6537pt too wide) detected at line 1525
 []| [][]
  []
 
-[40] [41] [42]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1487.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1487.
+[42] [43] [44] [45] [46]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1652.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1652.
  (./Math-Meth.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1487.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1487.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1652.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1652.
 Package rerunfilecheck Info: File `Math-Meth.out' has not changed.
 (rerunfilecheck)             Checksum: 8521E965DA15F014C17D7EBD3CF70559;1344.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1487.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1652.
 )
 
 Here is how much of LuaTeX's memory you used:
- 36272 strings out of 480991
+ 36320 strings out of 480991
  100000,1373583 words of node,token memory allocated
- 2047 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 6 glue, 4 kern, 1 sub_mlist, 1 glyph, 382 attribute
-, 57 glue_spec, 382 attribute_list, 2 write nodes
-   avail lists: 2:3803,3:237,4:29,5:517,6:42,7:4262,8:124,9:2570,10:13,11:105
- 52067 multiletter control sequences out of 65536+200000
+ 2226 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 7 glue, 4 kern, 1 sub_mlist, 1 glyph, 425 attribute
+, 57 glue_spec, 425 attribute_list, 2 write nodes
+   avail lists: 2:3717,3:293,4:29,5:517,6:42,7:4261,8:126,9:2570,10:13,11:105
+ 52077 multiletter control sequences out of 65536+200000
  116 fonts using 9214947 bytes
  71i,18n,102p,729b,1146s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/MiK
@@ -1651,9 +1660,9 @@ ublic/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C
 KTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmt
 t12.pfb>
-Output written on Math-Meth.pdf (43 pages, 1307362 bytes).
+Output written on Math-Meth.pdf (47 pages, 1337522 bytes).
 
-PDF statistics: 776 PDF objects out of 1000 (max. 8388607)
- 384 named destinations out of 1000 (max. 131072)
+PDF statistics: 827 PDF objects out of 1000 (max. 8388607)
+ 416 named destinations out of 1000 (max. 131072)
  72 words of extra memory for PDF output out of 10000 (max. 100000000)
 
