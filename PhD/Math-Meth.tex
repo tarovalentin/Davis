@@ -27,7 +27,7 @@ Residue theorem:
 If you have some domain with poles in them, you can pinch the conbtour of integration (since it doesn't affect the end results) around these poles. $f$ is analytic in the domain and on the boundary then
 \begin{equation}
 \oint _C \dd z  f(z)=2\pi i \sum_{a_i\in D}\Res[f(a_i)]\end{equation}
-\underline{Jordan's Lemma:} Integrals along the real line, so the contour is just the real axis, so it is open:
+\subsection{Jordan's Lemma} Integrals along the real line, so the contour is just the real axis, so it is open:
 \begin{equation}
 	\sum_{-\infty}^{\infty}f(x)\dd x= \lim_{R\to \infty }\int_{-R}^{R}f(x)\dd x
 \end{equation}
@@ -39,7 +39,7 @@ Let $C_R$ be a semicircle of radius R in e.g. upper half plane (UHP) and f is an
 	\int_{C_R} \dd z e^{i\alpha z}\to 0 \text{ as } R\to \infty, \text{ for } \alpha > 0
 \end{equation}
 This gets an exponential damping through $i\alpha z=i\alpha \Re (z)-\alpha \Im(z)$, so the integral is bounded by $1/R$ which goes to zero when we take $R\to \infty$\\
-\underline{Example:}
+\subsubsection{Example I}
 Rational functions
 \begin{equation}
 \int_{-\infty}^{\infty}\frac{p(x)}{q(x)}
@@ -49,7 +49,7 @@ with $p$ and $q$ begin polynomials with $q$ being one degree higher than $p$, al
 	\int_{-\infty}^{\infty}\frac{p(x)}{q(x)}=\lim_{R\to \infty}\int_{-R}^{R}\frac{p(x)}{q(x)}\to \oint_\gamma \dd z\frac{p(z)}{q(z)}=2\pi i \sum_{a_i\in\text{UHP}}\Res[\frac{p(a_i)}{q(a_i)}]
 \end{equation}
 where $\gamma$ is closed contour in either UHP or LHP with LHP giving a negative sign.\\
-\underline{Example I}
+\subsubsection{Example II}
 \begin{equation}
 \begin{aligned}
 \int_{0}^{\infty}\frac{x^2}{(x^2+1)(x^2+9)}&=\frac{1}{2}\int_{-\infty}^{\infty}\frac{x^2}{(x^2+1)(x^2+9)}\\
@@ -70,7 +70,7 @@ This has zeros at $z^2=1$ and $z^2=9$ so 4 simple poles at $z=\{-3i,-i,i,3i\}$. 
 \end{aligned}
 \end{equation}
 For simple pole one can just drop the pole part and evaluate the remainder at the pole to get the residue.\\
-\underline{Example II}
+\subsubsection{Example III}
 Sin for imaginary values is just Sinh, so $\sin(a z)\to 0$ as $Im(z)\to \pm\infty$ depending on sign of $a:\pm$. Using $\sin(az)=\Im(e^{iz})$
 \begin{equation}
 	\begin{aligned}
@@ -107,8 +107,8 @@ E.g.
 		&=\frac{2\pi}{\sqrt{1-a^2}}
 	\end{aligned}
 \end{equation}
-the poles are at $z=-\frac{-1\pm\sqrt{1-a^2}}{a}$\\
-\underline{Principal Value Prescription (Feynman $i\epsilon$ prescription)}
+the poles are at $z=-\frac{-1\pm\sqrt{1-a^2}}{a}$
+\subsection{Principal Value Prescription (Feynman $i\epsilon$ prescription)}
 If one tries to integrate a function that blows up on the real line, e.g.
 \begin{equation}
 \int_{-\infty}^{\infty}\frac{f(x)}{x-a}, ~~~ a\in \mathds{R}
@@ -126,7 +126,7 @@ where P is the principal part (the part of the integral that ignores the diverge
 \begin{equation}
 \frac{1}{x-a\pm i\epsilon}=P(\frac{1}{x-a})\mp i \pi\delta(x-a)
 \end{equation}
-\underline{Example I}\\\\
+\subsubsection{Example I}
 Using the Feynman Prescription
 \begin{equation}
 \begin{aligned}
@@ -136,7 +136,7 @@ Using the Feynman Prescription
   &=\pi/2
 \end{aligned}
 \end{equation}
-\underline{Example II}
+\subsubsection{Example II}
 \begin{equation}
 	\begin{aligned}
 		\int_{0}^{\infty} \dd k\frac{e^{ikx}}{k^2-m^2} &=\frac{1}{2}\Im\left[ \int_{-\infty}^{\infty} \dd x\frac{e^{ix}}{x}\right]
@@ -153,7 +153,7 @@ z\to f(z)
 \end{equation}
 we can think of this map from some domain in z-plane to $w=f(z)$. It maps points to points. So if $f$ is analytic in the first region\footnote{We only consider simply connected domains, i.e. no holes in the domains.} then it is analytic after the map.
 \\\\
-\underline{Riemann Mapping Theorem}
+\subsection{Riemann Mapping Theorem}
 The interior of any domain $\Omega$ (with more than 1 point on $\partial\Omega$), can be conformally mapped to the unit disc $D$ with the boundary being mapped to the unit circle. The map can be made unique by choosing to map a particular point $w_0\in \Omega$ to the origin of $D$ and by orienting a particular directions from $w_0$ to the real axis in $D$.
 % TODO: \usepackage{graphicx} required
 \begin{figure}[H]
@@ -439,7 +439,7 @@ The cut can be placed anywhere in the complex plane, one just has to be consiste
 \end{itemize}
 Branch cuts show up a lot in 2d CFT's. Since fermions live on the double cover. Another way to put it is that since fermions behave as $\psi^\mu(x)=\psi^\mu(x+2\pi)=-\psi^\mu(x)$, which means it behaves like the squareroot function.
 \subsection{Integrating functions with branch-cuts}
-\underline{Example I:}
+\subsubsection{Example I}
 \begin{equation}
 \begin{aligned}
 I=\int_{0}^{\infty}\dd x \frac{x^\alpha}{1+x^2},~~~~~|\alpha|<1
@@ -479,6 +479,7 @@ Similarly
 	\end{aligned}
 \end{equation}
 \section{Analytic continuation}
+\subsection{Introduction}
 Often times one encounters a computation where there are certain limitations using real analysis, e.g. the integral has a part that is diverging. The basic idea of analytic continuation relies on the fact that complex analytic functions are very constrained, i.e. it suffices to them in a small neighborhood. This allow one to extend the definition to a larger domain while maintaining analyticity.
 \\\\
 As an example, let us imagine the following three domains, where we know that $f_1$ is analytic in $D_1$ and that $f_2$ is analytic in $D_2$. Further we know that $f_1=f_2$ in some common domain $D\subset D_1,D_2$. Then we conclude there must be a function which is analytic in the domain $D_1\cup D_2$.
@@ -488,7 +489,7 @@ As an example, let us imagine the following three domains, where we know that $f
 	\caption{}
 	\label{fig:4}
 \end{figure}
-\underline{Example I}\\\\
+\subsubsection{Example I}
 Take the functions
 \begin{equation}
 \begin{aligned}
@@ -503,8 +504,8 @@ These two functions have the same representation but are valid for different dom
 	\caption{}
 	\label{fig:4}
 \end{figure}
-The function $f_2$ has been analytically continued and is valid for the much larger domain $D_2$\\\\
-\underline{Example II}\\\\
+The function $f_2$ has been analytically continued and is valid for the much larger domain $D_2$
+\subsubsection{Example II}
 We will often encounter integrals which can be analytically continued.
 \begin{figure}[H]
 	\centering
@@ -513,7 +514,7 @@ We will often encounter integrals which can be analytically continued.
 	\label{fig:4}
 \end{figure}
 If you were given the first integral, one would naively think that for certain values of $z$ we would not be able to perform it, however we see that from the infinite sum one can define a version which is valid in part of the domain that was previously excluded.\\\\
-\underline{Example III}\\\\
+\subsubsection{Example III}
 Take $\phi(x)$ to be a test function which decays rapidly enough at infinity. We then take the following integral defining an "inner product"
 \begin{equation}
 (x^{\alpha-1},\phi)=\int_0^\infty x^{\alpha-1}\phi(x)\dd x
@@ -541,7 +542,7 @@ I(\alpha)&=\frac{1}{\alpha(\alpha+1)}\int_{0}^{\infty}x^{\alpha+1}\phi''(x)\dd x
 \end{equation}
 Each iteration pushed the domain one more integer into the negative $x$ axis and has poles at $\alpha=-n$ with residues \\\\
 ...\\\\
-\underline{Gamma function}\\\\
+\subsection{Gamma function}
 A famous example is the function
 \begin{equation}
 \Gamma(z)=\int_0^{\infty}t^{z-1}e^{-t}\dd t~~~~~\Re(z)>0
@@ -579,6 +580,425 @@ For positive $n$ where is no cut and the integrand can just be evaluated on the 
 \end{aligned}
 \end{equation}
 And so we see that the recursion formula from before works for this way of expressing the gamma function as well.
+\subsection{Schwarz Reflection Principle}
+Suppose we have a function $f_1$ which is analytic in $D_1$ (and along the boundary $B$). If we then reflect this function $e.g.$ on the real axis, and call it $f_2$, then $f_1=f_2$ on $B$. Or $f_1=f_2$ on $D_1\cup D_2$.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{21}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+Say one has $f$ analytic in some domain $D$ which contains a part of the real line $\mathds R_{[a,b]}$. Further let us assume $f(z)$ is real when $z\in \mathds{R}$. Then we can construct a new function, $g(z)$, which extends $f(z)$ below the real axis:
+\begin{equation}
+g(z)=\begin{cases}
+f(z)~~~~z\in D\\
+\overline{f(\overline{z})}~~~~z\in D^*
+\end{cases}
+\end{equation}
+This shows up for instance in the context of dispersion relation which we will now go through.
+\subsection{Dispersion Relations and Optical Theorems}
+If you have light traveling through some non-linear medium, then the wave-profile will get attenuated (loss of flux density through medium) as it propagates
+\begin{equation}
+e^{i n(\omega)\bm k\cdot \bm x-i\omega t},~~~~~~n(\omega)=n_r+in_I: \text{ Complex refraction coeffecient}
+\end{equation}
+One can thing of the refraction coeffecient as an analytic function of (complex) $\omega $ and the physical refraction coefficient is the limit as you approach the the real part from above
+\begin{equation}
+n_{\text{phys}}(\omega )=\lim_{\epsilon\to 0^+}n(\omega +i\epsilon)
+\end{equation}
+In these cases the behavior of $n$ will usually look something like the following
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{22}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+It has cuts on the real axis, which give non-trivial scattering in the medium in this region.
+Another example of analytic continuation one can consider a damped harmonic oscillator with external driving
+\begin{equation}
+\ddot{x}+\gamma \dot{x}+(\Omega^2+\gamma^2)x=F(t)
+\end{equation}
+The solutions can be written as
+\begin{equation}
+x_{\text{sol}}(t)=\int_{-\infty}^{\infty}G(t-t')F(t')F(t')\dd t'
+\end{equation}
+We implement the boundary condition $G(t)=0$ for $t<0$, essentially turning on the driving force at $t=0$. The fourrier tranformed greensfunction is
+\begin{equation}
+G(w)=\int_{-\infty}^{\infty}G(t)e^{i\omega t}
+\end{equation}
+This is analytic in the UHP and can be solved by
+\begin{equation}
+G(\omega)=-\frac{1}{(\omega+i\gamma)^2-\Omega^2}
+\end{equation}
+which has poles as indicated on the figure below
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{23}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+Suppose we have a function $f(z)$ which has a cut on part of the real axis. We can use the Schwarz reflection principle to tell us something about the function. First we evaluate this using the keyhole contour and can represent the function in the following manor (given it has a residue at $\xi=z$):
+\begin{equation}
+\begin{aligned}
+f(z)=\frac{1}{2\pi i}\int_C \frac{f(\xi)}{\xi-z}\dd \xi
+\end{aligned}
+\end{equation}
+If $f$ was known above the real axis and we get it below by using the reflection principle, we can write
+\begin{equation}
+	\begin{aligned}
+		f(z)=\frac{1}{2\pi i}\left[\int_{x_0}^{\infty}\dd x \frac{f(x+i\epsilon)}{x-z+i\epsilon}-\int_{x_0}^{\infty}\dd x \frac{f(x-i\epsilon)}{x-z-i\epsilon}\right]
+	\end{aligned}
+\end{equation}
+where we assume that $z$ is not on the real axis and that $f(z)$ decays fast enough to use Jordan's Lemma. From combining the two we get
+\begin{equation}
+	\begin{aligned}
+		f(z)=\frac{1}{\pi}\int_{x_0}^{\infty}\dd x \frac{\Im f(x+i\epsilon)}{x-z}
+	\end{aligned}
+\end{equation}
+This is known at the dispersion relation. If $f(z)$ is not damped at infinity for large $\Im(z)$ then we can instead derive the once subtracted dispersion
+\begin{equation}
+	\begin{aligned}
+		f(z)-f(z_0)=\frac{z-z_0}{\pi}\int_{x_0}^{\infty}\dd x \frac{\Im f(x+i\epsilon)}{(x-z)(x-z_0)}
+	\end{aligned}
+\end{equation}
+Now the denominator goes as $x^2$ which helps with convergence at large $x$. These types of equations show up for instance when there is propagation through some medium with attenuation. For light propagation one gets the \textit{Optical Theorem}
+\begin{equation}
+	\begin{aligned}
+		\Im [f(\omega)]=\frac{\omega}{4\pi}\sigma_{\text{abs}}(\omega)
+	\end{aligned}
+\end{equation}
+where $f(w)$ is the forward scattering amplitude and $\sigma(w)$ is the total absorption cross-section. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Asymptotic expansions}
+Consider the following anharmonic integral which we can take as a toy model for quantum mechanics. 
+\begin{equation}
+	\begin{aligned}
+		f(\lambda)=\int_{-\infty}^{\infty}\dd e^{-x^2-\lambda x^4}
+	\end{aligned}
+\end{equation}
+One can't use Gaussian tricks because of the $x^4$ term. Let us instead then write this part as a Taylor series, assuming $\lambda \ll 1$
+\begin{equation}
+	\begin{aligned}
+		f(\lambda)&=\int_{-\infty}^{\infty}\dd e^{-x^2}\left[\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\lambda^n x^{4n}\right]\\
+		&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\lambda^n\int_{-\infty}^{\infty}\dd e^{-x^2} x^{4n}\\
+		&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\lambda^n\,\Gamma(2n+\frac{1}{2})\\
+	\end{aligned}
+\end{equation}
+Where the Gamma-function integral is obtained through a change of variables. Now we have a problem though, since the gamma function is approximately $\Gamma\sim (2n)!$ so the series is non-convergent. This is related to the non-careful swapping of the order of limits. The series representation obtained is asymptotic though since 
+\begin{equation}
+	\begin{aligned}
+		f(\lambda)\sum_{n=0}^{\infty}\sim a_n\lambda^n
+	\end{aligned}
+\end{equation}
+From this $f(\lambda)$ can be aveluated by fixing lambda and then taking a certain number of term in the series.
+\begin{equation}
+	f(\lambda)\sim \sum_{n=0}^{N} a_n\lambda^n+\mathcal{O} (\lambda^{N+1})
+\end{equation}
+where the following limit is bounded, but can be large
+\begin{equation}
+	\begin{aligned}
+		\lim_{\lambda\to 0}\frac{|f(\lambda)-\sum_{n=0}^{N} a_n\lambda^n|}{|\lambda^{N+1}|}=K<\infty
+	\end{aligned}
+\end{equation}
+For a fixed number of terms in the series, one decides how small $\lambda$ need to be, to get a good approximation. All perturbation series calculations we will ever do are in this regime. Note that one cannot deduce from the series (naïvely) the fact that there may be non-perturbation effects that scale like $e^{-\verb|#|/\lambda}$.
+
+Another important application is in statistical mechanics. Say you are looking at the canonical partition function
+\begin{equation}
+	\begin{aligned}
+		Z(\beta)=\sum_n \dd n\, e^{-\beta E_n}
+	\end{aligned}
+\end{equation}
+here the $d_n$ denote degeneracies at level $n$. To compute $d_n$ from $Z(\beta)$ we can calculate the spectral density and then read of the number of states with a given energy.
+\begin{equation}
+	\begin{aligned}
+	\rho(E)	\int\dd \beta \,Z(\beta)e^{\beta e}
+	\end{aligned}
+\end{equation}
+At large E this is however not regulated and this is the type of problem that we would like to deal with.
+\subsection{Stirlings asymptotics for $\Gamma(x)$}
+Let us remind ourselves of the following form og the $\Gamma$ function
+\begin{equation}
+	\begin{aligned}
+		\Gamma(x+1)&=\int_{0}^{\infty}e^{-t} t^x \,\dd t\\
+		&=x^{x+1}\int_{0}^{\infty}e^{x\left[\log \zeta-\zeta\right]} \,\dd \zeta
+	\end{aligned}
+\end{equation}
+where we have performed a change of variables in the second line $t=x\zeta$. We would know like to know how this behaves for large $x$. The integrand $e^{xf(\zeta)}$ for large $x$ is exponentially large near local maxima $\Re f(\zeta)$. If we fix $x$ this means that the integrand is sharply peaked around this maximum.  In our case 
+\begin{equation}
+	\begin{aligned}
+		f(\zeta)=\log \zeta -\zeta =-1-\frac{1}{2}(\zeta-1)^2+\mathcal{O}(\zeta^4)
+	\end{aligned}
+\end{equation}
+which has a maximum at $\zeta=1$.
+\begin{equation}
+	\begin{aligned}
+				\frac{\Gamma(x+1)}{x^{x+1}}
+		&=x^{x+1}\int_{0}^{\infty}e^{-x}e^{-x\frac{1}{2}(\zeta-1)^2+\cdots} \,\dd \zeta
+	\end{aligned}
+\end{equation}
+There is a local maximum at $\zeta=1$ and we have quadratic corrections which fall off fast away from the maximum. Performing the Gaussian integration and dropping the higher order corrections one obtains
+\begin{equation}
+	\begin{aligned}
+		\Gamma(x+1)
+		&=e^{x+\frac{1}{2}}e^{-x}\sqrt{\frac{2\pi}{x}}
+	\end{aligned}
+\end{equation}
+Retaining higher order terms, one could obtain an asymptotic expansion.
+\begin{equation}
+	\begin{aligned}
+		\Gamma(x+1)
+		&\sim e^{x+\frac{1}{2}}e^{-x}\sqrt{2\pi}\left[1+\frac{1}{12x}+\frac{1}{288x^2}+\cdots \right]
+	\end{aligned}
+\end{equation}
+\subsection{Saddle point evaluation of integrals by the method of steepest descend}
+Think of the integrand of some function, then we go to some local maximum and we then go down from this maximum following the path where the real part decreases the fastest, while the imaginary part doesn't oscillate to quickly. The formal structure is integrals of the following form
+\begin{equation}
+	\begin{aligned}
+		\int_C e^{\alpha f(z)}g(z)\,\dd z,~~~~~~|\alpha|\ll 1
+	\end{aligned}
+\end{equation}
+and we demand that $\Re f(z)$ decreased rapidly enough from the maximum at some $z=z_0$ and that $\Im f(z)$ stays roughly the same.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Groups, Lie Algebra and Representations}
+\subsection{Definition of groups}
+A group is defined as follows:\\\\
+A set of elements with some operation, referred to as mulitplication that acts in the following manor
+\begin{itemize}
+\item $x,y\in G~~ \to~~x\cdot y \in G$ 
+\item $\exists\, I\in G~~ \to~~x\cdot I=I\cdot x =x~~~~\forall\in G$ 
+\item $\forall\, x\in G~~\exists\,x^{-1}\to x^{-1} x=x x^{-1}=I$
+\item the multiplication is associative $(x\cdot y)\cdot z=x\cdot (y\cdot z)$
+\item Not necessarily commutative $x\cdot y\neq y\cdot x$, if it is, the group is Abelian.
+\end{itemize}
+\subsection{Subgroups and conjugacy classes:}
+A subset  $S\subset G$ is a subgroup if $S$ is closed under multiplication. An example is the group of integers which is a subgroup of the real numbers, with both the group and the subgroup having addition as its multiplication rule.
+
+Two elements $x,y\in G$ are conjugate if $\exists\,g\in G\to x=g\cdot y\cdot g^{-1}$, with $g$ the conjugating element. This can be used to define equivalence classes. As an example think of rotations in 3 dimensions, all rotations that are classified by a specific angle are equivalent to each other, which can be seen by performing a suitable rotation of basis.
+
+\subsection{Permutation group}
+Define the group by action on $\{1,2,\dots,n\}$. This action can be represented by $\sigma=(\sigma(1)\,\sigma(2)\,\sigma(3)\,\dots,\sigma(n))$. There are $n!$ elements, which is also known at the order of the group. 
+\begin{equation}
+\sigma: 
+\begin{pmatrix}
+1 & 2 & 3 \cdots & n\\
+\sigma(1) & \sigma(2) & \sigma(3) \cdots & \sigma(n)
+\end{pmatrix}
+\end{equation}
+The elements of $S_2$ are
+\begin{equation}
+S_2:~~~~~\begin{pmatrix}
+1 & 2\\
+1 & 2
+\end{pmatrix}
+~~~\begin{pmatrix}
+	1 & 2\\
+	 2& 1
+\end{pmatrix}
+\end{equation}
+Every permutation can be decomposed into 
+\begin{itemize}
+\item a sequence of cycles
+\item into a sequence of transpositions (cycles of length 2)
+\end{itemize}
+Example\\\\
+We take an element of $S_8$ and notice that there for this element a few closed cycles:
+\begin{equation}
+\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+	3 & 5 & 7 & 1 & 2 & 8 & 4 & 6
+\end{pmatrix}\in S_8 =(1374)(25)(68)
+\end{equation}
+Cycles are classified by their lengths:
+\begin{itemize}
+\item (1) cycle takes elements to it self, so are often omitted.
+\item (2) cycles are known as transpositions and every longer cycle can be decomposed in terms of these. 
+\end{itemize}
+Permutations can be assigned a parity (even/odd) by counting the number of transpositions. Two permutations are conjugate if and only if they have the same cycle structure, meaning that if $\sigma,\pi\in S_n$ are conjugate, i.e $\exists\,\xi \in S_n\to  \sigma \xi \cdot \pi \xi^{-1}$, then cycles$\,\sigma$=cycles$\,\pi$. If we denote the number of $n$-cycles in a permutation by $r_n$, so that $n=r_1+4r_2+3r_3\cdot nr_n$. 
+\subsection{Continous Groups}
+We start of be looking at an example. Rotations in three dimensions can be represented by
+\begin{equation}
+\begin{pmatrix}
+	x\\
+	y\\
+	z
+\end{pmatrix}\to M
+\begin{pmatrix}
+	x\\
+	y\\
+	z
+\end{pmatrix}
+\end{equation}
+For instance rotation by an angle $\theta$ about the $z-axis$ can be represented by the matrix
+\begin{equation}M_z=
+\begin{pmatrix}
+\cos\theta & -\sin \theta & 0\\
+\sin \theta & \cos \theta & 0\\
+0 & 0 & 1
+\end{pmatrix}
+\end{equation}
+Or for infinitesimal rotations
+\begin{equation}
+M_z=1-i\theta T_z,~~~~~~T_z\begin{pmatrix}
+	0 & -i & 0\\
+	i & 0 & 0\\
+	0 & 0 & 0
+\end{pmatrix}
+\end{equation}
+One can use this representation to write
+\begin{equation}
+M_z=\exp(-iT_z\theta)
+\end{equation}
+with $T_z$ being the generator of rotations about the $z$-axis. Similar arguments hold for $x$ and $y$ directions
+The matrix $M_z\in SO(3)$ which is the group of $3\times 3$ orthogonal matrices with unit determinant. The generators satisfy the following algebra
+\begin{equation}
+[T_i,T_j]=i\epsilon_{ijk}T_k
+\end{equation}
+\subsection{Lie Algebra}
+As seen in the previous subsection, Lie Algebras are important. We will in the course define them in the following way:\\\\
+A set of generators $X_a$ and a antisymmetric Lie product $[\;,\,]$ such that $[X_a,X_b]i f_{abc}X_c$ with the $f_{abc}$'s being the structure constants of the algebra. It so satisfies
+\begin{itemize}
+\item $[X_a,X_b]=-[X_b,X_a]$
+\item $[\alpha X_a+\beta X_b,X_c]=\alpha[ X_a,X_c]+\beta [X_b,X_c]$
+\item $[X_a,[X_b,X_c]]+[X_b,[X_c,X_a]]+[X_c,[X_a,X_b]]$
+\end{itemize}
+Put simply: Lie algebra is a vector space spanned by the generators $X_a$ with additional structure given by the structure constants $f_{abc}$.
+\subsection{Representations of group/algebra}
+In physics we often want to represent the action of the group elements/algebra generators on some vector space, which still preserves the group/algebra structure. Take e.g the following lie algebra $t_x,t_y,t_z$ satisfying $[t_i,t_j]=i\epsilon_{ijk}t_k$. These can be represented by the matrices described two subsections ago by $T_x,T_y,T_z$.  \\
+If $g\in G$ and $\ket{i}$ form a basis of some vectorspace $V$. We can associate $g$ to some linear operator $R(g)\in V\otimes V^*$, such that $R(g)\ket{i}$ gives action of $g$ on $V$:
+\begin{equation}
+R(g)\ket{i}=\sum_j \ket{j}\mel{j}{R(g)}{i}=[R(g)]_{ij}\ket{j}
+\end{equation}
+where $[R(g)]_{ij}$ is the matric representation of $R(g)$ on $V$.
+\subsection{Representations of groups}
+We want a faithful represntation of groups/algebra elements in terms of linear operators acting on some vector space.
+It can be convenient to think of this vector space as the quantum Hilbert space and the operators quantum on this space. We take the vector space
+\begin{equation}
+V= \text{span}\{\ket{i}\}
+\end{equation}
+If $g\in G$, then the representation act on the vector space according to
+\begin{equation}
+	R(g)\ket{i}=\sum_j \ket{j}\mel{j}{R(g)}{i}=[R(g)]_{ij}\ket{j}
+\end{equation}
+A very important group is the group of unitary ($U^\dagger U=1$) $n\times n$ matrices with unit determinant, also known as $SU(n)$. The corresponding algebra is generated by 
+\begin{equation}
+[t_a,t_b]=if_{abc}t_c
+\end{equation}
+Suppose we have matrices $(U_a)_{ij}$ which represent the generators
+\begin{equation}
+	(t_a)_{ij}=(U_a)_{ij}
+\end{equation}
+here $a=1,2,\dots,n^2-1$ and $i,j=1,2,\dots,n$
+For convenience and notational clarity we will in the following drop the generator label, $a$, and use super/sub-scripts.
+\begin{equation}
+U^i_j=U_{ij},~~~~~~(U^\dagger)^k_j=(U_k^j)^*
+\end{equation}
+The vectors in the representation space are labeled by $\phi_i\leftrightarrow\ket{i}$. We can now use this to define the fundamental representation
+\subsubsection{Fundamental representation}
+We will denote this by $R(U)$ which acts by rotating the basis vectors. 
+\begin{equation}
+\phi_i\to U_i^j \phi_j
+\end{equation}
+Since SU$(n)$ is the space of $n\times n$ matrices the fundamental reprensenation is $n$-dimensional\footnote{Dimensionality of the represenation is the number of basis vectors in the vectorspace}.
+\subsubsection{Conjugate fundamental representation}
+We will denote this by $\bar R(U)$ which acts by rotating the basis vectors. 
+\begin{equation}
+	\phi_i\to (U_i^j)^* \phi_j
+\end{equation}
+This is also $n$-dimensional. One could also write this in the following way
+\begin{equation}
+	\phi^i\to (U^\dagger)^i_j \phi^j
+\end{equation}
+The $\phi^i$ form the basis of the dual vector space $V^*$. One can think of them as $\phi^i\leftrightarrow\bra{i}$.
+\subsubsection{Trivial representation}
+Here one maps all elements of the group to the identity operator. Having presented the fundamental representions we now claim that all other representations can be build from tensor products of fundamental and conjugate-fundamental representations.
+\begin{equation}
+\underbrace{V\otimes V\otimes V\otimes V}_p\otimes \underbrace{V^*\otimes V^*\otimes V^*\otimes V^*}_q=V^p\otimes (V^*)^q
+\end{equation}
+and we can represent the basis vectors by tensors
+\begin{equation}
+\phi_{i_1\cdots i_n}^{j_1\cdots j_n}=\phi_{i_1}\otimes\phi_{i_2}\cdots
+\end{equation}
+One can obtain basis elements from rotations of the indices. e.g.
+\begin{equation}
+	\phi_{ij}^{kl}\to U_i^a U_j^b (U^\dagger)^k_c (U^\dagger)^l_d \phi_{ab}^{cd}
+\end{equation}
+The tensor product representations are simple to build, but they are not canonical because they can be decomposed into irreducible parts. In words, the smallest representation is the fundamental one which is $n$-dimensional. By combining matrices through the tensor product one is essentially making one large matrix which we would like to decompose into smaller submatrices that don't transform into each other.
+
+Suppose for instance we have $V\otimes V$
+\begin{equation}
+R_{fun\,fun}:~~~\phi_{ij}\to U_i^kU_j^l \phi_{kl}
+\end{equation}
+We can always split up the $\phi$ into a symmetric and antisymmtric part:
+\begin{equation} \label{eq:vecspace}
+\phi_{ij}=\frac{1}{2}(\phi_{ij}+\phi_{ij})+\frac{1}{2}(\phi_{ij}-\phi_{ij})
+\end{equation}
+The size of the representation is then
+\begin{equation}
+n^2 = \frac{1}{2}n(n+1)+\frac{1}{2}n(n-1)
+\end{equation}
+and our vectorspace can written as
+\begin{equation}
+V\otimes V=\text{sym}(V\otimes V)+\text{antisym}(V\otimes V)
+\end{equation}
+\subsection{Definitions}
+\subsubsection{Equivalent representations}
+Two representations are equivalent if they are related by a similarity transform. So if $R_2(U)=S(R_1(U))S^{-1}~~\forall\,U$, then $R_1\sim R_2 $
+\subsubsection{Reducible representation}
+The matrix representation is block diagonal.
+\begin{equation}
+R[U]=\begin{pmatrix}
+A(U) & C(U)\\ 0 & B(U)
+\end{pmatrix}
+\end{equation}
+If $C(U)=0$ this is \textit{completely reducible}. In this case the vector space splits into orthogonal subspaces
+\begin{equation}
+V=V_A \oplus V_B
+\end{equation}
+\subsubsection{Irreducible representation}
+A representation in which $\nexists$ a proper subspace of the representation vectors space $V$ which is left invariant by the generators.
+\subsubsection{Invariant tensors}
+Consider the anti-symmetric tensor $\epsilon_{ij}$ and $\epsilon^{ij}$. This is invariant under $SU(2)$. The transformation gives this away since
+\begin{equation}
+\epsilon_{ij}\to U_i^k U_j^l\epsilon_{kl}= \det U \epsilon_{ij}.
+\end{equation}
+Similarly $\delta^i_j$ is also invariant.
+\subsection{SU(2)}
+We look at the space of complex $2\times 2$ unitary matrices with unit determinant, which we can write as
+\begin{equation}
+\begin{pmatrix}
+a & b \\ -b & a^*
+\end{pmatrix},~~~~~~|a^2|+|b^2|=1
+\end{equation}
+the dimensionality is $2^2-1=3$ and the algebra is the spin algebra
+\begin{equation}
+[t_i,t_j]=i \epsilon_{ijk}t_k
+\end{equation}
+The fundamental representation $R_f$ maps
+\begin{equation}
+\phi_i\to U_i^j \phi_j,~~~~i=1,2
+\end{equation}
+Since $\epsilon_{ij}$ is invariant for SU(2) we can define an isomorphism between vector and dual vectors
+\begin{equation}
+\phi_i\to\xi ^i=\epsilon^{ij}\phi_j
+\end{equation}
+All representations are real and the fundamental is the same as the conjugate fundamental. For any R $\exists$ a similarity transform S, $R^*=S R S^{-1}$.
+We can keep exploiting $\epsilon^{ij}$ to reduce tensors. 
+\begin{equation}
+\begin{aligned}
+\phi_{[ij]}&\propto \epsilon_{ij}\\
+ \xi^{ijkl}&=\xi^{(ij)kl}+\xi^{[ij]kl}=\xi^{(ij)kl}+\epsilon^{ij}\chi^{kl}
+\end{aligned}
+\end{equation}
+From this we can deduce that all irreps of SU(2) correspond to totally symmetric finite rank tensors, since every anti-symmetric piece can be removed using $\epsilon$. We can then find the irreps:
+\begin{itemize}
+	\item 1d trivial rep
+	\item 2d fundamental
+	\item 3d [fun $\otimes$ fun] adjoint 
+\end{itemize}
+and so on. It is customary to denote irreps by dim $\bm r$ which is represented by an $r-1$ symmetric tensor.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section*{Homework 1\\\\
 Taro V. Brown}\vspace*{1cm}
@@ -1240,7 +1660,7 @@ We want to calulate the integral
 \begin{equation}
 I_1=\int_{0}^{\infty}\dd x\frac{x^{-a}}{x+1},~~~~~\alpha \in (0,1)
 \end{equation}
-If we extend this to the complex plane we need to specify a contour which avoids the branch cut along the real axis. A suitable contour is the keyhole (Pacman) contour, see figure
+If we extend this to the complex plane we need to specify a contour which avoids the branch cut along the real axis. A suitable contour is the keyhole (Pac Man) contour, see figure
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -1283,7 +1703,7 @@ We start of by noting that the large and small circle contours don't contribute 
 	i\epsilon e^{i\theta}\dd z\frac{e^{-i\alpha\theta }\epsilon^{-a}}{e^{i\theta }\epsilon+1}\sim \epsilon^{1-\alpha}\to 0~~~~\text{ as }~~\epsilon\to0,~~~~~\text{for }\alpha \in (0,1)
 \end{aligned}
 \end{equation}
-on the upper contour $z=xe^{0i}$ and on the lower $z=xe^{2\pi i}$, with the only pole inseide the contour being the simple pole at $z=-1=e^{i\pi}$. The residue on this pole is easily seen to be $(-1)^{\alpha}=e^{-i\pi \alpha}$ and so the residue theorem then gives (after flipping the integration ranges one of the contours)
+on the upper contour $z=xe^{0i}$ and on the lower $z=xe^{2\pi i}$, with the only pole inside the contour being the simple pole at $z=-1=e^{i\pi}$. The residue on this pole is easily seen to be $(-1)^{\alpha}=e^{-i\pi \alpha}$ and so the residue theorem then gives (after flipping the integration ranges one of the contours)
 \begin{equation}
 \begin{aligned}
 2\pi i e^{-i\pi \alpha}&=\int_{0}^{\infty}\dd x\,\frac{x^{-\alpha}}{1+x}-\int_{0}^{\infty}\dd x\,\frac{x^{-\alpha}e^{-2\pi i\alpha}}{1+xe^{-2\pi i}}\\
@@ -1334,7 +1754,7 @@ We now find the sum of the integrals of the two vertical contours (parameterizin
 For the top of the square we have $z=x+iR$
 \begin{equation}
 \begin{aligned}
-\int_{\pi}^{0}\log(-2ie^{i(x+iR)}\sin (x+iR))
+\int_{\pi}^{0}\dd x\log(-2ie^{i(x+iR)}\sin (x+iR))
 \end{aligned}
 \end{equation}
 By letting $R\to\infty$ we get that the integrand goes as
@@ -1344,13 +1764,51 @@ By letting $R\to\infty$ we get that the integrand goes as
 &=\lim_{R\to\infty} \log(1+e^{2ix-2R})=0
 	\end{aligned}
 \end{equation}
-Finally we see that only the bottom line segment contributes. Here we get
+Finally we see that only the bottom line segment contributes. Here we get ( setting $z=x$ and expanding the logarithm)
 \begin{equation}
 	\begin{aligned}
-		\int^{\pi}_{0}\log(-2ie^{i(x+iR)}\sin (x+iR))
+		\int^{\pi}_{0}\dd x\log(-2ie^{ix}\sin (x))&=	\int^{\pi}_{0}\dd x \left(ix+\log 2+\log (\sin x)+\log(-i)\right)\\
+		&=	\frac{ix^2}{2}+\pi\log 2+\pi\log(-i)+\int^{\pi}_{0}\dd x \log (\sin x)\\
+				&=\pi\log 2+\int^{\pi}_{0}\dd x \log (\sin x)
 	\end{aligned}
 \end{equation}
+Since the closed contour integral was zero along the full contour and all other segments vanished we finally find
+\begin{equation}
+\int^{\pi}_{0}\dd x \log (\sin x)=-\pi\log 2
+\end{equation}
 \subsection*{Integral 3}
+Lastly we consider the integral
+\begin{equation}
+I_3=\int_{0}^{\infty}\dd x\,\frac{x^{\alpha-1}}{1+x^4},~~~~~\alpha\in(0,4)
+\end{equation}
+The complex integrand $f(z)=\frac{z^{\alpha-1}}{1+z^4}$ has poles at $\{e^{3\pi/4},e^{\pi/4},e^{-3\pi/4},e^{-\pi/4}\}$, we will however only consider a contour that encloses $z_0=e^{i\pi/4}$. Let us integrate along a contour in the first quadrant, see figure
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{cont}
+	\caption{First quadrant ontour}
+	\label{fig:rectangle}
+\end{figure}
+The complex integral along this contour picks up the following contribution from the residue
+\begin{equation}
+\oint\dd z\,\frac{z^{\alpha-1}}{1+z^4}=-\frac{i\pi}{2}e^{i\pi\alpha/4} 
+\end{equation}
+We then consider the individual contributions from the line segments. The quarter circle contributions vanishes as $R\to\infty$, which can be seen by parameterizing $z=Re^{i\theta}$ and looking at the integrand with the Jacobian, explicitly the $R$ goes as
+\begin{equation}
+\sim R\frac{R^{\alpha-1}}{1+R^{4}}\sim \frac{R^{\alpha}}{R^4}\to 0~~\text{as }~~R\to\infty ~~\text{ for } ~~ \alpha < 4
+\end{equation}
+The two other segments sum to give the following contribution as we increase the size of the contour (with $z=ix$ for the vertical and $z=x$ for the horizontal segment respectively)
+\begin{equation}
+\begin{aligned}
+\int_\infty^0 i \dd x\,\frac{(ix)^{\alpha-1}}{1+(ix)^4}+\int^\infty_0  \dd x\,\frac{x^{\alpha-1}}{1+x^4}&=(1-i^\alpha)\int^\infty_0  \dd x\,\frac{x^{\alpha-1}}{1+x^4}\\
+&=(1-e^{i\pi \alpha/2})\int^\infty_0  \dd x\,\frac{x^{\alpha-1}}{1+x^4}
+\end{aligned}
+\end{equation}
+Setting this equal to the contribution we found from the residue, one obtains
+\begin{equation}
+\begin{aligned}
+\int^\infty_0  \dd x\,\frac{x^{\alpha-1}}{1+x^4}=-\frac{i\pi}{2(1-e^{i\pi \alpha/2})}e^{i\pi\alpha/4}=\frac{\pi}{4\sin \alpha\pi/4}
+\end{aligned}
+\end{equation}
 \section*{Problem 2}
 \subsection*{Part a}
 We want to show that we can use the following integral
@@ -1359,10 +1817,10 @@ We want to show that we can use the following integral
 I_1=\int_0^\infty \dd z\, f(z)\log z
 \end{aligned}
 \end{equation}
-to compute an integral that isn't symmetric and hence can't be computed emidiatly using Jordan's Lemma.
+to compute an integral that isn't symmetric and hence can't be computed emidiatly using Jordan's Lemma, such as the following for $f(x)$ not symmetric:
 \begin{equation}
 	\begin{aligned}
-		I=\int_0^\infty \dd x\, f(x)
+		I=\int_0^\infty \dd x\, f(x)~~~~~~
 	\end{aligned}
 \end{equation}
 Since our integrand now includes the logarithm we must integrate around a contour that excludes the branch cut, see below:
@@ -1406,7 +1864,7 @@ C_U:&~~~~~~~~\text{Line segment from $\epsilon+i\epsilon$ to $R+i\epsilon$}\\
 C_L:&~~~~~~~~\text{Line segment from from $R-i\epsilon$ to $\epsilon-i\epsilon$}
 \end{aligned}
 \end{equation}
-where we take $\epsilon\to 0$ and $R\to \infty$ at the end. This limit should in most cases (but has to be checked) make the contributions from the large and small circles go to zero and so we are left with the discontuniuty over the branch cut. If we look at the two line segments we get two integrals that are restricted along real line (almost)
+where we take $\epsilon\to 0$ and $R\to \infty$ at the end. This limit should in most cases make the contributions from the large and small circles go to zero, but this has to be checked on case by case basis. Assuming that this holds we are left with the discontuniuty over the branch cut. If we look at the two line segments we get two integrals that are restricted just above and below the real line 
 \begin{equation}
 \begin{aligned}
 \int_{C_U}\dd z\, f(z)\log z=\int_{\epsilon}^{R} \dd x\, f(x+i \epsilon)\log (x+i\epsilon)\\
@@ -1436,7 +1894,7 @@ So that the sum is just
 &=-2\pi i I
 \end{aligned}
 \end{equation}
-Using this we see that we obtain the integral we wanted provided that the integrals along the large and small circle contours vanish.
+Using this we see that we obtain the integral we wanted, provided that the integrals along the large and small circle contours vanish.
 In that case we have
 \begin{equation}
 I=-\sum_{i}\Res[f(z)\log z]_{z=z_i}
@@ -1445,7 +1903,7 @@ I=-\sum_{i}\Res[f(z)\log z]_{z=z_i}
 \begin{equation}
 I_a=\int_0^\infty \dd x \frac{1}{(x+1)(x^2+2x+2)},~~~~I_b=\int_0^\infty\dd x \frac{1}{(x^3+1)}
 \end{equation}
-Performing the firt integral we first check that the contributions from the large and small circles vanish in the appropriate limits by parameterizing $z=Re^{i\theta}$ (large circle) and $z=\epsilon e^{i\theta}$ (small circle). To do this it is convenient to introduce something known as the ML estimate. For an analytic function around some contour $\gamma$ then 
+Performing the first integral we first check that the contributions from the large and small circles vanish in the appropriate limits by parameterizing $z=Re^{i\theta}$ (large circle) and $z=\epsilon e^{i\theta}$ (small circle). To do this it is convenient to introduce something known as the ML estimate. For an analytic function around some contour $\gamma$ then 
 \begin{equation}
 \left|\int_\gamma\,\dd z\, f(z)\right|\leq M L
 \end{equation}
@@ -1483,9 +1941,8 @@ So we have poles at $\{-1,i-1,-i-1\}$. The exponetial form of these residues are
 	\begin{aligned}
 	I_a&=-\Res\left[\log z f(z)\right]\Big|_{z=-1}-\Res\left[\log zf(z)\right]\Big|_{z=-1-i}-\Res\left[\log zf(z)\right]\Big|_{z=1-i}\\
 	&=-\frac{\log z}{\left[z-(i-1)\right] \left[z-(-i-1)\right]}\Bigg|_{z=-1}-\frac{\log z}{\left[z+1\right] \left[z-(-i-1)\right]}\Bigg|_{z=i-1}-\frac{\log z}{\left[z+1\right] \left[z-(i-1)\right]}\Bigg|_{z=-i-1}\\
-	&=-i \pi -\frac{1}{2} \log \left(\frac{1}{2}e^{\frac{5 i \pi }{4}}\right)-\frac{1}{2} \log \left(\frac{1}{2} e^{\frac{3 i \pi }{4}}\right)\\
-	&=-i \pi -\frac{1}{2} \log \left(\frac{1}{2}e^{\frac{5 i \pi }{4}}\right)-\frac{1}{2} \log \left(\frac{1}{2} e^{\frac{3 i \pi }{4}}\right)\\
-	&=\log 2	\end{aligned}
+	&=-i \pi -\frac{1}{4} \log \left(\frac{1}{2}e^{\frac{5 i \pi }{4}}\right)-\frac{1}{4} \log \left(\frac{1}{2} e^{\frac{3 i \pi }{4}}\right)\\
+	&=\frac{\log 2}{2}	\end{aligned}
 \end{equation}
 For the other integral again use the ML estimate for the large circle contour
 \begin{equation}
@@ -1506,7 +1963,7 @@ While, for the small circle
 		\int_{C_\epsilon} \dd z \frac{\log z}{(x+1)(x^2+2x+2)}&=\int_{\epsilon}^{2\pi-\epsilon} i\dd \theta \epsilon e^{i\theta} \frac{\log \epsilon e^{i\theta}}{(\epsilon e^{i\theta}+1)(\epsilon ^2e^{2i\theta}+2\epsilon e^{i\theta}+2)}\\
 	\end{aligned}
 \end{equation}
-where the integrand goes as
+where the integrand again goes as
 \begin{equation}
 	\begin{aligned}
 		\epsilon\log \epsilon \to 0 \text{ as }\epsilon\to 0
@@ -1533,9 +1990,9 @@ And evalue the residues at these poles
 \subsection*{Part a}
 We want to prove the Mittag-Leffler decomposition
 \begin{equation}
-f(z)=f(0)+\sum_{j=\infty}^{\infty }r_j\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
+f(z)=f(0)+\sum_{j=1}^{\infty }r_j\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
 \end{equation}
-First we assume that all the poles of $f(z)$ are simple as well as considering a contour enclosing $n$ poles. Then by the residue theorem we can split this into the poles of $f$ and the pole at $w=z$.
+First we assume that all the poles of $f(z)$ are simple as well as considering a contour enclosing $n$ poles for which $|z_1|<|z_2|<\dots$. Then by the residue theorem we can split this into the poles of $f(w)$ and the pole at $w=z$.
 \begin{equation}
 \begin{aligned}
 \frac{1}{2\pi i}\oint_\gamma \frac{f(w)}{w-z}dw&=\Res(\frac{f(w)}{w-z})\Big|_{w=z}+\sum_j\Res(\frac{f(w)}{w-z})\Big|_{w=z_j}\\
@@ -1557,11 +2014,11 @@ Setting $z=0$ we get
 \end{equation}
 So we get
 \begin{equation}
-\frac{1}{2\pi i}\oint_\gamma f(w)\left(\frac{1}{w-z}-\frac{1}{w}\dd w\right)=f(z)-f(0)+\sum_{j=\infty}^{\infty }r_j\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
+\frac{1}{2\pi i}\oint_\gamma f(w)\left(\frac{1}{w-z}-\frac{1}{w}\dd w\right)=f(z)-f(0)+\sum_{j=0}^{\infty }r_j\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
 \end{equation}
-If we now assume $f(z)$ to be bounded within the contour for all poles then we get the expression requested
+If we now assume $f(z)$ to be bounded within the contour for all poles then the contour integral in the above expression vanishes and we get the expression requested
 \begin{equation}
-f(z)=f(0)+\sum_{j=\infty}^{\infty }r_j\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
+f(z)=f(0)+\sum_{j=0}^{\infty }r_j\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
 \end{equation}
 \subsection*{Part b}
 If we assume the function $g(z)$ only has simple poles at positions $z_i$, then the function
@@ -1581,11 +2038,19 @@ is meromorphic with the same poles. Residues of these poles can be found using L
 
 So 
 \begin{equation}
-\dv{\log(g(z))}{z}=\frac{g'(z)}{g(z)}\Big|_{z=0}+\sum_{j=-\infty}^{\infty }\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
+\dv{\log(g(z))}{z}=\frac{g'(z)}{g(z)}\Big|_{z=0}+\sum_{j=1}^{\infty }\left(\frac{1}{z-z_j}+\frac{1}{z_j}\right)
 \end{equation}
-Integrating up on both sides, we get
+Integrating up on both sides
 \begin{equation}
-\log 
+\int_0^z \dd\log(g(z))=\int_0^z \dd z\frac{g'(z)}{g(z)}\Big|_{z=0}+\sum_{j=1}^{\infty }\left(\frac{z}{z_j}+\log(1-\frac{z}{z_j})\right)
+\end{equation}
+and defining $c\equiv \frac{g'(z)}{g(z)}\Big|_{z=0}$, we get
+\begin{equation}
+\log g(z)-\log g(0)=cz+\sum_{j=1}^{\infty }\left(\frac{z}{z_j}+\log(1-\frac{z}{z_j})\right)
+\end{equation}
+which after exponentiation leads to
+\begin{equation}
+g(z)=e^{cz}g(0)\prod_{j=1}^{N}\left(1-\frac{z}{z_j}\right)e^{z/z_j}
 \end{equation}
 \section*{Problem 4}
 \subsection*{Part a}
@@ -1647,12 +2112,63 @@ Hence combinging this with \eqref{eq:dcot} we get the requested form
 \sum_{n=-\infty}^{\infty}\frac{1}{(z+n)^k}=\frac{(-2\pi i)^{k+1}}{k!}\sum_{n=1}^{\infty}n^k e^{2\pi iz}
 \end{equation}
 \subsection*{Part b}
-We first note that
+If we let $g(z)=\frac{\sin z}{z}$ then $g(0)=1$ and $c=0$. The residues are all of unit value at $z=2n\pi$ and the function is entire, so we can use the product expansion from problem 3 to find
 \begin{equation}
-\cot =
+\frac{\sin z}{z}=\prod_{n=1}^{\infty}\left(1-\frac{z}{n\pi}\right)\left(1+\frac{z}{n\pi}\right)e^{\frac{z}{n\pi}}e^{-\frac{z}{n\pi}}=\prod_{n=1}^{\infty}\left(1-\frac{z^2}{n^2\pi^2}\right)
 \end{equation}
-We first take the ML expansion of $\frac{1}{\sin(z)}$. The residues are at $z=2\pi$ and as before they have value $r_j=1$, so
+Which means that $\sin z$ does have an infinite product expansion. We will now derive the same result from the expression of $\cot z$ we showed in the previous problem. First noting that
 \begin{equation}
-\frac{1}{\sin z}-\frac{1}{z}=\sum_{n=\infty}^{~~\infty ~~,}\left(\frac{1}{z-2\pi n}+\frac{1}{2\pi n}\right)
+\cot -\frac{1}{z}=\dv{\log(\frac{\sin z}{z})}{z}
+\end{equation}
+So using the expantion we found in the previous problem
+\begin{equation}
+\begin{aligned}
+\dv{\log(\frac{\sin z}{z})}{z}&=\sum_{n=1}^{\infty}\frac{2z}{z^2-\pi^2 n^2}\\
+&=\dv{\sum_{n}\log(z^2-n^2\pi^2)}{z}
+\end{aligned}
+\end{equation}
+which we can integrate up to get
+\begin{equation}
+\log(\frac{\sin z}{z})=\sum_{n}\log(z^2-n^2\pi^2)
+\end{equation}
+or
+\begin{equation}
+\frac{\sin z}{z}=-\frac{1}{n^2\pi^2}\prod_{n=1}^{\infty}(z^2-n^2\pi^2)=\prod_{n=1}^{\infty}\left(1-\frac{z^2}{n^2\pi^2}\right)
+\end{equation}
+As per the problem statement. For the case of the Gamma function we know from the recurrence relation
+\begin{equation}
+\Gamma(z)=\frac{\Gamma(z+n)}{z(z+1)\cdots (z+n-1)}
+\end{equation}
+that it has poles at $\{0,-1,-2,-3,\cdots\}$ with residues at the $z=-n$ pole being $\frac{num(-1)^n}{n!}$. This was shown in lecture. From this we can deduce that the function $\frac{1}{z\Gamma(z)}$ has zeros at $z=\{-1,-2,-3\cdots\}$. 
+
+Lastly, since the following integral representation converges for all $z$ on the contour $C$ that originates at $-\infty$ just below the real axis and ends at $-\infty$ just above the real axis, after having gone around the origin in a small circle, thereby avoiding the branchcut
+\begin{equation}
+\frac{1}{\Gamma(z)}=\frac{1}{2\pi i}\int_C\dd t\, \frac{e^t}{t^2}
+\end{equation}
+the function is entire and we are able to use the expansion from problem 3. USing the product expansion we first have
+\begin{equation}
+\begin{aligned}
+\frac{1}{\Gamma(z+1)}=\frac{1}{z\Gamma(z)}=\Gamma(0+1)e^{cz}\prod_{n=1}^{\infty}\left(1+\frac{z}{n}\right)e^{-\frac{z}{n}}
+\end{aligned}
+\end{equation}
+Using $\Gamma(1)=1$ and $\Gamma'(z)=-\gamma$, with $\gamma $ being the Euler-Mascheroni constant, we find
+\begin{equation}
+	\begin{aligned}
+\frac{1}{\Gamma(z)}=ze^{\gamma z}\prod_{n=1}^{\infty}\left(1+\frac{z}{n}\right)e^{-\frac{z}{n}}
+	\end{aligned}
+\end{equation}
+We can then find the formula requested
+\begin{equation}
+\begin{aligned}
+\frac{1}{\Gamma(z)\Gamma(1-z)}&=
+\frac{1}{-z\Gamma(z)\Gamma(-z)}\\
+&=z\prod_{n=1}^{\infty}\left(1+\frac{z}{n}\right)\left(1-\frac{z}{n}\right)e^{-\frac{z}{n}}e^{\frac{z}{n}}\\
+&=z\prod_{n=1}^{\infty}\left(1-\frac{z^2}{n^2}\right)\\
+&=\frac{\sin \pi z}{\pi}
+\end{aligned}
+\end{equation}
+where we have used the just derived result for $\sin z$. Hence we get the equation
+\begin{equation}
+\Gamma(z)\Gamma(1-z)=\pi\text{cosec} \pi z
 \end{equation}
 \end{document}
