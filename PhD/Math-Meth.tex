@@ -2,6 +2,11 @@
 
 \usepackage{jheppub}
 \usepackage{taro}
+\newcommand\matthree[9]{%
+	\begin{pmatrix}
+		#1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9
+	\end{pmatrix}%
+}
 
 \title{Mathematical Methods in Physics}
 
@@ -714,7 +719,7 @@ here the $d_n$ denote degeneracies at level $n$. To compute $d_n$ from $Z(\beta)
 	\end{aligned}
 \end{equation}
 At large E this is however not regulated and this is the type of problem that we would like to deal with.
-\subsection{Stirlings asymptotics for $\Gamma(x)$}
+\subsection{Stirlings asymptotic for $\Gamma(x)$}
 Let us remind ourselves of the following form og the $\Gamma$ function
 \begin{equation}
 	\begin{aligned}
@@ -998,6 +1003,205 @@ From this we can deduce that all irreps of SU(2) correspond to totally symmetric
 	\item 3d [fun $\otimes$ fun] adjoint 
 \end{itemize}
 and so on. It is customary to denote irreps by dim $\bm r$ which is represented by an $r-1$ symmetric tensor.
+\subsection{Representation of SU(2) viewed as a Lie algebra}
+We take the generators $t_1,t_2,t_3$, with
+\begin{equation}
+[t_i,t_j]=i\epsilon_{ijk}t_k
+\end{equation}
+These have a 2-dimensional representation in terms of pauli matrices.
+\begin{equation}
+	\begin{aligned}
+		t_1=\frac{1}{2}\begin{pmatrix}
+			0 & 1 \\1 & 0
+		\end{pmatrix},~~~~		t_1=\frac{1}{2}\begin{pmatrix}
+		0 & -i \\i & 0
+	\end{pmatrix},~~~~		t_1=\frac{1}{2}\begin{pmatrix}
+	1 & 0 \\0 & -1
+\end{pmatrix}
+	\end{aligned}
+\end{equation}
+This representation acts on $\text{Span}\{\begin{pmatrix}
+	1\\0
+\end{pmatrix},\begin{pmatrix}
+0\\1
+\end{pmatrix}\}$. We can generator other reps through
+\begin{itemize}
+\item Same strategy as before $V\otimes V\otimes V\otimes \cdots$
+\item Use Casimir operator $[C_2,t_i]=0$ using $t_at^a=C_2$ and $t_3$
+\item Algorithmic strategy without introducing $C_2$ which generalizes.
+\end{itemize}
+We will use the last strategy for now for highest weight representations.
+Let us assume we have a faithful representation on $n$-dimensional vectorspace $V$. We then define
+\begin{equation}
+	\begin{aligned}
+		t_3,~~~t^\pm=\frac{t_1\pm i t_2}{\sqrt{2}}
+	\end{aligned}
+\end{equation}
+with commutators
+\begin{equation}
+	\begin{aligned}
+[t_3,t^\pm]&=\pm t^\pm\\
+	[t^+,t^-]&= t_3
+	\end{aligned}
+\end{equation}
+States in $V\,\ket{j,\alpha}$ where $j$ is eigenvalye of $t_3$ and it is the highest possible such and $\alpha$ is a degeneracy index.
+\begin{equation}
+	\begin{aligned}
+		t_3\ket{j,\alpha}=j\ket{j,\alpha}
+	\end{aligned}
+\end{equation}
+We choose the normalization
+\begin{equation}
+	\begin{aligned}
+		\braket{j,\alpha}{j,\beta}=\delta_{\alpha\beta}
+	\end{aligned}
+\end{equation}
+and
+\begin{equation}
+	\begin{aligned}
+		t_3\ket{m}&= \ket{m}\\
+		t_3 t^\pm \ket{m}&=(m+1)\ket{m}
+	\end{aligned}
+\end{equation}
+Then let $\ket{j,\alpha}$ have max $t_3$ eigenvalue $j$, such that
+$t^+\ket{j,\alpha}=0$. Also $t^-\ket{j,\alpha}=N_j(\alpha)\ket{j-1,\alpha}$ where $N_j(\alpha)$ is fixed by demanding othonormality and assuming hermiticity $t_i=t_i^\dagger$ and this $(t^+)^\dagger=t^-$
+\begin{equation}
+	\begin{aligned}
+		\mel{j,\beta}{t^+t^-}{j,\alpha}=N_j(\alpha)N_j^*(\beta)\braket{j-1,\beta}{j-1,\alpha}
+	\end{aligned}
+\end{equation}
+This can be calculated in another way using the commutators:
+\begin{equation}
+	\begin{aligned}
+		\mel{j,\beta}{t^+t^-}{j,\alpha}=\mel{j,\beta}{t^-t^++t_3}{j,\alpha}=j\braket{j,\beta}{j,\alpha}
+	\end{aligned}
+\end{equation}
+From this we see that
+\begin{equation}
+	\begin{aligned}
+		|N_j(\alpha)|^2=j\Rightarrow N_j(\alpha)=\sqrt{j}
+	\end{aligned}
+\end{equation}
+repeat this to obtain $\ket{j-m,\alpha}$ for $m=1,2,3\cdots$ so that
+\begin{equation}
+	\begin{aligned}
+		N_k=\frac{1}{\sqrt{2}}\sqrt{(j+k)(j-k+1)}
+	\end{aligned}
+\end{equation}
+Since V was assumed to be finite dimensional our lowering operator should terminate. $\exists$ some $l\in \mathds{Z}_+\to t^-\ket{j-l,\alpha}$. Here $N_{j-l}(\alpha)=0$ leading to
+
+If this is an irrep then there is no degeneracy and $\alpha$ is redundant. There are exactly $2j+1$ states
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{24}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+We said earlier that SU$(2)$ irreps are completely symmetric rank $r$ tensors since $r=2j+1$ is the dimensionality of the tensors.
+\subsection{Strategy for representations: Roots and weights}
+Recall that a Lie algebra is a set of generators with lie bracket commutators
+\begin{equation}
+	\begin{aligned}
+		\left[X_a,X_b\right]=if_{abc}X_c
+	\end{aligned}
+\end{equation}
+The lie bracket is antisymmetric and the $X_a$ are hermitian with $e^{iX_a}\in G$. The space of the generators is a vector space i.e. one can thing of the $X_a$'s as vectors. So one can in other words say that the Lie algebra is a vector space with additional structure provided by the Lie bracket.
+
+The dimensionality of the vector space is given by the number of generators, so for SU(n) is a $n^2-1$ dimensional Lie algebra vector space, which we will denote by $\mathcal{L}$.
+
+Remember for a representation we wanted to take our Lie algebra generators and think of them as linear operators in a vector space. If we take this vector space to be the Lie algebra itself, one gets the adjoint representation.
+\subsubsection{Adjoint map}
+The adjoint map takes two elements of the lie algebra and gives you a new element
+\begin{equation}
+	\begin{aligned}
+		ad:~~y,x\in \mathcal{L}~~~~~~ad_y(x)=[x,y]
+	\end{aligned}
+\end{equation}
+E.g. in SU(2)
+\begin{equation}
+	\begin{aligned}
+		ad_{t_3}=[t_3,x], ~~~~x=\alpha_i t_i
+	\end{aligned}
+\end{equation}
+One can think of the map $y\to ad_y$ as an association between $y\in \mathcal{L}$ and a linear operator. Since the commutator $[t_3,x]$ just gives a linear combination of the vectors making up the space.
+
+We claim that $y\to ad_y$ provides a represenation. Read the lhs ad the lie algebra generator and the rhs as the operator representation which acts on a representation space $\mathcal{L}$. To confirm this we need to check
+\begin{equation}
+	\begin{aligned}
+		\underbrace{\left[x,y\right]}_{\text{Lie bracket relation}}=z~~~~~~ \Rightarrow \underbrace{\left[ad_x,ad_y\right]}_{\text{Commutator of linear operators on } \mathcal{L}}=ad_z
+	\end{aligned}
+\end{equation}
+If this claim is right we should be able to compute the bracket acting on a vector $w\in \mathcal{L}$
+\begin{equation}
+	\begin{aligned}
+		\left[ad_x,ad_y\right]&=ad_x(ad_y(w))-ad_y(ad_x(w))\\
+		&=ad_x(\left[y,w\right])-ad_y(\left[x,w\right])\\
+		&=\left[x,\left[y,w\right]\right]-\left[y,\left[x,w\right]\right]\\
+		&=-\left[w,\left[x,y\right]\right]~~~~~~~~~~~\text{ by Jacobi}\\
+		&=ad_{[x,y]}(w)=ad_z(w)
+	\end{aligned}
+\end{equation}
+Let us check this for SU(2)
+\begin{equation}
+	\begin{aligned}
+		ad_{t_1}\begin{cases}
+			t_1&=0\\
+			t_2&=it_3\\
+			t_3&=-it_2
+		\end{cases},~~~~~~		ad_{t_2}\begin{cases}
+		t_1&=-it_3\\
+		t_2&=0\\
+		t_3&=it_1
+	\end{cases},~~~~~~		ad_{t_3}\begin{cases}
+	t_1&=it_2\\
+	t_2&-it_1\\
+	t_3&=0
+\end{cases}
+	\end{aligned}
+\end{equation}
+So we can represent them as the matrices (after picking suitable basis vectors)
+\begin{equation}
+	\begin{aligned}
+			ad_{t_1}:~\begin{pmatrix}
+				0 & 0 & 0\\
+				0 & 0 & i\\
+				0 & -i & 0
+			\end{pmatrix},~~~~
+			ad_{t_2}:~\begin{pmatrix}
+			0 & 0 & -i\\
+			0 & 0 & 0\\
+			i & 0 & 0
+		\end{pmatrix},~~~~
+	ad_{t_3}:~\begin{pmatrix}
+	0 & i & 0\\
+	-i & 0 & 0\\
+	0 & 0 & 0
+\end{pmatrix}
+	\end{aligned}
+\end{equation}
+For SU(3) we have 8 generators, which in matrix from are the Gell-Mann matrices.
+\begin{gather*}
+	\lambda^1 = \matthree {0}{1}{0}{1}{0}{0}{0}{0}{0},\quad
+	\lambda^2 = \matthree {0}{-i}{0}{i}{0}{0}{0}{0}{0},\quad
+	\lambda^3 = \matthree {1}{0}{0}{0}{-1}{0}{0}{0}{0},\\[1ex]
+	\lambda^4 = \matthree {0}{0}{1}{0}{0}{0}{1}{0}{0},\quad
+	\lambda^5 = \matthree {0}{0}{-i}{0}{0}{0}{i}{0}{0},\quad
+	\lambda^6 = \matthree {0}{0}{0}{0}{0}{1}{0}{1}{0},\\[1ex]
+	\lambda^7 = \matthree {0}{0}{0}{0}{0}{-i}{0}{i}{0},\quad
+	\lambda^8 = \frac{1}{\sqrt{3}} \matthree {1}{0}{0}{0}{1}{0}{0}{0}{-2}
+\end{gather*}
+One can split these into suitable lowering and raising pairs
+\begin{equation}
+	\begin{aligned}
+		t_\pm=& \frac{1}{2}(\lambda_1\pm i\lambda_2)\\
+		u_\pm=& \frac{1}{2}(\lambda_4\pm i\lambda_5)\\
+			v_\pm=& \frac{1}{2}(\lambda_6\pm i\lambda_7)\\
+			t_z=&\frac{1}{2}\lambda_3\\
+			y=&\frac{1}{\sqrt{3}}\lambda_8
+	\end{aligned}
+\end{equation}
+By computing matrix commutators we can get the $8\times 8$ adjoint representation.
+So we have 8 generators and only two can be diagonalized simultaneously. Considering the eigenvalues of these, gives what is known as the weight. The raising and lowering operators then lowers/raises this weight.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section*{Homework 1\\\\
@@ -2170,5 +2374,326 @@ We can then find the formula requested
 where we have used the just derived result for $\sin z$. Hence we get the equation
 \begin{equation}
 \Gamma(z)\Gamma(1-z)=\pi\text{cosec} \pi z
+\end{equation}
+\newpage
+\section{d}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Homework 4\\\\
+	Taro V. Brown}\vspace*{1cm}
+\section*{Problem 1}
+Want to solve ODE
+\begin{equation}
+	\begin{aligned}
+		L_{zz}\phi(z)=\left[\dv[2]{}{z}+\frac{1}{z}\dv{}{z}+\left(1-\frac{\nu^2}{z^2}\right)\right]\phi(z)=0
+	\end{aligned}
+\end{equation}
+Given the kernel
+\begin{equation}
+	\begin{aligned}
+		K(z,t)=\left(\frac{z}{2}\right)^\nu\exp[z-\frac{z^2}{4t}]
+	\end{aligned}
+\end{equation}
+such that
+\begin{equation}
+\phi(z)=\oint_{C} K(z,t)\xi(t)\, \dd t
+\end{equation}
+Applying the different parts of $L_{zz}$
+\begin{equation}
+	\begin{aligned}
+		\dv[2]{}{z}K=&2^{-\nu } (\nu -1) \nu  e^{z-\frac{z^2}{4 t}} z^{\nu -2}+2^{1-\nu } \nu  e^{z-\frac{z^2}{4 t}} \left(1-\frac{z}{2 t}\right) z^{\nu -1}\\
+		&+2^{-\nu } e^{z-\frac{z^2}{4 t}} \left(1-\frac{z}{2 t}\right)^2 z^{\nu }-\frac{2^{-\nu -1} e^{z-\frac{z^2}{4 t}} z^{\nu }}{t}\\
+		=&\frac{2^{-\nu -2} e^{z-\frac{z^2}{4 t}} z^{\nu -2} \left(4 t^2 \left((\nu +z)^2-\nu \right)-2 t z^2 (2 \nu +2 z+1)+z^4\right)}{t^2}
+	\end{aligned}
+\end{equation}
+Similarly
+\begin{equation}
+	\begin{aligned}
+		\frac{1}{z}\dv[]{}{z}K=&\frac{2^{-\nu } \nu  e^{z-\frac{z^2}{4 t}} z^{\nu -1}+2^{-\nu } e^{z-\frac{z^2}{4 t}} \left(1-\frac{z}{2 t}\right) z^{\nu }}{z}\\
+		=&-\frac{2^{-\nu -1} e^{z-\frac{z^2}{4 t}} z^{\nu -2} \left(z^2-2 t (\nu +z)\right)}{t}
+	\end{aligned}
+\end{equation}
+and finally 
+\begin{equation}
+	\begin{aligned}
+		\left(1-\frac{\nu^2}{z^2}\right)K=&2^{-\nu } e^{z-\frac{z^2}{4 t}} z^{\nu } \left(1-\frac{\nu ^2}{z^2}\right)
+	\end{aligned}
+\end{equation}
+Putting it all together we get 
+\begin{equation}
+	\begin{aligned}
+		\oint_C  \left[\frac{2^{-\nu -2} e^{t-\frac{z^2}{4 t}} z^{\nu +2}}{t^2}+2^{-\nu } e^{t-\frac{z^2}{4 t}} z^{\nu }-\frac{2^{-\nu } e^{t-\frac{z^2}{4 t}} z^{\nu }}{t}-\frac{2^{-\nu } \nu  e^{t-\frac{z^2}{4 t}} z^{\nu }}{t}\right]\xi(t)\,\dd t
+	\end{aligned}
+\end{equation}
+which is the same as 
+\begin{equation}
+	\begin{aligned}
+			\oint_C  \xi(t)\left[\dv{}{t}-\frac{\nu+1}{t}\right]K(x,t)\,\dd t	
+	\end{aligned}
+\end{equation}
+\section*{Problem 2}
+We first start of with the following version of the riemann zeta function
+\begin{equation}
+	\begin{aligned}
+		\zeta (s)=\sum_{n=1}^{\infty}\frac{1}{n^s}
+	\end{aligned}
+\end{equation}
+Then noting that
+\begin{equation}
+	\begin{aligned}
+		\Gamma(s)=\int_{0}^{\infty}e^{-y}y^{s-1}\dd y
+	\end{aligned}
+\end{equation}
+We mulitply the numerator and denominator of the RZ function by this and perform a change of variables $y= nu$
+\begin{equation}
+	\begin{aligned}
+		\zeta (s)&=\frac{1}{\Gamma(s)}\sum_{n=1}^{\infty}\frac{1}{n^s}\int_{0}^{\infty}e^{-y}y^{s-1}\dd y\\
+		&=\frac{1}{\Gamma(s)}\sum_{n=1}^{\infty}\int_{0}^{\infty}e^{-nu}u^{s-1}\dd u\\
+		&=\frac{1}{\Gamma(s)}\int_{0}^{\infty}\sum_{n=1}^{\infty}e^{-nu}u^{s-1}\dd u
+	\end{aligned}
+\end{equation}
+where we have changed the order of the limits in the last line. Now note that the following identity holds since $s>1$
+\begin{equation}
+	\begin{aligned}
+		\sum_{n=1}^{\infty} e^{-nu}u^{s-1}= \frac{u^{s-1}}{e^{u}-1}
+	\end{aligned}
+\end{equation}
+So that we get the following integral form
+\begin{equation}\label{eq:gammafunc}
+\zeta(s)=\frac{1}{\Gamma(s)}\int_0^\infty \frac{u^{s-1}}{e^{u}-1}\dd u
+\end{equation}
+This behaves badly for $\Re s=1$ so we extend it to the complex plane by using the Hankel contour in the following manor
+\begin{equation}
+	\begin{aligned}
+		\zeta(s)=\frac{\Gamma(1-s)}{2\pi i}\oint_\gamma \frac{z^{s-1}}{e^{z}-1} \dd z
+	\end{aligned}
+\end{equation}
+To show this, consider the integral part along the Hankel contour 
+\begin{equation}
+	\begin{aligned}
+		I(s)&=\oint_\gamma \frac{w^{s-1}}{e^{w}-1} \dd w\\
+		&=\int_{\infty}^{\epsilon}\frac{e^{(\log u-i\pi)s}}{(e^{u}-1)u} \dd u+
+		\int_{|w|=\epsilon} \frac{w^{s}}{(e^{w}-1)w} \dd w+\int^{\infty}_{\epsilon}\frac{e^{(\log u+i\pi)s}}{(e^{u}-1)u} \dd u
+	\end{aligned}
+\end{equation}
+Taking $\epsilon\to 0$
+\begin{equation}
+	\begin{aligned}
+		I(z)&=\left[e^{i\pi s}-e^{-i\pi s}\right]\int_0^\infty \frac{u^{s-1}}{e^{u}-1}\dd u\\
+		&=2i\sin \pi s\, \Gamma(s)\zeta(s)\\
+		&=\frac{2\pi i}{\Gamma(1-s)}\zeta(s)
+	\end{aligned}
+\end{equation}
+where we have used \eqref{eq:gammafunc} and the result obtained in the previous homework
+\begin{equation}
+\Gamma(1-z)\Gamma(z)=\frac{\pi}{\sin \pi z}
+\end{equation}
+so that
+\begin{equation}
+	\begin{aligned}
+		\zeta(s)&=\frac{\Gamma(1-s)}{2\pi i}I(s)
+	\end{aligned}
+\end{equation}
+Throughout this we have asserted that $\Re s >1$ for the integral formular of $\zeta(s)$, however the rhs is analytic everywhere except for $\Gamma(1-s)$ having simple poles at $s$ integer values $\geq0$ and $I(s)$ has zeroes at $\geq1$, so $\zeta(s)$ is actually analytic except for a simple pole at $s=1$ which has residue
+\begin{equation}
+	\begin{aligned}
+		\lim_{s\to 1}(s-1)\frac{\Gamma(1-s)}{2\pi i}I(s)&=-\frac{I(1)}{2\pi i}\\
+		&=-\frac{1}{2\pi i}		\int_{|w|=\epsilon} \frac{w^{1}}{(e^{w}-1)w} \dd w\\
+		&=1
+	\end{aligned}
+\end{equation}
+In conclusion the $\zeta$-function can be analytically continued to a meromorphic function with a simple at $s=1$ contributing a residue of 1.
+
+Now we use this to calculate $\zeta(-1)$
+\begin{equation}
+	\begin{aligned}
+				\zeta(-1)&=\frac{\Gamma(2)}{2\pi i}\oint_\gamma \frac{z^{-2}}{e^{z}-1} \dd z
+				\\
+				&=\frac{\Gamma(2)}{2\pi i}\oint_\gamma
+				\frac{1}{z^2\left(\left[1-z+\frac{z^2}{2}-\frac{z^3}{6}+\cdots\right] -1\right)} \dd z
+				\\
+				&=\frac{\Gamma(2)}{2\pi i}\oint_\gamma
+				\frac{1}{z^2\left(\left[-z+\frac{z^2}{2}-\frac{z^3}{6}+\cdots\right]\right)} \dd z
+				\\
+				&=-\frac{\Gamma(2)}{2\pi i}\oint_\gamma
+				\frac{1}{z^3\left(1-\left[\frac{z}{2}-\frac{z^2}{6}+\cdots\right]\right)} \dd z
+				\\
+				&=-\frac{\Gamma(2)}{2\pi i}\oint_\gamma
+				\frac{1+\left[\frac{z}{2}-\frac{z^2}{6}+\cdots\right]+\left[\frac{z}{2}-\frac{z^2}{6}+\cdots\right]^2+\left[\frac{z}{2}-\frac{z^2}{6}+\cdots\right]^3+\cdots}{z^3} \dd z
+				\\
+				&=-\frac{\Gamma(2)}{2\pi i}\oint_\gamma
+			\left[	\frac{1}{z^3}+\frac{1}{2z^2}+\frac{1}{12z}+\mathcal{O}(z^0)\right] \dd z
+	\end{aligned}
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		\zeta(-1)
+		&=-\frac{\Gamma(2)}{2\pi i}\oint_\gamma
+		\left[\frac{1}{12z}\right] \dd z\\
+		&=-\frac{1}{12}
+	\end{aligned}
+\end{equation}
+we have used the fact that $\Gamma(2)=1$
+
+\url{https://math.stackexchange.com/questions/881205/calculating-riemann-zeta-function-of-a-complex-number-given-the-complex-contour}
+\url{https://empslocal.ex.ac.uk/people/staff/mrwatkin/zeta/petersen.pdf}
+\section*{Problem 3}
+\subsection*{Part a}
+We have the partition function
+\begin{equation}
+Z(\beta)=\prod_{n=1}^{\infty}\frac{1}{\left(1-e^{-\beta n}\right)^{a_n}}
+\end{equation}
+taking the logarithm of this gives us
+\begin{equation}
+	\begin{aligned}
+		\log [Z(\beta)]&=\log \left[\prod_{n=1}^{\infty}\frac{1}{\left(1-e^{-\beta n}\right)^{a_n}}\right]\\
+		&=- \sum_{n=1}^{\infty}a_n\log\left[1-e^{-\beta n}\right]
+	\end{aligned}
+\end{equation}
+Then using the fact that
+\begin{equation}
+	\begin{aligned}
+		\log (1+x)=\sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{k}x^k
+	\end{aligned}
+\end{equation}
+we get
+\begin{equation}
+	\begin{aligned}
+		\log [Z(\beta)]
+		&= \sum_{k=1}^{\infty}\frac{1}{k}\sum_{n=1}^{\infty}a_ne^{-\beta kn}
+	\end{aligned}
+\end{equation}
+We are now going to use the Cahen-Mellin integral (see e.g. Mellin transformation on wikipedia), 
+\begin{equation}
+	\begin{aligned}
+		e^{-z}=\frac{1}{2\pi i}\int_{c-i\infty}^{c+i\infty}\Gamma(s)z^{-s}\,\dd s 
+	\end{aligned}
+\end{equation}
+with $c>0$, we obtain:
+\begin{equation}
+	\begin{aligned}
+		\log [Z(\beta)]
+&=\frac{1}{2\pi i}\sum_{k=1}^{\infty}\frac{1}{k}\sum_{n=1}^{\infty}a_n \int_{c-i\infty}^{c+i\infty}\Gamma(s)(\beta kn)^{-s}\,\dd s 
+	\end{aligned}
+\end{equation}
+If we assume convergence of the integrand we can switch the order of limits to obtain
+\begin{equation}
+	\begin{aligned}
+		\log [Z(\beta)]
+		&=\frac{1}{2\pi i}\int_{c-i\infty}^{c+i\infty}\sum_{k=1}^{\infty}\frac{1}{k}\sum_{n=1}^{\infty}a_n\Gamma(s) (\beta kn)^{-s}\,\dd s \\
+			&=\frac{1}{2\pi i}\int_{c-i\infty}^{c+i\infty}\frac{\Gamma(s)}{\beta^s}\sum_{k=1}^{\infty}\frac{1}{k^{s+1}}\sum_{n=1}^{\infty}\frac{a_n}{n^s}\,\dd s \\
+					&=\frac{1}{2\pi i}\int_{c-i\infty}^{c+i\infty}\frac{\Gamma(s)}{\beta^s}\sum_{k=1}^{\infty}\frac{1}{k^{s+1}}D(s)\,\dd s 
+	\end{aligned}
+\end{equation}
+where we have defined the Dirichlet series $D(s)\equiv\sum_{n=1}^{\infty}\frac{a_n}{n^s}$. Finally note that the sum over $1/k$ produces the Riemann-Zeta function leaving us with
+\begin{equation}
+	\begin{aligned}
+		\log [Z(\beta)]
+		&=\frac{1}{2\pi i}\int_{c-i\infty}^{c+i\infty}\frac{\Gamma(s)\zeta(s+1)}{\beta^s}D(s)\,\dd s 
+	\end{aligned}
+\end{equation}
+\subsection*{Part b}
+We repeat the steps from problem 2 applied to
+\begin{equation}
+D(s)=\sum_{n=1}^{\infty} \frac{a_n}{n^s}
+\end{equation}
+Multiplying and dividing by $\Gamma(s)$ and defining $y=nu$
+\begin{equation}
+	\begin{aligned}
+		D(s)&=\frac{1}{\Gamma(s)}\sum_{n=1}^{\infty}\frac{a_n}{n^s}\int_{0}^{\infty}e^{-y}y^{s-1}\dd y\\
+		&=\frac{1}{\Gamma(s)}\sum_{n=1}^{\infty}a_n\int_{0}^{\infty}e^{-nu}u^{s-1}\dd u\\
+		&=\frac{1}{\Gamma(s)}\int_{0}^{\infty}\sum_{n=1}^{\infty}a_ne^{-nu}u^{s-1}\dd u
+	\end{aligned}
+\end{equation}
+Performing the sum using the binomial coeffecients
+\begin{equation}
+	\begin{aligned}
+		D(s)
+		&=\frac{1}{\Gamma(s)}\int_{0}^{\infty}u^{s-1}\left(\frac{1}{1-e^{-u}}-1\right)
+		\dd u
+	\end{aligned}
+\end{equation}
+Then using the result from problem 2:
+\begin{equation}
+	\begin{aligned}
+		D(s)
+		&=\zeta(s)-\frac{1}{\Gamma(s)}\int_{0}^{\infty}u^{s-1}
+		\dd u
+	\end{aligned}
+\end{equation}
+Looking at the integral
+\begin{equation}
+	\begin{aligned}
+I(s)=\int_\gamma z^{s-1}
+		\dd z
+	\end{aligned}
+\end{equation}
+This can be has a removable singularity when $s$ gets close to 1 and so using the hankel contour, the contribution from the circle vanishes and we get the contributions from the flat parts, similar to problem 2
+\begin{equation}
+I(s)=2\pi i\sin(\pi s)\int_{0}^{\infty}u^{s-1}	\dd u
+\end{equation}
+and so
+\begin{equation}
+	\begin{aligned}
+		D(s)
+		&=\zeta(s)-\frac{I(s)}{2\pi i \Gamma(s)\sin \pi s}
+		\\
+		&=\zeta(s)-\frac{I(s)\Gamma(1-s)}{2\pi^2 i }
+	\end{aligned}
+\end{equation}
+Where we have used
+\begin{equation}
+	\Gamma(1-z)=\frac{\pi}{\Gamma(z)\sin \pi z}
+\end{equation}
+Or, since $\zeta(s)$ can also be written in terms of a hankel contour integral, see problem 2, 
+\begin{equation}
+	\begin{aligned}
+D(s)=\frac{1}{2\pi i}\int_\gamma
+\Gamma(1-s) z^{s-1}\left(\frac{1}{e^{z}-1}-\frac{1}{\pi}\right) \dd z
+	\end{aligned}
+\end{equation}
+Because of the gamma function this just has simple poles at $s=1,2,3\cdots,n$. The residues at these poles are for different values of $s$:
+\begin{equation}
+	\begin{aligned}
+		\Res \left[D(s)\right]_{s=1}&=-\frac{1}{e^z-1}\\
+		\Res \left[D(s)\right]_{s=2}&=\frac{z}{e^z-1}\\
+		\Res \left[D(s)\right]_{s=3}&=-\frac{z^2}{2 \left(e^z-1\right)}\\
+		\Res \left[D(s)\right]_{s=3}&=\frac{z^3}{6 \left(e^z-1\right)}
+	\end{aligned}
+\end{equation}
+From this we deduce that the residues at $s$ are given by
+\begin{equation}
+	\begin{aligned}
+		A_s(z)=\frac{(-1)^s z^{s-1}}{\left(e^z-1\right) (s-1)!}
+	\end{aligned}
+\end{equation}
+\subsection*{Part c}
+\begin{equation}
+	\begin{aligned}
+		\frac{\Gamma(s)\zeta(s+1)D(s)}{\beta^{s}}&=(1-s\log \beta+\dots)(s^{-1}-\gamma+\dots)(s^{-1}-\gamma+\dots)(D(0)+D'(0)s+\dots)
+		\\&=\frac{D(0)}{s^2}+\frac{1}{s}(D'(0)-D(0)\log \beta)+\mathcal{O}(s^{0})
+	\end{aligned}
+\end{equation}
+Hence
+\begin{equation}
+\begin{aligned}
+\log Z(\beta)=\sum_{s=1}^{\infty}\frac{\Gamma(s)\zeta(s+1)A_s(z)}{\beta^{s}}+	D'(0)-D(0)\log \beta+H.C.
+\end{aligned}
+\end{equation}
+Or
+\begin{equation}
+	\begin{aligned}
+ Z(\beta)=\exp[\sum_{s=1}^{\infty}\frac{\Gamma(s)\zeta(s+1)A_s(z)}{\beta^{s}}+	D'(0)-D(0)\log \beta]+H.C.
+	\end{aligned}
+\end{equation}
+\subsection*{Part d}
+Density of states is given by
+\begin{equation}
+d(n)=\frac{1}{2\pi i}\int_{b-i\pi}^{b+i\pi}\dd \beta\,Z(\beta)e^{n\beta}
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		S(\beta)=\beta n \log Z(\beta)
+	\end{aligned}
 \end{equation}
 \end{document}
