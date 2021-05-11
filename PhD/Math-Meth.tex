@@ -2535,12 +2535,65 @@ Similarly we take take the difference between the two Hankel functions and obtai
 		=& 2N_\nu(z)
 	\end{aligned}
 \end{equation}
-where the last line comes from an integral definition of $N_\nu(z)$ which can be looked up in an integral table. 
+where the last line comes from a definition of $N_\nu(z)$ which can be looked up in an integral table. 
 
-Finally we want to obtain an expression for the asymptotic expansion of $J_\nu(z)$ and $N_\mu(z)$ using the above representations, using the methods of steepest descent. We will look at the Hankel functions and shift to the Hankel contour
+Finally we want to obtain an expression for the asymptotic expansion of $J_\nu(z)$ and $N_\nu(z)$ using the above representations, using the methods of steepest descent. We will look at the Hankel functions and shift to the Hankel contour for the computation of $J_\nu(z)$ and $N_\nu(z)$, which means the Hankel functions are integrated over the following contours
+\begin{equation}
+	\begin{aligned}
+		H_\nu^{(1)}(z)&=\frac{1}{i\pi }\int_{i\epsilon}^{-\infty+i\epsilon}\dd t\, t^{-\nu-1}e^{-\frac{1}{2}(t-\frac{1}{t})z}\\
+		H_\nu^{(2)}(z)&=\frac{1}{i\pi }\int^{-i\epsilon}_{-\infty-i\epsilon}\dd t\, t^{-\nu-1}e^{-\frac{1}{2}(t-\frac{1}{t})z}
+	\end{aligned}
+\end{equation}
+The saddlepoint is easily found
+\begin{equation}
+	\begin{aligned}
+		\dv{}{t}(1-1/t)\big|_{t=t_0}=0\Rightarrow t_0=\pm i
+	\end{aligned}
+\end{equation}
+For $H_\nu^{(1)}(z)$ and $H_\nu^{(2)}(z)$ we have to derform the contour in different ways to go through the saddle point. Picking $i$ for $H_\nu^{(1)}(z)$ and $-i$ for $H_\nu^{(2)}(z)$. We start of by doing $H_\nu^{(1)}(z)$ and translate the result to $H_\nu^{(2}(z)$. 
 
+First we define $\xi\equiv t-i$, then we exandt around the saddle point, assuming that $z$ is large
+\begin{equation}
+	\begin{aligned}
+		H_\nu^{(1)}(z)&=\frac{1}{i\pi }\int_{i\epsilon}^{-\infty+i\epsilon}\dd \xi\, (\xi+i)^{-\nu-1}e^{-\frac{1}{2}(\xi+i-\frac{1}{\xi+i})z}\\
+		&=\frac{1}{i\pi }\int_{i\epsilon}^{-\infty+i\epsilon}\dd \xi\, (\xi+i)^{-\nu-1}e^{iz-i\frac{z}{2}\xi^2+\mathcal{O}(\xi^3)}\\
+	\end{aligned}
+\end{equation}
+We then take $\xi=r e^{i\theta}$ and expand the factor in the integral 
+$(\xi+i)^{-\nu-1}=i^{-\nu-1}+\mathcal{O}(\xi^1)$, such that
+\begin{equation}
+	\begin{aligned}
+		H_\nu^{(1)}(z)&\approx
+		&=\frac{2}{i\pi }\int_{0}^{\infty}\dd r\, e^{i\theta}(i)^{-\nu-1}e^{iz-i\frac{z}{2}r^2e^{2i\theta}}\\
+	\end{aligned}
+\end{equation}
+To be able to perform the saddle point integral we must have $\theta=\frac{3}{4}\pi$, further we write the $i$'s in polar form to get
+\begin{equation}
+	\begin{aligned}
+		H_\nu^{(1)}(z)&\approx
+		\frac{2e^{-\frac{1}{4} \pi i+iz-i\frac{1}{2}\pi\nu}}{\pi }
+		\int_{0}^{\infty}\dd r\, e^{-\frac{z}{2}r^2}\\
+		&=\sqrt{\frac{2}{\pi z}}e^{-\frac{1}{4} \pi i+iz-i\frac{1}{2}\pi\nu}
+		\end{aligned}
+	\end{equation}
+For the Hankel function of the second kind, we had to choose the other maximum. This in turn just changes the sign og the exponentials, since $\theta$ now changes and we so have
+\begin{equation}
+	\begin{aligned}
+		H_\nu^{(1)}(z)
+		&=\sqrt{\frac{2}{\pi z}}e^{-\frac{1}{4} \pi i+iz-i\frac{1}{2}\pi\nu}+H.C\\
+		H_\nu^{(2)}(z)
+		&=\sqrt{\frac{2}{\pi z}}e^{+\frac{1}{4} \pi i-iz+i\frac{1}{2}\pi\nu}+H.C
+	\end{aligned}
+\end{equation}
+with $H.C.$ signefying higher order corrections. We then also have
+\begin{equation}
+	\begin{aligned}
+		J_\nu(z)&=\sqrt{\frac{2}{\pi z}}\cos(z-\frac{\nu \pi}{2}-\frac{ \pi}{4})+ H.C.\\
+		N_\nu(z)&=\sqrt{\frac{2}{\pi z}}\sin(z-\frac{\nu \pi}{2}-\frac{ \pi}{4})+ H.C.
+	\end{aligned}
+\end{equation}
 \section*{Problem 2}
-We first start of with the following version of the riemann zeta function
+We first start of with the following version of the Riemann-zeta function
 \begin{equation}
 	\begin{aligned}
 		\zeta (s)=\sum_{n=1}^{\infty}\frac{1}{n^s}
