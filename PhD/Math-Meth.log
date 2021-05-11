@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  10 MAY 2021 15:33
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  11 MAY 2021 11:07
  restricted system commands enabled.
 **Math-Meth.tex
 (./Math-Meth.tex
@@ -1025,6 +1025,15 @@ LaTeX Warning: Label `fig:4' multiply defined.
 
 LaTeX Warning: Label `fig:rectangle' multiply defined.
 
+
+LaTeX Warning: Label `fig:rectangle' multiply defined.
+
+
+LaTeX Warning: Label `fig:rectangle' multiply defined.
+
+
+LaTeX Warning: Label `fig:rectangle' multiply defined.
+
 )
 \openout1 = Math-Meth.aux
 
@@ -1710,42 +1719,79 @@ Underfull \hbox (badness 10000) in paragraph at lines 2383--2383
 
  []
 
-[64] [65] [66]
-Overfull \hbox (381.11894pt too wide) in paragraph at lines 2538--2540
+[64]
+<27.png, id=1124, 542.025pt x 461.22313pt>
+File: 27.png Graphic file (type png)
+<use 27.png>
+Package luatex.def Info: 27.png  used on input line 2455.
+(luatex.def)             Requested size: 193.59155pt x 164.73119pt.
+<26.png, id=1125, 507.39563pt x 397.485pt>
+File: 26.png Graphic file (type png)
+<use 26.png>
+Package luatex.def Info: 26.png  used on input line 2468.
+(luatex.def)             Requested size: 215.1032pt x 168.50735pt.
+ [65
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.28'
+
+<./27.png>]
+<25.png, id=1137, 408.52625pt x 328.72812pt>
+File: 25.png Graphic file (type png)
+<use 25.png>
+Package luatex.def Info: 25.png  used on input line 2498.
+(luatex.def)             Requested size: 193.59155pt x 155.77629pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.29'
+
+<./26.png>]
+Overfull \hbox (1.17358pt too wide) detected at line 2537
+[][][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.30'
+
+<./25.png>] [68] [69]
+Overfull \hbox (381.11894pt too wide) in paragraph at lines 2643--2645
 [][][]$\T1/lmtt/m/n/12 https://math.stackexchange.com/questions/881205/calculati
 ng-[]riemann-[]zeta-[]function-[]of-[]a-[]complex-[]number-[]given-[]the-[]compl
 ex-[]contour$[][]
  []
 
-[67] [68]
-Overfull \hbox (35.61319pt too wide) detected at line 2676
+[70] [71]
+Overfull \hbox (35.61319pt too wide) detected at line 2774
 [][][]
  []
 
-[69] [70]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2699.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2699.
+[72] [73]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2829.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2829.
  (./Math-Meth.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2699.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2699.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2829.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2829.
 Package rerunfilecheck Info: File `Math-Meth.out' has not changed.
 (rerunfilecheck)             Checksum: 6D37B3615A619A4A9E8075C3440FD07A;8498.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2699.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2829.
 )
 
 Here is how much of LuaTeX's memory you used:
- 36646 strings out of 480991
+ 36704 strings out of 480991
  100000,1373583 words of node,token memory allocated
- 3349 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 8 glue, 4 kern, 1 sub_mlist, 1 glyph, 704 attribute
-, 57 glue_spec, 704 attribute_list, 2 write nodes
-   avail lists: 2:3465,3:293,4:134,5:517,6:72,7:4261,8:129,9:2570,10:13,11:181
- 52155 multiletter control sequences out of 65536+200000
- 116 fonts using 9214947 bytes
+ 3445 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 8 glue, 4 kern, 1 sub_mlist, 1 glyph, 728 attribute
+, 57 glue_spec, 728 attribute_list, 2 write nodes
+   avail lists: 2:3417,3:293,4:134,5:517,6:72,7:4261,8:130,9:2570,10:13,11:181
+ 52177 multiletter control sequences out of 65536+200000
+ 117 fonts using 9261347 bytes
  71i,18n,102p,754b,1146s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/MiK
 TeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/pu
@@ -1775,9 +1821,9 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX
 ublic/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 
-Output written on Math-Meth.pdf (72 pages, 1844222 bytes).
+Output written on Math-Meth.pdf (75 pages, 1945584 bytes).
 
-PDF statistics: 1316 PDF objects out of 1440 (max. 8388607)
- 634 named destinations out of 1000 (max. 131072)
+PDF statistics: 1350 PDF objects out of 1440 (max. 8388607)
+ 652 named destinations out of 1000 (max. 131072)
  392 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -1201,7 +1201,7 @@ One can split these into suitable lowering and raising pairs
 	\end{aligned}
 \end{equation}
 By computing matrix commutators we can get the $8\times 8$ adjoint representation.
-So we have 8 generators and only two can be diagonalized simultaneously. Considering the eigenvalues of these, gives what is known as the weight. The raising and lowering operators then lowers/raises this weight.
+So we have 8 generators and only two can be diagonalized simultaneously. Considering the eigenvalues of these, gives what is known as the weight. The raising and lowering operators then lower/raise this weight.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section*{Homework 1\\\\
@@ -2396,7 +2396,7 @@ Given the kernel
 \end{equation}
 such that
 \begin{equation}
-\phi(z)=\oint_{C} K(z,t)\xi(t)\, \dd t
+\phi(z)=\int_{C} K(z,t)\xi(t)\, \dd t
 \end{equation}
 Applying the different parts of $L_{zz}$
 \begin{equation}
@@ -2428,9 +2428,117 @@ Putting it all together we get
 which is the same as 
 \begin{equation}
 	\begin{aligned}
-			\oint_C  \xi(t)\left[\dv{}{t}-\frac{\nu+1}{t}\right]K(x,t)\,\dd t	
+			\int_C  \xi(t)\left[\dv{}{t}-\frac{\nu+1}{t}\right]K(x,t)\,\dd t	
 	\end{aligned}
 \end{equation}
+Using integration by part to expand this, $L_{zz}\phi(z)=0$ is satisfied by finding a $\xi(t)$ for which 
+\begin{equation}
+	\begin{aligned}
+		-\left[\dv{}{t}+\frac{\nu+1}{t}\right]\xi(t)=0
+	\end{aligned}
+\end{equation} 
+Which leads to $\xi(t)=t^{-\nu-1}$, hence
+\begin{equation}
+	\begin{aligned}
+		J(z)=\frac{1}{2\pi i}\int_C\dd t\, t^{-\nu-1}\left(\frac{z}{2}\right)^\nu\exp[t-\frac{z^2}{4t}]
+	\end{aligned}
+\end{equation}
+Further, the boundary terms have to vanish 
+\begin{equation}
+	\begin{aligned}
+		\left[t^{-\nu-1}\left(\frac{z}{2}\right)^\nu\exp[t-\frac{z^2}{4t}]\right]_{\partial C}=0
+	\end{aligned}
+\end{equation}
+This holds for  $t=-\infty \pm i\epsilon$ and hence we can use the Hankel contour along the negative real axis, see figure below.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.45\linewidth]{27}
+	\caption{Hankel contour}
+	\label{fig:rectangle}
+\end{figure}
+No information on $\nu$ has been given, so assuming it is not an integer, we need a branch cut integral. Setting first $t=uz/2$ and then $t=e^w$ we get a new contour integral,
+\begin{equation}
+	\begin{aligned}
+		J_\nu(z)=\frac{1}{2\pi i} \int_\gamma \dd w\, e^{z\sinh{w} -vw}
+	\end{aligned}
+\end{equation}
+over the contour shown in the figure below
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{26}
+	\caption{Deformed contour for $J_\nu(z)$}
+	\label{fig:rectangle}
+\end{figure}
+splitting the contour integral into 2 pieces and setting $w=t+i\pi$ on the flat and $w=i\theta$ on the vertical parts, we get
+\begin{equation}
+	\begin{aligned}
+	J_\nu(z)=\frac{1}{\pi} \int_0^\pi \dd \theta\cos(\nu\theta -z\sin\theta)
+	-\frac{\sin\nu\pi}{\pi} \int_0^\infty\dd t e^{-vt-z\sinh t}
+	\end{aligned}
+\end{equation}
+To make sure we have independent solutions of $J_{\nu}$ from $J_{-\nu}$ we then define the Neumann function
+\begin{equation}
+	\begin{aligned}
+		N_\nu(z)\equiv& \frac{J_\nu(z)\cos{\nu\pi-J_{-\nu}(z)}}{\sin{\nu\pi}}\\
+		=&
+		\int_0^\pi \frac{\cot{\nu\pi}}{\pi}\cos(\nu\theta -z\sin\theta)-\frac{\pi}{\sin{\nu\pi}}\cos(\nu\theta +z\sin\theta)\dd \theta\\
+		&- \int_0^\infty \frac{\cos\nu\pi}{\pi} e^{-vt-z\sinh t}+\frac{1}{\pi} e^{vt-z\sinh t}\dd t
+	\end{aligned}
+\end{equation}
+We now define the simpler Hankel functions 
+\begin{equation}
+	\begin{aligned}
+		H_\nu^{(1)}(z)&=\frac{1}{i\pi }\int_{-\infty}^{\infty+i\pi}e^{z\sinh w-vw}\dd w,~~~~~~|\arg z|<\pi/2\\
+	H_\nu^{(2)}(z)&=-\frac{1}{i\pi }\int_{-\infty}^{\infty-i\pi}e^{z\sinh w-vw}\dd w,~~~~~~|\arg z|<\pi/2\\
+	\end{aligned}
+\end{equation}
+Their contout integrals go like
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.45\linewidth]{25}
+	\caption{$H_{\nu}^{(1)}(z)$ and $H_{\nu}^{(2)}(z)$ contours.}
+	\label{fig:rectangle}
+\end{figure}
+Let us see what happens when they are combined. We write the sum and split the contour into a part from $\infty$ to 0 (this is canceled by the sum), then a part from $0$ to $\pi$ with $w=i\theta$ and then lastly a part from 0 to $\infty$ with $w=x\pm i\pi$ (depending on the which one of the Hankel functions).
+
+Doing this one obtains the following
+\begin{equation}
+	\begin{aligned}
+		H_\nu^{(1)}(z)+H_\nu^{(2)}(z)\\
+		=&\frac{1}{i\pi}\int_{0}^{\infty}e^{z\sinh (x+i\pi)-v(x+i\pi)}\dd 
+	x-\frac{1}{i\pi}\int_{0}^{\infty}e^{z\sinh (x-i\pi)-v(x-i\pi)}\dd x\\
+&-\frac{1}{i\pi}\int_{0}^{\pi}e^{z\sinh i\theta -\nu i\theta)}i\dd \theta\\
+	 =&\frac{1}{\pi}\int_0^\pi e^{i(\nu\theta-z\sinh\theta)}+e^{-i(\nu\theta-z\sinh\theta)}\dd \theta\\
+	 &-\frac{1}{\pi}\int_0^\infty \left(e^{i\nu\pi}-e^{-i\nu\pi}\right)e^{-\nu x-z\sinh\theta x}\dd  x
+	\end{aligned}
+\end{equation}
+Converting the exponentials we see that we match the Bessel function just found
+\begin{equation}
+	\begin{aligned}
+		H_\nu^{(1)}(z)+H_\nu^{(2)}(z)=&\frac{2}{\pi} \int_0^\pi \dd \theta\cos(\nu\theta -z\sin\theta)
+		-\frac{2\sin\nu\pi}{\pi} \int_0^\infty\dd t e^{-vt-z\sinh t}\\
+		&=
+		2J_\nu(z)
+	\end{aligned}
+\end{equation}
+Similarly we take take the difference between the two Hankel functions and obtain in the end an expression for $N_\nu(z)$.
+\begin{equation}
+	\begin{aligned}
+		H_\nu^{(1)}(z)-H_\nu^{(2)}(z)\\
+		=&\frac{2}{i\pi}\int_{-\infty}^{0}e^{z\sinh x-\nu x}\dd 
+		x+\frac{1}{i\pi}\int_{0}^{\infty}e^{z\sinh (x-i\pi)-\nu(x-i\pi)}\dd x\\
+		&+\frac{1}{i\pi}\int_{0}^{\infty}e^{z\sinh (x+i\pi)-\nu(x+i\pi)}\dd x+\frac{1}{i\pi}\int_{0}^{\pi}e^{z\sinh i\theta -\nu i\theta}i\dd \theta\\
+		&+\frac{1}{i\pi}\int_{0}^{-\pi}e^{z\sinh i\theta -\nu i\theta}i\dd \theta
+		\\ 
+		=&-\frac{2}{\pi}\int_{0}^{\infty}\left(e^{\nu x}+\cos{\nu x}e^{-\nu x}\right)e^{-\sinh x}\dd x+\frac{1}{\pi}\int_{0}^{\pi}\sin(z\sin\theta-\nu\theta)\dd \theta
+		\\
+		=& 2N_\nu(z)
+	\end{aligned}
+\end{equation}
+where the last line comes from an integral definition of $N_\nu(z)$ which can be looked up in an integral table. 
+
+Finally we want to obtain an expression for the asymptotic expansion of $J_\nu(z)$ and $N_\mu(z)$ using the above representations, using the methods of steepest descent. We will look at the Hankel functions and shift to the Hankel contour
+
 \section*{Problem 2}
 We first start of with the following version of the riemann zeta function
 \begin{equation}
@@ -2609,19 +2717,21 @@ Performing the sum using the binomial coeffecients
 \begin{equation}
 	\begin{aligned}
 		D(s)
-		&=\frac{1}{\Gamma(s)}\int_{0}^{\infty}u^{s-1}\left(\frac{1}{1-e^{-u}}-1\right)
+		&=\frac{1}{\Gamma(s)}\int_{0}^{\infty}u^{s-1}\left(\frac{1}{\left(1-e^{-u}\right)^k}-1\right)
 		\dd u
 	\end{aligned}
 \end{equation}
-Then using the result from problem 2:
+Then using the result from problem 2 we split this up in to two integrals. The first one over the hankel contour.
 \begin{equation}
 	\begin{aligned}
 		D(s)
-		&=\zeta(s)-\frac{1}{\Gamma(s)}\int_{0}^{\infty}u^{s-1}
+				&=
+		\frac{\Gamma(1-s)}{2\pi i}\int_\gamma
+		z^{s-1}\frac{1}{(1-e^{-z})^{-k}} \dd z-\frac{1}{\Gamma(s)}\int_{0}^{\infty}u^{s-1}
 		\dd u
 	\end{aligned}
 \end{equation}
-Looking at the integral
+Now consider the integral
 \begin{equation}
 	\begin{aligned}
 I(s)=\int_\gamma z^{s-1}
@@ -2632,39 +2742,30 @@ This can be has a removable singularity when $s$ gets close to 1 and so using th
 \begin{equation}
 I(s)=2\pi i\sin(\pi s)\int_{0}^{\infty}u^{s-1}	\dd u
 \end{equation}
-and so
-\begin{equation}
-	\begin{aligned}
-		D(s)
-		&=\zeta(s)-\frac{I(s)}{2\pi i \Gamma(s)\sin \pi s}
-		\\
-		&=\zeta(s)-\frac{I(s)\Gamma(1-s)}{2\pi^2 i }
-	\end{aligned}
-\end{equation}
-Where we have used
+Inserting this into $D(s)$ we can collect the the contour integral, using again
 \begin{equation}
 	\Gamma(1-z)=\frac{\pi}{\Gamma(z)\sin \pi z}
 \end{equation}
-Or, since $\zeta(s)$ can also be written in terms of a hankel contour integral, see problem 2, 
+so 
 \begin{equation}
 	\begin{aligned}
-D(s)=\frac{1}{2\pi i}\int_\gamma
-\Gamma(1-s) z^{s-1}\left(\frac{1}{e^{z}-1}-\frac{1}{\pi}\right) \dd z
+D(s)=-\frac{\Gamma(1-s)}{2\pi i}\int_\gamma
+ (-z)^{s-1}\left(\frac{1}{(1-e^{z})^{-k}}-1\right) \dd z
 	\end{aligned}
 \end{equation}
-Because of the gamma function this just has simple poles at $s=1,2,3\cdots,n$. The residues at these poles are for different values of $s$:
+This has simple poles at $s=1,2,3\cdots,k$. The residues at these points are the following (note that one has to then evaluate the $\zeta$ integral)
 \begin{equation}
 	\begin{aligned}
-		\Res \left[D(s)\right]_{s=1}&=-\frac{1}{e^z-1}\\
-		\Res \left[D(s)\right]_{s=2}&=\frac{z}{e^z-1}\\
-		\Res \left[D(s)\right]_{s=3}&=-\frac{z^2}{2 \left(e^z-1\right)}\\
-		\Res \left[D(s)\right]_{s=3}&=\frac{z^3}{6 \left(e^z-1\right)}
+		\Res \left[D(s)\right]_{s=1}&=1-\left(e^{-z}-1\right)^k\\
+		\Res \left[D(s)\right]_{s=2}&=z \left(\left(e^{-z}-1\right)^k-1\right)\\
+		\Res \left[D(s)\right]_{s=3}&-\frac{1}{2} z^2 \left(\left(e^{-z}-1\right)^k-1\right)\\
+		\Res \left[D(s)\right]_{s=4}&=\frac{1}{6} z^3 \left(\left(e^{-z}-1\right)^k-1\right)
 	\end{aligned}
 \end{equation}
 From this we deduce that the residues at $s$ are given by
 \begin{equation}
 	\begin{aligned}
-		A_s(z)=\frac{(-1)^s z^{s-1}}{\left(e^z-1\right) (s-1)!}
+		A_s(z)=\int_\gamma\frac{(-1)^s \left(\left(e^{-z}-1\right)^k-1\right) z^{s-1}}{\Gamma (s)}\dd z
 	\end{aligned}
 \end{equation}
 \subsection*{Part c}
@@ -2677,23 +2778,55 @@ From this we deduce that the residues at $s$ are given by
 Hence
 \begin{equation}
 \begin{aligned}
-\log Z(\beta)=\sum_{s=1}^{\infty}\frac{\Gamma(s)\zeta(s+1)A_s(z)}{\beta^{s}}+	D'(0)-D(0)\log \beta+H.C.
+\log Z(\beta)=\sum_{s=1}^{k}\frac{\Gamma(s)\zeta(s+1)A_s}{\beta^{s}}+	D'(0)-D(0)\log \beta+H.C.
 \end{aligned}
 \end{equation}
 Or
 \begin{equation}
 	\begin{aligned}
- Z(\beta)=\exp[\sum_{s=1}^{\infty}\frac{\Gamma(s)\zeta(s+1)A_s(z)}{\beta^{s}}+	D'(0)-D(0)\log \beta]+H.C.
+ Z(\beta)=\exp[\sum_{s=1}^{k}\frac{\Gamma(s)\zeta(s+1)A_s}{\beta^{s}}+	D'(0)-D(0)\log \beta]+H.C.
 	\end{aligned}
 \end{equation}
+%It will also be of value later to get the (q'th) derivative of this which is
+%\begin{equation}
+%	\begin{aligned}
+%		\dv[q]{}{\beta}\log Z(\beta)=\frac{1}{(-1)^q}\left[\sum_{s=1}^{k}\frac{\Gamma(s)\zeta(s+1)A_s(z)}{\beta^{s+q}}+	\frac{1}{\beta^{q}}D(0)\Gamma(k)\right]+H.C.
+%	\end{aligned}
+%\end{equation}
 \subsection*{Part d}
 Density of states is given by
 \begin{equation}
-d(n)=\frac{1}{2\pi i}\int_{b-i\pi}^{b+i\pi}\dd \beta\,Z(\beta)e^{n\beta}
+d(n)=\frac{1}{2\pi i}\int_{b-i\pi}^{b+i\pi}\dd \beta\,Z(\beta)e^{n\beta}=\frac{1}{2\pi}\int_{\pi}^{-\pi}\dd t\,Z(b+it)e^{nb+itn},~~~~(n\geq 0,b>0)
 \end{equation}
+To find the saddle point we are then going to look for the solution to
 \begin{equation}
 	\begin{aligned}
-		S(\beta)=\beta n \log Z(\beta)
+-	\dv{}{b} S(b_n)= 0
+	\end{aligned}
+\end{equation}
+The solution is denoted $b_n$ and
+\begin{equation}
+	\begin{aligned}
+		S(\beta)=\beta n+ \log Z(\beta)
+	\end{aligned}
+\end{equation}
+For $k=1$ we get
+\begin{equation}
+	\begin{aligned}
+		S'(b_n)&=-
+		\dv{}{b}
+		\left(\frac{\Gamma(s)\zeta(s+1)A_s}{b^{s}}+	D'(0)-D(0)\log b+bn\right)
+\\
+&=
+\frac{s\Gamma(s)\zeta(s+1)A_s}{b_n^{s+1}}+\frac{D(0)}{b_n}-n\\
+\Rightarrow b_n&=
+\end{aligned}
+\end{equation}
+Further
+\begin{equation}
+	\begin{aligned}
+		S''(b_n)&=
+		\frac{s(s+1)\Gamma(s)\zeta(s+1)A_s}{b^{s+2}}-\frac{D(0)}{b^2}
 	\end{aligned}
 \end{equation}
 \end{document}
