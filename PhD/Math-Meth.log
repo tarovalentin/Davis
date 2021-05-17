@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  11 MAY 2021 12:37
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  16 MAY 2021 23:02
  restricted system commands enabled.
 **Math-Meth.tex
 (./Math-Meth.tex
@@ -1204,7 +1204,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--161
 
  []
 
-<3.png, id=314, 471.26062pt x 143.03438pt>
+<3.png, id=329, 471.26062pt x 143.03438pt>
 File: 3.png Graphic file (type png)
 <use 3.png>
 Package luatex.def Info: 3.png  used on input line 166.
@@ -1221,7 +1221,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 185--187
 
  []
 
-<4.png, id=327, 377.41pt x 124.96687pt>
+<4.png, id=342, 377.41pt x 124.96687pt>
 File: 4.png Graphic file (type png)
 <use 4.png>
 Package luatex.def Info: 4.png  used on input line 200.
@@ -1236,7 +1236,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 193--203
 
  []
 
-<5.png, id=328, 294.60063pt x 168.12813pt>
+<5.png, id=343, 294.60063pt x 168.12813pt>
 File: 5.png Graphic file (type png)
 <use 5.png>
 Package luatex.def Info: 5.png  used on input line 219.
@@ -1305,7 +1305,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--266
 
  []
 
-<7.png, id=349, 601.24625pt x 214.30063pt>
+<7.png, id=364, 601.24625pt x 214.30063pt>
 File: 7.png Graphic file (type png)
 <use 7.png>
 Package luatex.def Info: 7.png  used on input line 273.
@@ -1323,7 +1323,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--283
 [9
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.4'
 <./7.png>]
-<8.png, id=372, 513.92pt x 78.79437pt>
+<8.png, id=387, 513.92pt x 78.79437pt>
 File: 8.png Graphic file (type png)
 <use 8.png>
 Package luatex.def Info: 8.png  used on input line 313.
@@ -1343,12 +1343,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 317--321
 
  []
 
-<9.png, id=373, 126.97438pt x 50.1875pt>
+<9.png, id=388, 126.97438pt x 50.1875pt>
 File: 9.png Graphic file (type png)
 <use 9.png>
 Package luatex.def Info: 9.png  used on input line 327.
 (luatex.def)             Requested size: 258.12645pt x 102.03038pt.
-<10.png, id=374, 533.49312pt x 257.96375pt>
+<10.png, id=389, 533.49312pt x 257.96375pt>
 File: 10.png Graphic file (type png)
 <use 10.png>
 Package luatex.def Info: 10.png  used on input line 334.
@@ -1367,7 +1367,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 342--347
 
  []
 
-<11.png, id=387, 700.11563pt x 102.88437pt>
+<11.png, id=402, 700.11563pt x 102.88437pt>
 File: 11.png Graphic file (type png)
 <use 11.png>
 Package luatex.def Info: 11.png  used on input line 362.
@@ -1375,12 +1375,12 @@ Package luatex.def Info: 11.png  used on input line 362.
 [11
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.7'
 <./10.png>]
-<12.png, id=398, 461.22313pt x 59.22125pt>
+<12.png, id=413, 461.22313pt x 59.22125pt>
 File: 12.png Graphic file (type png)
 <use 12.png>
 Package luatex.def Info: 12.png  used on input line 378.
 (luatex.def)             Requested size: 387.18312pt x 49.71477pt.
-<13.png, id=399, 417.56pt x 141.52875pt>
+<13.png, id=414, 417.56pt x 141.52875pt>
 File: 13.png Graphic file (type png)
 <use 13.png>
 Package luatex.def Info: 13.png  used on input line 389.
@@ -1390,12 +1390,12 @@ warning  (pdf backend): ignoring duplicate destination with the name 'figure.8'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.9'
 <./11.png><./12.png>]
-<14.png, id=411, 309.155pt x 173.64874pt>
+<14.png, id=426, 309.155pt x 173.64874pt>
 File: 14.png Graphic file (type png)
 <use 14.png>
 Package luatex.def Info: 14.png  used on input line 396.
 (luatex.def)             Requested size: 387.18312pt x 217.49493pt.
-<15.png, id=412, 289.58188pt x 139.01938pt>
+<15.png, id=427, 289.58188pt x 139.01938pt>
 File: 15.png Graphic file (type png)
 <use 15.png>
 Package luatex.def Info: 15.png  used on input line 420.
@@ -1415,12 +1415,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 424--426
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.12'
 
 <./15.png>]
-<16.png, id=432, 226.34563pt x 185.69376pt>
+<16.png, id=447, 226.34563pt x 185.69376pt>
 File: 16.png Graphic file (type png)
 <use 16.png>
 Package luatex.def Info: 16.png  used on input line 462.
 (luatex.def)             Requested size: 301.14316pt x 247.05742pt.
-<17.png, id=433, 230.8625pt x 132.99687pt>
+<17.png, id=448, 230.8625pt x 132.99687pt>
 File: 17.png Graphic file (type png)
 <use 17.png>
 Package luatex.def Info: 17.png  used on input line 493.
@@ -1434,7 +1434,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 488--496
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.13'
 
 <./16.png>]
-<18.png, id=446, 160.09813pt x 125.46875pt>
+<18.png, id=461, 160.09813pt x 125.46875pt>
 File: 18.png Graphic file (type png)
 <use 18.png>
 Package luatex.def Info: 18.png  used on input line 508.
@@ -1446,7 +1446,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.14'
 
 <./17.png>]
-<19.png, id=454, 510.90875pt x 152.57pt>
+<19.png, id=469, 510.90875pt x 152.57pt>
 File: 19.png Graphic file (type png)
 <use 19.png>
 Package luatex.def Info: 19.png  used on input line 517.
@@ -1483,12 +1483,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 547--550
  []
 
 [18]
-<20.png, id=474, 301.62688pt x 105.89563pt>
+<20.png, id=489, 301.62688pt x 105.89563pt>
 File: 20.png Graphic file (type png)
 <use 20.png>
 Package luatex.def Info: 20.png  used on input line 570.
 (luatex.def)             Requested size: 301.14316pt x 105.72568pt.
-<21.png, id=475, 201.75375pt x 131.49126pt>
+<21.png, id=490, 201.75375pt x 131.49126pt>
 File: 21.png Graphic file (type png)
 <use 21.png>
 Package luatex.def Info: 21.png  used on input line 592.
@@ -1497,7 +1497,7 @@ Package luatex.def Info: 21.png  used on input line 592.
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.17'
 
 <./20.png>]
-<22.png, id=486, 504.88625pt x 238.39063pt>
+<22.png, id=501, 504.88625pt x 238.39063pt>
 File: 22.png Graphic file (type png)
 <use 22.png>
 Package luatex.def Info: 22.png  used on input line 616.
@@ -1509,7 +1509,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'figure.18'
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.19'
 
 <./21.png><./22.png>]
-<23.png, id=499, 204.765pt x 176.66pt>
+<23.png, id=514, 204.765pt x 176.66pt>
 File: 23.png Graphic file (type png)
 <use 23.png>
 Package luatex.def Info: 23.png  used on input line 640.
@@ -1546,7 +1546,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 864--866
  []
 
 [26] [27] [28] [29] [30]
-<24.png, id=605, 397.98688pt x 123.96312pt>
+<24.png, id=620, 397.98688pt x 123.96312pt>
 File: 24.png Graphic file (type png)
 <use 24.png>
 Package luatex.def Info: 24.png  used on input line 1096.
@@ -1554,243 +1554,272 @@ Package luatex.def Info: 24.png  used on input line 1096.
  [31
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.21'
 
-<./24.png>] [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1208--1208
+<./24.png>] [32] [33] [34] [35] [36]
+Underfull \hbox (badness 10000) in paragraph at lines 1341--1341
 
  []
 
-[34] [35] [36]
-Overfull \hbox (26.15082pt too wide) detected at line 1348
+[37] [38] [39]
+Overfull \hbox (26.15082pt too wide) detected at line 1481
 [][][]
  []
 
-[37] [38] [39] [40]
-Underfull \hbox (badness 10000) in paragraph at lines 1509--1509
+[40] [41] [42] [43]
+Underfull \hbox (badness 10000) in paragraph at lines 1642--1642
 
  []
 
 
-Overfull \hbox (6.89096pt too wide) in paragraph at lines 1536--1537
+Overfull \hbox (6.89096pt too wide) in paragraph at lines 1669--1670
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (28.04083pt too wide) in paragraph at lines 1542--1543
+Overfull \hbox (28.04083pt too wide) in paragraph at lines 1675--1676
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ] 
  []
 
-[41]
-Overfull \hbox (28.04083pt too wide) in paragraph at lines 1544--1545
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-] 
- []
-
-
-Overfull \hbox (28.04083pt too wide) in paragraph at lines 1546--1547
+[44]
+Overfull \hbox (28.04083pt too wide) in paragraph at lines 1677--1678
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ] 
  []
 
 
-Overfull \hbox (13.94092pt too wide) in paragraph at lines 1572--1573
+Overfull \hbox (28.04083pt too wide) in paragraph at lines 1679--1680
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+
+Overfull \hbox (13.94092pt too wide) in paragraph at lines 1705--1706
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.89096pt too wide) in paragraph at lines 1573--1574
+Overfull \hbox (6.89096pt too wide) in paragraph at lines 1706--1707
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.89096pt too wide) in paragraph at lines 1574--1575
+Overfull \hbox (6.89096pt too wide) in paragraph at lines 1707--1708
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.89096pt too wide) in paragraph at lines 1575--1576
+Overfull \hbox (6.89096pt too wide) in paragraph at lines 1708--1709
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (13.94092pt too wide) in paragraph at lines 1579--1580
+Overfull \hbox (13.94092pt too wide) in paragraph at lines 1712--1713
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[42]
-<hw2.pdf, id=809, 252.945pt x 269.005pt>
+[45]
+<hw2.pdf, id=853, 252.945pt x 269.005pt>
 File: hw2.pdf Graphic file (type pdf)
 <use hw2.pdf>
-Package luatex.def Info: hw2.pdf  used on input line 1587.
+Package luatex.def Info: hw2.pdf  used on input line 1720.
 (luatex.def)             Requested size: 301.14316pt x 320.27179pt.
- [43
+ [46
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.22'
 
 <./hw2.pdf>]
-<contour.pdf, id=833, 361.35pt x 363.3575pt>
+<contour.pdf, id=877, 361.35pt x 363.3575pt>
 File: contour.pdf Graphic file (type pdf)
 <use contour.pdf>
-Package luatex.def Info: contour.pdf  used on input line 1642.
+Package luatex.def Info: contour.pdf  used on input line 1775.
 (luatex.def)             Requested size: 301.14316pt x 302.81749pt.
- [44
+ [47
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.23'
 
-<./contour.pdf>] [45]
-<map.pdf, id=876, 361.35pt x 153.57375pt>
+<./contour.pdf>] [48]
+<map.pdf, id=920, 361.35pt x 153.57375pt>
 File: map.pdf Graphic file (type pdf)
 <use map.pdf>
-Package luatex.def Info: map.pdf  used on input line 1722.
+Package luatex.def Info: map.pdf  used on input line 1855.
 (luatex.def)             Requested size: 301.14316pt x 127.98639pt.
- [46
+ [49
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.24'
 
-<./map.pdf>] [47] [48]
-Overfull \hbox (35.09079pt too wide) in paragraph at lines 1835--1836
+<./map.pdf>] [50] [51]
+Overfull \hbox (35.09079pt too wide) in paragraph at lines 1968--1969
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (20.99088pt too wide) in paragraph at lines 1837--1838
+Overfull \hbox (20.99088pt too wide) in paragraph at lines 1970--1971
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (20.99088pt too wide) in paragraph at lines 1839--1840
+Overfull \hbox (20.99088pt too wide) in paragraph at lines 1972--1973
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (20.99088pt too wide) in paragraph at lines 1841--1842
+Overfull \hbox (20.99088pt too wide) in paragraph at lines 1974--1975
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<contour2.pdf, id=916, 289.08pt x 289.08pt>
+<contour2.pdf, id=961, 289.08pt x 289.08pt>
 File: contour2.pdf Graphic file (type pdf)
 <use contour2.pdf>
-Package luatex.def Info: contour2.pdf  used on input line 1852.
+Package luatex.def Info: contour2.pdf  used on input line 1985.
 (luatex.def)             Requested size: 258.12645pt x 258.14052pt.
 
 Underfull \vbox (badness 1092) has occurred while \output is active []
 
- [49]
-[50
+ [52]
+[53
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.25'
 
 <./contour2.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1860--1860
+Underfull \hbox (badness 10000) in paragraph at lines 1993--1993
 
  []
 
-[51]
-<rectangle.png, id=973, 506.89375pt x 403.00563pt>
+[54]
+<rectangle.png, id=1017, 506.89375pt x 403.00563pt>
 File: rectangle.png Graphic file (type png)
 <use rectangle.png>
-Package luatex.def Info: rectangle.png  used on input line 1936.
+Package luatex.def Info: rectangle.png  used on input line 2069.
 (luatex.def)             Requested size: 215.1032pt x 171.01378pt.
- [52
+ [55
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.26'
 
 <./rectangle.png>]
-<cont.png, id=984, 374.90062pt x 311.66437pt>
+<cont.png, id=1028, 374.90062pt x 311.66437pt>
 File: cont.png Graphic file (type png)
 <use cont.png>
-Package luatex.def Info: cont.png  used on input line 1991.
+Package luatex.def Info: cont.png  used on input line 2124.
 (luatex.def)             Requested size: 215.1032pt x 178.8204pt.
- [53] [54
+ [56] [57
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.27'
 
-<./cont.png>] [55]
-Overfull \hbox (38.74649pt too wide) detected at line 2126
+<./cont.png>] [58]
+Overfull \hbox (38.74649pt too wide) detected at line 2259
 [][][]
  []
 
-[56]
-Overfull \hbox (66.76062pt too wide) detected at line 2150
+[59]
+Overfull \hbox (66.76062pt too wide) detected at line 2283
 [][][]
  []
 
-[57]
-Overfull \hbox (65.6537pt too wide) detected at line 2192
+[60]
+Overfull \hbox (65.6537pt too wide) detected at line 2325
 []| [][]
  []
 
-[58] [59] [60] [61] [62] [63]
-Underfull \hbox (badness 10000) in paragraph at lines 2383--2383
+[61] [62] [63] [64] [65] [66]
+Underfull \hbox (badness 10000) in paragraph at lines 2516--2516
 
  []
 
-[64]
-<27.png, id=1124, 542.025pt x 461.22313pt>
+[67]
+<27.png, id=1169, 542.025pt x 461.22313pt>
 File: 27.png Graphic file (type png)
 <use 27.png>
-Package luatex.def Info: 27.png  used on input line 2455.
+Package luatex.def Info: 27.png  used on input line 2588.
 (luatex.def)             Requested size: 193.59155pt x 164.73119pt.
-<26.png, id=1125, 507.39563pt x 397.485pt>
+<26.png, id=1170, 507.39563pt x 397.485pt>
 File: 26.png Graphic file (type png)
 <use 26.png>
-Package luatex.def Info: 26.png  used on input line 2468.
+Package luatex.def Info: 26.png  used on input line 2601.
 (luatex.def)             Requested size: 215.1032pt x 168.50735pt.
- [65
+
+Underfull \vbox (badness 3118) has occurred while \output is active []
+
+ [68
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.28'
 
 <./27.png>]
-<25.png, id=1137, 408.52625pt x 328.72812pt>
+<25.png, id=1181, 408.52625pt x 328.72812pt>
 File: 25.png Graphic file (type png)
 <use 25.png>
-Package luatex.def Info: 25.png  used on input line 2498.
-(luatex.def)             Requested size: 193.59155pt x 155.77629pt.
+Package luatex.def Info: 25.png  used on input line 2631.
+(luatex.def)             Requested size: 236.61482pt x 190.39659pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [66
+ [69
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.29'
 
 <./26.png>]
-Overfull \hbox (1.17358pt too wide) detected at line 2537
+Overfull \hbox (1.17358pt too wide) detected at line 2670
 [][][]
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67
+ [70
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.30'
 
-<./25.png>] [68] [69] [70]
-Overfull \hbox (381.11894pt too wide) in paragraph at lines 2699--2701
-[][][]$\T1/lmtt/m/n/12 https://math.stackexchange.com/questions/881205/calculati
-ng-[]riemann-[]zeta-[]function-[]of-[]a-[]complex-[]number-[]given-[]the-[]compl
-ex-[]contour$[][]
- []
-
-[71] [72]
-Overfull \hbox (35.61319pt too wide) detected at line 2830
+<./25.png>] [71] [72] [73] [74] [75] [76]
+Overfull \hbox (35.61319pt too wide) detected at line 2964
 [][][]
  []
 
-[73] [74]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2885.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2885.
+[77]
+Underfull \hbox (badness 10000) in paragraph at lines 3015--3018
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3015--3018
+
+ []
+
+[78] [79]
+Underfull \hbox (badness 10000) in paragraph at lines 3083--3083
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [80]
+Overfull \hbox (12.07007pt too wide) in paragraph at lines 3129--3148
+ [][] 
+ []
+
+
+Overfull \hbox (52.61038pt too wide) detected at line 3255
+[]| [][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [81
+warning  (pdf backend): ignoring duplicate destination with the name 'table.1'
+] [82] [83]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3306.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3306.
  (./Math-Meth.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2885.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2885.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3306.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3306.
 Package rerunfilecheck Info: File `Math-Meth.out' has not changed.
-(rerunfilecheck)             Checksum: 6D37B3615A619A4A9E8075C3440FD07A;8498.
+(rerunfilecheck)             Checksum: 965E1D53DCA46BBA721E3474C0EC69FF;9124.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2885.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3306.
 )
 
 Here is how much of LuaTeX's memory you used:
- 36712 strings out of 480991
+ 36772 strings out of 480991
  100000,1373583 words of node,token memory allocated
- 3501 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 8 glue, 4 kern, 1 sub_mlist, 1 glyph, 742 attribute
-, 57 glue_spec, 742 attribute_list, 2 write nodes
-   avail lists: 2:3389,3:293,4:134,5:517,6:72,7:4261,8:130,9:2570,10:13,11:181
- 52177 multiletter control sequences out of 65536+200000
+ 3757 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 8 glue, 4 kern, 1 sub_mlist, 1 glyph, 806 attribute
+, 57 glue_spec, 806 attribute_list, 2 write nodes
+   avail lists: 2:3538,3:293,4:134,5:517,6:72,7:7050,8:123,9:2570,10:13,11:181
+ 52184 multiletter control sequences out of 65536+200000
  117 fonts using 9261347 bytes
  71i,18n,102p,754b,1146s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/MiK
@@ -1821,9 +1850,9 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX
 ublic/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 
-Output written on Math-Meth.pdf (76 pages, 1953460 bytes).
+Output written on Math-Meth.pdf (85 pages, 1992088 bytes).
 
-PDF statistics: 1361 PDF objects out of 1440 (max. 8388607)
- 660 named destinations out of 1000 (max. 131072)
- 392 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1457 PDF objects out of 1728 (max. 8388607)
+ 713 named destinations out of 1000 (max. 131072)
+ 416 words of extra memory for PDF output out of 10000 (max. 100000000)
 
