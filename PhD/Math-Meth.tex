@@ -1335,6 +1335,136 @@ so
 and we get $h_{\alpha_1}=\frac{1}{3}t_z$ and similarly for the other $h$'s. Using them we can then find $\langle\alpha_i,\alpha_j\rangle=(h_{\alpha_i},h_{\alpha_j})$.
 \subsection{Structure of Lie algbera}
 The Lie algebra can be decomposed $L=H\cup R$ where $R$ is the set of all roots.
+\begin{equation}
+	\begin{aligned}
+		\left[h_i,h_j\right]&=0,~~~~h_j,h_i\in H\\
+		[h_i,e_\alpha]&=\begin{cases}
+			&N_{\alpha \beta} e_{\alpha+\beta},~~~~\alpha+\beta \in R\\
+			&(e_{\alpha},e_\beta)h_\alpha,~~~~\alpha+\beta  =0\\
+			&0,~~~~~~~~~~~~\alpha+\beta  \neq0, ~~\alpha+\beta  \neq R
+		\end{cases}
+	\end{aligned}
+\end{equation}
+We make the following claim: every weight arises in a sequence $\mu+p\alpha,\mu+(p-1)\alpha,\dots , \mu,\mu-\alpha\dots \mu-q\alpha$ with
+\begin{equation}  \label{eq:minw}
+	\begin{aligned}
+		q-p=\frac{\expval{\mu,\alpha}}{\expval{\alpha,\alpha}}
+	\end{aligned}
+\end{equation}
+To see this, consider the following sequence. Let $\mu^*$ be the highest weight. then we lower by $e^{-\alpha}$ to make the sequence $\mu^*,\mu^*-\alpha\cdots \mu^*-q\alpha$. These would correspond to states $\ket{\mu^*-j\alpha}\in V$ and if $\ket{\mu^*-q\alpha}$ is the minimal weight, then 
+\begin{equation}
+	\begin{aligned}
+		e_{-\alpha}\ket{\mu^*-q\alpha}&=0\\
+		e_\alpha \ket {\mu^*}&=0
+	\end{aligned}
+\end{equation}
+remember $e_\alpha,e_{-\alpha}$ are a raising and lowering pair. If we lower the maximal state $k$ times, one can show that
+\begin{equation}
+	\begin{aligned}
+		r_k=r_{k_1}+\expval{\mu^*,\alpha}-(k-1)\expval{\alpha,\alpha}
+	\end{aligned}
+\end{equation}
+where $r$ is the coefficient
+\begin{equation}
+	\begin{aligned}
+		e_\alpha\ket{\mu^*-k\alpha}=r_k\ket{\mu^*-(k-1)\alpha}
+	\end{aligned}
+\end{equation}
+Using the fact that $\ket{\mu^*}$ is annihilated by $e_\alpha$, i.e. $\ket{\mu^*-q\alpha}$ is the minimum weight for some $q$, one obtains the seed for the recursion since $r_{q+1}=0$ after which we get equation \eqref{eq:minw}.
+
+But roots are a special case of weights (just correspond to the adjoint rep), therefore for two roots $\alpha,\beta$ we must have by raising/lowering $\beta$ by $e_{\pm\alpha}$ and $\alpha$ by $e_{\pm\beta}$ we can conclude
+\begin{equation}
+	\begin{aligned}
+		2\frac{\expval{\beta,\alpha}}{\expval{\alpha,\alpha}}&=m\in \mathds{Z}\\
+			2\frac{\expval{\alpha,\beta}}{\expval{\beta,\beta}}&=m'\in \mathds{Z}
+	\end{aligned}
+\end{equation}
+we conclude that
+\begin{equation}
+	\begin{aligned}
+		\frac{\expval{\beta,\alpha}\expval{\alpha,\beta}}{\expval{\alpha,\alpha}\expval{\beta,\beta}}&=mm'/4\\
+	\end{aligned}
+\end{equation}
+Since $\alpha,\beta$ are defined with an inner product on our space then we have a constraint on the angle between them
+\begin{equation}
+	\begin{aligned}
+		\cos^2\theta_{\alpha\beta}=\frac{\expval{\beta,\alpha}\expval{\alpha,\beta}}{\expval{\alpha,\alpha}}\expval{\beta,\beta}=mm'/4\in \{0,1,2,3,4\}
+	\end{aligned}
+\end{equation}
+This means that root-sequences can not be more then 4 units long. 
+
+Some more facts about roots:
+\begin{itemize}
+	\item If $\alpha\in H^*$, then $\expval{\alpha,\alpha}\neq 0$.
+	\item If $\alpha\in H^*$, then only $\pm \alpha,0\in H^*$.
+	\item \exists only one linearly independent root vector for each root.
+	\item Every root can be expressed as a linear combination of a basis set with rational coefficients.
+	\item If $\alpha,\beta$ are roots, then $\expval{\alpha,\beta}$ is rational.
+\end{itemize}
+We will now try to construct a basis for $H^*$. Pick some basis $\{\alpha_1,\alpha_2,\dots,\alpha_n\}$ for $H^*$, with $n$ the rank of the root space. Take then $\rho\in H^*,~~~\rho\sum_i c_i \alpha_i$.  $\rho$ is postive if the first non-zero $c_i$ in the linear combination is positive. A root is \textit{\textbf{simple}} if it cannot be expressed as a sum of 2 positive roots.
+
+More simple roots facts
+\begin{itemize}
+	\item Difference of 2 simple roots is not a root
+	\item If $\alpha,\beta$ are simple then $\expval{\alpha,\beta}\leq 0$
+	\item Simple roots are linearly independent
+\end{itemize}
+\subsubsection{Example}
+In SU(3) we had $\alpha_1(a t_z+b y)=a$ $\alpha_2(a t_z+b y)=-a/2+b$, $\alpha_3(a t_z+b y)=a/2+b$. If we pick the basis $H^*=\{\alpha_1,\alpha_3\}$ then $\alpha_2=\alpha_3-\alpha_1<0$. Also $\alpha_1,(-\alpha_2),\alpha_3$ are positive and $(-\alpha_2),\alpha_3$ are simple. 
+\subsubsection{Cartan Matrix}
+Given the simple roots define the following matrix
+\begin{equation}
+	\begin{aligned}
+		A_{ij}=\frac{\expval{\alpha_i,\alpha_j}}{\expval{\alpha_j,\alpha_j}}
+	\end{aligned}
+\end{equation}
+For SU(3) taking $(-\alpha_2),\alpha_3$ as our simple roots
+\begin{equation}
+	\begin{aligned}
+		A=\begin{pmatrix}
+			2 & -1 \\
+			-1 & 2
+		\end{pmatrix}
+	\end{aligned}
+\end{equation}
+In general $A_{ii}=2$ and $A_{ij}\in\{0,-1,-2,-3\}$. Further $A_{ij} A_{ji}<4$. Now that we have the matrix, we can make the following statements
+\begin{itemize}
+\item  The Cartan matrix can be used to determine all the roots by taking linear combinations of simple roots.
+\item It specifies all the commutation relations we need to know, and so also specifies the Lie Algebra.
+\end{itemize}
+Let $e_i=e_{\alpha_i}$ for $\alpha_i$ simple. We then define
+\begin{equation}
+	\begin{aligned}
+		f_i=e_{-\alpha_i}\frac{2}{\expval{e_{\alpha_i},e_{-\alpha_i}}\expval{\alpha_i\alpha_i}},~~~~h_i=h_{\alpha_i}\frac{2}{\expval{\alpha_i,\alpha_i}}
+	\end{aligned}
+\end{equation}
+We can then find the commutators (\textbf{need to fill this in})
+\begin{equation}
+	\begin{aligned}
+		\left[e_i,f_j\right]&=
+	\end{aligned}
+\end{equation}
+\subsubsection{Dynkin diagrams}
+We can finally draw Dynkin diagrams, knowing the Cartan matrix.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{28}
+\end{figure} 
+Dynkin classification of allowed Cartan matrices:
+\begin{itemize}
+	\item 4 infinite families (A,B,C,D), see illustration
+	\begin{itemize}
+		\item The first infinite family is the linear chain. It gives the Lie algebra of $SU(n+1)$
+		\item If the infinite chain is terminated by a double note this gives you the algebra of $SO(2n+1)$.
+		\item If the dots are colored in, one gets Sp($2n$)
+		\item Finally the last family has a split in the last chain and gives $SO(2n)$
+	\end{itemize}
+	\item 5 exceptions (E,F,G,H,I), see illustration
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{29}
+\end{figure} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section*{Homework 1\\\\
@@ -3082,10 +3212,104 @@ Similarly one could solve the condition posed for $k=2$ \eqref{eq:condition} and
 \section*{Homework 5\\\\
 	Taro V. Brown}\vspace*{1cm}
 \section*{Problem 1}
-\subsection*{Integral 1}
+We will take some $k\times k$ matrix $U\in g$ which commutes with all the matrices of an irreducible representation. For any matrix $V$ in this irreduciple representation, we then expect 
+\begin{equation}
+	\begin{aligned}
+		UV-VU=0
+	\end{aligned}
+\end{equation} 
+We then consider some matrices, which we will denote by $M(n,m)$ in the irreducible representation, defined by
+\begin{equation}
+	\begin{aligned}
+		M(n,m)_{ij}=\begin{cases}
+			1,~~~~~\text{for }~~i=n,~~~~j=m\\
+			0,~~~~~\text{elsewhere } 
+		\end{cases}
+	\end{aligned}
+\end{equation}
+As before we have
+\begin{equation}
+	\begin{aligned}
+		UM-MU=0
+	\end{aligned}
+\end{equation}
+If we expand $A$ in terms of all of these matrices $M$ with one non-zero component at different points, we have
+\begin{equation}
+	\begin{aligned}
+		U=\sum_{\substack{j=1\\i=1}}c_{ij}M_{ij}
+	\end{aligned}
+\end{equation}
+Inserting this into the commutation relation, we find
+\begin{equation}
+	\begin{aligned}
+		\sum_{\substack{j=1\\i=1}}c_{ij}M_{ij}M(n,m)-M(n,m)\sum_{\substack{j=1\\i=1}}c_{ij}M_{ij}&=0\\
+		\sum_{\substack{i=1}}c_{im}M(i,n)-\sum_{\substack{j=1}} c_{nj}M(m,j)&=0\\
+	\end{aligned}
+\end{equation}
+where we have collapsed the sum using the delta-function that comes from the non-zero component of $M$. The above equality only holds for $c_{ii}=c_{jj}=c$ for all $i$ and $j$ and for $c_{im}=c_{nj}=0$. From this we see that Schur's Lemma follows
+\begin{equation}
+	\begin{aligned}
+		U=c \, \mathds{1}_{n\times n}
+	\end{aligned}
+\end{equation}
+which holds for any matrix $U$ that commutes with all the matrices of the irreducible representation.
 \section*{Problem 2}
-https://people.cas.uab.edu/~pjung/SpinTutorialShannon.pdf
-zee 270
+The $\bm r$ in question is taken to be an irreducible tensor representation of SU(2). The space of the representation is $r$-dimensional, since it acts on totally symmetric rank $r-1$ tensors. We will approach this problem working with the lowest dimensional representation, then working our way up and generalizing.
+\subsubsection*{$2\times 2 $ rep}
+We decombose the the product in terms of a symmetric and antisymmetric combination
+\begin{equation}
+	\begin{aligned}
+		\phi_i\phi_j=\phi_{(i}\phi_{j)}+\phi_{[i}\phi_{j]}=\phi_{(i}\phi_{j)}+a\epsilon_{ij}
+	\end{aligned}
+\end{equation}
+where we have used the fact that the only $2\times 2$ antisymmetric tensor one can have is the levi cevita symbol (possibly multiplied by some constant). We have 3 free parameters in the symmetric part and 1 in the antisymmetric, hence we can write
+
+\section*{Problem 3}
+For SU(3) we have to work with tensors that have both upper and lower indices
+\begin{equation}
+	\begin{aligned}
+		\phi^{i_1,\dots,i_p}_{j_1,\dots,j_q}
+	\end{aligned}
+\end{equation}
+Since the invariant tensor $\epsilon$ has three indices we can't use it in the way we did for SU(2), we can still use it, however, to write the antisymmetric part of any tensor in terms of a lower rank tensor, i.e.
+\begin{equation}
+	\begin{aligned}
+		\phi^{[i_1,i_2]\dots}_{\dots}=\epsilon^{i_1 i_2 k} \phi_{b_k\dots }^{\dots}
+	\end{aligned}
+\end{equation}
+and so we can restrict ourselves to only consider tensors that are completely symmetric and their upper and lower indices. The representation induced on the space of the traceless symmetric tensors with $p$ upper indeices and $q$ lower indices is written as 
+\begin{equation}
+	\begin{aligned}
+		(q,p)
+	\end{aligned}
+\end{equation}
+It is easy to see from these assertions that 
+\begin{equation}
+	\begin{aligned}
+		(p,q)^*\sim(q,p)
+	\end{aligned}
+\end{equation}
+This is from the fact (see e.g. Anthony Zee), that by definition
+$\phi^{i*}=\phi_i$ because of unitarity. Further we may decompose the product of a symmetric tensor with $p$ upper indices with a tensor that has $q$ lower indices in terms of symmetric tensors and and a tensor which has had an index traced out. More explicitly:
+\begin{equation}
+	\begin{aligned}
+		(p,0)\otimes (0,q)=(p,q)\oplus \left[(p-1,0)\otimes (0,q-1)\right]
+	\end{aligned}
+\end{equation} 
+The using the fact that since the tensor is symmetric and each index can take on $q$ values, we have
+\begin{equation}
+	\begin{aligned}
+		\dim(n,0)=\dim(0,n)=1/2(n+2)(n+1)
+	\end{aligned}
+\end{equation}
+we can take the dimension on both sides and rearrange to get:
+\begin{equation}
+	\begin{aligned}
+		\dim(p,q)&=\dim(p,0)\times \dim(0,q)-\left[\dim(p-1,0)\times \dim(0,q-1)\right]\\
+		&=1/4(p+2)(p+1)(q+2)(q+1)-1/4(p+1)(p)(q+1)(q)\\
+		&=1/2(p+1)(q+1)(p+q+2)
+	\end{aligned}
+\end{equation}
 \section*{Problem 4}
 \subsection*{Part a}
 For SU(3) we have 8 generators, which in matrix form are the Gell-Mann matrices.
@@ -3137,9 +3361,9 @@ We have computed the adjoint action (commutator) in mathematica for all the diff
 		\hline
 		 $u_-$ & $v_-$ & $0$ &  $-3/2y-t_z$  & $0$ & $-t_-$  & $0$  & $1/2 u_-$ & $u_-$  \\
 		\hline
-		 $v_+$&  $-u_+$ & $0$ &  $0$  & $t_-$ & $0$  & $3/2y-t_z$  & $1/2 v_+$ & $-v_+$  \\
+		 $v_+$&  $-u_+$ & $0$ &  $0$  & $t_-$ & $0$  & $-3/2y+t_z$  & $1/2 v_+$ & $-v_+$  \\
 		\hline
-		 $v_-$& $0$ & $u_-$ &  $-t_+$  & $0$ & $-3/2y+t_z$  & $0$  & $-1/2 v_-$ & $v_-$  \\
+		 $v_-$& $0$ & $u_-$ &  $-t_+$  & $0$ & $3/2y-t_z$  & $0$  & $-1/2 v_-$ & $v_-$  \\
 		\hline
 		 $t_z$& $t_+$ & $-t_-$ &  $1/2u_+$  & $-1/2 u_-$ & $-1/2 v_+$  & $1/2v_-$  & $0$ & $0$  \\
 		\hline
@@ -3257,13 +3481,13 @@ The corresponding adjoint matrices can then be read of to be:
 Consider a generic element in the Cartan subalgebra
 \begin{equation}
 	\begin{aligned}
-		at_z+by
+		x=at_z+by
 	\end{aligned}
 \end{equation}
 The commutation relations in the table imply that we can write it as
 \begin{equation}
 	\begin{aligned}
-	(at_z+by)^{\text{adj}}=
+	ad_x=ad_{(at_z+by)}
 	\left(
 	\begin{array}{cccccccc}
 		a & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -3278,15 +3502,106 @@ The commutation relations in the table imply that we can write it as
 	\right)
 	\end{aligned}
 \end{equation}
-
+The eigenvectors of this generic element can be seen to be just the basis desribed already 
+$t_\pm, u_\pm, v_\pm, t_z $,and $y$ with eigenvalues $a, -a, a/2+b, -a/2-b, -a/2+b, a/2-b,0$, and $0$. We note that the eigenvectors are not unique since e.g. $u_+$ and $cu_+$ both are eigenvector for $c$ some number. Both have the same eigenvalues. I.e. we have
+\begin{equation} \label{eq:adj}
+	\begin{aligned}
+		ad(x)t_+&=at_+\\
+		ad(x)t_-&=-at_- \\
+		ad(x)u_+&=(1/2a+b)u_+\\
+		ad(x)u_-&=(-1/2a-b)u_-\\
+		ad(x)v_+&=(-1/2a+b)v_+\\
+		ad(x)v_-&=(1/2a-b)v_-\\
+		ad(x)t_z&=0\\
+		ad(x)y&=0\\
+	\end{aligned}
+\end{equation}
+\subsection*{Part c}
+We can use \eqref{eq:adj} to write the roots, $\alpha_i$
+\begin{equation} \label{eq: roots}
+	\begin{aligned}
+		\alpha_{1}x&=a\\
+		\alpha_{2}x&=a/2+b\\
+		\alpha_{3}x&=-a/2+b\\
+	\end{aligned}
+\end{equation}
+with the remaining roots being zero or the negative of the above. We then determine the associtated Cartan elements. They can be written in the form
+\begin{equation}
+	\begin{aligned}
+		h_i\equiv h_{\alpha_i}=c_it_z+d_iy
+	\end{aligned}
+\end{equation}
+Using this representation we have explicitly calculated in mathematica (see included code at the end) the non zero killing form products
+\begin{equation}
+	\begin{aligned}
+		(t_+,t_-)&=(v_+,v_-)=(u_+,u_-)=6\\
+		(t_z,t_z)&=3\\
+	     (y,y)&=4\\	
+	\end{aligned}
+\end{equation}
+We can use these to determine $c$ and $d$. We must also further use that, as stated in lecture, if $\rho\in H^*$, $\exists h_\rho \in H$ such that for every $k\in H$
+\begin{equation}
+	\begin{aligned}
+		\rho(k)=(h_\rho,k)
+	\end{aligned}
+\end{equation} 
+Taking for instance $\alpha_1(t_z)=1$ we get
+\begin{equation}
+	\begin{aligned}
+		\alpha_1(t_z)=1=(h_1,t_z)=3c_1\Rightarrow c_1=\frac{1}{3}
+	\end{aligned}
+\end{equation}
+We repeat this to get all the constants
+\begin{equation}
+	\begin{aligned}
+		\alpha_2(y)&=0=(h_1,t_z)=4d_1\Rightarrow d_1=0\\
+		\alpha_2(t_z)&=-1/2=(h_2,t_z)=3c_2\Rightarrow c_2=-\frac{1}{6}\\
+		\alpha_2(y)&=1=(h_2,t_z)=4d_2\Rightarrow d_2=\frac{1}{4}\\
+			\alpha_3(t_z)&=1/2=(h_3,t_z)=3c_3\Rightarrow c_3=\frac{1}{6}\\
+		\alpha_3(y)&=1=(h_3,t_z)=4d_3\Rightarrow d_3=\frac{1}{4}\\
+	\end{aligned}
+\end{equation}
+From this we get the Cartan elements
+\begin{equation}
+	\begin{aligned}
+		h_1&=1/3 t_z\\
+		h_2&=-1/6t_z+1/4y\\
+		h_3&=1/6t_z+1/4y
+	\end{aligned}
+\end{equation}
+We note in passing that
+\begin{equation}
+	\begin{aligned}
+		h_1+h_2=h_3
+	\end{aligned}
+\end{equation}
 \subsection*{Part d}
+Using this we can now calculate the inner product on the root space from
+\begin{equation}
+	\begin{aligned}
+		\expval{\alpha_i,\alpha_j}=(h_i,h_j)
+	\end{aligned}
+\end{equation}
+We again refer to the mathematica code at the end where we have defined the matrices and the Killin form, to get 
+\begin{equation}
+	\begin{aligned}
+		\expval{\alpha_1,\alpha_1}&=1/3\\
+		\expval{\alpha_2,\alpha_2}&=1/3\\
+		\expval{\alpha_3,\alpha_3}&=1/3\\
+		\expval{\alpha_1,\alpha_2}&=-1/6\\
+		\expval{\alpha_1,\alpha_3}&=1/6\\
+		\expval{\alpha_2,\alpha_3}&=1/6\\
+	\end{aligned}
+\end{equation}
+\subsection*{Part e}
 The cartan matrix is given by
 \begin{equation}
 	\begin{aligned}
 		A_{ij}=2\frac{\expval{\alpha_i,\alpha_j}}{\expval{\alpha_j,\alpha_j}}
 	\end{aligned}
 \end{equation}
-For SU(3), take the positive basis to be $\alpha_1$ and $\alpha_2$
+Since the simple roots have to be linearly independent we look at the roots we have (eq \eqref{eq: roots}) and any two independens ones, say
+ $\alpha_1$ and $\alpha_2$, and note that $\alpha_3=\alpha_1+\alpha_2$. We have already calculated the inner prodtucs in the previous exercise, so the matrix is easily found to be
 \begin{equation}
 	\begin{aligned}
 		\expval{\alpha_1,\alpha_1}&=\frac{1}{3}\\
@@ -3303,4 +3618,67 @@ So that the matrix is
 		\end{pmatrix}
 	\end{aligned}
 \end{equation}
+\subsection*{Part f}
+There are two ways of going about this. Using the Dynkin diagrams we have 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{30}
+\end{figure} 
+Let us show that this is the case. The Chevalley-Serre relations give us in terms of the Cartan elements $h_i$ corresponding to $\lambda_3$
+In mathemetica we have explicitly calculated all the commutators using the Gell-Mann matrices, taking
+\begin{equation}
+	\begin{aligned}
+		T_i=\lambda_i/2
+	\end{aligned}
+\end{equation}
+and then checking against the expected result:
+\begin{lstlisting}
+	\[Lambda] 
+= {{{0, 1, 0}, {1, 0, 0}, {0, 0, 0}}, {{0, -I, 0}, {I, 0, 
+	0}, {0, 0, 0}}, {{1, 0, 0}, {0, -1, 0}, {0, 0, 0}}, {{0, 0, 
+	1}, {0, 0, 0}, {1, 0, 0}}, {{0, 0, -I}, {0, 0, 0}, {I, 0, 
+	0}}, {{0, 0, 0}, {0, 0, 1}, {0, 1, 0}}, {{0, 0, 0}, {0, 
+	0, -I}, {0, I, 0}}, {{1/Sqrt[3], 0, 0}, {0, 1/Sqrt[3], 0}, {0, 
+	0, -(2/Sqrt[3])}}};
+	zero = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+	Commutator[x_, y_] := x . y - y . x
+	T = \[Lambda]/2;
+Commutator[T[[1]], T[[1]]] == zero;
+Commutator[T[[2]], T[[2]]] == zero;
+Commutator[T[[3]], T[[3]]] == zero;
+Commutator[T[[4]], T[[4]]] == zero;
+Commutator[T[[5]], T[[5]]] == zero;
+Commutator[T[[6]], T[[6]]] == zero;
+Commutator[T[[7]], T[[7]]] == zero;
+Commutator[T[[8]], T[[8]]] == zero;
+Commutator[T[[1]], T[[2]]] == I*T[[3]];
+Commutator[T[[1]], T[[3]]] == -I*T[[2]];
+Commutator[T[[1]], T[[4]]] == I/2 T[[7]];
+Commutator[T[[1]], T[[5]]] == -I/2 T[[6]];
+Commutator[T[[1]], T[[6]]] == I/2 T[[5]];
+Commutator[T[[1]], T[[7]]] == -I/2 T[[4]];
+Commutator[T[[1]], T[[8]]] == zero;
+Commutator[T[[2]], T[[3]]] == I*T[[1]];
+Commutator[T[[2]], T[[4]]] == I/2 T[[6]];
+Commutator[T[[2]], T[[5]]] == I/2 T[[7]];
+Commutator[T[[2]], T[[6]]] == -I/2 T[[4]];
+Commutator[T[[2]], T[[7]]] == -I/2 T[[5]];
+Commutator[T[[2]], T[[8]]] == zero;
+Commutator[T[[3]], T[[4]]] == I/2 T[[5]];
+Commutator[T[[3]], T[[5]]] == -I/2 T[[4]];
+Commutator[T[[3]], T[[6]]] == -I/2 T[[7]];
+Commutator[T[[3]], T[[7]]] == I/2 T[[6]];
+Commutator[T[[3]], T[[8]]] == zero;
+Commutator[T[[4]], T[[5]]] == I Sqrt[3]/2 T[[8]] + I/2 T[[3]];
+Commutator[T[[4]], T[[6]]] == I/2 T[[2]];
+Commutator[T[[4]], T[[7]]] == I/2 T[[1]];
+Commutator[T[[4]], T[[8]]] == -I Sqrt[3]/2 T[[5]];
+Commutator[T[[5]], T[[6]]] == -I/2 T[[1]];
+Commutator[T[[5]], T[[7]]] == I/2 T[[2]];
+Commutator[T[[5]], T[[8]]] == I Sqrt[3]/2 T[[4]];
+Commutator[T[[6]], T[[7]]] == -I/2 T[[3]] + I Sqrt[3]/2 T[[8]];
+Commutator[T[[6]], T[[8]]] == -I Sqrt[3]/2 T[[7]];
+Commutator[T[[7]], T[[8]]] == I Sqrt[3]/2 T[[6]];
+\end{lstlisting}
+From this we see, that we get the correct structure constants.
 \end{document}
