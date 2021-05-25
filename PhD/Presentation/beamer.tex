@@ -1,0 +1,446 @@
+\documentclass{beamer}[10]
+\usepackage{pgf}
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage{beamerthemesplit}
+\usepackage{graphics,epsfig, subfigure}
+\usepackage{url}
+\usepackage{srcltx}
+\usepackage{hyperref}
+
+\usepackage{mathrsfs}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{MnSymbol}
+
+\usepackage{amsthm}
+
+\usepackage{blkarray}
+
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+
+\usepackage{centernot}
+
+\usepackage{caption}
+
+\usepackage{braket}
+
+\usepackage{slashed}
+
+\usepackage{pgfplots}
+
+\usepackage{feynmp-auto}
+
+\usepackage{lastpage}
+
+
+
+
+\usepackage{fancyhdr}
+
+\newcommand{\euler}[1]{\text{e}^{#1}}
+
+\newcommand{\trace}[1]{\text{Tr}\left({#1}\right)}
+
+\newcommand{\Real}{\text{Re}}
+
+\newcommand{\Imag}{\text{Im}}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newcommand{\sket}[1]{\left|#1\right]}
+\newcommand{\sbra}[1]{\left[#1\right|}
+\newcommand{\sbraket}[1]{\left[#1\right]}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\MHV}{\text{MHV}}
+
+
+% TikZ til at lave figurer - for de avancerede
+\usepackage{tikz}
+% Div. pakker (muligt at ikke alle er i brug)
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.pathreplacing,decorations.markings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{fadings}
+\usetikzlibrary{calc}
+\usetikzlibrary{tikzmark,fit,shapes.geometric}
+
+\definecolor{kugreen}{RGB}{50,93,61}
+\definecolor{kugreenlys}{RGB}{132,158,139}
+\definecolor{kugreenlyslys}{RGB}{173,190,177}
+\definecolor{kugreenlyslyslys}{RGB}{214,223,216}
+\setbeamercovered{transparent}
+\mode<presentation>
+%\usetheme[numbers,totalnumber,compress,sidebarshades]{PaloAlto}
+\setbeamertemplate{footline}[frame number]
+
+  \usecolortheme[named=kugreen]{structure}
+  \useinnertheme{circles}
+  \usefonttheme[onlymath]{serif}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{blocks}[rounded][shadow=true]
+
+\logo{\includegraphics[width=0.8cm]{kuscience-logo}}
+%\useoutertheme{infolines} 
+\title{On an MHV-like vertex expansion for gravity amplitudes}
+\subtitle{}
+\author{Johannes M. Sørensen}
+\institute{Niels Bohr Institute \\ University of Copenhagen}
+\date{June 14th 2017}
+
+\setbeamercovered{invisible}
+
+\begin{document}
+\frame{\titlepage \vspace{-0.5cm}
+}
+
+\frame
+{
+\frametitle{Overview}
+\tableofcontents%[pausesection]
+}
+
+\section{Content of the thesis}
+
+\begin{frame}
+\frametitle{Content of the thesis}
+\begin{block}{}
+	\begin{itemize}
+		\item The spinor-helicity formalism 
+		\begin{enumerate}[-]
+			\item{Helicity basis}
+			\item{Helicity spinors}
+			\item{Little group scaling and locality}
+		\end{enumerate}
+		\item Recursion techniques
+		\begin{enumerate}[-]
+			\item BCFW recursion
+			\item CSW expansion
+		\end{enumerate}
+		\item The KLT relations
+		\item \tikzmark{start}A modified all-line shift
+		\begin{enumerate}[-]
+			\item Zeros of graviton amplitude
+			\item Bad/good all-line shifts
+			\item An MHV-like vertex expansion for gravitons\tikzmark{end}
+		\end{enumerate}
+	\end{itemize}
+\pause
+\begin{tikzpicture}[remember picture,overlay]
+\node[draw,line width=1pt,red,rectangle ,inner ysep=12pt,fit={(pic cs:start) (pic cs:end)}] {};
+\end{tikzpicture} 
+\end{block}	
+\end{frame}
+\section{The all-line shift}
+\begin{frame}
+	\frametitle{Introducing the all-line shift}
+		General shifts considered in this project are deformations
+		$$p_i\longrightarrow \hat{p}_i=p_i+zr_i,$$
+		which have to fulfil:
+		\begin{enumerate}[(i)]
+			\item $\sum_{i=1}^{n}r_i=0$, (Momentum conservation).
+			\item $r_i\cdot r_j=0$, for all $i,j$ including $i=j$.
+			\item $p_i\cdot r_i=0$, where there is no sum over $i$.
+		\end{enumerate}
+	\vspace*{0.3cm}
+\pause
+		From [1] the all-line shift is defined\begin{equation}
+		\sket{i}\longrightarrow\sket{\hat{i}}=\sket{i}+zc_i\sket{X} \label{originalAll-line}
+		\end{equation}
+		where it is required that $\sum_{i}c_i\ket{i}=0$ such that (i) is fulfilled.\\
+		(ii) and (iii) follows from \eqref{originalAll-line} being an only square spinor shift.
+
+	
+\end{frame}
+\begin{frame}
+	\frametitle{Bad all-line shifts}
+	All-line shift can be chosen specifically such that given an arbitrary square spinor $\sket{Z}$ of unit length it holds for all $i$ that\begin{equation}
+		c_i\sket{Z}=P_Z\sket{i},\text{ where }P_Z\text{ is a projection operator.}
+	\end{equation}
+	Now there are two cases:\\\vspace*{0.3cm}
+	\begin{blockarray}{@{}p{5cm}\Right{\}}{Both shift the amplitude trivially.}}
+		\vspace{-\baselineskip}\emph{1)} $\sket{Z}$ is orthogonal to $\sket{X}$.\\
+\emph{2)} $\sket{Z}$ is parallel to $\sket{X}$.
+\vspace*{-\baselineskip}
+\end{blockarray}
+\begin{block}{}
+	\begin{equation}
+		\hat{P}_I^2(z)=P_I^2-z\sum_{i}c_i\bra{i}P_I\sket{X}
+	\end{equation}
+\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Bad all-line shifts}
+	If \emph{1)} is true, it holds that $c_i=\sbraket{Xi}$, because of antisymmetry of the spinor product. Therefore \begin{equation}
+	P_I^2=\hat{P}_I^2+z\sum_{i\in I}c_i\bra{i}P_I\sket{X}=\hat{P}_I^2+z\sum_{i,j\in I}\sbraket{iX}\sbraket{jX}\braket{ij}=\hat{P}_I^2.
+	\end{equation}
+	\pause
+	If \emph{2)} is true, all spinors are parallel at $z=-1$. Therefore \begin{equation}
+		\sbraket{\hat{i}\hat{j}}=\sbraket{ij}(z+1),
+	\end{equation}
+	from which it follows that every subset of momenta fulfil\begin{equation}
+		\hat{P}_I^2=P_I^2(z+1).
+	\end{equation}
+\end{frame}
+\begin{frame}
+	\frametitle{Good all-line shifts: Definition}
+	To avoid bad all-line shift, require further that \begin{equation}
+		z_\alpha=\frac{P_\alpha^2}{\sum_{i\in\alpha}c_i\bra{i}P_\alpha\sket{X}}\neq\frac{P_\beta^2}{\sum_{i\in\beta}c_i\bra{i}P_\beta\sket{X}}=z_\beta\quad \text{for}\quad \alpha\neq\beta. \label{modifiedcondition}
+	\end{equation}
+	\pause
+	\begin{block}{}
+		\begin{itemize}
+			\item Different subsets of momenta $P_I$ are shifted differently.
+			\item Finite number of conditions.
+			\item Conditions are possible to fulfil.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Good all-line shifts: Existence}
+Note first that $\sbraket{\hat{i}\hat{j}}=\sbraket{ij}\frac{z_{ij}-z}{z_{ij}}$ is linear in $z$. Furthermore \begin{equation}
+\hat{P}_I^2=\sum_{i,j\in I}\braket{ij}\sbraket{\hat{i}\hat{j}}=\sum_{i,j\in I}\braket{ij}\sbraket{ij}\frac{z_{ij}-z}{z_{ij}}.
+\end{equation}
+Therefore, if every $z_{ij}$ is chosen to be different, the condition \eqref{modifiedcondition} will be fulfilled for generic momenta.\\
+\pause
+\begin{block}{Process of choosing $c$s:}
+	\begin{enumerate}[(1)]
+		\item Choose first two $c$s arbitrarily.
+		\item Choose $c_3$ such that $z_{i3}\neq z_{12}$, where $i=1,2$.
+		\item Continue until only three $c$s are left.
+		\item Choose $c_{n-2}$, $c_{n-1}$ and $c_n$ such that momentum is conserved and \eqref{modifiedcondition} is fulfilled.
+	\end{enumerate}
+\end{block}
+\end{frame}
+
+\section{Zeros of the graviton amplitude}
+\begin{frame}
+	\frametitle{Zeros of graviton amplitudes}
+	From the KLT relations one gets [9] \begin{equation}
+	\mathcal{M}^{\text{N}^k\text{MHV}}_n=\sum_{i}\prod_{j=1}^{n-3} s_{ij}\mathcal{A}^{\text{N}^k\text{MHV}}_{n\ i}\tilde{\mathcal{A}}^{\text{N}^k\text{MHV}}_{n\ i}. \label{KLT}
+	\end{equation}
+	Undesired large $z$ behavior for large $n$.\\\vspace{0.4cm}
+	\pause
+	At tree level the graviton amplitude is a rational function of helicity spinor products. Therefore\begin{equation}
+	\hat{\mathcal{M}}_n^{\text{N}^k\MHV}=\frac{Pol_N(z)}{Pol_M(z)},
+	\end{equation}
+	where $Pol_N(z)$ and $Pol_M(z)$ have no common roots.\\
+	Therefore $	\hat{\mathcal{M}}_n^{\text{N}^k\MHV}$ has zeros $\{z_1,z_2,...,z_N\}$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Zeros of graviton amplitudes}
+Given the zeros, define the following $$Z(z)=\prod_{i}(z-z_i).$$ Then the following holds \begin{equation}
+	\frac{\hat{\mathcal{M}}^{\text{N}^k\MHV}_n(z)}{Z(z)}=\mathcal{O}(z^{-M}).
+\end{equation}
+\pause
+\begin{block}{}
+	\begin{itemize}
+		\item Fit for recursion given that $M\geq1$.
+		\item $M\geq 1$ can be seen from the Feynman expansion. $\hat{\mathcal{M}}^{\text{N}^k\MHV}_n$ has a pole whenever $\hat{P}_I^2=0.$
+	\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\section{Recursion from all-line shift}
+\begin{frame}
+	\frametitle{Recursion relation}
+Under complex deformation, the physical amplitude can be reconstructed by Cauchy's theorem\begin{equation}
+	\frac{1}{2\pi i}\oint_{\mathbb{C}\text{ at }\infty}\frac{dz}{zZ(z)}\hat{\mathcal{M}}_n(z)=\text{Res}\left(\frac{\hat{\mathcal{M}}_n(z)}{zZ(z)},z=\infty\right).
+\end{equation}
+Given that $M\geq1$ one concludes\begin{equation}
+	0=	\frac{1}{2\pi i}\oint_{\mathbb{C}\text{ at }\infty}\frac{dz}{zZ(z)}\hat{\mathcal{M}}_n(z)=\frac{\mathcal{M}_n}{Z(0)}+\sum_{I}\text{Res}\left(\frac{\hat{\mathcal{M}}_n(z)}{zZ(z)},z=z_I\right),\notag
+\end{equation}
+The amplitude only has poles from propagators going on-shell, therefore\begin{equation}
+	\mathcal{M}_n=\sum_{I}\frac{Z(0)}{Z(z_I)}\hat{\mathcal{M}}^L_{n_I}\frac{1}{P_I^2}\hat{\mathcal{M}}^R_{\overline{n_I}},\quad n_I+\overline{n_I}=n+2.
+\end{equation}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Recursion relation}
+	Under all-line shift it holds that \begin{equation}
+		\mathcal{M}_n(1^\pm,2^+,3^+,...,n^+)=0\quad \text{and}\quad \hat{\mathcal{M}}_3^{\text{AMHV}}=0.
+	\end{equation}
+	Therefore it must hold that \begin{equation}
+		\mathcal{M}^{\text{N}^k\MHV}_n=\sum_{\text{Diagrams } I}\begin{gathered}
+		\begin{tikzpicture}[scale=0.5]
+		
+		\node[circle,draw,thick, minimum size=1.3cm] (L) at  (2,0) {\tiny{$\hat{\mathcal{M}}_{n_I}^{\text{N}^q\MHV}$}};
+		\node[circle,draw,thick, minimum size=1.3cm] (R) at  (7,0)  {\tiny{$\hat{\mathcal{M}}_{\overline{n_I}}^{\text{N}^{\bar{q}}\MHV}$}};
+		\draw[thick] (L) --node[above]{$\mathcal{P}^2_I$} (R);
+		\draw[thick] (0.0,1.5)--(L);
+		\draw[thick] (-0.5,1)--(L);
+		\draw[thick] (0,-1.5)--(L);
+		
+		\draw[thick] (9,1.5)--(R);
+		\draw[thick] (9.5,1)--(R);
+		\draw[thick] (9,-1.5)--(R);
+		\end{tikzpicture}
+		\end{gathered}, \quad \bar{q}=k-q-1, \notag
+	\end{equation}
+	where the propagator is\begin{equation}
+		\mathcal{P}^2_I\longrightarrow\frac{\prod_{i}\frac{z_i}{z_i-z_I}}{P_I^2}.
+	\end{equation}
+\end{frame}
+\section{MHV-like vertex expansion for gravity}
+\begin{frame}
+	\frametitle{MHV-like vertex expansion}
+	It now follows by induction that \begin{equation}
+		\mathcal{M}_n^{\text{N}^k\text{MVH}}=\sum_{\substack{\text{MHV diag.}\\\{\alpha_1, \alpha_2,...,\alpha_k\}}}\prod_{i=1}^{k}k_{\alpha_i}\frac{\hat{\mathcal{M}}^{\MHV}(\alpha_1)\hat{\mathcal{M}}^{\MHV}(\alpha_2)...\hat{\mathcal{M}}^{\MHV}(\alpha_{k+1})}{P_{\alpha_1}^2P_{\alpha_2}^2...P_{\alpha_k}^2}, \notag
+	\end{equation}
+	where $k_{\alpha_i}=\prod_{j}\frac{z_j}{z_j-z_{\alpha_i}}$.
+	\pause
+	\begin{block}{}
+		\begin{itemize}
+			\item Gravity analogue to the CSW expansion
+			\item It ties connections to other interesting subjects:
+			\begin{enumerate}[-]
+				\item Scattering equations [10]
+				\item Twistor strings and Veronese polynomials [11]
+			\end{enumerate}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Outlook}
+	Extra relations from the large $z$ fall off $\frac{\hat{\mathcal{M}}(z)}{Z(z)}=\mathcal{O}(z^{-M})$
+	\begin{equation}
+	0=\frac{1}{2\pi i}\oint_{\mathbb{C}\text{ at }\infty}\frac{dz}{z}z^\omega\frac{\hat{\mathcal{M}}_n(z)}{Z(z)}=\sum_{I}\text{Res}\left(z^{\omega-1}\frac{\hat{\mathcal{M}}_n(z)}{Z(z)}, z=z_I\right),\notag
+	\end{equation}
+	where $\omega<M$.\\
+	This gives extra relations between residues and zeros of $\hat{\mathcal{M}}_n(z)$.
+\begin{block}{Interesting theoretical connections}
+	\begin{itemize}
+		\item Scattering equations 
+		\item Other representations of the amplitude
+		\item Twistor strings and Veronese polynomials
+	\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Outlook}
+	\begin{block}{Nummerical work so far}
+		\begin{itemize}
+			\item 5-point NMHV amplitude
+			\begin{enumerate}[-]
+				\item Zeros found nummerically
+				\item Process is relatively easy
+				\item Result agrees with Risager's expansion.
+			\end{enumerate}
+		\end{itemize}
+	\end{block}
+\pause
+\begin{block}{Future numerical work}
+	\begin{itemize}
+		\item Zeros are to be found analytically
+		\begin{enumerate}[-]
+			\item Study the explicit form of the zeros
+			\item Try to design more economic ways of calculating zeros.
+		\end{enumerate}
+	\item Higher point amplitudes
+	\item Higher $k$ amplitudes ($\text{N}^k\MHV$)
+	\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\centering
+	\Large Thank you for your attention.\\
+\end{frame}
+\section{References}
+\begin{frame}
+\frametitle{References}
+\begin{enumerate}
+	\small{\item H. Elvang, D. Z. Freedman and M. Kiermaier,
+	"Proof of the MHV vertex expansion for all tree amplitudes in $\mathcal{N}=4$ SYM theory",
+	JHEP \textbf{0906}, 068 (2009), [arXiv:0811.3624 [hep-th]].
+	\item M. Bianchi, H. Elvang and D. Z. Freedman,
+	"Generating Tree Amplitudes in $\mathcal{N}=4$ SYM and $\mathcal{N}=8$ SG", JHEP \textbf{0809}, 063 (2008), [arXiv:0805.0757 [hep-th]].
+	\item C. Cheung, K. Kampf, J. Novotny, et al.,
+	"On-Shell Recursion Relations for Effective Field Theories",
+	Phys. Rev. Lett. \textbf{116}, 041601 (2016).
+	\item K. Risager, "A direct proof of the CSW rules", JHEP \textbf{0512}, 003 (2005), [arXiv:hep-th/0508206].
+	\item H. Elvang and Y. Huang, "Scattering Amplitudes", (2014) [arXiv:1308.1697].
+	\item M. Srednicki, "Quantum Field Theory", Cambridge, UK: Univ. Pr. (2007).}
+	
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Further reading}
+\begin{enumerate}
+	\setcounter{enumi}{7}
+	\small{\item
+		H. Elvang, D. Z. Freedman and M. Kiermaier,
+		"Proof of the MHV vertex expansion for all tree amplitudes in $\mathcal{N}=4$ SYM theory",
+		JHEP \textbf{0906}, 068 (2009), [arXiv:0811.3624 [hep-th]].
+		\item N. E. J. Bjerrum-Bohr, P. H. Damgaard, T. Søndergaard and P. Vanhove, "The Momentum Kernel of Gauge and Gravity Theories", JHEP \textbf{1101}, 001 (2011), [ 	arXiv:1010.3933 [hep-th]].
+	\item F. Cachazo, S. He and E. Y. Yuan "Scattering Equations and KLT Orthogonality", Phys. Rev. D\textbf{90}, 065001 (2014), [arXiv:1306.6575 [hep-th]].
+	\item B. Penante, S. Rajabi and G. Sizov "CSW-like Expansion for Einstein Gravity", [arXiv:1212.6257 [hep-th].}
+\end{enumerate}
+\end{frame}
+\begin{frame}
+	\frametitle{Extra slides}
+	\textbf{Induction argument}\\\vspace*{0.3cm}
+		Assume that the following holds true for all $q<k$
+		\begin{equation}
+		\mathcal{M}^{\text{N}^q\text{MHV}}_n=\sum_{\substack{\text{MHV diagrams}\\\{\alpha_1,\alpha_2,...\alpha_q\}}}\prod_{i=1}^{q}k_{\alpha_i}\frac{\hat{\mathcal{M}}^{\MHV}(\alpha_1)...\hat{\mathcal{M}}^{\MHV}(\alpha_{q+1})}{P_{\alpha_1}^2P_{\alpha_2}^2...P_{\alpha_q}^2}
+		\label{assumptionMHV}
+		\end{equation}
+		Now it is clear from the recursion relation that.
+		\begin{equation}
+		\mathcal{M}_n^{\text{N}^k\text{MVH}}(I)=\frac{1}{2}\sum_{\alpha}k_\alpha\left. \frac{\hat{\mathcal{M}}^{\text{N}^{q}\MHV}(\beta)\hat{\mathcal{M}}^{\text{N}^{k-q-1}\MHV}(\gamma)}{P_\alpha^2}\right|_{z=z_\alpha}
+		\end{equation}
+		By combining these one obtains
+		\tiny{
+		\begin{align}
+		\hspace*{-0.5cm}\mathcal{M}_n^{\text{N}^k\text{MVH}}=\frac{1}{2}\sum_{\alpha}\sum_{\substack{\text{MHV}\\\{\beta_i, \gamma_j\}}}\prod_{i=1}^{p}\prod_{j=1}^{k-q-1}k_\alpha k_{\beta_i}k_{\gamma_j}\frac{\hat{\mathcal{M}}^{\MHV}(\beta_1)...\hat{\mathcal{M}}^{\MHV}(\beta_{q+1})\hat{\mathcal{M}}^{\MHV}(\gamma_1)...\hat{\mathcal{M}}^{\MHV}(\gamma_{k-q})}{\hat{P}_{\beta_1}^2(z_\alpha)...\hat{P}_{\beta_q}^2(z_\alpha)P_\alpha^2\hat{P}_{\gamma_1}^2(z_\alpha)...\hat{P}_{\gamma_{k-q-1}}^2(z_\alpha)}
+		\end{align}}
+	
+\end{frame}
+\begin{frame}
+	\frametitle{Extra slides}
+	\textbf{Induction continued}\\\vspace*{0.3cm}
+		By reindexing in the following way \begin{equation}
+			\{\alpha_1,\alpha_2,...,\alpha_k\}\equiv\{\alpha,\beta_1,\beta_2,...,\beta_q,\gamma_1,\gamma_2,...,\gamma_{k-q-1}\}\notag
+		\end{equation}
+		one obtains\tiny{\begin{equation}
+		\mathcal{M}_n^{\text{N}^k\text{MVH}}=\sum_{\substack{\text{MHV diag.}\\\{\alpha_1, \alpha_2,...,\alpha_k\}}}\prod_{i=1}^{k}k_{\alpha_i}\sum_{B=1}^{k}\frac{\hat{\mathcal{M}}^{\MHV}(\alpha_1)\hat{\mathcal{M}}^{\MHV}(\alpha_2)...\hat{\mathcal{M}}^{\MHV}(\alpha_{k+1})}{\hat{P}_{\alpha_1}^2(z_{\alpha_B})...\hat{P}_{\alpha_{B-1}}^2(z_{\alpha_B})P_{\alpha_B}^2\hat{P}_{\alpha_{B+1}}^2(z_{\alpha_B})...\hat{P}_{\alpha_k}^2(z_{\alpha_B})}.
+		\label{mMHV-1}
+		\end{equation} }
+	\normalsize
+	Now it is known that \small\begin{equation}
+		\sum_{B=1}^{k}\frac{1}{\hat{P}_{\alpha_1}^2(z_{\alpha_B})...\hat{P}_{\alpha_{B-1}}^2(z_{\alpha_B})P_{\alpha_B}^2\hat{P}_{\alpha_{B+1}}^2(z_{\alpha_B})...\hat{P}_{\alpha_k}^2(z_{\alpha_B})}=\frac{1}{P_{\alpha_1}^2P_{\alpha_2}^2...P_{\alpha_k}^2}\notag
+	\end{equation} \normalsize
+	which follows from the integral\tiny\begin{equation}
+	\oint_{\mathbb{C}\text{ at }\infty}\frac{dz}{z}\frac{1}{\hat{P}_{\alpha_1}^2(z)...\hat{P}_{\alpha_{B-1}}^2(z)\hat{P}_{\alpha_B}^2(z)\hat{P}_{\alpha_{B+1}}^2(z)...\hat{P}_{\alpha_k}^2(z)}=0\notag
+	\end{equation}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Extra slides: Existence of good all-line shift}
+Given the set of all square spinor shifts\begin{equation*}
+\sket{i}\longrightarrow \sket{\hat{i}}=\sket{i}+zc_i\sket{X}
+\end{equation*}
+Define the parametric space of coordinates $\{c_i\}_{i\in\{1,2,...,n\}}=\mathbb{C}^n$.\\ \vspace*{0.2cm}
+(i) reduces this space to a hyperplane, $\mathscr{H}$, of dimension $n-2$.\\\vspace*{0.2cm}
+Every condition such as \begin{equation}
+z_\alpha=\frac{P_\alpha^2}{\sum_{i\in\alpha}c_i\bra{i}P_\alpha\sket{X}}=\frac{P_\beta^2}{\sum_{i\in\beta}c_i\bra{i}P_\beta\sket{X}}=z_\beta\quad \text{for}\quad \alpha\neq\beta,
+\end{equation}
+defines a hyperplane of dimension $n-1$.\\ \vspace*{0.2cm}
+Intersection is hyperplane of dimension $n-3$.\\
+The union of all these intersections can not span $\mathscr{H}$
+\end{frame}
+\end{document}

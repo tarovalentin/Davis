@@ -1,0 +1,4 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Idea of Riemann Surfaces}{3}{0}{1}
+\beamer@sectionintoc {2}{Applications}{11}{0}{2}
+\beamer@sectionintoc {3}{The Scattering Equations}{12}{0}{3}

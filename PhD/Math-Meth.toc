@@ -3,13 +3,22 @@
 \contentsline {subsubsection}{\numberline {1.1.1}Example I}{2}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.2}Example II}{3}{subsubsection.1.1.2}%
 \contentsline {subsubsection}{\numberline {1.1.3}Example III}{3}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Example IV}{3}{subsubsection.1.1.4}%
 \contentsline {subsection}{\numberline {1.2}Principal Value Prescription (Feynman $i\epsilon $ prescription)}{4}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Example I}{4}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.1}Example I}{5}{subsubsection.1.2.1}%
 \contentsline {subsubsection}{\numberline {1.2.2}Example II}{5}{subsubsection.1.2.2}%
 \contentsline {section}{\numberline {2}Conformal Mapping}{5}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Riemann Mapping Theorem}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}How to find conformal maps}{8}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Applications in fluid dynamics}{9}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.1.1}Example II}{7}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Riemann sphere}{8}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}How to find conformal maps}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Example I}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Example II}{9}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Example III}{9}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Example IV}{9}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}Applications in fluid dynamics}{10}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Example I}{10}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}No flux condition}{10}{subsubsection.2.3.2}%
 \contentsline {section}{\numberline {3}Branch structure \& multivalued functions}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Integrating functions with branch-cuts}{15}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Example I}{15}{subsubsection.3.1.1}%
@@ -17,9 +26,9 @@
 \contentsline {subsection}{\numberline {4.1}Introduction}{16}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Example I}{16}{subsubsection.4.1.1}%
 \contentsline {subsubsection}{\numberline {4.1.2}Example II}{17}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Example III}{17}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3}Example III}{18}{subsubsection.4.1.3}%
 \contentsline {subsection}{\numberline {4.2}Gamma function}{18}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Schwarz Reflection Principle}{19}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Schwarz Reflection Principle}{20}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Dispersion Relations and Optical Theorems}{20}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Asymptotic expansions}{22}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Stirlings asymptotic for $\Gamma (x)$}{23}{subsection.5.1}%
@@ -49,5 +58,5 @@
 \contentsline {subsection}{\numberline {6.13}Structure of Lie algbera}{36}{subsection.6.13}%
 \contentsline {subsubsection}{\numberline {6.13.1}Example}{38}{subsubsection.6.13.1}%
 \contentsline {subsubsection}{\numberline {6.13.2}Cartan Matrix}{38}{subsubsection.6.13.2}%
-\contentsline {subsubsection}{\numberline {6.13.3}Dynkin diagrams}{38}{subsubsection.6.13.3}%
-\contentsline {section}{\numberline {7}d}{69}{section.7}%
+\contentsline {subsubsection}{\numberline {6.13.3}Dynkin diagrams}{39}{subsubsection.6.13.3}%
+\contentsline {section}{\numberline {7}d}{82}{section.7}%

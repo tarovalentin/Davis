@@ -8,7 +8,7 @@
 	\end{pmatrix}%
 }
 
-\title{Mathematical Methods in Physics}
+\title{Theoretical Methods in Physics}
 
 \author[a]{Taro V. Brown}
 
@@ -16,8 +16,8 @@
 
 
 % e-mail addresses: one for each author, in the same order as the authors
-\emailAdd{taro.brown@nbi.ku.dk}
-\abstract{}
+\emailAdd{tvbrown@ucdavis.edu}
+\abstract{Transcribed lectures by M. Rangamani.}
 \begin{document} 
 \maketitle
 \flushbottom
@@ -89,8 +89,9 @@ This has poles at $z=\pm 1 \pm i$ so
 	\end{aligned}
 \end{equation}
 ...\\
+\textbf{fill in more here}\\
 ...\\
-\underline{Example III}
+\subsubsection{Example IV}
 Functions of trig functions
 \begin{equation}
 	\begin{aligned}
@@ -209,9 +210,7 @@ We have
 \end{aligned}
 \end{equation}
 The equipotentials are $\Re[\Phi]=constant$ give circles in $x,y$ plane. Field lines come from $\Im(\phi)=2\lambda \Theta$.
-\\\\
-\underline{Example II}
-\\\\
+\subsubsection{Example II}
 Two semi-infinite capacitor places at $y={\pi,-\pi}$ and hold them at constant potential $V(y=\pm \pi)=\pm \pi$. Sketching this, we now the equipotentials just go along the direction of the plates. We can use the exponential map to open it up to (almost) the whole complex plane, so taking $z\to1+z+e^z$. This maps a strip and maps it to the complex plane with two cuts. We can then solve the Laplace equation in the complex plane, i.e. we just get a linear function and the B.C.'s force the solutions to be non-zero.\\\\
 The exponential map takes the complex plane and wraps it into a cylinder.
 \begin{figure}[H]
@@ -242,7 +241,7 @@ a & b \\c& d
 \end{pmatrix}
 \end{equation}
 If $\det A=ad-bc=1$ them we restrict to $SL(2,\mathds{C})$. \\\\
-\underline{Riemann sphere}
+\subsubsection{Riemann sphere}
 The tranformations with $\det A=1$ transform the unit sphere onto it self. $\mathds{P}^1=\mathds{C}\cup \infty$. $S^2\subset R^3$, $\{x_1,x_2,x_3\}$. The sphere can be seen as a sterographic projection from the complex plane onto $S^2$
 \begin{equation}
 x_1=\frac{z+\bar z}{|z|^2+1},~~~~x_2=\frac{1}{i}\frac{z-\bar z}{|z|^2+1},~~~~x_3=\frac{|z|^2-1}{|z|^2+1}
@@ -252,12 +251,12 @@ z=\frac{x_1+ix_2}{1-x_3}
 \end{equation}\\\\
 \subsection{How to find conformal maps}
 First let us take some examples of maps:
-\underline{Example I}\\\\
+\subsubsection{Example I}
 \begin{equation}
 w=\frac{z-1}{z+1},~~~~z=\frac{w+1}{1-w}
 \end{equation}
-This map takes the right half of the $z$-plane to the unit disc in $w$\\\\
-\underline{Example II}\\\\
+This map takes the right half of the $z$-plane to the unit disc in $w$
+\subsubsection{Example II}
 \begin{equation}
 \zeta= e^{i\phi}\frac{w-a}{\bar a w-1},~~~~~~|a|<1,~~~\phi\in (-\pi,\pi]
 \end{equation}
@@ -266,7 +265,7 @@ The general way to find a conformal map is
 \begin{itemize}
 \item $w=f(z)$ are $\zeta=g(w)$ analytic then $\zeta= g\circ f(z)$ is a conformal map from $z\to \zeta$ planes
 \end{itemize}
-\underline{Example}\\\\
+\subsubsection{Example III}
 We want to map a strip in the z-plane to the unit disc. We know that the exponential function maps it to the right half plane
 \begin{figure}[H]
 	\centering
@@ -278,7 +277,7 @@ Now we can use the map from the half-plane to the unit sphere that we just saw a
 \begin{equation}
 \zeta = \frac{e^z-1}{e^z+1}
 \end{equation}
-\underline{Example}\\\\
+\subsubsection{Example IV}
 To get the map from the UHP to the disc is just a combination of the right half plane map to unit disc, with a rotations:
 \begin{equation}
 \zeta=\frac{iz-1}{iz+1}
@@ -307,7 +306,7 @@ With
 \begin{equation}
 U(z)=\partial_z\Phi
 \end{equation}
-\underline{Example}\\\
+\subsubsection{Example I}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{8}
@@ -315,8 +314,7 @@ U(z)=\partial_z\Phi
 	\label{fig:4}
 \end{figure}
 The streamlines are $y=c$ (constant lines) and the equipotentials are $x=c$. Now recall, analyticity of $\Phi(z)$ leads to $\grad \phi\cdot\grad \chi=0 $ since the velocity is the gradient of $\phi$ and it is tangent to $\chi=c$ then these are the level sets. If we were to add obstacles to the flow, these would be characterized by an absence of fluid flux into/out of the obstacle domain. 
-\\\\
-\underline{No flux condition}\\\\
+\subsubsection{No flux condition}
 $U$ is tangent to the boundary of the obstacle. $\phi$ should satisfy neumann bc at obstacle boundary
 \begin{equation}
 \pdv{\phi}{\bm n}
@@ -547,6 +545,8 @@ I(\alpha)&=\frac{1}{\alpha(\alpha+1)}\int_{0}^{\infty}x^{\alpha+1}\phi''(x)\dd x
 \end{equation}
 Each iteration pushed the domain one more integer into the negative $x$ axis and has poles at $\alpha=-n$ with residues \\\\
 ...\\\\
+\textbf{Fill more here}
+\\\\
 \subsection{Gamma function}
 A famous example is the function
 \begin{equation}
@@ -1040,7 +1040,7 @@ Let us assume we have a faithful representation on $n$-dimensional vectorspace $
 with commutators
 \begin{equation}
 	\begin{aligned}
-[t_3,t^\pm]&=\pm t^\pm\\
+\left[t_3,t^\pm\right]&=\pm t^\pm\\
 	[t^+,t^-]&= t_3
 	\end{aligned}
 \end{equation}
@@ -1105,7 +1105,7 @@ Recall that a Lie algebra is a set of generators with lie bracket commutators
 		\left[X_a,X_b\right]=if_{abc}X_c
 	\end{aligned}
 \end{equation}
-The lie bracket is antisymmetric and the $X_a$ are hermitian with $e^{iX_a}\in G$. The space of the generators is a vector space i.e. one can thing of the $X_a$'s as vectors. So one can in other words say that the Lie algebra is a vector space with additional structure provided by the Lie bracket.
+The lie bracket is antisymmetric and the $X_a$ are hermitian with $e^{iX_a}\in G$. The space of the generators is a vector space i.e. one can think of the $X_a$'s as vectors. So one can in other words say that the Lie algebra is a vector space with additional structure provided by the Lie bracket.
 
 The dimensionality of the vector space is given by the number of generators, so for SU(n) is a $n^2-1$ dimensional Lie algebra vector space, which we will denote by $\mathcal{L}$.
 
@@ -1438,10 +1438,12 @@ Let $e_i=e_{\alpha_i}$ for $\alpha_i$ simple. We then define
 		f_i=e_{-\alpha_i}\frac{2}{\expval{e_{\alpha_i},e_{-\alpha_i}}\expval{\alpha_i\alpha_i}},~~~~h_i=h_{\alpha_i}\frac{2}{\expval{\alpha_i,\alpha_i}}
 	\end{aligned}
 \end{equation}
-We can then find the commutators (\textbf{need to fill this in})
+We can then find the commutators
 \begin{equation}
 	\begin{aligned}
-		\left[e_i,f_j\right]&=
+		\left[e_i,f_j\right]&=\delta_{ij}h_j\\
+		[h_i,e_j]&=A_{ji}e_j\\
+		[h_i,f_j]&=-A_{ji}f_j
 	\end{aligned}
 \end{equation}
 \subsubsection{Dynkin diagrams}
@@ -2638,7 +2640,6 @@ where we have used the just derived result for $\sin z$. Hence we get the equati
 \begin{equation}
 \Gamma(z)\Gamma(1-z)=\pi\text{cosec} \pi z
 \end{equation}
-\section{d}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3205,6 +3206,7 @@ hence we can put together (neglecting the factor of $1/e$) and calling the const
 	\end{aligned}
 \end{equation}
 Similarly one could solve the condition posed for $k=2$ \eqref{eq:condition} and then insert this into $S(\beta_n)$ to obtain the asymptotic density of states.
+\section{d}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3212,7 +3214,7 @@ Similarly one could solve the condition posed for $k=2$ \eqref{eq:condition} and
 \section*{Homework 5\\\\
 	Taro V. Brown}\vspace*{1cm}
 \section*{Problem 1}
-We will take some $k\times k$ matrix $U\in g$ which commutes with all the matrices of an irreducible representation. For any matrix $V$ in this irreduciple representation, we then expect 
+We will take some $k\times k$ matrix $U\in g$ which commutes with all the matrices of an irreducible representation. For any matrix $V$ in this irreducible representation, we then expect 
 \begin{equation}
 	\begin{aligned}
 		UV-VU=0
@@ -3254,16 +3256,56 @@ where we have collapsed the sum using the delta-function that comes from the non
 \end{equation}
 which holds for any matrix $U$ that commutes with all the matrices of the irreducible representation.
 \section*{Problem 2}
-The $\bm r$ in question is taken to be an irreducible tensor representation of SU(2). The space of the representation is $r$-dimensional, since it acts on totally symmetric rank $r-1$ tensors. We will approach this problem working with the lowest dimensional representation, then working our way up and generalizing.
+The $r$ in question is taken to be an irreducible tensor representation of SU(2). The space of the representation is $r$-dimensional, since it acts on totally symmetric rank $r-1$ tensors.
+
+ We will approach this problem working with the lowest dimensional representation, then working our way up and generalizing in the ned.
 \subsubsection*{$2\times 2 $ rep}
-We decombose the the product in terms of a symmetric and antisymmetric combination
+We decompose the the product in terms of a symmetric and antisymmetric combination
 \begin{equation}
 	\begin{aligned}
 		\phi_i\phi_j=\phi_{(i}\phi_{j)}+\phi_{[i}\phi_{j]}=\phi_{(i}\phi_{j)}+a\epsilon_{ij}
 	\end{aligned}
 \end{equation}
-where we have used the fact that the only $2\times 2$ antisymmetric tensor one can have is the levi cevita symbol (possibly multiplied by some constant). We have 3 free parameters in the symmetric part and 1 in the antisymmetric, hence we can write
-
+where we have used the fact that the only $2\times 2$ antisymmetric tensor one can have is the levi cevita symbol (multiplied by some constant). We have 3 free parameters in the symmetric part and 1 in the antisymmetric, hence we can write
+\begin{equation}
+	\begin{aligned}
+		2\otimes 2 = 3\oplus 1
+	\end{aligned}
+\end{equation}
+\subsubsection*{$2\times 3 $ rep}
+Similarly we can decompose the following tensor
+\begin{equation}
+	\begin{aligned}
+		\phi_i\phi_{(jk)}=\phi_{(i}\phi_{(j)k)}+\epsilon_{i(j}\psi_{k)}
+	\end{aligned}
+\end{equation}
+where the first part is completely symmetric in its indices so it has 4 free paramters, while the antisymmetric part now has two, which leads us to
+\begin{equation}
+	\begin{aligned}
+		2\otimes 3 = 4\oplus 2
+	\end{aligned}
+\end{equation}
+We now generalize this to the case of $p\otimes q$
+\subsubsection*{$p\times q $ rep}
+We now take the product of two tensors, which we decompose as above
+\begin{equation}
+	\begin{aligned}
+		\phi_{(i_1\cdots i_{p-1})}\phi_{(j_1\cdots j_{q-1})}=\phi_{(i_1\cdots(i_{p_1})}\phi_{(j_1)\cdots j_{q-1})}+\psi_{(i_1\dots }\epsilon_{i_{q-1})(j_1}\psi_{\dots j_{q-1})}
+	\end{aligned}
+\end{equation}
+The first part is completely symmetric as before and has $p+q-1$ free components. The second part is composed of the antisymmetric tensor as well as two completely symmetric tensors with $p-1$ and $q-1$ free parameters. We can then further decompose these into a completely symmetric tensor with $p+q-3$ free parameters and an antisymmetric part composed of $p-3$ and $p-3$ tensors, so
+\begin{equation}
+	\begin{aligned}
+		p\otimes q=p+q-1\oplus p+q-3\oplus \cdots
+	\end{aligned}
+\end{equation}
+Reitterating this procedure until the lower rank tensor is turned into a scalar. This will leave the term with $p-q+1$ free parameters (or |q-p| if we reverse the designation of the higher/lower rank tensors) and we are left with
+\begin{equation}
+	\begin{aligned}
+		p\otimes q=p+q-1\oplus p+q-3\oplus \cdots \oplus |p-q|+1
+	\end{aligned}
+\end{equation}
+as described in the problem
 \section*{Problem 3}
 For SU(3) we have to work with tensors that have both upper and lower indices
 \begin{equation}
@@ -3271,16 +3313,16 @@ For SU(3) we have to work with tensors that have both upper and lower indices
 		\phi^{i_1,\dots,i_p}_{j_1,\dots,j_q}
 	\end{aligned}
 \end{equation}
-Since the invariant tensor $\epsilon$ has three indices we can't use it in the way we did for SU(2), we can still use it, however, to write the antisymmetric part of any tensor in terms of a lower rank tensor, i.e.
+Since the invariant tensor $\epsilon$ has three indices we can't use it in the way we did for SU(2). We can still use it, however, to write the antisymmetric part of any tensor in terms of a lower rank tensor, i.e.
 \begin{equation}
 	\begin{aligned}
 		\phi^{[i_1,i_2]\dots}_{\dots}=\epsilon^{i_1 i_2 k} \phi_{b_k\dots }^{\dots}
 	\end{aligned}
 \end{equation}
-and so we can restrict ourselves to only consider tensors that are completely symmetric and their upper and lower indices. The representation induced on the space of the traceless symmetric tensors with $p$ upper indeices and $q$ lower indices is written as 
+and so we can restrict ourselves to only consider tensors that are completely symmetric in their upper and lower indices. The representation induced on the space of the traceless symmetric tensors with $p$ upper indeices and $q$ lower indices is written as 
 \begin{equation}
 	\begin{aligned}
-		(q,p)
+		(p,q)
 	\end{aligned}
 \end{equation}
 It is easy to see from these assertions that 
@@ -3290,13 +3332,13 @@ It is easy to see from these assertions that
 	\end{aligned}
 \end{equation}
 This is from the fact (see e.g. Anthony Zee), that by definition
-$\phi^{i*}=\phi_i$ because of unitarity. Further we may decompose the product of a symmetric tensor with $p$ upper indices with a tensor that has $q$ lower indices in terms of symmetric tensors and and a tensor which has had an index traced out. More explicitly:
+$\phi^{i*}=\phi_i$ because of unitarity of the group elements $U^*U=1$. Further we may decompose the product of a symmetric tensor with $p$ upper indices with a tensor that has $q$ lower indices in terms of symmetric tensors and a tensor which has had an index traced out. More explicitly:
 \begin{equation}
 	\begin{aligned}
 		(p,0)\otimes (0,q)=(p,q)\oplus \left[(p-1,0)\otimes (0,q-1)\right]
 	\end{aligned}
 \end{equation} 
-The using the fact that since the tensor is symmetric and each index can take on $q$ values, we have
+Then using the fact that since the tensor is symmetric and each index can take on $q$ values, we have
 \begin{equation}
 	\begin{aligned}
 		\dim(n,0)=\dim(0,n)=1/2(n+2)(n+1)
@@ -3371,6 +3413,111 @@ We have computed the adjoint action (commutator) in mathematica for all the diff
 	\end{tabular}
 	\caption{\label{tab:1} All commutation relations}
 \end{table}
+\subsubsection*{Mathematica code}
+\begin{lstlisting}
+	(*Defining Gell-Mann matrices*)
+\[Lambda] = {{{0, 1, 0}, {1, 0, 0}, {0, 0, 0}}, {{0, -I, 0}, {I, 0, 
+0}, {0, 0, 0}}, {{1, 0, 0}, {0, -1, 0}, {0, 0, 0}}, {{0, 0, 
+1}, {0, 0, 0}, {1, 0, 0}}, {{0, 0, -I}, {0, 0, 0}, {I, 0, 
+0}}, {{0, 0, 0}, {0, 0, 1}, {0, 1, 0}}, {{0, 0, 0}, {0, 
+0, -I}, {0, I, 0}}, {{1/Sqrt[3], 0, 0}, {0, 1/Sqrt[3], 0}, {0, 
+0, -(2/Sqrt[3])}}};
+	
+	(*Defining commutator function*)
+zero = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+Commutator[x_, y_] := x . y - y . x
+
+	(*Defining basis*)
+tp = 1/2*(\[Lambda][[1]] + I*\[Lambda][[2]]);
+tm = 1/2*(\[Lambda][[1]] - I*\[Lambda][[2]]);
+up = 1/2*(\[Lambda][[4]] + I*\[Lambda][[5]]);
+um = 1/2*(\[Lambda][[4]] - I*\[Lambda][[5]]);
+vp = 1/2*(\[Lambda][[6]] + I*\[Lambda][[7]]);
+vm = 1/2*(\[Lambda][[6]] - I*\[Lambda][[7]]);
+tz = 1/2*\[Lambda][[3]];
+y = 1/Sqrt[3]*\[Lambda][[8]];
+
+(*Checking t+ in basis*)
+tp . tp - tp . tp == zero;
+tp . tm - tm . tp == tz*2;
+tp . up - up . tp == zero;
+tp . um - um . tp == -vm;
+tp . vp - vp . tp == up;
+tp . vm - vm . tp == zero;
+tp . tz - tz . tp == -tp;
+tp . y - y . tp == zero;
+
+(*Checking t- in basis*)
+tm . tp - tp . tm == -2 tz;
+tm . tm - tm . tm == zero;
+tm . up - up . tm == vp;
+tm . um - um . tm == zero;
+tm . vp - vp . tm == zero;
+tm . vm - vm . tm == -um;
+tm . tz - tz . tm == tm;
+tm . y - y . tm == zero;
+
+(*Checking u+ in basis*)
+up . tp - tp . up == zero;
+up . tm - tm . up == -vp;
+up . up - up . up == zero;
+up . um - um . up == 3/2 y + tz;
+up . vp - vp . up == zero;
+up . vm - vm . up == tp;
+up . tz - tz . up == -1/2*up;
+up . y - y . up == -up;
+
+(*Checking u- in basis*)
+um . tp - tp . um == vm;
+um . tm - tm . um == zero;
+um . up - up . um == -3/2 y - tz;
+um . um - um . um == zero;
+um . vp - vp . um == -tm;
+um . vm - vm . um == zero;
+um . tz - tz . um == 1/2 um;
+um . y - y . um == um;
+
+(*Checking v+ in basis*)
+vp . tp - tp . vp == -up;
+vp . tm - tm . vp == zero;
+vp . up - up . vp == zero;
+vp . um - um . vp == tm;
+vp . vp - vp . vp == zero;
+vp . vm - vm . vp == 3/2 y - tz;
+vp . tz - tz . vp == vp/2;
+vp . y - y . vp == -vp;
+
+(*Checking v- in basis*)
+Commutator[vm, tp] == zero;
+Commutator[vm, tm] == um;
+Commutator[vm, up] == -tp;
+Commutator[vm, um] == zero;
+Commutator[vm, vp] == -3/2 y + tz;
+Commutator[vm, vm] == zero;
+Commutator[vm, tz] == -vm/2;
+Commutator[vm, y] == vm;
+
+(*Checking tz in basis*)
+Commutator[tz, tp] == tp;
+Commutator[tz, tm] == -tm;
+Commutator[tz, up] == 1/2 up;
+Commutator[tz, um] == -1/2 um;
+Commutator[tz, vp] == -1/2 vp;
+Commutator[tz, vm] == 1/2 vm;
+Commutator[tz, tz] == zero;
+Commutator[tz, y] == zero;
+
+(*Checking y in basis*)
+Commutator[y, tp] == zero;
+Commutator[y, tm] == zero;
+Commutator[y, up] == up;
+Commutator[y, um] == -um;
+Commutator[y, vp] == vp;
+Commutator[y, vm] == - vm;
+Commutator[y, tz] == zero;
+Commutator[y, y] == zero;
+\end{lstlisting}
+
 The corresponding adjoint matrices can then be read of to be:
 \begin{equation}\hspace*{-1cm}
 	\begin{aligned}
@@ -3415,39 +3562,39 @@ The corresponding adjoint matrices can then be read of to be:
 			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 			0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 \\
 			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-			0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{2} & 0 \\
-			1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+			0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{2} & 1 \\
 			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+			1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 			0 & 0 & -1 & 0 & 0 & 0 & 0 & 0 \\
 			0 & 0 & -\frac{3}{2} & 0 & 0 & 0 & 0 & 0 \\
 		\end{array}
 		\right),
 		~~v_+^{\text{adj}}=
-		\left(
-		\begin{array}{cccccccc}
-			0 & 0 & 0 & -1 & 0 & 0 & 0 & 0 \\
-			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-			1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-			0 & 0 & 0 & 0 & 0 & 0 & -\frac{1}{2} & 1 \\
-			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-			0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-			0 & 0 & 0 & 0 & 0 & -\frac{3}{2} & 0 & 0 \\
-		\end{array}
-		\right),
+	\left(
+	\begin{array}{cccccccc}
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & -1 & 0 & 0 & 0 & 0 \\
+		-1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{2} & 1 \\
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & \frac{3}{2} & 0 & 0 \\
+	\end{array}
+	\right),
 		~~v_-^{\text{adj}}=
-		\left(
-		\begin{array}{cccccccc}
-			0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
-			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-			0 & -1 & 0 & 0 & 0 & 0 & 0 & 0 \\
-			0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-			0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{2} & -1 \\
-			0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 \\
-			0 & 0 & 0 & 0 & \frac{3}{2} & 0 & 0 & 0 \\
-		\end{array}
-		\right)\\
+	\left(
+	\begin{array}{cccccccc}
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & -1 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 0 & -\frac{1}{2} & 1 \\
+		0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & -\frac{3}{2} & 0 & 0 & 0 \\
+	\end{array}
+	\right)\\
 		&t_z^{\text{adj}}=
 		\left(
 		\begin{array}{cccccccc}
@@ -3502,8 +3649,8 @@ The commutation relations in the table imply that we can write it as
 	\right)
 	\end{aligned}
 \end{equation}
-The eigenvectors of this generic element can be seen to be just the basis desribed already 
-$t_\pm, u_\pm, v_\pm, t_z $,and $y$ with eigenvalues $a, -a, a/2+b, -a/2-b, -a/2+b, a/2-b,0$, and $0$. We note that the eigenvectors are not unique since e.g. $u_+$ and $cu_+$ both are eigenvector for $c$ some number. Both have the same eigenvalues. I.e. we have
+The eigenvectors of this generic element can be seen to be just the basis described already 
+$t_\pm, u_\pm, v_\pm, t_z $, and $y$ with eigenvalues $a, -a, a/2+b, -a/2-b, -a/2+b, a/2-b,0$, and $0$. We note that the eigenvectors are not unique since e.g. $u_+$ and $cu_+$ both are eigenvectors with $c$ some number. I.e. we have
 \begin{equation} \label{eq:adj}
 	\begin{aligned}
 		ad(x)t_+&=at_+\\
@@ -3575,6 +3722,60 @@ We note in passing that
 		h_1+h_2=h_3
 	\end{aligned}
 \end{equation}
+Here is the mathematica code used to calculate the Killing form
+\subsubsection*{Mathematica code}
+\begin{lstlisting}
+In[2129]:= (*Defining the matrices in the basis*)
+tpp = {{0, 0, 0, 0, 0, 0, -1, 0}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 
+0, 1, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 
+0}, {0, 0, 0, -1, 0, 0, 0, 0}, {0, 2, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 
+0, 0, 0, 0, 0}}
+
+tmm = {{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 1, 0}, {0, 0, 0, 
+0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, -1, 0, 0}, {0, 0, 1, 0, 0, 0, 0, 
+0}, {0, 0, 0, 0, 0, 0, 0, 0}, {-2, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0,
+0, 0, 0, 0, 0}};
+
+upp = {{0, 0, 0, 0, 0, 1, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 
+0, 0, 0, -(1/2), -1}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, -1, 0, 0, 0, 
+0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 0, 0}, {0, 
+0, 0, 3/2, 0, 0, 0, 0}};
+
+umm = {{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, -1, 0, 0, 0}, {0, 0, 0, 
+0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 1/2, 1}, {0, 0, 0, 0, 0, 0, 0, 
+0}, {1, 0, 0, 0, 0, 0, 0, 0}, {0, 0, -1, 0, 0, 0, 0, 0}, {0, 
+0, -(3/2), 0, 0, 0, 0, 0}};
+
+vpp = {{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, -1, 0, 0, 0, 0}, {-1, 0, 0,
+0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 1/2,
+1}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, -1, 0, 0}, {0, 0, 
+0, 0, 0, 3/2, 0, 0}};
+
+vmm = {{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, -1, 0, 0, 0, 0, 0}, {0, 0, 0, 
+0, 0, 0, 0, 0}, {0, 1, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 
+0}, {0, 0, 0, 0, 0, 0, -(1/2), 1}, {0, 0, 0, 0, 1, 0, 0, 0}, {0, 
+0, 0, 0, -(3/2), 0, 0, 0}};
+
+tzz = {{-1, 0, 0, 0, 0, 0, 0, 0}, {0, 1, 0, 0, 0, 0, 0, 0}, {0, 
+0, -(1/2), 0, 0, 0, 0, 0}, {0, 0, 0, 1/2, 0, 0, 0, 0}, {0, 0, 0, 
+0, 1/2, 0, 0, 0}, {0, 0, 0, 0, 0, -(1/2), 0, 0}, {0, 0, 0, 0, 0, 
+0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}};
+
+yy = {{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0,
+0, 0, 0}, {0, 0, -1, 
+0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 0, 0}, {0, 0, 0, 0, -1, 0, 0, 
+0}, {0, 0, 0, 0, 0, 1, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 
+0, 0, 0, 0, 0}};
+
+(*Computation of Killing form*)
+TT = {tpp, tmm, upp, umm, vpp, vmm, tzz, yy};
+Table[Tr[TT[[i]] . TT[[j]]], {i, 1, 8}, {j, 1, 8}]
+
+Out[1640]= {{0, 6, 0, 0, 0, 0, 0, 0}, {6, 0, 0, 0, 0, 0, 0, 0}, {0, 0,
+0, 6, 0, 0, 0, 0}, {0, 0, 6, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 
+0}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 3, 0}, {0, 0, 0, 0,
+0, 0, 0, 4}}
+\end{lstlisting}
 \subsection*{Part d}
 Using this we can now calculate the inner product on the root space from
 \begin{equation}
@@ -3582,7 +3783,7 @@ Using this we can now calculate the inner product on the root space from
 		\expval{\alpha_i,\alpha_j}=(h_i,h_j)
 	\end{aligned}
 \end{equation}
-We again refer to the mathematica code at the end where we have defined the matrices and the Killin form, to get 
+We again refer to the mathematica code at the end where we have defined the matrices and the Killing form, to get 
 \begin{equation}
 	\begin{aligned}
 		\expval{\alpha_1,\alpha_1}&=1/3\\
@@ -3593,6 +3794,17 @@ We again refer to the mathematica code at the end where we have defined the matr
 		\expval{\alpha_2,\alpha_3}&=1/6\\
 	\end{aligned}
 \end{equation}
+\subsubsection*{Mathematica}
+\begin{lstlisting}
+	(*Computation of inner products*)
+In[2165]:=	 h1 = 1/3 tzz;
+			 h2 = -1/6 tzz + 1/4 yy;
+   			 h3 = 1/6 tzz + 1/4 yy;
+			 hh = {h1, h2, h3};
+	Table[Tr[hh[[i]] . hh[[j]]], {i, 1, 3}, {j, 1, 3}]
+
+Out[2169]= {{1/3, -(1/6), 1/6}, {-(1/6), 1/3, 1/6}, {1/6, 1/6, 1/3}}
+\end{lstlisting}
 \subsection*{Part e}
 The cartan matrix is given by
 \begin{equation}
@@ -3619,13 +3831,55 @@ So that the matrix is
 	\end{aligned}
 \end{equation}
 \subsection*{Part f}
-There are two ways of going about this. Using the Dynkin diagrams we have 
+There are two ways of going about this. Using the Dynkin diagrams we know
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{30}
 \end{figure} 
-Let us show that this is the case. The Chevalley-Serre relations give us in terms of the Cartan elements $h_i$ corresponding to $\lambda_3$
-In mathemetica we have explicitly calculated all the commutators using the Gell-Mann matrices, taking
+Let us show that this is the case. The Chevalley-Serre relations give us the Lie Algebra in terms of the Cartan elements.
+\begin{equation}
+	\begin{aligned}
+		e_{i}&=e_{\alpha_i}\\
+		f_{i}&=2\frac{e_{-i}}{(e_i,e_{-i})\expval{\alpha_i,\alpha_i}}\\
+		h_i&=2\frac{h_{\alpha_i}}{\expval{\alpha_i,\alpha_i}}
+	\end{aligned}
+\end{equation}
+and we expect to get
+\begin{equation}
+	\begin{aligned}
+		[e_i,f_j]&=\delta_{ij}h_j\\
+		[h_i,e_j]&=A_{ji}e_j\\
+		[h_i,f_j]&=-A_{ji}f_j
+	\end{aligned}
+\end{equation}
+Again, we have defined the functions in mathematica and have included the code. We take the $e_{i}$ to be the $t_+,u_+,v_+$ and $e_{-i}$ to be $t_-,u-,v_-$. This does not work out quite in mathematica, but we still include some of the results since we have spend a lot of time on it
+\begin{lstlisting}
+h1 = 1/3 tzz;
+h2 = -1/6 tzz + 1/4 yy;
+h3 = 1/6 tzz + 1/4 yy;
+hh = {h1, h2, h3};
+ep = {tpp, upp, vpp};
+em = {tmm, umm, vmm};
+hh = {h1, h2, h3};
+\[Alpha] = {1/3, 1/3, 1/3};
+
+In[2204]:= f[n_] := 2*em[[n]]/(Tr[ep[[n]] . em[[n]]]*\[Alpha][[n]])
+h[n_] := hh[[n]]*2/(\[Alpha][[n]])
+
+In[2225]:= Commutator[ep[[1]], f[1]] == -h[1]
+Commutator[ep[[1]], f[2]] == zero2
+Commutator[ep[[2]], f[2]] == zero2
+
+Out[2225]= True
+
+Out[2226]= False
+
+Out[2227]= False
+\end{lstlisting}
+
+Perhaps we have misunderstood the meaning of the $e_{\alpha_i}$'s, since we don't see how for instance $[e_1,f_1]\sim [t_+,t_-]=0$ since we have already shown that $[t_+,t_-]=2t_z$
+\\\\
+At first we mistakenly checked the Lie Algebra for the Gell-Mann matrices, but since we have done the work, we might as well include it, so here is the Mathematica code for it.
 \begin{equation}
 	\begin{aligned}
 		T_i=\lambda_i/2

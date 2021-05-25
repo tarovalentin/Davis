@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {danish}
+\beamer@sectionintoc {1}{Content of the thesis}{3}{0}{1}
+\beamer@sectionintoc {2}{The all-line shift}{5}{0}{2}
+\beamer@sectionintoc {3}{Zeros of the graviton amplitude}{14}{0}{3}
+\beamer@sectionintoc {4}{Recursion from all-line shift}{18}{0}{4}
+\beamer@sectionintoc {5}{MHV-like vertex expansion for gravity}{20}{0}{5}
+\beamer@sectionintoc {6}{References}{26}{0}{6}

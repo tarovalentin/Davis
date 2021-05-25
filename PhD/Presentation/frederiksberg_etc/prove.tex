@@ -1,0 +1,78 @@
+\documentclass[usenames,english]{beamer} % 10pt standard
+
+% Eksempel-dokument på brug af LaTeX/Beamer til at fremstille slides til præsentationern.
+% Dokumentet kræver at pakken "Frederiksberg" er installeret. Denne giver KU-layout.
+% To TikZ-filer (bohrAtom.tex og standardClock.tex) er brugt som figur-illustration. Disse skal ligge i mappen med dette dokument.
+
+% Simpel Beamer-syntax er illustreret sammen med de mest nødvendige kommandoer for at kunne lave en præsentation i Beamer, men det er bestemt ikke udtømmende. Specielt mulighederne for at få ting til at komme frem og forsvinde igen er ikke dækket særligt grundigt. See the documentation for an extensive introdoction: http://texdoc.net/texmf-dist/doc/latex/beamer/doc/beameruserguide.pdf.
+
+% Brug Frederiksberg tema. Dette hentes her: http://www.matdat.life.ku.dk/LaTeX/Frederiksberg/.
+\usetheme[nat,uk]{Frederiksberg}
+\KUtitlepageLRimage{ } % Erstatter det fjollede billede paa titlepage
+
+% Standard minimal preamble
+\usepackage[UTF8]{inputenc}
+\usepackage[english,danish]{babel}
+\renewcommand\danishhyphenmins{22}    % fikser babel fejl 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % lidt bedre CM font
+\usepackage{amsmath,amssymb,bm,mathtools}   % god matematik
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{url}
+\usepackage{pgfplots}
+\usepackage{amsfonts}
+\usepackage{pdfpages}
+\newcommand{\specialcell}[2][c]{%
+	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\newcommand\pro{\item[$+$]}
+\newcommand\con{\item[$-$]}
+
+% Titlepage og overskrifter etc.
+\title{Det elastiske pendul}
+\subtitle{Undersøgelse af monodromi i et klassisk system}
+\author[Johannes Sørensen]{Johannes Sørensen\\[3mm] \tiny{Eksperiment i samarbejde med Hano Sura og Sean Marker}}
+%\author[Hano Sura]{Hano Sura}
+
+\institute[Niels Bohr Institutet]{Niels Bohr Institutet}
+\date[]{\today}
+
+% TikZ til at lave figurer - for de avancerede
+\usepackage{tikz}
+% Div. pakker (muligt at ikke alle er i brug)
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.pathreplacing,decorations.markings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{fadings}
+\usetikzlibrary{calc}
+
+\begin{document}
+	
+	\selectlanguage{english}
+	
+	\frame[plain]{\titlepage} % Meget simple frames kan gives i \frame{} ellers brug \begin{frame} og \end{frame}
+	
+	\begin{frame}
+	\frametitle{Indhold} % En måde at lave en overskrift
+	\tableofcontents
+\end{frame}
+
+\section{Introduktion} % Ting til indholdsfortegnelsen
+\begin{frame}{Introduktion}
+\begin{block}{Anvendelse af ultralyd som afstand- og hastighedsmåler}
+	\begin{itemize}
+		\item Hvad er ultralyd?
+		\item Ultralyd i.fh.t lys
+		\item Ultralyd frem for andre frekvenser
+		\item Ultralyd i lægevidenskaben
+	\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+
+
+\end{document}
