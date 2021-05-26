@@ -247,7 +247,7 @@ Given a holomorphic injective map from an open set $U$ to $\mathds{C}$
 		f:U \to \mathds{C}
 	\end{aligned}
 \end{equation}
-then $f(u)$ is open, and the inverse map is also holomorphic.
+then $f(U)$ is open, and the inverse map is also holomorphic.
 	\end{block}
 \end{frame}
 
@@ -291,7 +291,7 @@ then $f(u)$ is open, and the inverse map is also holomorphic.
 \begin{frame}
 	\frametitle{Complex analysis on surfaces}
 	\begin{block}{Complex analysis on surface}
-	Require that $f\circ \phi^{-1}$ is holomorphic in points $x$ ind $\mathcal{D}$.
+	Require that $f\circ \phi^{-1}$ is holomorphic in points $x$ in $\mathcal{D}$.
 	
 	Just like on slide 5, we can say that $f$ is holomorphic on $D$ if $f\circ \phi^{-1}$ is holomorphic on $\Delta$. 
 	
@@ -310,7 +310,7 @@ then $f(u)$ is open, and the inverse map is also holomorphic.
 \begin{frame}
 	\frametitle{Complex analysis on surfaces}
 	\begin{block}{Complex analysis on surface}
-		More generally: a complex coorddinate chart is a pair
+		More generally: a complex coordinate chart is a pair
 		\begin{equation}
 			\begin{aligned}
 				(\mathcal{U},\phi)
@@ -318,7 +318,176 @@ then $f(u)$ is open, and the inverse map is also holomorphic.
 		\end{equation}
 	where $\mathcal{U}$ is an open subset of $X$ and $\phi:\mathcal{U}\to \mathcal{V}$ is a homemorphism onto an open subset $\mathcal{V}$ of $\mathds{C}$.
 	\end{block}
+\begin{figure}
+	\includegraphics[width=7cm]{4}
+\end{figure}
 \end{frame}
+
+\begin{frame}
+	\frametitle{Naïve preliminary definition of Riemann Surface}
+	\begin{block}{Riemann surface}
+	A surface $X$ covered by a collection of charts that span of all of $X$
+	\begin{equation}
+		\begin{aligned}
+			\{(\mathcal{U}_\alpha,\phi_\alpha)~\big|~\alpha\in I\}
+		\end{aligned}
+	\end{equation}
+	\end{block}
+\end{frame} 
+
+\begin{frame}
+	\frametitle{Naïve preliminary definition of Riemann Surface}
+	\begin{block}{Problem since charts can in principle intersect}
+		Consider e.g. 
+		\begin{equation}
+			\begin{aligned}
+				f:\mathcal{U}_{\alpha_1}\cap \mathcal{U}_{\alpha_2}\to \mathds{C}
+			\end{aligned}
+		\end{equation}
+	so we have two charts $(\mathcal{U}_{\alpha_1},\phi_{\alpha_1})$ and $(\mathcal{U}_{\alpha_2},\phi_{\alpha_2})$. To be a Riemann surface, both charts should be holomorphic in the domain.
+	\end{block}
+\begin{figure}
+	\includegraphics[width=10cm]{5}
+\end{figure}
+\end{frame} 
+
+
+\begin{frame}
+	\frametitle{Naïve preliminary definition of Riemann Surface}
+	\begin{block}{Problem since charts can in principle intersect}
+	We then require the transition function $g_{12}$ between $\mathcal{V}_{\alpha_{12}}$ and $\mathcal{V}_{\alpha_{21}}$ to be holomorphic
+	\begin{equation}
+		\begin{aligned}
+			g_{12}=\phi_{\alpha_1}\big|_{\mathcal{U}_{\alpha_1}\cap \mathcal{U}_{\alpha_2}}\circ \phi_{\alpha_2}^{-1}\big|_{\mathcal{U}_{\alpha_1}\cap \mathcal{U}_{\alpha_2}}
+		\end{aligned}
+	\end{equation}
+	since this condition leads to (ignoring subscripts)
+	\begin{equation}
+		\begin{aligned}
+			f\circ \phi_{\alpha_1}^{-1}\circ g_{12}=f\circ \phi_{\alpha_2}^{-1}
+		\end{aligned}
+	\end{equation}
+$g_{12}$ is holomorphic isomorphism from the holomorphic requirement (i.e. it has an inverse $g_{21}$)\\ This implies that
+	$\phi^{-1}_{\alpha_1}$ and $\phi^{-1}_{\alpha_2}$ have to both be holomorphic. \\
+	It is exactly what we wanted!
+	\end{block}
+\end{frame} 
+
+\begin{frame}
+	\frametitle{Definition of Riemann Surface}
+	\begin{block}{Summary}
+	\begin{itemize}
+		\item We require that transition functions are holomorphic for $\mathcal{U}_{\alpha_1}\cap \mathcal{U}_{\alpha_2}\neq \emptyset$
+		\item This gives us a collection of charts that are \textit{compatible}
+		\item Such a collection that covers all of $X$ is known as a complex \textit{Atlas}
+		\item A surface $X$ is a Riemann surface if there exists such an atlas.
+	\end{itemize}
+	\end{block}
+\end{frame} 
+\section{Riemann surface definition and examples}
+\begin{frame}
+	\frametitle{Examples of Riemann Surfaces}
+	\begin{block}{Example I: $X=\mathds{R}^2$}
+		We only need one chart
+		\begin{equation}
+			\begin{aligned}
+				X=\{(\mathds{R}^2,\phi)\}
+			\end{aligned}
+		\end{equation}
+		with
+		\begin{equation}
+			\begin{aligned}
+				\phi: \mathds{R}^2\to \mathds{C}
+			\end{aligned}
+		\end{equation}
+	I.e. $(x,y)\to x+iy$
+	\end{block}
+\begin{figure}
+	\includegraphics[width=6cm]{6}
+\end{figure}
+\end{frame} 
+
+\begin{frame}
+	\frametitle{Examples of Riemann Surfaces}
+	\begin{block}{Example I: $X=\mathds{R}^2$}
+	We could also have taken a difference chart, namely $\phi:\mathds{R}^2\to \mathds{C}$ with 
+		\begin{equation}
+			\begin{aligned}
+				X=\{(\mathds{R}^2,\phi)\}
+			\end{aligned}
+		\end{equation}
+		with
+		\begin{equation}
+			\begin{aligned}
+				\phi: \mathds{R}^2\to \mathds{C}
+			\end{aligned}
+		\end{equation}
+		I.e. $(x,y)\to x+iy$
+	\end{block}
+	\begin{figure}
+		\includegraphics[width=6cm]{6}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Examples of Riemann Surfaces}
+	\begin{block}{Example: $X=S^2$}
+		Take the two-dimensional sphere.	
+	\end{block}
+	\begin{figure}\vspace*{-0.7cm}\hspace*{-0.7cm}
+		\includegraphics[width=12cm]{7}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Examples of Riemann Surfaces}
+	\begin{block}{Example: $X=S^2$}
+	Stereographic projection works in the following way
+	\end{block}
+	\begin{figure}
+		\includegraphics[width=6cm]{8}
+	\end{figure}
+	$\phi_1(p)=$ point of intersection of north pole with $xy$-plane\\
+	$\phi_2(p)=$ point of intersection of south pole with $xy$-plane
+\end{frame}
+
+\begin{frame}
+	\frametitle{Examples of Riemann Surfaces}
+	\begin{block}{Check for compatiblity}
+	\begin{equation}
+		\begin{aligned}
+			\mathcal{U}_{1}\cap \mathcal{U}_{2}&=S^2\backslash\{N,S\}\\
+			\phi_1(\mathcal{U}_{1}\cap \mathcal{U}_{2})&=\mathds{C}\backslash\{0\}\\
+			\phi_2(\mathcal{U}_{1}\cap \mathcal{U}_{2})&=\mathds{C}\backslash\{0\}
+		\end{aligned}
+	\end{equation}
+	The transition function from $\mathds{C}\backslash\{0\}\to \mathds{C}\backslash\{0\}$ is $z\to \frac{1}{z}$, which is holomorphic.\\
+	Are there any more atlas?
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Examples of Riemann Surfaces}
+	\begin{block}{Uniformization Theorem}
+	Every simply connected Riemann surface is conformally equivalent to one of three Riemann surfaces: the open unit disk $\Delta$, the complex plane $\mathds{C}$, or the Riemann sphere $\mathds{C}\cup \infty$.\\
+	\vspace*{0.3cm}
+	\textit{Simply connected}: I.e. an object which consists of one piece and does not have any holes that pass all the way through it.
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Examples of Riemann Surfaces}
+	\begin{block}{Automorphisms}
+		Final note before we look at applications.\\
+		 Automorphisms of the Riemann sphere are Möbius transformations
+		 \begin{equation}
+		 	\begin{aligned}
+		 		z\to \frac{az+b}{cz+d},~~~~ad-bc=1
+		 	\end{aligned}
+		 \end{equation}
+	\end{block}
+\end{frame}
+
 
 \section{Applications}
 \begin{frame}
@@ -335,11 +504,10 @@ then $f(u)$ is open, and the inverse map is also holomorphic.
 \end{frame}
 
 
-\section{The Scattering Equations}
 \begin{frame}
-	\frametitle{The CHY formalism}
+	\frametitle{The Scattering Equations}
 	\begin{block}{Scattering equations and amplitudes}
-		The \emph{scattering equations} are given by
+		The \emph{scattering equations} live on the Riemann sphere through $z_i$ and are given by
 		\begin{equation}
 		\mathcal{S}_i=\sum_{j\neq i}\frac{s_{ij}}{z_i-z_j}=0,\quad i\in\{1,2,..,n\}.	\label{ScatteringEquations}
 		\end{equation}
@@ -352,25 +520,77 @@ then $f(u)$ is open, and the inverse map is also holomorphic.
 \end{frame}
 
 \begin{frame}
-	\frametitle{Integration rules}
-	\begin{block}{Graphic representation of M\"obious invariant integrands}
-		We represent the integrands by four-regular graphs. Every factor of $ z_{ij}^{-1} $ is a line between vertices $ i $ and $ j $ and every factor $ z_{ij} $ is a dashed line. 
+	\frametitle{Complex analysis tools}
+	\begin{block}{Scattering equations and amplitudes}
+		Since the space is the Riemann sphere, one can use tools of complex analysis. Remember
 		\begin{equation}
 			\begin{aligned}
-				A_3^{\text{YM}}(1,2,3)&=\PT(1,2,3)\Pf' \Psi^{1,3}\\
-				&=\frac{1}{z_{12}^2z_{23}^2z_{13}^2}\left\{-\epsilon_{12}\epsilon k_{32}+\epsilon_{13}\epsilon k_{23}+\epsilon_{23}\epsilon k_{12}\right\}\\
-				&=\begin{chy}[3]
-					\chydoubleline{1}{2};
-					\chydoubleline{1}{3};
-					\chydoubleline{3}{2};
-				\end{chy}\left\{-\epsilon_{12}\epsilon k_{32}+\epsilon_{13}\epsilon k_{23}+\epsilon_{23}\epsilon k_{12}\right\}
-				\\
-				&=-\epsilon_{12}\epsilon k_{32}-\epsilon_{13}\epsilon k_{21}+\epsilon_{23}\epsilon k_{12}
-				, \end{aligned}
+				f(a)&=\frac{1}{2\pi i}\oint \text{d}z\,\frac{f(z)}{z-a}
+			\end{aligned}
 		\end{equation}
+	Reformulate the delta-functions $\to$ use complex analysis. \\
+	\vspace*{0.5cm}
+	From the global residue theorem one can obtain diagrammatic rules to calculate amplitudes.
 	\end{block}
 \end{frame}
 
+
+\begin{frame}
+	\frametitle{Integration rules}
+	\begin{block}{Graphic representation of Möbius invariant integrands}
+		We represent the integrands by four-regular graphs. Every factor of $ z_{ij}^{-1} $ is a line between vertices $ i $ and $ j $ and every factor $ z_{ij} $ is a dashed line. 
+		\begin{equation}
+			A_n^{\varphi^3}(1,2,3,\dots,n)=\int\text{d}\Omega_{\text{CHY}}\frac{1}{z_{12}^2z_{23}^2\cdots z_{n1}^2}.
+		\end{equation}
+	The integrand is 
+	\begin{equation} \label{eq:4pt-ex}
+	\mathcal{I}(z)=\frac{1}{z_{12}^2z_{23}^2z_{34}^2z_{41}^2}\to
+	\begin{chy}[4]
+		\chydoubleline{1}{2};
+		\chydoubleline{2}{3};
+		\chydoubleline{3}{4};
+		\chydoubleline{4}{1};
+	\end{chy}.
+\end{equation}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Integration rules}
+	\begin{block}{Graphic representation of Möbius invariant integrands}
+	Using simple derived rules
+	\begin{equation} \label{eq:4pt-expr}
+		\begin{chy}[4]
+			\chydoubleline{1}{2};
+			\chydoubleline{2}{3};
+			\chydoubleline{3}{4};
+			\chydoubleline{4}{1};
+		\end{chy}
+		\to
+		-\frac{1}{s_{12}}-\frac{1}{s_{14}},
+	\end{equation}
+	We get the final amplitude to be
+	\begin{equation}
+		A_4^{\varphi^3}(1,2,3,4)=-\frac{1}{s_{12}}-\frac{1}{s_{14}}.
+	\end{equation}
+It only took 1 diagram!
+	\end{block}
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}
+	\frametitle{Summary}
+	\begin{block}{}
+		\begin{itemize}
+			\item Started with a real surface $X$ on which we wanted to do complex analysis
+			\item This was achieved by using complex charts $\{(\mathcal{U}_i,\phi_i)\big|i\in I\}$ such that $\mathcal{U}_i$ covers all of $X$
+			\item We checked that it was holomorphic by using $\phi^{-1}$
+			\item Compatible charts (atlas) were introduced to make sure the functions were holomorphic even if charts overlapped.
+			\item We analyzed different Riemann structures and introduced the uniformization theorem.
+			\item Finally an application in scattering amplitudes was reviewed.
+		\end{itemize}
+	\end{block}
+\end{frame}
 
 \begin{frame}
 	\centering

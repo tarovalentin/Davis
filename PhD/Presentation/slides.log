@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  25 MAY 2021 15:42
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  25 MAY 2021 23:51
  restricted system commands enabled.
 **slides.tex
 (./slides.tex
@@ -1534,7 +1534,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 203.
 (./slides.nav)
-<kuscience-logo.pdf, id=48, 165.61874pt x 165.61874pt>
+<kuscience-logo.pdf, id=52, 165.61874pt x 165.61874pt>
 File: kuscience-logo.pdf Graphic file (type pdf)
 <use kuscience-logo.pdf>
 Package luatex.def Info: kuscience-logo.pdf  used on input line 205.
@@ -1568,7 +1568,7 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 222
 ("C:/Program Files/MiKTeX 2.9/tex/latex/jknappen/ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-<1.PNG, id=114, 527.47063pt x 156.585pt>
+<1.PNG, id=120, 527.47063pt x 156.585pt>
 File: 1.PNG Graphic file (type png)
 <use 1.PNG>
 Package luatex.def Info: 1.PNG  used on input line 222.
@@ -1600,7 +1600,7 @@ Package luatex.def Info: kuscience-logo.pdf  used on input line 252.
  [5
 
 ]
-<2.PNG, id=203, 852.68562pt x 262.48062pt>
+<2.PNG, id=209, 852.68562pt x 262.48062pt>
 File: 2.PNG Graphic file (type png)
 <use 2.PNG>
 Package luatex.def Info: 2.PNG  used on input line 267.
@@ -1612,7 +1612,7 @@ Package luatex.def Info: kuscience-logo.pdf  used on input line 267.
  [6
 
 <./2.PNG>]
-<3.png, id=231, 319.1925pt x 194.22563pt>
+<3.png, id=237, 319.1925pt x 194.22563pt>
 File: 3.png Graphic file (type png)
 <use 3.png>
 Package luatex.def Info: 3.png  used on input line 289.
@@ -1640,39 +1640,173 @@ Package luatex.def Info: kuscience-logo.pdf  used on input line 308.
  [9
 
 ]
+<4.png, id=320, 330.23375pt x 149.55875pt>
+File: 4.png Graphic file (type png)
+<use 4.png>
+Package luatex.def Info: 4.png  used on input line 324.
+(luatex.def)             Requested size: 199.16928pt x 90.20377pt.
 File: kuscience-logo.pdf Graphic file (type pdf)
 <use kuscience-logo.pdf>
-Package luatex.def Info: kuscience-logo.pdf  used on input line 321.
+Package luatex.def Info: kuscience-logo.pdf  used on input line 324.
 (luatex.def)             Requested size: 39.83368pt x 39.8327pt.
  [10
 
-]
+<./4.png>]
 File: kuscience-logo.pdf Graphic file (type pdf)
 <use kuscience-logo.pdf>
-Package luatex.def Info: kuscience-logo.pdf  used on input line 335.
+Package luatex.def Info: kuscience-logo.pdf  used on input line 336.
 (luatex.def)             Requested size: 39.83368pt x 39.8327pt.
  [11
 
 ]
+<5.png, id=376, 828.09375pt x 309.155pt>
+File: 5.png Graphic file (type png)
+<use 5.png>
+Package luatex.def Info: 5.png  used on input line 352.
+(luatex.def)             Requested size: 284.52756pt x 106.2246pt.
 File: kuscience-logo.pdf Graphic file (type pdf)
 <use kuscience-logo.pdf>
 Package luatex.def Info: kuscience-logo.pdf  used on input line 352.
 (luatex.def)             Requested size: 39.83368pt x 39.8327pt.
  [12
 
-]
+<./5.png>]
 File: kuscience-logo.pdf Graphic file (type pdf)
 <use kuscience-logo.pdf>
-Package luatex.def Info: kuscience-logo.pdf  used on input line 372.
+Package luatex.def Info: kuscience-logo.pdf  used on input line 374.
 (luatex.def)             Requested size: 39.83368pt x 39.8327pt.
- [13
+
+[13
 
 ]
 File: kuscience-logo.pdf Graphic file (type pdf)
 <use kuscience-logo.pdf>
-Package luatex.def Info: kuscience-logo.pdf  used on input line 378.
+Package luatex.def Info: kuscience-logo.pdf  used on input line 386.
 (luatex.def)             Requested size: 39.83368pt x 39.8327pt.
  [14
+
+]
+<6.png, id=456, 670.00313pt x 298.11375pt>
+File: 6.png Graphic file (type png)
+<use 6.png>
+Package luatex.def Info: 6.png  used on input line 408.
+(luatex.def)             Requested size: 170.71652pt x 75.95659pt.
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 408.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [15
+
+<./6.png>]
+File: 6.png Graphic file (type png)
+<use 6.png>
+Package luatex.def Info: 6.png  used on input line 430.
+(luatex.def)             Requested size: 170.71652pt x 75.95659pt.
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 430.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [16
+
+]
+<7.png, id=514, 729.22438pt x 334.75063pt>
+File: 7.png Graphic file (type png)
+<use 7.png>
+Package luatex.def Info: 7.png  used on input line 440.
+(luatex.def)             Requested size: 341.43306pt x 156.73518pt.
+
+Overfull \hbox (16.65724pt too wide) in paragraph at lines 440--440
+ |  [] 
+ []
+
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 440.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+[17
+
+<./7.png>]
+<8.png, id=542, 643.40375pt x 389.95688pt>
+File: 8.png Graphic file (type png)
+<use 8.png>
+Package luatex.def Info: 8.png  used on input line 452.
+(luatex.def)             Requested size: 170.71652pt x 103.46898pt.
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 452.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [18
+
+<./8.png>]
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 467.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [19
+
+]
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 476.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [20
+
+]
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 489.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [21
+
+]
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 504.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [22
+
+]
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 520.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [23
+
+]
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 535.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [24
+
+]
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 556.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [25
+
+]
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 578.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [26
+
+]
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 593.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+ [27
+
+]
+File: kuscience-logo.pdf Graphic file (type pdf)
+<use kuscience-logo.pdf>
+Package luatex.def Info: kuscience-logo.pdf  used on input line 598.
+(luatex.def)             Requested size: 39.83368pt x 39.8327pt.
+
+[28
 
 ]
 \tf@nav=\write7
@@ -1684,51 +1818,55 @@ Package luatex.def Info: kuscience-logo.pdf  used on input line 378.
 \tf@snm=\write9
 
 \openout9 = slides.snm
-
-
+ 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 379.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 379.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 599.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 599.
 (./slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 379.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 379.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 599.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 599.
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: 501043FD4E47DDFA229BEB178E6845B7;447.
+(rerunfilecheck)             Checksum: 26CF385607C7CF7B90C34FC98AED7236;622.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41432 strings out of 480991
+ 41652 strings out of 480991
  125171,1373583 words of node,token memory allocated
- 1802 words of node memory still in use:
+ 1970 words of node memory still in use:
    29 hlist, 6 vlist, 10 rule, 2 disc, 1 local_par, 19 glue, 7 kern, 8 penalty, 
-28 glyph, 127 attribute, 68 glue_spec, 89 attribute_list, 5 write, 16 pdf_litera
-l, 20 pdf_colorstack nodes
-   avail lists: 1:3,2:2315,3:648,4:117,5:145,6:41,7:1705,8:45,9:606,10:18,11:111
-
- 57185 multiletter control sequences out of 65536+200000
- 63 fonts using 6496299 bytes
- 64i,22n,103p,798b,1302s stack positions out of 5000i,500n,10000p,200000b,50000s
+28 glyph, 183 attribute, 68 glue_spec, 117 attribute_list, 5 write, 16 pdf_liter
+al, 20 pdf_colorstack nodes
+   avail lists: 1:5,2:3520,3:1051,4:128,5:147,6:49,7:1795,8:46,9:663,10:18,11:11
+1
+ 57282 multiletter control sequences out of 65536+200000
+ 73 fonts using 7224179 bytes
+ 64i,16n,103p,798b,1239s stack positions out of 5000i,500n,10000p,200000b,50000s
 <c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman7-italic.otf><c:/pr
-ogram files/miktex 2.9/fonts/opentype/public/lm/lmsans10-oblique.otf><c:/program
- files/miktex 2.9/fonts/opentype/public/lm/lmroman10-regular.otf><c:/program fil
-es/miktex 2.9/fonts/opentype/public/lm/lmsans10-bold.otf><c:/program files/mikte
-x 2.9/fonts/opentype/public/lm/lmroman8-italic.otf><c:/program files/miktex 2.9/
-fonts/opentype/public/lm/lmroman8-regular.otf><c:/program files/miktex 2.9/fonts
-/opentype/public/lm/lmroman10-italic.otf><c:/program files/miktex 2.9/fonts/open
-type/public/lm/lmsans8-regular.otf><c:/program files/miktex 2.9/fonts/opentype/p
-ublic/lm/lmsans10-regular.otf><c:/program files/miktex 2.9/fonts/opentype/public
-/lm/lmsans12-regular.otf><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/
-fonts/type1/public/doublestroke/dsrom10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on slides.pdf (14 pages, 402671 bytes).
+ogram files/miktex 2.9/fonts/opentype/public/lm/lmroman12-italic.otf><c:/program
+ files/miktex 2.9/fonts/opentype/public/lm/lmroman6-regular.otf><c:/program file
+s/miktex 2.9/fonts/opentype/public/lm/lmsans10-oblique.otf><c:/program files/mik
+tex 2.9/fonts/opentype/public/lm/lmroman10-regular.otf><c:/program files/miktex 
+2.9/fonts/opentype/public/lm/lmsans10-bold.otf><c:/program files/miktex 2.9/font
+s/opentype/public/lm/lmroman8-italic.otf><c:/program files/miktex 2.9/fonts/open
+type/public/lm/lmroman8-regular.otf><c:/program files/miktex 2.9/fonts/opentype/
+public/lm/lmroman10-italic.otf><c:/program files/miktex 2.9/fonts/opentype/publi
+c/lm/lmsans8-regular.otf><c:/program files/miktex 2.9/fonts/opentype/public/lm/l
+msans10-regular.otf><c:/program files/miktex 2.9/fonts/opentype/public/lm/lmsans
+12-regular.otf><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
+y8.pfb><C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/doublestrok
+e/dsrom10.pfb><C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/doub
+lestroke/dsrom12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb>
+Output written on slides.pdf (28 pages, 983572 bytes).
 
-PDF statistics: 541 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 131072)
- 210 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 950 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 131072)
+ 218 words of extra memory for PDF output out of 10000 (max. 100000000)
 
