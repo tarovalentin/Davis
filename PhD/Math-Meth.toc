@@ -59,4 +59,5 @@
 \contentsline {subsubsection}{\numberline {6.13.1}Example}{38}{subsubsection.6.13.1}%
 \contentsline {subsubsection}{\numberline {6.13.2}Cartan Matrix}{38}{subsubsection.6.13.2}%
 \contentsline {subsubsection}{\numberline {6.13.3}Dynkin diagrams}{39}{subsubsection.6.13.3}%
-\contentsline {section}{\numberline {7}d}{82}{section.7}%
+\contentsline {subsubsection}{\numberline {6.13.4}SU(3) from Dynkin diagrams}{40}{subsubsection.6.13.4}%
+\contentsline {section}{\numberline {7}d}{84}{section.7}%

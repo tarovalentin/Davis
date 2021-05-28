@@ -1,5 +1,5 @@
 \babel@toc {english}{}
 \beamer@sectionintoc {1}{Idea of Riemann Surfaces}{3}{0}{1}
-\beamer@sectionintoc {2}{Riemann surface definition and examples}{15}{0}{2}
-\beamer@sectionintoc {3}{Applications}{22}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{27}{0}{4}
+\beamer@sectionintoc {2}{Riemann surface definition and examples}{16}{0}{2}
+\beamer@sectionintoc {3}{Applications}{24}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{29}{0}{4}

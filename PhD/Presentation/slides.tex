@@ -257,7 +257,7 @@ then $f(U)$ is open, and the inverse map is also holomorphic.
 		\begin{itemize}
 			\item Take a known surface that we can visualize.
 			\item Pick some point $x_0$ on the surface on some disc-like domain $\mathcal{D}$.
-			\item Introduce function $f$ that takes on complex values on $\mathcal{D}$.
+			\item Introduce function $f:\mathcal{D}\to \mathds{C}$ that takes on complex values on $\mathcal{D}$.
 			\item Extend definition of holomorphic function at $x_0$ so that we can use tools of complex analysis on the surface.
 		\end{itemize}
 	\end{block}
@@ -267,8 +267,8 @@ then $f(U)$ is open, and the inverse map is also holomorphic.
 \end{frame}
 
 \begin{frame}
-	\frametitle{Complex analysis on surfaces}
-	\begin{block}{Complex analysis on surface}
+	\frametitle{Pick a simple surface}
+	\begin{block}{Pick a simple surface}
 			Do this by identifying $\mathcal{D}$ with an open subset, say
 			\begin{equation}
 				\begin{aligned}
@@ -278,45 +278,62 @@ then $f(U)$ is open, and the inverse map is also holomorphic.
 		by choosing a homeomorphism 
 		\begin{equation}
 			\begin{aligned}
-				\phi:\mathcal{D}\to \Delta
+				\phi:\mathcal{D}\to \Delta \subset \mathds{C}
 			\end{aligned}
 		\end{equation}
 	Hence we now have a map from the unit disc on the surface to the complex plane
 \begin{figure}\vspace*{-0.3cm}
 	\includegraphics[width=2.7cm]{3}
 \end{figure}
+and require that $f\circ \phi^{-1}$ is holomorphic at the point.
 	\end{block}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Complex analysis on surfaces}
-	\begin{block}{Complex analysis on surface}
-	Require that $f\circ \phi^{-1}$ is holomorphic in points $x$ in $\mathcal{D}$.
-	
-	Just like on slide 5, we can say that $f$ is holomorphic on $D$ if $f\circ \phi^{-1}$ is holomorphic on $\Delta$. 
-	
+	\frametitle{Holomorphic requirement}
+	\begin{block}{Holomorphic requirement}
+	So: we get a function from the disc in the complex plane to the complex numbers.\\
+	\vspace*{0.5cm}
+	Here it is it is easy to see when it is holomorphic at $x_0$.\\
+		\vspace*{0.5cm}
+	 $f$ is holomorphic on all of $\mathcal{D}$ if $f\circ \phi^{-1}$ is holomorphic on $\Delta$.\\
 	\end{block}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Complex analysis on surfaces}
-	\begin{block}{Complex analysis on surface}
-	The pair $(\mathcal{D},\phi)$ is called a \textit{complex coordinate chart}
-	
-	It allows us to do complex analysis on the disc, but we could have taken any open set.
+	\frametitle{Complex coordinate chart}
+	\begin{block}{Complex coordinate chart}
+	The pair $(\mathcal{D},\phi)$ is called a \textit{complex coordinate chart}\\
+	\vspace*{0.5cm}
+	It allows us to do complex analysis on the disc\\
+	\vspace*{0.5cm}
+	In this example $z=\phi(x)$, $x\in X$ provides us with a new symbol in a continuously isomorphic way.\\
+	\vspace*{0.5cm}
+	The resulting function is a function of one complex variable on an open subset on the complex plane, where we can do complex analysis.
 	\end{block}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Complex analysis on surfaces}
-	\begin{block}{Complex analysis on surface}
+	\frametitle{Extending to other surfaces}
+	\begin{block}{Extending to other surfaces}
+		\vspace*{0.5cm}
+		We could have taken any open set, not just a disc-like neighborhood.\\
+		\vspace*{0.5cm}
+		Would have to choose a different homeomorphism to an open set on the complex plane.
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Extending to other surfaces}
+	\begin{block}{Extending to other surfaces}
 		More generally: a complex coordinate chart is a pair
 		\begin{equation}
 			\begin{aligned}
 				(\mathcal{U},\phi)
 			\end{aligned}
 		\end{equation}
-	where $\mathcal{U}$ is an open subset of $X$ and $\phi:\mathcal{U}\to \mathcal{V}$ is a homemorphism onto an open subset $\mathcal{V}$ of $\mathds{C}$.
+	where $\mathcal{U}$ is an open subset of $X$ and $\phi:\mathcal{U}\to \mathcal{V}$ is a homemorphism onto an open subset $\mathcal{V}$ of $\mathds{C}$.\\
+	\vspace*{0.5cm} If we we have a function $f$ on $\mathcal{D}$ that takes complex values, $f$ is holomorphic if $f\circ \phi^{-1}$ is holomorphic.
 	\end{block}
 \begin{figure}
 	\includegraphics[width=7cm]{4}
@@ -400,7 +417,7 @@ $g_{12}$ is holomorphic isomorphism from the holomorphic requirement (i.e. it ha
 				\phi: \mathds{R}^2\to \mathds{C}
 			\end{aligned}
 		\end{equation}
-	I.e. $(x,y)\to x+iy$
+	I.e. $(x,y)\to x+iy$. The holomorphic functions on $X$ are the holomorphic functions on $\mathds{C}$.
 	\end{block}
 \begin{figure}
 	\includegraphics[width=6cm]{6}
@@ -410,24 +427,36 @@ $g_{12}$ is holomorphic isomorphism from the holomorphic requirement (i.e. it ha
 \begin{frame}
 	\frametitle{Examples of Riemann Surfaces}
 	\begin{block}{Example I: $X=\mathds{R}^2$}
-	We could also have taken a difference chart, namely $\phi:\mathds{R}^2\to \mathds{C}$ with 
+	We could also have taken a difference chart $\phi:\mathds{R}^2\to \mathds{C}$ with 
 		\begin{equation}
 			\begin{aligned}
-				X=\{(\mathds{R}^2,\phi)\}
+			\phi:(x,y)&\mapsto \frac{z}{1+|z|}=\frac{x}{1+\sqrt{x^2+y^2}}+i\frac{y}{1+\sqrt{x^2+y^2}}\\
+			\phi^{-1}:z&\mapsto \frac{z}{1-|z|}=\left(\frac{x}{1-\sqrt{x^2+y^2}},\frac{y}{1-\sqrt{x^2+y^2}}\right)
 			\end{aligned}
 		\end{equation}
-		with
-		\begin{equation}
-			\begin{aligned}
-				\phi: \mathds{R}^2\to \mathds{C}
-			\end{aligned}
-		\end{equation}
-		I.e. $(x,y)\to x+iy$
+	(I.e.) mapping $\mathds{C}$ onto $\Delta$. This is a homeomorphism. This is not the same Riemann surface!
 	\end{block}
-	\begin{figure}
-		\includegraphics[width=6cm]{6}
-	\end{figure}
 \end{frame}
+
+\begin{frame}
+	\frametitle{Examples of Riemann Surfaces}
+	\begin{block}{Example I: $X=\mathds{R}^2$}
+	For $f$ to be holomorphic, $f\circ \phi^{-1}$ has to also be. 
+	\begin{equation}
+		\begin{aligned}
+			f\circ \phi^{-1}(z)=f\left(\frac{z}{1-|z|}\right)=f\left(\frac{x}{1-\sqrt{x^2+y^2}},\frac{y}{1-\sqrt{x^2+y^2}}\right)
+		\end{aligned}
+	\end{equation}
+Not holomorphic for the natural identification $f(x,y)\to x+iy=z$
+\begin{equation}
+	\begin{aligned}
+		f\left(\frac{z}{1-|z|}\right)=\frac{z}{1-|z|}
+	\end{aligned}
+\end{equation}
+Completely different structure! It is the Riemann surface structure on the unit disc.\\
+\vspace*{0.2cm} Riemann mapping theorem: unit disc is not equal to complex plane. 
+\end{block}
+	\end{frame}
 
 \begin{frame}
 	\frametitle{Examples of Riemann Surfaces}
@@ -461,7 +490,7 @@ $g_{12}$ is holomorphic isomorphism from the holomorphic requirement (i.e. it ha
 			\phi_2(\mathcal{U}_{1}\cap \mathcal{U}_{2})&=\mathds{C}\backslash\{0\}
 		\end{aligned}
 	\end{equation}
-	The transition function from $\mathds{C}\backslash\{0\}\to \mathds{C}\backslash\{0\}$ is $z\to \frac{1}{z}$, which is holomorphic.\\
+	The transition function from $\mathds{C}\backslash\{0\}\to \mathds{C}\backslash\{0\}$ is $z\to \frac{1}{z}$, which is holomorphic. This Riemann surface structure is the Riemann Sphere\\
 	Are there any more atlas?
 	\end{block}
 \end{frame}
@@ -584,7 +613,7 @@ It only took 1 diagram!
 		\begin{itemize}
 			\item Started with a real surface $X$ on which we wanted to do complex analysis
 			\item This was achieved by using complex charts $\{(\mathcal{U}_i,\phi_i)\big|i\in I\}$ such that $\mathcal{U}_i$ covers all of $X$
-			\item We checked that it was holomorphic by using $\phi^{-1}$
+			\item We checked that $f$ was holomorphic by using $f\circ \phi^{-1}$
 			\item Compatible charts (atlas) were introduced to make sure the functions were holomorphic even if charts overlapped.
 			\item We analyzed different Riemann structures and introduced the uniformization theorem.
 			\item Finally an application in scattering amplitudes was reviewed.
