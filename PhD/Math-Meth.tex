@@ -4132,9 +4132,9 @@ we are allowed to rescale these however so we instead write
 	\end{aligned}
 \end{equation} 
 where we in essence by this notation mean $ad_{H_1}A_\pm=0$ and $ad_{H_2}A_\pm=\pm A_\pm$
-\subsection*{Part b}
 \subsection*{Part c}
-We have to simple roots
+We are going to do part c before part b since this seemed like a simpler way to proceed.
+We have two simple roots
 \begin{equation}
 	\begin{aligned}
 		\alpha_1&=(0,1)\\
@@ -4171,5 +4171,290 @@ The angle bewteen the simple roots is
 		\theta=\acos\left[\frac{\expval{\alpha_1,\alpha_2}}{\sqrt{\expval{\alpha_1,\alpha_1}\expval{\alpha_2,\alpha_2}}}\right]=\acos\left[-\frac{1}{\sqrt{2}}\right]=\frac{3\pi}{4}
 	\end{aligned}
 \end{equation}
-From the lectures, we know that this gives a double lined diagram (also since $A_{ji}A_{ij}=2$). Further since $A_{12}<A_{21}$ then the diagram starts with a colored-in dot
+From the lectures, we know that this gives a double lined diagram (also since $A_{ji}A_{ij}=2$). Further since $A_{21}<A_{12}$ then the diagram starts with a white dot and ends with a filled in one.
+\begin{figure}[H]\centering
+\begin{tikzpicture}
+	\draw (0.15,0.1) -- (2,0.1);
+	\draw (0.15,-0.1) -- (2,-0.1);
+	\draw (0,0) circle (0.2cm);
+	\fill[black] (2,0) circle (0.2cm);
+\end{tikzpicture}
+\end{figure}
+We see from the dictionary given in the lecture, that this is the diagram of SP(2) which is isomorphic to SO(5). We can now proceed to find the fundamental weights $\mu_i$. These are defined to be the weights for which
+\begin{equation} \label{eq:weight}
+	\begin{aligned}
+		\frac{2\expval{\mu_i,\alpha_j}}{\expval{\alpha_j,\alpha_j}}=\delta_{ij}
+	\end{aligned}
+\end{equation}
+As described in Cahn this can be written in terms of the Cartan matrix. The procedure is as follows. We express the fundamental weight vectors as a linear combination of the simple roots
+\begin{equation}
+	\begin{aligned}
+		\mu_i= \sum_j c_{ji}\alpha_j
+	\end{aligned}
+\end{equation}
+Combining this with \eqref{eq:weight} and the expression for the Cartan matrix, we find
+\begin{equation}
+	\begin{aligned}
+		\mu_i= \sum_i (A^{-1})_{ij}\alpha_{j}
+	\end{aligned}
+\end{equation}
+Hence we get two fundamental weights. We find, using the inverse
+\begin{equation}
+	\begin{aligned}
+		A^{-1}=\begin{pmatrix}
+		1 & \frac{1}{2}\\
+		1 & 1
+		\end{pmatrix}
+	\end{aligned}
+\end{equation}
+that the weights are
+\begin{equation}
+	\begin{aligned}
+		\mu_1&=\left(\frac{1}{2},\frac{1}{2}\right)\\
+		\mu_2&=\left(1,0\right)
+	\end{aligned}
+\end{equation}
+\subsection*{Part b}
+Using the block weight diagram as described in Cahn, we have for the four-dimensional representation using the prescrption described in the book and in class, i.e. starting with the highest weight $\mu_1=(1/2,1/2)$
+\begin{figure}[H]\centering
+	\begin{tikzpicture}
+		\draw (0.15,0.1) -- (2,0.1);
+		\draw (0.15,-0.1) -- (2,-0.1);
+		\draw (0,0) circle (0.2cm);
+		\fill[black] (2,0) circle (0.2cm);
+		\node at (1,-0.8) [rectangle,draw] {$1~~~~~~0$};
+		\node at (1,-1.8) [rectangle,draw] {$-1~~~~1$};
+		\node at (1,-2.8) [rectangle,draw] {$1~~~-1$};
+		\node at (1,-3.8) [rectangle,draw] {$-1~~~~0$};
+	\end{tikzpicture}
+\end{figure}
+where the numbers in the boxes are the Dynkin coeffecients
+\begin{equation}
+	\begin{aligned}
+		\Lambda_{i}=2\frac{\expval{\mu,\alpha_i}}{\expval{\alpha_i,\alpha_i}}
+	\end{aligned}
+\end{equation}
+and we have subtracted off factors of $A_{ij}$ to get the next coeffectients for the weights. In terms of the root vectors one can again express the weights as
+\begin{equation}
+	\begin{aligned}
+		\mu=c_1 \alpha_1+c_2\alpha_2
+	\end{aligned}
+\end{equation}
+the weight correspoinding to the dynkin coeffecient is found by solving $\Lambda_1= \frac{\expval{\mu,\alpha_1}}{\expval{\alpha_1,\alpha_1}} $ and $\Lambda_2= \frac{\expval{\mu,\alpha_2}}{\expval{\alpha_2,\alpha_2}} $ and then inserting the coeffecients. We get
+\begin{equation}
+	\begin{aligned}
+	&\mu=\left(1/2 \Lambda_1+\Lambda_{2},1/2\Lambda_1\right)\\	
+	\Rightarrow&\mu=\{(1/2,1/2)\,,\,(1/2,-1/2)\,,\,(-1/2,1/2)\,,\,(-1/2,-1/2)\}
+	\end{aligned}
+\end{equation}
+\section*{Problem 2}
+We have $n$ simple adjacent roots. The non-zero Cartan elements must obey $A_{i\,(i+1)}A_{(i+1)\,i}$. Again since these are adjacent and since all off-diagonal elements have to be $\{0,-1,-2,-3\}$ we can see the Dynkin diagram corresponds to the following Cartan matrix, with each row corresponding to one of the simple roots.
+\begin{equation}
+	\begin{aligned}
+		A=\begin{pmatrix}
+			2 & -1 & & &\\
+			-1 & 2 & -1 & &\\
+			 &  -1& \ddots  &-1 &\\
+			 & & -1 & 2&-1\\
+			 & &  &-1 & 2\\
+		\end{pmatrix}
+	\end{aligned}
+\end{equation}
+We then want to check how many cobinations of these simple roots we can obtain. One can start with a root $\alpha_i$ and then add/subtract factors of $\alpha_j$ to this obtaining the following root-chain
+\begin{equation}
+	\begin{aligned}
+	\alpha_i-q\alpha_j,\cdots,\alpha_i -\alpha_j,	\alpha_i,\alpha_i +\alpha_j,\cdots \alpha_i+p\alpha_j\\
+	\end{aligned}
+\end{equation}
+We know, however, that $\alpha_i\alpha_j$ is not a root, so the chain must start at $q=0$. Now using the following formula given in class for such a chain
+\begin{equation}  \label{eq:minw}
+	\begin{aligned}
+		q-p=\frac{\expval{\mu,\alpha}}{\expval{\alpha,\alpha}}
+	\end{aligned}
+\end{equation}
+we have, in our case
+\begin{equation}  \label{eq:minw}
+	\begin{aligned}
+		-p_{ij}=\frac{\expval{\alpha_i,\alpha_j}}{\expval{\alpha_j,\alpha_j}}=A_{ij}
+	\end{aligned}
+\end{equation}
+where $p=\delta_{i\pm 1,j}$. We see that the first two levels of roots from this are given by
+\begin{equation}
+	\begin{aligned}
+		&\alpha_1,\alpha_2,\cdots,\alpha_{n-1},\alpha_n,~~~~~~~~&&n\text{ roots}\\
+		&\alpha_1+\alpha_2,\alpha_2+\alpha_3,\cdots,\alpha_{n-1}+\alpha_n,~~~~~~~~&&n-1\text{ roots}\\
+	\end{aligned}
+\end{equation}
+we then check whether one can add more roots, i.e.
+\begin{equation}  \label{eq:minw}
+	\begin{aligned}
+		-p_{ij}=\frac{\expval{\alpha_i,\alpha_j}}{\expval{\alpha_j,\alpha_j}}=A_{ij}+A_{i+1\,j}
+	\end{aligned}
+\end{equation}
+Now $p=1$ for $j=i+2$ and $j=i-1$. Similarly to before, one obtains
+\begin{equation}
+	\begin{aligned}
+		&\alpha_1,\alpha_2,\cdots,\alpha_{n-1},\alpha_n,~~~~~~~~&&n\text{ roots}\\
+		&\alpha_1+\alpha_2,\alpha_2+\alpha_3,\cdots,\alpha_{n-1}+\alpha_n,~~~~~~~~&&n-1\text{ roots}\\
+		&\alpha_1+\alpha_2+\alpha_3,\alpha_2+\alpha_3+\alpha_4,\cdots,\alpha_{n-2}+\alpha_{n-1}+\alpha_n,~~~~~~~~&&n-2\text{ roots}\\
+	\end{aligned}
+\end{equation}
+The final number of positive roots must then be the sum of this (i.e. completing the chains), $\frac{1}{2}n(n+1)$, so we in total have $n(n+1)$ total roots and these are given by the sums of the simple roots with each root only appearing once in a sum:
+\begin{equation}
+	\begin{aligned}
+		\{(2,-1,\cdots,0),(-1,2,-1,\cdots),\cdots(0,\cdots,0,-1,-2)\}
+	\end{aligned}
+\end{equation}
+\section*{Problem 3}
+Since the second matrix is equivalent to the matrix obtained in problem 1 we will only do the first diagram. We start of by determining the roots of $G_2$. We will start with $\alpha_1$'s chain through $\alpha_1+\alpha_2$ and $\alpha_2$:
+\begin{equation}
+	\begin{aligned}
+		\alpha_2-\frac{2\expval{\alpha_2,\alpha_1}}{\expval{\alpha_1,\alpha_1}}\alpha_1=\alpha_1+\alpha_2
+	\end{aligned}
+\end{equation}
+where the coeffecient can be read of from the Cartan matrix. We can then use this and continue the chain
+\begin{equation}
+	\begin{aligned}
+		\alpha_1+\alpha_2-\frac{2\expval{\alpha_1+\alpha_2,\alpha_1}}{\expval{\alpha_1,\alpha_1}}\alpha_1=\alpha_2
+	\end{aligned}
+\end{equation}
+Then starting from $\alpha_2$ 
+\begin{equation}
+	\begin{aligned}
+		\alpha_1-\frac{2\expval{\alpha_1+\alpha_2,\alpha_1}}{\expval{\alpha_1,\alpha_1}}\alpha_2=\alpha_1+3\alpha_2
+	\end{aligned}
+\end{equation}
+Continuing the chains again we obtain:
+\begin{equation}
+	\begin{aligned}
+		\alpha_1+3\alpha_2-\frac{2\expval{\alpha_1+3\alpha_2,\alpha_1}}{\expval{\alpha_2,\alpha_2}}\alpha_2&=\alpha_1\\
+			\alpha_1+3\alpha_2-\frac{2\expval{\alpha_1+3\alpha_2,\alpha_1}}{\expval{\alpha_1,\alpha_1}}\alpha_1&=2\alpha_1+3\alpha_2\\
+		\alpha_1+\alpha_2-\frac{2\expval{\alpha_1+\alpha_2,\alpha_2}}{\expval{\alpha_2,\alpha_2}}\alpha_2&=\alpha_1+2\alpha_2\\
+	\end{aligned}
+\end{equation}
+This is continued and we see that the full root system is (after completion by taking the negative roots as well)
+\begin{equation}
+	\begin{aligned}
+		\{\pm \alpha_1,\pm \alpha_2,\pm(\alpha_1+\alpha_2),\pm(\alpha_1+2\alpha_2),\pm(\alpha_1+3\alpha_2),\pm(2\alpha_1+3\alpha_2)\}
+	\end{aligned}
+\end{equation}
+\section*{Problem 4}
+\subsection*{Part a}
+To simplify the calculation we first study the case of SU(2) in 2d then generalize the result to SU(N). Here we have three operators
+\begin{equation}
+	\begin{aligned}
+		Q_x=\frac{a_1^\dagger a_2+a_2^\dagger a_1}{2},~~~~~~
+		Q_y=\frac{a_1^\dagger a_2-a_2^\dagger a_1}{2i},~~~~~~
+		Q_z=\frac{a_1^\dagger a_1-a_2^\dagger a_2}{2},~~~~~~
+	\end{aligned}
+\end{equation}
+since $t^a_{ij}=\sigma_{ij}^a$. These should commute with the hamiltonian written in terms of raising and lowering operators ($\hbar=1$)
+\begin{equation}
+	\begin{aligned}
+		H=(a_1^\dagger a_1+a_2^\dagger a_2+1)\omega 
+	\end{aligned}
+\end{equation}
+with 
+\begin{equation}
+	\begin{aligned}
+		\left[a_i,a^\dagger_j\right]=\delta_{ij}
+	\end{aligned}
+\end{equation}
+Taking
+\begin{equation}
+	\begin{aligned}
+		\left[a_1^\dagger a_2,a_1^\dagger a_1\right]&=a_1^\dagger a_2a_1^\dagger a_1-a_1^\dagger a_1a_1^\dagger a_2\\
+		&=a_1^\dagger a_2a_1^\dagger a_1-a_1^\dagger a_2 a_1a_1^\dagger \\
+		&=-a_1^\dagger a_2 
+	\end{aligned}
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		\left[a_1^\dagger a_2,a_2^\dagger a_2\right]&=a_1^\dagger a_2a_2^\dagger a_2-a_2^\dagger a_2a_1^\dagger a_2\\
+		&=a_1^\dagger a_2a_2^\dagger a_2-a_1^\dagger a_2^\dagger a_2 a_2\\
+		&=-a_1^\dagger a_2	\end{aligned}
+\end{equation}
+\subsection*{Part b}
+Since the $Q$'s algebra mainly depend on the pauli matrices, it is straightforward to see that
+\begin{equation}
+	\begin{aligned}
+		\left[Q_a,Q_b\right]=i \epsilon_{abc}Q^c
+	\end{aligned}
+\end{equation}
+Further
+\begin{equation}
+	\begin{aligned}
+		\left[Q^a,a_i^\dagger\right]=\frac{1}{2}a_j^\dagger (\sigma^a)^j_i
+	\end{aligned}
+\end{equation}
+which implies that the ladder operators transform like SU(2) doublets, meaning we can built a fock space out of them. This can also be seen from the fact that
+\begin{equation}
+	\begin{aligned}
+		Q^2=Q_x^2+Q_y^2+Q_z^2=\frac{1}{4}a_i^\dagger a_j a_k^\dagger a_l \left(\sigma^x_{ij}\sigma^x_{kl}+\sigma^y_{ij}\sigma^y_{kl}+\sigma^z_{ij}\sigma^z_{kl}\right)\equiv\rho(\rho+1)
+	\end{aligned}
+\end{equation}
+where $\rho$ is a combination of number operators $\rho=\frac{N_1+N_2}{2}$, $N_i=\alpha_i^\dagger \alpha_i$ with $\rho$ i.e. corresponding to what we normally would call the magnitude of the angular momentum. We have used identities for sum over pauli matrices in the last line. We can then construct the Fock space
+\begin{equation}
+	\begin{aligned}
+		\ket{M}\equiv \ket{m,2\rho-m}
+	\end{aligned}
+\end{equation}
+where $m=0,1,\dots,2\rho$ is the occupation number of the first oscillator and $2\rho-m$ is for the second oscillator. I.e. $N_1\ket{M}=m\ket{M}$. Here $Q_z$ is diagonal
+\begin{equation}
+	\begin{aligned}
+		Q_z\ket{M}=(m-\rho)\ket{M}
+	\end{aligned}
+\end{equation}
+while we can define raising and lowering operators $Q_+=a_1^\dagger a_2$ and $Q_-=a_2^\dagger a_1$ so that for instance
+\begin{equation}
+	\begin{aligned}
+		Q_+\ket{M}&=\frac{1}{2}a_1^\dagger a_2\ket{m,2\rho-m}\\&=\frac{1}{2}\sqrt{(m+1)(2\rho-m)}\ket{m+1,2\rho-m-1}\\
+		&=\frac{1}{2}\sqrt{(m+1)(2\rho-m)}\ket{M+1}
+	\end{aligned}
+\end{equation}
+I.e. acting just like angular momentum operators. Hence th fock space is basically build out of the states (with some appropriate normalization)
+\begin{equation}
+	\begin{aligned}
+		\ket{M}\propto(a_1^\dagger)^{m} (a_2^\dagger) ^{\rho}\ket{0}
+	\end{aligned}
+\end{equation}
+\section*{Problem 5}
+From the anticommutation relation
+\begin{equation}
+	\begin{aligned}
+		\{\Gamma_j,\Gamma_k\}=2\delta_{jk}
+	\end{aligned}
+\end{equation}
+we see that
+\begin{equation} \label{eq:clif}
+	\begin{aligned}
+		M_{ab}&=\frac{1}{4i}\left[\Gamma_a,\Gamma_b\right]
+		\\
+		&=\frac{1}{4i}\left(\Gamma_a\Gamma_b-\Gamma_b\Gamma_a\right)\\
+		&=\frac{1}{4i}\left(2\Gamma_a\Gamma_b-\Gamma_b\Gamma_a-\Gamma_a\Gamma_b\right)\\
+		&=\frac{1}{4i}\left(-\{\Gamma_b,\Gamma_a\}+2\Gamma_a\Gamma_b\right)\\
+			&=\frac{1}{2i}\left(\Gamma_a\Gamma_b-\delta_{ab}\right)
+	\end{aligned}
+\end{equation}
+Taking the commutator of this with one of the gamma matrices gives us (for $a\neq b$)
+\begin{equation}
+	\begin{aligned}
+		\left[M_{ab},\Gamma_c\right]&=\frac{1}{2i}\left[\Gamma_a\Gamma_b,\Gamma_c\right]\\
+		&=\frac{1}{2i}\left(\Gamma_a\Gamma_b\Gamma_c-\Gamma_c\Gamma_a\Gamma_b\right)\\
+		&=\frac{1}{2i}\left(\Gamma_a\{\Gamma_b,\Gamma_c\}-\Gamma_a\Gamma_c\Gamma_b-\{\Gamma_c,\Gamma_a\}\Gamma_b+\Gamma_a\Gamma_c\Gamma_b\right)\\
+		&=\frac{1}{i}\left(\Gamma_a \delta_{bc}-\Gamma_b \delta_{ca}\right)
+	\end{aligned}
+\end{equation}
+Taking the commutators between two $M$'s with $a\neq b$ and $c\neq d$
+\begin{equation}
+	\begin{aligned}
+		\left[M_{ab},M_{cd}\right]&=\frac{1}{2i}\left[M_{ab},\Gamma_{c}\Gamma_{d}\right]\\
+		&=\frac{1}{2i}\left(\left[M_{ab},\Gamma_{c}\right]\Gamma^d+\Gamma^c\left[M_{ab},\Gamma_{d}\right]\right)\\
+		&=\frac{1}{2i}\left(
+		\Gamma_a\Gamma_d\delta_{bc}-\Gamma_b\Gamma_d\delta_{ac}+\Gamma_c\Gamma_a\delta_{bd}-\Gamma_c\Gamma_b\delta_{ad}
+		\right)\\
+		&=-i\left(M_{ad}\delta_{bc}-M_{bd}\delta_{ac}+M_{ca}\delta_{bd}-M_{cb}\delta_{ad}\right)
+	\end{aligned}
+\end{equation}
+Where we in the last line have used \eqref{eq:clif}.
 \end{document}
