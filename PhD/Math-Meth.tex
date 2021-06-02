@@ -4248,7 +4248,7 @@ the weight correspoinding to the dynkin coeffecient is found by solving $\Lambda
 	\end{aligned}
 \end{equation}
 \section*{Problem 2}
-We have $n$ simple adjacent roots. The non-zero Cartan elements must obey $A_{i\,(i+1)}A_{(i+1)\,i}$. Again since these are adjacent and since all off-diagonal elements have to be $\{0,-1,-2,-3\}$ we can see the Dynkin diagram corresponds to the following Cartan matrix, with each row corresponding to one of the simple roots.
+We have $n$ simple adjacent roots. The non-zero Cartan elements must obey $A_{i\,(i+1)}A_{(i+1)\,i}=1$. Again since these are adjacent and since all off-diagonal elements have to be $\{0,-1,-2,-3\}$ we can see the Dynkin diagram corresponds to the following Cartan matrix, with each row corresponding to one of the simple roots.
 \begin{equation}
 	\begin{aligned}
 		A=\begin{pmatrix}
@@ -4260,13 +4260,13 @@ We have $n$ simple adjacent roots. The non-zero Cartan elements must obey $A_{i\
 		\end{pmatrix}
 	\end{aligned}
 \end{equation}
-We then want to check how many cobinations of these simple roots we can obtain. One can start with a root $\alpha_i$ and then add/subtract factors of $\alpha_j$ to this obtaining the following root-chain
+We then want to check how many combinations of these simple roots we can obtain. One can start with a root $\alpha_i$ and then add/subtract factors of $\alpha_j$ to this obtaining the following root-chain
 \begin{equation}
 	\begin{aligned}
 	\alpha_i-q\alpha_j,\cdots,\alpha_i -\alpha_j,	\alpha_i,\alpha_i +\alpha_j,\cdots \alpha_i+p\alpha_j\\
 	\end{aligned}
 \end{equation}
-We know, however, that $\alpha_i\alpha_j$ is not a root, so the chain must start at $q=0$. Now using the following formula given in class for such a chain
+We know, however, that $\alpha_i-\alpha_j$ is not a root, so the chain must start at $q=0$. Now using the following formula given in class for such a chain
 \begin{equation}  \label{eq:minw}
 	\begin{aligned}
 		q-p=\frac{\expval{\mu,\alpha}}{\expval{\alpha,\alpha}}
@@ -4339,7 +4339,7 @@ This is continued and we see that the full root system is (after completion by t
 	\end{aligned}
 \end{equation}
 \section*{Problem 4}
-\subsection*{Part a}
+\subsection*{Part a and b combined}
 To simplify the calculation we first study the case of SU(2) in 2d then generalize the result to SU(N). Here we have three operators
 \begin{equation}
 	\begin{aligned}
@@ -4374,8 +4374,13 @@ Taking
 		&=a_1^\dagger a_2a_2^\dagger a_2-a_1^\dagger a_2^\dagger a_2 a_2\\
 		&=-a_1^\dagger a_2	\end{aligned}
 \end{equation}
-\subsection*{Part b}
-Since the $Q$'s algebra mainly depend on the pauli matrices, it is straightforward to see that
+Further, the number operators commute, and hence we obtain
+\begin{equation}
+	\begin{aligned}
+		[Q_i,H]=0
+	\end{aligned}
+\end{equation}
+as expected from a symmtry operation. Since the $Q$'s algebra mainly depend on the pauli matrices, it is straightforward to see that
 \begin{equation}
 	\begin{aligned}
 		\left[Q_a,Q_b\right]=i \epsilon_{abc}Q^c
@@ -4412,12 +4417,13 @@ while we can define raising and lowering operators $Q_+=a_1^\dagger a_2$ and $Q_
 		&=\frac{1}{2}\sqrt{(m+1)(2\rho-m)}\ket{M+1}
 	\end{aligned}
 \end{equation}
-I.e. acting just like angular momentum operators. Hence th fock space is basically build out of the states (with some appropriate normalization)
+I.e. acting just like angular momentum operators. Hence the fock space is basically build out of the states (with some appropriate normalization)
 \begin{equation}
 	\begin{aligned}
 		\ket{M}\propto(a_1^\dagger)^{m} (a_2^\dagger) ^{\rho}\ket{0}
 	\end{aligned}
 \end{equation}
+Generalizing to $SU(N)$ should be straightforward albeit, somewhat more involved. We do expect the results to hold in that cases.
 \section*{Problem 5}
 From the anticommutation relation
 \begin{equation}
@@ -4456,5 +4462,5 @@ Taking the commutators between two $M$'s with $a\neq b$ and $c\neq d$
 		&=-i\left(M_{ad}\delta_{bc}-M_{bd}\delta_{ac}+M_{ca}\delta_{bd}-M_{cb}\delta_{ad}\right)
 	\end{aligned}
 \end{equation}
-Where we in the last line have used \eqref{eq:clif}.
+Where we in the last line have used \eqref{eq:clif}. This is the relation we wanted to prove, since it is the one satisfied by the SO(N) generators.
 \end{document}
