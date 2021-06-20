@@ -2,11 +2,11 @@
 \contentsline {section}{\numberline {2}Concept of Riemann Surfaces}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Power of complex analysis}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Complex analysis on surfaces}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}General surfaces}{3}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Definition of Riemann surface \cite {Farkas}}{5}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Examples of Riemann surfaces}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}The real plane $\mathds {R}^2$}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}2-sphere $S^2$}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Uniformization Theorem}{6}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Application in the field of scattering amplitudes}{7}{section.4}%
-\contentsline {section}{\numberline {5}Conclusion}{8}{section.5}%
+\contentsline {subsection}{\numberline {2.3}General surfaces}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Definition of Riemann surface}{6}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Examples of Riemann surfaces}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The real plane $\mathds {R}^2$}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}2-sphere, $S^2$}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Uniformization Theorem}{8}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Application in the field of scattering amplitudes}{8}{section.4}%
+\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}%

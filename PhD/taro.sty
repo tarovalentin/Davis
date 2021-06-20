@@ -31,6 +31,8 @@
 \usetikzlibrary{positioning,fit}
 \usetikzlibrary{patterns}
 
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
 \tikzset{cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},
 	%default radius will be 1pt.
 	cross/.default={2pt}}
@@ -183,3 +185,27 @@
 	\end{tikzpicture}
 	\end{gathered}
 }
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newenvironment{On-shell-4}[2]{
+%	\node at (0,0) [circle,fill=black,inner sep=0pt,minimum size=5mm]  {};
+%	\node at (#1,0) [circle,,fill=black,inner sep=0pt,minimum size=2mm,label=below:\begin{small}$#1$\end{small}]
+%	{};
+%	\draw[ultra thick,black] (1,0) -- (#1,0);
+%}
+%
+%\newenvironment{BCJ}[1][]
+%{
+%	\begin{gathered}
+%		\begin{tikzpicture}[scale=0.57,baseline={([yshift=2ex]current bounding box.center)}]
+%			\begin{BCJa}{#1}
+%			}
+%			{ 
+%			\end{BCJa}
+%		\end{tikzpicture}
+%	\end{gathered}
+%}
