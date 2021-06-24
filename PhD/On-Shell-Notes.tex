@@ -639,7 +639,6 @@ a_1&a_2&\cdots &a_k
 \newpage
 \section{On-shell diagrams}
 \subsection{Using three point on shell functions}
-The three-point vertex can be found from the following MHV and $\overline{\text{MHV}}$ diagrams
 \begin{figure}[H]\centering\hspace*{3.5cm}
 	\begin{tikzpicture}
 		\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
@@ -674,7 +673,7 @@ The three-point vertex can be found from the following MHV and $\overline{\text{
 		\end{scope}
 	\end{tikzpicture}
 \end{figure}
-These produce the two following $C$ matrices, respectively
+These produce the two following $C$ matrices respectively
 \begin{equation}
 	\begin{aligned}
 		C&=\begin{pmatrix}
@@ -1073,32 +1072,6 @@ We can now calculate the form
 		\end{scope}
 	\end{tikzpicture}
 \end{figure}
-Each vertex can fix one edge-variable, however you cannot do it in such a way that all variables in a vertex is fixed.
-The $C$ matrix is
-\begin{equation}
-	\begin{aligned}
-		C=\begin{pmatrix}
-			1 & \alpha_1+\alpha_2\alpha_6 & \alpha_6 & \alpha_3\alpha_6 & 0\\
-			0 & \alpha_5 \alpha_6 \alpha_2 & \alpha_5 \alpha_6 & \alpha_4+\alpha_3\alpha_5\alpha_6 & 1
-		\end{pmatrix}
-	\end{aligned}
-\end{equation}
-with the inverse being
-\begin{equation}
-	\begin{aligned}
-		C^\perp =\begin{pmatrix}
-			-(\alpha_1+\alpha_2\alpha_6) & 1 & 0 & 0 & -\alpha_5 \alpha_6 \alpha_2\\
-			-\alpha_6 & 0 & 1 & 0 & -\alpha_5 \alpha_6 \\
-			-\alpha_3 \alpha_6 & 0 & 0 & 1 & -(\alpha_4+\alpha_3\alpha_5\alpha_6)
-		\end{pmatrix}
-	\end{aligned}
-\end{equation}
-Jacobian which can be found from
-\begin{equation}
-	\begin{aligned}
-		\frac{(\det M_{ab})^2}{\expval{ab}^2}
-	\end{aligned}
-\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{thebibliography}{99}
 
