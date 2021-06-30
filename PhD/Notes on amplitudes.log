@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  23 JUN 2021 09:35
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  29 JUN 2021 17:14
  restricted system commands enabled.
 **"Notes on amplitudes.tex"
 ("./Notes on amplitudes.tex"
@@ -1140,43 +1140,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 631--634
 
  []
 
-[14] [15] [16]
-Overfull \hbox (4.1506pt too wide) in paragraph at lines 710--710
-[][]$\OML/cmm/m/it/12 III$  
- []
-
-
-Overfull \hbox (1.3603pt too wide) in paragraph at lines 714--714
-[][]$\OML/cmm/m/it/12 IV$  
- []
-
-
-Overfull \hbox (72.03194pt too wide) detected at line 741
+[14] [15] [16] [17] [18]
+Overfull \hbox (17.10115pt too wide) detected at line 852
 [][][]
  []
 
+[19] [20] [21] [22]
+Underfull \vbox (badness 1852) has occurred while \output is active []
 
-Underfull \vbox (badness 1571) has occurred while \output is active []
-
- [17]
-[18] [19] [20] [21] [22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1116.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1116.
+ [23]
+[24] [25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1290.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1290.
  ("./Notes on amplitudes.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1116.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1116.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1290.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1290.
 Package rerunfilecheck Info: File `"Notes on amplitudes".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1116.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1290.
 )
 
 Here is how much of LuaTeX's memory you used:
- 35784 strings out of 480991
+ 35806 strings out of 480991
  100000,1373583 words of node,token memory allocated
- 1333 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 209 attribute, 57 glue_spe
-c, 209 attribute_list, 2 write nodes
-   avail lists: 2:2762,3:734,4:72,5:292,6:39,7:2397,8:127,9:1034,10:12,11:152
+ 1499 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 2 sub_mlist, 1 glyph, 249 attribute
+, 57 glue_spec, 249 attribute_list, 2 write nodes
+   avail lists: 2:2694,3:733,4:78,5:292,6:39,7:2397,8:119,9:1034,10:12,11:152
  51906 multiletter control sequences out of 65536+200000
  88 fonts using 7502851 bytes
  71i,14n,102p,762b,1301s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1202,9 +1192,9 @@ gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Notes on amplitudes.pdf (23 pages, 555745 bytes).
+Output written on Notes on amplitudes.pdf (26 pages, 572150 bytes).
 
-PDF statistics: 449 PDF objects out of 1000 (max. 8388607)
- 169 named destinations out of 1000 (max. 131072)
+PDF statistics: 482 PDF objects out of 1000 (max. 8388607)
+ 191 named destinations out of 1000 (max. 131072)
  168 words of extra memory for PDF output out of 10000 (max. 100000000)
 

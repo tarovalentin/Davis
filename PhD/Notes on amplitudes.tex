@@ -685,20 +685,129 @@ These produce the two following $C$ matrices, respectively
 	\end{pmatrix}
 	\end{aligned}
 \end{equation}
-Note that as opposed to what we will see in the four-point case, here we have no choice in what starting points we take, since e.g. in the MHV (k=2) case, we have to pick $1$ and $2$. Because of momentum conservation and little group invariance, the solution of the delta functions in this case leads to 
+Note that as opposed to what we will see in the four-point case, here we have no choice in what starting points we take, since e.g. in the MHV ($k=2$) case, we have to pick $1$ and $2$. Because of momentum conservation and little group invariance, the solution of the delta functions in this case leads to 
 \begin{equation}
 	\begin{aligned}
 		A_3^{\text{MHV}}(1,2,3)&=\frac{\delta^{8}\left(\sum_{i=1}^{3}\lambda_i\tilde\eta_i\right)\delta^{4}\left(\sum_{i=1}^{3}\lambda_i\tilde\lambda_i\right)}{\expval{12}\expval{23}\expval{31}}\\
-		A_3^{\overline{\text{MHV}}}(1,2,3)&=\frac{\delta^{8}\left([12]\tilde\eta_3+[23]\tilde\eta_1+[31]\tilde\eta_2\right)\delta^{4}\left(\sum_{i=1}^{3}\lambda_i\tilde\lambda_i\right)}{[12][23][31]}\\
+		A_3^{\overline{\text{MHV}}}(1,2,3)&=\frac{\delta^{4}\left([12]\tilde\eta_3+[23]\tilde\eta_1+[31]\tilde\eta_2\right)\delta^{4}\left(\sum_{i=1}^{3}\lambda_i\tilde\lambda_i\right)}{[12][23][31]}\\
 	\end{aligned}
 \end{equation}
-To construct the four-point diagram we then glue four three-point amplitudes together by integrating over the internal degrees of freedom through
+We start by constructing the simplest possible diagram out of two opposite helicity ($k=1$ and $k=2$) amplitudes, see figure below:
+\begin{figure}[H]\centering\hspace*{3cm}
+	\begin{tikzpicture}
+		\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
+			\draw (1.5,1.5) circle (2.4mm);
+			\draw[black,fill=gray] (0,1.5) circle (2.4mm);
+			\draw[thick,black] (0.25,1.5) -- node {\midarrow} (1.25,1.5);
+			\node[text width=0.5cm] at (0.8,1.9) {$P$};
+			\draw[thick,black] (-0.18,1.3) --  (-0.7,0.8); %4
+			\draw[thick,black] (1.67,1.67) --   (2.2,2.2);
+			\draw[thick,black] (-0.7,2.2) -- (-0.19,1.67);
+			\draw[thick,black] (2.2,0.8) -- (1.65,1.3); %3
+			\node[text width=3cm] at (0.4,2.4) {1};
+			\node[text width=3cm] at (3.9,2.4) {2};
+			\node[text width=3cm] at (3.9,0.6) {3};
+			\node[text width=3cm] at (0.4,0.6) {4};
+		\end{scope}
+	\end{tikzpicture}
+\end{figure}
+To construct the four-point diagram we then glue the two three-point amplitudes together by integrating over the internal degrees of freedom through
 \begin{equation}
 	\begin{aligned}
-		\prod_{I}\int \dd^4 \eta_I \int\frac{d^2\lambda_Id^2\tilde\lambda_I}{GL(1)}
+		\prod_{I}\int \dd^4 \tilde \eta_I \int\frac{d^2\lambda_Id^2\tilde\lambda_I}{GL(1)}
 	\end{aligned}
 \end{equation}
-We take
+Explicitly we have
+\begin{equation}
+	\begin{aligned}
+		\int \dd \tilde \eta_{P} \int\frac{d^2\lambda_Pd^2\tilde\lambda_P}{GL(1)}&
+		\frac{\delta^{8}\left(\lambda_1\tilde\eta_1+\lambda_{4}\tilde\eta_{4}+\lambda_{P}\tilde\eta_{P}\right)\delta^{4}\left(\lambda_{1}\tilde\lambda_{1}+\lambda_{4}\tilde\lambda_{4}+\lambda_{P}\tilde\lambda_{P}\right)}{\expval{14}\expval{4P}\expval{P1}}\\
+		\times&\frac{\delta^{4}\left([23]\tilde\eta_{P}+[3P]\tilde\eta_{2}+[P 3]\tilde\eta_{3}\right)\delta^{4}\left(\lambda_{2}\tilde\lambda_{2}+\lambda_{3}\tilde\lambda_{3}-\lambda_{P}\tilde\lambda_{P}
+			\right)}{[23][3P][P2]}
+	\end{aligned}
+\end{equation}
+First we solve the delta-function constraint by projecting along $\lambda_1$
+\begin{equation}
+	\begin{aligned}
+		&\lambda_{1}\tilde\lambda_{1}+\lambda_{4}\tilde\lambda_{4}+\lambda_{P}\tilde\lambda_{P}=0\\
+		\Rightarrow& \tilde\lambda_{P}=\frac{\expval{41}}{\expval{1P}}\tilde\lambda_4
+	\end{aligned}
+\end{equation}
+Similarly we use the other delta-function and project using $\tilde \lambda_3$
+\begin{equation}
+	\begin{aligned}
+		&\lambda_{2}\tilde\lambda_{2}+\lambda_{3}\tilde\lambda_{3}-\lambda_{P}\tilde\lambda_{P}=0\\
+		\Rightarrow& 
+		\lambda_{P}=\frac{[23]}{[P3]}\lambda_2
+	\end{aligned}
+\end{equation}
+combining these we obtain
+\begin{equation}
+	\begin{aligned}
+		\tilde\lambda_P \lambda_P=\lambda_2 \tilde\lambda_4 \frac{\expval{41}[23]}{\expval{1P}[P3]}&=\lambda_2 \tilde\lambda_4 \frac{[23]}{[43]}\\
+		&=\lambda_2 \tilde\lambda_4 \frac{\expval{41}}{\expval{12}}
+ 	\end{aligned}
+\end{equation}
+where we have used $P=-1-4=2+3$ in the last two equalities. Solving this collapses the momentum conservation delta function as well as giving a Jacobian factor of $\frac{1}{\expval{23}[32]}$
+\begin{equation} \label{eq:sol3}
+	\begin{aligned}
+		\lambda_P&=\lambda_2\\
+		\tilde \lambda_P&=\lambda_4 \frac{\expval{41}}{\expval{12}}=\tilde\lambda_4 \frac{[23]}{[43]}
+	\end{aligned}
+\end{equation}
+We then use these in one of the grassmann delta-functions
+\begin{equation}
+	\begin{aligned}
+		\tilde\eta_{P}&=\frac{-[3P]\tilde\eta_{2}-[P 2]\tilde\eta_{3}}{[23]}\\
+		&=-\frac{1}{[23]}\times \frac{[34][23]}{[43]} \times\tilde \eta_2-\frac{1}{[23]}\times \frac{[42]\expval{41}}{\expval{12}} \times\tilde \eta_3\\
+		&=\tilde \eta_2+ \frac{\expval{13}}{\expval{12}} \times\tilde \eta_3\\
+	\end{aligned}
+\end{equation}
+This can be obtained from contracting
+\begin{equation}
+	\begin{aligned}
+\lambda_P\tilde\eta_{P}	&=\lambda_2\tilde \eta_2+ \lambda_3 \tilde \eta_3\\	
+	\end{aligned}
+\end{equation}
+ with $\lambda_1$, since $\lambda_P=\lambda_2$. Using this in the other grassmann  delta function we get $[23]^4\delta^8(\sum_i\lambda_i\tilde\eta_i)$. Finally we take the solutions \eqref{eq:sol3} and insert them into the bosonic delta-function
+ \begin{equation}
+ 	\begin{aligned}
+ 		0&=\lambda_1\tilde\lambda_1+\lambda_4\tilde\lambda_4+\lambda_P\tilde\lambda_P\\
+ 		&=\lambda_1\tilde\lambda_1+\lambda_4\tilde\lambda_4+\lambda_2\tilde\lambda_4  \frac{[23]}{[43]}\\
+ 		&=\lambda_1\tilde\lambda_1+\tilde\lambda_4 \left(\lambda_4+\lambda_2  \frac{[23]}{[43]}\right)
+ 		\\
+ 		&=\lambda_1\tilde\lambda_1+\tilde\lambda_4 \left(  \frac{\lambda_4[43]+\lambda_2[23]}{[43]}\right)
+ 		\\
+ 		&=\lambda_1\tilde\lambda_1+\tilde\lambda_4 \left(  \frac{(2+4)|3]}{[43]}\right)
+ 		\\
+ 		&=\lambda_1\tilde\lambda_1-\tilde\lambda_4 \left(  \frac{\lambda_1[13]}{[43]}\right)
+ 		\\
+ 		&=\lambda_1 \left(\tilde\lambda_1 +\tilde\lambda_4 \frac{[13]}{[34]}\right)
+ 			\\
+ 		&=\lambda_1 \left( \frac{\tilde\lambda_1[34]+\tilde\lambda_4[13]}{[34]}\right)
+ 			\\
+ 		&=\lambda_1 \tilde\lambda_3 \frac{[14]}{[34]}
+ 	\end{aligned}
+ \end{equation}
+Since $\lambda_1\neq0,$ and $\tilde\lambda_3\neq0$ this leads to $[14]=0$ which in turn gives us
+\begin{equation}
+	\begin{aligned}
+		(p_1+p_4)^2=\expval{14}[41]=0
+	\end{aligned}
+\end{equation}
+Now we only need the kinematic part of the integrand. Including the Jacobians and using $\expval{1P}[P3]=\expval{12}[23]$ and $\expval{4P}[P2]=\expval{43}[32]$ we obtain
+\begin{equation}
+	\begin{aligned}
+		\frac{1}{\expval{14}\expval{4P}\expval{P1}}\times\frac{1}{[23][3P][P2]}\times \frac{[23]^4}{\expval{23}[23]}&=\frac{1}{\expval{12}\expval{23}\expval{34}\expval{41}}\\
+	\end{aligned}
+\end{equation}
+Such that we in total have the amplitude
+\begin{equation}
+	\begin{aligned}
+		\frac{\delta^{8}\left(\mathcal{Q}\right)\delta^{4}\left(P\right)}{\expval{12}\expval{23}\expval{34}\expval{41}}\delta((p_1+p_4)^2)
+	\end{aligned}
+\end{equation}
+Continuing this approach, we then look at the four-point on-shell diagram. We bridge together two of the diagrams just obtained
 \begin{figure}[H]\centering\hspace*{3cm}
 	\begin{tikzpicture}
 		\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
@@ -706,14 +815,16 @@ We take
 			\draw (1.5,0) circle (2.4mm);
 			\draw[black,fill=gray] (1.5,1.5) circle (2.4mm);
 			\draw (0,1.5) circle (2.4mm);
-			\draw[thick,black] (1.25,0) -- node {\midarrow} (0.25,0);
-			\node[text width=0.5cm] at (0.75,-0.4) {$III$};
-			\draw[thick,black] (0.25,1.5) -- node {\midarrow} (1.25,1.5);
-			\node[text width=0.5cm] at (0.8,1.9) {$I$};
-			\draw[thick,black]  (0,0.25) -- node {\midarrow}(0,1.25);
-			\node[text width=0.5cm] at (-0.5,0.75) {$IV$};
-			\draw[thick,black]   (1.5,1.25) -- node {\midarrow}(1.5,0.25);
-			\node[text width=0.5cm] at (2,0.7) {$II$};
+			\draw[thick,black] (1.25,0) --  (0.25,0);
+			\draw[thick,black] (0.25,1.5) -- (1.25,1.5);
+			\draw[thick,black]  (0,0.95) -- (0,1.25);
+			\draw[thick,black]  (0,0.25) -- (0,0.55);
+			\draw[thick,red,dashed] (0,0.6) -- (0,0.9) ;
+			\node[text width=0.5cm] at (-0.5,0.75) {$P_1$};
+			\draw[thick,black] (1.5,0.95) -- (1.5,1.25) ;
+			\draw[thick,black] (1.5,0.25) -- (1.5,0.55) ;
+			\draw[thick,red,dashed] (1.5,0.6) -- (1.5,0.9) ;
+			\node[text width=0.5cm] at (2,0.7) {$P_2$};
 			\draw[thick,black] (-0.18,-0.18) --  (-0.7,-0.7);
 			\draw[thick,black] (1.67,1.67) --   (2.2,2.2);
 			\draw[thick,black] (-0.7,2.2) -- (-0.19,1.67);
@@ -729,16 +840,32 @@ We take
 We have the following integral
 \begin{equation}
 	\begin{aligned}
-		\int\prod_{i=I}^{IV} \dd \eta_{i} \int\frac{d^2\lambda_id^2\tilde\lambda_i}{GL(4)}&
-		\frac{\delta^{8}\left(\lambda_1\tilde\eta_1+\lambda_{I}\tilde\eta_{I}+\lambda_{IV}\tilde\eta_{IV}\right)\delta^{4}\left(\lambda_{1}\tilde\lambda_{1}+\lambda_{I}\tilde\lambda_{I}-\lambda_{IV}\tilde\lambda_{IV}\right)}{\expval{1I}\expval{I(IV)}\expval{(IV)1}}\\
-		\times&\frac{\delta^{8}\left(\lambda_3\tilde\eta_3+\lambda_{II}\tilde\eta_{II}+\lambda_{III}\tilde\eta_{III}\right)\delta^{4}\left(\lambda_{3}\tilde\lambda_{3}-\lambda_{II}\tilde\lambda_{II}+\lambda_{III}\tilde\lambda_{III}\right)}{\expval{(II)3}\expval{3(III)}\expval{(III)(II)}}\\
-		\times&\frac{\delta^{8}\left([2I]\tilde\eta_{II}+[I(II)]\tilde\eta_{2}+[(II)2]\tilde\eta_{I}\right)\delta^{4}\left(\lambda_{2}\tilde\lambda_{2}-\lambda_{I}\tilde\lambda_{I}+\lambda_{II}\tilde\lambda_{II}
-		\right)}{[(II)2][2I][I(II)]}
-		\\
-		\times&\frac{\delta^{8}\left([4(III)]\tilde\eta_{IV}+[(III)(IV)]\tilde\eta_{4}+[(IV)4]\tilde\eta_{III}\right)\delta^{4}\left(\lambda_{4}\tilde\lambda_{4}-\lambda_{III}\tilde\lambda_{III}+\lambda_{IV}\tilde\lambda_{IV}
-			\right)}{[(II)2][2I][I(II)]}
+		\int \dd \eta_{P_1} \dd \eta_{P_2}\int&\frac{d^2\lambda_{P_1}d^2\tilde\lambda_{P_1}d^2\lambda_{P_2}d^2\tilde\lambda_{P_2}}{\text{Vol}(GL(1))\times\text{Vol}(GL(1))}\times \Omega (1,2,P_2,P_1)\times \Omega (P_1,P_2,3,4)
 	\end{aligned}
 \end{equation}
+\begin{equation}
+	\begin{aligned}
+		&\int \dd \eta_{P_1} \dd \eta_{P_2}\int\frac{d^2\lambda_{P_1}d^2\tilde\lambda_{P_1}d^2\lambda_{P_2}d^2\tilde\lambda_{P_2}}{\text{Vol}(GL(1))\times\text{Vol}(GL(1))}\\&\times 	\frac{\delta^{8}\left(\lambda_{1}\tilde \eta_{1}+\lambda_{2}\tilde \eta_{2}+\lambda_{P_1}\tilde \eta_{P_1}+\lambda_{P_2}\tilde \eta_{P_2}\right)\delta^{4}\left(\lambda_{1}\tilde\lambda_{1}+\lambda_{2}\tilde\lambda_{2}+\lambda_{P_2}\tilde\lambda_{P_2}-\lambda_{P_1}\tilde\lambda_{P_1}\right)}{\expval{12}\expval{2P_2}\expval{P_2P_1}\expval{P_11}}\delta(\expval{1P_1}[P_1 1])
+		\\&\times 	\frac{\delta^{8}\left(\lambda_{3}\tilde \eta_{3}+\lambda_{4}\tilde \eta_{4}+\lambda_{P_1}\tilde \eta_{P_1}+\lambda_{P_2}\tilde \eta_{P_2}\right)\delta^{4}\left(\lambda_{3}\tilde\lambda_{3}+\lambda_{4}\tilde\lambda_{4}-\lambda_{P_2}\tilde\lambda_{P_2}+\lambda_{P_1}\tilde\lambda_{P_1}\right)}{\expval{34}\expval{4P_1}\expval{P_1P_
+			2}\expval{P_23}}\delta(\expval{4P_1}[P_1 4])
+	\end{aligned}
+\end{equation}
+We use the bosonic delta-function to solve for $\lambda_{P_i}$ and $\tilde\lambda_{P_i}$ while assuming $[P_1 1]=[P_1 4]=0$ so that the delta-function forcing the amplitude on the s-channel simplifies, while keeping the integrand from blowing up. Contracting with $\lambda_1$ and $\lambda_4$
+\begin{equation}
+	\begin{aligned}
+		\expval{12}\tilde\lambda_{2}+\expval{1P_2}\tilde\lambda_{P_2}-\expval{1P_1}\tilde\lambda_{P_1}=0\\
+		\expval{43}\tilde\lambda_{3}-\expval{4P_2}\tilde\lambda_{P_2}+\expval{4P_1}\tilde\lambda_{P_1}=0
+	\end{aligned}
+\end{equation}
+ and then with $ \tilde \lambda_1$ and $\lambda_2$, while using $[P_1 1]=0$
+\begin{equation}
+	\begin{aligned}
+		\left[1P_2\right]\expval{P_2 2}=0\\
+		\expval{43}\tilde\lambda_{3}-\expval{4P_2}\tilde\lambda_{P_2}+\expval{4P_1}\tilde\lambda_{P_1}=0
+	\end{aligned}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 The grassmann integral is easily seen to just produce $\delta^8(\sum_i\lambda_i\tilde \eta_i)$ while the bosonic delta functions collapse the spinor products into a single delta-function $\delta^4(\sum_i\lambda_i\tilde \lambda_i)$. Finally 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Four-point directly from C(2,4) matrix}
@@ -776,7 +903,7 @@ The four-point diagram with face-variables looks like this
 While the
 \begin{equation}
 	\begin{aligned}
-		C_{ab}=-\sum_{\Gamma(a\to b)}\prod_j\left(-f_j\right),~~~~~~\text{ on the right}
+		C_{ab}=-\sum_{\Gamma(a\to b)}\prod_j\left(-f_j\right),~~~~~~\text{ on the right} 
 	\end{aligned}
 \end{equation}
 with the constraint
@@ -1093,10 +1220,57 @@ with the inverse being
 		\end{pmatrix}
 	\end{aligned}
 \end{equation}
-Jacobian which can be found from
+The amplitude is found through
 \begin{equation}
 	\begin{aligned}
-		\frac{(\det M_{ab})^2}{\expval{ab}^2}
+		\dd \Omega =\frac{\dd \alpha_1}{\alpha_1}\frac{\dd \alpha_2}{\alpha_2}\frac{\dd \alpha_3}{\alpha_3}\frac{\dd \alpha_4}{\alpha_4}\frac{\dd \alpha_5}{\alpha_5}\frac{\dd \alpha_6}{\alpha_6}\delta^{2\times 2}(C\cdot \tilde \lambda) \delta^{2\times 3}(C^\perp\cdot \lambda)\delta^{4\times 2}(C\cdot \tilde \eta)
+	\end{aligned}
+\end{equation}
+Using the delta-function $\delta^{2\times 3}(C^\perp\cdot \lambda)$ to solve for the $\alpha$'s we obtain after contracting with $\lambda_1$, $\lambda_3$, and $\lambda_5$
+\begin{equation}
+	\begin{aligned}
+		\alpha_1=\frac{\expval{23}}{\expval{13}}
+	\end{aligned}
+\end{equation}
+From which we see that we get a Jacobian of $\frac{1}{\expval{15}^2\expval{13}}$. Plugging these $\alpha$'s back into $(\delta^{2\times 2}C\cdot\tilde \lambda)$, we get
+\begin{equation}
+	\begin{aligned}
+0=&\tilde\lambda_1
++
+\tilde\lambda_2 \frac{\expval{25}}{\expval{15}}
++
+\tilde\lambda_3
+\frac{\expval{35}}{\expval{15}}
++
+\tilde\lambda_4
+\frac{\expval{45}}{\expval{15}}\\
+0=&\tilde\lambda_2 \frac{\expval{12}}{\expval{15}}
++
+\tilde\lambda_3
+\frac{\expval{13}}{\expval{15}}
++
+\tilde\lambda_4 \frac{\expval{14}}{\expval{15}}
++
+\tilde\lambda_5
+\end{aligned}
+\end{equation}
+where we have used Schouten identities on the $\tilde\lambda_2$ term in the first equation and $\tilde \lambda_4$ term in the second equation. We easily see that
+\begin{equation}
+	\begin{aligned}
+		\delta^{2\times 2}(C\cdot\lambda)=\expval{15}^2\delta^{2\times 2}(P)
+	\end{aligned}
+\end{equation}
+Then we plug the $\alpha$'s into the Grassmann delta function. This will of course give a similar result with the exchange of $\tilde\lambda\to \tilde\eta$, although with the Jacobian factor now being $\frac{1}{\expval{15}^4}$. Finally we calculate
+\begin{equation}
+	\begin{aligned}
+		\prod_i\frac{1}{\alpha_i}=\frac{\expval{13} \expval{15}^2 \expval{35}^2}{\expval{12}\expval{23}\expval{34}\expval{45}\expval{51}}
+	\end{aligned}
+\end{equation}
+We are now easily able to get the form
+\begin{equation}
+	\begin{aligned}
+		\dd \Omega =
+		\frac{\delta^{8}\left(\mathcal{Q}\right)\delta^{4}\left(P\right)}{\expval{12}\expval{23}\expval{34}\expval{45}\expval{51}}
 	\end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
