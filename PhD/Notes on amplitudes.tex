@@ -857,11 +857,51 @@ We use the bosonic delta-function to solve for $\lambda_{P_i}$ and $\tilde\lambd
 		\expval{43}\tilde\lambda_{3}-\expval{4P_2}\tilde\lambda_{P_2}+\expval{4P_1}\tilde\lambda_{P_1}=0
 	\end{aligned}
 \end{equation}
- and then with $ \tilde \lambda_1$ and $\lambda_2$, while using $[P_1 1]=0$
+Solving for the $\lambda$'s we find
 \begin{equation}
 	\begin{aligned}
-		\left[1P_2\right]\expval{P_2 2}=0\\
-		\expval{43}\tilde\lambda_{3}-\expval{4P_2}\tilde\lambda_{P_2}+\expval{4P_1}\tilde\lambda_{P_1}=0
+		\tilde \lambda_{P_1}&=\frac{\tilde{\lambda}_3
+		\expval{1P_2}\expval{34}
+		-
+		\tilde{\lambda}_2
+		\expval{12}\expval{4P_2}
+	}{\expval{1P_2}\expval{4P_1}
+	-
+	\expval{1P_1}\expval{4P_2}}
+=\frac{\tilde{\lambda}_3
+	\expval{1P_2}\expval{34}
+	-
+	\tilde{\lambda}_2
+	\expval{12}\expval{4P_2}
+}{\expval{14}\expval{P_2P_1}}
+\\
+		\tilde \lambda_{P_2}&=\frac{\tilde{\lambda}_3
+	\expval{1P_1}\expval{34}
+	-
+	\tilde{\lambda}_2
+	\expval{12}\expval{4P_1}
+}{\expval{1P_2}\expval{4P_1}
+	-
+	\expval{1P_1}\expval{4P_2}}=\frac{\tilde{\lambda}_3
+	\expval{1P_1}\expval{34}
+	-
+	\tilde{\lambda}_2
+	\expval{12}\expval{4P_1}
+}{\expval{14}\expval{P_2P_1}}\\
+	\end{aligned}
+\end{equation}
+Similar we can contract with $ \tilde \lambda_2$ and $\tilde \lambda_3$
+\begin{equation}
+	\begin{aligned}
+		\lambda_1[12]+\lambda_{P_2}[P_2 2]-\lambda_{P_1}[P_1 2]&=0\\
+		\lambda_3[34]-\lambda_{P_2}[P_2 4]+\lambda_{P_1}[P_1 4]&=0\\
+	\end{aligned}
+\end{equation}
+to obtain
+\begin{equation}
+	\begin{aligned}
+		\lambda_{P_1}&=\frac{\lambda_3[2P_2][34]+\lambda_2[4P_2][12]}{[2P_2][4P_1]-[2P_1][4P_2]}=\frac{\lambda_3[2P_2][34]+\lambda_2[4P_2][12]}{[24][P_2P_1]}\\
+		\lambda_{P_2}&=\frac{\lambda_3[2P_1][34]+\lambda_2[4P_1][12]}{[2P_2][4P_1]-[2P_1][4P_2]}=\frac{\lambda_3[2P_2][34]+\lambda_2[4P_2][12]}{[24][P_2P_1]}
 	\end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1173,7 +1213,7 @@ We can now calculate the form
 			\draw (-2.5,0.75)[black,fill=gray]  circle (2.4mm);
 			\draw[thick,black] (1.25,0) -- node {\midarrow} (0.25,0);
 			\node[text width=0.5cm] at (0.75,-0.3) {$\alpha_3$};
-			\draw[thick,black] (0.25,1.5) -- node {\midarrow} (1.25,1.5);
+			\draw[thick,black] (1.25,1.5)  -- node {\midarrow}  (0.25,1.5);
 			\node[text width=0.5cm] at (0.75,1.8) {$\alpha_1$};
 			\draw[thick,black] (0,1.25) -- node {\midarrow} (0,0.25);
 			\node[text width=0.5cm] at (-0.3,0.75) {$\alpha_6$};
@@ -1229,7 +1269,12 @@ The amplitude is found through
 Using the delta-function $\delta^{2\times 3}(C^\perp\cdot \lambda)$ to solve for the $\alpha$'s we obtain after contracting with $\lambda_1$, $\lambda_3$, and $\lambda_5$
 \begin{equation}
 	\begin{aligned}
-		\alpha_1=\frac{\expval{23}}{\expval{13}}
+		\alpha_1=\frac{\expval{23}}{\expval{13}},~~~~
+		\alpha_2=\frac{\expval{12}}{\expval{13}},~~~~
+		\alpha_3=\frac{\expval{45}}{\expval{35}},~~~~
+		\alpha_4=\frac{\expval{34}}{\expval{34}},~~~~
+		\alpha_5=\frac{\expval{13}}{\expval{35}},~~~~
+		\alpha_6=\frac{\expval{35}}{\expval{15}}
 	\end{aligned}
 \end{equation}
 From which we see that we get a Jacobian of $\frac{1}{\expval{15}^2\expval{13}}$. Plugging these $\alpha$'s back into $(\delta^{2\times 2}C\cdot\tilde \lambda)$, we get
