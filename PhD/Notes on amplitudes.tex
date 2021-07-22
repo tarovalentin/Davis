@@ -3,6 +3,12 @@
 \usepackage{taro}
 \usepackage{booktabs}
 
+\newcommand{\ab}[1]{\langle #1 \rangle}
+\newcommand{\sqb}[1]{[ #1 ]}
+\newcommand{\aMs}[3]{\langle #1|#2|#3]}  		% <1|2|3]
+\newcommand{\aMMa}[3]{\langle #1|#2|#3\rangle}		% <1|Q_1.Q_2|3>
+\newcommand{\sab}[1]{s_{#1}}
+\newcommand{\twhite}[1]{\textcolor{white}{#1}}
 
 \title{Modern amplitude techniques}
 
@@ -1318,7 +1324,62 @@ We are now easily able to get the form
 		\frac{\delta^{8}\left(\mathcal{Q}\right)\delta^{4}\left(P\right)}{\expval{12}\expval{23}\expval{34}\expval{45}\expval{51}}
 	\end{aligned}
 \end{equation}
+
+\subsection*{Six-point NMHV}
+We first look at the 4+4 diagram
+% TODO: \usepackage{graphicx} required
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{4+4}
+	\caption[4+4]{}
+	\label{fig:44}
+\end{figure}
+We then use the following combination of equation from the $C\cdot\tilde \lambda$ and $C_\perp\cdot \lambda$ delta functions
+\begin{equation}
+	\begin{aligned}
+0=&-\langle 3 4 \rangle + \alpha_{4} \langle 3 5 \rangle
+\\
+0=&-(\alpha_{5} \langle 3 5 \rangle) + \langle 4 5 \rangle
+\\
+0=&\left[ 1 2 \right] - \alpha_{2} \left[ 2 6 \right]
+\\
+0=&\left[ 1 6 \right] + \alpha_{1} \left[ 2 6 \right]
+\\
+0=&-\left[ 2 3 \right] - \alpha_{5} \left[ 2 4 \right] - \alpha_{6} \alpha_{7} \left[ 2 6 \right]
+\\
+0=&\alpha_{6} \left[ 2 6 \right] + \left[ 3 6 \right] + \alpha_{5} \left[ 4 6 \right]
+\\
+0=&-(\alpha_{4} \left[ 2 4 \right]) - \left[ 2 5 \right] - (\alpha_{3} + \alpha_{6} \alpha_{7} \alpha_{8}) \left[ 2 6 \right]
+\\
+0=&\alpha_{6} \alpha_{8} \left[ 2 6 \right] + \alpha_{4} \left[ 4 6 \right] + \left[ 5 6 \right]
+	\end{aligned}
+\end{equation}
+to obtain
+\begin{align*}
+	& \alpha_1 = -\frac{[16]}{[26]}\,, \quad \alpha_2 = \frac{[12]}{[26]}\,, \quad \alpha_3 = \frac{\sab{345}}{\aMs{5}{Q_{345}}{6}}\,, \quad \alpha_4 = \frac{\ab{34}}{\ab{35}}\,, \quad
+	\alpha_5 = \frac{\ab{45}}{\ab{35}}\,, \\ 
+	& \twhite{.}\hspace{1.4cm} 
+	\alpha_6 = \frac{\aMs{5}{Q_{345}}{6}}{\ab{35}\sqb{26}}\,, \alpha_7 = -\frac{\aMs{5}{Q_{345}}{2}}{\aMs{5}{Q_{345}}{6}}\,,\quad
+	\alpha_8 = - \frac{\aMs{3}{Q_{345}}{6}}{\aMs{5}{Q_{345}}{6}}\,.
+\end{align*}
+where $Q_{ijk}=p_i+p_j+p_k$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For the other delta functions we get
+\begin{equation}
+	\begin{aligned}
+	 0&=\tilde\eta_1-\frac{[16]}{[26]}\tilde\eta_2+\frac{[12]}{[26]}\tilde\eta_6\\
+		0&= \frac{\langle5|Q_{345}|6]}{\expval{35}[26]}\tilde\eta_2+\tilde\eta_3+\frac{\expval{45}}{\expval{35}}\tilde\eta_4-\frac{\langle5|Q_{345}|2]}{\expval{35}[26]}\tilde\eta_6
+		\\
+		0&= -\frac{\langle3|Q_{45}|6]}{\expval{35}[26]}\tilde\eta_2+\frac{\expval{34}}{\expval{35}}\tilde\eta_4+\tilde\eta_5+\frac{s_{345}\expval{35}[26]+\langle3|Q_{345}|6]\langle5|Q_{345}|2] }{\langle5|Q_{345}|6]}
+\tilde\eta_5
+	\end{aligned}
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		0&= \frac{\langle5|Q_{345}|6]}{\expval{35}[26]}\tilde\eta_2+\tilde\eta_3+\frac{\expval{45}}{\expval{35}}\tilde\eta_4-\frac{\langle5|Q_{345}|2]}{\expval{35}[26]}\tilde\eta_6
+		\\
+	\end{aligned}
+\end{equation}
 \begin{thebibliography}{99}
 
 %\cite{Bjerrum-Bohr:2013bxa}
