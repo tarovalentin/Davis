@@ -1324,7 +1324,57 @@ We are now easily able to get the form
 		\frac{\delta^{8}\left(\mathcal{Q}\right)\delta^{4}\left(P\right)}{\expval{12}\expval{23}\expval{34}\expval{45}\expval{51}}
 	\end{aligned}
 \end{equation}
-
+\subsection*{Five-point through loop kinematics}
+We have the following relations among the helicity variables 
+\begin{equation}
+	\begin{aligned}
+		&\lambda_1\propto \lambda_\ell\propto\lambda_{\ell-1},\quad \lambda_3\propto \lambda_q\propto\lambda_{q-3},\quad \lambda_{q+4}\propto \lambda_{\ell-1-5}\propto\lambda_{-q+3+2+\ell}\\
+		\tilde\lambda_{\ell-1}\propto \tilde \lambda_{5}&\propto \tilde\lambda_{\ell-1-5},\quad \tilde\lambda_{4}\propto \tilde \lambda_{q}\propto \tilde\lambda_{q+4},\quad  \tilde\lambda_{q-3-2}\propto \tilde \lambda_{q-3-2-\ell}\propto \tilde\lambda_{\ell}\propto \tilde\lambda_{2}\propto \tilde\lambda_{q-3}
+	\end{aligned}
+\end{equation}
+First we write the loop momentum in the box as
+\begin{equation}
+	\begin{aligned}
+		\ell&=\alpha\lambda_1\tilde\lambda_2=-\frac{\left[15\right]}{\left[25\right]}\lambda_1\tilde\lambda_2\\
+		\ell-1&=\lambda_1\left(\tilde \lambda_1+\alpha\tilde\lambda_2\right)=
+		\frac{\lambda_1}{[25]}\left(\tilde \lambda_1\left[25\right]+\tilde\lambda_2 \left[15\right]\right)=-\frac{\left[12\right]}{\left[25\right]}\lambda_1\tilde\lambda_5
+		\\
+		\ell-1-5&=
+		\frac{\tilde \lambda_5}{[25]}\left(\left[21\right]\lambda_1+ \left[25\right]\lambda_5\right)=\frac{\aMs{\,\cdot\,}{1+5}{2}}{\left[25\right]}\tilde\lambda_5
+	\end{aligned}
+\end{equation}
+where we found $\alpha=-\frac{\left[15\right]}{\left[25\right]}$ through the on-shell condition
+\begin{equation}
+	\begin{aligned}
+		0=(\ell-1-5)^2=\alpha\expval{15}\left[52\right]+\expval{15}\left[51\right]
+	\end{aligned}
+\end{equation}
+For the pentagon loop momenta we have
+\begin{equation}
+	\begin{aligned}
+		q&=\beta\lambda_3\tilde\lambda_4=-\frac{\left[23\right]}{\left[24\right]}\lambda_3\tilde\lambda_4
+		\\
+		q-3&=
+		\frac{\lambda_3}{[24]}\left(\tilde \lambda_4\left[23\right]+\tilde\lambda_3 \left[24\right]\right)=-\frac{\left[34\right]}{\left[24\right]}\lambda_3\tilde\lambda_2
+	\\
+q-3-2&=
+\frac{\tilde \lambda_2}{[24]}\left(\left[34\right]\lambda_3+ \left[24\right]\lambda_2\right)=\frac{\aMs{\,\cdot\,}{1+5}{4}}{\left[24\right]}\tilde\lambda_2
+	\end{aligned}
+\end{equation}
+Finally we have the momentum shared by the two loops
+\begin{equation}
+	\begin{aligned}
+	q-3-2-\ell&=\frac{\left[45\right]\aMs{\,\cdot\,}{1+5}{2}}{\left[25\right]\left[24\right]}\tilde\lambda_2	
+	\end{aligned}
+\end{equation}
+From this we have the following subamplitudes
+\begin{equation}
+	\begin{aligned}
+		A_4(q+4,5,1,q-3-2)&=\frac{1}{\left[q+4,5\right]\left[51\right]\left[1,q-3-2\right]\left[q-3-2,q+4\right]}\\
+		&=\frac{1}{\frac{\left[45\right]}{\left[24\right]}\left[51\right]\frac{\left[12\right]}{\left[24\right]}\frac{\left[24\right]}{\left[24\right]^2}}\\
+		&=\frac{[24]^3}{[12]\left[45\right][51]}
+	\end{aligned}
+\end{equation}
 \subsection*{Six-point NMHV}
 We first look at the 4+4 diagram
 % TODO: \usepackage{graphicx} required
@@ -1374,10 +1424,99 @@ For the other delta functions we get
 \tilde\eta_5
 	\end{aligned}
 \end{equation}
+The Jacobian from the delta functions is
 \begin{equation}
 	\begin{aligned}
-		0&= \frac{\langle5|Q_{345}|6]}{\expval{35}[26]}\tilde\eta_2+\tilde\eta_3+\frac{\expval{45}}{\expval{35}}\tilde\eta_4-\frac{\langle5|Q_{345}|2]}{\expval{35}[26]}\tilde\eta_6
+		J=\frac{1}{[26]^3\expval{35}^3\aMs{5}{Q_{345}}{6}^2}
+	\end{aligned}
+\end{equation}
+and we get the form
+\begin{equation}
+	\begin{aligned}
+		\dd \Omega=\frac{\delta(\sum P)\delta(\tilde\eta_1[26]+\tilde\eta_2[61]+\tilde\eta_6[12])}{s_{345}\expval{34}\expval{45}[12][16]\aMs{3}{Q_{345}}{6}\aMs{5}{Q_{345}}{2}}
+	\end{aligned}
+\end{equation}
+We later realized that we changed the bcfw bridge scheme in making the next diagram. To match the schemes we permute all labels in this form by $1$
+\begin{equation}
+	\begin{aligned}
+		\dd \Omega_1=\frac{\delta(\sum P)\delta(\tilde\eta_5[16]+\tilde\eta_6[15]+\tilde\eta_1[56])}{s_{234}\expval{23}\expval{34}[61][56]\aMs{2}{Q_{234}}{5}\aMs{4}{Q_{234}}{1}}
+	\end{aligned}
+\end{equation}
+Looking at the 5+3 diagram we use the following C-matrix
+\begin{equation}
+	\begin{aligned}
+		C&=\left(
+		\begin{array}{cccccc}
+			\alpha_2 & \alpha_3 + \alpha_4 & 1 & 0 & 0 & 0 \\
+		\alpha_2 \alpha_5 & \alpha_3 \alpha_5 & 0 & 1 & \alpha_6 & 0 \\
+		\alpha_8 (\alpha_1+\alpha_2 \alpha_5) & \alpha_3 \alpha_5
+		\alpha_8 & 0 & 0 & \alpha_7 & 1 \\
+		\end{array}
+		\right)\\
+		C_\perp&=
+		\left(
+		\begin{array}{cccccc}
+			1 & 0 & -\alpha_2 & -\alpha_2 \alpha_5 & 0 & -\alpha_8 (\alpha
+				_1+\alpha_2 \alpha_5) \\
+			0 & 1 & -\alpha_3-\alpha_4 & -\alpha_3 \alpha_5 & 0 & -\alpha_3
+			\alpha_5 \alpha_8 \\
+			0 & 0 & 0 & -\alpha_6 & 1 & -\alpha_7 \\
+		\end{array}
+		\right)
+	\end{aligned}
+\end{equation}
+From the delta functions $\delta(C\cdot \tilde \lambda)$ and $\delta(C_\perp \cdot \lambda)$, we use the following equations
+\begin{equation}
+	\begin{aligned}
+		0=&\langle 2 6 \rangle - (\alpha_{3} + \alpha_{4}) \langle 3 6 \rangle - \alpha_{3} \alpha_{5} \langle 4 6 \rangle
 		\\
+		0=&-\langle 4 5 \rangle + \alpha_{7} \langle 4 6 \rangle
+		\\
+	0=&	-\alpha_{6} \langle 4 6 \rangle + \langle 5 6 \rangle
+		\\
+	0=&	-(\alpha_{3} + \alpha_{4}) \left[ 1 2 \right] - \left[ 1 3 \right]
+		\\
+	0=&	\alpha_{2} \left[ 1 2 \right] - \left[ 2 3 \right]
+		\\
+	0=&	\alpha_{2} \alpha_{5} \left[ 1 2 \right] - \left[ 2 4 \right] - \alpha_{6} \left[ 2 5 \right]
+		\\
+	0=&	-\alpha_{3} \alpha_{5} \alpha_{8} \left[ 1 2 \right] - \alpha_{7} \left[ 1 5 \right] - \left[ 1 6 \right]
+		\\
+	0=&	(\alpha_{1} + \alpha_{2} \alpha_{5}) \alpha_{8} \left[ 1 2 \right] - \alpha_{7} \left[ 2 5 \right] - \left[ 2 6 \right]
+	\end{aligned}
+\end{equation}
+to obtain solutions for the edge-variables
+\begin{equation}
+	\begin{aligned}
+			& \alpha_1 = \frac{\sab{456}}{\aMs{4}{Q_{456}}{1}}\,, \quad \alpha_2 = \frac{[23]}{[12]}\,, \quad \alpha_3 = \frac{[23]\aMs{6}{Q_{456}}{1}}{[12]\aMs{6}{Q_{456}}{2}}\,, \quad \alpha_4 = \frac{\aMs{6}{Q_{456}}{3}}{\aMs{6}{Q_{456}}{2}}\,,\\ 
+		&\alpha_5 = \frac{\aMs{6}{Q_{456}}{2}}{\ab{46}[23]}\,, 
+		 \quad
+		\alpha_6 = \frac{\ab{56}}{\ab{46}}\,,\quad \alpha_7 = \frac{\ab{45}}{\ab{46}}\,,\quad
+		\alpha_8 =  \frac{\aMs{4}{Q_{456}}{1}}{\aMs{6}{Q_{456}}{1}}\,.
+	\end{aligned}
+\end{equation}
+Here the Jacobian from the delta functions is
+\begin{equation}
+	\begin{aligned}
+		J=\frac{1}{[12]^3\expval{46}^3\aMs{6}{Q_{456}}{2}^2}
+	\end{aligned}
+\end{equation}
+and we get the form
+\begin{equation}
+	\begin{aligned}
+		\dd \Omega=\frac{\delta(\sum P)\delta(\tilde\eta_1[26]+\tilde\eta_2[61]+\tilde\eta_3[12])}{s_{456}\expval{45}\expval{56}[12][23]\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}
+	\end{aligned}
+\end{equation}
+Again we have to permute by 2 to obtain the correct recursion scheme
+\begin{equation}
+	\begin{aligned}
+		\dd \Omega_2=\frac{\delta(\sum P)\delta(\tilde\eta_3[45]+\tilde\eta_4[35]+\tilde\eta_5[34])}{s_{612}\expval{12}\expval{16}[34][35]\aMs{6}{Q_{612}}{3}\aMs{2}{Q_{612}}{5}}
+	\end{aligned}
+\end{equation}
+The final diagram can be found by permuting by $2$ and exchanging square and angle brackets while permuting by 1:
+\begin{equation}
+	\begin{aligned}
+		\dd \Omega_3=\frac{\delta(\sum P)\delta(\tilde\eta_1[23]+\tilde\eta_2[13]+\tilde\eta_3[12])}{s_{456}\expval{45}\expval{56}[23][12]\aMs{4}{Q_{234}}{1}\aMs{6}{Q_{234}}{3}}
 	\end{aligned}
 \end{equation}
 \begin{thebibliography}{99}
