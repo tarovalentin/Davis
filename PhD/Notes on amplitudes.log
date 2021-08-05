@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  3 AUG 2021 15:16
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  4 AUG 2021 21:52
  restricted system commands enabled.
 **"Notes on amplitudes.tex"
 ("./Notes on amplitudes.tex"
@@ -970,32 +970,32 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 ("./Notes on amplitudes.aux")
 \openout1 = Notes on amplitudes.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 26
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 44
 .
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/base/ts1cmr.fd"
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 (C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1018,7 +1018,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 5.
 )
 \AtBeginShipoutBox=\box67
-Package hyperref Info: Link coloring ON on input line 26.
+Package hyperref Info: Link coloring ON on input line 44.
  ("C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1031,9 +1031,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count322
 )
-LaTeX Info: Redefining \ref on input line 26.
-LaTeX Info: Redefining \pageref on input line 26.
-LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
  ("./Notes on amplitudes.out") ("./Notes on amplitudes.out")
 \@outlinefile=\write4
 
@@ -1044,26 +1044,26 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 ck labels; missing features). Consider writing \pgfplotsset{compat=1.17} into yo
 ur preamble.
- on input line 26.
+ on input line 44.
 
 \c@lstlisting=\count323
 isodate: babel.sty, (n)german.sty have not been loaded
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 27
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 45
 .
 ("C:/Program Files/MiKTeX 2.9/tex/latex/lm/t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 27
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 45
 .
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/lm/t1lmtt.fd"
@@ -1077,101 +1077,113 @@ n amplitudes.toc")
 \openout5 = Notes on amplitudes.toc
 
 [1]
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 60
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 78
 .
  (C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/latex/doublestroke/udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 ) [2] [3]
-Overfull \hbox (17.34703pt too wide) detected at line 201
+Overfull \hbox (17.34703pt too wide) detected at line 219
 \OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 (1[]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2[]\
 OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3[]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 4[]\OML
 /cmm/m/it/12 ; \OT1/cmr/m/n/12 5[]) = [] \OMS/cmsy/m/n/12 ! []  []
  []
 
 [4] [5]
-Overfull \hbox (47.24239pt too wide) detected at line 263
+Overfull \hbox (47.24239pt too wide) detected at line 281
 []
  []
 
 [6] [7] [8] [9]
-<projec.PNG, id=209, 750.30313pt x 340.77313pt>
+<projec.PNG, id=214, 750.30313pt x 340.77313pt>
 File: projec.PNG Graphic file (type png)
 <use projec.PNG>
-Package luatex.def Info: projec.PNG  used on input line 409.
+Package luatex.def Info: projec.PNG  used on input line 427.
 (luatex.def)             Requested size: 426.79134pt x 193.84232pt.
 
-Overfull \hbox (13.94092pt too wide) in paragraph at lines 443--445
+Overfull \hbox (13.94092pt too wide) in paragraph at lines 461--463
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [10<./projec.PNG>] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 492--503
+Underfull \hbox (badness 10000) in paragraph at lines 510--521
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--503
+Underfull \hbox (badness 10000) in paragraph at lines 510--521
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--503
+Underfull \hbox (badness 10000) in paragraph at lines 510--521
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--503
+Underfull \hbox (badness 10000) in paragraph at lines 510--521
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--503
+Underfull \hbox (badness 10000) in paragraph at lines 510--521
 
  []
 
 [12]
-<CP2Area2.pdf, id=254, 275.0275pt x 122.4575pt>
+<CP2Area2.pdf, id=259, 275.0275pt x 122.4575pt>
 File: CP2Area2.pdf Graphic file (type pdf)
 <use CP2Area2.pdf>
-Package luatex.def Info: CP2Area2.pdf  used on input line 555.
+Package luatex.def Info: CP2Area2.pdf  used on input line 573.
 (luatex.def)             Requested size: 110.00905pt x 48.98212pt.
  [13<./CP2Area2.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 637--640
+Underfull \hbox (badness 10000) in paragraph at lines 655--658
 
  []
 
 [14] [15] [16] [17] [18]
-Overfull \hbox (17.10115pt too wide) detected at line 858
+Overfull \hbox (17.10115pt too wide) detected at line 876
 [][][]
  []
 
 [19] [20] [21] [22] [23] [24] [25]
-<4+4.png, id=399, 668.4975pt x 197.73875pt>
+<4+4.png, id=404, 668.4975pt x 197.73875pt>
 File: 4+4.png Graphic file (type png)
 <use 4+4.png>
-Package luatex.def Info: 4+4.png  used on input line 1383.
+Package luatex.def Info: 4+4.png  used on input line 1401.
 (luatex.def)             Requested size: 387.18312pt x 114.53165pt.
  [26
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.1'
-<./4+4.png>] [27] [28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1535.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1535.
+<./4+4.png>] [27]
+Overfull \hbox (0.83038pt too wide) detected at line 1548
+[][][]
+ []
+
+<two-loop.png, id=427, 619.31375pt x 196.23312pt>
+File: two-loop.png Graphic file (type png)
+<use two-loop.png>
+Package luatex.def Info: two-loop.png  used on input line 1574.
+(luatex.def)             Requested size: 344.16641pt x 109.05438pt.
+[28] [29
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.2'
+<./two-loop.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1591.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1591.
  ("./Notes on amplitudes.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1535.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1535.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1591.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1591.
 Package rerunfilecheck Info: File `"Notes on amplitudes".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1535.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1591.
 )
 
 Here is how much of LuaTeX's memory you used:
- 35853 strings out of 480991
+ 35889 strings out of 480991
  100000,1373583 words of node,token memory allocated
- 1673 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 4 sub_mlist, 1 glyph, 291 attribute
-, 57 glue_spec, 291 attribute_list, 2 write nodes
-   avail lists: 2:2810,3:785,4:90,5:292,6:39,7:2397,8:136,9:1034,10:12,11:152
- 51921 multiletter control sequences out of 65536+200000
+ 1689 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 4 sub_mlist, 1 glyph, 295 attribute
+, 57 glue_spec, 295 attribute_list, 2 write nodes
+   avail lists: 2:2802,3:785,4:90,5:292,6:41,7:2397,8:161,9:1034,10:12,11:152
+ 51945 multiletter control sequences out of 65536+200000
  88 fonts using 7502851 bytes
  71i,14n,102p,762b,1301s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKT
@@ -1196,9 +1208,9 @@ gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Notes on amplitudes.pdf (29 pages, 642949 bytes).
+Output written on Notes on amplitudes.pdf (30 pages, 681569 bytes).
 
-PDF statistics: 520 PDF objects out of 1000 (max. 8388607)
- 217 named destinations out of 1000 (max. 131072)
- 168 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 535 PDF objects out of 1000 (max. 8388607)
+ 223 named destinations out of 1000 (max. 131072)
+ 176 words of extra memory for PDF output out of 10000 (max. 100000000)
 

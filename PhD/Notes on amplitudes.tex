@@ -12,6 +12,24 @@
 
 \title{Modern amplitude techniques}
 
+\def\Tr{{\rm Tr}}
+\def\MHVbar{${\overline{\rm MHV}}$}
+\def\nn{\nonumber}
+\def\NeqFour{${\cal N}=4$}
+\def\Split{{\rm Split}}
+\def\spa#1.#2{\left\langle#1\,#2\right\rangle}
+\def\spb#1.#2{\left[#1\,#2\right]}
+\def\sandmx#1.#2.#3{%
+	\left\langle#1{\vphantom1}\right|{#2}\left|#3\right]}%
+\def\delt#1{\delta^{(#1)}}
+\def\eps{\epsilon}
+\def\Ord{{\cal O}}
+\def\tlambda{\tilde\lambda}
+\def\draftnote#1{{\sl #1}}
+\def\tp{\!+\!}
+\def\sA{{\cal A}}
+\def\Int#1{I^{(#1)}}
+
 \author[a]{Taro V. Brown}
 
 \affiliation[a]{Department of Physics, UC Davis, One Shields Avenue, Davis, CA 95616, USA }
@@ -1516,11 +1534,49 @@ Again we have to permute by 2 to obtain the correct recursion scheme
 The final diagram can be found by permuting by $2$ and exchanging square and angle brackets while permuting by 1:
 \begin{equation}
 	\begin{aligned}
-		\dd \Omega_3=\frac{\delta(\sum P)\delta(\tilde\eta_1[23]+\tilde\eta_2[13]+\tilde\eta_3[12])}{s_{456}\expval{45}\expval{56}[23][12]\aMs{4}{Q_{234}}{1}\aMs{6}{Q_{234}}{3}}
+		\dd \Omega_3=\frac{\delta(\sum P)\delta(\tilde\eta_1[23]+\tilde\eta_2[13]+\tilde\eta_3[12])}{s_{456}\expval{45}\expval{56}[23][12]\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}
 	\end{aligned}
 \end{equation}
-\begin{thebibliography}{99}
+In total we have
+\begin{equation}
+	\begin{aligned}
+		&\dd \Omega_1 +\dd \Omega_2+\dd \Omega_3\\
+		=&\frac{\delta(\sum P)\delta(\tilde\eta_5[16]+\tilde\eta_6[15]+\tilde\eta_1[56])}{s_{234}\expval{23}\expval{34}[61][56]\aMs{2}{Q_{234}}{5}\aMs{4}{Q_{234}}{1}}
+		+\frac{\delta(\sum P)\delta(\tilde\eta_3[45]+\tilde\eta_4[35]+\tilde\eta_5[34])}{s_{612}\expval{12}\expval{16}[34][35]\aMs{6}{Q_{612}}{3}\aMs{2}{Q_{612}}{5}}
+		\\&+\frac{\delta(\sum P)\delta(\tilde\eta_1[23]+\tilde\eta_2[13]+\tilde\eta_3[12])}{s_{456}\expval{45}\expval{56}[23][12]\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}
+	\end{aligned}
+\end{equation}
+Then using the fact that
+\begin{eqnarray}
+	&&  \sA^{(0),\text{MHV}} R_{j,j+3,j+5} =\nonumber\\
+	&&\hskip 5mm \frac{%
+		\delt8\bigl(\sum \lambda_i \eta^A_i\bigr)
+	}
+	{\spa{j}.{(j\tp 1)} \spa{(j\tp 1)}.{(j\tp 2)}\spb{(j\tp 3)}.{(j\tp 4)}
+		\spb{(j\tp 4)}.{(j\tp 5)}}\\
+	&&\hskip 5mm \times\frac{\delt4\bigl(\eta^A_{j+3} \spb{(j\tp4)}.{(j\tp5)} 
+		+ \eta^A_{j+4} \spb{(j\tp5)}.{(j\tp3)} 
+		+ \eta^A_{j+5} \spb{(j\tp3)}.{(j\tp4)}\bigr)}
+	{\sandmx{j}.{K_{j+1,j+2}}.{(j\tp 3)}
+		\sandmx{(j\tp 2)}.{K_{j+3,j+4}}.{(j\tp 5)}
+		s_{j,j+1,j+2}}\,.\nonumber
+\end{eqnarray} 
+such that
+\begin{equation}
+	\begin{aligned}
+		A_6^{\text{NMHV}}=A_6^{\text{MHV}}\left(R_{251}+R_{413}+R_{635}\right)
+	\end{aligned}
+\end{equation}
+\subsection{2 loop four-point}
+We have the diagram% TODO: \usepackage{graphicx} required
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{two-loop}
+	\caption{}
+	\label{fig:two-loop}
+\end{figure}
 
+\begin{thebibliography}{99}
 %\cite{Bjerrum-Bohr:2013bxa}
 \bibitem{Bjerrum-Bohr:2013bxa}
 N.~E.~J.~Bjerrum-Bohr, J.~F.~Donoghue and P.~Vanhove,
