@@ -187,11 +187,30 @@ StringReplace[StringReplace[StringReplace[ToString[B7],latexto2],latexto3],latex
 (*4 pt two loop*)
 
 (*Define C-matrices and lambda*)
-CC={{a2, a3 +a4,1,0,0,0},{a2 a5,a3 a5,0,1,a6,0},{a8(a1+a5 a2),a3 a5 a8,0,0,a7,1}};
-ffs={{0,a,0},{1,a6,0},{0,a7,1}};
-Cperp ={{1,0,-a2, -a2 a5 ,0,-a8 (a1+a2 a5)},{0,1,-a3-a4,-a3 a5,0,-a3 a5 a8},{0,0,0,-a6,1,-a7}};
-lambda={{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]}};
-tlambda={{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6]}};
+CC={{1, 0,a2 a3 a5,a1+a2 a3},{0,1,a4+a3 a5,a3}};
+Cperp ={{-a2 a3 a5,-(a4+a3 a5),1,0},{-(a1+a2 a3),-a3,0,1}};
+lambda={{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4]}};
+tlambda={{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4]}};
 CC . Transpose[Cperp];
-Cperp . Transpose[lambda];
+Cperp . Transpose[lambda]
 CC . Transpose[tlambda];
+
+
+A1 = -a2 a3 a5 \[Lambda][1] . \[Lambda][1]+(-a4-a3 a5) \[Lambda][2] . \[Lambda][1]+\[Lambda][3] . \[Lambda][1]//.RR//Simplify
+A2 = -a2 a3 a5 \[Lambda][1] . \[Lambda][2]+(-a4-a3 a5) \[Lambda][2] . \[Lambda][2]+\[Lambda][3] . \[Lambda][2]//.RR//Simplify
+A3 =(-a1-a2 a3) \[Lambda][1] . \[Lambda][1]-a3 \[Lambda][2] . \[Lambda][1]+\[Lambda][4] . \[Lambda][1]//.RR//Simplify
+A4 =(-a1-a2 a3) \[Lambda][1] . \[Lambda][2]-a3 \[Lambda][2] . \[Lambda][2]+\[Lambda][4] . \[Lambda][2]//.RR//Simplify
+Solve[{A1==0,A2==0,A3==0,A4==0},{a2,a3,a4,a5}]
+
+
+StringReplace[StringReplace[StringReplace[ToString[A1],latexto2],latexto3],latexto4]
+"\\\\"
+StringReplace[StringReplace[StringReplace[ToString[A2],latexto2],latexto3],latexto4]
+"\\\\"
+StringReplace[StringReplace[StringReplace[ToString[A3],latexto2],latexto3],latexto4]
+"\\\\"
+StringReplace[StringReplace[StringReplace[ToString[A4],latexto2],latexto3],latexto4]
+"\\\\"
+
+
+
