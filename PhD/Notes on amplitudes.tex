@@ -1590,6 +1590,85 @@ Solving the bosonic delta-functions
 \end{equation}
 we find
 
+\subsection{Calculating $\mathcal{N}<4$ amplitudes}
+\subsubsection{The measure}
+The important difference between this and the $\mathcal{N}=4$ case is that the diagrams are necessarily oriented unlike in the maximally supersymmetric forms where the perfect orientations only played an auxiliary role for constructing the C-matrix. In addition, for perfect orientations with closed internal loops we have to add an extra factor, $\mathcal{J}$ , in
+the measure,
+\begin{equation}
+	\begin{aligned}
+		\dd \Omega= \dlog{\alpha_1} \dlog{\alpha_2}\cdots  \dlog{\alpha_m} \mathcal{J}^{\mathcal{N}-4}\cdot \delta(C\cdot Z)
+	\end{aligned}
+\end{equation}
+If there is a collection of closed orbits bounding "faces" $f_i$, with disjoint pairs $(f_i, f_j)$, disjoint triples $(f_i, f_j ,f_k)$ etc., then the Jacobian $\mathcal{J}$ can be expressed as,
+\begin{equation}
+	\begin{aligned}
+		\mathcal{J}=1+\sum_if_i+\sum_{\substack{\text{disjoint}\\ \text{pairs } i,j}}f_i f_j+\sum_{\substack{\text{disjoint}\\ \text{pairs } i,j,k}}f_i f_j f_k+\cdots
+	\end{aligned}
+\end{equation}
+First we note that each face is defined as clockwise-oriented product of edge-variables, such that a counter clockwise "face" $f$, gives a Jacobian contribution of $f^{-1}$. As an example see for instance the following diagram with four internal loops
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{Jexample}
+	\caption{}
+	\label{fig:jexample}
+\end{figure}
+Here we have three loops containing one phase variable, contributing each $f_1,f_2^{-1},f_{3}$. Further we have the disjoint pair $f_1f_3$. Lastly we have a close loop containing both $f_2$ and $f_4$, i.e. we have in total
+\begin{equation}
+	\begin{aligned}
+		\mathcal{J}=1+f_1+f_3+f_2^{-1}+f_2^{-1}f_4^{-1}+f_1f_3
+	\end{aligned}
+\end{equation}
+\subsubsection{ 4 pt $\mathcal{N}=0$}
+In this case we have two diagrams
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.1\linewidth]{YM4pt}
+	\caption{}
+	\label{fig:jexample}
+\end{figure}
+where the $\delta's$ are defined by
+\begin{equation}
+	\begin{aligned}
+		\delta_a=\frac{1}{1-\sum_{i=1}^{4}\alpha_i}
+	\end{aligned}
+\end{equation}
+Solving the $C_\perp$ delta-function, we get the following equations after contracting with appropriate $\lambda$'s
+\begin{equation}
+	\begin{aligned}
+		           0&=   
+		\langle 1 2 \rangle + \frac{ \alpha_{4} \langle 2 4\rangle
+		}{1 - \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4}}
+		\\
+ 0&=   
+\langle 1 4\rangle - \frac{\alpha_{2} \alpha_{3} \alpha_{4} \langle 2 4\rangle
+}{1 - \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4}}
+\\
+ 0&=   
+-\langle 23\rangle + \frac{\alpha_{1} \alpha_{2} \alpha_{4} \langle 2 4\rangle
+}{1 - \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4}}
+\\
+	 0&=   
+	\langle 3 4\rangle - \frac{\alpha_{2}  \langle 2 4\rangle
+	}{1 - \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4}}
+	\end{aligned}
+\end{equation}
+from which we obtain
+\begin{equation}
+	\begin{aligned}
+	\alpha_1&=-\frac{\langle 23 \rangle}{\langle 13\rangle},~~~~~~~~~~\alpha_2=\frac{\langle 14 \rangle}{\langle 12\rangle},\\
+	\alpha_3&=-\frac{\langle 14 \rangle}{\langle 13\rangle},~~~~~~~~~~	\alpha_4=-\frac{\langle 13 \rangle}{\langle 34\rangle},
+	\end{aligned}
+\end{equation}
+We can further find an expression for $\delta_a$ through this
+\begin{equation}
+	\begin{aligned}
+		  &0=   
+		\langle 1 2 \rangle +  \alpha_{4} \langle 2 4\rangle\delta_a
+		\\ 
+		\Rightarrow&\delta_a=-\frac{1}{\alpha_4}\frac{\langle 1 2 \rangle}{\langle 24 \rangle}=\frac{\langle 1 2 \rangle \langle 34 \rangle}{ \langle 13 \rangle\langle 24 \rangle}
+	\end{aligned}
+\end{equation}
 \begin{thebibliography}{99}
 %\cite{Bjerrum-Bohr:2013bxa}
 \bibitem{Bjerrum-Bohr:2013bxa}

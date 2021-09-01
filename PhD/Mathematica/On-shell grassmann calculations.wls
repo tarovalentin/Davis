@@ -203,14 +203,32 @@ A4 =(-a1-a2 a3) \[Lambda][1] . \[Lambda][2]-a3 \[Lambda][2] . \[Lambda][2]+\[Lam
 Solve[{A1==0,A2==0,A3==0,A4==0},{a2,a3,a4,a5}]
 
 
-StringReplace[StringReplace[StringReplace[ToString[A1],latexto2],latexto3],latexto4]
-"\\\\"
-StringReplace[StringReplace[StringReplace[ToString[A2],latexto2],latexto3],latexto4]
-"\\\\"
-StringReplace[StringReplace[StringReplace[ToString[A3],latexto2],latexto3],latexto4]
-"\\\\"
-StringReplace[StringReplace[StringReplace[ToString[A4],latexto2],latexto3],latexto4]
-"\\\\"
+(*N=0 4 pt calculation*)
+(*Define C-matrices and lambda*)
+\[Delta]a = 1/(1-a1 a2 a3 a4);
+GrassA = {{a2 a3 a4 \[Delta]a,1,a2 \[Delta]a,0},{a4 \[Delta]a,0,a4 a1 a2 \[Delta]a, 1}};
+CperpA = {{1,-a2 a3 a4 \[Delta]a,0,-a4 \[Delta]a},{0,-a2 \[Delta]a,1,-a4 a1 a2 \[Delta]a}};
+lambda = {{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4]}};
+tlambda={{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4]}};
+
+CperpA . Transpose[lambda];
+
+A1 = \[Lambda][1] . \[Lambda][2]-a2 a3 a4 \[Lambda][2] . \[Lambda][2]\[Delta]a-a4 \[Lambda][4] . \[Lambda][2]\[Delta]a//.RR;
+A2 = \[Lambda][1] . \[Lambda][4]-a2 a3 a4 \[Lambda][2] . \[Lambda][4]\[Delta]a-a4 \[Lambda][4] . \[Lambda][4]\[Delta]a//.RR;
+A3 = -a2 \[Lambda][2] . \[Lambda][2]\[Delta]a+\[Lambda][3] . \[Lambda][2]-a1 a2 a4 \[Lambda][4] . \[Lambda][2]\[Delta]a//.RR;
+A4 = -a2 \[Lambda][2] . \[Lambda][4]\[Delta]a+\[Lambda][3] . \[Lambda][4]-a1 a2 a4 \[Lambda][4] . \[Lambda][4]\[Delta]a//.RR;
+
+Sol = Solve[{A1==0,A2==0,A3==0,A4==0},{a1,a2,a3,a4}]//Simplify;
+Sol//.schoutenA
+
+
+a1=-(Spaa[2,3]/Spaa[1,3]);
+a2=Spaa[1,3]/Spaa[1,2];
+a3=-(Spaa[1,4]/Spaa[1,3]);
+a4=-(Spaa[1,3]/Spaa[3,4]);
+GrassA . Transpose[tlambda]//Simplify
+B1 = t\[Lambda][2] . t\[Lambda][1]+(Spaa[1,3] (Spaa[1,4] t\[Lambda][1] . t\[Lambda][1]+Spaa[3,4] t\[Lambda][3] . t\[Lambda][1]))/(Spaa[1,4] Spaa[2,3]+Spaa[1,2] Spaa[3,4])//.RR
+B1//.schoutenA//FullSimplify
 
 
 

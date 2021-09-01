@@ -13,7 +13,7 @@
 
 \pgfdeclarelayer{bg}    % declare background layer
 \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
-
+\newcommand{\dlog}[1]{\frac{\dd #1}{#1}}
 \definecolor{Mathematica}{HTML}{ed192d}
 \newcommand\Mathematica{{\fontspec[Numbers=OldStyle]{Minion Pro}%
 		\textcolor{Mathematica}{Wolfram}
