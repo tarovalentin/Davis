@@ -232,3 +232,111 @@ B1//.schoutenA//FullSimplify
 
 
 
+
+
+\[Beta]1=Spaa[1,3]/Spaa[2,3];
+\[Beta]2=Spaa[2,1]/Spaa[1,3];
+\[Beta]3=Spaa[1,3]/Spaa[1,4];
+\[Beta]4=Spaa[3,4]/Spaa[1,3];
+
+
+1/(1-a1 a2 a3 a4)//Expand
+\[Beta]1 \[Beta]2 \[Beta]3 \[Beta]4//FullSimplify
+
+
+(* ::InheritFromParent:: *)
+(*1/((Spaa[1,3] Spaa[2,4])/(Spaa[1,4] Spaa[2,3]))*)
+
+
+Spaa[1,2] Spaa[3,4]+Spaa[1,4] Spaa[2,3]//.schoutenA
+
+
+aa= (Spaa[2,4]^4 Spaa[1,2]Spaa[3,4])/(Spaa[1,2]^2 Spaa[3,4]^2Spaa[4,1]Spaa[2,3])*((Spaa[1,3] Spaa[2,4])/(Spaa[1,2] Spaa[3,4]))^(-4)//Simplify
+ 
+bb=  (Spaa[2,4]^4 Spaa[2,3]Spaa[4,1])/(Spaa[1,4]^2 Spaa[2,3]^2Spaa[1,2]Spaa[3,4])*((Spaa[1,3] Spaa[2,4])/(Spaa[1,4] Spaa[2,3]))^(-4)//Simplify
+
+
+
+aa+bb//FullSimplify
+
+
+(Spaa[1,4] Spaa[2,3]+Spaa[1,2]Spaa[3,4])^4//Expand
+
+
+(* ::InheritFromParent:: *)
+(*4 Spaa[1,2] Spaa[1,4]^3 Spaa[2,3]^3 Spaa[3,4]+6 Spaa[1,2]^2 Spaa[1,4]^2 Spaa[2,3]^2 Spaa[3,4]^2+4 Spaa[1,2]^3 Spaa[1,4] Spaa[2,3] Spaa[3,4]^3*)
+
+
+Spaa[1,4] Spaa[2,3]+Spaa[1,2]Spaa[3,4]//.schoutenA
+
+
+DefNumSH[4]
+
+
+Spaa[1,4]^4 Spaa[2,3]^4+Spaa[1,2]^4Spaa[3,4]^4//.NSpinHel
+Spaa[1,3]^4 Spaa[2,4]^4//.NSpinHel
+(Spaa[1,4] Spaa[2,3]+Spaa[1,2]Spaa[3,4])^4//.NSpinHel
+
+
+(Spaa[1,4]^4 Spaa[2,3]^4+Spaa[1,2]^4 Spaa[3,4]^4)/(Spaa[1,2] Spaa[1,3]^4 Spaa[1,4] Spaa[2,3] Spaa[3,4])//.NSpinHel
+Spaa[2,4]^4/(Spaa[1,2] Spaa[1,4] Spaa[2,3] Spaa[3,4])//.NSpinHel
+
+
+aa= (Spaa[2,4]^4 Spaa[1,2]Spaa[3,4])/(Spaa[1,2]^2 Spaa[3,4]^2Spaa[4,1]Spaa[2,3])*((Spaa[1,2] Spaa[3,4])/(Spaa[1,3] Spaa[2,4]))^(-4)//Simplify
+ 
+bb=  (Spaa[2,4]^4 Spaa[2,3]Spaa[4,1])/(Spaa[1,4]^2 Spaa[2,3]^2Spaa[1,2]Spaa[3,4])*((Spaa[1,2] Spaa[3,4])/(Spaa[1,4] Spaa[2,3]))^(-4)//Simplify
+aa+bb//.NSpinHel
+
+
+1/(1-a1 a2 a3 a4)//Expand;
+Ja = (Spaa[1,2] Spaa[3,4])/(Spaa[1,3] Spaa[2,4]);
+Jb = 1/(\[Beta]1 \[Beta]2 \[Beta]3 \[Beta]4)//FullSimplify;
+
+
+Ja
+Jb
+\[Delta]a = (Spaa[1,2] Spaa[3,4])/(Spaa[1,3] Spaa[2,4]);
+\[Delta]b = (Spaa[1,4] Spaa[2,3])/(Spaa[1,3] Spaa[2,4]);
+
+
+DefNumSH[4]
+aa= Spaa[2,4]^4 /(Spaa[1,2]^2 Spaa[3,4]^2)*1/(a1 a2 a3 a4)*(Ja)^(-4)//Simplify
+ 
+bb=  Spaa[2,4]^4 /(Spaa[1,4]^2 Spaa[2,3]^2)*1/(\[Beta]1 \[Beta]2 \[Beta]3 \[Beta]4)*(Jb)^(-4)//Simplify
+aa+bb//.NSpinHel
+-(Spaa[2,4]^4/(Spaa[1,2] Spaa[1,4] Spaa[2,3] Spaa[3,4]))//.NSpinHel
+
+
+JtotJa = (\[Delta]a)^(4)+(\[Delta]b)^(4)//FullSimplify
+
+
+DefNumSH[4]
+aa= Spaa[2,4]^4 /(Spaa[1,2]^2 Spaa[3,4]^2)*1/(a1 a2 a3 a4)*(\[Delta]a)^(4)//Simplify
+ 
+bb=  Spaa[2,4]^4 /(Spaa[1,4]^2 Spaa[2,3]^2)*1/(\[Beta]1 \[Beta]2 \[Beta]3 \[Beta]4)*(\[Delta]b)^(4)//Simplify
+aa+bb//.NSpinHel//N
+-(Spaa[2,4]^4/(Spaa[1,2] Spaa[1,4] Spaa[2,3] Spaa[3,4]))//.NSpinHel//N
+
+
+DefNumSH[4];
+JtotJa = 1/2*(\[Delta]a+\[Delta]b)^4//FullSimplify;
+aa= Spaa[2,4]^4 /(Spaa[1,2]^2 Spaa[3,4]^2)*1/(a1 a2 a3 a4)*JtotJa //Simplify;
+ 
+bb=  Spaa[2,4]^4 /(Spaa[1,4]^2 Spaa[2,3]^2)*1/(\[Beta]1 \[Beta]2 \[Beta]3 \[Beta]4)*JtotJa //Simplify;
+res = aa+bb//FullSimplify;
+res//.schoutenA
+-(Spaa[2,4]^4/(Spaa[1,2] Spaa[1,4] Spaa[2,3] Spaa[3,4]))
+
+
+DefNumSH[4]
+Ja = (Spaa[1,2] Spaa[3,4])/(Spaa[1,3] Spaa[2,4]);
+Jb = 1/(\[Beta]1 \[Beta]2 \[Beta]3 \[Beta]4)//FullSimplify;
+JtotJa = (Ja)^(-4)+(Jb)^(-4)//FullSimplify
+aa= Spaa[2,4]^4 /(Spaa[1,2]^2 Spaa[3,4]^2)*1/(a1 a2 a3 a4)*JtotJa //Simplify
+ 
+bb=  Spaa[2,4]^4 /(Spaa[1,4]^2 Spaa[2,3]^2)*1/(\[Beta]1 \[Beta]2 \[Beta]3 \[Beta]4)*JtotJa //Simplify
+aa+bb//FullSimplify
+-(Spaa[2,4]^4/(Spaa[1,2] Spaa[1,4] Spaa[2,3] Spaa[3,4]))//.NSpinHel//N
+
+
+

@@ -1630,12 +1630,12 @@ In this case we have two diagrams
 where the $\delta's$ are defined by
 \begin{equation}
 	\begin{aligned}
-		\delta_a=\frac{1}{1-\sum_{i=1}^{4}\alpha_i}
+		\delta_a=\frac{1}{1-\prod_{i=1}^{4}\alpha_i}
 	\end{aligned}
 \end{equation}
-Solving the $C_\perp$ delta-function, we get the following equations after contracting with appropriate $\lambda$'s
+Solving the $C_\perp$ delta-function, we get the following equations after contracting with $\lambda_2$ and $\lambda_4$ (which gives a Jacobian of $\ab{24}^2$)
 \begin{equation}
-	\begin{aligned}
+	\begin{aligned} \label{eq:1}
 		           0&=   
 		\langle 1 2 \rangle + \frac{ \alpha_{4} \langle 2 4\rangle
 		}{1 - \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4}}
@@ -1655,11 +1655,30 @@ Solving the $C_\perp$ delta-function, we get the following equations after contr
 \end{equation}
 from which we obtain
 \begin{equation}
-	\begin{aligned}
+	\begin{aligned} \label{eq:1}
 	\alpha_1&=-\frac{\langle 23 \rangle}{\langle 13\rangle},~~~~~~~~~~\alpha_2=\frac{\langle 14 \rangle}{\langle 12\rangle},\\
 	\alpha_3&=-\frac{\langle 14 \rangle}{\langle 13\rangle},~~~~~~~~~~	\alpha_4=-\frac{\langle 13 \rangle}{\langle 34\rangle},
 	\end{aligned}
 \end{equation}
+along with a Jacobian factor from rewriting the delta functions of $\frac{\ab{24}^2}{\ab{12}^2\ab{34}^2}$. The procedure to find this factor can be found by eg the first line of \eqref{eq:1}, which after insertion of the $\delta_a=\frac{1}{1-\alpha_1 \alpha_2 \alpha_3 \alpha_4}$ reads
+\begin{equation}
+	\begin{aligned}
+	0&=   
+\langle 1 2 \rangle + \frac{ \alpha_{4} \langle 12\rangle \ab{34}
+}{\ab{13}}
+	\end{aligned}
+\end{equation}
+Since this is really a delta-function, we can write this as
+\begin{equation}
+	\begin{aligned}
+\delta\left(
+\frac{\ab{34}\ab{12}}{\ab{13}}\left[\frac{\ab{13}}{\ab{34}}+\alpha_4\right] 
+\right)=\frac{\ab{13}}{\ab{34}\ab{12}}\delta\left(
+\frac{\ab{13}}{\ab{34}}+\alpha_4
+\right)
+	\end{aligned}
+\end{equation}
+i.e. the Jacobian from this factor is $\frac{\ab{13}}{\ab{34}\ab{12}}$.
 We can further find an expression for $\delta_a$ through this
 \begin{equation}
 	\begin{aligned}
@@ -1669,10 +1688,102 @@ We can further find an expression for $\delta_a$ through this
 		\Rightarrow&\delta_a=-\frac{1}{\alpha_4}\frac{\langle 1 2 \rangle}{\langle 24 \rangle}=\frac{\langle 1 2 \rangle \langle 34 \rangle}{ \langle 13 \rangle\langle 24 \rangle}
 	\end{aligned}
 \end{equation}
+Taking these solutions and inserting into the other delta functions, and multiplying by $\tilde\lambda_1$ and $\tilde\lambda_3$ we get
+\begin{equation}
+	\begin{aligned}
+	0&=	\sqb{12}+\frac{\ab{34}\sqb{13}}{\ab{24}}
+,	~~~~~~~~
+	0=	\sqb{23}+\frac{\ab{14}\sqb{13}}{\ab{24}}
+	\\
+	0&=	\sqb{14}+\frac{\ab{23}\sqb{13}}{\ab{24}}
+,	~~~~~~~~
+	0=	\sqb{34}+\frac{\ab{12}\sqb{13}}{\ab{24}}
+	\end{aligned}
+\end{equation}
+Which we can write as
+\begin{equation}
+	\begin{aligned}
+		0&=	\ab{42}\sqb{21}+\ab{43}\sqb{31}=\aMs{4}{P}{1}
+		,	~~~~~~~~
+		0=	\ab{42}\sqb{23}+\ab{41}\sqb{13}=\aMs{4}{P}{3}
+		\\
+		0&=	\ab{24}\sqb{41}+\ab{23}\sqb{31}=\aMs{2}{P}{1}
+		,	~~~~~~~~
+		0=	\ab{24}\sqb{43}+\ab{21}\sqb{13}=\aMs{2}{P}{3}
+	\end{aligned}
+\end{equation}
+Which we can combine into $\delta^4(P)\ab{24}^2$. Finally the Jacobian is
+\begin{equation}
+	\begin{aligned}
+		\mathcal{J}_a=1-\alpha_{1}\alpha_{2}\alpha_{3}\alpha_{4}=\delta_a^{-1}=
+		\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 2 \rangle \langle 34 \rangle}
+	\end{aligned}
+\end{equation}
+The procedure is the same for the other diagram and here we just summarize the results
+\begin{equation}
+	\begin{aligned}
+		\beta_1&=\frac{\langle 13 \rangle}{\langle 23\rangle},~~~~~~~~~~\beta_2=\frac{\langle 21 \rangle}{\langle 13\rangle},\\
+		\beta_3&=\frac{\langle 13 \rangle}{\langle 14\rangle},~~~~~~~~~~	\beta_4=\frac{\langle 34 \rangle}{\langle 13\rangle},
+	\end{aligned}
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		\mathcal{J}_b=1-\beta_{1}\beta_{2}\beta_{3}\beta_{4}=\delta_b^{-1}=
+		\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 4 \rangle \langle 23 \rangle}
+	\end{aligned}
+\end{equation}
+Combining all these factors with $\prod_i \alpha_i=\frac{\ab{41}\ab{23}}{\ab{12}\ab{34}}$ and $\prod_i \beta_i=\frac{\ab{12}\ab{34}}{\ab{23}\ab{41}}$, as well as using taking the Jacobians to the $-4$'th power, we have the form
+\begin{equation}
+	\begin{aligned}
+		\dd \Omega &= \left(\frac{\ab{24}^4}{\ab{12}^2\ab{34}^2}\frac{ \ab{12}\ab{34}}{\ab{41}\ab{23} } \left[\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 2 \rangle \langle 34 \rangle}\right]^{-4}+\frac{\ab{24}^4}{\ab{14}^2\ab{23}^2}\frac{\ab{23}\ab{41}}{\ab{12}\ab{34}}\left[	\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 4 \rangle \langle 23 \rangle}\right]^{-4}\right)\delta(P)\\
+		&=\frac{\ab{12}^2}{den}
+	\end{aligned}
+\end{equation}
+\subsubsection{Five-point $\mathcal{N}=0$}
+We will once again look at the following diagram
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{5pt}
+	\caption{}
+	\label{fig:5pt}
+\end{figure}
+We already solved this in section ....., here we obtained
+the following edgevariables after contracting with $\lambda_1$, $\lambda_3$, and $\lambda_5$
+\begin{equation}
+	\begin{aligned}
+		\alpha_1=\frac{\expval{23}}{\expval{13}},~~~~
+		\alpha_2=\frac{\expval{12}}{\expval{13}},~~~~
+		\alpha_3=\frac{\expval{45}}{\expval{35}},~~~~
+		\alpha_4=\frac{\expval{34}}{\expval{34}},~~~~
+		\alpha_5=\frac{\expval{13}}{\expval{35}},~~~~
+		\alpha_6=\frac{\expval{35}}{\expval{15}}
+	\end{aligned}
+\end{equation}
+and a Jacobian of $\frac{1}{\expval{15}^2\expval{13}}$. For this diagram we have two negative helicity particles $1$ and $5$ which is seen from the incoming arrows.
+
+\subsubsection{Jacobian from solving delta-function}
+The following property holds for the $\delta$-functions
+\begin{equation}
+	\begin{aligned}
+		\delta(kx)=\frac{1}{k}\delta(x)
+	\end{aligned}
+\end{equation}
+which means that for instance when multiplying a deltafunction by a spinor one has
+\begin{equation}
+	\begin{aligned}
+		\delta(\lambda_i)=\lambda_j\delta(\lambda_j\lambda_i)
+	\end{aligned}
+\end{equation}
+Or, using spinor helicity bracket notation
+\begin{equation}
+	\begin{aligned}
+		\delta(\lambda_i)\delta(\lambda_j)=\ab{kl}\delta(\lambda_k\lambda_i)\delta(\lambda_l\lambda_j)
+	\end{aligned}
+\end{equation}
 \begin{thebibliography}{99}
 %\cite{Bjerrum-Bohr:2013bxa}
 \bibitem{Bjerrum-Bohr:2013bxa}
-N.~E.~J.~Bjerrum-Bohr, J.~F.~Donoghue and P.~Vanhove,
+=N.~E.~J.~Bjerrum-Bohr, J.~F.~Donoghue and P.~Vanhove,
 ``On-shell Techniques and Universal Results in Quantum Gravity,''
 JHEP \textbf{02} (2014), 111
 doi:10.1007/JHEP02(2014)111

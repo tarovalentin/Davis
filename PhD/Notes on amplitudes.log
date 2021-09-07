@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  1 SEP 2021 14:06
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  7 SEP 2021 11:23
  restricted system commands enabled.
 **"Notes on amplitudes.tex"
 ("./Notes on amplitudes.tex"
@@ -971,6 +971,9 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 
 LaTeX Warning: Label `fig:jexample' multiply defined.
 
+
+LaTeX Warning: Label `eq:1' multiply defined.
+
 )
 \openout1 = Notes on amplitudes.aux
 
@@ -1097,7 +1100,7 @@ Overfull \hbox (47.24239pt too wide) detected at line 281
  []
 
 [6] [7] [8] [9]
-<projec.PNG, id=229, 750.30313pt x 340.77313pt>
+<projec.PNG, id=239, 750.30313pt x 340.77313pt>
 File: projec.PNG Graphic file (type png)
 <use projec.PNG>
 Package luatex.def Info: projec.PNG  used on input line 427.
@@ -1133,7 +1136,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 510--521
  []
 
 [12]
-<CP2Area2.pdf, id=274, 275.0275pt x 122.4575pt>
+<CP2Area2.pdf, id=284, 275.0275pt x 122.4575pt>
 File: CP2Area2.pdf Graphic file (type pdf)
 <use CP2Area2.pdf>
 Package luatex.def Info: CP2Area2.pdf  used on input line 573.
@@ -1149,7 +1152,7 @@ Overfull \hbox (17.10115pt too wide) detected at line 876
  []
 
 [19] [20] [21] [22] [23] [24] [25]
-<4+4.png, id=419, 668.4975pt x 197.73875pt>
+<4+4.png, id=429, 668.4975pt x 197.73875pt>
 File: 4+4.png Graphic file (type png)
 <use 4+4.png>
 Package luatex.def Info: 4+4.png  used on input line 1401.
@@ -1161,7 +1164,7 @@ Overfull \hbox (0.83038pt too wide) detected at line 1548
 [][][]
  []
 
-<two-loop.png, id=442, 619.31375pt x 196.23312pt>
+<two-loop.png, id=452, 619.31375pt x 196.23312pt>
 File: two-loop.png Graphic file (type png)
 <use two-loop.png>
 Package luatex.def Info: two-loop.png  used on input line 1574.
@@ -1175,7 +1178,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1593.
 
-<Jexample.png, id=455, 495.35063pt x 439.6425pt>
+<Jexample.png, id=465, 495.35063pt x 439.6425pt>
 File: Jexample.png Graphic file (type png)
 <use Jexample.png>
 Package luatex.def Info: Jexample.png  used on input line 1612.
@@ -1196,7 +1199,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1622.
 
-<YM4pt.png, id=465, 818.05624pt x 185.19188pt>
+<YM4pt.png, id=475, 818.05624pt x 185.19188pt>
 File: YM4pt.png Graphic file (type png)
 <use YM4pt.png>
 Package luatex.def Info: YM4pt.png  used on input line 1626.
@@ -1211,28 +1214,44 @@ warning  (pdf backend): ignoring duplicate destination with the name 'figure.3'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.4'
 <./Jexample.png><./YM4pt.png>] [31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1684.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1684.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1742.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1742.
+
+<5pt.png, id=502, 495.35063pt x 456.70625pt>
+File: 5pt.png Graphic file (type png)
+<use 5pt.png>
+Package luatex.def Info: 5pt.png  used on input line 1746.
+(luatex.def)             Requested size: 129.06322pt x 118.99168pt.
+[32
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.5'
+<./5pt.png>] [33]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1795.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1795.
  ("./Notes on amplitudes.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1684.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1684.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1795.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1795.
 Package rerunfilecheck Info: File `"Notes on amplitudes".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1684.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1795.
 )
 
 Here is how much of LuaTeX's memory you used:
- 35935 strings out of 480991
+ 35969 strings out of 480991
  100000,1373583 words of node,token memory allocated
- 1753 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 4 sub_mlist, 1 glyph, 311 attribute
-, 57 glue_spec, 311 attribute_list, 2 write nodes
-   avail lists: 2:2770,3:785,4:90,5:292,6:47,7:2397,8:161,9:1034,10:12,11:152
- 51964 multiletter control sequences out of 65536+200000
+ 1849 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 4 sub_mlist, 1 glyph, 335 attribute
+, 57 glue_spec, 335 attribute_list, 2 write nodes
+   avail lists: 2:2722,3:785,4:90,5:292,6:51,7:2397,8:161,9:1034,10:12,11:152
+ 51975 multiletter control sequences out of 65536+200000
  88 fonts using 7502851 bytes
  71i,15n,102p,762b,1301s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKT
@@ -1257,9 +1276,9 @@ gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Notes on amplitudes.pdf (32 pages, 783872 bytes).
+Output written on Notes on amplitudes.pdf (34 pages, 840248 bytes).
 
-PDF statistics: 574 PDF objects out of 1000 (max. 8388607)
- 238 named destinations out of 1000 (max. 131072)
- 200 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 609 PDF objects out of 1000 (max. 8388607)
+ 255 named destinations out of 1000 (max. 131072)
+ 216 words of extra memory for PDF output out of 10000 (max. 100000000)
 
