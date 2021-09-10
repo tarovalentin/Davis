@@ -1736,7 +1736,7 @@ Combining all these factors with $\prod_i \alpha_i=\frac{\ab{41}\ab{23}}{\ab{12}
 \begin{equation}
 	\begin{aligned}
 		\dd \Omega &= \left(\frac{\ab{24}^4}{\ab{12}^2\ab{34}^2}\frac{ \ab{12}\ab{34}}{\ab{41}\ab{23} } \left[\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 2 \rangle \langle 34 \rangle}\right]^{-4}+\frac{\ab{24}^4}{\ab{14}^2\ab{23}^2}\frac{\ab{23}\ab{41}}{\ab{12}\ab{34}}\left[	\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 4 \rangle \langle 23 \rangle}\right]^{-4}\right)\delta(P)\\
-		&=\frac{\ab{12}^2}{den}
+		&=\frac{\ab{12}^4\ab{34}^4+\ab{14}^4\ab{23}^4}{\ab{12}\ab{13}^4\ab{23}\ab{34}\ab{41}}
 	\end{aligned}
 \end{equation}
 \subsubsection{Five-point $\mathcal{N}=0$}
@@ -1759,8 +1759,70 @@ the following edgevariables after contracting with $\lambda_1$, $\lambda_3$, and
 		\alpha_6=\frac{\expval{35}}{\expval{15}}
 	\end{aligned}
 \end{equation}
-and a Jacobian of $\frac{1}{\expval{15}^2\expval{13}}$. For this diagram we have two negative helicity particles $1$ and $5$ which is seen from the incoming arrows.
-
+and a Jacobian of $\frac{\ab{15}^2}{\expval{35}^2\expval{13}}$. For this diagram we have two negative helicity particles $1$ and $5$ which is seen from the incoming arrows at those points. The orientation of these external legs do not yield an internal orientation with a closed cycle, and so this is the only diagram we have to take into account and there is no extra Jacobian factor. Using $\prod_{i}\alpha_i=\frac{\ab{12}\ab{23}\ab{34}\ab{45}}{\ab{13}\ab{15}\ab{35}^2}$ The form then yields the amplitude
+\begin{equation}
+	\begin{aligned}
+		A_5(1^-,2^+,3^+,4^+,5^-)&=\frac{\ab{15}^2}{\expval{35}^2\expval{13}}\frac{\delta(P)}{\prod_i \alpha_i}\\
+		&=\frac{\ab{15}^4}{\ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}\delta(P)
+	\end{aligned}
+\end{equation}
+\subsubsection{Six-point $\mathcal{N}=0$}
+Here we start by treating the same diagram as we did in section ...
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{6ptYM}
+	\caption{}
+	\label{fig:5pt}
+\end{figure}
+where we obtained
+\begin{align*}
+	& \alpha_1 = -\frac{[65]}{[15]}\,, \quad \alpha_2 = \frac{[61]}{[15]}\,, \quad \alpha_3 = \frac{\sab{234}}{\aMs{4}{Q_{234}}{5}}\,, \quad \alpha_4 = \frac{\ab{23}}{\ab{24}}\,, \quad
+	\alpha_5 = \frac{\ab{34}}{\ab{24}}\,, \\ 
+	& \twhite{.}\hspace{1.4cm} 
+	\alpha_6 = \frac{\aMs{4}{Q_{234}}{5}}{\ab{24}\sqb{15}}\,, \alpha_7 = -\frac{\aMs{4}{Q_{234}}{1}}{\aMs{4}{Q_{234}}{5}}\,,\quad
+	\alpha_8 = - \frac{\aMs{2}{Q_{234}}{5}}{\aMs{4}{Q_{234}}{5}}\,.
+\end{align*}
+The Jacobian from the delta functions is
+\begin{equation}
+	\begin{aligned}
+		J=\frac{[15]\expval{24}}{\aMs{4}{Q_{234}}{5}^2}
+	\end{aligned}
+\end{equation}
+such that the form is
+\begin{equation}
+	\begin{aligned}
+		\dd\Omega_{4+4}=\frac{\ab{24}^4 \sqb{15}^4}{s_{234}\ab{23}\ab{34}\aMs{2}{Q_{234}}{5}\aMs{4}{Q_{234}}{1}\sqb{61}\sqb{56}}
+	\end{aligned}
+\end{equation}
+For the 5+3 diagram we once again use the results from the previous section. The diagram is
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{5ptYM}
+	\caption{}
+	\label{fig:5pt}
+\end{figure}
+With the following edgevariables
+\begin{equation}
+	\begin{aligned}
+		& \alpha_1 = \frac{\sab{612}}{\aMs{6}{Q_{612}}{3}}\,, \quad \alpha_2 = \frac{[45]}{[34]}\,, \quad \alpha_3 = \frac{[45]\aMs{2}{Q_{612}}{3}}{[34]\aMs{2}{Q_{612}}{4}}\,, \quad \alpha_4 = \frac{\aMs{2}{Q_{612}}{5}}{\aMs{2}{Q_{612}}{4}}\,,\\ 
+		&\alpha_5 = \frac{\aMs{2}{Q_{612}}{4}}{\ab{62}[45]}\,, 
+		\quad
+		\alpha_6 = \frac{\ab{12}}{\ab{62}}\,,\quad \alpha_7 = \frac{\ab{61}}{\ab{62}}\,,\quad
+		\alpha_8 =  \frac{\aMs{6}{Q_{612}}{3}}{\aMs{2}{Q_{612}}{3}}\,.
+	\end{aligned}
+\end{equation}
+Here the Jacobian from the delta functions is
+\begin{equation}
+	\begin{aligned}
+		J=\frac{[35]^4\expval{62}}{\sqb{34}^3\aMs{2}{Q_{612}}{4}\aMs{6}{Q_{612}}{3}}
+	\end{aligned}
+\end{equation}
+The form is
+\begin{equation}
+	\begin{aligned}
+		\dd\Omega_{5+3}=\frac{\ab{26}^4 \sqb{35}^4}{s_{612}\ab{12}\ab{16}\aMs{6}{Q_{612}}{3}\aMs{2}{Q_{612}}{5}\sqb{34}\sqb{45}}
+	\end{aligned}
+\end{equation}
 \subsubsection{Jacobian from solving delta-function}
 The following property holds for the $\delta$-functions
 \begin{equation}

@@ -1,0 +1,124 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4033,        114]
+NotebookOptionsPosition[      3078,         92]
+NotebookOutlinePosition[      3484,        108]
+CellTagsIndexPosition[      3441,        105]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "SetDirectory", "[", 
+   "\"\<C:\\\\Users\\\\tarob\\\\OneDrive\\\\Dokumenter\\\\Taro \
+PC\\\\Documents\\\\Davis\\\\PhD\\\\Mathematica\>\"", "]"}], ";"}], "\n", 
+ RowBox[{"Off", "[", 
+  RowBox[{"Part", "::", "pkspec1"}], "]"}], "\n", 
+ RowBox[{"Off", "[", 
+  RowBox[{"SetDelayed", "::", "write"}], "]"}], "\n", 
+ RowBox[{"Off", "[", 
+  RowBox[{"General", "::", "compat"}], "]"}], "\n", 
+ RowBox[{"<<", "Num_hel.wl"}]}], "Input",
+ CellChangeTimes->{{3.8400383035488834`*^9, 3.840038306106643*^9}, {
+   3.8400384006521273`*^9, 3.840038400880003*^9}, 3.8400385645553846`*^9, 
+   3.840038612500538*^9, {3.8400386529089055`*^9, 3.840038664030066*^9}, {
+   3.840038712731041*^9, 3.8400387181394053`*^9}},
+ CellLabel->
+  "In[176]:=",ExpressionUUID->"f4d1e6a5-1adf-41af-ac4e-042bca49958a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"DefNumSH", "[", "4", "]"}], "\n", 
+ RowBox[{"aa", "=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Spaa", "[", 
+      RowBox[{"2", ",", "4"}], "]"}], "^", "4"}], " ", "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Spaa", "[", 
+        RowBox[{"1", ",", "2"}], "]"}], "^", "2"}], " ", 
+      RowBox[{
+       RowBox[{"Spaa", "[", 
+        RowBox[{"3", ",", "4"}], "]"}], "^", "2"}]}], ")"}]}], "//.", 
+   "NSpinHel"}]}]}], "Input",
+ CellChangeTimes->{{3.8400388159019184`*^9, 3.840038823410304*^9}},
+ CellLabel->
+  "In[184]:=",ExpressionUUID->"7ea8d639-d389-4449-b45b-2b3ecc03beab"],
+
+Cell[BoxData["\<\"Momentum Conserved\"\>"], "Print",
+ CellChangeTimes->{{3.840038820240429*^9, 3.84003882375124*^9}},
+ CellLabel->
+  "During evaluation of \
+In[184]:=",ExpressionUUID->"88651155-9375-449b-86b1-378d6688fb6e"],
+
+Cell[BoxData[
+ FractionBox["135976562500", "13122991669489"]], "Output",
+ CellChangeTimes->{{3.840038820243419*^9, 3.8400388237532344`*^9}},
+ CellLabel->
+  "Out[185]=",ExpressionUUID->"81522e14-5153-4413-a7c8-910377de9733"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.84003855784469*^9, 
+  3.8400385661595554`*^9}},ExpressionUUID->"1a13b36c-f20a-4550-a9c2-\
+f15d03752338"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.840038319820386*^9, 3.8400383563669553`*^9}, 
+   3.8400383989226203`*^9},ExpressionUUID->"e65fa949-95f3-4bf0-8163-\
+8933d632f56a"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.840038388114258*^9, 
+  3.840038394792093*^9}},ExpressionUUID->"33d58d07-909b-4f1d-89c0-\
+7b9ce5ebbda1"]
+},
+WindowSize->{960, 568},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"9b324077-099a-4128-a136-a50d2b7606be"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 895, 19, 126, "Input",ExpressionUUID->"f4d1e6a5-1adf-41af-ac4e-042bca49958a"],
+Cell[CellGroupData[{
+Cell[1478, 43, 639, 19, 48, "Input",ExpressionUUID->"7ea8d639-d389-4449-b45b-2b3ecc03beab"],
+Cell[2120, 64, 223, 4, 22, "Print",ExpressionUUID->"88651155-9375-449b-86b1-378d6688fb6e"],
+Cell[2346, 70, 223, 4, 70, "Output",ExpressionUUID->"81522e14-5153-4413-a7c8-910377de9733"]
+}, Open  ]],
+Cell[2584, 77, 153, 3, 28, "Input",ExpressionUUID->"1a13b36c-f20a-4550-a9c2-f15d03752338"],
+Cell[2740, 82, 179, 3, 28, "Input",ExpressionUUID->"e65fa949-95f3-4bf0-8163-8933d632f56a"],
+Cell[2922, 87, 152, 3, 28, InheritFromParent,ExpressionUUID->"33d58d07-909b-4f1d-89c0-7b9ce5ebbda1"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
