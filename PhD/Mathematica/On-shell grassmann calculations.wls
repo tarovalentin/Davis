@@ -388,21 +388,31 @@ A13 = Spaa[1,5] /Spaa[2,5] t\[Lambda][1] . t\[Lambda][4]+t\[Lambda][2] . t\[Lamb
 A14 = -(Spaa[1,2] /Spaa[2,5])t\[Lambda][1] . t\[Lambda][1]+Spaa[2,3] /Spaa[2,5] t\[Lambda][3] . t\[Lambda][1]+(Spaa[2,4]/Spaa[2,5]) t\[Lambda][4] . t\[Lambda][1]+t\[Lambda][5] . t\[Lambda][1]//.RR//Expand;
 A15 = -(Spaa[1,2] /Spaa[2,5])t\[Lambda][1] . t\[Lambda][3]+Spaa[2,3] /Spaa[2,5] t\[Lambda][3] . t\[Lambda][3]+(Spaa[2,4]/Spaa[2,5]) t\[Lambda][4] . t\[Lambda][3]+t\[Lambda][5] . t\[Lambda][3]//.RR//Expand;
 A16 = -(Spaa[1,2] /Spaa[2,5])t\[Lambda][1] . t\[Lambda][4]+Spaa[2,3] /Spaa[2,5] t\[Lambda][3] . t\[Lambda][4]+(Spaa[2,4]/Spaa[2,5]) t\[Lambda][4] . t\[Lambda][4]+t\[Lambda][5] . t\[Lambda][4]//.RR//Expand;
-(*These give a Jacobian of Spaa[2,5]^6*)
+(*These give a Jacobian of Spaa[2,5]^6, further we have a Jacobian of
+(Spbb[1,3]Spbb[1,4]Spbb[3,4])*)
 A11 = A11*Spaa[2,5]//Simplify;
-A11//.asBracket
+A11//.asBracket;
 A12 = A12*Spaa[2,5]//Simplify;
-A12//.asBracket
+A12//.asBracket;
 A13 = A13*Spaa[2,5]//Simplify;
-A13//.asBracket
+A13//.asBracket;
 A14 = A14*Spaa[2,5]//Simplify;
-A14//.asBracket
+A14//.asBracket;
 A15 = A15*Spaa[2,5]//Simplify;
-A15//.asBracket
+A15//.asBracket;
 A16 = A16*Spaa[2,5]//Simplify;
-A16//.asBracket
+A16//.asBracket;
 asBracket = {-Spaa[i_,j_] Spbb[k_,i_]-Spaa[l_,j_] Spbb[k_,l_]-Spaa[r_,j_] Spbb[k_,r_]->-Spab[j,P[i]+P[l]+P[r],k],Spaa[i_,j_] Spbb[i_,k_]+Spaa[l_,j_] Spbb[l_,k_]-Spaa[r_,j_] Spbb[k_,r_]->-Spab[j,P[i]+P[l]+P[r],k],Spaa[k_,i_] Spbb[k_,j_]+Spaa[l_,i_] Spbb[l_,j_]+Spaa[r_,i_] Spbb[r_,j_]->-Spab[i,P[k]+P[l]+P[r],j],-Spaa[i_,k_] Spbb[j_,k_]-Spaa[i_,l_] Spbb[j_,l_]-Spaa[i_,r_] Spbb[j_,r_]->Spab[i,P[k]+P[l]+P[r],j],-Spaa[k_,i_] Spbb[k_,j_]-Spaa[i_,l_] Spbb[j_,l_]-Spaa[i_,r_] Spbb[j_,r_]->Spab[i,P[k]+P[l]+P[r],j],-Spaa[k_,i_] Spbb[k_,j_]+Spaa[i_,l_] Spbb[l_,j_]-Spaa[i_,r_] Spbb[j_,r_]->Spab[i,P[k]+P[l]+P[r],j]};
-(*From this we get Spaa[2,5]^3*Spbb[1,3]*Spbb[3,4]*Spbb[1,4]*)
+(*From this we get Spaa[2,5]^(2)*Spaa[2,5]^(-3)*Spbb[1,3]^(-1)*Spbb[3,4]^(-1)*Spbb[1,4]^(-1), so combined jacobian is*)
+J2 = Spaa[2,5]^(2)Spaa[2,5]^(-3)*Spbb[1,3]^(-1)*Spbb[3,4]^(-1)*Spbb[1,4]^(-1)*Spaa[2,5]^(6)*(Spbb[1,3]Spbb[1,4]Spbb[3,4]);
+J = -J1*J2*Spaa[1,5]^(-1)
+
+Ji = (Spaa[1,3] Spaa[2,5]^4)/(Spaa[1,2]^2 Spaa[3,5]^4);
 
 
+fiveYM1 = 1/(\[Alpha]1 \[Alpha]2 \[Alpha]3 \[Alpha]4 \[Alpha]5 \[Alpha]6)*Ja^(-4)*J
+fiveYM2 = 1/(\[Beta]1 \[Beta]2 \[Beta]3 \[Beta]4 \[Beta]5 \[Beta]6)*Jb^(-4)*Ji
+fiveYM1 + fiveYM2 //FullSimplify 
 
+
+DefNumSH[4]
