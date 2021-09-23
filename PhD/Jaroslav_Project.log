@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  22 SEP 2021 14:02
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  23 SEP 2021 16:18
  restricted system commands enabled.
 **Jaroslav_Project.tex
 (./Jaroslav_Project.tex
@@ -1107,7 +1107,7 @@ Overfull \hbox (8.50772pt too wide) in paragraph at lines 260--262
  []
 
 [5] [6] [7] [8] [9] [10] [11]
-<4+4.png, id=217, 668.4975pt x 197.73875pt>
+<4+4.png, id=222, 668.4975pt x 197.73875pt>
 File: 4+4.png Graphic file (type png)
 <use 4+4.png>
 Package luatex.def Info: 4+4.png  used on input line 756.
@@ -1115,10 +1115,10 @@ Package luatex.def Info: 4+4.png  used on input line 756.
  [12
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.1'
 <./4+4.png>] [13]
-<two-loop.png, id=237, 619.31375pt x 196.23312pt>
+<two-loop.png, id=242, 619.31375pt x 196.23312pt>
 File: two-loop.png Graphic file (type png)
 <use two-loop.png>
-Package luatex.def Info: two-loop.png  used on input line 929.
+Package luatex.def Info: two-loop.png  used on input line 930.
 (luatex.def)             Requested size: 353.83585pt x 112.11752pt.
  [14]
 
@@ -1129,7 +1129,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 948.
 
-<Jexample.png, id=250, 495.35063pt x 439.6425pt>
+<Jexample.png, id=255, 495.35063pt x 439.6425pt>
 File: Jexample.png Graphic file (type png)
 <use Jexample.png>
 Package luatex.def Info: Jexample.png  used on input line 967.
@@ -1145,7 +1145,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 977.
 
-<YM4pt.png, id=260, 818.05624pt x 185.19188pt>
+<YM4pt.png, id=265, 818.05624pt x 185.19188pt>
 File: YM4pt.png Graphic file (type png)
 <use YM4pt.png>
 Package luatex.def Info: YM4pt.png  used on input line 981.
@@ -1171,7 +1171,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1097.
 
-<5pt.png, id=285, 495.35063pt x 456.70625pt>
+<5pt.png, id=290, 495.35063pt x 456.70625pt>
 File: 5pt.png Graphic file (type png)
 <use 5pt.png>
 Package luatex.def Info: 5pt.png  used on input line 1101.
@@ -1187,43 +1187,59 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1124.
 
-<6ptYM.png, id=296, 682.55pt x 453.695pt>
+<6ptYM.png, id=301, 682.55pt x 453.695pt>
 File: 6ptYM.png Graphic file (type png)
 <use 6ptYM.png>
 Package luatex.def Info: 6ptYM.png  used on input line 1128.
 (luatex.def)             Requested size: 221.14656pt x 146.99222pt.
-<5ptYM.png, id=297, 572.1375pt x 480.79625pt>
+<5ptYM.png, id=302, 572.1375pt x 480.79625pt>
 File: 5ptYM.png Graphic file (type png)
 <use 5ptYM.png>
 Package luatex.def Info: 5ptYM.png  used on input line 1155.
 (luatex.def)             Requested size: 176.91455pt x 148.67113pt.
 [19
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.6'
-<./6ptYM.png>] [20
+<./6ptYM.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1200.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1200.
+
+<5pt3l.png, id=312, 757.83125pt x 513.41812pt>
+File: 5pt3l.png Graphic file (type png)
+<use 5pt3l.png>
+Package luatex.def Info: 5pt3l.png  used on input line 1204.
+(luatex.def)             Requested size: 221.14656pt x 149.81969pt.
+[20
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.7'
-<./5ptYM.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1212.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1212.
+<./5ptYM.png>] [21
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.8'
+<./5pt3l.png>] [22]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1265.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1265.
  (./Jaroslav_Project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1212.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1212.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1265.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1265.
 Package rerunfilecheck Info: File `Jaroslav_Project.out' has not changed.
-(rerunfilecheck)             Checksum: 0A2415337611CF089E758CDD25E88909;2094.
+(rerunfilecheck)             Checksum: 5FDCC1F1F01BF7AAA88D7AC0FD7201A6;2295.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1212.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1265.
 )
 
 Here is how much of LuaTeX's memory you used:
- 35862 strings out of 480991
+ 35883 strings out of 480991
  100000,1373583 words of node,token memory allocated
- 1391 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 2 sub_mlist, 1 glyph, 222 attribute
-, 57 glue_spec, 222 attribute_list, 2 write nodes
-   avail lists: 2:2726,3:785,4:90,5:235,6:28,7:2106,8:161,9:917,10:13,11:81
- 51972 multiletter control sequences out of 65536+200000
+ 1407 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 2 sub_mlist, 1 glyph, 226 attribute
+, 57 glue_spec, 226 attribute_list, 2 write nodes
+   avail lists: 2:2718,3:785,4:90,5:235,6:29,7:2106,8:161,9:917,10:13,11:81
+ 51981 multiletter control sequences out of 65536+200000
  117 fonts using 9348875 bytes
  71i,15n,102p,757b,1315s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKT
@@ -1246,9 +1262,9 @@ ic/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/
 Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/lm/lmtt10.pfb>
-Output written on Jaroslav_Project.pdf (21 pages, 831066 bytes).
+Output written on Jaroslav_Project.pdf (23 pages, 940373 bytes).
 
-PDF statistics: 399 PDF objects out of 1000 (max. 8388607)
- 154 named destinations out of 1000 (max. 131072)
- 120 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 417 PDF objects out of 1000 (max. 8388607)
+ 160 named destinations out of 1000 (max. 131072)
+ 128 words of extra memory for PDF output out of 10000 (max. 100000000)
 
