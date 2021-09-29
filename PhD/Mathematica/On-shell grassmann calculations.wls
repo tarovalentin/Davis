@@ -16,11 +16,71 @@ latexto3 := {"Spbb[1, 2]"->"\\left[ 1 2 \\right]","Spbb[1, 3]"->"\\left[ 1 3 \\r
 latexto4 := {"a1"->"\\alpha_{1}","a2"->"\\alpha_{2}","a3"->"\\alpha_{3}","a4"->"\\alpha_{4}","a5"->"\\alpha_{5}","a6"->"\\alpha_{6}","a7"->"\\alpha_{7}","a8"->"\\alpha_{8}"};
 schoutenC = {Spaa[i_,j_] Spaa[l_,r_] Spbb[i_,k_]+Spaa[j_,r_] Spaa[l_,t_] Spbb[k_,t_]+Spaa[j_,r_] Spaa[l_,r_] Spbb[k_,r_]->Spaa[j,l]Spab[r,P[l]+P[t]+P[r],k]};
 SPAB = {Spaa[j_,i_] Spbb[j_,r_]+Spaa[k_,i_] Spbb[k_,r_]->-Spab[i,P[j]+P[k],r],Spaa[i_,j_] Spbb[r_,j_]+Spaa[i_,k_] Spbb[r_,k_]->-Spab[i,P[j]+P[k],r],-Spaa[j_,i_] Spbb[j_,r_]-Spaa[i_,k_] Spbb[r_,k_]-Spaa[i_,l_] Spbb[r_,l_]-Spaa[i_,nn_] Spbb[r_,nn_]->Spab[i,P[j]+P[k]+P[l]+P[nn],r],Spaa[j_,i_] Spbb[j_,r_]+Spaa[i_,k_] Spbb[r_,k_]->-Spab[i,P[j]+P[k],r],Spaa[j_,i_] Spbb[r_,j_]+Spaa[k_,i_] Spbb[r_,k_]->Spab[i,P[j]+P[k],r]};
+SPAB2 = {Spab[i_,P[j_],k_]->Spaa[i,j]Spbb[j,k]}
 SHtest = {Spab[i_,P[j_]+P[k_]+P[l_],r_]->Spaa[i,j]Spbb[j,r]+Spaa[i,k]Spbb[k,r]+Spaa[i,l]Spbb[l,r],s[i_,j_,k_]->Spaa[i,j]Spbb[j,i]+Spaa[i,k]Spbb[k,i]+Spaa[j,k]Spbb[k,j]};
 
 
 (* ::Section::Closed:: *)
+(*4 Pt MHV*)
+
+
+(*4 pt MHV*)
+
+(*Define C-matrices and lambda*)
+GrassC = {{1, a1,0,a4},{0,a2,1,a3}};
+Cperp4 = {{-a1,1,-a2,0},{-a4,0,-a3,1}};
+lambda = {{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4]}};
+tlambda = {{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4]}};
+GrassC . Transpose[tlambda]
+(*Solve for \[Alpha]'s by solving one delta function constraint. Here we get the equations from the eq below*)
+Cperp4 . Transpose[lambda];
+
+
+(*We then define them underneath by contracting with lambda's*)
+A1=-a1 \[Lambda][1] . \[Lambda][1]+\[Lambda][2] . \[Lambda][1]-a2 \[Lambda][3] . \[Lambda][1]//.RR
+A2=-a1 \[Lambda][1] . \[Lambda][3]+\[Lambda][2] . \[Lambda][3]-a2 \[Lambda][3] . \[Lambda][3]//.RR
+A3=-a4 \[Lambda][1] . \[Lambda][1]-a3 \[Lambda][3] . \[Lambda][1]+\[Lambda][4] . \[Lambda][1]//.RR
+A4=-a4 \[Lambda][1] . \[Lambda][3]-a3 \[Lambda][3] . \[Lambda][3]+\[Lambda][4] . \[Lambda][3]//.RR
+B1 = t\[Lambda][1] . t\[Lambda][2]+a1 t\[Lambda][2] . t\[Lambda][2]+a4 t\[Lambda][4] . t\[Lambda][2]//.RR;
+B2 = t\[Lambda][1] . t\[Lambda][4]+a1 t\[Lambda][2] . t\[Lambda][4]+a4 t\[Lambda][4] . t\[Lambda][4]//.RR;
+B3 = a2 t\[Lambda][2] . t\[Lambda][2]+t\[Lambda][3] . t\[Lambda][2]+a3 t\[Lambda][4] . t\[Lambda][2]//.RR
+B4 = a2 t\[Lambda][2] . t\[Lambda][4]+t\[Lambda][3] . t\[Lambda][4]+a3 t\[Lambda][4] . t\[Lambda][4]//.RR;
+
+Sol = Solve[{A1==0,A2==0,A3==0,A4==0},{a1,a2,a3,a4}]//Simplify;
+Sol//.schoutenA
+
+
+DefNumSH[4];
+B3//.NSpinHel
+
+
+a1 = Spaa[2,3]/Spaa[1,3];
+a2 = Spaa[1,2]/Spaa[1,3];
+a3 = Spaa[1,4]/Spaa[1,3];
+a4 = -(Spaa[3,4]/Spaa[1,3]);
+
+
+(*We solve for \[Alpha]'s and simplify using schouten*)
+J1 = Solve[-Spaa[1,2]+\[Alpha]2 Spaa[1,3]==x(a2-\[Alpha]2),x] (*A1*);
+J1 = 1/x//.J1[[1]][[1]];
+J2 = Solve[-\[Alpha]2 Spaa[1,3]+Spaa[2,3]==x(a1-\[Alpha]2),x] (*A2*);
+J2 = 1/x//.J2[[1]][[1]]//.schoutenA;
+J3 = Solve[\[Alpha]3 Spaa[1,3]-Spaa[1,4]==x(a3-\[Alpha]3),x] (*A3*);
+J3 = 1/x//.J3[[1]][[1]]//.schoutenA;
+J4 = Solve[-\[Alpha]4 Spaa[1,3]-Spaa[3,4]==x(a4-\[Alpha]4),x] (*A4*);
+J4 = 1/x//.J4[[1]][[1]]//.schoutenA;
+J1 J2 J3 J4
+
+
+1/(a1 a2 a3 a4)//FullSimplify
+
+
+(* ::Section:: *)
 (*5 Pt MHV*)
+
+
+(* ::Subsection::Closed:: *)
+(*On - shell calculation*)
 
 
 (*5 pt MHV*)
@@ -47,6 +107,15 @@ A6=-a3 a6 \[Lambda][1] . \[Lambda][5]+\[Lambda][4] . \[Lambda][5]+(-a4-a3 a5 a6)
 (*We solve for \[Alpha]'s and simplify using schouten*)
 Sol = Solve[{A1==0,A2==0,A3==0,A4==0,A5==0,A6==0},{a1,a2,a3,a4,a5,a6}]//Simplify;
 Sol//.schoutenA
+
+
+(* ::Subsection:: *)
+(*5 Pt from gluing 3 pt*)
+
+
+ToLoop = {Spaa[i_,l]->Spaa[i,1]/(Spaa[1,3]),Spaa[l,i_]->-Spaa[i,1]/(Spaa[1,3]),Spbb[l,i_]->Spab[3,P[1]+P[2],l],Spbb[i_,l]->-Spab[3,P[1]+P[2],l],Spaa[i_,lm1]->Spaa[2,3]Spaa[i,1]/(Spaa[1,3]),Spaa[lm1,i_]->-Spaa[2,3]Spaa[i,1]/(Spaa[1,3]),Spbb[lm1,i_]->Spbb[2,i],Spbb[i_,lm1]->Spbb[i,2]};
+Spaa[]
+Spaa[lm1,2]Spbb[2,lm1]//.ToLoop
 
 
 (* ::Section::Closed:: *)
@@ -198,7 +267,7 @@ StringReplace[StringReplace[StringReplace[ToString[B6],latexto2],latexto3],latex
 StringReplace[StringReplace[StringReplace[ToString[B7],latexto2],latexto3],latexto4]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Loop calculation (extra internal parameter)*)
 
 
@@ -214,7 +283,7 @@ Cperp ={{-a2 a3 a5,-(a4+a3 a5),1,0},{-(a1+a2 a3),-a3,0,1}};
 lambda={{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4]}};
 tlambda={{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4]}};
 CC . Transpose[Cperp];
-Cperp . Transpose[lambda]
+Cperp . Transpose[lambda];
 CC . Transpose[tlambda];
 
 
@@ -222,7 +291,19 @@ A1 = -a2 a3 a5 \[Lambda][1] . \[Lambda][1]+(-a4-a3 a5) \[Lambda][2] . \[Lambda][
 A2 = -a2 a3 a5 \[Lambda][1] . \[Lambda][2]+(-a4-a3 a5) \[Lambda][2] . \[Lambda][2]+\[Lambda][3] . \[Lambda][2]//.RR//Simplify
 A3 =(-a1-a2 a3) \[Lambda][1] . \[Lambda][1]-a3 \[Lambda][2] . \[Lambda][1]+\[Lambda][4] . \[Lambda][1]//.RR//Simplify
 A4 =(-a1-a2 a3) \[Lambda][1] . \[Lambda][2]-a3 \[Lambda][2] . \[Lambda][2]+\[Lambda][4] . \[Lambda][2]//.RR//Simplify
-Solve[{A1==0,A2==0,A3==0,A4==0},{a2,a3,a4,a5}]
+Solve[{A1==0,A2==0,A3==0,A4==0},{a2,a3,a4,a5}]//.schoutenA//Simplify;
+
+
+a2 = -((a1 Spaa[1,2]+Spaa[2,4])/Spaa[1,4]);
+a3 = Spaa[1,4]/Spaa[1,2];
+a4 = (a1 Spaa[1,3]+Spaa[3,4])/(a1 Spaa[1,2]+Spaa[2,4]);
+a5 = Spaa[2,3]/(a1 Spaa[1,2]+Spaa[2,4]);
+
+
+J=1/Spaa[1,2]^4*1/(a3^2 a2)
+
+
+Simplify[a1 a2 a3 a4 a5*1/J]^(-1)
 
 
 (* ::Subsection::Closed:: *)
@@ -321,47 +402,39 @@ Solve[A4==0,a4]
 (*((Spaa[1,3] (a4 Spaa[1,2]+Spaa[1,5]-Spaa[2,5]))/Spaa[1,2]+Spaa[3,5])/(a2 (Spaa[1,3]/(a2 Spaa[1,5])) Spaa[1,5])//FullSimplify*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*5 pt three-loop third try (works!)*)
 
 
 (*Define C-matrices and lambda*)
-CC={{1,a1+a6 a2,a1 a7+a6+a6 a2 a7,a6 a3,0},{0, a5 a6 a2,a5 a6+a5 a6 a2 a7, a4+ a5 a6 a3,1}}//MatrixForm
+CC={{1,a1+a6 a2,a1 a7+a6+a6 a2 a7,a6 a3,0},{0, a5 a6 a2,a5 a6+a5 a6 a2 a7, a4+ a5 a6 a3,1}};
 Cperp ={{-a1-a6 a2,1,0,0,-a5 a6 a2},{-a1 a7-a6-a6 a2 a7,0,1,0,-a5 a6-a5 a6 a2 a7},{-a6 a3,0,0,1,-a4- a5 a6 a3}};
 lambda={{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5]}};
 tlambda={{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5]}};
 CC . Transpose[Cperp];
-Cperp . Transpose[lambda]
-CC . Transpose[tlambda]
+Cperp . Transpose[lambda];
+CC . Transpose[tlambda];
+eta={{\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5]},{\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5]},{\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5]}};
+CC . Transpose[eta];
 
 
-(* ::InheritFromParent:: *)
-(*{{(-a1-a2 a6) \[Lambda][1]+\[Lambda][2]-a2 a5 a6 \[Lambda][5],(-a1-a2 a6) \[Lambda][1]+\[Lambda][2]-a2 a5 a6 \[Lambda][5]},{(-a6-a1 a7-a2 a6 a7) \[Lambda][1]+\[Lambda][3]+(-a5 a6-a2 a5 a6 a7) \[Lambda][5],(-a6-a1 a7-a2 a6 a7) \[Lambda][1]+\[Lambda][3]+(-a5 a6-a2 a5 a6 a7) \[Lambda][5]},{-a3 a6 \[Lambda][1]+\[Lambda][4]+(-a4-a3 a5 a6) \[Lambda][5],-a3 a6 \[Lambda][1]+\[Lambda][4]+(-a4-a3 a5 a6) \[Lambda][5]}}*)
-
-
-A1 = (-a1-a2 a6) \[Lambda][1] . \[Lambda][1]+\[Lambda][2] . \[Lambda][1]-a2 a5 a6 \[Lambda][5] . \[Lambda][1]//.RR
-A2 = (-a1-a2 a6) \[Lambda][1] . \[Lambda][5]+\[Lambda][2] . \[Lambda][5]-a2 a5 a6 \[Lambda][5] . \[Lambda][5]//.RR//.RR
-A3 = (-a6-a1 a7-a2 a6 a7) \[Lambda][1] . \[Lambda][1]+\[Lambda][3] . \[Lambda][1]+(-a5 a6-a2 a5 a6 a7) \[Lambda][5] . \[Lambda][1]//.RR
-A4 = (-a6-a1 a7-a2 a6 a7) \[Lambda][1] . \[Lambda][5]+\[Lambda][3] . \[Lambda][5]+(-a5 a6-a2 a5 a6 a7) \[Lambda][5] . \[Lambda][5]//.RR
-A5 = -a3 a6 \[Lambda][1] . \[Lambda][1]+\[Lambda][4] . \[Lambda][1]+(-a4-a3 a5 a6) \[Lambda][5] . \[Lambda][1]//.RR
-A6 = -a3 a6 \[Lambda][1] . \[Lambda][5]+\[Lambda][4] . \[Lambda][5]+(-a4-a3 a5 a6) \[Lambda][5] . \[Lambda][5]//.RR
+A1 = (-a1-a2 a6) \[Lambda][1] . \[Lambda][1]+\[Lambda][2] . \[Lambda][1]-a2 a5 a6 \[Lambda][5] . \[Lambda][1]//.RR//FullSimplify
+A2 = (-a1-a2 a6) \[Lambda][1] . \[Lambda][5]+\[Lambda][2] . \[Lambda][5]-a2 a5 a6 \[Lambda][5] . \[Lambda][5]//.RR//.RR//FullSimplify
+A3 = (-a6-a1 a7-a2 a6 a7) \[Lambda][1] . \[Lambda][1]+\[Lambda][3] . \[Lambda][1]+(-a5 a6-a2 a5 a6 a7) \[Lambda][5] . \[Lambda][1]//.RR//FullSimplify
+A4 = (-a6-a1 a7-a2 a6 a7) \[Lambda][1] . \[Lambda][5]+\[Lambda][3] . \[Lambda][5]+(-a5 a6-a2 a5 a6 a7) \[Lambda][5] . \[Lambda][5]//.RR//FullSimplify
+A5 = -a3 a6 \[Lambda][1] . \[Lambda][1]+\[Lambda][4] . \[Lambda][1]+(-a4-a3 a5 a6) \[Lambda][5] . \[Lambda][1]//.RR//FullSimplify
+A6 = -a3 a6 \[Lambda][1] . \[Lambda][5]+\[Lambda][4] . \[Lambda][5]+(-a4-a3 a5 a6) \[Lambda][5] . \[Lambda][5]//.RR//FullSimplify
 (*Solve[{A1==0,A2==0,A3==0,A4\[Equal]0,A5==0,A6==0},{a1,a2,a3,a5,a4,a6}]*)
+DefNumSH[5];
+A1//.NSpinHel//Simplify;
 
 
-J1 = Solve[-\[Alpha]3 a6 Spaa[1,5]+Spaa[4,5]==x(a3-\[Alpha]3),x] (*A6*);
-J1 = 1/x//.J1[[1]][[1]];
-J2 = Solve[-a7 (1+a7 \[Alpha]2) Spaa[1,2]+a7 \[Alpha]2 Spaa[1,3]==x(a2-\[Alpha]2),x] (*A3*);
-J2 = 1/x//.J2[[1]][[1]]//.schoutenA;
-J3 = Solve[Spaa[1,5] (-\[Alpha]1-Spaa[2,3]/(a7 Spaa[1,2]-Spaa[1,3]))==x(a1-\[Alpha]1),x] (*A2*);
-J3 = 1/x//.J3[[1]][[1]]//.schoutenA;
-J4 = Solve[Spaa[1,5] (\[Alpha]4+(-a7 Spaa[2,4]+Spaa[3,4])/(a7 Spaa[2,5]-Spaa[3,5]))==x(a4-\[Alpha]4),x] (*A5*);
-J4 = 1/x//.J4[[1]][[1]]//.schoutenA;
-J5 = Solve[(Spaa[1,3] (\[Alpha]6 Spaa[1,5]+a7 Spaa[2,5]-Spaa[3,5]))/(a7 Spaa[1,2]-Spaa[1,3])==x(a6-\[Alpha]6),x] (*A4*);
-J5 = 1/x//.J5[[1]][[1]]//.schoutenA//FullSimplify;
-J6 = Solve[Spaa[1,2] (-1+(\[Alpha]5 (-a7 Spaa[2,5]+Spaa[3,5]))/(-a7 Spaa[1,2]+Spaa[1,3]))==x(a5-\[Alpha]5),x] (*A1*);
-J6 = 1/x//.J6[[1]][[1]]//.schoutenA;
-
-J=J1*J2*J3*J4*J5*J6//FullSimplify
+Simplify[A1/(a5 a6 Spaa[1,5])]
+Simplify[A2/(Spaa[1,5])]
+Simplify[A3/(Spaa[1,5]a6(1+a2 a7) )]//Simplify
+Simplify[A4/(Spaa[1,5](1+a2 a7))]
+Simplify[A5/(Spaa[1,5])]//FullSimplify
+Simplify[A6/(Spaa[1,5] a6)]//FullSimplify
 
 
 a1 = -(Spaa[2,3]/(a7 Spaa[1,2]-Spaa[1,3]))//FullSimplify;
@@ -372,7 +445,115 @@ a4 = (-a7 Spaa[2,4]+Spaa[3,4])/(-a7 Spaa[2,5]+Spaa[3,5])//FullSimplify;
 a6 = (-a7 Spaa[2,5]+Spaa[3,5])/Spaa[1,5];
 
 
-J*1/(a1 a2 a3 a4 a5 a6)//.Sol//.schoutenA//FullSimplify
+DefNumSH[5];
+A1//.NSpinHel//Simplify
+A2//.NSpinHel//Simplify
+A3//.NSpinHel//Simplify
+A4//.NSpinHel//Simplify
+A5//.NSpinHel//Simplify
+A6//.NSpinHel//Simplify
+
+
+(*Finding tilde-\[Lambda] delfatunctions*)
+FullSimplify[t\[Lambda][1]+(a1+a2 a6) t\[Lambda][2]+(a6+a1 a7+a2 a6 a7) t\[Lambda][3]+a3 a6 t\[Lambda][4]]//.schoutenA//FullSimplify
+FullSimplify[a2 a5 a6 t\[Lambda][2]+(a5 a6+a2 a5 a6 a7) t\[Lambda][3]+(a4+a3 a5 a6) t\[Lambda][4]+t\[Lambda][5]]//.schoutenA;
+(Spaa[1,2] t\[Lambda][2])/Spaa[1,5]+(Spaa[1,3] t\[Lambda][3])/Spaa[1,5]+(Spaa[1,4] t\[Lambda][4])/Spaa[1,5]+t\[Lambda][5]
+
+
+(*Finding eta delfatunctions*)
+FullSimplify[\[Eta][1]+(a1+a2 a6) \[Eta][2]+(a6+a1 a7+a2 a6 a7) \[Eta][3]+a3 a6 \[Eta][4]]//.schoutenA//.schoutenB
+(*After schouten this turns into*)
+(Spaa[1,5] \[Eta][1]+Spaa[2,5] \[Eta][2]+Spaa[3,5] \[Eta][3]+Spaa[4,5] \[Eta][4])/Spaa[1,5]
+
+a2 a5 a6 \[Eta][2]+(a5 a6+a2 a5 a6 a7) \[Eta][3]+(a4+a3 a5 a6) \[Eta][4]+\[Eta][5]//FullSimplify; 
+(*After schouten this turns into*)
+(Spaa[1,2] \[Eta][2])/Spaa[1,5]+(Spaa[1,3] \[Eta][3])/Spaa[1,5]+(Spaa[1,4] \[Eta][4])/Spaa[1,5]+\[Eta][5]
+
+
+
+1/(a5 a6^3(1+a2 a7)^2)1/(Spaa[1,5]^1)//FullSimplify
+
+
+Limit[1/(a5 a6^3(1+a2 a7)^2)1/(Spaa[1,5]^1),a7->0]
+
+
+d\[CapitalOmega] = 1/(a1 a2 a3 a4 a5 a6 a7)//FullSimplify
+d\[CapitalOmega]2 = d\[CapitalOmega] *(((-a7 Spaa[1,2]+Spaa[1,3]) Spaa[1,5]^2)/(Spaa[1,3]^2 (-a7 Spaa[2,5]+Spaa[3,5])^2))//Simplify
+Simplify[Limit[d\[CapitalOmega]2,a7->\[Infinity]]]//.schoutenA
+
+
+(* ::InheritFromParent:: *)
+(**)
+
+
+(* ::Subsection::Closed:: *)
+(*5 pt three-loop with internal loop*)
+
+
+(*Define C-matrices and lambda*)
+\[Delta]1 = 1/(1-a1 a2 a6);
+Ca = {{a1 \[Delta]1,1,a7+a1 a6 \[Delta]1, a3 a1 a6 \[Delta]1,0},{a5 a6 a2 a1 \[Delta]1, 0, a5 a6 \[Delta]1, a4+a5 a3 a6 \[Delta]1, 1}};
+CaP = {{1, -a1 \[Delta]1,0,0,-a5 a6 a2 a1 \[Delta]1},{0,-a7-a1 a6 \[Delta]1,1,0,-a5 a6 \[Delta]1},{0,-a3 a1 a6 \[Delta]1,0,1,-a4-a5 a3 a6 \[Delta]1}};
+lambda = {{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5]}};
+tlambda={{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5]}};
+Ca . Transpose[CaP];
+(*Solve for \[Alpha]'s by solving one delta function constraint. Here we get the equations from the eq below*)
+CaP . Transpose[lambda];
+Ca . Transpose[tlambda];
+
+A1 = \[Lambda][1] . \[Lambda][2]-a1 \[Delta]1 \[Lambda][2] . \[Lambda][2]-a1 a2 a5 a6 \[Delta]1 \[Lambda][5] . \[Lambda][2]//.RR
+A2 = \[Lambda][1] . \[Lambda][5]-a1  \[Delta]1 \[Lambda][2] . \[Lambda][5]-a1 a2 a5 a6  \[Delta]1 \[Lambda][5] . \[Lambda][5]//.RR
+A3 = (-a7-a1 a6 \[Delta]1) \[Lambda][2] . \[Lambda][2]+\[Lambda][3] . \[Lambda][2]-a5 a6 \[Delta]1 \[Lambda][5] . \[Lambda][2]//.RR
+A4 = (-a7-a1 a6 \[Delta]1) \[Lambda][2] . \[Lambda][5]+\[Lambda][3] . \[Lambda][5]-a5 a6 \[Delta]1 \[Lambda][5] . \[Lambda][5]//.RR
+A5 = -a1 a6 a3 \[Delta]1 \[Lambda][2] . \[Lambda][2]+\[Lambda][4] . \[Lambda][2]+(-a4-a3 a5 a6 \[Delta]1 ) \[Lambda][5] . \[Lambda][2]//.RR
+A6 = -a1 a6 a3 \[Delta]1 \[Lambda][2] . \[Lambda][5]+\[Lambda][4] . \[Lambda][5]+(-a4- a3 a5 a6 \[Delta]1 ) \[Lambda][5] . \[Lambda][5]//.RR
+Sola = Solve[{A1==0,A2==0,A3==0,A4==0,A5==0,A6==0},{a1,a2,a3,a4,a5,a6}]//Simplify;
+Sola//.schoutenA//FullSimplify
+
+
+a1 = (-a7 Spaa[1,2]+Spaa[1,3])/Spaa[2,3];
+a2 = Spaa[1,2]/(a7 Spaa[1,2]-Spaa[1,3]);
+a3 = -(Spaa[4,5]/(a7 Spaa[2,5]-Spaa[3,5]));
+a4 = (-a7 Spaa[2,4]+Spaa[3,4])/(-a7 Spaa[2,5]+Spaa[3,5]);
+a5 = (-a7 Spaa[1,2]+Spaa[1,3])/(-a7 Spaa[2,5]+Spaa[3,5]);
+a6 = (-a7 Spaa[2,5]+Spaa[3,5])/Spaa[1,5];
+\[Delta]1 =(Spaa[1,5] Spaa[2,3])/((-a7 Spaa[1,2]+Spaa[1,3]) Spaa[2,5]);
+
+
+j1 = -1/(\[Delta]1 Spaa[2,5]*a1*a5*a6)//FullSimplify; (*a2*)
+j2 = 1/(\[Delta]1 Spaa[2,5])//FullSimplify; (*a1*)
+j3 = 1/(\[Delta]1 Spaa[2,5]*a6)//FullSimplify; (*a5*)
+j4 = 1/(\[Delta]1 Spaa[2,5]*a1)//FullSimplify; (*a6*)
+j5 = 1/(Spaa[2,5])//FullSimplify; (*a4*)
+j6 = 1/(\[Delta]1 Spaa[2,5]*a1 a6)//FullSimplify; (*a3*)
+J = Spaa[2,5]^5 j1 j2 j3 j4 j5 j6//FullSimplify
+J//.a7->0
+-((Spaa[1,3] Spaa[2,5]^4)/(Spaa[1,5]^2 Spaa[2,3]^2 Spaa[3,5]^2));
+
+
+Jac = \[Delta]1^(-1);
+d\[CapitalOmega] = 1/(a1 a2 a3 a4 a5 a6 a7)//FullSimplify;
+J*d\[CapitalOmega]
+J*d\[CapitalOmega]*Jac//Simplify
+Residue[J*d\[CapitalOmega],{a7,0}]
+Limit[J*d\[CapitalOmega],a7->\[Infinity]]
+
+
+(-a7 Spaa[2,5]Spaa[1,2]+Spaa[3,5]Spaa[1,2]+Spaa[1,5] Spaa[2,3])/(Spaa[1,5] Spaa[2,3])//.schoutenA//FullSimplify
+
+
+(*Porting to LaTeX*)
+StringReplace[StringReplace[StringReplace[ToString[A1],latexto2],latexto3],latexto4]
+"\\\\"
+StringReplace[StringReplace[StringReplace[ToString[A2],latexto2],latexto3],latexto4]
+"\\\\"
+StringReplace[StringReplace[StringReplace[ToString[A3],latexto2],latexto3],latexto4]
+"\\\\"
+StringReplace[StringReplace[StringReplace[ToString[A4],latexto2],latexto3],latexto4]
+"\\\\"
+StringReplace[StringReplace[StringReplace[ToString[A5],latexto2],latexto3],latexto4]
+"\\\\"
+StringReplace[StringReplace[StringReplace[ToString[A6],latexto2],latexto3],latexto4]
 
 
 (* ::Section::Closed:: *)
@@ -423,6 +604,9 @@ Na = a1^2 a3^2*s[1,2]^2;
 Nb = \[Beta]2^2 \[Beta]4^2*s[1,4]^2;
 aa= Spaa[2,4]^4 /(Spaa[1,2]^2 Spaa[3,4]^2)*1/(a1 a2 a3 a4)*Ja^(-4)//Expand;
 bb= Spaa[2,4]^4 /(Spaa[1,4]^2 Spaa[2,3]^2)*1/(\[Beta]1 \[Beta]2 \[Beta]3 \[Beta]4)*Jb^(-4)//Expand;
+
+
+1/(a1 a2 a3 a4)*Spaa[2,4]^4 /(Spaa[1,2]^2 Spaa[3,4]^2)
 
 
 (* ::Subsection::Closed:: *)
