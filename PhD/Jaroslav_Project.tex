@@ -46,11 +46,20 @@
 \flushbottom
 \newpage
 \section{Introduction}
+During the last two decades, significant strides have been made in the study of scattering amplitudes. New modern on-shell techniques have made calculations with a large number of particles and loops feasible. Many of the significant advancements in the field has come by studying $\mathcal N = 4$ super Yang-Mills (sYM)
+and using its planar, or large $N$, limit as a sandbox to explore the underlying geometric structure. 
+
+In recent years this geometric structure of scattering amplitudes in $\mathcal N = 4$
+sYM has been explored using the positive Grassmannian, on-shell diagrams, and
+the Amplituhedron. A natural progression is to try and extend these discoveries beyond planar $\mathcal N = 4$ sYM to explore whether the geometric interpretation is a more general feature of quantum field theories (QFT’s). Similarly, considering theories with $\mathcal N\neq 4$, such as supergravity ($\mathcal N = 8$), will teach us to what extend these geometric pictures apply to other field theories. 
+
+The focus of this project has been some of these extensions, with the report structured as follows. In section ------ we give a short review of the Grassmaniann, followed by an introduction to on-shell diagrams. Then, in section ----- we calculate various examples using the methods described. We extend this approach to multiple loops in section -----, giving examples at four and five points, and then proceed to describe the approach used when considering theories for $\mathcal{N}\neq 4$, explicitly calculating multiple examples at five and six points. Finally we consider the pole structure of the results found.
 \section{Grassmanian}
-The Grassmanian $G(k,n)$ is the space of $k$-planes going through the origin in $n$ dimensions. It can be though of as a generalization of $P^{n-1}$ which is the space of lines going through the origin in $n$-dimensions since $G(1,n)=P^{n-1}$. One can e.g. take $k$ vectors in $n$ dimensions
-\begin{figure}
+In this section we give a brief review of the Grassmanian, which will serve as a crucial ingredient for our discussion of on-shell diagrams.
+The Grassmanian, denoted $G(k,n)$, is the space of $k$-planes going through the origin in $n$ dimensions. It can be thought of as a generalization of projective space $P^{n-1}$, which is the space of lines going through the origin in $n$-dimensions, since $G(1,n)=P^{n-1}$. One can e.g. take $k$ vectors in $n$ dimensions, see figure \ref{fig:1}
+\begin{figure}[H]
 	\centering
-\begin{tikzpicture}
+\begin{tikzpicture}{scale=0.5}
 	\draw[thin,gray!40] (0,0) grid (4,4);
 	\draw[line width=2pt,black,-stealth](0,0)--(2,3) node[anchor=south west]{$\boldsymbol{v_1}$};
 	\node at (2.3,2.3) [circle,fill,inner sep=1pt]{};
@@ -58,8 +67,10 @@ The Grassmanian $G(k,n)$ is the space of $k$-planes going through the origin in 
 	\node at (2.7,1.7) [circle,fill,inner sep=1pt]{};
 	\draw[line width=2pt,black,-stealth](0,0)--(3.3,1) node[anchor=south west]{$\boldsymbol{v_k}$};
 \end{tikzpicture}
+\caption{}
+\label{fig:1}
 \end{figure}
-The span of these vectors give me the $k$- plane. If we stack them we get
+The span of these vectors gives the $k$- plane. If they are stacked, we get a matrix $C_{\alpha a}$
 \begin{equation}
 \begin{aligned}
 	&~~~~~~~n\\
@@ -71,15 +82,13 @@ The span of these vectors give me the $k$- plane. If we stack them we get
 \end{bmatrix}\equiv C_{\alpha a},~~~~~~~~\alpha=1,\dots,k~~~~a=1,\dots,n
 \end{aligned}
 \end{equation}
-These are in general not unique since there is a GL($k$) redundant.
-\begin{equation}
-C_{\alpha a}\sim L^{\beta}_\alpha C_{\beta a}
-\end{equation}
+This matrix are generally not unique since it is GL($k$) redundant, $
+C_{\alpha a}\sim L^{\beta}_\alpha C_{\beta a}$.
 The dimensionality of the Grassmanian is 
 \begin{equation}
 \dim G(k,n)=\overbrace{k\times n}^{k\times n \text{ matrix}}\underbrace{-k^2}_{GL(k) \text{ red}}
 \end{equation}
-The redudancy means that we can gaugefix the matrix using a linear transformation by setting any $k\times k$ blok to the identity. This is equivalent to the rescaling of vectors in projective space to $\begin{pmatrix}
+The redudancy means that we can gaugefix the matrix using a linear transformation by setting any $k\times k$ blok to the identity. This is equivalent to the rescaling of a vector in projective space to $\begin{pmatrix}
 1 & v_2 & v_3 & v_4 \cdots
 \end{pmatrix}$. Taking e.g. $G(3,5)$, we have six degrees of freedom:
 \begin{equation}G(3,5) = 
@@ -96,7 +105,7 @@ The redudancy means that we can gaugefix the matrix using a linear transformatio
 	\end{matrix}  \\
 \end{array} \right]
 \end{equation}
-The dimensionality of the Grassmanian are symmetric under $n\leftrightarrow k$. This is because there is a bijection between the Grassmania: $k$ and $n-k$ planes in $n$ dimensions, since these planes are orthogonal. In the case above $C^{\perp}$ is a $2$-plane in 5 dimensions, so
+The dimensionality of the Grassmanian are symmetric under $n\leftrightarrow k$. This is because there is a bijection between the Grassmania: $k$ and $n-k$ planes in $n$ dimensions, since these planes are orthogonal. In the case above $C^{\perp}$ is a $2$-plane in 5 dimensions. We Can illustrate both the matrices like so,
 \begin{equation}
 	\left[ \begin{array}{@{}c|c@{}}
 		\begin{matrix}
@@ -120,17 +129,27 @@ The dimensionality of the Grassmanian are symmetric under $n\leftrightarrow k$. 
 \end{matrix} 
 	\end{array} \right]
 \end{equation}
-With the bottom part just being the negative transpose of the $x,y$ and $z$ coordinates in the upper right corner. \\\\
-SL$(k)$ invariant are determinants of any $k$ coloumns of the matrix (the minors), labeling these by their indices:
+With the bottom part just being the negative transpose of the $x,y$ and $z$ coordinates in the upper right corner. The SL$(k)$ invariants are determinants of any $k$ coloumns of the matrix (the minors), labeling these by their indices:
 \begin{equation}
 \begin{pmatrix}
 a_1&a_2&\cdots &a_k
 \end{pmatrix}
 \end{equation}
+We will now proceed to used the properties of the Grassmanian by introducing the concept of on-shell diagrams.
 \newpage
-\section{On-shell diagrams}
-\subsection{Using three point on shell functions}
-The three-point vertex can be found from the following MHV and $\overline{\text{MHV}}$ diagrams
+\section{Introduction to on-shell diagrams}
+In this section we introduce the notion of on-shell diagrams, and give examples on different ways one can calculate diagrams from these. 
+
+One can construct $(k\times n)$ C-matrices out of on-shell diagrams, where $k$ labels the number of negative helicity particles and $n$ is the total number of particles. The procedure to construct a matrix from a diagram is as follows
+\begin{itemize}
+	\item Label the edges of the on-shell diagram by $\alpha$'s.
+	\item Starting at one of the incoming particles (say, $2$), trace a path to one of the outgoing particles  (say, $4$). Multiply the $\alpha$'s encountered on the path. This would be entry $C_{2\,4}$ in the C-matrix
+	\item Going from an incoming particle to another incoming particle, put a $0$ in that matrix entry, unless it is the a path starting and ending in the same particle, then put a $1$.
+\end{itemize} 
+We will in this section calculate amplitudes through various techniques using the on-shell diagrams.
+\subsection{Three point on-shell form} 
+The easiest example is the two diagrams representing the three-point MHV and $\overline{\text{MHV}}$ amplitudes.
+Taking e.g the amplitudes to be $A_3^{\text{MHV}}(1^-,2^-,3^+)$ and $A_3^{\overline{\text{MHV}}}(1^+,2^+,3^-)$, the on-shell diagrams are
 \begin{figure}[H]\centering
 	\begin{tikzpicture}[scale=0.85]
 		\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
@@ -141,7 +160,7 @@ The three-point vertex can be found from the following MHV and $\overline{\text{
 			\draw[thick,black] (0.24,0) -- node {\midarrow} (2.05,0);
 			\node[text width=0.5cm] at (-1.1,2.0) {2};
 			\node[text width=0.5cm] at (-1.1,-2.0) {1};
-			\node[text width=3cm] at (3.7,0) {3};
+			\node[text width=3cm] at (4,0) {3};
 				\node[text width=0.5cm] at (-0.8,-0.7) {$\alpha_1$};
 				\node[text width=0.5cm] at (-0.8,0.7) {$\alpha_2$};
 				\node[text width=0.5cm] at (1,0.3) {$\alpha_3$};
@@ -151,14 +170,14 @@ The three-point vertex can be found from the following MHV and $\overline{\text{
 	\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
 		\draw[black] (0,0) circle (2.4mm);
 		\draw (0,0) circle (20.5mm);
-		\draw[thick,black] (-1.1,1.7) -- node {\midarrow} (-0.16,0.16);
-		\draw[thick,black] (-1.1,-1.7) -- node {\midarrow} (-0.16,-0.16);
-		\draw[thick,black] (0.24,0) -- node {\midarrow} (2.05,0);
+		\draw[thick,black] (-0.16,0.16) -- node {\midarrow} (-1.1,1.7);
+		\draw[thick,black] (-0.16,-0.16) -- node {\midarrow} (-1.1,-1.7);
+		\draw[thick,black] (2.05,0) -- node {\midarrow} (0.24,0);
 		\node[text width=0.5cm] at (-1.1,2.0) {2};
 		\node[text width=0.5cm] at (-1.1,-2.0) {1};
-		\node[text width=3cm] at (3.7,0) {3};
-		\node[text width=0.5cm] at (-0.8,-0.7) {$\alpha_1$};
-		\node[text width=0.5cm] at (-0.8,0.7) {$\alpha_2$};
+		\node[text width=3cm] at (4,0) {3};
+		\node[text width=0.5cm] at (-0.9,-0.7) {$\alpha_1$};
+		\node[text width=0.5cm] at (-0.9,0.7) {$\alpha_2$};
 		\node[text width=0.5cm] at (1,0.3) {$\alpha_3$};
 	\end{scope}
 \end{tikzpicture}
@@ -168,9 +187,8 @@ These produce the two following $C$ matrices, respectively
 	\begin{aligned}
 		C&=\begin{pmatrix}
 			1 & 0 & \alpha_1\alpha_2 \\ 0 & 1 & \alpha_2\alpha_3
-		\end{pmatrix}\\
-	C&=\begin{pmatrix}
-		\alpha_1\alpha_3 \alpha_2\alpha_3 & 1
+		\end{pmatrix},~~~~~~~~~~~~C=\begin{pmatrix}
+		\alpha_1\alpha_3 & \alpha_2\alpha_3 & 1
 	\end{pmatrix}
 	\end{aligned}
 \end{equation}
@@ -181,7 +199,8 @@ Because of momentum conservation and little group invariance, the solution of th
 		A_3^{\overline{\text{MHV}}}(1,2,3)&=\frac{\delta^{4}\left([12]\tilde\eta_3+[23]\tilde\eta_1+[31]\tilde\eta_2\right)\delta^{4}\left(\sum_{i=1}^{3}\lambda_i\tilde\lambda_i\right)}{[12][23][31]}\\
 	\end{aligned}
 \end{equation}
-We start by constructing the simplest possible diagram out of two opposite helicity ($k=1$ and $k=2$) amplitudes, see figure below:
+One can further construct more elaborate diagrams by gluing these three point functions together.
+The simplest possible diagram out of two opposite helicity ($k=1$ and $k=2$) amplitudes, is shown below
 \begin{figure}[H]\centering\hspace*{3cm}
 	\begin{tikzpicture}
 		\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
@@ -281,14 +300,40 @@ Now we only need the kinematic part of the integrand. Including the Jacobians an
 		\frac{1}{\expval{14}\expval{4P}\expval{P1}}\times\frac{1}{[23][3P][P2]}\times \frac{[23]^4}{\expval{23}[23]}&=\frac{1}{\expval{12}\expval{23}\expval{34}\expval{41}}\\
 	\end{aligned}
 \end{equation}
-Such that we in total have the amplitude
+Such that we in total have the form
 \begin{equation}
 	\begin{aligned}
 		\frac{\delta^{8}\left(\mathcal{Q}\right)\delta^{4}\left(P\right)}{\expval{12}\expval{23}\expval{34}\expval{41}}\delta((p_1+p_4)^2)
 	\end{aligned}
 \end{equation}
-\subsection{Four-point directly from C(2,4) matrix}
-The calculation this C-matrix can be performed either using face or edge variables. We are going to do both for good measure.
+This is not surprising since the diagram we considered is not a Feynman diagram. Rather the first diagram to give the four-point on-shell amplitude arises from gluing 4 three-point functions together
+\begin{figure}[H]\centering \hspace*{3cm}
+	\begin{tikzpicture}
+		\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
+			\draw[black,fill=gray] (0,0) circle (2.4mm);
+			\draw (1.5,0) circle (2.4mm);
+			\draw[black,fill=gray] (1.5,1.5) circle (2.4mm);
+			\draw (0,1.5) circle (2.4mm);
+			\draw[thick,black] (1.25,0) -- node {\midarrow} (0.25,0);
+			\draw[thick,black] (0.25,1.5) -- node {\midarrow} (1.25,1.5);
+			\draw[thick,black] (0,1.25) -- node {\midarrow} (0,0.25);
+			\draw[thick,black] (1.5,1.25) -- node {\midarrow} (1.5,0.25);
+			\draw[thick,black] (-0.18,-0.18) -- node {\midarrow} (-0.7,-0.7);
+			\draw[thick,black] (2.2,2.2) --  node {\midarrow}  (1.67,1.67) ;
+			\draw[thick,black] (-0.7,2.2) -- node {\midarrow} (-0.19,1.67);
+			\draw[thick,black] (1.65,-0.17) -- node {\midarrow} (2.2,-0.7);
+			\draw (0.75,0.75) circle (20.5mm);
+			\node[text width=3cm] at (0.4,2.4) {1};
+			\node[text width=3cm] at (3.9,2.4) {2};
+			\node[text width=3cm] at (3.9,-0.9) {3};
+			\node[text width=3cm] at (0.4,-0.9) {4};
+		\end{scope}
+	\node at (5,0.75) {$\rightarrow\frac{\delta^{8}\left(\mathcal{Q}\right)\delta^{4}\left(P\right)}{\expval{12}\expval{23}\expval{34}\expval{41}}$};
+	\end{tikzpicture}
+\end{figure}
+In the next section we will present two methods of getting the amplitude directly from the diagram.
+\subsection{Four-point directly from $G(2,4)$ matrix}
+The calculation this C-matrix can be performed either using face or edge variables. We are going to show how to do both for good measure.
 The four-point diagram with face-variables looks like this
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[H]\centering \hspace*{3cm}
@@ -332,6 +377,7 @@ with the constraint
 	\end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Using the above, we find the matrix to have the following entries
 \begin{equation}
 	\begin{aligned}
 		C=
@@ -341,9 +387,7 @@ with the constraint
 		\end{pmatrix}
 	\end{aligned}
 \end{equation}
-Note that $f_2$ doesn't show up, which means that according to \eqref{eq:prodf} we can take the remaining $f$'s as independent.
-
-Positivity (all minors are positive) then demands that
+Note that $f_2$ doesn't show up, which means that according to \eqref{eq:prodf} we can take the remaining $f$'s as independent. Positivity (all minors are positive) then demands that
 \begin{equation}
 	\begin{aligned}
 		f_0<0,~~~~f_1>0,~~~~f_2<0,~~~~f_3<0,~~~~
@@ -579,6 +623,7 @@ We can now calculate the form
 		\frac{\delta^{8}\left(\mathcal{Q}\right)\delta^{4}\left(P\right)}{\expval{12}\expval{23}\expval{34}\expval{41}}
 	\end{aligned}
 \end{equation}
+\section{Examples of on-shell diagrams at five and six points}
 \subsection{Five point}
 \begin{figure}[H]\centering\hspace*{3cm}
 	\begin{tikzpicture}
@@ -697,7 +742,7 @@ We are now easily able to get the form
 		\frac{\delta^{8}\left(\mathcal{Q}\right)\delta^{4}\left(P\right)}{\expval{12}\expval{23}\expval{34}\expval{45}\expval{51}}
 	\end{aligned}
 \end{equation}
-\subsection*{Five-point through loop kinematics}
+\subsection{Five-point through loop kinematics}
 We have the following relations among the helicity variables 
 \begin{equation}
 	\begin{aligned}
@@ -748,7 +793,7 @@ From this we have the following subamplitudes
 		&=\frac{[24]^3}{[12]\left[45\right][51]}
 	\end{aligned}
 \end{equation}
-\subsection*{Six-point NMHV}
+\subsection{Six-point NMHV}
 We first look at the 4+4 diagram
 % TODO: \usepackage{graphicx} required
 \begin{figure}[H]
@@ -922,7 +967,7 @@ such that
 		A_6^{\text{NMHV}}=A_6^{\text{MHV}}\left(R_{251}+R_{413}+R_{635}\right)
 	\end{aligned}
 \end{equation}
-\
+\section{Examples at higher loops}
 \subsection{2 loop four-point}
 We have the diagram
 \begin{figure}[H]
@@ -945,8 +990,8 @@ Solving the bosonic delta-functions
 	\end{aligned}
 \end{equation}
 we find
-\subsection{Calculating $\mathcal{N}<4$ amplitudes}
-\subsubsection{The measure}
+\section{Calculating $\mathcal{N}<4$ amplitudes}
+\subsection{The measure}
 The important difference between this and the $\mathcal{N}=4$ case is that the diagrams are necessarily oriented unlike in the maximally supersymmetric forms where the perfect orientations only played an auxiliary role for constructing the C-matrix. In addition, for perfect orientations with closed internal loops we have to add an extra factor, $\mathcal{J}$ , in
 the measure,
 \begin{equation}
@@ -1225,7 +1270,7 @@ Such a diagram can be thought of as a loop-level diagram, since the on-shell con
 \end{equation}
 \begin{equation}
 	\begin{aligned}
-		\delta^{6}(C_\perp\cdot \lambda)&\rightarrow\begin{cases}
+		\delta(C_\perp\cdot \lambda)&\rightarrow\begin{cases}
 	0&=-\langle 1 2 \rangle + \alpha_{2} \alpha_{5} \alpha_{6} \langle 1 5 \rangle
 		\\
 		0&=-((\alpha_{1} + \alpha_{2} \alpha_{6}) \langle 1 5 \rangle) + \langle 2 5 \rangle
@@ -1284,9 +1329,11 @@ Solving the delta-functions we find
 Such that
 \begin{equation}
 	\begin{aligned}
-		&\delta^{4}(C_\perp\cdot \lambda)\delta^{6}(C_\perp\cdot \lambda)\\
+		&\delta(C_\perp\cdot \lambda)\delta(C\cdot\tilde \lambda)\\
 		=&
-		\frac{\ab{15}^2\left(\alpha_7\ab{12}-\ab{13}\right)^{\phantom{2}}}{\ab{13}^2\left(\alpha_7\ab{25}-\ab{35}\right)^2}\delta^4( P)
+		\frac{\ab{15}^3}{\left(\alpha_7\ab{12}-\ab{13}\right)
+	\left(-\alpha_7\ab{25}+\ab{35}\right)^2	
+	}\delta^4( P)
 		\delta\left(\alpha_1+\frac{\ab{23}}{\alpha_7\ab{12}-\ab{13}}\right)
 		\delta\left(\alpha_2+\frac{\ab{12}}{\alpha_7\ab{12}-\ab{13}}\right)\\&
 		\delta\left(\alpha_3+\frac{\ab{45}}{\alpha_7\ab{25}-\ab{35}}\right)
@@ -1298,7 +1345,7 @@ Such that
 So that we get the form
 \begin{equation}
 	\begin{aligned}
-	\dd \Omega=	\frac{\left(\alpha_7 \ab{12}-\ab{13}\right)^2\ab{15}^3}{\alpha_7 \ab{12}\ab{13}^2\ab{23}\ab{45}\left(\alpha_7\ab{24}-\ab{34}\right)}
+	\dd \Omega=	\frac{\ab{15}^3}{\alpha_7 \ab{12}\ab{23}\ab{45}\left(\alpha_7\ab{24}-\ab{34}\right)}
 	\end{aligned}
 \end{equation}
 taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Parke-Taylor tree-level amplitude
@@ -1309,7 +1356,7 @@ taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Park
 \end{equation}
 Further, we note that the form has one other pole at $\alpha_7=\frac{\ab{34}}{\ab{24}}$.
 \subsection{One loop five-point in any $\mathcal{N}$}
-We will work on the following diagram.
+To get the form for e.g. $\mathcal{N}=1$, one needs to consider diagrams that contain internal closed  cycles. Here we will consider the following
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{5pt3l_2}
@@ -1403,6 +1450,30 @@ Further, the $\mathcal{N}=0$ Jacobian is
 	\begin{aligned}
 		J_a=\delta_a^{-1}=
 		\frac{\ab{25}\left(\alpha_7\ab{12}-\ab{13}\right)}{\ab{15}\ab{23}}
+	\end{aligned}
+\end{equation}
+\subsection{5 point from stitching subamplitudes}
+Once again we look at the following diagram
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{5pt3l3}
+	\caption{}
+	\label{fig:5pt3l_2}
+\end{figure}
+Where we have assigned 3 different loop-momenta, $\ell_1$, $\ell_2$, and $z$. 
+The momenta is found to be
+\begin{equation}
+	\begin{aligned}
+z=\alpha \lambda_2\tilde\lambda_3,~~~~~~
+	z_2 = \lambda_2\left(\alpha \tilde \lambda_3- \tilde \lambda_2\right)
+,~~~~~~
+	z_3 = \tilde \lambda_3\left(\alpha  \lambda_2+ \lambda_3\right)
+	\end{aligned}\\
+\end{equation}
+giving the full $\mathcal{N}=4$ form
+\begin{equation}
+	\begin{aligned}
+	\dd \Omega_5^{\ell}=\frac{\delta(P)\delta(Q)}{\alpha \ab{12}\ab{23}\ab{45}\ab{51}\left(\alpha\ab{24}+\ab{34}\right)}	
 	\end{aligned}
 \end{equation}
 \begin{thebibliography}{99}

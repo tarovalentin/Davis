@@ -16,7 +16,7 @@ latexto3 := {"Spbb[1, 2]"->"\\left[ 1 2 \\right]","Spbb[1, 3]"->"\\left[ 1 3 \\r
 latexto4 := {"a1"->"\\alpha_{1}","a2"->"\\alpha_{2}","a3"->"\\alpha_{3}","a4"->"\\alpha_{4}","a5"->"\\alpha_{5}","a6"->"\\alpha_{6}","a7"->"\\alpha_{7}","a8"->"\\alpha_{8}"};
 schoutenC = {Spaa[i_,j_] Spaa[l_,r_] Spbb[i_,k_]+Spaa[j_,r_] Spaa[l_,t_] Spbb[k_,t_]+Spaa[j_,r_] Spaa[l_,r_] Spbb[k_,r_]->Spaa[j,l]Spab[r,P[l]+P[t]+P[r],k]};
 SPAB = {Spaa[j_,i_] Spbb[j_,r_]+Spaa[k_,i_] Spbb[k_,r_]->-Spab[i,P[j]+P[k],r],Spaa[i_,j_] Spbb[r_,j_]+Spaa[i_,k_] Spbb[r_,k_]->-Spab[i,P[j]+P[k],r],-Spaa[j_,i_] Spbb[j_,r_]-Spaa[i_,k_] Spbb[r_,k_]-Spaa[i_,l_] Spbb[r_,l_]-Spaa[i_,nn_] Spbb[r_,nn_]->Spab[i,P[j]+P[k]+P[l]+P[nn],r],Spaa[j_,i_] Spbb[j_,r_]+Spaa[i_,k_] Spbb[r_,k_]->-Spab[i,P[j]+P[k],r],Spaa[j_,i_] Spbb[r_,j_]+Spaa[k_,i_] Spbb[r_,k_]->Spab[i,P[j]+P[k],r]};
-SPAB2 = {Spab[i_,P[j_],k_]->Spaa[i,j]Spbb[j,k]}
+SPAB2 = {Spab[i_,P[j_],k_]->Spaa[i,j]Spbb[j,k],Spab[i_,P[j_]+P[l_],k_]->Spaa[i,j]Spbb[j,k]+Spaa[i,l]Spbb[l,k]}
 SHtest = {Spab[i_,P[j_]+P[k_]+P[l_],r_]->Spaa[i,j]Spbb[j,r]+Spaa[i,k]Spbb[k,r]+Spaa[i,l]Spbb[l,r],s[i_,j_,k_]->Spaa[i,j]Spbb[j,i]+Spaa[i,k]Spbb[k,i]+Spaa[j,k]Spbb[k,j]};
 
 
@@ -109,13 +109,22 @@ Sol = Solve[{A1==0,A2==0,A3==0,A4==0,A5==0,A6==0},{a1,a2,a3,a4,a5,a6}]//Simplify
 Sol//.schoutenA
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*5 Pt from gluing 3 pt*)
 
 
-ToLoop = {Spaa[i_,l]->Spaa[i,1]/(Spaa[1,3]),Spaa[l,i_]->-Spaa[i,1]/(Spaa[1,3]),Spbb[l,i_]->Spab[3,P[1]+P[2],l],Spbb[i_,l]->-Spab[3,P[1]+P[2],l],Spaa[i_,lm1]->Spaa[2,3]Spaa[i,1]/(Spaa[1,3]),Spaa[lm1,i_]->-Spaa[2,3]Spaa[i,1]/(Spaa[1,3]),Spbb[lm1,i_]->Spbb[2,i],Spbb[i_,lm1]->Spbb[i,2]};
-Spaa[]
-Spaa[lm1,2]Spbb[2,lm1]//.ToLoop
+ToLoop = {Spaa[i_,l]->Spaa[i,1]/(Spaa[1,3]),Spaa[l,i_]->-Spaa[i,1]/(Spaa[1,3]),Spbb[l,i_]->Spab[3,P[1]+P[2],i],Spbb[i_,l]->-Spab[3,P[1]+P[2],i],Spaa[i_,lm1]->Spaa[2,3]Spaa[i,1]/(Spaa[1,3]),Spaa[lm1,i_]->-Spaa[2,3]Spaa[i,1]/(Spaa[1,3]),Spbb[lm1,i_]->Spbb[2,i],Spbb[i_,lm1]->Spbb[i,2],Spaa[i_,lm12]->Spaa[1,2]Spaa[i,3]/(Spaa[1,3]),Spaa[lm12,i_]->-Spaa[1,2]Spaa[i,3]/(Spaa[1,3]),Spbb[lm12,i_]->Spbb[2,i],Spbb[i_,lm12]->Spbb[i,2],Spaa[i_,lm123]->Spaa[i,3]/(Spaa[1,3]),Spaa[lm123,i_]->-Spaa[i,3]/(Spaa[1,3]),Spbb[i_,lm123]->-Spab[1,P[2]+P[3],i],Spbb[lm123,i_]->Spab[1,P[2]+P[3],i]};
+ToLoop3 = {Spab[i_,j___,lm1]->Spab[i,j,2]};
+ToLoop2 = {Spaa[i_,l2]->Spaa[i,5]/(Spaa[3,5]),Spaa[l2,i_]->-Spaa[i,5]/(Spaa[3,5]),Spbb[l2,i_]->Spab[3,P[1]+P[2],i],Spbb[i_,l2]->-Spab[3,P[1]+P[2],i],Spaa[i_,l2m5]->Spaa[3,4]Spaa[i,5]/(Spaa[3,5]),Spaa[l2m5,i_]->-Spaa[3,4]Spaa[i,5]/(Spaa[3,5]),Spbb[l2m5,i_]->Spbb[4,i],Spbb[i_,l2m5]->Spbb[i,4],Spaa[i_,l2m45]->Spaa[4,5]Spaa[i,3]/(Spaa[3,5]),Spaa[l2m45,i_]->-Spaa[4,5]Spaa[i,3]/(Spaa[3,5]),Spbb[l2m45,i_]->Spbb[4,i],Spbb[i_,l2m45]->Spbb[i,4]};
+A4 = 1/(Spaa[4,5]Spaa[5,l]Spaa[l,lm123]Spaa[lm123,4])//.ToLoop
+A31 = 1/(Spbb[l,1]Spbb[1,lm1]Spbb[lm1,l])//.ToLoop//.ToLoop3//.SPAB2
+A32 = 1/(Spaa[lm1,2]Spaa[2,lm12]Spaa[lm12,lm1])//.ToLoop//.ToLoop3//.SPAB2
+A33 = 1/(Spbb[lm12,3]Spbb[3,lm123]Spbb[lm123,lm12])//.ToLoop//.ToLoop3//.SPAB2
+A4*A31*A32*A33*s[1,2]^3s[2,3]^3/(Spaa[1,3]^4)//.s[i_,j_]->Spaa[i,j]Spbb[j,i]//FullSimplify
+
+
+
+
 
 
 (* ::Section::Closed:: *)
@@ -267,7 +276,7 @@ StringReplace[StringReplace[StringReplace[ToString[B6],latexto2],latexto3],latex
 StringReplace[StringReplace[StringReplace[ToString[B7],latexto2],latexto3],latexto4]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Loop calculation (extra internal parameter)*)
 
 
@@ -402,7 +411,7 @@ Solve[A4==0,a4]
 (*((Spaa[1,3] (a4 Spaa[1,2]+Spaa[1,5]-Spaa[2,5]))/Spaa[1,2]+Spaa[3,5])/(a2 (Spaa[1,3]/(a2 Spaa[1,5])) Spaa[1,5])//FullSimplify*)
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*5 pt three-loop third try (works!)*)
 
 
@@ -554,6 +563,39 @@ StringReplace[StringReplace[StringReplace[ToString[A4],latexto2],latexto3],latex
 StringReplace[StringReplace[StringReplace[ToString[A5],latexto2],latexto3],latexto4]
 "\\\\"
 StringReplace[StringReplace[StringReplace[ToString[A6],latexto2],latexto3],latexto4]
+
+
+(* ::Subsection::Closed:: *)
+(*5 pt three-loop other try,.*)
+
+
+A1 = a2==Spaa[1,2]/(Spaa[1,5] a5 a6);
+A2 = a1==-a2 a6+Spaa[2,5]/(Spaa[1,5]);
+A3 = a5==Spaa[1,3]/(Spaa[1,5]a6(1+a2 a7));
+A4 = a6==-a1 a7/(1+a2 a7)+Spaa[3,5]/(Spaa[1,5] (1+ a2 a7));
+A5 = a4==-a3 a5 a6+Spaa[1,4]/(Spaa[1,5]);
+A6 = a3==Spaa[4,5]/(Spaa[1,5]a6);
+Simplify[Sol = Solve[{A1,A2,A3,A4,A5,A6},{a1,a2,a3,a4,a5,a6}]//.schoutenA]
+
+
+(* ::InheritFromParent:: *)
+(*Sol ={{a1->-(Spaa[2,3]/(a7 Spaa[1,2]-Spaa[1,3])),a2->-(Spaa[1,2]/(a7 Spaa[1,2]-Spaa[1,3])),a3->-(Spaa[4,5]/(a7 Spaa[2,5]-Spaa[3,5])),a4->(a7 Spaa[2,4]-Spaa[3,4])/(a7 Spaa[2,5]-Spaa[3,5]),a5->(a7 Spaa[1,2]-Spaa[1,3])/(a7 Spaa[2,5]-Spaa[3,5]),a6->(-a7 Spaa[2,5]+Spaa[3,5])/Spaa[1,5]}}*)
+
+
+Simplify[(Collect[(a7 Spaa[1,4] Spaa[2,5]-Spaa[1,5] Spaa[3,4]-a7 Spaa[1,2] Spaa[4,5]),a7]//.schoutenA)/(a7 Spaa[1,5] Spaa[2,5]-Spaa[1,5] Spaa[3,5])]
+
+
+1/(a1 a2 a3 a4 a5 a6 a7)//.Sol//Simplify
+1/(a5 a6)*1/(a6(1+a2 a7))*1/(1+a2 a7)*1/(a6)//.Sol//Simplify
+1/(a1 a2 a3 a4 a5 a6 a7)*1/(a5 a6)*1/(a6(1+a2 a7))*1/(1+a2 a7)*1/(a6)//.Sol//Simplify
+
+
+a1 = -(Spaa[2,3]/(a7 Spaa[1,2]-Spaa[1,3]))//FullSimplify;
+a2 = -(Spaa[1,2]/(a7 Spaa[1,2]-Spaa[1,3]))//FullSimplify;
+a3 = -(Spaa[4,5]/(a7 Spaa[2,5]-Spaa[3,5]))//FullSimplify;
+a5 = (a7 Spaa[1,2]-Spaa[1,3])/(a7 Spaa[2,5]-Spaa[3,5])//FullSimplify;
+a4 = (-a7 Spaa[2,4]+Spaa[3,4])/(-a7 Spaa[2,5]+Spaa[3,5])//FullSimplify;
+a6 = (-a7 Spaa[2,5]+Spaa[3,5])/Spaa[1,5];
 
 
 (* ::Section::Closed:: *)
