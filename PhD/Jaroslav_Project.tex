@@ -143,8 +143,19 @@ In this section we introduce the notion of on-shell diagrams, and give examples 
 One can construct $(k\times n)$ C-matrices out of on-shell diagrams, where $k$ labels the number of negative helicity particles and $n$ is the total number of particles. The procedure to construct a matrix from a diagram is as follows
 \begin{itemize}
 	\item Label the edges of the on-shell diagram by $\alpha$'s.
-	\item Starting at one of the incoming particles (say, $2$), trace a path to one of the outgoing particles  (say, $4$). Multiply the $\alpha$'s encountered on the path. This would be entry $C_{2\,4}$ in the C-matrix
+	\item Starting at one of the incoming particles (say, $2$), trace a path to one of the outgoing particles  (say, $4$). Multiply the $\alpha$'s encountered on the path. This would be entry $C_{2\,4}$ in the C-matrix, i.e.
+	\begin{equation}
+		\begin{aligned}
+			C_{ab}=\sum_{\Gamma(a\to b)}\prod_j\alpha_j
+		\end{aligned}
+	\end{equation}
 	\item Going from an incoming particle to another incoming particle, put a $0$ in that matrix entry, unless it is the a path starting and ending in the same particle, then put a $1$.
+	\item If the path encounters an internal cycle that forms a complete loop, the matrix element is multiplied by the geometric series, labeled by $\delta$, containing the edge-variables encountered in that loop, i.e.
+	\begin{equation}
+		\begin{aligned}
+			\delta=\sum_{n=0}^\infty (\alpha_i \alpha_j\alpha_k \cdots)^n=\frac{1}{1- (\alpha_i \alpha_j\alpha_k \cdots)}
+		\end{aligned}
+	\end{equation}
 \end{itemize} 
 We will in this section calculate amplitudes through various techniques using the on-shell diagrams.
 \subsection{Three point on-shell form} 
@@ -333,7 +344,8 @@ This is not surprising since the diagram we considered is not a Feynman diagram.
 \end{figure}
 In the next section we will present two methods of getting the amplitude directly from the diagram.
 \subsection{Four-point directly from $G(2,4)$ matrix}
-The calculation this C-matrix can be performed either using face or edge variables. We are going to show how to do both for good measure.
+The calculation if the C-matrix can be performed either using face or edge variables. We are going to show how to do both for good measure.
+\subsubsection*{Using face-variables}
 The four-point diagram with face-variables looks like this
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[H]\centering \hspace*{3cm}
@@ -505,7 +517,7 @@ We can put it all together to obtain the form
 	\end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\subsubsection*{Using edge-variables}
 For the edge-variable case let us try a different orientation
 \begin{figure}[H]\centering\hspace*{3cm}
 	\begin{tikzpicture}
@@ -534,44 +546,32 @@ For the edge-variable case let us try a different orientation
 		\end{scope}
 	\end{tikzpicture}
 \end{figure}
-Here the $C$-matrix is now giving by
-\begin{equation}
-	\begin{aligned}
-		C_{ab}=\sum_{\Gamma(a\to b)}\prod_j\alpha_j
-	\end{aligned}
-\end{equation}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SO we get the following
+The $C$-matrix and its inverse are
 \begin{equation}
 	\begin{aligned}
 		C=
 		\begin{pmatrix}
 			1  & \alpha_1 & 0 & \alpha_4\\
 			0 &\alpha_2 &1 & \alpha_3
-		\end{pmatrix}
-	\end{aligned}
-\end{equation}
-With the inverse
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{equation}
-	\begin{aligned}
-		C^\perp=
-		\begin{pmatrix}
-			-\alpha_1  & 1 & -\alpha_2 & 0\\
-			-\alpha_4 & 0 &-\alpha_3 & 1
-		\end{pmatrix}
+		\end{pmatrix},~~~~~~~~~~~~
+			C^\perp=
+	\begin{pmatrix}
+		-\alpha_1  & 1 & -\alpha_2 & 0\\
+		-\alpha_4 & 0 &-\alpha_3 & 1
+	\end{pmatrix}
 	\end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The delta-function constraint on $C^\perp$ gives the following equations
 \begin{equation}
 	\begin{aligned}
-		C^\perp\cdot \lambda=0\Rightarrow\begin{cases}
+		\delta(C^\perp\cdot \lambda)\rightarrow\begin{cases}
 			-\alpha_1\lambda_1+\lambda_2-\alpha_3\lambda_3&=0\\
 			-\alpha_4\lambda_1-\alpha_2\lambda_3+\lambda_4&=0
 		\end{cases}
 	\end{aligned}
 \end{equation}
-turns into
+Which after contracting with $\lambda_1$ and $\lambda_2$ turns into
 \begin{equation}
 	\begin{aligned}
 		\expval{21} -\alpha_2 \expval{31}&=0\Rightarrow\alpha_2=\frac{\expval{12}}{\expval{13}}\\
@@ -584,7 +584,7 @@ Similarly we find
 		\alpha_3=\frac{\expval{14}}{\expval{13}},~~~~~~~~\alpha_4=\frac{\expval{43}}{\expval{13}}
 	\end{aligned}
 \end{equation}
-For the other delta functions $C\cdot \tilde\lambda$ gives us two equations. The first one is
+For the other delta function $\delta(C\cdot \tilde\lambda)$ we get the two equations. The first one is
 \begin{equation}
 	\begin{aligned}
 		0&=\tilde\lambda_1+\alpha_2\tilde\lambda_2+\alpha_4\tilde\lambda_4=\tilde\lambda_1+\frac{\expval{23}}{\expval{13}}\tilde\lambda_2+\frac{\expval{43}}{\expval{13}}\tilde\lambda_4\\
@@ -794,32 +794,47 @@ From this we have the following subamplitudes
 	\end{aligned}
 \end{equation}
 \subsection{Six-point NMHV}
-We first look at the 4+4 diagram
-% TODO: \usepackage{graphicx} required
+For the NMHV ($k=3$) amplitude at six-points we get three different diagrams. In our case we will look at
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\linewidth]{4+4}
-	\caption[4+4]{}
+	\includegraphics[width=0.9\linewidth]{nmhv}
+	\caption[]{}
 	\label{fig:44}
 \end{figure}
+
+We first look at the 4+4 diagram, which has the following C-matrices
+% TODO: \usepackage{graphicx} required
+\begin{equation}
+	\begin{aligned}
+		C=\begin{pmatrix}
+			\alpha_2 & 1 & \alpha_1 & 0 & 0 & 0\\
+			\alpha_6 \alpha_7 & 0 &\alpha_6 & 1 & \alpha_5 & 0\\
+			\alpha_3+\alpha_6\alpha_7\alpha_8 & 0 & \alpha_6\alpha_8  & 0 & \alpha_4 & 1
+		\end{pmatrix},~~~~	C^\perp=\begin{pmatrix}
+		1 & -\alpha_2 & 0 &-\alpha_6 \alpha_7 & 0 & -\alpha_3-\alpha_6\alpha_7\alpha_8\\
+		0  & -\alpha_1 & 1 & -\alpha_6 & 0 & -\alpha_6\alpha_8\\
+		0 & 0 & 0  & -\alpha_5 & 1 & -\alpha_4
+	\end{pmatrix}
+	\end{aligned}
+\end{equation}
 We then use the following combination of equation from the $C\cdot\tilde \lambda$ and $C_\perp\cdot \lambda$ delta functions
 \begin{equation}
 	\begin{aligned}
-0=&-\langle 3 4 \rangle + \alpha_{4} \langle 3 5 \rangle
+0=&-\langle 2 3 \rangle + \alpha_{4} \langle 2 4 \rangle
 \\
-0=&-(\alpha_{5} \langle 3 5 \rangle) + \langle 4 5 \rangle
+0=&-(\alpha_{5} \langle 2 4 \rangle) + \langle 3 4 \rangle
 \\
-0=&\left[ 1 2 \right] - \alpha_{2} \left[ 2 6 \right]
+0=&\left[ 6 1 \right] - \alpha_{2} \left[ 1 5 \right]
 \\
-0=&\left[ 1 6 \right] + \alpha_{1} \left[ 2 6 \right]
+0=&\left[ 6 5 \right] + \alpha_{1} \left[ 1 5 \right]
 \\
-0=&-\left[ 2 3 \right] - \alpha_{5} \left[ 2 4 \right] - \alpha_{6} \alpha_{7} \left[ 2 6 \right]
+0=&-\left[ 1 2 \right] - \alpha_{5} \left[ 1 3 \right] - \alpha_{6} \alpha_{7} \left[ 1 5 \right]
 \\
-0=&\alpha_{6} \left[ 2 6 \right] + \left[ 3 6 \right] + \alpha_{5} \left[ 4 6 \right]
+0=&\alpha_{6} \left[ 1 5 \right] + \left[ 2 5 \right] + \alpha_{5} \left[ 3 5 \right]
 \\
-0=&-(\alpha_{4} \left[ 2 4 \right]) - \left[ 2 5 \right] - (\alpha_{3} + \alpha_{6} \alpha_{7} \alpha_{8}) \left[ 2 6 \right]
+0=&-(\alpha_{4} \left[ 1 3 \right]) - \left[ 1 4 \right] - ( \alpha_{3} + \alpha_{6} \alpha_{7} \alpha_{8}) \left[ 1 5 \right]
 \\
-0=&\alpha_{6} \alpha_{8} \left[ 2 6 \right] + \alpha_{4} \left[ 4 6 \right] + \left[ 5 6 \right]
+0=&\alpha_{6} \alpha_{8} \left[ 1 5 \right] + \alpha_{4} \left[ 3 5 \right] + \left[ 4 5 \right]
 	\end{aligned}
 \end{equation}
 to obtain
@@ -1139,7 +1154,8 @@ Combining all these factors with $\prod_i \alpha_i=\frac{\ab{41}\ab{23}}{\ab{12}
 		&=\frac{\ab{12}^4\ab{34}^4+\ab{14}^4\ab{23}^4}{\ab{12}\ab{13}^4\ab{23}\ab{34}\ab{}}
 	\end{aligned}
 \end{equation}
-\subsubsection{Five-point $\mathcal{N}=0$}
+\subsubsection{Five-point $\mathcal{N}=0$, no internal cycle}
+For five and six points we will look at two different type of diagrams. First we analyze on without an internal cycle, i.e. has $\mathcal{J}=0$. As will be evident, this produces  the standard Yang-Mills amplitude. We then follow this by evaluating diagrams with internal cycles, which we can use to get forms for $\mathcal{N}\neq4$.
 We will once again look at the following diagram
 \begin{figure}[H]
 	\centering
@@ -1147,8 +1163,7 @@ We will once again look at the following diagram
 	\caption{}
 	\label{fig:5pt}
 \end{figure}
-We already solved this in section ....., here we obtained
-the following edgevariables after contracting with $\lambda_1$, $\lambda_3$, and $\lambda_5$
+We already solved this in section ------, here we obtainedthe following edgevariables after contracting with $\lambda_1$, $\lambda_3$, and $\lambda_5$
 \begin{equation}
 	\begin{aligned}
 		\alpha_1=\frac{\expval{23}}{\expval{13}},~~~~
@@ -1159,11 +1174,83 @@ the following edgevariables after contracting with $\lambda_1$, $\lambda_3$, and
 		\alpha_6=\frac{\expval{35}}{\expval{15}}
 	\end{aligned}
 \end{equation}
-and a Jacobian of $\frac{\ab{15}^2}{\expval{35}^2\expval{13}}$. For this diagram we have two negative helicity particles $1$ and $5$ which is seen from the incoming arrows at those points. The orientation of these external legs do not yield an internal orientation with a closed cycle, and so this is the only diagram we have to take into account and there is no extra Jacobian factor. Using $\prod_{i}\alpha_i=\frac{\ab{12}\ab{23}\ab{34}\ab{45}}{\ab{13}\ab{15}\ab{35}^2}$ The form then yields the amplitude
+and a Jacobian from solving the delta functions of $\frac{\ab{15}^2}{\expval{35}^2\expval{13}}$. For this diagram we have two negative helicity particles $1$ and $5$ which is seen from the incoming arrows at those points. The orientation of these external legs do not yield an internal orientation with a closed cycle, and so this is the only diagram we have to take into account and there is no extra Jacobian factor. Using $\prod_{i}\alpha_i=\frac{\ab{12}\ab{23}\ab{34}\ab{45}}{\ab{13}\ab{15}\ab{35}^2}$ The form then yields the amplitude
 \begin{equation}
 	\begin{aligned}
-		A_5(1^-,2^+,3^+,4^+,5^-)&=\frac{\ab{15}^2}{\expval{35}^2\expval{13}}\frac{\delta(P)}{\prod_i \alpha_i}\\
+		\dd \Omega_5(1^-,2^+,3^+,4^+,5^-)&=\frac{\ab{15}^2}{\expval{35}^2\expval{13}}\frac{\delta(P)}{\prod_i \alpha_i}\\
 		&=\frac{\ab{15}^4}{\ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}\delta(P)
+	\end{aligned}
+\end{equation}
+\subsection{Five point with internal cycles}
+We will now consider a diagram containing internal cycles. For the fixed helicity configuration of $(1^+,2^-,3^+,4^+,5^-)$ the diagrams below contribute
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{5pt3}
+	\caption{}
+	\label{fig:5pt}
+\end{figure}
+Denoting the left diagram by "$a$" and the right one by "$b$", the $C$-matrices are
+\begin{equation}
+	\begin{aligned}
+		C_a&=\left(
+		\begin{array}{ccccc}
+			\alpha _1 \delta_a & 1 & \alpha _1 \alpha _6 \delta_a & \alpha _1 \alpha _3 \alpha _6 \delta_a & 0 \\
+	\alpha _1 \alpha _2 \alpha _5 \alpha _6 \delta_a & 0 & \alpha _5 \alpha _6 \delta_a & \alpha _3 \alpha _5 \alpha _6 \delta_a+\alpha _4 & 1 \\
+		\end{array}
+		\right)
+		,~~~~
+		C_a^\perp = \left(
+		\begin{array}{ccccc}
+			1 & -\alpha _1 \delta_a & 0 & 0 & -\alpha _1 \alpha _2 \alpha _5 \alpha _6 \delta_a \\
+		0 & -\alpha _1 \alpha _6 \delta_a & 1 & 0 & -\alpha _5 \alpha _6 \delta_a \\
+		0 & -\alpha _1 \alpha _3 \alpha _6 \delta_a & 0 & 1 & -\alpha _3 \alpha _5 \alpha _6 \delta_a-\alpha _4 \\
+		\end{array}
+		\right)\\
+		C_b&=\left(
+		\begin{array}{ccccc}
+			\beta _2 \beta _6 \delta_b & 1 & \beta _2 \delta_b & \beta _2 \beta _3 \delta_b & 0 \\
+			\beta _5 \delta_b & 0 & \beta _1 \beta _2 \beta _5 \delta_b & \beta _1 \beta _2 \beta _3 \beta _5 \delta_b+\beta _4 & 1 \\
+		\end{array}
+		\right),~~~~~~~C_b^\perp =
+		\left(
+		\begin{array}{ccccc}
+			1 & -\beta _2 \beta _6 \delta_b & 0 & 0 & -\beta _5 \delta_b \\
+			0 & -\beta _2 \delta_b & 1 & 0 & -\beta _1 \beta _2 \beta _5 \delta_b \\
+			0 & -\beta _2 \beta _3 \delta_b & 0 & 1 & -\beta _1 \beta _2 \beta _3 \beta _5 \delta_b -\beta _4 \\
+		\end{array}
+		\right)
+	\end{aligned}
+\end{equation}
+Solving the delta-function constraints we are led to the following solutions for the edge variables
+\begin{equation}
+	\begin{aligned}
+		&\alpha_1=\frac{\expval{13}}{\expval{23}},~~~~
+		\alpha_2=-\frac{\expval{12}}{\expval{13}},~~~~
+		\alpha_3=\frac{\expval{45}}{\expval{35}},~~~~
+		\alpha_4=\frac{\expval{34}}{\expval{35}},~~~~
+		\alpha_5=\frac{\expval{13}}{\expval{35}},~~~~
+		\alpha_6=\frac{\expval{35}}{\expval{15}}\\
+	&\beta_1=-\frac{\expval{23}}{\expval{13}},~~~~
+	\beta_2=-\frac{\expval{13}}{\expval{12}},~~~~
+	\beta_3=\frac{\expval{45}}{\expval{35}},~~~~
+	\beta_4=\frac{\expval{34}}{\expval{35}},~~~~
+	\beta_5=-\frac{\expval{13}}{\expval{35}},~~~~
+	\beta_6=\frac{\expval{15}}{\expval{35}}
+	\end{aligned}
+\end{equation}
+along with a Jacobian from solving the delta functions of $\frac{\ab{13}\ab{25}^4}{\ab{15}^2\ab{23}^2\ab{35}^2}$ and $\frac{\ab{13}\ab{25}^4}{\ab{12}^2\ab{35}^2}$ respectively. The Jacobian from the internal loops are
+\begin{equation}
+	\begin{aligned}
+		J_a=\delta_a^{-1}=\frac{\ab{13}\ab{25}}{\ab{15}\ab{23}},~~~~~~J_b=\delta_a^{-1}=\frac{\ab{13}\ab{25}}{\ab{12}\ab{35}}
+	\end{aligned}
+\end{equation}
+The $\mathcal{N}=0$ form found by adding the diagrams is then
+\begin{equation}
+	\begin{aligned}
+		\dd\Omega
+		&=\left(\frac{\ab{13}\ab{25}^4}{\ab{15}^2\ab{23}^2\ab{35}^2}J_a^{-4}\prod_{i=1}^{5}\frac{1}{\alpha_i}+\frac{\ab{13}\ab{25}^4}{\ab{12}^2\ab{35}^2}J_b^{-4}\prod_{i=1}^{5}\frac{1}{\beta_i}\right)\delta(P)\\
+		&=\frac{\ab{25}^4}{\ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}\delta(P)\left(J_a^{-4}+J_b^{-4}\right)\\
+		&=\frac{\ab{15}^4\ab{23}^4+\ab{12}^4\ab{35}^4}{\ab{13}^4\ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}\delta(P)
 	\end{aligned}
 \end{equation}
 \subsubsection{Six-point $\mathcal{N}=0$}
@@ -1223,23 +1310,28 @@ The form is
 		\dd\Omega_{5+3}=\frac{\ab{26}^4 \sqb{35}^4}{s_{612}\ab{12}\ab{16}\aMs{6}{Q_{612}}{3}\aMs{2}{Q_{612}}{5}\sqb{34}\sqb{45}}
 	\end{aligned}
 \end{equation}
-\subsubsection{Jacobian from solving delta-function}
-The following property holds for the $\delta$-functions
+\subsection{Six point NMHV with internal cycles}
+We now consider a six point diagram with an internal cycle. Fixing the helicity configuration to $(1^+,2^-,3^+,4^-,5^+,6^-)$ and considering the 5+3 diagrams yields 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{3+5L}
+	\caption{}
+	\label{fig:5pt3l}
+\end{figure}
+Where another diagram with the internal cycle is reversed also contributes to the form. The edgevariables are found to be
 \begin{equation}
 	\begin{aligned}
-		\delta(kx)=\frac{1}{k}\delta(x)
+		& \alpha_1 = \frac{\sab{612}}{\aMs{6}{Q_{612}}{3}}\,, \quad \alpha_2 = \frac{[45]}{[34]}\,, \quad \alpha_3 = \frac{[45]\aMs{2}{Q_{612}}{3}}{[34]\aMs{2}{Q_{612}}{4}}\,, \quad \alpha_4 = -\frac{\aMs{2}{Q_{612}}{4}}{\aMs{2}{Q_{612}}{5}}\,,\\ 
+		&\alpha_5 = \frac{\aMs{2}{Q_{612}}{4}}{\ab{62}[45]}\,, 
+		\quad
+		\alpha_6 = \frac{\ab{12}}{\ab{62}}\,,\quad \alpha_7 = \frac{\ab{61}}{\ab{62}}\,,\quad
+		\alpha_8 = - \frac{\aMs{6}{Q_{612}}{3}}{\aMs{2}{Q_{612}}{3}}\,.
 	\end{aligned}
 \end{equation}
-which means that for instance when multiplying a deltafunction by a spinor one has
+The Jacobian from solving the delta functions is
 \begin{equation}
 	\begin{aligned}
-		\delta(\lambda_i)=\lambda_j\delta(\lambda_j\lambda_i)
-	\end{aligned}
-\end{equation}
-Or, using spinor helicity bracket notation
-\begin{equation}
-	\begin{aligned}
-		\delta(\lambda_i)\delta(\lambda_j)=\ab{kl}\delta(\lambda_k\lambda_i)\delta(\lambda_l\lambda_j)
+		\frac{\ab{26}\sqb{35}^4\aMs{2}{Q_{612}}{4}}{\sqb{34}^2\aMs{2}{Q_{612}}{5}^2\aMs{2}{Q_{612}}{3}}
 	\end{aligned}
 \end{equation}
 \subsection{One loop five-point in $\mathcal{N}=0$}
@@ -1474,6 +1566,26 @@ giving the full $\mathcal{N}=4$ form
 \begin{equation}
 	\begin{aligned}
 	\dd \Omega_5^{\ell}=\frac{\delta(P)\delta(Q)}{\alpha \ab{12}\ab{23}\ab{45}\ab{51}\left(\alpha\ab{24}+\ab{34}\right)}	
+	\end{aligned}
+\end{equation}
+\appendix
+\section{Jacobian from solving delta-function}
+The following property holds for the $\delta$-functions
+\begin{equation}
+	\begin{aligned}
+		\delta(kx)=\frac{1}{k}\delta(x)
+	\end{aligned}
+\end{equation}
+which means that for instance when multiplying a deltafunction by a spinor one has
+\begin{equation}
+	\begin{aligned}
+		\delta(\lambda_i)=\lambda_j\delta(\lambda_j\lambda_i)
+	\end{aligned}
+\end{equation}
+Or, using spinor helicity bracket notation
+\begin{equation}
+	\begin{aligned}
+		\delta(\lambda_i)\delta(\lambda_j)=\ab{kl}\delta(\lambda_k\lambda_i)\delta(\lambda_l\lambda_j)
 	\end{aligned}
 \end{equation}
 \begin{thebibliography}{99}
