@@ -982,29 +982,6 @@ such that
 		A_6^{\text{NMHV}}=A_6^{\text{MHV}}\left(R_{251}+R_{413}+R_{635}\right)
 	\end{aligned}
 \end{equation}
-\section{Examples at higher loops}
-\subsection{2 loop four-point}
-We have the diagram
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\linewidth]{two-loop}
-	\caption{}
-	\label{fig:two-loop}
-\end{figure}
-Solving the bosonic delta-functions
-\begin{equation}
-	\begin{aligned}
-		0&=\alpha_{4} \langle 1 2 \rangle + \alpha_{3} \alpha_{5} \langle 1 2 \rangle - \langle 1 3 \rangle
-		\\
-		0&=\alpha_{2} \alpha_{3} \alpha_{5} \langle 1 2 \rangle - \langle 2 3 \rangle
-		\\
-		0&=\alpha_{3} \langle 1 2 \rangle - \langle 1 4 \rangle
-		\\
-		0&=-((\alpha_{1} + \alpha_{2} \alpha_{3}) \langle 1 2 \rangle) - \langle 2 4 \rangle
-		\\
-	\end{aligned}
-\end{equation}
-we find
 \section{Calculating $\mathcal{N}<4$ amplitudes}
 \subsection{The measure}
 The important difference between this and the $\mathcal{N}=4$ case is that the diagrams are necessarily oriented unlike in the maximally supersymmetric forms where the perfect orientations only played an auxiliary role for constructing the C-matrix. In addition, for perfect orientations with closed internal loops we have to add an extra factor, $\mathcal{J}$ , in
@@ -1034,7 +1011,7 @@ Here we have three loops containing one phase variable, contributing each $f_1,f
 		\mathcal{J}=1+f_1+f_3+f_2^{-1}+f_2^{-1}f_4^{-1}+f_1f_3
 	\end{aligned}
 \end{equation}
-\subsubsection{ 4 pt $\mathcal{N}=0$}
+\subsection{ 4 pt $\mathcal{N}=0$}
 In this case we have two diagrams
 \begin{figure}[H]
 	\centering
@@ -1154,7 +1131,7 @@ Combining all these factors with $\prod_i \alpha_i=\frac{\ab{41}\ab{23}}{\ab{12}
 		&=\frac{\ab{12}^4\ab{34}^4+\ab{14}^4\ab{23}^4}{\ab{12}\ab{13}^4\ab{23}\ab{34}\ab{}}
 	\end{aligned}
 \end{equation}
-\subsubsection{Five-point $\mathcal{N}=0$, no internal cycle}
+\subsection{Five-point $\mathcal{N}=0$, no internal cycle}
 For five and six points we will look at two different type of diagrams. First we analyze on without an internal cycle, i.e. has $\mathcal{J}=0$. As will be evident, this produces  the standard Yang-Mills amplitude. We then follow this by evaluating diagrams with internal cycles, which we can use to get forms for $\mathcal{N}\neq4$.
 We will once again look at the following diagram
 \begin{figure}[H]
@@ -1244,7 +1221,15 @@ along with a Jacobian from solving the delta functions of $\frac{\ab{13}\ab{25}^
 		J_a=\delta_a^{-1}=\frac{\ab{13}\ab{25}}{\ab{15}\ab{23}},~~~~~~J_b=\delta_a^{-1}=\frac{\ab{13}\ab{25}}{\ab{12}\ab{35}}
 	\end{aligned}
 \end{equation}
-The $\mathcal{N}=0$ form found by adding the diagrams is then
+One can note that these can be rewritten using Schouten,
+\begin{equation}
+	\begin{aligned}
+		J_a=1+\frac{\ab{12}\ab{35}}{\ab{15}\ab{23}}\equiv1+f^{-1},~~~~J_a=1+\frac{\ab{15}\ab{23}}{\ab{12}\ab{35}}\equiv1+f
+	\end{aligned}
+\end{equation}
+and since, as we will se shortly, the forms produced by the individual diagrams only differ by this Jacobian, one does not have to go through the calculation of both diagrams, but can instead infer, the Jacobian by rewriting it in this form.
+
+Using this, the $\mathcal{N}=0$ form found by adding the diagrams is then
 \begin{equation}
 	\begin{aligned}
 		\dd\Omega
@@ -1328,13 +1313,48 @@ Where another diagram with the internal cycle is reversed also contributes to th
 		\alpha_8 = - \frac{\aMs{6}{Q_{612}}{3}}{\aMs{2}{Q_{612}}{3}}\,.
 	\end{aligned}
 \end{equation}
-The Jacobian from solving the delta functions is
+The Jacobian from solving the delta functions is $ \frac{\ab{26}\sqb{35}^4\aMs{2}{Q_{612}}{4}}{\sqb{34}^3\aMs{2}{Q_{612}}{5}^2\aMs{2}{Q_{612}}{3}}$ while the internal cycle Jacobian is
 \begin{equation}
 	\begin{aligned}
-		\frac{\ab{26}\sqb{35}^4\aMs{2}{Q_{612}}{4}}{\sqb{34}^2\aMs{2}{Q_{612}}{5}^2\aMs{2}{Q_{612}}{3}}
+		J_a=\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{4}\sqb{35}}
 	\end{aligned}
 \end{equation}
-\subsection{One loop five-point in $\mathcal{N}=0$}
+Using the approach described at five-point we can infer the Jacobian of the diagam with opposite cycle to be
+\begin{equation}
+	\begin{aligned}
+		J_b=-\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{3}\sqb{45}}
+	\end{aligned}
+\end{equation}
+The form is then
+\begin{equation}
+	\begin{aligned}
+		\dd\Omega&=\frac{\ab{26}^4\sqb{24}^4}{s_{612}\ab{12}\ab{16}\sqb{34}\sqb{45}\aMs{2}{Q_{612}}{5}\aMs{6}{Q_{612}}{3}}\left[\left(\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{4}\sqb{35}}\right)^{-4}+\left(-\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{3}\sqb{45}}\right)^{-4}\right]
+	\end{aligned}
+\end{equation}
+\section{Higher loops}
+\subsection{2 loop four-point}
+We have the diagram
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{two-loop}
+	\caption{}
+	\label{fig:two-loop}
+\end{figure}
+Solving the bosonic delta-functions
+\begin{equation}
+	\begin{aligned}
+		0&=\alpha_{4} \langle 1 2 \rangle + \alpha_{3} \alpha_{5} \langle 1 2 \rangle - \langle 1 3 \rangle
+		\\
+		0&=\alpha_{2} \alpha_{3} \alpha_{5} \langle 1 2 \rangle - \langle 2 3 \rangle
+		\\
+		0&=\alpha_{3} \langle 1 2 \rangle - \langle 1 4 \rangle
+		\\
+		0&=-((\alpha_{1} + \alpha_{2} \alpha_{3}) \langle 1 2 \rangle) - \langle 2 4 \rangle
+		\\
+	\end{aligned}
+\end{equation}
+we find
+\subsection{Threes loop five-point in $\mathcal{N}=0$}
 One might also consider diagrams with an extra internal parameter. At five-point an example of this is shown below
 \begin{figure}[H]
 	\centering
