@@ -623,47 +623,54 @@ We can now calculate the form
 		\frac{\delta^{8}\left(\mathcal{Q}\right)\delta^{4}\left(P\right)}{\expval{12}\expval{23}\expval{34}\expval{41}}
 	\end{aligned}
 \end{equation}
+\newpage
 \section{Examples of on-shell diagrams at five and six points}
 \subsection{Five point}
-\begin{figure}[H]\centering\hspace*{3cm}
-	\begin{tikzpicture}
-		\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
-			\draw[black,fill=gray] (0,0) circle (2.4mm);
-			\draw (1.5,0) circle (2.4mm);
-			\draw[black,fill=gray] (1.5,1.5) circle (2.4mm);
-			\draw (0,1.5) circle (2.4mm);
-			\draw (-1.1,2.25) circle (2.4mm);
-			\draw (-1.1,-0.7) circle (2.4mm);
-			\draw (-2.5,0.75)[black,fill=gray]  circle (2.4mm);
-			\draw[thick,black] (1.25,0) -- node {\midarrow} (0.25,0);
-			\node[text width=0.5cm] at (0.75,-0.3) {$\alpha_3$};
-			\draw[thick,black] (1.25,1.5)  -- node {\midarrow}  (0.25,1.5);
-			\node[text width=0.5cm] at (0.75,1.8) {$\alpha_1$};
-			\draw[thick,black] (0,1.25) -- node {\midarrow} (0,0.25);
-			\node[text width=0.5cm] at (-0.3,0.75) {$\alpha_6$};
-			\draw[thick,black] (1.5,0.25) -- node {\midarrow} (1.5,1.25);
-			\node[text width=0.5cm] at (1.95,0.75) {$\alpha_2$};
-			\draw[thick,black] (1.5,0.25) -- node {\midarrow} (1.5,1.25);
-			\draw[thick,black] (-1.3,-0.6) -- node {\midarrow} (-2.35,0.56);
-			\node[text width=0.5cm] at (-2.1,-0.3) {$\alpha_1$};
-			\draw[thick,black] (-1.3,2.1) -- node {\midarrow} (-2.35,0.95);
-			\node[text width=0.5cm] at (-2.1,1.8) {$\alpha_2$};
-			%			
-			\draw[thick,black] (-0.18,-0.18) -- node {\midarrow} (-0.9,-0.6);
-			\draw[thick,black] (-3.55,0.75) -- node {\midarrow} (-2.75,0.74);
-			\draw[thick,black] (1.67,1.67) --  node {\midarrow} (2.2,2.2);
-			\draw[thick,black] (-0.9,2.1) -- node {\midarrow} (-0.19,1.67);
-			\draw[thick,black] (2.2,-0.7) -- node {\midarrow} (1.65,-0.17);
-			\draw[thick,black] (-1.11,-2.25) -- node {\midarrow} (-1.11,-0.95);
-			\draw[thick,black] (-1.11,3.75) -- node {\midarrow} (-1.11,2.5);
-			\draw (-0.5,0.75) circle (30.5mm);
-			%\node[text width=3cm] at (0.4,2.4) {1};
-			\node[text width=3cm] at (3.9,2.4) {4};
-			\node[text width=3cm] at (3.9,-0.9) {5};
-			%\node[text width=3cm] at (0.4,-0.9) {4};
-		\end{scope}
-	\end{tikzpicture}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{5pt}
+	\caption{}
+	\label{fig:5pt}
 \end{figure}
+%\begin{figure}[H]\centering\hspace*{3cm}
+%	\begin{tikzpicture}
+%		\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
+%			\draw[black,fill=gray] (0,0) circle (2.4mm);
+%			\draw (1.5,0) circle (2.4mm);
+%			\draw[black,fill=gray] (1.5,1.5) circle (2.4mm);
+%			\draw (0,1.5) circle (2.4mm);
+%			\draw (-1.1,2.25) circle (2.4mm);
+%			\draw (-1.1,-0.7) circle (2.4mm);
+%			\draw (-2.5,0.75)[black,fill=gray]  circle (2.4mm);
+%			\draw[thick,black] (1.25,0) -- node {\midarrow} (0.25,0);
+%			\node[text width=0.5cm] at (0.75,-0.3) {$\alpha_3$};
+%			\draw[thick,black] (1.25,1.5)  -- node {\midarrow}  (0.25,1.5);
+%			\node[text width=0.5cm] at (0.75,1.8) {$\alpha_1$};
+%			\draw[thick,black] (0,1.25) -- node {\midarrow} (0,0.25);
+%			\node[text width=0.5cm] at (-0.3,0.75) {$\alpha_6$};
+%			\draw[thick,black] (1.5,0.25) -- node {\midarrow} (1.5,1.25);
+%			\node[text width=0.5cm] at (1.95,0.75) {$\alpha_2$};
+%			\draw[thick,black] (1.5,0.25) -- node {\midarrow} (1.5,1.25);
+%			\draw[thick,black] (-1.3,-0.6) -- node {\midarrow} (-2.35,0.56);
+%			\node[text width=0.5cm] at (-2.1,-0.3) {$\alpha_1$};
+%			\draw[thick,black] (-1.3,2.1) -- node {\midarrow} (-2.35,0.95);
+%			\node[text width=0.5cm] at (-2.1,1.8) {$\alpha_2$};
+%			%			
+%			\draw[thick,black] (-0.18,-0.18) -- node {\midarrow} (-0.9,-0.6);
+%			\draw[thick,black] (-3.55,0.75) -- node {\midarrow} (-2.75,0.74);
+%			\draw[thick,black] (1.67,1.67) --  node {\midarrow} (2.2,2.2);
+%			\draw[thick,black] (-0.9,2.1) -- node {\midarrow} (-0.19,1.67);
+%			\draw[thick,black] (2.2,-0.7) -- node {\midarrow} (1.65,-0.17);
+%			\draw[thick,black] (-1.11,-2.25) -- node {\midarrow} (-1.11,-0.95);
+%			\draw[thick,black] (-1.11,3.75) -- node {\midarrow} (-1.11,2.5);
+%			\draw (-0.5,0.75) circle (30.5mm);
+%			%\node[text width=3cm] at (0.4,2.4) {1};
+%			\node[text width=3cm] at (3.9,2.4) {4};
+%			\node[text width=3cm] at (3.9,-0.9) {5};
+%			%\node[text width=3cm] at (0.4,-0.9) {4};
+%		\end{scope}
+%	\end{tikzpicture}
+%\end{figure}
 Each vertex can fix one edge-variable, however you cannot do it in such a way that all variables in a vertex is fixed.
 The $C$ matrix is
 \begin{equation}
@@ -982,6 +989,7 @@ such that
 		A_6^{\text{NMHV}}=A_6^{\text{MHV}}\left(R_{251}+R_{413}+R_{635}\right)
 	\end{aligned}
 \end{equation}
+\newpage
 \section{Calculating $\mathcal{N}<4$ amplitudes}
 \subsection{The measure}
 The important difference between this and the $\mathcal{N}=4$ case is that the diagrams are necessarily oriented unlike in the maximally supersymmetric forms where the perfect orientations only played an auxiliary role for constructing the C-matrix. In addition, for perfect orientations with closed internal loops we have to add an extra factor, $\mathcal{J}$ , in
@@ -1015,7 +1023,7 @@ Here we have three loops containing one phase variable, contributing each $f_1,f
 In this case we have two diagrams
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.1\linewidth]{YM4pt}
+	\includegraphics[width=0.7\linewidth]{YM4pt}
 	\caption{}
 	\label{fig:jexample}
 \end{figure}
@@ -1128,7 +1136,7 @@ Combining all these factors with $\prod_i \alpha_i=\frac{\ab{41}\ab{23}}{\ab{12}
 \begin{equation}
 	\begin{aligned}
 		\dd \Omega &= \left(\frac{\ab{24}^4}{\ab{12}^2\ab{34}^2}\frac{ \ab{12}\ab{34}}{\ab{41}\ab{23} } \left[\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 2 \rangle \langle 34 \rangle}\right]^{-4}+\frac{\ab{24}^4}{\ab{14}^2\ab{23}^2}\frac{\ab{23}\ab{41}}{\ab{12}\ab{34}}\left[	\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 4 \rangle \langle 23 \rangle}\right]^{-4}\right)\delta(P)\\
-		&=\frac{\ab{12}^4\ab{34}^4+\ab{14}^4\ab{23}^4}{\ab{12}\ab{13}^4\ab{23}\ab{34}\ab{}}
+		&=\frac{\ab{12}^4\ab{34}^4+\ab{14}^4\ab{23}^4}{\ab{12}\ab{13}^4\ab{23}\ab{34}\ab{41}}
 	\end{aligned}
 \end{equation}
 \subsection{Five-point $\mathcal{N}=0$, no internal cycle}
@@ -1266,35 +1274,6 @@ such that the form is
 		\dd\Omega_{4+4}=\frac{\ab{24}^4 \sqb{15}^4}{s_{234}\ab{23}\ab{34}\aMs{2}{Q_{234}}{5}\aMs{4}{Q_{234}}{1}\sqb{61}\sqb{56}}
 	\end{aligned}
 \end{equation}
-For the 5+3 diagram we once again use the results from the previous section. The diagram is
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\linewidth]{5ptYM}
-	\caption{}
-	\label{fig:5pt}
-\end{figure}
-With the following edgevariables
-\begin{equation}
-	\begin{aligned}
-		& \alpha_1 = \frac{\sab{612}}{\aMs{6}{Q_{612}}{3}}\,, \quad \alpha_2 = \frac{[45]}{[34]}\,, \quad \alpha_3 = \frac{[45]\aMs{2}{Q_{612}}{3}}{[34]\aMs{2}{Q_{612}}{4}}\,, \quad \alpha_4 = \frac{\aMs{2}{Q_{612}}{5}}{\aMs{2}{Q_{612}}{4}}\,,\\ 
-		&\alpha_5 = \frac{\aMs{2}{Q_{612}}{4}}{\ab{62}[45]}\,, 
-		\quad
-		\alpha_6 = \frac{\ab{12}}{\ab{62}}\,,\quad \alpha_7 = \frac{\ab{61}}{\ab{62}}\,,\quad
-		\alpha_8 =  \frac{\aMs{6}{Q_{612}}{3}}{\aMs{2}{Q_{612}}{3}}\,.
-	\end{aligned}
-\end{equation}
-Here the Jacobian from the delta functions is
-\begin{equation}
-	\begin{aligned}
-		J=\frac{[35]^4\expval{62}}{\sqb{34}^3\aMs{2}{Q_{612}}{4}\aMs{6}{Q_{612}}{3}}
-	\end{aligned}
-\end{equation}
-The form is
-\begin{equation}
-	\begin{aligned}
-		\dd\Omega_{5+3}=\frac{\ab{26}^4 \sqb{35}^4}{s_{612}\ab{12}\ab{16}\aMs{6}{Q_{612}}{3}\aMs{2}{Q_{612}}{5}\sqb{34}\sqb{45}}
-	\end{aligned}
-\end{equation}
 \subsection{Six point NMHV with internal cycles}
 We now consider a six point diagram with an internal cycle. Fixing the helicity configuration to $(1^+,2^-,3^+,4^-,5^+,6^-)$ and considering the 5+3 diagrams yields 
 \begin{figure}[H]
@@ -1331,12 +1310,18 @@ The form is then
 		\dd\Omega&=\frac{\ab{26}^4\sqb{24}^4}{s_{612}\ab{12}\ab{16}\sqb{34}\sqb{45}\aMs{2}{Q_{612}}{5}\aMs{6}{Q_{612}}{3}}\left[\left(\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{4}\sqb{35}}\right)^{-4}+\left(-\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{3}\sqb{45}}\right)^{-4}\right]
 	\end{aligned}
 \end{equation}
+\begin{equation}
+	\begin{aligned}
+		q-3=\frac{s_{126}}{\aMs{2}{Q_{126}}{3}}\lambda_2\tilde \lambda_3,~~~~q=\frac{s_{126}}{\aMs{2}{Q_{126}}{3}}\lambda_2\tilde\lambda_3
+	\end{aligned}
+\end{equation}
+\newpage
 \section{Higher loops}
 \subsection{2 loop four-point}
 We have the diagram
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth]{two-loop}
+	\includegraphics[width=0.7\linewidth]{two-loop}
 	\caption{}
 	\label{fig:two-loop}
 \end{figure}
@@ -1354,13 +1339,13 @@ Solving the bosonic delta-functions
 	\end{aligned}
 \end{equation}
 we find
-\subsection{Threes loop five-point in $\mathcal{N}=0$}
+\subsection{Three loop five-point in $\mathcal{N}=0$}
 One might also consider diagrams with an extra internal parameter. At five-point an example of this is shown below
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{5pt3l}
 	\caption{}
-	\label{fig:5pt3l}
+	\label{fig:5pt3l_1}
 \end{figure}
 Such a diagram can be thought of as a loop-level diagram, since the on-shell condition imposed on the three loop momenta leaves us with $3\times 4-11=1$ unfixed parameter. The C-matrices are
 \begin{equation}
@@ -1467,13 +1452,13 @@ taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Park
 	\end{aligned}
 \end{equation}
 Further, we note that the form has one other pole at $\alpha_7=\frac{\ab{34}}{\ab{24}}$.
-\subsection{One loop five-point in any $\mathcal{N}$}
+\subsection{Three loop five-point in any $\mathcal{N}$}
 To get the form for e.g. $\mathcal{N}=1$, one needs to consider diagrams that contain internal closed  cycles. Here we will consider the following
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{5pt3l_2}
 	\caption{}
-	\label{fig:5pt3l_2}
+	\label{fig:5pt3l_3}
 \end{figure}
 The C-matrices obtained are
 \begin{equation}
@@ -1532,7 +1517,7 @@ Solving the delta-functions we find
 \end{equation}
 \begin{equation}
 	\begin{aligned}
-		&\delta^{4}(C_\perp\cdot \lambda)\delta^{6}(C_\perp\cdot \lambda)\\
+		&\delta(C_\perp\cdot \lambda)\delta(C\cdot \tilde \lambda)\\
 		=&
 		\frac{\ab{15}^4\left(\alpha_7\ab{12}-\ab{13}\right)^{\phantom{2}}}{\ab{15}^2\ab{23}^2 \left(-\alpha_7\ab{25}+\ab{35}\right)^2}\delta^4( P)
 		\delta\left(\alpha_1+\frac{
@@ -1557,57 +1542,75 @@ taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Park
 		\dd \Omega=	\frac{\ab{15}^4}{ \ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}
 	\end{aligned}
 \end{equation}
-Further, the $\mathcal{N}=0$ Jacobian is
+Further, the $\mathcal{N} \neq4$ Jacobian is
 \begin{equation}
 	\begin{aligned}
 		J_a=\delta_a^{-1}=
 		\frac{\ab{25}\left(\alpha_7\ab{12}-\ab{13}\right)}{\ab{15}\ab{23}}
 	\end{aligned}
 \end{equation}
-\subsection{5 point from stitching subamplitudes}
-Once again we look at the following diagram
+While the Jacobian for the diagram with the internal cycle in the opposite direction is
+\begin{equation}
+	\begin{aligned}
+		J_b=
+		\frac{\ab{25}\left(\alpha_7\ab{12}-\ab{13}\right)}{\ab{12}\left(\alpha_7\ab{25}-\ab{35}\right)}
+	\end{aligned}
+\end{equation}
+Which gives the total $\mathcal{N}=0$ Form
+\begin{equation}
+	\begin{aligned}
+		 \dd\Omega =\frac{\ab{25}^4}{\alpha_7 \ab{12}\ab{51}\ab{23}\ab{45}\left(\alpha_7\ab{24}-\ab{34}\right)}\left(	\left[\frac{\ab{25}\left(\alpha_7\ab{12}-\ab{13}\right)}{\ab{15}\ab{23}}\right]^{-4}+
+		\left[\frac{\ab{25}\left(\alpha_7\ab{12}-\ab{13}\right)}{\ab{12}\left(\alpha_7\ab{25}-\ab{35}\right)}\right]^{-4}\right)
+	\end{aligned}
+\end{equation}
+\subsection{Singularities}
+To look at the singularity structure of the five-point three-loop on-shell diagram, we once again  look at 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{5pt3l3}
 	\caption{}
 	\label{fig:5pt3l_2}
 \end{figure}
-Where we have assigned 3 different loop-momenta, $\ell_1$, $\ell_2$, and $z$. 
+Where we have assigned 3 different loop-momenta, $\ell_1$, $\ell_2$, and $\ell_3$. 
 The momenta is found to be
 \begin{equation}
 	\begin{aligned}
-z=\alpha \lambda_2\tilde\lambda_3,~~~~~~
-	z_2 = \lambda_2\left(\alpha \tilde \lambda_3- \tilde \lambda_2\right)
+\ell_3&=\textcolor{blue}{z} \lambda_2\tilde\lambda_3,~~~~~~
+	\ell_3+2 = \lambda_2\left(z \tilde \lambda_3- \tilde \lambda_2\right)
 ,~~~~~~
-	z_3 = \tilde \lambda_3\left(\alpha  \lambda_2+ \lambda_3\right)
-	\end{aligned}\\
-\end{equation}
-giving the full $\mathcal{N}=4$ form
-\begin{equation}
-	\begin{aligned}
-	\dd \Omega_5^{\ell}=\frac{\delta(P)\delta(Q)}{\alpha \ab{12}\ab{23}\ab{45}\ab{51}\left(\alpha\ab{24}+\ab{34}\right)}	
+	\ell_3-3 = \tilde \lambda_3\left(z  \lambda_2+ \lambda_3\right)\\
+	\ell_1&=\frac{\lambda_1}{z\ab{12}-\ab{13}}\left(z\aMs{2}{Q_{123}}{\bm\cdot}-\aMs{3}{Q_{123}}{\bm\cdot}\right),~~~
+	\ell_2=-\frac{\lambda_5}{z\ab{25}-\ab{35}}\left(z\aMs{2}{Q_{123}}{\bm\cdot}-\aMs{3}{Q_{123}}{\bm\cdot}\right)\\
+	\ell_2-5&=\textcolor{red}{\frac{z\ab{24}-\ab{34}}{z\ab{25}-\ab{35}}}\lambda_5\tilde\lambda_4,~~~~\ell_2-Q_{45}=
+\textcolor{orange}{	\frac{\ab{45}}{z\ab{25}-\ab{35}}}\tilde\lambda_4\left(z\lambda_2-\lambda_3\right)\\
+	\ell_1-1&=\textcolor{ForestGreen}{\frac{\ab{23}}{z\ab{12}-\ab{13}}}\lambda_1\left(z\tilde \lambda_3+\tilde\lambda_2 \right),~~~~~\\
+	\ell_1+\ell_2&=
+	\frac{\ab{15}\left(z\lambda_2-\lambda_3\right)}{\left(z\ab{12}-\ab{13}\right)\left(z\ab{25}-\ab{35}\right)}\left(z\aMs{2}{Q_{123}}{\bm\cdot}-\aMs{3}{Q_{123}}{\bm\cdot}\right)\\
 	\end{aligned}
 \end{equation}
+First we note that after identifying $\textcolor{blue}{z=-\alpha_7}$ the $\mathcal{N}=4$ form found by combining three-point amplitudes using the momenta above, matches the results obtained in the previous sections
+\begin{equation}
+	\begin{aligned}
+	\dd \Omega_5=\frac{\delta(P)\delta(Q)}{z \ab{12}\ab{23}\ab{45}\ab{51}\left(z\ab{24}+\ab{34}\right)}
+	\end{aligned}
+\end{equation}
+Further we see that the $\ell_2-5$ coefficient directly corresponds to the $\textcolor{red}{\alpha_4}$ edge, and below we have highlighted some of the edgevariables where the correspondence with the above is easily seen.
+\begin{equation}
+	\begin{aligned}
+		\alpha_1&=\textcolor{ForestGreen}{-\frac{\ab{23}}{\alpha_7\ab{12}-\ab{13}}},~~~~~~
+		\alpha_2=-\frac{\ab{12}}{\alpha_7\ab{12}-\ab{13}},~~~~~~
+		\alpha_3=\textcolor{orange}{-\frac{\ab{45}}{\alpha_7\ab{25}-\ab{35}}}\\
+		\alpha_4&=\textcolor{red}{-\frac{\alpha_7\ab{24}-\ab{34}}{\alpha_7\ab{25}-\ab{35}}}
+		,~~~~~~
+		\alpha_5=\frac{\alpha_7\ab{12}-\ab{13}}{\alpha_7\ab{25}-\ab{35}}
+		,~~~~~~~~\,
+		\alpha_6=-\frac{\alpha_7\ab{25}-\ab{35}}{\ab{15}}
+	\end{aligned}
+\end{equation}
+Comparing Figure \ref{fig:5pt3l_1} and Figure \ref{fig:5pt3l_3} with their respective edge-variables, one sees that flipping arrows inside the diagram, inverts the corresponding edge-variable. Sending $\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5\to 0$ sends the corresponding edge to zero, while $\alpha_6\to\infty $ erases that edge. This agrees with the statement that edges that contain an arrow from a white to a black vertex is erasable by sending $\alpha\to 0$ and from black to white by $\alpha\to \infty$.
+\newpage
+\section{Summary and outlook}
 \appendix
-\section{Jacobian from solving delta-function}
-The following property holds for the $\delta$-functions
-\begin{equation}
-	\begin{aligned}
-		\delta(kx)=\frac{1}{k}\delta(x)
-	\end{aligned}
-\end{equation}
-which means that for instance when multiplying a deltafunction by a spinor one has
-\begin{equation}
-	\begin{aligned}
-		\delta(\lambda_i)=\lambda_j\delta(\lambda_j\lambda_i)
-	\end{aligned}
-\end{equation}
-Or, using spinor helicity bracket notation
-\begin{equation}
-	\begin{aligned}
-		\delta(\lambda_i)\delta(\lambda_j)=\ab{kl}\delta(\lambda_k\lambda_i)\delta(\lambda_l\lambda_j)
-	\end{aligned}
-\end{equation}
 \begin{thebibliography}{99}
 %\cite{Bjerrum-Bohr:2013bxa}
 \bibitem{Bjerrum-Bohr:2013bxa}
