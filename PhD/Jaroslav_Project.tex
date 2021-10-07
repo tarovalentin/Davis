@@ -36,7 +36,7 @@
 
 
 % e-mail addresses: one for each author, in the same order as the authors
-\emailAdd{taro.brown@nbi.ku.dk}
+\emailAdd{tvbrown@ucdavis.edu}
 
 
 \abstract{Notes on modern amplitude techniques written as part of a research project with Jaroslav Trnka.}
@@ -46,7 +46,7 @@
 \flushbottom
 \newpage
 \section{Introduction}
-During the last two decades, significant strides have been made in the study of scattering amplitudes. New modern on-shell techniques have made calculations with a large number of particles and loops feasible. Many of the significant advancements in the field has come by studying $\mathcal N = 4$ super Yang-Mills (sYM)
+During the last few decades, significant strides have been made in the study of scattering amplitudes. New modern on-shell techniques have made calculations with a large number of particles and loops feasible. Many of the significant advancements in the field has come by studying $\mathcal N = 4$ super Yang-Mills (sYM)
 and using its planar, or large $N$, limit as a sandbox to explore the underlying geometric structure. 
 
 In recent years this geometric structure of scattering amplitudes in $\mathcal N = 4$
@@ -345,7 +345,7 @@ This is not surprising since the diagram we considered is not a Feynman diagram.
 In the next section we will present two methods of getting the amplitude directly from the diagram.
 \subsection{Four-point directly from $G(2,4)$ matrix}
 The calculation if the C-matrix can be performed either using face or edge variables. We are going to show how to do both for good measure.
-\subsubsection*{Using face-variables}
+\subsubsection{Using face-variables}
 The four-point diagram with face-variables looks like this
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[H]\centering \hspace*{3cm}
@@ -376,13 +376,13 @@ The four-point diagram with face-variables looks like this
 		\end{scope}
 	\end{tikzpicture}
 \end{figure}
-While the
+While the $C$-matrix is found through
 \begin{equation}
 	\begin{aligned}
 		C_{ab}=-\sum_{\Gamma(a\to b)}\prod_j\left(-f_j\right),~~~~~~\text{ on the right} 
 	\end{aligned}
 \end{equation}
-with the constraint
+with the added constraint
 \begin{equation}
 	\begin{aligned} \label{eq:prodf}
 		\prod_j f_j=-1
@@ -421,7 +421,7 @@ we can then find the form through
 		\dd \Omega =\frac{\dd f_0}{f_0}\frac{\dd f_1}{f_1}\frac{\dd f_3}{f_3}\frac{\dd f_4}{f_4}\delta(C\cdot \tilde \lambda) \delta(C^\perp\cdot \lambda)\delta(C\cdot \tilde \eta)
 	\end{aligned}
 \end{equation}
-First let us look at the delta-functions, such that we can specify the face-variables in terms of the spinor products. We start by looking at $\lambda \cdot C^\perp=0$, from which we can two equations
+First let us look at the delta-functions, such that we can specify the face-variables in terms of the spinor products. We start by looking at $\lambda \cdot C^\perp=0$, from which we get two equations
 \begin{equation}
 	\begin{aligned}
 		C^\perp\cdot \lambda=0\Rightarrow\begin{cases}
@@ -430,7 +430,7 @@ First let us look at the delta-functions, such that we can specify the face-vari
 		\end{cases}
 	\end{aligned}
 \end{equation}
-By multiplying the first equation by $\tilde \lambda_2$ one obtains $f_0f_3f_4=-\frac{\expval{23}}{\expval{12}}$. Similarly multiplying the second equation by $\tilde \lambda_1$ we get $f_0f_1f_4= \frac{\expval{14}}{\expval{12}}$. Combining these two,
+By multiplying the first equation by $ \lambda_2$ one obtains $f_0f_3f_4=-\frac{\expval{23}}{\expval{12}}$. Similarly multiplying the second equation by $ \lambda_1$ we get $f_0f_1f_4= \frac{\expval{14}}{\expval{12}}$. Combining these two,
 \begin{equation}
 	\begin{aligned}
 		f_1=-\frac{\expval{14}}{\expval{23}}f_3
@@ -517,8 +517,9 @@ We can put it all together to obtain the form
 	\end{aligned}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection*{Using edge-variables}
-For the edge-variable case let us try a different orientation
+\subsubsection{Using edge-variables}
+For the remainder of the report we will use instead be using edge-variables in the $C$-matrices.
+To demonstrate how this approach works, we look at a diagram with a different orientation,
 \begin{figure}[H]\centering\hspace*{3cm}
 	\begin{tikzpicture}
 		\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
@@ -623,8 +624,10 @@ We can now calculate the form
 		\frac{\delta^{8}\left(\mathcal{Q}\right)\delta^{4}\left(P\right)}{\expval{12}\expval{23}\expval{34}\expval{41}}
 	\end{aligned}
 \end{equation}
+In the next section we will go over examples using these techniques described here at five and six points.
 \newpage
 \section{Examples of on-shell diagrams at five and six points}
+One can build all the physically relevant on-shell diagrams by attaching BCFW bridges to existing
 \subsection{Five point}
 \begin{figure}[H]
 	\centering
@@ -1246,7 +1249,7 @@ Using this, the $\mathcal{N}=0$ form found by adding the diagrams is then
 		&=\frac{\ab{15}^4\ab{23}^4+\ab{12}^4\ab{35}^4}{\ab{13}^4\ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}\delta(P)
 	\end{aligned}
 \end{equation}
-\subsubsection{Six-point $\mathcal{N}=0$}
+\subsection{Six-point $\mathcal{N}=0$}
 Here we start by treating the same diagram as we did in section ...
 \begin{figure}[H]
 	\centering
@@ -1310,9 +1313,76 @@ The form is then
 		\dd\Omega&=\frac{\ab{26}^4\sqb{24}^4}{s_{612}\ab{12}\ab{16}\sqb{34}\sqb{45}\aMs{2}{Q_{612}}{5}\aMs{6}{Q_{612}}{3}}\left[\left(\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{4}\sqb{35}}\right)^{-4}+\left(-\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{3}\sqb{45}}\right)^{-4}\right]
 	\end{aligned}
 \end{equation}
+Let us further examine the six-point NMHV case by looking at an example of a 4+4 diagram. It is not possible to orient the graph with an closed cycle for the external helicity configuration of $(1^+,2^-,3^+,4^-,5^+,6^-)$, so instead we consider the following diagram
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{6pt}
+	\caption{}
+	\label{fig:two-loop}
+\end{figure}
+The $C$-matrices are
 \begin{equation}
 	\begin{aligned}
-		q-3=\frac{s_{126}}{\aMs{2}{Q_{126}}{3}}\lambda_2\tilde \lambda_3,~~~~q=\frac{s_{126}}{\aMs{2}{Q_{126}}{3}}\lambda_2\tilde\lambda_3
+		C&=\left(
+		\begin{array}{cccccc}
+			1 & 0 & \alpha _3 \delta_a & 0 & \alpha _3 \alpha _4 \alpha _5 \alpha _8 \delta_a & \alpha _3 \alpha _4 \alpha _5 \delta_a \\
+			0 & 1 & \alpha _1 \alpha _3 \delta_a+\alpha _2 & 0 & \alpha _1 \alpha _3 \alpha _4 \alpha _5 \alpha _8 \delta_a & \alpha _1 \alpha _3 \alpha _4 \alpha _5 \delta_a \\
+			0 & 0 & \alpha _3 \alpha _5 \alpha _6 \delta_a & 1 & \alpha _5 \alpha _8 \delta_a+\alpha _7 & \alpha _5 \delta_a
+		\end{array}
+		\right)\\
+		C^{\perp}&=\left(
+		\begin{array}{cccccc}
+			-\alpha _3 \delta_a & -\alpha _1 \alpha _3 \delta_a-\alpha _2 & 1 & -\alpha _3 \alpha _5 \alpha _6 \delta_a & 0 & 0 \\
+			-\alpha _3 \alpha _4 \alpha _5 \alpha _8 \delta_a & -\alpha _1 \alpha _3 \alpha _4 \alpha _5 \alpha _8 \delta_a & 0 & -\alpha _5 \alpha _8 \delta_a-\alpha _7 & 1 & 0 \\
+			-\alpha _3 \alpha _4 \alpha _5 \delta_a & -\alpha _1 \alpha _3 \alpha _4 \alpha _5 \delta_a & 0 & -\alpha _5 \delta_a & 0 & 1 \\
+		\end{array}
+		\right)
+	\end{aligned}
+\end{equation}
+The edge-variables are found to be
+\begin{align*}
+ \alpha_1 = \frac{[23]}{[13]}\,, \quad \alpha_2 =- \frac{[12]}{[23]}&\,,~~
+	\alpha_3 = - \frac{\aMs{6}{Q_{456}}{1}}{\aMs{6}{Q_{456}}{3}}, \quad
+	\alpha_4 = \frac{\ab{46}\sqb{13}}{\aMs{6}{Q_{456}}{1}}\,,\\
+	 \alpha_5 = \frac{\aMs{6}{Q_{456}}{1}}{\aMs{4}{Q_{456}}{1}}\,,\quad
+	 \,\alpha_6 &= \frac{\sab{456}}{\aMs{6}{Q_{456}}{1}}\,, \quad \alpha_7 = \frac{\ab{56}}{\ab{46}}\,, \quad
+	\alpha_8 = \frac{\ab{45}}{\ab{46}}\,  
+\end{align*}
+with a factor of $\frac{\ab{46}^3\ab{13}^3}{\aMs{4}{Q_{456}}{1}^2\aMs{6}{Q_{456}}{3}^2}$ from solving the delta functions and a Jacobian of
+\begin{equation}
+	\begin{aligned}
+		J_a=\delta_a^{-1}=\frac{\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}{\aMs{4}{Q_{456}}{3}\aMs{6}{Q_{456}}{1}}
+	\end{aligned}
+\end{equation}
+Using the aforementioned we can also infer the Jacobian of the diagram with the internal cycle reversed
+\begin{equation}
+	\begin{aligned}
+		J_b=\frac{\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}{[13]\ab{46}s_{456}}
+	\end{aligned}
+\end{equation}
+The form obtained
+is then
+\begin{equation}
+	\begin{aligned}
+		\dd\Omega&=\frac{\ab{46}^4\sqb{13}^4}{s_{456}\ab{45}\ab{56}\sqb{12}\sqb{23}\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}\left(
+		\left[\frac{\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}{\aMs{4}{Q_{456}}{3}\aMs{6}{Q_{456}}{1}}\right]^{-4}+\left[\frac{\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}{[13]\ab{46}s_{456}}\right]^{-4}
+		\right)	
+	\end{aligned}
+\end{equation}
+We will now analyze the singularity structure of this diagram, by assigning loop momenta to the three loops and putting the internal propagators on-shell.
+\subsection{Singularities}
+First we assign the three loop momenta $\ell_1,\ell_2$, and $\ell_3$, in the following way
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{sing}
+	\caption{}
+	\label{fig:two-loop}
+\end{figure}
+We then put the internal propagators on shell, which gives the following solutions for the internal momenta
+\begin{equation}
+	\begin{aligned}
+	\ell_1=\frac{\tilde\lambda_4}{\ab{46}}\aMs{6}{Q_{456}}{\bm\cdot},~~~~~~\ell_2=\frac{1}{\aMs{6 }{Q_{456}}{1}}\aMs{3 }{Q_{456}}{\bm\cdot}\aMs{\bm \cdot }{Q_{456}}{4},~~~~~~	\ell_3=\frac{\tilde\lambda_3}{\sqb{13}}\aMs{\bm\cdot}{Q_{456}}{1}\\
+	\ell_1+4=\frac{\ab{56}}{\ab{46}}\lambda_4\tilde{\lambda}_5
 	\end{aligned}
 \end{equation}
 \newpage
@@ -1542,7 +1612,7 @@ taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Park
 		\dd \Omega=	\frac{\ab{15}^4}{ \ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}
 	\end{aligned}
 \end{equation}
-Further, the $\mathcal{N} \neq4$ Jacobian is
+Further, the Jacobian is
 \begin{equation}
 	\begin{aligned}
 		J_a=\delta_a^{-1}=
@@ -1607,7 +1677,7 @@ Further we see that the $\ell_2-5$ coefficient directly corresponds to the $\tex
 		\alpha_6=-\frac{\alpha_7\ab{25}-\ab{35}}{\ab{15}}
 	\end{aligned}
 \end{equation}
-Comparing Figure \ref{fig:5pt3l_1} and Figure \ref{fig:5pt3l_3} with their respective edge-variables, one sees that flipping arrows inside the diagram, inverts the corresponding edge-variable. Sending $\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5\to 0$ sends the corresponding edge to zero, while $\alpha_6\to\infty $ erases that edge. This agrees with the statement that edges that contain an arrow from a white to a black vertex is erasable by sending $\alpha\to 0$ and from black to white by $\alpha\to \infty$.
+Comparing Figure \ref{fig:5pt3l_1} and Figure \ref{fig:5pt3l_3} with their respective edge-variables, one sees that flipping arrows inside the diagram, inverts the corresponding edge-variable. Sending one of $\{\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5\}\to 0$ sends the corresponding edge to zero, while $\alpha_6\to\infty $ erases that edge. This agrees with the statement that edges that contain an arrow from a white to a black vertex is erasable by sending $\alpha\to 0$ and from black to white by $\alpha\to \infty$.
 \newpage
 \section{Summary and outlook}
 \appendix
