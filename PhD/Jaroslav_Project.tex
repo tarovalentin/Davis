@@ -87,7 +87,7 @@ The span of these vectors gives the $k$- plane. If they are stacked, we get a ma
 \end{bmatrix}\equiv C_{\alpha a},~~~~~~~~\alpha=1,\dots,k~~~~a=1,\dots,n
 \end{aligned}
 \end{equation}
-This matrix are generally not unique since it is GL($k$) redundant, $
+This matrix is generally not unique since it is GL($k$) redundant, $
 C_{\alpha a}\sim L^{\beta}_\alpha C_{\beta a}$.
 The dimensionality of the Grassmanian is 
 \begin{equation}
@@ -110,7 +110,7 @@ The redudancy means that we can gaugefix the matrix using a linear transformatio
 	\end{matrix}  \\
 \end{array} \right]
 \end{equation}
-The dimensionality of the Grassmanian are symmetric under $n\leftrightarrow k$. This is because there is a bijection between the Grassmania: $k$ and $n-k$ planes in $n$ dimensions, since these planes are orthogonal. In the case above $C^{\perp}$ is a $2$-plane in 5 dimensions. We Can illustrate both the matrices like so,
+The dimensionality of the Grassmanian are symmetric under $n\leftrightarrow k$. This is because there is a bijection between the Grassmania: $k$ and $n-k$ planes in $n$ dimensions, since these planes are orthogonal. In the case above $C^{\perp}$ is a $2$-plane in 5 dimensions. We can illustrate both the matrices like so,
 \begin{equation}
 	\left[ \begin{array}{@{}c|c@{}}
 		\begin{matrix}
@@ -140,12 +140,12 @@ With the bottom part just being the negative transpose of the $x,y$ and $z$ coor
 a_1&a_2&\cdots &a_k
 \end{pmatrix}
 \end{equation}
-We will now proceed to used the properties of the Grassmanian by introducing the concept of on-shell diagrams.
+We will now proceed to use the properties of the Grassmanian by introducing the concept of on-shell diagrams.
 \newpage
 \section{Introduction to on-shell diagrams}
 In this section we introduce the notion of on-shell diagrams, and give examples on different ways one can calculate diagrams from these. 
 
-One can construct $(k\times n)$ C-matrices out of on-shell diagrams, where $k$ labels the number of negative helicity particles and $n$ is the total number of particles. The procedure to construct a matrix from a diagram is as follows
+One can construct $(k\times n)$ C-matrices out of on-shell diagrams, where $k$ labels the number of negative helicity particles and $n$ is the total number of particles. The procedure to construct a matrix from a diagram using \textit{edge-variables} is as follows
 \begin{itemize}
 	\item Label the edges of the on-shell diagram by $\alpha$'s.
 	\item Starting at one of the incoming particles (say, $2$), trace a path to one of the outgoing particles  (say, $4$). Multiply the $\alpha$'s encountered on the path. This would be entry $C_{2\,4}$ in the C-matrix, i.e.
@@ -1175,7 +1175,7 @@ One can note that these can be rewritten using Schouten,
 \end{equation}
 and since, as we will se shortly, the forms produced by the individual diagrams only differ by this Jacobian, one does not have to go through the calculation of both diagrams, but can instead infer, the Jacobian by rewriting it in this form.
 
-Using this, the $\mathcal{N}=0$ form found by adding the diagrams is then
+Using this, the $\mathcal{N}=0$ form for the cut is found by adding the diagrams
 \begin{equation}
 	\begin{aligned}
 		\dd\Omega
@@ -1184,8 +1184,57 @@ Using this, the $\mathcal{N}=0$ form found by adding the diagrams is then
 		&=\frac{\ab{15}^4\ab{23}^4+\ab{12}^4\ab{35}^4}{\ab{13}^4\ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}\delta(P)
 	\end{aligned}
 \end{equation}
+As described, the only difference between the two diagrams is the Jacobian. To complete the picture we will consider one further example, by changing the external helicity configuration to $(1^-,2^+,3^+,4^-,5^+)$. Here the diagrams below contribute
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{5pt4}
+	\caption{}
+	\label{fig:5pt}
+\end{figure}
+We will just consider the "$A$" diagram and then apply the above method to get the Jacobian from the "$B$" orientation.
+We obtain
+\begin{equation}
+	\begin{aligned}
+		C_A&=\left(
+		\begin{array}{ccccc}
+			1 & \alpha _2 \alpha _6 \delta_a +\alpha _1 & \alpha _6 \delta_a  & 0 & \alpha _3 \alpha _4 \alpha _6 \delta_a  \\
+			0 & \alpha _2 \alpha _4 \alpha _5 \alpha _6 \delta_a  & \alpha _4 \alpha _5 \alpha _6 \delta_a  & 1 & \alpha _4 \delta_a  \\
+		\end{array}
+		\right)\\
+		C_A^\perp &=\left(
+		\begin{array}{ccccc}
+			-\alpha _2 \alpha _6 \delta -\alpha _1 & 1 & 0 & -\alpha _2 \alpha _4 \alpha _5 \alpha _6\delta & 0 \\
+			-\alpha _6 \delta  & 0 & 1 & -\alpha _4 \alpha _5 \alpha _6 \delta & 0 \\
+			-\alpha _3 \alpha _4 \alpha _6 \delta  & 0 & 0 & -\alpha _4 \delta & 1 \\
+		\end{array}
+		\right)
+	\end{aligned}
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		&\alpha_1=\frac{\expval{23}}{\expval{13}},~~~~
+		\alpha_2=\frac{\expval{12}}{\expval{13}},~~~~
+		\alpha_3=-\frac{\expval{45}}{\expval{35}},~~~~
+		\alpha_4=\frac{\expval{35}}{\expval{34}},~~~~
+		\alpha_5=\frac{\expval{13}}{\expval{35}},~~~~
+		\alpha_6=\frac{\expval{35}}{\expval{15}}\\
+		\end{aligned}
+\end{equation}
+with 
+\begin{equation}
+	\begin{aligned}
+		J_a=\frac{\ab{14}\ab{35}}{\ab{15}\ab{34}},~~~~~~J_b=\frac{\ab{14}\ab{35}}{\ab{13}\ab{45}}
+	\end{aligned}
+\end{equation}
+and the form for the cut is found to be
+\begin{equation}
+	\begin{aligned}
+		\dd \Omega
+		=\frac{\ab{14}^4}{\ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}\delta(P)\left(\left[\frac{\ab{14}\ab{35}}{\ab{15}\ab{34}}\right]^{-4}+\left[\frac{\ab{14}\ab{35}}{\ab{13}\ab{45}}\right]^{-4}\right)
+	\end{aligned}
+\end{equation}
 \subsection{Six-point $\mathcal{N}=0$}
-Here we start by treating the same diagram as we did in section ...
+To illustrate what the form of the bare\footnote{By bare we mean the form without the internal cycle Jacobian} diagram should look like we start by treating a diagram without an internal cycle.  We take the same diagram as we did in section ...
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{6ptYM}
@@ -1200,27 +1249,23 @@ where we obtained
 	\alpha_6 = \frac{\aMs{4}{Q_{234}}{5}}{\ab{24}\sqb{15}}\,, \alpha_7 = -\frac{\aMs{4}{Q_{234}}{1}}{\aMs{4}{Q_{234}}{5}}\,,\quad
 	\alpha_8 = - \frac{\aMs{2}{Q_{234}}{5}}{\aMs{4}{Q_{234}}{5}}\,.
 \end{align*}
-The Jacobian from the delta functions is
-\begin{equation}
-	\begin{aligned}
-		J=\frac{[15]\expval{24}}{\aMs{4}{Q_{234}}{5}^2}
-	\end{aligned}
-\end{equation}
-such that the form is
+The Jacobian from solving the delta functions is $		J=\frac{[15]\expval{24}}{\aMs{4}{Q_{234}}{5}^2}$,
+such that the form is given by
 \begin{equation}
 	\begin{aligned}
 		\dd\Omega_{4+4}=\frac{\ab{24}^4 \sqb{15}^4}{s_{234}\ab{23}\ab{34}\aMs{2}{Q_{234}}{5}\aMs{4}{Q_{234}}{1}\sqb{61}\sqb{56}}
 	\end{aligned}
 \end{equation}
+One would expect the bare form to look something like this in the next examples. We proceed by looking at diagrams with internal cycles, after which we analyze the singularity structure.
 \subsection{Six point NMHV with internal cycles}
 We now consider a six point diagram with an internal cycle. Fixing the helicity configuration to $(1^+,2^-,3^+,4^-,5^+,6^-)$ and considering the 5+3 diagrams yields 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{3+5L}
+	\includegraphics[width=0.45\linewidth]{3+5L}
 	\caption{}
 	\label{fig:5pt3l}
 \end{figure}
-Where another diagram with the internal cycle is reversed also contributes to the form. The edgevariables are found to be
+Where another diagram with the internal cycle is reversed also contributes to the form of the cut. The edgevariables are found to be
 \begin{equation}
 	\begin{aligned}
 		& \alpha_1 = \frac{\sab{612}}{\aMs{6}{Q_{612}}{3}}\,, \quad \alpha_2 = \frac{[45]}{[34]}\,, \quad \alpha_3 = \frac{[45]\aMs{2}{Q_{612}}{3}}{[34]\aMs{2}{Q_{612}}{4}}\,, \quad \alpha_4 = -\frac{\aMs{2}{Q_{612}}{4}}{\aMs{2}{Q_{612}}{5}}\,,\\ 
@@ -1245,27 +1290,27 @@ Using the approach described at five-point we can infer the Jacobian of the diag
 The form is then
 \begin{equation}
 	\begin{aligned}
-		\dd\Omega&=\frac{\ab{26}^4\sqb{24}^4}{s_{612}\ab{12}\ab{16}\sqb{34}\sqb{45}\aMs{2}{Q_{612}}{5}\aMs{6}{Q_{612}}{3}}\left[\left(\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{4}\sqb{35}}\right)^{-4}+\left(-\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{3}\sqb{45}}\right)^{-4}\right]
+		\dd\Omega&=\frac{\ab{26}^4\sqb{24}^4\delta(P)}{s_{612}\ab{12}\ab{16}\sqb{34}\sqb{45}\aMs{2}{Q_{612}}{5}\aMs{6}{Q_{612}}{3}}\left[\left(\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{4}\sqb{35}}\right)^{-4}+\left(-\frac{\aMs{2}{Q_{612}}{5}\sqb{34}}{\aMs{2}{Q_{612}}{3}\sqb{45}}\right)^{-4}\right]
 	\end{aligned}
 \end{equation}
-Let us further examine the six-point NMHV case by looking at an example of a 4+4 diagram. It is not possible to orient the graph with an closed cycle for the external helicity configuration of $(1^+,2^-,3^+,4^-,5^+,6^-)$, so instead we consider the following diagram
+Let us further examine the six-point NMHV case by looking at an example of a 4+4 diagram. It is not possible to orient the graph with an closed cycle for the external helicity configuration of $(1^+,2^-,3^+,4^-,5^+,6^-)$, so instead we consider the following two diagrams.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{6pt}
+	\includegraphics[width=0.9\linewidth]{6pt}
 	\caption{}
 	\label{fig:two-loop}
 \end{figure}
-The $C$-matrices are
+They are the only ones that arise when fixing the internal states as shown. Here we explicitly show the $C_A$-matrices
 \begin{equation}
 	\begin{aligned}
-		C&=\left(
+		C_A&=\left(
 		\begin{array}{cccccc}
 			1 & 0 & \alpha _3 \delta_a & 0 & \alpha _3 \alpha _4 \alpha _5 \alpha _8 \delta_a & \alpha _3 \alpha _4 \alpha _5 \delta_a \\
 			0 & 1 & \alpha _1 \alpha _3 \delta_a+\alpha _2 & 0 & \alpha _1 \alpha _3 \alpha _4 \alpha _5 \alpha _8 \delta_a & \alpha _1 \alpha _3 \alpha _4 \alpha _5 \delta_a \\
 			0 & 0 & \alpha _3 \alpha _5 \alpha _6 \delta_a & 1 & \alpha _5 \alpha _8 \delta_a+\alpha _7 & \alpha _5 \delta_a
 		\end{array}
 		\right)\\
-		C^{\perp}&=\left(
+		C_A^{\perp}&=\left(
 		\begin{array}{cccccc}
 			-\alpha _3 \delta_a & -\alpha _1 \alpha _3 \delta_a-\alpha _2 & 1 & -\alpha _3 \alpha _5 \alpha _6 \delta_a & 0 & 0 \\
 			-\alpha _3 \alpha _4 \alpha _5 \alpha _8 \delta_a & -\alpha _1 \alpha _3 \alpha _4 \alpha _5 \alpha _8 \delta_a & 0 & -\alpha _5 \alpha _8 \delta_a-\alpha _7 & 1 & 0 \\
@@ -1274,7 +1319,7 @@ The $C$-matrices are
 		\right)
 	\end{aligned}
 \end{equation}
-The edge-variables are found to be
+The edge-variables for diagram $A$ are found to be
 \begin{align*}
  \alpha_1 = \frac{[23]}{[13]}\,, \quad \alpha_2 =- \frac{[12]}{[13]}&\,,~~
 	\alpha_3 = - \frac{\aMs{6}{Q_{456}}{1}}{\aMs{6}{Q_{456}}{3}}, \quad
@@ -1286,13 +1331,13 @@ The edge-variables are found to be
 with a factor of $\frac{\ab{46}^3\ab{13}^3}{\aMs{4}{Q_{456}}{1}^2\aMs{6}{Q_{456}}{3}^2}$ from solving the delta functions and a Jacobian of
 \begin{equation}
 	\begin{aligned}
-		J_a=\delta_a^{-1}=\frac{\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}{\aMs{4}{Q_{456}}{3}\aMs{6}{Q_{456}}{1}}
+		J_a=\delta_a^{-1}=\frac{\aMs{4}{Q_{456}}{3}\aMs{6}{Q_{456}}{1}}{\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}
 	\end{aligned}
 \end{equation}
 Using the aforementioned we can also infer the Jacobian of the diagram with the internal cycle reversed
 \begin{equation}
 	\begin{aligned}
-		J_b=\frac{\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}{[13]\ab{46}s_{456}}
+		J_b=\frac{\aMs{4}{Q_{456}}{3}\aMs{6}{Q_{456}}{1}}{[13]\ab{46}s_{456}}
 	\end{aligned}
 \end{equation}
 The form obtained
@@ -1300,7 +1345,7 @@ is then
 \begin{equation}
 	\begin{aligned}
 		\dd\Omega&=\frac{\ab{46}^4\sqb{13}^4}{s_{456}\ab{45}\ab{56}\sqb{12}\sqb{23}\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}\left(
-		\left[\frac{\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}{\aMs{4}{Q_{456}}{3}\aMs{6}{Q_{456}}{1}}\right]^{-4}+\left[\frac{\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}{[13]\ab{46}s_{456}}\right]^{-4}
+		\left[\frac{\aMs{4}{Q_{456}}{3}\aMs{6}{Q_{456}}{1}}{\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}\right]^{-4}+\left[\frac{\aMs{4}{Q_{456}}{3}\aMs{6}{Q_{456}}{1}}{[13]\ab{46}s_{456}}\right]^{-4}
 		\right)	
 	\end{aligned}
 \end{equation}

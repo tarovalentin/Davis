@@ -280,7 +280,7 @@ StringReplace[StringReplace[StringReplace[ToString[B6],latexto2],latexto3],latex
 StringReplace[StringReplace[StringReplace[ToString[B7],latexto2],latexto3],latexto4]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Loop calculation (extra internal parameter)*)
 
 
@@ -525,7 +525,7 @@ Residue[d\[CapitalOmega]2,{a7,0}]
 a7 Spaa[1,2] Spaa[2,3] (-a7 Spaa[2,4]+Spaa[3,4])^2 Spaa[4,5]//Expand//FullSimplify
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*5 pt three-loop with internal loop*)
 
 
@@ -811,6 +811,57 @@ fiveYM1 + fiveYM2 //FullSimplify
 
 
 (* ::Subsection::Closed:: *)
+(*5 pt N=0 with one internal loop, second config*)
+
+
+(*5 point YM MHV*)
+(*Define C-matrices and lambda for first diagram*)
+\[Delta] = 1/(1-a[3]a[4]a[5]a[6]);
+Ca = {{1,a[1]+a[2]a[6]\[Delta],a[6]\[Delta],0,a[3]a[4]a[6] \[Delta]},{0,a[2]a[4]a[5]a[6]\[Delta],a[4]a[5]a[6]\[Delta],1,a[4]\[Delta]}};
+CaP = {{-a[1]-a[2]a[6]\[Delta],1,0,-a[2]a[4]a[5]a[6]\[Delta],0},{-a[6]\[Delta],0,1,-a[4]a[5]a[6]\[Delta],0},{-a[3]a[4]a[6]\[Delta],0,0,-a[4]\[Delta],1}};
+lambda = {{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5]}};
+Ca . Transpose[CaP];
+(*Solve for \[Alpha]'s by solving one delta function constraint. Here we get the equations from the eq below*)
+CaP . Transpose[lambda]
+
+
+A1 = (-a[1]-\[Delta] a[2] a[6]) \[Lambda][1] . \[Lambda][1]+\[Lambda][2] . \[Lambda][1]-\[Delta] a[2] a[4] a[5] a[6] \[Lambda][4] . \[Lambda][1]//.RR;
+A2 = (-a[1]-\[Delta] a[2] a[6]) \[Lambda][1] . \[Lambda][4]+\[Lambda][2] . \[Lambda][4]-\[Delta] a[2] a[4] a[5] a[6] \[Lambda][4] . \[Lambda][4]//.RR;
+A3 = -\[Delta] a[6] \[Lambda][1] . \[Lambda][1]+\[Lambda][3] . \[Lambda][1]-\[Delta] a[4] a[5] a[6] \[Lambda][4] . \[Lambda][1]//.RR;
+A4 = -\[Delta] a[6] \[Lambda][1] . \[Lambda][4]+\[Lambda][3] . \[Lambda][4]-\[Delta] a[4] a[5] a[6] \[Lambda][4] . \[Lambda][4]//.RR;
+A5 = -\[Delta] a[3] a[4] a[6] \[Lambda][1] . \[Lambda][1]-\[Delta] a[4] \[Lambda][4] . \[Lambda][1]+\[Lambda][5] . \[Lambda][1]//.RR;
+A6 = -\[Delta] a[3] a[4] a[6] \[Lambda][1] . \[Lambda][4]-\[Delta] a[4] \[Lambda][4] . \[Lambda][4]+\[Lambda][5] . \[Lambda][4]//.RR;
+Sola = Solve[{A1==0,A2==0,A3==0,A4==0,A5==0,A6==0},{a[1],a[2],a[3],a[4],a[5],a[6]}]//Simplify;
+Sola//.schoutenA
+
+
+EE[1] = (-a[1]-\[Delta] a[2] a[6]) \[Lambda][1] . \[Lambda][1]+\[Lambda][2] . \[Lambda][1]-\[Delta] a[2] a[4] a[5] a[6] \[Lambda][4] . \[Lambda][1]//.RR;
+EE[2] = (-a[1]-\[Delta] a[2] a[6]) \[Lambda][1] . \[Lambda][4]+\[Lambda][2] . \[Lambda][4]-\[Delta] a[2] a[4] a[5] a[6] \[Lambda][4] . \[Lambda][4]//.RR;
+EE[3] = -\[Delta] a[6] \[Lambda][1] . \[Lambda][1]+\[Lambda][3] . \[Lambda][1]-\[Delta] a[4] a[5] a[6] \[Lambda][4] . \[Lambda][1]//.RR;
+EE[4] = -\[Delta] a[6] \[Lambda][1] . \[Lambda][4]+\[Lambda][3] . \[Lambda][4]-\[Delta] a[4] a[5] a[6] \[Lambda][4] . \[Lambda][4]//.RR;
+EE[5] = -\[Delta] a[3] a[4] a[6] \[Lambda][1] . \[Lambda][1]-\[Delta] a[4] \[Lambda][4] . \[Lambda][1]+\[Lambda][5] . \[Lambda][1]//.RR;
+EE[6] = -\[Delta] a[3] a[4] a[6] \[Lambda][1] . \[Lambda][4]-\[Delta] a[4] \[Lambda][4] . \[Lambda][4]+\[Lambda][5] . \[Lambda][4]//.RR;
+
+
+JacA=(Spaa[1,4] Spaa[3,5])/(Spaa[1,5] Spaa[3,4]);
+JacB=(Spaa[1,4] Spaa[3,5])/(Spaa[1,3] Spaa[4,5]);
+
+
+F[i_,j_]:=D[EE[i],a[j]];
+Mat = Table[F[i,j],{i,1,6},{j,1,6}];
+Simplify[1/(Det[Mat])]//.Sola//FullSimplify
+
+
+(* ::InheritFromParent:: *)
+(*{-(1/(Spaa[1,3] Spaa[1,4] Spaa[1,5]^2 Spaa[3,4]^2))}*)
+
+
+J = Spaa[1,4]^4 /(Spaa[1,3] Spaa[1,5]^2 Spaa[3,4]^2)
+d\[CapitalOmega] = Product[1/(a[i]),{i,1,6}]*J//.Sola//.schoutenA;
+d\[CapitalOmega][[1]]*(JacA^(-4)+JacB^(-4))
+
+
+(* ::Subsection::Closed:: *)
 (*6 pt 4+4 NMHV calculation,  no internal loop*)
 
 
@@ -955,7 +1006,7 @@ Spaa[2,6]^3 Spaa[2,4] (Spab[2,P[1]+P[2]+P[6],4] Spbb[3,5]^4)/(Spaa[2,4] Spaa[2,6
 Spaa[4,5]Spaa[2,3]-Spaa[2,4] Spaa[3,5]//.schoutenA
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*6 pt 4+4 NMHV calculation,  one internal loop*)
 
 
@@ -1001,6 +1052,9 @@ a[5]=Spab[6,P[4]+P[5]+P[6],1]/Spab[4,P[4]+P[5]+P[6],1];
 a[6]=s[4,5,6]/Spab[6,P[4]+P[5]+P[6],1];
 a[7]=Spaa[5,6]/Spaa[4,6];
 a[8]=Spaa[4,5]/Spaa[4,6];
+
+
+JA =((Spab[4,P[4]+P[5]+P[6],3] Spab[6,P[4]+P[5]+P[6],1])/(Spab[4,P[4]+P[5]+P[6],1] Spab[6,P[4]+P[5]+P[6],3]))
 
 
 DefNumSH[6]
