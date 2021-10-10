@@ -76,7 +76,6 @@ The Grassmanian, denoted $G(k,n)$, is the space of $k$-planes going through the 
 	\node at (2.7,1.7) [circle,fill,inner sep=1pt]{};
 	\draw[line width=2pt,black,-stealth](0,0)--(3.3,1) node[anchor=south west]{$\boldsymbol{v_k}$};
 \end{tikzpicture}
-\caption{}
 \label{fig:1}
 \end{figure}
 The span of these vectors gives the $k$- plane. If they are stacked, we get a matrix $C_{\alpha a}$
@@ -649,7 +648,7 @@ One can build all the physically relevant on-shell diagrams by attaching BCFW br
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.25\linewidth]{5pt}
-	\caption{}
+	\caption{Five point on-shell diagram}
 	\label{fig:5pt}
 \end{figure}
 %\begin{figure}[H]\centering\hspace*{3cm}
@@ -773,7 +772,7 @@ For the NMHV ($k=3$) amplitude at six-points we get three different diagrams. In
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{nmhv}
-	\caption[]{}
+	\caption[]{Diagrams contributing to the six point NMHV six point amplitude}
 	\label{fig:44}
 \end{figure}
 
@@ -952,26 +951,14 @@ Where, this Jacobian is given by
 		\mathcal{J}=1+\sum_if_i+\sum_{\substack{\text{disjoint}\\ \text{pairs } i,j}}f_i f_j+\sum_{\substack{\text{disjoint}\\ \text{pairs } i,j,k}}f_i f_j f_k+\cdots
 	\end{aligned}
 \end{equation}
-with $f_i$ denoting the face of a closed cycle, and the sums are over disjoint collections of these closed cycles. One also has to note that each face is defined as \textit{clockwise-oriented product of edge-variables}, meaning that a counterclockwise cycle would produce $\frac{1}{f}$. This is easiest seen through an example, 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.3\linewidth]{Jexample}
-	\caption{}
-	\label{fig:jexample}
-\end{figure}
-Here we have three loops containing one phase variable, contributing each $f_1,f_2^{-1},f_{3}$. Further we have the disjoint pair $f_1f_3$. Lastly we have a close loop containing both $f_2$ and $f_4$, i.e. we have in total
-\begin{equation}
-	\begin{aligned}
-		\mathcal{J}=1+f_1+f_3+f_2^{-1}+f_2^{-1}f_4^{-1}+f_1f_3
-	\end{aligned}
-\end{equation}
-Specifically we will consider $\mathcal N=0$ for which $\delta(C\cdot Z)=\delta(C^\perp\cdot \lambda)\delta(C\cdot \tilde\lambda)$.
+with $f_i$ denoting the face of a closed cycle, and the sums are over disjoint collections of these closed cycles. One also has to note that each face is defined as \textit{clockwise-oriented product of edge-variables}, meaning that a counterclockwise cycle would produce $\frac{1}{f}$.
+In the following sections we will specifically consider $\mathcal N=0$ for which one also has to take $\delta(C\cdot Z)=\delta(C^\perp\cdot \lambda)\delta(C\cdot \tilde\lambda)$.
 \subsection{Four-point $\mathcal{N}=0$ with internal loop}
 The simplest example is at four points where we have two diagrams after fixing the external helicities
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{YM4pt}
-	\caption{}
+	\caption{All diagrams contributing to the specified helicity configuration at four points}
 	\label{fig:jexample}
 \end{figure}
 where the $\delta's$ are defined by
@@ -1057,10 +1044,10 @@ We will once again look at the following diagram
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\linewidth]{5pt}
-	\caption{}
+	\caption{Five point on-shell diagram}
 	\label{fig:5pt}
 \end{figure}
-We already solved this in section ------, here we obtainedthe following edgevariables after contracting with $\lambda_1$, $\lambda_3$, and $\lambda_5$
+We already solved this in section \ref{sec:examples}, here we obtained the following edge-variables after contracting with $\lambda_1$, $\lambda_3$, and $\lambda_5$
 \begin{equation}
 	\begin{aligned}
 		\alpha_1=\frac{\expval{23}}{\expval{13}},~~~~
@@ -1083,7 +1070,7 @@ We will now consider a diagram containing internal cycles. For the fixed helicit
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{5pt3}
-	\caption{}
+	\caption{All diagrams for the specified five point helicity configuration}
 	\label{fig:5pt}
 \end{figure}
 Denoting the left diagram by "$a$" and the right one by "$b$", the $C$-matrices are
@@ -1162,7 +1149,7 @@ As described, the only difference between the two diagrams is the Jacobian. To c
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{5pt4}
-	\caption{}
+	\caption{All diagrams for the specified five point helicity configuration}
 	\label{fig:5pt}
 \end{figure}
 We will just consider the "$A$" diagram and then apply the above method to get the Jacobian from the "$B$" orientation.
@@ -1208,11 +1195,11 @@ and the form for the cut is found to be
 	\end{aligned}
 \end{equation}
 \subsection{Six-point $\mathcal{N}=0$}
-To illustrate what the form of the bare\footnote{By bare we mean the form without the internal cycle Jacobian} diagram should look like we start by treating a diagram without an internal cycle.  We take the same diagram as we did in section ...
+To illustrate what the form of the bare\footnote{By bare we mean the form without the internal cycle Jacobian} diagram should look like we start by treating a diagram without an internal cycle.  We take the same diagram as we did in section \ref{sec:examples}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{6ptYM}
-	\caption{}
+	\caption{4+4 NMHV six point diagram}
 	\label{fig:5pt}
 \end{figure}
 where we obtained
@@ -1236,7 +1223,7 @@ We now consider a six point diagram with an internal cycle. Fixing the helicity 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.45\linewidth]{3+5L}
-	\caption{}
+	\caption{5+3 six-point NMHV diagram with internal cycle. To calculate the form of the cut, the same diagram with the cycle reversed also contributes.}
 	\label{fig:5pt3l}
 \end{figure}
 Where another diagram with the internal cycle is reversed also contributes to the form of the cut. The edgevariables are found to be
@@ -1271,7 +1258,7 @@ Let us further examine the six-point NMHV case by looking at an example of a 4+4
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{6pt}
-	\caption{}
+	\caption{All six point NMHV diagrams for the specific helicity configuration}
 	\label{fig:two-loop}
 \end{figure}
 They are the only ones that arise when fixing the internal states as shown. Here we explicitly show the $C_A$-matrices
@@ -1329,7 +1316,7 @@ To find the singularity structure of the form obtained, we first assign the thre
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{sing}
-	\caption{}
+	\caption{Six point NMHV 4+4 diagram with assigned loop momenta}
 	\label{fig:two-loop}
 \end{figure}
 We then put the internal propagators on shell, which gives the following solutions for the internal momenta
@@ -1376,7 +1363,7 @@ Finally we will in the next section discuss how to construct higher loop on-shel
 \section{Higher loops\label{sec:higherloops}}
 One can get to higher loops with the same number of points by attaching two connected vertices to one of the graphs we have already considered. We will do this at four point to show how the form is constructed and then proceed to analyze one five-point three-loop diagram with no internal cycles and one with an internal cycle. Finally we analyze the singularity structure by comparing with the solution obtained by explicitly solving the on-shell constraints of the internal momenta.
 \subsection{2 loop four-point}
-At four points we can attach the two connected vertices to make the following two-loop diagram, with corresponding C-matrix
+At four points we can attach the two connected vertices to the four point diagram from section \ref{sec:on-she-intro} to make the following two-loop diagram, with corresponding C-matrix
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{two-loop}
@@ -1411,7 +1398,7 @@ Just like in the four-point example we can add a connected pair of vertices to o
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{5pt3l}
-	\caption{}
+	\caption{Three loop five-point diagram with no cycles}
 	\label{fig:5pt3l_1}
 \end{figure}
 The on-shell condition imposed on the three loop momenta leaves us with $3\times 4-11=1$ unfixed parameter. The C-matrices are
@@ -1638,7 +1625,7 @@ To look at the singularity structure of the five-point three-loop on-shell diagr
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{5pt3l3}
-	\caption{}
+	\caption{Three-loop diagram with loop momenta assigned.}
 	\label{fig:5pt3l_2}
 \end{figure}
 Where we have assigned 3 different loop-momenta, $\ell_1$, $\ell_2$, and $\ell_3$. 
@@ -1649,13 +1636,21 @@ The momenta is found to be
 	\ell_3+2 = \lambda_2\left(z \tilde \lambda_3- \tilde \lambda_2\right)
 ,~~~~~~
 	\ell_3-3 = \tilde \lambda_3\left(z  \lambda_2+ \lambda_3\right)\\
-	\ell_1&=\frac{\lambda_1}{z\ab{12}-\ab{13}}\left(z\aMs{2}{Q_{123}}{\bm\cdot}-\aMs{3}{Q_{123}}{\bm\cdot}\right),~~~
-	\ell_2=-\frac{\lambda_5}{z\ab{25}-\ab{35}}\left(z\aMs{2}{Q_{123}}{\bm\cdot}-\aMs{3}{Q_{123}}{\bm\cdot}\right)\\
-	\ell_2-5&=\textcolor{red}{\frac{z\ab{24}-\ab{34}}{z\ab{25}-\ab{35}}}\lambda_5\tilde\lambda_4,~~~~\ell_2-Q_{45}=
-\textcolor{orange}{	\frac{\ab{45}}{z\ab{25}-\ab{35}}}\tilde\lambda_4\left(z\lambda_2-\lambda_3\right)\\
-	\ell_1-1&=\textcolor{ForestGreen}{\frac{\ab{23}}{z\ab{12}-\ab{13}}}\lambda_1\left(z\tilde \lambda_3+\tilde\lambda_2 \right),~~~~~\\
-	\ell_1+\ell_2&=
-	\frac{\ab{15}\left(z\lambda_2-\lambda_3\right)}{\left(z\ab{12}-\ab{13}\right)\left(z\ab{25}-\ab{35}\right)}\left(z\aMs{2}{Q_{123}}{\bm\cdot}-\aMs{3}{Q_{123}}{\bm\cdot}\right)\\
+	\ell_1&=\frac{\lambda_1}{\green{z\ab{12}-\ab{13}}}\left(z\aMs{2}{Q_{123}}{\bm\cdot}-\aMs{3}{Q_{123}}{\bm\cdot}\right),~~~
+	\ell_2=-\frac{\lambda_5}{\orange{z\ab{25}-\ab{35}}}\left(z\aMs{2}{Q_{123}}{\bm\cdot}-\aMs{3}{Q_{123}}{\bm\cdot}\right)
+	\\
+	\ell_2-5&=\frac{\textcolor{red}{z\ab{24}-\ab{34}}}{\orange{z\ab{25}-\ab{35}}}\lambda_5\tilde\lambda_4,~~~~\ell_2-Q_{45}=
+	\frac{\textcolor{purple}{\ab{45}}}{\textcolor{orange}{z\ab{25}-\ab{35}}}\tilde\lambda_4\left(z\lambda_2-\lambda_3\right)\\
+	\ell_1-1&=\frac{\brown{\ab{23}}}{\textcolor{ForestGreen}{z\ab{12}-\ab{13}}}\lambda_1\left(z\tilde \lambda_3+\tilde\lambda_2 \right),~~~
+\ell_1+Q_{45}=\frac{z\lambda_2-\lambda_3}{\green{z\ab{12}-\ab{13}}}\left(\ab{12}\tilde \lambda_2+z\ab{12}\tilde \lambda_3-\ab{13}\tilde \lambda_3\right)	
+	\end{aligned}
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		\ell_1+\ell_2&=
+		\frac{\pink{\ab{15}}\left(z\lambda_2-\lambda_3\right)}{\green{\left(z\ab{12}-\ab{13}\right)}\orange{\left(z\ab{25}-\ab{35}\right)}}\left(z\aMs{2}{Q_{123}}{\bm\cdot}-\aMs{3}{Q_{123}}{\bm\cdot}\right)\\
+		\ell_1+\ell_3+2-1&=\frac{\textcolor{yellow}{\ab{12}}}{\green{z\ab{13}-\ab{12}}}
+		\left(z \lambda_2-\lambda_3\right)\left(z \tilde\lambda_3-\tilde \lambda_2\right)
 	\end{aligned}
 \end{equation}
 First we note that after identifying $\textcolor{blue}{z=-\alpha_7}$ the $\mathcal{N}=4$ form found by combining three-point amplitudes using the momenta above, matches the results obtained in the previous sections
@@ -1664,20 +1659,20 @@ First we note that after identifying $\textcolor{blue}{z=-\alpha_7}$ the $\mathc
 	\dd \Omega_5=\frac{\delta(P)\delta(Q)}{z \ab{12}\ab{23}\ab{45}\ab{51}\left(z\ab{24}+\ab{34}\right)}
 	\end{aligned}
 \end{equation}
-Further we see that the $\ell_2-5$ coefficient directly corresponds to the $\textcolor{red}{\alpha_4}$ edge, and below we have highlighted some of the edgevariables where the correspondence with the above is easily seen.
+Further we see that the $\ell_2-5$ coefficient directly corresponds to the $\textcolor{red}{\alpha_4}$ edge, and below we have highlighted the common factors.
 \begin{equation}
 	\begin{aligned}
-		\alpha_1&=\textcolor{ForestGreen}{-\frac{\ab{23}}{\alpha_7\ab{12}-\ab{13}}},~~~~~~
-		\alpha_2=-\frac{\ab{12}}{\alpha_7\ab{12}-\ab{13}},~~~~~~
-		\alpha_3=\textcolor{orange}{-\frac{\ab{45}}{\alpha_7\ab{25}-\ab{35}}}\\
-		\alpha_4&=\textcolor{red}{-\frac{\alpha_7\ab{24}-\ab{34}}{\alpha_7\ab{25}-\ab{35}}}
+		\alpha_1&=\textcolor{ForestGreen}{-\frac{\brown{\ab{23}}}{\alpha_7\ab{12}-\ab{13}}},~~~~~~
+		\alpha_2=-\frac{\textcolor{yellow}{\ab{12}}}{\green{\alpha_7\ab{12}-\ab{13}}},~~~~~~
+		\alpha_3=\textcolor{orange}{-\frac{\textcolor{purple}{\ab{45}}}{\alpha_7\ab{25}-\ab{35}}}\\
+		\alpha_4&=-\frac{\textcolor{red}{\alpha_7\ab{24}-\ab{34}}}{\orange{\alpha_7\ab{25}-\ab{35}}}
 		,~~~~~~
-		\alpha_5=\frac{\alpha_7\ab{12}-\ab{13}}{\alpha_7\ab{25}-\ab{35}}
+		\alpha_5=\frac{\green{\alpha_7\ab{12}-\ab{13}}}{\orange{\alpha_7\ab{25}-\ab{35}}}
 		,~~~~~~~~\,
-		\alpha_6=-\frac{\alpha_7\ab{25}-\ab{35}}{\ab{15}}
+		\alpha_6=-\frac{\orange{\alpha_7\ab{25}-\ab{35}}}{\pink{\ab{15}}}
 	\end{aligned}
 \end{equation}
-Comparing Figure \ref{fig:5pt3l_1} and Figure \ref{fig:5pt3l_3} with their respective edge-variables, one sees that flipping arrows inside the diagram, inverts the corresponding edge-variable. Sending one of $\{\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5\}\to 0$ sends the corresponding edge to zero, while $\alpha_6\to\infty $ erases that edge. This agrees with the statement that edges that contain an arrow from a white to a black vertex is erasable by sending $\alpha\to 0$ and from black to white by $\alpha\to \infty$.
+Comparing Figure \ref{fig:5pt3l_1} and Figure \ref{fig:5pt3l_3} with their respective edge-variables, one sees that flipping arrows inside the diagram, inverts the corresponding edge-variable. Sending one of $\{\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5\}\to 0$ sends the corresponding edge to zero, while $\alpha_6\to\infty $ erases that edge. This agrees with the statement found at six points that edges that contain an arrow from a white to a black vertex is erasable by sending $\alpha\to 0$ and from black to white by $\alpha\to \infty$.  
 \newpage
 \section{Summary and outlook}
 In this report we first gave a brief introduction to the Grassmanian and on-shell diagrams. We then outlined how to get  $\mathcal{N}=4$ sYM amplitudes from these, by explicitly calculating examples at four, five, and six points. The techniques were then extended to $\mathcal{N}\neq4$ by considering all internal configurations for a specific fixed external helicity configuration, specifically focusing on $\mathcal{N}=0$. When diagrams contain an internal cycle, a Jacobian contributes, and the form does not give the amplitudes but rather represent cuts of loop integrands, while the \textit{bare} form, (i.e. the form without the Jacobian), gave the normal MHV Parke-Taylor amplitudes.
