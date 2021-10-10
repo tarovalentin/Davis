@@ -4,9 +4,13 @@
 \usepackage{booktabs}
 
 \newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\pink}[1]{\textcolor{pink}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 \newcommand{\green}[1]{\textcolor{ForestGreen}{#1}}
 \newcommand{\orange}[1]{\textcolor{orange}{#1}}
+\newcommand{\brown}[1]{\textcolor{brown}{#1}}
+
+\newcommand{\J}{\mathcal{J}}
 
 \newcommand{\ab}[1]{\langle #1 \rangle}
 \newcommand{\sqb}[1]{[ #1 ]}
@@ -44,7 +48,7 @@
 \emailAdd{tvbrown@ucdavis.edu}
 
 
-\abstract{Notes on modern amplitude techniques written as part of a research project with Jaroslav Trnka.}
+\abstract{Using on-shell diagrams we calculate various forms in $\mathcal{N}=0$ and analyze}
 
 \begin{document} 
 \maketitle
@@ -162,9 +166,9 @@ One can construct $(k\times n)$ C-matrices out of on-shell diagrams, where $k$ l
 		\end{aligned}
 	\end{equation}
 \end{itemize} 
-We will in this section calculate amplitudes through various techniques using the on-shell diagrams.
+We will in this section calculate amplitudes through various techniques using the on-shell diagrams. 
 \subsection{Three point on-shell form} 
-The easiest example is the two diagrams representing the three-point MHV and $\overline{\text{MHV}}$ amplitudes.
+The easiest example is the two diagrams representing the three-point MHV and $\overline{\text{MHV}}$ amplitudes in $\mathcal{N}=4$ sYM.
 Taking e.g the amplitudes to be $A_3^{\text{MHV}}(1^-,2^-,3^+)$ and $A_3^{\overline{\text{MHV}}}(1^+,2^+,3^-)$, the on-shell diagrams are
 \begin{figure}[H]\centering
 	\begin{tikzpicture}[scale=0.85]
@@ -208,7 +212,7 @@ These produce the two following $C$ matrices, respectively
 	\end{pmatrix}
 	\end{aligned}
 \end{equation}
-Because of momentum conservation and little group invariance, the solution of the delta functions in this case leads to 
+The amplitudes in this case are
 \begin{equation}
 	\begin{aligned}
 		A_3^{\text{MHV}}(1,2,3)&=\frac{\delta^{8}\left(\sum_{i=1}^{3}\lambda_i\tilde\eta_i\right)\delta^{4}\left(\sum_{i=1}^{3}\lambda_i\tilde\lambda_i\right)}{\expval{12}\expval{23}\expval{31}}\\
@@ -632,11 +636,12 @@ We can now calculate the form
 In the next section we will go over examples using these techniques described here at five and six points.
 \newpage
 \section{Examples of on-shell diagrams at five and six points}
-One can build all the physically relevant on-shell diagrams by attaching BCFW bridges to existing
+In this section we present results for $\mathcal{N}=4$ sYM at five and six points, which will serve as a springboard to consider forms at $\mathcal{N}\neq 4$ in the remainder of the report.
 \subsection{Five point}
+One can build all the physically relevant on-shell diagrams by attaching BCFW bridges to existing diagrams. Here we construct a five point diagram by adding three vertices to a four point graph.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\linewidth]{5pt}
+	\includegraphics[width=0.25\linewidth]{5pt}
 	\caption{}
 	\label{fig:5pt}
 \end{figure}
@@ -679,7 +684,6 @@ One can build all the physically relevant on-shell diagrams by attaching BCFW br
 %		\end{scope}
 %	\end{tikzpicture}
 %\end{figure}
-Each vertex can fix one edge-variable, however you cannot do it in such a way that all variables in a vertex is fixed.
 The $C$ matrix is
 \begin{equation}
 	\begin{aligned}
@@ -702,10 +706,10 @@ with the inverse being
 The amplitude is found through
 \begin{equation}
 	\begin{aligned}
-		\dd \Omega =\frac{\dd \alpha_1}{\alpha_1}\frac{\dd \alpha_2}{\alpha_2}\frac{\dd \alpha_3}{\alpha_3}\frac{\dd \alpha_4}{\alpha_4}\frac{\dd \alpha_5}{\alpha_5}\frac{\dd \alpha_6}{\alpha_6}\delta^{2\times 2}(C\cdot \tilde \lambda) \delta^{2\times 3}(C^\perp\cdot \lambda)\delta^{4\times 2}(C\cdot \tilde \eta)
+		\dd \Omega =\frac{\dd \alpha_1}{\alpha_1}\frac{\dd \alpha_2}{\alpha_2}\frac{\dd \alpha_3}{\alpha_3}\frac{\dd \alpha_4}{\alpha_4}\frac{\dd \alpha_5}{\alpha_5}\frac{\dd \alpha_6}{\alpha_6}\delta(C\cdot \tilde \lambda) \delta(C^\perp\cdot \lambda)\delta(C\cdot \tilde \eta)
 	\end{aligned}
 \end{equation}
-Using the delta-function $\delta^{2\times 3}(C^\perp\cdot \lambda)$ to solve for the $\alpha$'s we obtain after contracting with $\lambda_1$, $\lambda_3$, and $\lambda_5$
+Using the delta-function $\delta(C^\perp\cdot \lambda)$ to solve for the $\alpha$'s we obtain after contracting with $\lambda_1$, $\lambda_3$, and $\lambda_5$
 \begin{equation}
 	\begin{aligned}
 		\alpha_1=\frac{\expval{23}}{\expval{13}},~~~~
@@ -716,7 +720,7 @@ Using the delta-function $\delta^{2\times 3}(C^\perp\cdot \lambda)$ to solve for
 		\alpha_6=\frac{\expval{35}}{\expval{15}}
 	\end{aligned}
 \end{equation}
-From which we see that we get a Jacobian of $\frac{1}{\expval{15}^2\expval{13}}$. Plugging these $\alpha$'s back into $(\delta^{2\times 2}C\cdot\tilde \lambda)$, we get
+From which we see that we get a Jacobian of $\frac{1}{\expval{15}^2\expval{13}}$. Plugging these $\alpha$'s back into $\delta (C\cdot\tilde \lambda)$, we get
 \begin{equation}
 	\begin{aligned}
 0=&\tilde\lambda_1
@@ -738,10 +742,10 @@ From which we see that we get a Jacobian of $\frac{1}{\expval{15}^2\expval{13}}$
 \tilde\lambda_5
 \end{aligned}
 \end{equation}
-where we have used Schouten identities on the $\tilde\lambda_2$ term in the first equation and $\tilde \lambda_4$ term in the second equation. We easily see that
+where we have used Schouten identities on the $\tilde\lambda_2$ term in the first equation and $\tilde \lambda_4$ term in the second equation. We find that
 \begin{equation}
 	\begin{aligned}
-		\delta^{2\times 2}(C\cdot\lambda)=\expval{15}^2\delta^{2\times 2}(P)
+		\delta(C\cdot\lambda)=\expval{15}^2\delta (P)
 	\end{aligned}
 \end{equation}
 Then we plug the $\alpha$'s into the Grassmann delta function. This will of course give a similar result with the exchange of $\tilde\lambda\to \tilde\eta$, although with the Jacobian factor now being $\frac{1}{\expval{15}^4}$. Finally we calculate
@@ -750,7 +754,7 @@ Then we plug the $\alpha$'s into the Grassmann delta function. This will of cour
 		\prod_i\frac{1}{\alpha_i}=\frac{\expval{13} \expval{15}^2 \expval{35}^2}{\expval{12}\expval{23}\expval{34}\expval{45}\expval{51}}
 	\end{aligned}
 \end{equation}
-We are now easily able to get the form
+From which we are now easily able to get the form
 \begin{equation}
 	\begin{aligned}
 		\dd \Omega =
@@ -784,21 +788,17 @@ We first look at the 4+4 diagram, which has the following C-matrices
 We then use the following combination of equation from the $C\cdot\tilde \lambda$ and $C_\perp\cdot \lambda$ delta functions
 \begin{equation}
 	\begin{aligned}
-0=&-\langle 2 3 \rangle + \alpha_{4} \langle 2 4 \rangle
+0=&-\langle 2 3 \rangle + \alpha_{4} \langle 2 4 \rangle,~~~~&&
+0=-(\alpha_{5} \langle 2 4 \rangle) + \langle 3 4 \rangle
 \\
-0=&-(\alpha_{5} \langle 2 4 \rangle) + \langle 3 4 \rangle
+0=&\left[ 6 1 \right] - \alpha_{2} \left[ 1 5 \right],~~~~&&
+0=\left[ 6 5 \right] + \alpha_{1} \left[ 1 5 \right]
 \\
-0=&\left[ 6 1 \right] - \alpha_{2} \left[ 1 5 \right]
+0=&-\left[ 1 2 \right] - \alpha_{5} \left[ 1 3 \right] - \alpha_{6} \alpha_{7} \left[ 1 5 \right],~~~~&&
+0=\alpha_{6} \left[ 1 5 \right] + \left[ 2 5 \right] + \alpha_{5} \left[ 3 5 \right]
 \\
-0=&\left[ 6 5 \right] + \alpha_{1} \left[ 1 5 \right]
-\\
-0=&-\left[ 1 2 \right] - \alpha_{5} \left[ 1 3 \right] - \alpha_{6} \alpha_{7} \left[ 1 5 \right]
-\\
-0=&\alpha_{6} \left[ 1 5 \right] + \left[ 2 5 \right] + \alpha_{5} \left[ 3 5 \right]
-\\
-0=&-(\alpha_{4} \left[ 1 3 \right]) - \left[ 1 4 \right] - ( \alpha_{3} + \alpha_{6} \alpha_{7} \alpha_{8}) \left[ 1 5 \right]
-\\
-0=&\alpha_{6} \alpha_{8} \left[ 1 5 \right] + \alpha_{4} \left[ 3 5 \right] + \left[ 4 5 \right]
+0=&-(\alpha_{4} \left[ 1 3 \right]) - \left[ 1 4 \right] - ( \alpha_{3} + \alpha_{6} \alpha_{7} \alpha_{8}) \left[ 1 5 \right],~~~~&&
+0=\alpha_{6} \alpha_{8} \left[ 1 5 \right] + \alpha_{4} \left[ 3 5 \right] + \left[ 4 5 \right]
 	\end{aligned}
 \end{equation}
 to obtain
@@ -821,6 +821,7 @@ For the other delta functions we get
 \tilde\eta_5
 	\end{aligned}
 \end{equation}
+
 The Jacobian from the delta functions is
 \begin{equation}
 	\begin{aligned}
@@ -921,30 +922,30 @@ Then using the fact that
 		\sandmx{(j\tp 2)}.{K_{j+3,j+4}}.{(j\tp 5)}
 		s_{j,j+1,j+2}}\,.\nonumber
 \end{eqnarray} 
-such that
+We find that the full NMHV amplitude can be written as
 \begin{equation}
 	\begin{aligned}
 		A_6^{\text{NMHV}}=A_6^{\text{MHV}}\left(R_{251}+R_{413}+R_{635}\right)
 	\end{aligned}
 \end{equation}
+Having now showed the general procedure to calculate forms from the on-shell diagrams, we will show how to extend this approach to amplitudes with $\mathbb{N}\neq 4$ super-symmetries. 
 \newpage
 \section{Calculating $\mathcal{N}<4$ amplitudes}
 \subsection{The measure}
-The important difference between this and the $\mathcal{N}=4$ case is that the diagrams are necessarily oriented unlike in the maximally supersymmetric forms where the perfect orientations only played an auxiliary role for constructing the C-matrix. In addition, for perfect orientations with closed internal loops we have to add an extra factor, $\mathcal{J}$ , in
+Since going to $\mathcal{N}<4$ means that the graphs have to be oriented, one has to consider all internal orientations for specific external helicity configuraions. Further, for diagrams containing closed internal loops, one has to add an extra factor, $\mathcal{J}$ , in
 the measure,
 \begin{equation}
 	\begin{aligned}
 		\dd \Omega= \dlog{\alpha_1} \dlog{\alpha_2}\cdots  \dlog{\alpha_m} \mathcal{J}^{\mathcal{N}-4}\cdot \delta(C\cdot Z)
 	\end{aligned}
 \end{equation}
-If there is a collection of closed orbits bounding "faces" $f_i$, with disjoint pairs $(f_i, f_j)$, disjoint triples $(f_i, f_j ,f_k)$ etc., then the Jacobian $\mathcal{J}$ can be expressed as,
+Where, this Jacobian is given by
 \begin{equation}
 	\begin{aligned}
 		\mathcal{J}=1+\sum_if_i+\sum_{\substack{\text{disjoint}\\ \text{pairs } i,j}}f_i f_j+\sum_{\substack{\text{disjoint}\\ \text{pairs } i,j,k}}f_i f_j f_k+\cdots
 	\end{aligned}
 \end{equation}
-First we note that each face is defined as clockwise-oriented product of edge-variables, such that a counter clockwise "face" $f$, gives a Jacobian contribution of $f^{-1}$. As an example see for instance the following diagram with four internal loops
-
+with $f_i$ denoting the face of a closed cycle, and the sums are over disjoint collections of these closed cycles. One also has to note that each face is defined as \textit{clockwise-oriented product of edge-variables}, meaning that a counterclockwise cycle would produce $\frac{1}{f}$. This is easiest seen through an example, 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\linewidth]{Jexample}
@@ -957,8 +958,9 @@ Here we have three loops containing one phase variable, contributing each $f_1,f
 		\mathcal{J}=1+f_1+f_3+f_2^{-1}+f_2^{-1}f_4^{-1}+f_1f_3
 	\end{aligned}
 \end{equation}
-\subsection{ 4 pt $\mathcal{N}=0$}
-In this case we have two diagrams
+
+\subsection{Four-point $\mathcal{N}=0$ with internal loop}
+The simplest example is at four points where we have two diagrams after fixing the external helicities
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{YM4pt}
@@ -971,22 +973,21 @@ where the $\delta's$ are defined by
 		\delta_a=\frac{1}{1-\prod_{i=1}^{4}\alpha_i}
 	\end{aligned}
 \end{equation}
-Solving the $C_\perp$ delta-function, we get the following equations after contracting with $\lambda_2$ and $\lambda_4$ (which gives a Jacobian of $\ab{24}^2$)
+Solving the $C_\perp$ delta-function, we get the following equations after contracting with $\lambda_2$ and $\lambda_4$
 \begin{equation}
 	\begin{aligned} \label{eq:1}
 		           0&=   
 		\langle 1 2 \rangle + \frac{ \alpha_{4} \langle 2 4\rangle
-		}{1 - \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4}}
-		\\
- 0&=   
+		}{1 - \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4}},~~~~&&
+ 0=   
 \langle 1 4\rangle - \frac{\alpha_{2} \alpha_{3} \alpha_{4} \langle 2 4\rangle
-}{1 - \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4}}
+}{1 - \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4}},
 \\
  0&=   
 -\langle 23\rangle + \frac{\alpha_{1} \alpha_{2} \alpha_{4} \langle 2 4\rangle
 }{1 - \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4}}
-\\
-	 0&=   
+,~~~~&&
+	 0=   
 	\langle 3 4\rangle - \frac{\alpha_{2}  \langle 2 4\rangle
 	}{1 - \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4}}
 	\end{aligned}
@@ -998,32 +999,11 @@ from which we obtain
 	\alpha_3&=-\frac{\langle 14 \rangle}{\langle 13\rangle},~~~~~~~~~~	\alpha_4=-\frac{\langle 13 \rangle}{\langle 34\rangle},
 	\end{aligned}
 \end{equation}
-along with a Jacobian factor from rewriting the delta functions of $\frac{\ab{24}^2}{\ab{12}^2\ab{34}^2}$. The procedure to find this factor can be found by eg the first line of \eqref{eq:1}, which after insertion of the $\delta_a=\frac{1}{1-\alpha_1 \alpha_2 \alpha_3 \alpha_4}$ reads
+along with a Jacobian factor from rewriting the delta functions of $\frac{\ab{24}^2}{\ab{12}^2\ab{34}^2}$.
+We further find an expression for $\delta_a$
 \begin{equation}
 	\begin{aligned}
-	0&=   
-\langle 1 2 \rangle + \frac{ \alpha_{4} \langle 12\rangle \ab{34}
-}{\ab{13}}
-	\end{aligned}
-\end{equation}
-Since this is really a delta-function, we can write this as
-\begin{equation}
-	\begin{aligned}
-\delta\left(
-\frac{\ab{34}\ab{12}}{\ab{13}}\left[\frac{\ab{13}}{\ab{34}}+\alpha_4\right] 
-\right)=\frac{\ab{13}}{\ab{34}\ab{12}}\delta\left(
-\frac{\ab{13}}{\ab{34}}+\alpha_4
-\right)
-	\end{aligned}
-\end{equation}
-i.e. the Jacobian from this factor is $\frac{\ab{13}}{\ab{34}\ab{12}}$.
-We can further find an expression for $\delta_a$ through this
-\begin{equation}
-	\begin{aligned}
-		  &0=   
-		\langle 1 2 \rangle +  \alpha_{4} \langle 2 4\rangle\delta_a
-		\\ 
-		\Rightarrow&\delta_a=-\frac{1}{\alpha_4}\frac{\langle 1 2 \rangle}{\langle 24 \rangle}=\frac{\langle 1 2 \rangle \langle 34 \rangle}{ \langle 13 \rangle\langle 24 \rangle}
+\delta_a=\frac{\langle 1 2 \rangle \langle 34 \rangle}{ \langle 13 \rangle\langle 24 \rangle}
 	\end{aligned}
 \end{equation}
 Taking these solutions and inserting into the other delta functions, and multiplying by $\tilde\lambda_1$ and $\tilde\lambda_3$ we get
@@ -1036,18 +1016,6 @@ Taking these solutions and inserting into the other delta functions, and multipl
 	0&=	\sqb{14}+\frac{\ab{23}\sqb{13}}{\ab{24}}
 ,	~~~~~~~~
 	0=	\sqb{34}+\frac{\ab{12}\sqb{13}}{\ab{24}}
-	\end{aligned}
-\end{equation}
-Which we can write as
-\begin{equation}
-	\begin{aligned}
-		0&=	\ab{42}\sqb{21}+\ab{43}\sqb{31}=\aMs{4}{P}{1}
-		,	~~~~~~~~
-		0=	\ab{42}\sqb{23}+\ab{41}\sqb{13}=\aMs{4}{P}{3}
-		\\
-		0&=	\ab{24}\sqb{41}+\ab{23}\sqb{31}=\aMs{2}{P}{1}
-		,	~~~~~~~~
-		0=	\ab{24}\sqb{43}+\ab{21}\sqb{13}=\aMs{2}{P}{3}
 	\end{aligned}
 \end{equation}
 Which we can combine into $\delta^4(P)\ab{24}^2$. Finally the Jacobian is
@@ -1070,15 +1038,14 @@ The procedure is the same for the other diagram and here we just summarize the r
 		\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 4 \rangle \langle 23 \rangle}
 	\end{aligned}
 \end{equation}
-Combining all these factors with $\prod_i \alpha_i=\frac{\ab{41}\ab{23}}{\ab{12}\ab{34}}$ and $\prod_i \beta_i=\frac{\ab{12}\ab{34}}{\ab{23}\ab{41}}$, as well as using taking the Jacobians to the $-4$'th power, we have the form
+Combining all these factors with $\prod_i \alpha_i=\frac{\ab{41}\ab{23}}{\ab{12}\ab{34}}$ and $\prod_i \beta_i=\frac{\ab{12}\ab{34}}{\ab{23}\ab{41}}$, as well as using taking the Jacobians to the $-4$'th power, we can combine them in the form
 \begin{equation}
 	\begin{aligned}
-		\dd \Omega &= \left(\frac{\ab{24}^4}{\ab{12}^2\ab{34}^2}\frac{ \ab{12}\ab{34}}{\ab{41}\ab{23} } \left[\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 2 \rangle \langle 34 \rangle}\right]^{-4}+\frac{\ab{24}^4}{\ab{14}^2\ab{23}^2}\frac{\ab{23}\ab{41}}{\ab{12}\ab{34}}\left[	\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 4 \rangle \langle 23 \rangle}\right]^{-4}\right)\delta(P)\\
-		&=\frac{\ab{12}^4\ab{34}^4+\ab{14}^4\ab{23}^4}{\ab{12}\ab{13}^4\ab{23}\ab{34}\ab{41}}
+		\dd \Omega &=\frac{\ab{24}^4}{\ab{12}\ab{23}\ab{34}\ab{41}}\left( \left[\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 2 \rangle \langle 34 \rangle}\right]^{-4}+\left[	\frac{ \langle 13 \rangle\langle 24 \rangle}{\langle 1 4 \rangle \langle 23 \rangle}\right]^{-4}\right)\delta(P)\\
 	\end{aligned}
 \end{equation}
 \subsection{Five-point $\mathcal{N}=0$, no internal cycle}
-For five and six points we will look at two different type of diagrams. First we analyze on without an internal cycle, i.e. has $\mathcal{J}=0$. As will be evident, this produces  the standard Yang-Mills amplitude. We then follow this by evaluating diagrams with internal cycles, which we can use to get forms for $\mathcal{N}\neq4$.
+For five and six points we will look at two different types of diagrams. First we analyze one without an internal cycle, i.e. has $\mathcal{J}=1$. As will be evident, this produces  the standard Yang-Mills amplitude. We then follow this by evaluating diagrams with internal cycles, which we can use to get forms for $\mathcal{N}\neq4$.
 We will once again look at the following diagram
 \begin{figure}[H]
 	\centering
@@ -1164,13 +1131,13 @@ Solving the delta-function constraints we are led to the following solutions for
 along with a Jacobian from solving the delta functions of $\frac{\ab{13}\ab{25}^4}{\ab{15}^2\ab{23}^2\ab{35}^2}$ and $\frac{\ab{13}\ab{25}^4}{\ab{12}^2\ab{35}^2}$ respectively. The Jacobian from the internal loops are
 \begin{equation}
 	\begin{aligned}
-		J_a=\delta_a^{-1}=\frac{\ab{13}\ab{25}}{\ab{15}\ab{23}},~~~~~~J_b=\delta_a^{-1}=\frac{\ab{13}\ab{25}}{\ab{12}\ab{35}}
+		\J_a=\delta_a^{-1}=\frac{\ab{13}\ab{25}}{\ab{15}\ab{23}},~~~~~~\J_b=\delta_a^{-1}=\frac{\ab{13}\ab{25}}{\ab{12}\ab{35}}
 	\end{aligned}
 \end{equation}
 One can note that these can be rewritten using Schouten,
 \begin{equation}
 	\begin{aligned}
-		J_a=1+\frac{\ab{12}\ab{35}}{\ab{15}\ab{23}}\equiv1+f^{-1},~~~~J_a=1+\frac{\ab{15}\ab{23}}{\ab{12}\ab{35}}\equiv1+f
+		\J_a=1+\frac{\ab{12}\ab{35}}{\ab{15}\ab{23}}\equiv1+f^{-1},~~~~\J_a=1+\frac{\ab{15}\ab{23}}{\ab{12}\ab{35}}\equiv1+f
 	\end{aligned}
 \end{equation}
 and since, as we will se shortly, the forms produced by the individual diagrams only differ by this Jacobian, one does not have to go through the calculation of both diagrams, but can instead infer, the Jacobian by rewriting it in this form.
@@ -1343,7 +1310,7 @@ Using the aforementioned we can also infer the Jacobian of the diagram with the 
 The form obtained
 is then
 \begin{equation}
-	\begin{aligned}
+	\begin{aligned} \label{eq:6pt}
 		\dd\Omega&=\frac{\ab{46}^4\sqb{13}^4}{s_{456}\ab{45}\ab{56}\sqb{12}\sqb{23}\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}\left(
 		\left[\frac{\aMs{4}{Q_{456}}{3}\aMs{6}{Q_{456}}{1}}{\aMs{4}{Q_{456}}{1}\aMs{6}{Q_{456}}{3}}\right]^{-4}+\left[\frac{\aMs{4}{Q_{456}}{3}\aMs{6}{Q_{456}}{1}}{[13]\ab{46}s_{456}}\right]^{-4}
 		\right)	
@@ -1359,58 +1326,88 @@ First we assign the three loop momenta $\ell_1,\ell_2$, and $\ell_3$, in the fol
 	\label{fig:two-loop}
 \end{figure}
 We then put the internal propagators on shell, which gives the following solutions for the internal momenta
+%\begin{equation}
+%	\begin{aligned}
+%	\ell_1=\frac{\tilde\lambda_4}{\ab{46}}\aMs{6}{Q_{456}}{\bm\cdot},~~~~~~\ell_2=\frac{1}{\green{\aMs{6 }{Q_{456}}{1}}}\aMs{6 }{Q_{456}}{\bm\cdot}\aMs{\bm \cdot }{Q_{456}}{1},~~~~~~	\ell_3=\frac{\tilde\lambda_3}{\sqb{13}}\aMs{\bm\cdot}{Q_{456}}{1},\\
+%	\ell_1+4=\frac{\textcolor{yellow}{\ab{56}}}{\ab{46}}\lambda_4\tilde{\lambda}_5,~~~~~~\ell_2+\ell_3=\frac{\aMs{6 }{Q_{456}}{3}}{\green{\aMs{6 }{Q_{456}}{1}}}\aMs{\bm \cdot }{Q_{456}}{1}\frac{\tilde\lambda_4}{\sqb{13}},~~~~~~\ell_3+3=-\frac{\blue{\sqb{12}}}{\sqb{13}}\lambda_2\tilde{\lambda}_3,
+%	\\
+%	\ell_1+Q_{45}=\frac{\textcolor{purple}{\ab{45}}}{\ab{46}}\lambda_6\tilde{\lambda}_4,~~~~~~\ell_2-Q_{456}=\frac{\orange{s_{456}}}{\green{\aMs{6 }{Q_{456}}{1}}}\lambda_3\tilde\lambda_4,~~~~~~\ell_3+Q_{23}=\frac{\red{\sqb{23}}}{\sqb{13}}\lambda_2\tilde{\lambda}_1,\\
+%	\ell_1+Q_{456}=\frac{\lambda_6}{\ab{46}}\aMs{4}{s_{456}}{\bm \cdot},~~~~~~\ell_1+\ell_2=\frac{\aMs{4 }{Q_{456}}{1}}{\green{\aMs{6 }{Q_{456}}{1}}}\aMs{6 }{Q_{456}}{\bm \cdot}\frac{\lambda_6}{\ab{46}},~~~~~~\ell_3+Q_{123}=\frac{\tilde\lambda_1}{\sqb{13}}\aMs{\bm\cdot}{s_{456}}{3},
+%	\end{aligned}
+%\end{equation}
 \begin{equation}
 	\begin{aligned}
-	\ell_1=\frac{\tilde\lambda_4}{\ab{46}}\aMs{6}{Q_{456}}{\bm\cdot},~~~~~~\ell_2=\frac{1}{\green{\aMs{6 }{Q_{456}}{1}}}\aMs{6 }{Q_{456}}{\bm\cdot}\aMs{\bm \cdot }{Q_{456}}{1},~~~~~~	\ell_3=\frac{\tilde\lambda_3}{\sqb{13}}\aMs{\bm\cdot}{Q_{456}}{1},\\
-	\ell_1+4=\frac{\textcolor{yellow}{\ab{56}}}{\ab{46}}\lambda_4\tilde{\lambda}_5,~~~~~~\ell_2+\ell_3=\frac{\aMs{6 }{Q_{456}}{3}}{\green{\aMs{6 }{Q_{456}}{1}}}\aMs{\bm \cdot }{Q_{456}}{1}\frac{\tilde\lambda_4}{\sqb{13}},~~~~~~\ell_3+3=-\frac{\blue{\sqb{12}}}{\sqb{13}}\lambda_2\tilde{\lambda}_3,
-	\\
-	\ell_1+Q_{45}=\frac{\textcolor{purple}{\ab{45}}}{\ab{56}}\lambda_6\tilde{\lambda}_4,~~~~~~\ell_2-Q_{456}=\frac{\orange{s_{456}}}{\green{\aMs{6 }{Q_{456}}{1}}}\lambda_3\tilde\lambda_4,~~~~~~\ell_3+Q_{23}=\frac{\red{\sqb{23}}}{\sqb{13}}\lambda_2\tilde{\lambda}_1,\\
-	\ell_1+Q_{456}=\frac{\lambda_6}{\ab{46}}\aMs{4}{s_{456}}{\bm \cdot},~~~~~~\ell_1+\ell_2=\frac{\aMs{4 }{Q_{456}}{1}}{\green{\aMs{6 }{Q_{456}}{1}}}\aMs{6 }{Q_{456}}{\bm \cdot}\frac{\lambda_6}{\ab{46}},~~~~~~\ell_3+Q_{123}=\frac{\tilde\lambda_1}{\sqb{13}}\aMs{\bm\cdot}{s_{456}}{3},
+		\ell_1=\frac{\tilde\lambda_4}{\pink{\ab{46}}}\aMs{6}{Q_{456}}{\bm\cdot},~~~~~~\ell_2=\frac{1}{\green{\aMs{6 }{Q_{456}}{1}}}\aMs{6 }{Q_{456}}{\bm\cdot}\aMs{\bm \cdot }{Q_{456}}{1},~~~~~~	\ell_3=\frac{\tilde\lambda_3}{\brown{\sqb{13}}}\aMs{\bm\cdot}{Q_{456}}{1},\\
+		\ell_1+4=\frac{\textcolor{yellow}{\ab{56}}}{\pink{\ab{46}}}\lambda_4\tilde{\lambda}_5,~~~~~~\ell_2+\ell_3=\frac{\aMs{6 }{Q_{456}}{3}}{\green{\aMs{6 }{Q_{456}}{1}}}\aMs{\bm \cdot }{Q_{456}}{1}\frac{\tilde\lambda_4}{\brown{\sqb{13}}},~~~~~~\ell_3+3=-\frac{\blue{\sqb{12}}}{\brown{\sqb{13}}}\lambda_2\tilde{\lambda}_3,
+		\\
+		\ell_1+Q_{45}=\frac{\textcolor{purple}{\ab{45}}}{\pink{\ab{46}}}\lambda_6\tilde{\lambda}_4,~~~~~~\ell_2-Q_{456}=\frac{\orange{s_{456}}}{\green{\aMs{6 }{Q_{456}}{1}}}\lambda_3\tilde\lambda_4,~~~~~~\ell_3+Q_{23}=\frac{\red{\sqb{23}}}{\brown{\sqb{13}}}\lambda_2\tilde{\lambda}_1,\\
+		\ell_1+Q_{456}=\frac{\lambda_6}{\pink{\ab{46}}}\aMs{4}{s_{456}}{\bm \cdot},~~~~~~\ell_1+\ell_2=\frac{\aMs{4 }{Q_{456}}{1}}{\green{\aMs{6 }{Q_{456}}{1}}}\aMs{6 }{Q_{456}}{\bm \cdot}\frac{\lambda_6}{\pink{\ab{46}}},~~~~~~\ell_3+Q_{123}=\frac{\tilde\lambda_1}{\brown{\sqb{13}}}\aMs{\bm\cdot}{s_{456}}{3},
 	\end{aligned}
 \end{equation}
 Comparing this with the edge-variables, we have highlighted some of the common factors among them. 
 \begin{align*}
-	\alpha_1 = \frac{\red{[23]}}{[13]}\,, \quad \alpha_2 = -\frac{\blue{[12]}}{[13]}&\,,~~
+	\alpha_1 = \frac{\red{[23]}}{\brown{[13]}}\,, \quad \alpha_2 = -\frac{\blue{[12]}}{\brown{[13]}}&\,,~~
 	\alpha_3 = - \frac{\green{\aMs{6}{Q_{456}}{1}}}{\aMs{6}{Q_{456}}{3}}, \quad
-	\alpha_4 =  \frac{\ab{46}\sqb{13}}{\green{\aMs{6}{Q_{456}}{1}}}\,,\\
+	\alpha_4 =  \frac{\pink{\ab{46}}\brown{[13]}}{\green{\aMs{6}{Q_{456}}{1}}}\,,\\
 	\alpha_5 = \frac{\green{\aMs{6}{Q_{456}}{1}}}{\aMs{4}{Q_{456}}{1}}\,,\quad
-	\,\alpha_6 &= \frac{\orange{\sab{456}}}{\green{\aMs{6}{Q_{456}}{1}}}\,, \quad \alpha_7 = \frac{\textcolor{yellow}{\ab{56}}}{\ab{46}}\,, \quad
-	\alpha_8 = \frac{\textcolor{purple}{\ab{45}}}{\ab{46}}\,  
+	\,\alpha_6 &= \frac{\orange{\sab{456}}}{\green{\aMs{6}{Q_{456}}{1}}}\,, \quad \alpha_7 = \frac{\textcolor{yellow}{\ab{56}}}{\pink{\ab{46}}}\,, \quad
+	\alpha_8 = \frac{\textcolor{purple}{\ab{45}}}{\pink{\ab{46}}}\,  
 \end{align*}
-We see that sending $\{\alpha_1,\alpha_2,\alpha_6,\alpha_7,\alpha_8\}\to 0$ erases the corresponding edge, while the same happens by sending $\{\alpha_3,\alpha_5\}\to \infty$. For $\alpha_4$, sending it to 0, would either erase the whole middle box, or blow the $\ell_1$ and $\ell_3$ loops up.
+We see that sending $\{\alpha_1,\alpha_2,\alpha_4,\alpha_6,\alpha_7,\alpha_8\}\to 0$ erases the corresponding edge, while the same happens by sending $\{\alpha_3,\alpha_5\}\to \infty$. 
+Further we can identify
+\begin{equation}
+	\begin{aligned}
+		\ell_1\to& \infty,~~~~\text{ for }\pink{ \ab{46}}\to 0,\\
+		\ell_2\to& \infty,~~~~\text{ for } \green{\aMs{6}{Q_{456}}{1}}\to 0,\\
+		\ell_3\to& \infty,~~~~\text{ for } \brown{\sqb{13}}\to 0.\\
+	\end{aligned}
+\end{equation}
+We see that in the final form \eqref{eq:6pt}, these will contribute as higher order poles stemming from the Jacobian factors.
+
+Finally we will in the next section discuss how to construct higher loop on-shell diagrams. 
 \newpage
 \section{Higher loops}
+One can get to higher loops with the same number of points by attaching two connected vertices to one of the graphs we have already considered. We will do this at four point to show how the form is constructed and then proceed to analyze one five-point three-loop diagram with no internal cycles and one with an internal cycle. Finally we analyze the singularity structure by comparing with the solution obtained by explicitly solving the on-shell constraints of the internal momenta.
 \subsection{2 loop four-point}
-We have the diagram
+At four points we can attach the two connected vertices to make the following two-loop diagram, with corresponding C-matrix
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{two-loop}
 	\caption{}
 	\label{fig:two-loop}
 \end{figure}
-Solving the bosonic delta-functions
+Solving the bosonic delta-functions one obtains the following equations
 \begin{equation}
 	\begin{aligned}
 		0&=\alpha_{4} \langle 1 2 \rangle + \alpha_{3} \alpha_{5} \langle 1 2 \rangle - \langle 1 3 \rangle
-		\\
-		0&=\alpha_{2} \alpha_{3} \alpha_{5} \langle 1 2 \rangle - \langle 2 3 \rangle
+		&&0=\alpha_{2} \alpha_{3} \alpha_{5} \langle 1 2 \rangle - \langle 2 3 \rangle
 		\\
 		0&=\alpha_{3} \langle 1 2 \rangle - \langle 1 4 \rangle
-		\\
-		0&=-((\alpha_{1} + \alpha_{2} \alpha_{3}) \langle 1 2 \rangle) - \langle 2 4 \rangle
+		&&0=-((\alpha_{1} + \alpha_{2} \alpha_{3}) \langle 1 2 \rangle) - \langle 2 4 \rangle
 		\\
 	\end{aligned}
 \end{equation}
-we find
-\subsection{Three loop five-point in $\mathcal{N}=0$}
-One might also consider diagrams with an extra internal parameter. At five-point an example of this is shown below
+Then, taking $\alpha_4$ as the free parameter, we find
+\begin{equation}
+	\begin{aligned}
+		\alpha_1=-\frac{\alpha_4\ab{24}-\ab{34}}{\alpha_4\ab{12}-\ab{13}},~~~~\alpha_2=\frac{\ab{23}}{\alpha_4\ab{12}-\ab{13}},~~~~\alpha_3=\frac{\ab{14}}{\ab{12}},~~~~\alpha_5=-\frac{\alpha_4\ab{12}-\ab{13}}{\ab{14}},~~~~
+	\end{aligned}
+\end{equation}
+So that the $\mathcal{N}=0$ form, after multiplying by the delta function Jacobian $\frac{\ab{12}^2}{\ab{14}\left(\alpha_4\ab{12}-\ab{13}\right)}$, is
+\begin{equation}
+	\begin{aligned}
+	\dd\Omega = \frac{\ab{12}^4}{\alpha_4\ab{12}\ab{23}\ab{41}\left(\alpha_4\ab{24}-\ab{34}\right)}\delta(P)	\end{aligned}
+\end{equation}
+Before we approach a diagram with an internal cycle, we will first give another example of a higher loop diagram, specifically at five points.
+\subsection{Three loop five-point in $\mathcal{N}=0$, no internal cycle}
+Just like in the four-point example we can add a connected pair of vertices to one of the five point diagrams, to get a three loop graph. An example of such a graph is shown below
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{5pt3l}
 	\caption{}
 	\label{fig:5pt3l_1}
 \end{figure}
-Such a diagram can be thought of as a loop-level diagram, since the on-shell condition imposed on the three loop momenta leaves us with $3\times 4-11=1$ unfixed parameter. The C-matrices are
+The on-shell condition imposed on the three loop momenta leaves us with $3\times 4-11=1$ unfixed parameter. The C-matrices are
 \begin{equation}
 	\begin{aligned}
 		C&=\left(
@@ -1428,6 +1425,7 @@ Such a diagram can be thought of as a loop-level diagram, since the on-shell con
 		\right)
 	\end{aligned}
 \end{equation}
+With the following corresponding equations stemming from the delta function
 \begin{equation}
 	\begin{aligned}
 		\delta(C_\perp\cdot \lambda)&\rightarrow\begin{cases}
@@ -1473,7 +1471,7 @@ Such a diagram can be thought of as a loop-level diagram, since the on-shell con
 %
 %
 %
-Solving the delta-functions we find
+It is natural choice in this case to take either $\alpha_7$ or $\alpha_4$ as the free parameters. We take $\alpha_7$ and note that since removing $\alpha_7$ gives us one of the five-point graphs analyzed earlier in this report, one would expect the residue at $\alpha_7=0$ of the resulting form to match the five-point two loop result. Solving the delta-functions we find
 \begin{equation}
 	\begin{aligned}
 \alpha_1&=-\frac{\ab{23}}{\alpha_7\ab{12}-\ab{13}},~~~~~~
@@ -1505,25 +1503,27 @@ Such that
 So that we get the form
 \begin{equation}
 	\begin{aligned}
-	\dd \Omega=	\frac{\ab{15}^3}{\alpha_7 \ab{12}\ab{23}\ab{45}\left(\alpha_7\ab{24}-\ab{34}\right)}
+	\dd \Omega=	\frac{\ab{15}^4}{\alpha_7 \ab{12}\ab{23}\ab{45}\ab{15}\left(\alpha_7\ab{24}-\ab{34}\right)}
 	\end{aligned}
 \end{equation}
-taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Parke-Taylor tree-level amplitude
+taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Parke-Taylor tree-level amplitude, as expected.
 \begin{equation}
 	\begin{aligned}
 		\dd \Omega=	\frac{\ab{15}^4}{ \ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}
 	\end{aligned}
 \end{equation}
-Further, we note that the form has one other pole at $\alpha_7=\frac{\ab{34}}{\ab{24}}$.
-\subsection{Three loop five-point in any $\mathcal{N}$}
-To get the form for e.g. $\mathcal{N}=1$, one needs to consider diagrams that contain internal closed  cycles. Here we will consider the following
+Further, we note that the form has one other pole at $\alpha_7=\frac{\ab{34}}{\ab{24}}$. Since we now have an intuition for the procedure, let us repeat this for a diagram with an internal cycle
+\subsection{Three loop five-point in $\mathcal{N}=0$ with internal cycle}
+We will consider the following graph
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{5pt3l_2}
-	\caption{}
+	\caption{Diagram $A$: three loop, five point}
 	\label{fig:5pt3l_3}
 \end{figure}
-The C-matrices obtained are
+To get form of the cut, one has to fix the helicity configuration and then find all the configurations of the internal momenta that yield a perfect orientation. The only other possible diagram would have the internal cycle going clockwise instead - we will refer to that as diagram $B$. Since the bare form is the same for both diagrams, the only point of difference is the Jacobians. 
+
+For diagram A, the C-matrices are
 \begin{equation}
 	\begin{aligned}
 		C
@@ -1593,19 +1593,19 @@ Solving the delta-functions we find
 		\delta\left(\alpha_6+\frac{\alpha_7\ab{25}-\ab{35}}{\ab{15}}\right)
 	\end{aligned}
 \end{equation}
-So that we get the form
+The bare form matches that of our earlier diagram
 \begin{equation}
 	\begin{aligned}
-		\dd \Omega=	\frac{\ab{25}^4}{\alpha_7 \ab{12}\ab{51}\ab{23}\ab{45}\left(\alpha_7\ab{24}-\ab{34}\right)}
+		\dd \Omega_{\text{bare}}=	\frac{\ab{25}^4}{\alpha_7 \ab{12}\ab{51}\ab{23}\ab{45}\left(\alpha_7\ab{24}-\ab{34}\right)}
 	\end{aligned}
 \end{equation}
-taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Parke-Taylor tree-level amplitude
+and we note that taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Parke-Taylor tree-level amplitude
 \begin{equation}
 	\begin{aligned}
 		\dd \Omega=	\frac{\ab{15}^4}{ \ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}
 	\end{aligned}
 \end{equation}
-Further, the Jacobian is
+To get the form of the cut we find that the Jacobian is
 \begin{equation}
 	\begin{aligned}
 		J_a=\delta_a^{-1}=
@@ -1673,6 +1673,11 @@ Further we see that the $\ell_2-5$ coefficient directly corresponds to the $\tex
 Comparing Figure \ref{fig:5pt3l_1} and Figure \ref{fig:5pt3l_3} with their respective edge-variables, one sees that flipping arrows inside the diagram, inverts the corresponding edge-variable. Sending one of $\{\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5\}\to 0$ sends the corresponding edge to zero, while $\alpha_6\to\infty $ erases that edge. This agrees with the statement that edges that contain an arrow from a white to a black vertex is erasable by sending $\alpha\to 0$ and from black to white by $\alpha\to \infty$.
 \newpage
 \section{Summary and outlook}
+In this report we gave a brief introduction to the Grassmanian and on-shell diagrams. In sections --- we outlined the how to get  $\mathcal{N}=4$ sYM amplitudes from these, by explicitly calculating examples at four, five, and six points. We then show how to extend the techniques to $\mathcal{N}\neq4$ by considering all internal configurations for a specific fixed external helicity configuration, specifically focusing on $\mathcal{N}=0$. When diagrams contain an internal cycle, a Jacobian contributes, and the form does not give the amplitudes but rather represent cuts of loop integrands, while the \textit{bare} form, (i.e. the form without the Jacobian), gave the normal MHV Parke-Taylor amplitudes.
+
+We then considered higher loop diagrams at four- and five-point, which had one parameter unfixed. Here  
+
+We then considered the singularity structure
 \appendix
 \begin{thebibliography}{99}
 %\cite{Bjerrum-Bohr:2013bxa}
