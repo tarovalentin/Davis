@@ -48,7 +48,7 @@
 \emailAdd{tvbrown@ucdavis.edu}
 
 
-\abstract{Using on-shell diagrams we calculate various forms in $\mathcal{N}=0$ and analyze}
+\abstract{Using on-shell diagrams we calculate various amplitudes in $\mathcal{N}=4$. We then extend this to $\mathcal{N}\neq4$ focusing on $\mathcal{N}=0$ and analyze the singularity structure of the results. Finally we calculate higher loop forms at five points.}
 
 \begin{document} 
 \maketitle
@@ -56,11 +56,11 @@
 \newpage
 \section{Introduction}
 During the last few decades, significant strides have been made in the study of scattering amplitudes. New modern on-shell techniques have made calculations with a large number of particles and loops feasible. Many of the significant advancements in the field has come by studying $\mathcal N = 4$ super Yang-Mills (sYM)
-and using its planar, or large $N$, limit as a sandbox to explore the underlying geometric structure. 
+and using its planar, or large $N$, limit as a sandbox to explore the underlying geometric structure. \cite{amp1,amp3,amp4,amp6,Elvang} 
 
 In recent years this geometric structure of scattering amplitudes in $\mathcal N = 4$
 sYM has been explored using the positive Grassmannian, on-shell diagrams, and
-the Amplituhedron. A natural progression is to try and extend these discoveries beyond planar $\mathcal N = 4$ sYM to explore whether the geometric interpretation is a more general feature of quantum field theories (QFT’s). Similarly, considering theories with $\mathcal N\neq 4$, such as supergravity ($\mathcal N = 8$), will teach us to what extend these geometric pictures apply to other field theories. 
+the Amplituhedron\cite{amp2,on1,on2}. A natural progression is to try and extend these discoveries beyond planar $\mathcal N = 4$ sYM to explore whether the geometric interpretation is a more general feature of quantum field theories (QFT’s). Similarly, considering theories with $\mathcal N\neq 4$, such as supergravity ($\mathcal N = 8$), will teach us to what extend these geometric pictures apply to other field theories. 
 
 The focus of this project has been some of these extensions, with the report structured as follows. In section \ref{sec:grassmanian} we give a short review of the Grassmaniann, followed by an introduction to on-shell diagrams. Then, in sections \ref{sec:on-she-intro} and \ref{sec:examples} we calculate various examples using the methods described. We extend this approach to theories for $\mathcal{N}\neq 4$ in section \ref{sec:YM}, focusing on $\mathcal N=0$ \footnote{The results found at $\mathcal{N}=0$ can easily be extended by adding super momentum delta functions in the calculation.}, explicitly calculating multiple examples at five and six points. Then diagrams at higher loops are considered in section \ref{sec:higherloops} and finally we consider the singularity structure of the results found.
 \section{Grassmanian\label{sec:grassmanian}}
@@ -90,7 +90,7 @@ The span of these vectors gives the $k$- plane. If they are stacked, we get a ma
 \end{bmatrix}\equiv C_{\alpha a},~~~~~~~~\alpha=1,\dots,k~~~~a=1,\dots,n
 \end{aligned}
 \end{equation}
-This matrix is generally not unique since it is GL($k$) redundant, $
+This matrix is generally not unique since it has a GL($k$) redundancy, $
 C_{\alpha a}\sim L^{\beta}_\alpha C_{\beta a}$.
 The dimensionality of the Grassmanian is 
 \begin{equation}
@@ -113,7 +113,7 @@ The redudancy means that we can gaugefix the matrix using a linear transformatio
 	\end{matrix}  \\
 \end{array} \right]
 \end{equation}
-The dimensionality of the Grassmanian are symmetric under $n\leftrightarrow k$. This is because there is a bijection between the Grassmania: $k$ and $n-k$ planes in $n$ dimensions, since these planes are orthogonal. In the case above $C^{\perp}$ is a $2$-plane in 5 dimensions. We can illustrate both the matrices like so,
+The dimensionality of the Grassmanian is symmetric under $n\leftrightarrow k$. This is because there is a bijection between the Grassmania: $k$ and $n-k$ planes in $n$ dimensions, since these planes are orthogonal. In the case above $C^{\perp}$ is a $2$-plane in 5 dimensions. We can illustrate both the matrices like so,
 \begin{equation}
 	\left[ \begin{array}{@{}c|c@{}}
 		\begin{matrix}
@@ -137,7 +137,7 @@ The dimensionality of the Grassmanian are symmetric under $n\leftrightarrow k$. 
 \end{matrix} 
 	\end{array} \right]
 \end{equation}
-With the bottom part just being the negative transpose of the $x,y$ and $z$ coordinates in the upper right corner. The SL$(k)$ invariants are determinants of any $k$ coloumns of the matrix (the minors), labeling these by their indices:
+With the bottom part just being the negative transpose of the $x,y$ and $z$ coordinates in the upper right corner. The invariants are determinants of any $k$ coloumns of the matrix (the minors), labeling these by their indices:
 \begin{equation}
 \begin{pmatrix}
 a_1&a_2&\cdots &a_k
@@ -146,11 +146,11 @@ a_1&a_2&\cdots &a_k
 We will now proceed to use the properties of the Grassmanian by introducing the concept of on-shell diagrams.
 \newpage
 \section{Introduction to on-shell diagrams}\label{sec:on-she-intro}
-In this section we introduce the notion of on-shell diagrams, and give examples on different ways one can calculate diagrams from these. 
+In this section we introduce the notion of on-shell diagrams, and give examples on different ways one can calculate differential forms from these. 
 
 One can construct $(k\times n)$ C-matrices out of on-shell diagrams, where $k$ labels the number of negative helicity particles and $n$ is the total number of particles. The procedure to construct a matrix from a diagram using \textit{edge-variables} is as follows
 \begin{itemize}
-	\item Label the edges of the on-shell diagram by $\alpha$'s.
+	\item Label the edges of the on-shell diagram by $\alpha$'s. Not all edges have to be labeled due to the GL$(k)$ redundancy.
 	\item Starting at one of the incoming particles (say, $2$), trace a path to one of the outgoing particles  (say, $4$). Multiply the $\alpha$'s encountered on the path. This would be entry $C_{2\,4}$ in the C-matrix, i.e.
 	\begin{equation}
 		\begin{aligned}
@@ -176,7 +176,7 @@ We will now calculate amplitudes through various techniques using the on-shell d
 \subsection{Three point on-shell form} 
 The easiest example is the two diagrams representing the three-point MHV and $\overline{\text{MHV}}$ amplitudes in $\mathcal{N}=4$ sYM.
 Taking e.g the amplitudes to be $A_3^{\text{MHV}}(1^-,2^-,3^+)$ and $A_3^{\overline{\text{MHV}}}(1^+,2^+,3^-)$, the on-shell diagrams are
-\begin{figure}[H]\centering
+\begin{figure}[H]\centering\hspace*{1.5cm}
 	\begin{tikzpicture}[scale=0.85]
 		\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
 			\draw[black,fill=gray] (0,0) circle (2.4mm);
@@ -221,12 +221,13 @@ These produce the two following $C$ matrices, respectively
 The amplitudes in this case are
 \begin{equation}
 	\begin{aligned}
-		A_3^{\text{MHV}}(1,2,3)&=\frac{\delta^{8}\left(\sum_{i=1}^{3}\lambda_i\tilde\eta_i\right)\delta^{4}\left(\sum_{i=1}^{3}\lambda_i\tilde\lambda_i\right)}{\expval{12}\expval{23}\expval{31}}\\
-		A_3^{\overline{\text{MHV}}}(1,2,3)&=\frac{\delta^{4}\left([12]\tilde\eta_3+[23]\tilde\eta_1+[31]\tilde\eta_2\right)\delta^{4}\left(\sum_{i=1}^{3}\lambda_i\tilde\lambda_i\right)}{[12][23][31]}\\
+		A_3^{\text{MHV}}(1,2,3)&=\frac{\delta\left(\mathcal Q\right)\delta\left(P\right)}{\expval{12}\expval{23}\expval{31}}\\
+		A_3^{\overline{\text{MHV}}}(1,2,3)&=\frac{\delta\left([12]\tilde\eta_3+[23]\tilde\eta_1+[31]\tilde\eta_2\right)\delta\left(P\right)}{[12][23][31]}\\
 	\end{aligned}
 \end{equation}
+where $\mathcal Q\equiv \sum_{i=1}^{3}\lambda_i\tilde\eta_i$ and $P\equiv \sum_{i=1}^{3}\lambda_i\tilde\lambda_i$
 One can further construct more elaborate diagrams by gluing these three point functions together.
-The simplest possible diagram out of two opposite helicity ($k=1$ and $k=2$) amplitudes, is shown below
+The simplest possible diagram, found by stitching together two vertices of opposite helicity ($k=1$ and $k=2$), is shown below
 \begin{figure}[H]\centering\hspace*{3cm}
 	\begin{tikzpicture}
 		\begin{scope}[very thick, every node/.style={sloped,allow upside down}]
@@ -414,7 +415,7 @@ Using the above, we find the matrix to have the following entries
 		\end{pmatrix}
 	\end{aligned}
 \end{equation}
-Note that $f_2$ doesn't show up, which means that according to \eqref{eq:prodf} we can take the remaining $f$'s as independent. Positivity (all minors are positive) then demands that
+Note that $f_2$ doesn't appear, which means that according to \eqref{eq:prodf} we can take the remaining $f$'s as independent. Positivity (all minors are positive) then demands that
 \begin{equation}
 	\begin{aligned}
 		f_0<0,~~~~f_1>0,~~~~f_2<0,~~~~f_3<0,~~~~
@@ -495,7 +496,7 @@ For the last delta-function we get the exact same thing except for replacing $\t
 	\delta^{8}(\lambda_1\tilde\eta_1+\lambda_2\tilde\eta_2+\lambda_3\tilde\eta_3+\lambda_4\tilde\eta_4)\equiv \delta^{8}\left(\mathcal{Q}\right)
 \end{aligned}
 \end{equation}
-Note that we get an extra factor of $\frac{1}{\expval{12}^4}$ from re-writing the delta-functions by projecting along $\lambda_1$ and $\lambda_2$. Finally we get a Jacobian.
+Note that we get an extra factor of $\frac{1}{\expval{12}^4}$ from re-writing the delta-functions by projecting along $\lambda_1$ and $\lambda_2$. Finally we get a Jacobian from solving the delta-function constraints
 \begin{equation}
 	\begin{aligned}
 		J=\left|J_{ij}\right|=f_0^2f_1f_3f_4^3=\frac{\expval{23}\expval{34}\expval{41}}{\expval{12}^2\expval{13}}
@@ -642,7 +643,7 @@ We can now calculate the form
 In the next section we will go over examples using these techniques described here at five and six points.
 \newpage
 \section{Examples of on-shell diagrams at five and six points\label{sec:examples}}
-In this section we present results for $\mathcal{N}=4$ sYM at five and six points, which will serve as a springboard to consider forms at $\mathcal{N}\neq 4$ in the remainder of the report.
+In this section we present results for $\mathcal{N}=4$ sYM at five and six points, which will serve as a springboard to consider forms at $\mathcal{N}\neq 4$.
 \subsection{Five point}
 One can build all the physically relevant on-shell diagrams by attaching BCFW bridges to existing diagrams. Here we construct a five point diagram by adding three vertices to a four point graph.
 \begin{figure}[H]
@@ -715,7 +716,7 @@ The amplitude is found through
 		\dd \Omega =\frac{\dd \alpha_1}{\alpha_1}\frac{\dd \alpha_2}{\alpha_2}\frac{\dd \alpha_3}{\alpha_3}\frac{\dd \alpha_4}{\alpha_4}\frac{\dd \alpha_5}{\alpha_5}\frac{\dd \alpha_6}{\alpha_6}\delta(C\cdot \tilde \lambda) \delta(C^\perp\cdot \lambda)\delta(C\cdot \tilde \eta)
 	\end{aligned}
 \end{equation}
-Using the delta-function $\delta(C^\perp\cdot \lambda)$ to solve for the $\alpha$'s we obtain after contracting with $\lambda_1$, $\lambda_3$, and $\lambda_5$
+Using the delta-function $\delta(C^\perp\cdot \lambda)$ to solve for the $\alpha$'s we obtain, after contracting with $\lambda_1$, $\lambda_3$, and $\lambda_5$,
 \begin{equation}
 	\begin{aligned}
 		\alpha_1=\frac{\expval{23}}{\expval{13}},~~~~
@@ -726,7 +727,7 @@ Using the delta-function $\delta(C^\perp\cdot \lambda)$ to solve for the $\alpha
 		\alpha_6=\frac{\expval{35}}{\expval{15}}
 	\end{aligned}
 \end{equation}
-From which we see that we get a Jacobian of $\frac{1}{\expval{15}^2\expval{13}}$. Plugging these $\alpha$'s back into $\delta (C\cdot\tilde \lambda)$, we get
+From which we get a Jacobian of $\frac{1}{\expval{15}^2\expval{13}}$. Plugging these $\alpha$'s back into $\delta (C\cdot\tilde \lambda)$, we get
 \begin{equation}
 	\begin{aligned}
 0=&\tilde\lambda_1
@@ -889,7 +890,7 @@ to obtain solutions for the edge-variables
 Here the Jacobian from the delta functions is
 \begin{equation}
 	\begin{aligned}
-		J=\frac{1}{[34]^3\expval{62}^3\aMs{2}{Q_{612}}{4}^2}
+		J=\frac{1}{[34]^3\expval{62}^3\aMs{2}{Q_{612}}{4}\aMs{6}{Q_{612}}{3}}
 	\end{aligned}
 \end{equation}
 and we get the form
@@ -934,7 +935,7 @@ We find that the full NMHV amplitude can be written as
 		A_6^{\text{NMHV}}=A_6^{\text{MHV}}\left(R_{251}+R_{413}+R_{635}\right)
 	\end{aligned}
 \end{equation}
-Having now showed the general procedure to calculate forms from the on-shell diagrams, we will show how to extend this approach to amplitudes with $\mathbb{N}\neq 4$ super-symmetries. 
+Having now showed the general procedure to calculate forms from the on-shell diagrams, we will show how to extend this approach to amplitudes with $\mathcal{N}\neq 4$ super-symmetries. 
 \newpage
 \section{Calculating $\mathcal{N}<4$ amplitudes\label{sec:YM}} 
 \subsection{The measure}
@@ -942,7 +943,7 @@ Since going to $\mathcal{N}<4$ means that the graphs have to be oriented, one ha
 the measure,
 \begin{equation}
 	\begin{aligned}
-		\dd \Omega= \dlog{\alpha_1} \dlog{\alpha_2}\cdots  \dlog{\alpha_m} \mathcal{J}^{\mathcal{N}-4}\cdot \delta(C\cdot Z)
+		\dd \Omega= \dlog{\alpha_1} \dlog{\alpha_2}\cdots  \dlog{\alpha_m} \mathcal{J}^{\mathcal{N}-4} \delta(C\cdot Z)
 	\end{aligned}
 \end{equation}
 Where, this Jacobian is given by
@@ -964,7 +965,7 @@ The simplest example is at four points where we have two diagrams after fixing t
 where the $\delta's$ are defined by
 \begin{equation}
 	\begin{aligned}
-		\delta_a=\frac{1}{1-\prod_{i=1}^{4}\alpha_i}
+		\delta_a=\frac{1}{1-\prod_{i=1}^{4}\alpha_i},~~~~~~\delta_b=\frac{1}{1-\prod_{i=1}^{4}\beta_i}
 	\end{aligned}
 \end{equation}
 Solving the $C_\perp$ delta-function, we get the following equations after contracting with $\lambda_2$ and $\lambda_4$
@@ -1039,7 +1040,7 @@ Combining all these factors with $\prod_i \alpha_i=\frac{\ab{41}\ab{23}}{\ab{12}
 	\end{aligned}
 \end{equation}
 \subsection{Five-point $\mathcal{N}=0$, no internal cycle}
-For five and six points we will look at two different types of diagrams. First we analyze one without an internal cycle, i.e. has $\mathcal{J}=1$. As will be evident, this produces  the standard Yang-Mills amplitude. We then follow this by evaluating diagrams with internal cycles, which we can use to get forms for $\mathcal{N}\neq4$.
+For five and six points we will look at two different types of diagrams. First we analyze one without an internal cycle, i.e. has $\mathcal{J}=1$. As will be evident, this produces  the standard Yang-Mills amplitude. We then follow this by evaluating diagrams with internal cycles, which can be used to get forms for $\mathcal{N}\neq4$.
 We will once again look at the following diagram
 \begin{figure}[H]
 	\centering
@@ -1187,7 +1188,7 @@ with
 		J_a=\frac{\ab{14}\ab{35}}{\ab{15}\ab{34}},~~~~~~J_b=\frac{\ab{14}\ab{35}}{\ab{13}\ab{45}}
 	\end{aligned}
 \end{equation}
-and the form for the cut is found to be
+and the $\mathcal{N}=0$ form for the cut is found to be
 \begin{equation}
 	\begin{aligned}
 		\dd \Omega
@@ -1198,7 +1199,7 @@ and the form for the cut is found to be
 To illustrate what the form of the bare\footnote{By bare we mean the form without the internal cycle Jacobian} diagram should look like we start by treating a diagram without an internal cycle.  We take the same diagram as we did in section \ref{sec:examples}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{6ptYM}
+	\includegraphics[width=0.4\linewidth]{6ptYM}
 	\caption{4+4 NMHV six point diagram}
 	\label{fig:5pt}
 \end{figure}
@@ -1222,7 +1223,7 @@ One would expect the bare form to look something like this in the next examples.
 We now consider a six point diagram with an internal cycle. Fixing the helicity configuration to $(1^+,2^-,3^+,4^-,5^+,6^-)$ and considering the 5+3 diagrams yields 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.45\linewidth]{3+5L}
+	\includegraphics[width=0.4\linewidth]{3+5L}
 	\caption{5+3 six-point NMHV diagram with internal cycle. To calculate the form of the cut, the same diagram with the cycle reversed also contributes.}
 	\label{fig:5pt3l}
 \end{figure}
@@ -1315,7 +1316,7 @@ We will now analyze the singularity structure of this diagram, by assigning loop
 To find the singularity structure of the form obtained, we first assign the three loop momenta $\ell_1,\ell_2$, and $\ell_3$, in the following way
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\linewidth]{sing}
+	\includegraphics[width=0.5\linewidth]{sing}
 	\caption{Six point NMHV 4+4 diagram with assigned loop momenta}
 	\label{fig:two-loop}
 \end{figure}
@@ -1358,7 +1359,7 @@ Further we can identify
 \end{equation}
 We see that in the final form \eqref{eq:6pt}, these will contribute as higher order poles stemming from the Jacobian factors.  From these equations we also see that erasing $\alpha_4$ either comes from sending $\sqb{13}$ or $\ab{46}$ to 0 (which would send $\ell_1$ or $\ell_3$ to $\infty$) or from sending $\aMs{6}{Q_{456}}{1}\to \infty$, which would erase $\alpha_3,\alpha_5,$ and $\alpha_6$ as well.
 
-Finally we will in the next section discuss how to construct higher loop on-shell diagrams. 
+Finally we will in the next section discuss how to construct higher loop, or non-reduced, on-shell diagrams. 
 \newpage
 \section{Higher loops\label{sec:higherloops}}
 One can get to higher loops with the same number of points by attaching two connected vertices to one of the graphs we have already considered. We will do this at four point to show how the form is constructed and then proceed to analyze one five-point three-loop diagram with no internal cycles and one with an internal cycle. Finally we analyze the singularity structure by comparing with the solution obtained by explicitly solving the on-shell constraints of the internal momenta.
@@ -1491,16 +1492,16 @@ Such that
 		\delta\left(\alpha_3+\frac{\ab{45}}{\alpha_7\ab{25}-\ab{35}}\right)
 		\delta\left(\alpha_4+\frac{\alpha_7\ab{24}-\ab{34}}{\alpha_7\ab{25}-\ab{35}}\right)
 		\delta\left(\alpha_5-\frac{\alpha_7\ab{12}-\ab{13}}{\alpha_7\ab{25}-\ab{35}}\right)
-		\delta\left(\alpha_6+\frac{\alpha_7\ab{25}-\ab{35}}{\ab{15}}\right)
+		\delta\left(\alpha_6+\frac{\alpha_7\ab{25}-\ab{35}}{\ab{15}}\right),
 	\end{aligned}
 \end{equation}
-So that we get the form
+and we get the form
 \begin{equation}
 	\begin{aligned}
-	\dd \Omega=	\frac{\ab{15}^4}{\alpha_7 \ab{12}\ab{23}\ab{45}\ab{15}\left(\alpha_7\ab{24}-\ab{34}\right)}
+	\dd \Omega=	\frac{\ab{15}^4}{\alpha_7 \ab{12}\ab{23}\ab{45}\ab{15}\left(\alpha_7\ab{24}-\ab{34}\right)}.
 	\end{aligned}
 \end{equation}
-taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Parke-Taylor tree-level amplitude, as expected.
+Taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Parke-Taylor tree-level amplitude, as expected.
 \begin{equation}
 	\begin{aligned}
 		\dd \Omega=	\frac{\ab{15}^4}{ \ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}
@@ -1515,7 +1516,7 @@ We will consider the following graph
 	\caption{Diagram $A$: three loop, five point}
 	\label{fig:5pt3l_3}
 \end{figure}
-To get form of the cut, one has to fix the helicity configuration and then find all the configurations of the internal momenta that yield a perfect orientation. The only other possible diagram would have the internal cycle going clockwise instead - we will refer to that as diagram $B$. Since the bare form is the same for both diagrams, the only point of difference is the Jacobians. 
+To get form of the cut, one has to fix the helicity configuration and then find all the configurations of the internal momenta that yield a perfect orientation. The only other possible diagram would have the internal cycle going clockwise instead; we will refer to that as diagram $B$. Since the bare form is the same for both diagrams, the only point of difference is the Jacobians. 
 
 For diagram A, the C-matrices are
 \begin{equation}
@@ -1587,7 +1588,7 @@ Solving the delta-functions we find
 		\delta\left(\alpha_6+\frac{\alpha_7\ab{25}-\ab{35}}{\ab{15}}\right)
 	\end{aligned}
 \end{equation}
-The bare form matches that of our earlier diagram
+The bare form matches that of our earlier diagram (albeit with a different helicity structure)
 \begin{equation}
 	\begin{aligned}
 		\dd \Omega_{\text{bare}}=	\frac{\ab{25}^4}{\alpha_7 \ab{12}\ab{51}\ab{23}\ab{45}\left(\alpha_7\ab{24}-\ab{34}\right)}
@@ -1596,7 +1597,7 @@ The bare form matches that of our earlier diagram
 and we note that taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Parke-Taylor tree-level amplitude
 \begin{equation}
 	\begin{aligned}
-			\frac{\ab{15}^4}{ \ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}
+			\frac{\ab{25}^4}{ \ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}
 	\end{aligned}
 \end{equation}
 To get the form of the cut we find that the Jacobian is
@@ -1677,21 +1678,71 @@ Comparing Figure \ref{fig:5pt3l_1} and Figure \ref{fig:5pt3l_3} with their respe
 \section{Summary and outlook}
 In this report we first gave a brief introduction to the Grassmanian and on-shell diagrams. We then outlined how to get  $\mathcal{N}=4$ sYM amplitudes from these, by explicitly calculating examples at four, five, and six points. The techniques were then extended to $\mathcal{N}\neq4$ by considering all internal configurations for a specific fixed external helicity configuration, specifically focusing on $\mathcal{N}=0$. When diagrams contain an internal cycle, a Jacobian contributes, and the form does not give the amplitudes but rather represent cuts of loop integrands, while the \textit{bare} form, (i.e. the form without the Jacobian), gave the normal MHV Parke-Taylor amplitudes.
 
-We then considered the singularity structure by comparing the form and corresponding edge-variables with the diagrams loop-variables, found by explicitly putting the internal propagators on-shell. The six point NMHV on-shell form considered has higher order poles when the loop momenta goes to infinity. Further we saw that the edge-variables erase an edge by going to $0$ when the arrow points from a white to a black vertex, while the edge is erased for the variable going to $\infty$ for arrows pointing from black to white vertices.
+We then considered the singularity structure by comparing the form and corresponding edge-variables with the diagram's loop-variables, found by explicitly putting the internal propagators on-shell. The six point NMHV on-shell form considered has higher order poles when the loop momenta goes to infinity. Further we saw that the edge-variables erase an edge by going to $0$ when the arrow points from a white to a black vertex, while the edge is erased for the variable going to $\infty$ for arrows pointing from black to white vertices.
 
 Finally we looked at higher loop diagrams at four- and five-point, i.e. having one parameter unfixed. Here we also found that higher order poles arise when the loop momenta goes to infinity.
 The residues of the forms at these poles are yet to be analyzed, while explicitly computing forms at other $\mathcal{N}$, along with their residues when the loop momenta goes to infinity, provides more avenues that can be pursued. 
-\appendix
 \begin{thebibliography}{99}
-%\cite{Bjerrum-Bohr:2013bxa}
-\bibitem{Bjerrum-Bohr:2013bxa}
-N.~E.~J.~Bjerrum-Bohr, J.~F.~Donoghue and P.~Vanhove,
-``On-shell Techniques and Universal Results in Quantum Gravity,''
-JHEP \textbf{02} (2014), 111
-doi:10.1007/JHEP02(2014)111
-[arXiv:1309.0804 [hep-th]].
-%83 citations counted in INSPIRE as of 21 Aug 2020
-
+%\cite{Arkani-Hamed:2010zjl}
+\bibitem{amp1}
+N.~Arkani-Hamed, J.~L.~Bourjaily, F.~Cachazo, S.~Caron-Huot and J.~Trnka,
+%``The All-Loop Integrand For Scattering Amplitudes in Planar N=4 SYM,''
+JHEP \textbf{01}, 041 (2011)
+doi:10.1007/JHEP01(2011)041
+[arXiv:1008.2958 [hep-th]].
+%411 citations counted in INSPIRE as of 10 Oct 2021
+%\cite{Elvang:2015rqa}
+\bibitem{Elvang}
+H.~Elvang and Y.~t.~Huang,
+``Scattering Amplitudes in Gauge Theory and Gravity,''
+%18 citations counted in INSPIRE as of 10 Oct 2021
+%\cite{Arkani-Hamed:2012zlh}
+\bibitem{amp2}
+N.~Arkani-Hamed, J.~L.~Bourjaily, F.~Cachazo, A.~B.~Goncharov, A.~Postnikov and J.~Trnka,
+%``Grassmannian Geometry of Scattering Amplitudes,''
+doi:10.1017/CBO9781316091548
+[arXiv:1212.5605 [hep-th]].
+%393 citations counted in INSPIRE as of 10 Oct 2021
+%\cite{Arkani-Hamed:2013jha}
+\bibitem{amp3}
+N.~Arkani-Hamed and J.~Trnka,
+%``The Amplituhedron,''
+JHEP \textbf{10}, 030 (2014)
+doi:10.1007/JHEP10(2014)030
+[arXiv:1312.2007 [hep-th]].
+%352 citations counted in INSPIRE as of 10 Oct 2021
+%\cite{Arkani-Hamed:2013kca}
+\bibitem{amp4}
+N.~Arkani-Hamed and J.~Trnka,
+%``Into the Amplituhedron,''
+JHEP \textbf{12}, 182 (2014)
+doi:10.1007/JHEP12(2014)182
+[arXiv:1312.7878 [hep-th]].
+%133 citations counted in INSPIRE as of 10 Oct 2021
+%\cite{Arkani-Hamed:2014bca}
+\bibitem{on1}
+N.~Arkani-Hamed, J.~L.~Bourjaily, F.~Cachazo, A.~Postnikov and J.~Trnka,
+%``On-Shell Structures of MHV Amplitudes Beyond the Planar Limit,''
+JHEP \textbf{06}, 179 (2015)
+doi:10.1007/JHEP06(2015)179
+[arXiv:1412.8475 [hep-th]].
+%68 citations counted in INSPIRE as of 10 Oct 2021
+%\cite{Arkani-Hamed:2014dca}
+\bibitem{amp6}
+N.~Arkani-Hamed, A.~Hodges and J.~Trnka,
+%``Positive Amplitudes In The Amplituhedron,''
+JHEP \textbf{08}, 030 (2015)
+doi:10.1007/JHEP08(2015)030
+[arXiv:1412.8478 [hep-th]].
+%70 citations counted in INSPIRE as of 10 Oct 2021
+%\cite{Herrmann:2016qea}
+\bibitem{on2}
+E.~Herrmann and J.~Trnka,
+%``Gravity On-shell Diagrams,''
+JHEP \textbf{11}, 136 (2016)
+doi:10.1007/JHEP11(2016)136
+[arXiv:1604.03479 [hep-th]].
+%42 citations counted in INSPIRE as of 10 Oct 2021
 %\fi
 \end{thebibliography}
 \end{document}
