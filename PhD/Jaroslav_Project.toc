@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {3.1}Three point on-shell form}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Four-point directly from $G(2,4)$ matrix}{7}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Using face-variables}{7}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Using edge-variables}{9}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2}Using edge-variables}{10}{subsubsection.3.2.2}%
 \contentsline {section}{\numberline {4}Examples of on-shell diagrams at five and six points}{12}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Five point}{12}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Six-point NMHV}{13}{subsection.4.2}%

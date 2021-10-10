@@ -62,8 +62,8 @@ In recent years this geometric structure of scattering amplitudes in $\mathcal N
 sYM has been explored using the positive Grassmannian, on-shell diagrams, and
 the Amplituhedron. A natural progression is to try and extend these discoveries beyond planar $\mathcal N = 4$ sYM to explore whether the geometric interpretation is a more general feature of quantum field theories (QFT’s). Similarly, considering theories with $\mathcal N\neq 4$, such as supergravity ($\mathcal N = 8$), will teach us to what extend these geometric pictures apply to other field theories. 
 
-The focus of this project has been some of these extensions, with the report structured as follows. In section ------ we give a short review of the Grassmaniann, followed by an introduction to on-shell diagrams. Then, in section ----- we calculate various examples using the methods described. We extend this approach to multiple loops in section -----, giving examples at four and five points, and then proceed to describe the approach used when considering theories for $\mathcal{N}\neq 4$, explicitly calculating multiple examples at five and six points. Finally we consider the pole structure of the results found.
-\section{Grassmanian}
+The focus of this project has been some of these extensions, with the report structured as follows. In section \ref{sec:grassmanian} we give a short review of the Grassmaniann, followed by an introduction to on-shell diagrams. Then, in sections \ref{sec:on-she-intro} and \ref{sec:examples} we calculate various examples using the methods described. We extend this approach to theories for $\mathcal{N}\neq 4$ in section \ref{sec:YM}, focusing on $\mathcal N=0$ \footnote{The results found at $\mathcal{N}=0$ can easily be extended by adding super momentum delta functions in the calculation.}, explicitly calculating multiple examples at five and six points. Then diagrams at higher loops are considered in section \ref{sec:higherloops} and finally we consider the singularity structure of the results found.
+\section{Grassmanian\label{sec:grassmanian}}
 In this section we give a brief review of the Grassmanian, which will serve as a crucial ingredient for our discussion of on-shell diagrams.
 The Grassmanian, denoted $G(k,n)$, is the space of $k$-planes going through the origin in $n$ dimensions. It can be thought of as a generalization of projective space $P^{n-1}$, which is the space of lines going through the origin in $n$-dimensions, since $G(1,n)=P^{n-1}$. One can e.g. take $k$ vectors in $n$ dimensions, see figure \ref{fig:1}
 \begin{figure}[H]
@@ -146,7 +146,7 @@ a_1&a_2&\cdots &a_k
 \end{equation}
 We will now proceed to use the properties of the Grassmanian by introducing the concept of on-shell diagrams.
 \newpage
-\section{Introduction to on-shell diagrams}
+\section{Introduction to on-shell diagrams}\label{sec:on-she-intro}
 In this section we introduce the notion of on-shell diagrams, and give examples on different ways one can calculate diagrams from these. 
 
 One can construct $(k\times n)$ C-matrices out of on-shell diagrams, where $k$ labels the number of negative helicity particles and $n$ is the total number of particles. The procedure to construct a matrix from a diagram using \textit{edge-variables} is as follows
@@ -165,8 +165,15 @@ One can construct $(k\times n)$ C-matrices out of on-shell diagrams, where $k$ l
 			\delta=\sum_{n=0}^\infty (\alpha_i \alpha_j\alpha_k \cdots)^n=\frac{1}{1- (\alpha_i \alpha_j\alpha_k \cdots)}
 		\end{aligned}
 	\end{equation}
+	\item The form is then found through
+	\begin{equation}
+		\begin{aligned}
+			\dd \Omega =\prod_{i=1}^{N}\frac{\dd \alpha_i}{\alpha_i}\delta(C\cdot Z)\mathcal{J}^{\mathcal{N}-4}
+		\end{aligned}
+	\end{equation}
 \end{itemize} 
-We will in this section calculate amplitudes through various techniques using the on-shell diagrams. 
+where $\delta(C\cdot Z)\equiv\delta(C\cdot \tilde \lambda) \delta(C^\perp\cdot \lambda)\delta(C\cdot \tilde \eta)$, and $\mathcal{J}$ is a Jacobian which we will describe in further detail in section \ref{sec:YM}.
+We will now calculate amplitudes through various techniques using the on-shell diagrams. 
 \subsection{Three point on-shell form} 
 The easiest example is the two diagrams representing the three-point MHV and $\overline{\text{MHV}}$ amplitudes in $\mathcal{N}=4$ sYM.
 Taking e.g the amplitudes to be $A_3^{\text{MHV}}(1^-,2^-,3^+)$ and $A_3^{\overline{\text{MHV}}}(1^+,2^+,3^-)$, the on-shell diagrams are
@@ -635,7 +642,7 @@ We can now calculate the form
 \end{equation}
 In the next section we will go over examples using these techniques described here at five and six points.
 \newpage
-\section{Examples of on-shell diagrams at five and six points}
+\section{Examples of on-shell diagrams at five and six points\label{sec:examples}}
 In this section we present results for $\mathcal{N}=4$ sYM at five and six points, which will serve as a springboard to consider forms at $\mathcal{N}\neq 4$ in the remainder of the report.
 \subsection{Five point}
 One can build all the physically relevant on-shell diagrams by attaching BCFW bridges to existing diagrams. Here we construct a five point diagram by adding three vertices to a four point graph.
@@ -930,7 +937,7 @@ We find that the full NMHV amplitude can be written as
 \end{equation}
 Having now showed the general procedure to calculate forms from the on-shell diagrams, we will show how to extend this approach to amplitudes with $\mathbb{N}\neq 4$ super-symmetries. 
 \newpage
-\section{Calculating $\mathcal{N}<4$ amplitudes}
+\section{Calculating $\mathcal{N}<4$ amplitudes\label{sec:YM}} 
 \subsection{The measure}
 Since going to $\mathcal{N}<4$ means that the graphs have to be oriented, one has to consider all internal orientations for specific external helicity configuraions. Further, for diagrams containing closed internal loops, one has to add an extra factor, $\mathcal{J}$ , in
 the measure,
@@ -958,7 +965,7 @@ Here we have three loops containing one phase variable, contributing each $f_1,f
 		\mathcal{J}=1+f_1+f_3+f_2^{-1}+f_2^{-1}f_4^{-1}+f_1f_3
 	\end{aligned}
 \end{equation}
-
+Specifically we will consider $\mathcal N=0$ for which $\delta(C\cdot Z)=\delta(C^\perp\cdot \lambda)\delta(C\cdot \tilde\lambda)$.
 \subsection{Four-point $\mathcal{N}=0$ with internal loop}
 The simplest example is at four points where we have two diagrams after fixing the external helicities
 \begin{figure}[H]
@@ -1318,7 +1325,7 @@ is then
 \end{equation}
 We will now analyze the singularity structure of this diagram, by assigning loop momenta to the three loops and putting the internal propagators on-shell.
 \subsection{Singularities}
-First we assign the three loop momenta $\ell_1,\ell_2$, and $\ell_3$, in the following way
+To find the singularity structure of the form obtained, we first assign the three loop momenta $\ell_1,\ell_2$, and $\ell_3$, in the following way
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{sing}
@@ -1353,7 +1360,7 @@ Comparing this with the edge-variables, we have highlighted some of the common f
 	\,\alpha_6 &= \frac{\orange{\sab{456}}}{\green{\aMs{6}{Q_{456}}{1}}}\,, \quad \alpha_7 = \frac{\textcolor{yellow}{\ab{56}}}{\pink{\ab{46}}}\,, \quad
 	\alpha_8 = \frac{\textcolor{purple}{\ab{45}}}{\pink{\ab{46}}}\,  
 \end{align*}
-We see that sending $\{\alpha_1,\alpha_2,\alpha_4,\alpha_6,\alpha_7,\alpha_8\}\to 0$ erases the corresponding edge, while the same happens by sending $\{\alpha_3,\alpha_5\}\to \infty$. 
+We see that sending $\{\alpha_1,\alpha_2,\alpha_6,\alpha_7,\alpha_8\}\to 0$ erases the corresponding edge, while the same happens by sending $\{\alpha_3,\alpha_5\}\to \infty$.
 Further we can identify
 \begin{equation}
 	\begin{aligned}
@@ -1362,11 +1369,11 @@ Further we can identify
 		\ell_3\to& \infty,~~~~\text{ for } \brown{\sqb{13}}\to 0.\\
 	\end{aligned}
 \end{equation}
-We see that in the final form \eqref{eq:6pt}, these will contribute as higher order poles stemming from the Jacobian factors.
+We see that in the final form \eqref{eq:6pt}, these will contribute as higher order poles stemming from the Jacobian factors.  From these equations we also see that erasing $\alpha_4$ either comes from sending $\sqb{13}$ or $\ab{46}$ to 0 (which would send $\ell_1$ or $\ell_3$ to $\infty$) or from sending $\aMs{6}{Q_{456}}{1}\to \infty$, which would erase $\alpha_3,\alpha_5,$ and $\alpha_6$ as well.
 
 Finally we will in the next section discuss how to construct higher loop on-shell diagrams. 
 \newpage
-\section{Higher loops}
+\section{Higher loops\label{sec:higherloops}}
 One can get to higher loops with the same number of points by attaching two connected vertices to one of the graphs we have already considered. We will do this at four point to show how the form is constructed and then proceed to analyze one five-point three-loop diagram with no internal cycles and one with an internal cycle. Finally we analyze the singularity structure by comparing with the solution obtained by explicitly solving the on-shell constraints of the internal momenta.
 \subsection{2 loop four-point}
 At four points we can attach the two connected vertices to make the following two-loop diagram, with corresponding C-matrix
@@ -1602,7 +1609,7 @@ The bare form matches that of our earlier diagram
 and we note that taking the residue of the form at $\alpha_7=0$ one recovers the standard YM Parke-Taylor tree-level amplitude
 \begin{equation}
 	\begin{aligned}
-		\dd \Omega=	\frac{\ab{15}^4}{ \ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}
+			\frac{\ab{15}^4}{ \ab{12}\ab{23}\ab{34}\ab{45}\ab{51}}
 	\end{aligned}
 \end{equation}
 To get the form of the cut we find that the Jacobian is
@@ -1673,13 +1680,12 @@ Further we see that the $\ell_2-5$ coefficient directly corresponds to the $\tex
 Comparing Figure \ref{fig:5pt3l_1} and Figure \ref{fig:5pt3l_3} with their respective edge-variables, one sees that flipping arrows inside the diagram, inverts the corresponding edge-variable. Sending one of $\{\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5\}\to 0$ sends the corresponding edge to zero, while $\alpha_6\to\infty $ erases that edge. This agrees with the statement that edges that contain an arrow from a white to a black vertex is erasable by sending $\alpha\to 0$ and from black to white by $\alpha\to \infty$.
 \newpage
 \section{Summary and outlook}
-In this report we gave a brief introduction to the Grassmanian and on-shell diagrams. In sections --- we outlined the how to get  $\mathcal{N}=4$ sYM amplitudes from these, by explicitly calculating examples at four, five, and six points. We then show how to extend the techniques to $\mathcal{N}\neq4$ by considering all internal configurations for a specific fixed external helicity configuration, specifically focusing on $\mathcal{N}=0$. When diagrams contain an internal cycle, a Jacobian contributes, and the form does not give the amplitudes but rather represent cuts of loop integrands, while the \textit{bare} form, (i.e. the form without the Jacobian), gave the normal MHV Parke-Taylor amplitudes.
+In this report we first gave a brief introduction to the Grassmanian and on-shell diagrams. We then outlined how to get  $\mathcal{N}=4$ sYM amplitudes from these, by explicitly calculating examples at four, five, and six points. The techniques were then extended to $\mathcal{N}\neq4$ by considering all internal configurations for a specific fixed external helicity configuration, specifically focusing on $\mathcal{N}=0$. When diagrams contain an internal cycle, a Jacobian contributes, and the form does not give the amplitudes but rather represent cuts of loop integrands, while the \textit{bare} form, (i.e. the form without the Jacobian), gave the normal MHV Parke-Taylor amplitudes.
 
-We then considered the singularity structure by comparing the form and corresponding edge-variables with the diagrams loop-variables, found by explicitly putting the internal propagators on-shell. The six point NMHV on-shell form considered has higher order poles when the loop momenta goes to infinity. Further we see that the edge-variables erase an edge by going to $0$ when the arrow points from a white to a black vertex, while the edge is erased for the variable going to $\infty$ for arrows pointing from black to white vertices.
+We then considered the singularity structure by comparing the form and corresponding edge-variables with the diagrams loop-variables, found by explicitly putting the internal propagators on-shell. The six point NMHV on-shell form considered has higher order poles when the loop momenta goes to infinity. Further we saw that the edge-variables erase an edge by going to $0$ when the arrow points from a white to a black vertex, while the edge is erased for the variable going to $\infty$ for arrows pointing from black to white vertices.
 
 Finally we looked at higher loop diagrams at four- and five-point, i.e. having one parameter unfixed. Here we also found that higher order poles arise when the loop momenta goes to infinity.
-
-The residues of the forms at these poles are yet to be analyzed while explicitly computing forms at other $\mathcal{N}$ along with their residues when the loop momenta goes to infinity provides more avenues that can be pursued. 
+The residues of the forms at these poles are yet to be analyzed, while explicitly computing forms at other $\mathcal{N}$, along with their residues when the loop momenta goes to infinity, provides more avenues that can be pursued. 
 \appendix
 \begin{thebibliography}{99}
 %\cite{Bjerrum-Bohr:2013bxa}
