@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  9 OCT 2021 18:16
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  9 OCT 2021 18:41
  restricted system commands enabled.
 **Jaroslav_Project.tex
 (./Jaroslav_Project.tex
@@ -1357,18 +1357,18 @@ Overfull \hbox (10.61676pt too wide) detected at line 1653
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.16'
 
 <./5pt3l3.png>] [31] [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1694.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1694.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1696.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1696.
  (./Jaroslav_Project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1694.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1694.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1696.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1696.
 Package rerunfilecheck Info: File `Jaroslav_Project.out' has not changed.
 (rerunfilecheck)             Checksum: B75E15D78858B3559DABFAB26E227C04;4451.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1694.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1696.
 )
 
 Here is how much of LuaTeX's memory you used:
@@ -1406,7 +1406,7 @@ blic/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:
 TeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/symbols/msbm10.pfb>
-Output written on Jaroslav_Project.pdf (33 pages, 1813776 bytes).
+Output written on Jaroslav_Project.pdf (33 pages, 1814519 bytes).
 
 PDF statistics: 578 PDF objects out of 1000 (max. 8388607)
  206 named destinations out of 1000 (max. 131072)
