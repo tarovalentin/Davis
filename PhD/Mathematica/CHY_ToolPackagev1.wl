@@ -72,7 +72,7 @@ sxpand:={s[a_,b_,c_]->s[a,b]+s[a,c]+s[b,c],
 	s[a_,b_,c_,d_]->s[a,b]+s[a,c]+s[a,d]+s[b,c]+s[b,d]+s[c,d]};
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Pfaffian definition (PSI) and its reduction.*)
 
 
@@ -1203,7 +1203,7 @@ Return[app];
 ]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Spinor-Helicity*)
 
 
