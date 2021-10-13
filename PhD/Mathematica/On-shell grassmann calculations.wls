@@ -1090,3 +1090,45 @@ If[Sum[TB[i],{i,1,8}]==0,"Correct Solutions","One or more incorrect Solutions"]
 
 
 
+
+
+(* ::Section:: *)
+(*6-7 pt MHV *)
+
+
+(* ::Subsection:: *)
+(*6-7 pt MHV no cycle*)
+
+
+(*6 pt NMHV 4+4*)
+
+(*Define C-matrices and lambda*)
+CC={{1,a1,0,0,0,a2},{0,a6,1,a5,0,a6 a7},{0,a6 a8 ,0,a4,1,a3+a6 a7 a8}};
+Cperp ={{-a[1]-a[2] a[6],1,0,0,0,-a[2] a[5] a[6]},{-a[6],0,1,0,0,-a[5] a[6]},{-a[3] a[6],0,0,1,0,-a[4]-a[3] a[5] a[6]},{-a[3] a[6] a[7], 0,0,0,1,-a[8] -a[7](a[4]+a[3] a[5] a[6])}};
+lambda={{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]},{\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]}};
+tlambda={{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6]},{t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6]}};
+(*Test transpose orthogonality*)
+CC . Transpose[Cperp]=={{0,0,0},{0,0,0},{0,0,0}};
+Cperp . Transpose[lambda]
+CC . Transpose[tlambda]
+
+
+A[1] = (-a[1]-a[2] a[6]) \[Lambda][1] . \[Lambda][1]+\[Lambda][2] . \[Lambda][1]-a[2] a[5] a[6] \[Lambda][6] . \[Lambda][1]//.RR;
+A[2] = (-a[1]-a[2] a[6]) \[Lambda][1] . \[Lambda][6]+\[Lambda][2] . \[Lambda][6]-a[2] a[5] a[6] \[Lambda][6] . \[Lambda][6]//.RR;
+A[3] = -a[6] \[Lambda][1] . \[Lambda][1]+\[Lambda][3] . \[Lambda][1]-a[5] a[6] \[Lambda][6] . \[Lambda][1]//.RR;
+A[4] = -a[6] \[Lambda][1] . \[Lambda][6]+\[Lambda][3] . \[Lambda][6]-a[5] a[6] \[Lambda][6] . \[Lambda][6]//.RR;
+A[5] = -a[3] a[6] \[Lambda][1] . \[Lambda][1]+\[Lambda][4] . \[Lambda][1]+(-a[4]-a[3] a[5] a[6]) \[Lambda][6] . \[Lambda][1]//.RR;
+A[6] = -a[3] a[6] \[Lambda][1] . \[Lambda][6]+\[Lambda][4] . \[Lambda][6]+(-a[4]-a[3] a[5] a[6]) \[Lambda][6] . \[Lambda][6]//.RR;
+A[7] = -a[3] a[6] a[7] \[Lambda][1] . \[Lambda][1]+\[Lambda][5] . \[Lambda][1]+(-((a[4]+a[3] a[5] a[6]) a[7])-a[8]) \[Lambda][6] . \[Lambda][1]//.RR;
+A[8] = -a[3] a[6] a[7] \[Lambda][1] . \[Lambda][6]+\[Lambda][5] . \[Lambda][6]+(-((a[4]+a[3] a[5] a[6]) a[7])-a[8]) \[Lambda][6] . \[Lambda][6]//.RR;
+
+
+Sol = Solve[{A[1]==0,A[2]==0,A[3]==0,A[4]==0,A[5]==0,A[6]==0,A[7]==0,A[8]==0},{a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8]}]//.schoutenA
+
+
+F[i_,j_]:=D[A[i],a[j]];
+Mat = Table[F[i,j],{i,1,8},{j,1,8}];
+J = Simplify[1/(Det[Mat])]//.Sol//FullSimplify
+
+
+Product[1/(a[i]),{i,1,8}]*J*Spaa[1,6]^2//.Sol
