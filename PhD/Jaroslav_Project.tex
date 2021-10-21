@@ -1678,13 +1678,173 @@ Further we see that the $\ell_2-5$ coefficient directly corresponds to the $\alp
 \end{equation}
 Comparing Figure \ref{fig:5pt3l_1} and Figure \ref{fig:5pt3l_3} with their respective edge-variables, one sees that flipping arrows inside the diagram inverts the corresponding edge-variable. Sending one of $\{\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5\}\to 0$ sends the corresponding edge to zero, while $\alpha_6\to\infty $ erases that edge. This agrees with the statement found at six points that edges that contain an arrow from a white to a black vertex is erasable by sending $\alpha\to 0$ and from black to white by $\alpha\to \infty$.  Finally, sending $\ell_1\to \infty$ gives a higher order pole in the form for the cut.
 \newpage
-\section{Summary and outlook}
-In this report we first gave a brief introduction to the Grassmannian and on-shell diagrams. We then outlined how to get  $\mathcal{N}=4$ sYM amplitudes from these, by explicitly calculating examples at four, five, and six points. The techniques were then extended to $\mathcal{N}\neq4$ by considering all internal configurations for a specific fixed external helicity configuration, specifically focusing on $\mathcal{N}=0$. When diagrams contain an internal cycle, a Jacobian contributes, and the form does not give the amplitudes but rather represent cuts of loop integrands, while the \textit{bare} form, (i.e. the form without the Jacobian), gave the normal MHV Parke-Taylor amplitudes.
-
-We then considered the singularity structure by comparing the form and corresponding edge-variables with the diagram's loop-variables, found by explicitly putting the internal propagators on-shell. The six point NMHV on-shell form considered has higher order poles when the loop momenta goes to infinity. Further we saw that the edge-variables erase an edge by going to $0$ when the arrow points from a white to a black vertex, while the edge is erased for the variable going to $\infty$ for arrows pointing from black to white vertices.
-
-Finally we looked at higher loop diagrams at four- and five-point, i.e. having one parameter unfixed. Here we found that a higher order poles arises when the pentagon loop momenta goes to infinity.
-The residues of the forms at these poles are yet to be analyzed, while explicitly computing forms at other $\mathcal{N}$, along with their residues when the loop momenta goes to infinity, provides more avenues that can be pursued. 
+\section{Six-, seven-, eight-, and nine-point MHV results} 
+At six and seven points we obtain
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{6+7pt}
+	\caption{Six and seven point MHV with cycle}
+	\label{fig:two-loop}
+\end{figure}
+\noindent
+The alphas obtained are
+\begin{equation}
+	\begin{aligned}
+		&\text{Six point}:\\
+		\alpha_1&=\frac{\ab{13}}{\ab{23}},\,\alpha_2=\frac{\ab{21}}{\ab{13}},\,\alpha_3=\frac{\ab{46}}{\ab{36}},\,\alpha_4=\frac{\ab{34}}{\ab{36}},\\
+		\alpha_5&=\frac{\ab{13}}{\ab{36}},\,\alpha_6=\frac{\ab{36}}{\ab{16}},\,\alpha_7=\frac{\ab{56}}{\ab{46}},\,\alpha_8=\frac{\ab{45}}{\ab{46}}.\\
+&\text{Seven point}:\\
+		\alpha_1&=\frac{\ab{13}}{\ab{23}},\,\alpha_2=\frac{\ab{21}}{\ab{13}},\,\alpha_3=\frac{\ab{47}}{\ab{37}},\,\alpha_4=\frac{\ab{34}}{\ab{37}},\alpha_5=\frac{\ab{13}}{\ab{37}},\\
+		\alpha_6&=\frac{\ab{37}}{\ab{17}},\,\alpha_7=\frac{\ab{67}}{\ab{47}},\,\alpha_8=\frac{\ab{46}}{\ab{47}},\,\alpha_9=\frac{\ab{56}}{\ab{46}},\,\alpha_{10}=\frac{\ab{45}}{\ab{46}}.
+	\end{aligned}
+\end{equation}
+The Jacobians from solving the delta functions are
+\begin{equation}
+	\begin{aligned}
+		\text{Six point}:&\\
+		&\frac{\ab{13}}{\ab{16}^2\ab{23}^2\ab{36}^2\ab{46}}\\
+		\text{Seven point}:&\\
+		&\frac{\ab{13}}{\ab{17}^2\ab{23}^2\ab{37}^2\ab{46}\ab{47}}
+		\end{aligned}
+\end{equation}
+with the Jacobian from the cycle being
+\begin{equation}
+	\begin{aligned}
+		\J_6=\frac{\ab{13}\ab{26}}{\ab{16}\ab{23}},~~~~
+		\J_7=\frac{\ab{13}\ab{37}}{\ab{17}\ab{23}}
+	\end{aligned}
+\end{equation}
+The forms found by summing over all internal configurations are
+\begin{equation}
+	\begin{aligned}
+		\dd \Omega 
+	\end{aligned}
+\end{equation}
+At eight and nine points we obtain
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{8+9pt}
+	\caption{Eight and nine point MHV with cycle}
+	\label{fig:two-loop}
+\end{figure}
+\noindent
+The alphas obtained are
+\begin{equation}
+	\begin{aligned}
+		&\text{Eight point}:\\
+	\alpha_1&=\frac{\ab{14}}{\ab{24}},\,\alpha_2=\frac{\ab{21}}{\ab{14}},\,\alpha_3=\frac{\ab{58}}{\ab{48}},\,\alpha_4=\frac{\ab{45}}{\ab{48}},\alpha_5=\frac{\ab{14}}{\ab{48}},\,
+	\alpha_6=\frac{\ab{48}}{\ab{18}},\\
+	\alpha_7&=\frac{\ab{78}}{\ab{58}},\,\alpha_8=\frac{\ab{57}}{\ab{58}},\,\alpha_9=\frac{\ab{67}}{\ab{57}},\,\alpha_{10}=\frac{\ab{56}}{\ab{57}}
+	,\,\alpha_{11}=\frac{\ab{43}}{\ab{24}}
+	,\,\alpha_{12}=\frac{\ab{32}}{\ab{24}}
+	.\\
+		&\text{Nine point}:\\
+		\alpha_1&=\frac{\ab{14}}{\ab{24}},\,\alpha_2=\frac{\ab{21}}{\ab{14}},\,\alpha_3=\frac{\ab{59}}{\ab{49}},\,\alpha_4=\frac{\ab{45}}{\ab{49}},\alpha_5=\frac{\ab{14}}{\ab{49}},\,
+	\alpha_6=\frac{\ab{49}}{\ab{19}},\,
+	\alpha_7=\frac{\ab{89}}{\ab{59}},\\
+	\alpha_8&=\frac{\ab{58}}{\ab{59}},\,\alpha_9=\frac{\ab{78}}{\ab{58}},\,\alpha_{10}=\frac{\ab{57}}{\ab{58}}
+	,\,\alpha_{11}=\frac{\ab{43}}{\ab{24}}
+	,\,\alpha_{12}=\frac{\ab{32}}{\ab{24}}
+	,\,\alpha_{13}=\frac{\ab{67}}{\ab{57}}
+	,\,\alpha_{14}=\frac{\ab{56}}{\ab{57}}
+	.
+	\end{aligned}
+\end{equation}
+The Jacobians from solving the delta functions are
+\begin{equation}
+	\begin{aligned}
+		\text{Eight point}:&\\
+		&\frac{\ab{14}}{\ab{18}^2\ab{24}^3\ab{48}^2\ab{57}\ab{58}}\\
+		\text{Nine point}:&\\
+		&\frac{\ab{14}}{\ab{19}^2\ab{24}^3\ab{49}^2\ab{57}\ab{58}\ab{59}}
+	\end{aligned}
+\end{equation}
+with the Jacobian from the cycle being
+\begin{equation}
+	\begin{aligned}
+		\J_8=\frac{\ab{14}\ab{28}}{\ab{18}\ab{24}},~~~~
+		\J_9=\frac{\ab{14}\ab{29}}{\ab{19}\ab{24}}
+	\end{aligned}
+\end{equation}
+\subsection{Higher loops}
+We consider
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{6pt4l_1}
+	\caption{Four-loop six-point MHV with cycle}
+	\label{fig:two-loop}
+\end{figure}
+\noindent
+With the following solutions for the edge variables
+\begin{equation}
+	\begin{aligned}
+		\alpha_1&=\frac{\ab{13}}{\ab{23}},\,\alpha_2=\frac{\ab{21}}{13},\,\alpha_3=\frac{\ab{46}-\alpha_9\ab{56}}{\ab{36}}\,\alpha_4=\frac{\ab{34}-\alpha_9\ab{35}}{\ab{36}}\\
+		\alpha_5&=\frac{\ab{13}}{\ab{36}},\,\alpha_6=\frac{\ab{36}}{16},\,\alpha_7=\frac{\ab{56}}{\ab{46}-\alpha_9\ab{56}}\,\alpha_8=\frac{\ab{45}}{\ab{46}-\alpha_9\ab{56}}
+	\end{aligned}
+\end{equation}
+The Jacobian in $\mathcal{N}=0$ from solving the delta function is 
+\begin{equation}
+	\begin{aligned}
+		-\frac{\ab{31}\ab{26}^4}{\ab{16}^2\ab{23}^2\ab{36}^2\left(\ab{46}-\alpha_9 \ab{56}\right)}
+	\end{aligned}
+\end{equation}
+while the Jacobian from the cycle is
+\begin{equation}
+	\begin{aligned}
+		\mathcal{J}=\frac{\ab{13}\ab{26}}{\ab{16}\ab{23}}
+	\end{aligned}
+\end{equation}
+The total form summing over all internal configurations is
+\begin{equation}
+	\begin{aligned}
+		\dd\Omega =\frac{\ab{26}^4}{\alpha_9 \ab{12}\ab{23}\ab{45}\ab{56}\ab{61}\left(\alpha_9\ab{45}-\ab{34}\right)}\left(	\left[\frac{\ab{13}\ab{26}}{\ab{16}\ab{23}}\right]^{-4}+
+		\left[\frac{\ab{13}\ab{26}}{\ab{12}\ab{36}}\right]^{-4}\right)
+	\end{aligned}
+\end{equation}
+We then treat the following diagram
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{6pt4l_2}
+	\caption{Four-loop six-point MHV with cycle}
+	\label{fig:two-loop}
+\end{figure}
+\noindent
+For which we obtain
+\begin{equation}
+	\begin{aligned}
+		\alpha_1&=\frac{\ab{13}-\alpha_9\ab{12}}{\ab{23}},\,\alpha_2=\frac{\ab{21}}{\ab{13}-\alpha_9\ab{12}},\,\alpha_3=\frac{\ab{46}}{\ab{36}-\alpha_9\ab{26}},\,\alpha_4=\frac{\ab{34}-\alpha_9\ab{24}}{\ab{36}-\alpha_9\ab{26}}\\
+		\alpha_5&=\frac{\ab{13}-\alpha_9\ab{12}}{\ab{36}-\alpha_9\ab{26}},\,\alpha_6=\frac{\ab{36}-\alpha_9\ab{26}}{16},\,\alpha_7=\frac{\ab{56}}{\ab{46}}\,\alpha_8=\frac{\ab{45}}{\ab{46}}
+	\end{aligned}
+\end{equation}
+The Jacobian in $\mathcal{N}=0$ from solving the delta function is 
+\begin{equation}
+	\begin{aligned}
+		\frac{\left(\alpha_9\ab{12}-\ab{31}\right)\ab{26}^4}{\ab{16}^2\ab{23}^2\ab{46}\left(\ab{36}-\alpha_9 \ab{26}\right)^2}
+	\end{aligned}
+\end{equation}
+while the Jacobian from the cycle is
+\begin{equation}
+	\begin{aligned}
+		\mathcal{J}=\frac{\ab{26}\left(\ab{13}-\alpha_9\ab{12}\right)}{\ab{16}\ab{23}}
+	\end{aligned}
+\end{equation}
+The total form summing over all internal configurations is
+\begin{equation}
+	\begin{aligned}
+		\dd\Omega =\frac{\ab{26}^4}{\alpha_9 \ab{12}\ab{23}\ab{45}\ab{56}\ab{61}\left(\alpha_9\ab{24}-\ab{34}\right)}\left(	\left[\frac{\ab{26}\left(\ab{13}-\alpha_9\ab{12}\right)}{\ab{16}\ab{23}}\right]^{-4}+
+		\left[\frac{\ab{26}\left(\ab{13}-\alpha_9\ab{12}\right)}{\ab{12}\left(\ab{36}-\alpha_9\ab{26}\right)}\right]^{-4}\right)
+	\end{aligned}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \begin{thebibliography}{99}
 %\cite{Arkani-Hamed:2010zjl}
 \bibitem{amp1}
