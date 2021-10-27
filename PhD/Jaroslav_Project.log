@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  20 OCT 2021 18:51
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  20 OCT 2021 19:11
  restricted system commands enabled.
 **Jaroslav_Project.tex
 (./Jaroslav_Project.tex
@@ -1372,62 +1372,62 @@ File: 6+7pt.png Graphic file (type png)
 <use 6+7pt.png>
 Package luatex.def Info: 6+7pt.png  used on input line 1685.
 (luatex.def)             Requested size: 309.60384pt x 132.36914pt.
-<8+9pt.png, id=500, 893.3375pt x 391.96437pt>
-File: 8+9pt.png Graphic file (type png)
-<use 8+9pt.png>
-Package luatex.def Info: 8+9pt.png  used on input line 1720.
-(luatex.def)             Requested size: 309.60384pt x 135.84387pt.
  [31
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.16'
 
 <./6+7pt.png>]
-<6pt4l_1.png, id=510, 538.01pt x 402.50375pt>
-File: 6pt4l_1.png Graphic file (type png)
-<use 6pt4l_1.png>
-Package luatex.def Info: 6pt4l_1.png  used on input line 1767.
-(luatex.def)             Requested size: 176.91455pt x 132.35373pt.
+<8+9pt.png, id=509, 893.3375pt x 391.96437pt>
+File: 8+9pt.png Graphic file (type png)
+<use 8+9pt.png>
+Package luatex.def Info: 8+9pt.png  used on input line 1731.
+(luatex.def)             Requested size: 309.60384pt x 135.84387pt.
  [32
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.17'
 
 <./8+9pt.png>]
+<6pt4l_1.png, id=519, 538.01pt x 402.50375pt>
+File: 6pt4l_1.png Graphic file (type png)
+<use 6pt4l_1.png>
+Package luatex.def Info: 6pt4l_1.png  used on input line 1789.
+(luatex.def)             Requested size: 176.91455pt x 132.35373pt.
 <6pt4l_2.png, id=520, 534.49687pt x 378.41376pt>
 File: 6pt4l_2.png Graphic file (type png)
 <use 6pt4l_2.png>
-Package luatex.def Info: 6pt4l_2.png  used on input line 1801.
+Package luatex.def Info: 6pt4l_2.png  used on input line 1823.
 (luatex.def)             Requested size: 176.91455pt x 125.25224pt.
  [33
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.18'
 
-
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.19'
-
-<./6pt4l_1.png><./6pt4l_2.png>]
-Overfull \hbox (43.14465pt too wide) detected at line 1831
+<./6pt4l_1.png>]
+Overfull \hbox (43.14465pt too wide) detected at line 1853
 [][][]
  []
 
-[34] [35]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1903.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1903.
+[34
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.19'
+
+<./6pt4l_2.png>] [35]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1925.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1925.
  (./Jaroslav_Project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1903.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1903.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1925.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1925.
 Package rerunfilecheck Info: File `Jaroslav_Project.out' has not changed.
 (rerunfilecheck)             Checksum: 17B7ADBAB63D5BD04BD9915BF2C8C65E;4735.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1903.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1925.
 )
 
 Here is how much of LuaTeX's memory you used:
- 36125 strings out of 480991
+ 36127 strings out of 480991
  100000,1373583 words of node,token memory allocated
- 1701 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 2 sub_mlist, 1 glyph, 296 attribute
-, 57 glue_spec, 296 attribute_list, 2 write nodes
-   avail lists: 2:2565,3:872,4:92,5:191,6:51,7:2985,8:160,9:990,10:13,11:222
+ 1717 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 2 sub_mlist, 1 glyph, 300 attribute
+, 57 glue_spec, 300 attribute_list, 2 write nodes
+   avail lists: 2:2557,3:872,4:92,5:191,6:51,7:2985,8:160,9:990,10:13,11:222
  52087 multiletter control sequences out of 65536+200000
  128 fonts using 10052851 bytes
  71i,15n,102p,848b,1321s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1457,9 +1457,9 @@ type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr
 les/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
 mssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Jaroslav_Project.pdf (36 pages, 2249689 bytes).
+Output written on Jaroslav_Project.pdf (36 pages, 2251935 bytes).
 
-PDF statistics: 653 PDF objects out of 1000 (max. 8388607)
- 236 named destinations out of 1000 (max. 131072)
+PDF statistics: 655 PDF objects out of 1000 (max. 8388607)
+ 238 named destinations out of 1000 (max. 131072)
  216 words of extra memory for PDF output out of 10000 (max. 100000000)
 
