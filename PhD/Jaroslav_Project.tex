@@ -1222,6 +1222,73 @@ such that the form is given by
 	\end{aligned}
 \end{equation}
 One would expect the bare form to look something like this in the next examples. We proceed by looking at diagrams with internal cycles, after which we analyze the singularity structure.
+\subsubsection{Getting Jacobian from $\tilde \eta$ delta function}
+We do not have supermomentum in the case of $\mathcal{N}=0$ but for $\mathcal{N}>0$ here is the procedure for getting them in the above case. First we have, after insertion of $\alpha$ solutions
+\begin{equation}
+	\begin{aligned}
+		\delta^4\left(\frac{1}{\sqb{35}}\left(
+		\sqb{54}\tilde\eta_3+\sqb{35}\tilde\eta_4+\sqb{43}\tilde\eta_5
+		\right)\right)=\sqb{35}^4	\delta^4\left(
+		\sqb{54}\tilde\eta_3+\sqb{35}\tilde\eta_4+\sqb{43}\tilde\eta_5
+	\right)
+\end{aligned}
+\end{equation}
+The second equation is
+\begin{equation}
+\begin{aligned}
+	&\delta^4\left(\frac{1}{\sqb{35}\ab{26}}\left(\sqb{35}
+	\ab{21}\tilde\eta_1+\aMs{2}{Q_{34}}{5}\tilde\eta_3-\aMs{2}{Q_{45}}{3}\tilde\eta_5+\sqb{35}\ab{26}\tilde\eta_6
+	\right)\right)\\
+	=&\sqb{35}^4\ab{26}^4\delta^4\left(\sqb{35}
+	\ab{21}\tilde\eta_1+\aMs{2}{Q_{34}}{5}\tilde\eta_3-\aMs{2}{Q_{45}}{3}\tilde\eta_5+\sqb{35}\ab{26}\tilde\eta_6
+	\right)\\
+	=&\sqb{35}^4\ab{26}^4\delta^4\left(\sqb{35}
+	\ab{21}\tilde\eta_1+\ab{24}\left(\sqb{45}\tilde\eta_3+\sqb{53}\tilde\eta_5\right)+\sqb{35}\ab{23}\tilde{\eta}_3+\sqb{35}\ab{25}\tilde{\eta}_5+\sqb{35}\ab{26}\tilde\eta_6
+	\right)\\
+	=&\sqb{35}^4\ab{26}^4\delta^4\left(\sqb{35}
+	\ab{21}\tilde\eta_1+\sqb{35}\ab{24}\tilde \eta_4+\sqb{35}\ab{23}\tilde{\eta}_3+\sqb{35}\ab{25}\tilde{\eta}_5+\sqb{35}\ab{26}\tilde\eta_6
+	\right)\\
+	=&\frac{\sqb{35}^4\ab{26}^4}{\sqb{35}^4\lambda_2^4}\delta^4\left(\mathcal{Q}
+	\right)=\frac{\ab{26}^4}{\lambda_2^4}\delta^4\left(\mathcal{Q}
+	\right)
+	\end{aligned}
+\end{equation}
+and the third equation is
+\begin{equation}
+	\begin{aligned}
+		&\delta^4\left(\frac{1}{\sqb{34}\ab{26}}\left(\sqb{34}
+		\ab{61}\tilde\eta_1
+		+\sqb{34}
+		\ab{62}\tilde\eta_2
+		+\aMs{6}{Q_{35}}{4}\tilde\eta_3-\frac{1}{\sqb{35}}\aMs{6}{Q_{45}}{3}\left(\sqb{45}\tilde\eta_3+\sqb{34}\tilde\eta_5\right)\right)\right)\\
+		&\delta^4\left(\frac{1}{\sqb{34}\ab{26}}\left(\sqb{34}
+		\ab{61}\tilde\eta_1
+		+\sqb{34}
+		\ab{62}\tilde\eta_2
+		+\aMs{6}{Q_{35}}{4}\tilde\eta_3+\aMs{6}{Q_{45}}{3}\tilde\eta_4\right)\right)\\
+		&\delta^4\left(\frac{1}{\sqb{34}\ab{26}}\left(\sqb{34}
+		\ab{61}\tilde\eta_1
+		+\sqb{34}
+		\ab{62}\tilde\eta_2
+		+\sqb{34}\ab{63}\tilde\eta_3+
+		\sqb{34}\ab{64}\tilde\eta_4+\ab{65}\left(\sqb{45}\tilde\eta_3+\sqb{35}\tilde\eta_4\right)\right)\right)\\
+		&\delta^4\left(\frac{1}{\sqb{34}\ab{26}}\left(\sqb{34}
+		\ab{61}\tilde\eta_1
+		+\sqb{34}
+		\ab{62}\tilde\eta_2
+		+\sqb{34}\ab{63}\tilde\eta_3+
+		\sqb{34}\ab{64}\tilde\eta_4+\sqb{34}\ab{65}\tilde\eta_5\right)\right)\\
+		&\frac{\ab{26}^4}{\lambda_6^4}\delta^4\left(\mathcal{Q}\right)\\
+	\end{aligned}
+\end{equation}
+So that we in total have
+\begin{equation}
+	\begin{aligned}
+		\delta( C\cdot \tilde \eta)=\ab{26}^4\sqb{35}^4\delta^{8}(\mathcal{Q})\delta^4\left(
+		\sqb{54}\tilde\eta_3+\sqb{35}\tilde\eta_4+\sqb{43}\tilde\eta_5
+		\right)
+	\end{aligned}
+\end{equation}
 \subsection{Six point NMHV with internal cycles}
 We now consider a six point diagram with an internal cycle. Fixing the helicity configuration to $(1^+,2^-,3^+,4^-,5^+,6^-)$ and considering the 5+3 diagrams yields 
 \begin{figure}[H]
@@ -1255,7 +1322,7 @@ Using the approach described at five-point we can infer the Jacobian of the diag
 The form is then
 \begin{equation}
 	\begin{aligned}
-		\dd\Omega&=\frac{\ab{26}^4\sqb{24}^4\delta(P)}{s_{612}\ab{12}\ab{16}\sqb{34}\sqb{45}\aMs{2}{Q_{612}}{5}\aMs{6}{Q_{612}}{3}}\left[\left(\frac{\aMs{2}{Q_{612}}{4}\sqb{35}}{\aMs{2}{Q_{612}}{5}\sqb{34}}\right)^{-4}+\left(\frac{\aMs{2}{Q_{612}}{4}\sqb{35}}{\aMs{2}{Q_{612}}{3}\sqb{45}}\right)^{-4}\right]
+		\dd\Omega&=\frac{\ab{26}^4\sqb{35}^4\delta(P)}{s_{612}\ab{12}\ab{16}\sqb{34}\sqb{45}\aMs{2}{Q_{612}}{5}\aMs{6}{Q_{612}}{3}}\left[\left(\frac{\aMs{2}{Q_{612}}{4}\sqb{35}}{\aMs{2}{Q_{612}}{5}\sqb{34}}\right)^{-4}+\left(\frac{\aMs{2}{Q_{612}}{4}\sqb{35}}{\aMs{2}{Q_{612}}{3}\sqb{45}}\right)^{-4}\right]
 	\end{aligned}
 \end{equation}
 Let us further examine the six-point NMHV case by looking at an example of a 4+4 diagram. It is not possible to orient the graph with a closed cycle for the external helicity configuration of $(1^+,2^-,3^+,4^-,5^+,6^-)$, so instead we consider the following two diagrams.
