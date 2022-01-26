@@ -1927,6 +1927,147 @@ The total form summing over all internal configurations is
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{6 point NMHV residue}
+To figure out the corresponding rule for NMHV diagrams we consider the following six point graph
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{6ptNMHV2}
+	\caption{Four-loop six-point MHV with cycle}
+	\label{fig:two-loop}
+\end{figure}
+\noindent
+The $C$ and $C_\perp$ matrices give the following delta-functions
+\begin{equation}
+	\begin{aligned}
+		0&=-\ab{12}+\delta\alpha_2 \left(\ab{13}+\alpha_3\alpha_6\ab{16}\right)~~~
+		&&0=\ab{23}+\delta\alpha_3 \left(-\ab{13}+\alpha_6\ab{36}\right)\\
+		0&=\ab{26}-\delta\alpha_2 \left(\ab{36}+\alpha_3\ab{16}\right)~~~
+		&&0=-\ab{14}+\alpha_5\ab{16}+\delta\alpha_3 \alpha_4 \left(\alpha_{1}\alpha_2\ab{13}+\alpha_6\ab{16}\right)\\
+		0&=-\ab{34}+\alpha_5\ab{36}+\delta\alpha_3 \alpha_4 \left(\alpha_{6}\ab{16}-\ab{13}\right)~~~
+		&&0=\ab{46}-\delta\alpha_3 \alpha_4 \left(\ab{16}+\alpha_1\alpha_2\ab{36}\right)\\
+		0&=-\ab{15}+\left(\alpha_5\alpha_7+\alpha_8\right)\ab{16}+\delta\alpha_3 \alpha_4 \alpha_7 \left(\alpha_1\alpha_{2}\ab{13}+\alpha_6\ab{16}\right)~~~
+		&&0=-\ab{35}+\left(\alpha_5\alpha_7+\alpha_8\right)\ab{36}+\delta\alpha_3 \alpha_4 \alpha_7 \left(-\ab{13}+\alpha_6\ab{16}\right)\\
+		0&=\ab{56}-\delta\alpha_3 \alpha_4 \alpha_7 \left(\alpha_1\alpha_{2}\ab{36}+\ab{16}\right)
+	\end{aligned}
+\end{equation}
+and
+\begin{equation}\hspace*{-2.7cm}
+	\begin{aligned}
+		0&=\left[ 1 2 \right] - \delta \alpha_{3} \alpha_{4} (\left[ 2 4 \right] + \alpha_{7} \left[ 2 5 \right])
+~~~&&0=
+		\left[ 1 4 \right] + \delta \alpha_{3} (\alpha_{2} \left[ 2 4 \right] - \alpha_{4} \alpha_{7} \left[ 4 5 \right])
+		\\
+		0&=\left[ 1 5 \right] + \delta \alpha_{3} (\alpha_{2} \left[ 2 5 \right] + \alpha_{4} \left[ 4 5 \right])
+~~~&&0=
+		-\left[ 2 3 \right] - \delta \alpha_{1} \alpha_{2} \alpha_{3} \alpha_{4} (\left[ 2 4 \right] + \alpha_{7} \left[ 2 5 \right])
+		\\
+		0&=\left[ 3 4 \right] + \delta \alpha_{2} (\left[ 2 4 \right] - \alpha_{1} \alpha_{3} \alpha_{4} \alpha_{7} \left[ 4 5 \right])
+~~~&&0=
+		\left[ 3 5 \right] + \delta \alpha_{2} (\left[ 2 5 \right] + \alpha_{1} \alpha_{3} \alpha_{4} \left[ 4 5 \right])
+		\\
+		0&=-((\alpha_{5} + \delta \alpha_{3} \alpha_{4} \alpha_{6}) \left[ 2 4 \right]) - ((\alpha_{5} + \delta \alpha_{3} \alpha_{4} \alpha_{6}) \alpha_{7} + \alpha_{8}) \left[ 2 5 \right] - \left[ 2 6 \right]
+~~~&&0=
+		\delta \alpha_{2} \alpha_{3} \alpha_{6} \left[ 2 4 \right] - ((\alpha_{5} + \delta \alpha_{3} \alpha_{4} \alpha_{6}) \alpha_{7} + \alpha_{8}) \left[ 4 5 \right] - \left[ 4 6 \right]
+	\end{aligned}
+\end{equation}
+with solutions for the edgevariables being
+\begin{equation}
+	\begin{aligned}
+		 \alpha_1 = \frac{[23]}{[13]}\,, \quad \alpha_2 =- \frac{[13]}{[12]}&\,,~~
+		\alpha_3 = \frac{\aMs{6}{Q_{456}}{1}}{\aMs{6}{Q_{456}}{3}}, \quad
+		\alpha_4 = \frac{\ab{46}\sqb{13}}{\aMs{6}{Q_{456}}{1}}\,,\\
+		\alpha_5 = \frac{\aMs{4}{Q_{456}}{1}}{\aMs{6}{Q_{456}}{1}}\,,\quad
+		\,\alpha_6 &= \frac{\sab{456}}{\aMs{6}{Q_{456}}{1}}\,, \quad \alpha_7 = \frac{\ab{56}}{\ab{46}}\,, \quad
+		\alpha_8 = \frac{\ab{45}}{\ab{46}}\,  
+	\end{aligned}
+\end{equation}
+Using the edge-variables obtained as well as 
+\begin{equation}
+	\begin{aligned}
+		\mathcal{J}=\frac{\aMs{6}{Q_{123}}{2}\sqb{13}}{\aMs{6}{Q_{123}}{3}\sqb{12}}
+	\end{aligned}
+\end{equation}
+We find the form for $\mathcal{N}=0$
+\begin{equation}
+	\begin{aligned}
+		\Omega=\frac{\delta(Q)\delta(P)}{s_{123}\ab{45}\ab{56}\aMs{4}{Q_{123}}{1}\sqb{13}\sqb{23}}
+	\end{aligned}
+\end{equation}
+Which has a pole on $\sqb{13}\to 0$, which corresponds to the loop in the cycle blowing up. Taking the residue on this pole we find
+\begin{equation}
+	\begin{aligned}
+		\Res_{\sqb{13}=0} \Omega=&
+		\frac{\delta(\left(\lambda_{1}+\alpha\lambda_3\right)\tilde{\lambda}_1+\lambda_{2}\tilde{\lambda}_2+\lambda_{4}\tilde{\lambda}_4+\lambda_{5}\tilde{\lambda}_5+\lambda_{6}\tilde{\lambda}_6)}{\alpha\left(\ab{12}-\alpha\ab{23}\right)\ab{45}\ab{56}\sqb{12}^3}\delta(\tilde{\lambda}_3-\alpha\tilde\lambda_1)\\
+		&\times
+		\delta(\left(\lambda_{1}+\alpha\lambda_3\right)\tilde{\eta}_1+\lambda_{2}\tilde{\eta}_2+\lambda_{4}\tilde{\eta}_4+\lambda_{5}\tilde{\eta}_5+\lambda_{6}\tilde{\eta}_6)
+	\end{aligned}
+\end{equation}
+We compare this to the following six-point diagram,
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{6ptNMHV}
+	\caption{Four-loop six-point MHV with cycle}
+	\label{fig:two-loop}
+\end{figure}
+\noindent
+From the C matrix we obtain
+\begin{equation}
+	\begin{aligned}
+		0&=\left[ 1 2 \right] - \alpha_{1} \alpha_{2} (\left[ 2 4 \right] + \alpha_{5} \left[ 2 5 \right])
+&&0=
+		\left[ 1 4 \right] + \alpha_{1} (\left[ 2 4 \right] - \alpha_{2} \alpha_{5} \left[ 4 5 \right])
+		\\0&=
+		\left[ 1 5 \right] + \alpha_{1} (\left[ 2 5 \right] + \alpha_{2} \left[ 4 5 \right])
+&&0=
+		-\left[ 2 3 \right] - \alpha_{1} \alpha_{2} \alpha_{7} (\left[ 2 4 \right] + \alpha_{5} \left[ 2 5 \right])
+		\\0&=
+		\left[ 3 4 \right] + \alpha_{1} \alpha_{7} (\left[ 2 4 \right] - \alpha_{2} \alpha_{5} \left[ 4 5 \right])
+&&0=
+		\left[ 3 5 \right] + \alpha_{1} \alpha_{7} (\left[ 2 5 \right] + \alpha_{2} \left[ 4 5 \right])
+		\\0&=
+		-((\alpha_{3} + \alpha_{1} \alpha_{2} \alpha_{4}) \left[ 2 4 \right]) - ((\alpha_{3} + \alpha_{1} \alpha_{2} \alpha_{4}) \alpha_{5} + \alpha_{6}) \left[ 2 5 \right] - \left[ 2 6 \right]
+&&0=
+		\alpha_{3} \left[ 4 5 \right] + \alpha_{1} \alpha_{4} (\left[ 2 5 \right] + \alpha_{2} \left[ 4 5 \right]) - \left[ 5 6 \right]
+		\\
+0&=
+		\alpha_{1} \alpha_{4} \left[ 2 4 \right] - ((\alpha_{3} + \alpha_{1} \alpha_{2} \alpha_{4}) \alpha_{5} + \alpha_{6}) \left[ 4 5 \right] - \left[ 4 6 \right]
+\end{aligned}
+\end{equation}
+Similarly we find from $C_\perp$
+\begin{equation}
+	\begin{aligned}
+0&=		-\langle 1 2 \rangle + \alpha_{1} (\alpha_{7} \langle 1 3 \rangle + \alpha_{4} \langle 1 6 \rangle)
+&&0=
+		\langle 2 3 \rangle + \alpha_{1} (-\langle 1 3 \rangle + \alpha_{4} \langle 3 6 \rangle)
+		\\0&=
+		\langle 2 6 \rangle - \alpha_{1} (\langle 1 6 \rangle + \alpha_{7} \langle 3 6 \rangle)
+&&0=
+		-\langle 1 4 \rangle + \alpha_{3} \langle 1 6 \rangle + \alpha_{1} \alpha_{2} (\alpha_{7} \langle 1 3 \rangle + \alpha_{4} \langle 1 6 \rangle)
+		\\0&=
+		-\langle 3 4 \rangle + \alpha_{3} \langle 3 6 \rangle + \alpha_{1} \alpha_{2} (-\langle 1 3 \rangle + \alpha_{4} \langle 3 6 \rangle)
+&&0=
+		-(\alpha_{1} \alpha_{2} (\langle 1 6 \rangle + \alpha_{7} \langle 3 6 \rangle)) + \langle 4 6 \rangle
+		\\0&=
+		-\langle 1 5 \rangle + (\alpha_{3} \alpha_{5} + \alpha_{6}) \langle 1 6 \rangle + \alpha_{1} \alpha_{2} \alpha_{5} (\alpha_{7} \langle 1 3 \rangle + \alpha_{4} \langle 1 6 \rangle)
+&&0=
+	-(\alpha_{1} \alpha_{2} \alpha_{5} (\langle 1 6 \rangle + \alpha_{7} \langle 3 6 \rangle)) + \langle 5 6 \rangle
+		\\0&=
+		-\langle 3 5 \rangle + (\alpha_{3} \alpha_{5} + \alpha_{6}) \langle 3 6 \rangle + \alpha_{1} \alpha_{2} \alpha_{5} (-\langle 1 3 \rangle + \alpha_{4} \langle 3 6 \rangle)
+	\end{aligned}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \begin{thebibliography}{99}
 %\cite{Arkani-Hamed:2010zjl}

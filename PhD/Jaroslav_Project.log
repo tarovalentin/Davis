@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  2 NOV 2021 14:57
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  28 DEC 2021 19:54
  restricted system commands enabled.
 **Jaroslav_Project.tex
 (./Jaroslav_Project.tex
@@ -1005,6 +1005,12 @@ LaTeX Warning: Label `fig:two-loop' multiply defined.
 
 LaTeX Warning: Label `fig:two-loop' multiply defined.
 
+
+LaTeX Warning: Label `fig:two-loop' multiply defined.
+
+
+LaTeX Warning: Label `fig:two-loop' multiply defined.
+
 )
 \openout1 = Jaroslav_Project.aux
 
@@ -1406,32 +1412,72 @@ Overfull \hbox (43.14465pt too wide) detected at line 1920
 [][][]
  []
 
-[35
+<6ptNMHV2.png, id=546, 828.59563pt x 295.1025pt>
+File: 6ptNMHV2.png Graphic file (type png)
+<use 6ptNMHV2.png>
+Package luatex.def Info: 6ptNMHV2.png  used on input line 1937.
+(luatex.def)             Requested size: 442.29314pt x 157.52478pt.
+
+Underfull \vbox (badness 1184) has occurred while \output is active []
+
+ [35
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.19'
 
-<./6pt4l_2.png>] [36]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1992.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1992.
+<./6pt4l_2.png>]
+Overfull \hbox (148.98697pt too wide) detected at line 1955
+[][][]
+ []
+
+
+Overfull \hbox (77.8409pt too wide) detected at line 1975
+[]| [][]
+ []
+
+[36
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.20'
+
+<./6ptNMHV2.png>]
+<6ptNMHV.png, id=569, 902.37125pt x 345.29pt>
+File: 6ptNMHV.png Graphic file (type png)
+<use 6ptNMHV.png>
+Package luatex.def Info: 6ptNMHV.png  used on input line 2011.
+(luatex.def)             Requested size: 442.29314pt x 169.24626pt.
+
+Overfull \hbox (57.12346pt too wide) detected at line 2038
+[][][]
+ []
+
+
+Overfull \hbox (52.66899pt too wide) detected at line 2060
+[][][]
+ []
+
+[37
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.21'
+
+<./6ptNMHV.png>] [38]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2132.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2132.
  (./Jaroslav_Project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1992.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1992.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2132.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2132.
 Package rerunfilecheck Info: File `Jaroslav_Project.out' has not changed.
 (rerunfilecheck)             Checksum: D0EBC3F2AC61A80FA2B84EC4D20F1C01;5004.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1992.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2132.
 )
 
 Here is how much of LuaTeX's memory you used:
- 36134 strings out of 480991
+ 36173 strings out of 480991
  100000,1373583 words of node,token memory allocated
- 1749 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 2 sub_mlist, 1 glyph, 308 attribute
-, 57 glue_spec, 308 attribute_list, 2 write nodes
-   avail lists: 2:2541,3:872,4:96,5:191,6:53,7:2985,8:160,9:990,10:13,11:222
- 52088 multiletter control sequences out of 65536+200000
+ 1813 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 2 sub_mlist, 1 glyph, 324 attribute
+, 57 glue_spec, 324 attribute_list, 2 write nodes
+   avail lists: 2:2509,3:872,4:96,5:191,6:53,7:2985,8:160,9:990,10:13,11:222
+ 52102 multiletter control sequences out of 65536+200000
  128 fonts using 10052851 bytes
  71i,15n,102p,848b,1321s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/MiK
@@ -1460,9 +1506,9 @@ type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr
 les/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
 mssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Jaroslav_Project.pdf (37 pages, 2258453 bytes).
+Output written on Jaroslav_Project.pdf (39 pages, 2474077 bytes).
 
-PDF statistics: 668 PDF objects out of 1000 (max. 8388607)
- 244 named destinations out of 1000 (max. 131072)
+PDF statistics: 692 PDF objects out of 1000 (max. 8388607)
+ 257 named destinations out of 1000 (max. 131072)
  224 words of extra memory for PDF output out of 10000 (max. 100000000)
 
