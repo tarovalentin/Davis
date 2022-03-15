@@ -65,7 +65,7 @@ $(d+1)$-dimensional bulk theory of gravity in anti-de Sitter spacetime (AdS) to 
 The correspondence provides a dictionary between the CFT and Gravity sides. The focus of this project is on how one relates operators on the boundary to operators in the bulk. This might seem strange at first, since the operators on the boundary live in one spacetime dimension lower than the bulks ones and so one might expect the dictionary to only work one way, but as we will show, one is able to \textit{reconstruct} information in the bulk from data on the boundary. Further, one can reconstruct operators using only part of the boundary information. Here we will focus on Rindler reconstruction, but other subregion dualities exist. 
 
 Using Rindler reconstruction, some subtleties and puzzles in the prescription appear. We will describe the problems and then show how treating AdS/CFT as a Quantum Error Correcting Code (QECC), resolves the problems. For this purpose we introduce a toy model: the 3 qutrit model. The model is very coarse grained and we give a brief introduction to how to introduce more degrees of freedom by using tensor networks.
-\section{Bulk and Rindler Reconstruction}
+\section{Bulk and Rindler Reconstruction \label{sec:1}}
 We are going to consider global AdS spacetime with metric
 \begin{equation}
 	\begin{aligned}
@@ -174,12 +174,22 @@ where the basis vectors now are
 			|\tilde 2\rangle &=\frac{1}{\sqrt{3}}\left(\ket{021}+\ket{102}+\ket{210}\right)\\
 		\end{aligned}
 	\end{equation}
-such that $\{\ket{\tilde k}\}$ forms a basis for a 3-dimensional subspace, denoted by $H_{\text{code}}$ within the 27 full dimensional Hilbert space of the qutrits.
-\begin{equation}
-	\begin{aligned}
-		\rho_{\text{single qutrit}}=\frac{1}{\sqrt{3}}
-\left(\dyad{0}{0}+\dyad{1}{1}+\dyad{2}{2}\right)	\end{aligned}
-\end{equation}
+such that $\left\{|\tilde k\rangle\right\}$ forms a basis for a 3-dimensional subspace, denoted by $H_{\text{code}}$ within the full 27 dimensional Hilbert space of the qutrits. The 3 qutrits encoding the information of the logical qutrit is called \textit{physical qutrits}. 
+
+Before we move on, let us summarize some important features of the states just defined:
+\begin{itemize}
+	\item $H_{\text{code}}$ is symmetric under exhange of the 3 qutrits.
+	\item All $| \tilde \psi \rangle\in H_{\text{code}}$ are highly entangled, since the density matrix obtained from tracing out two qutrits, i.e.
+	\begin{equation}
+		\begin{aligned}
+			\rho_{\text{single qutrit}}=\frac{1}{\sqrt{3}}
+			\left(\dyad{0}{0}+\dyad{1}{1}+\dyad{2}{2}\right)	\end{aligned}
+	\end{equation}
+is a maximally mixed state. 
+\item Any single qutrit has no information about the original state.
+\item Any two of the three qutrits contains complete information about the original state, so even if Bob looses a single qutrit he can still recover the original information. We will describe how this works below.
+\end{itemize}
+To see that the physical qutrits contain all the information from the logical qutrit, we define decoding operators $U_{ij}$, for $\{i,j\}=1,2,3$, $i\neq j$. It is easiest to see how these through an explicit example, so take e.g. $U_{12}$, which has the explicit action of changing the first two qutrits in the following manor,
 \begin{align}
 	\begin{tabular}{ l c r }
 		$|00\rangle\to|00\rangle$ & $|11\rangle \to |01\rangle$ & $|22\rangle\to |02\rangle$ \\ 
@@ -187,7 +197,7 @@ such that $\{\ket{\tilde k}\}$ forms a basis for a 3-dimensional subspace, denot
 		$|02\rangle\to |21\rangle$ & $|10\rangle\to|22\rangle$ & $|21\rangle \to |20\rangle$ 
 	\end{tabular}.
 \end{align}
-Example
+Such that, for instance acting on the $|\tilde 1\rangle$
 \begin{equation}
 	\begin{aligned}
 		U_{12}|\tilde 1\rangle&=\frac{1}{\sqrt{3}}\left(\ket{122}+\ket{100}+\ket{111}\right)
@@ -195,36 +205,59 @@ Example
 		&=\ket{1}_1\otimes \ket{\chi}_{23}
 	\end{aligned}
 \end{equation}
-in general
+where $\ket{\chi}_{23}$ is the following state of the last two qutrits
+\begin{equation}
+	\begin{aligned}
+		\ket{\chi}_{23}&\equiv \frac{1}{\sqrt{3}}\left(\ket{00}+\ket{11}+\ket{22}\right)
+	\end{aligned}
+\end{equation}
+in general one finds $	U_{12}|\tilde k\rangle=\ket{k}_1\otimes \ket{\chi}_{23}$, 
+such that we can recover the original state using the decoder
 \begin{equation}
 	\begin{aligned}
 		U_{12}|\tilde \psi\rangle
-		&=\ket{\psi}_1\otimes \ket{\chi}_{23}
+		&=\ket{\psi}_1\otimes \ket{\chi}_{23}.
 	\end{aligned}
 \end{equation}
+Using this operator Bob would be able to get the information from the logical qutrit, even if he lost the third physical qutrit somehow.
+One then obviously has similar actions for $U_{31}$ and $U_{23}$. Now let us assume that Bob want to perform a quantum computation on the logical qutrit, i.e. he wants to act on it with a general linear operator,
 \begin{equation}
 	\begin{aligned}
-		O\ket{k}=O_{jk}\ket{j}
+		O\ket{k}=O_{jk}\ket{j}.
 	\end{aligned}
 \end{equation}
-
+If he receives the encoded state $|\tilde \psi\rangle$, he wants an operator that gives the same value as above, i.e.
 \begin{equation}
-	\begin{aligned}
+	\begin{aligned} \label{eq:3}
 		\tilde{O}|\tilde k\rangle =O_{jk}|\tilde j\rangle 
 	\end{aligned}
 \end{equation}
+An example of such an operator can be build from the decoding operators that we just defined, e.g.
 \begin{equation}
 	\begin{aligned}
-		\tilde{O}_{12}\equiv U^\dagger_{12}O_1 U_{12}  
+		\tilde{O}_{12}\equiv U^\dagger_{12}O_1 U_{12},
 	\end{aligned}
 \end{equation}
+where $O_1$ is an operator acting on the first qutrit.
+This exactly has the intended action, \eqref{eq:3}, and it only acts on the $1,2$ subset and so once again, Bob could loose the third qutrit and still recover the initial information. 
+
+Further, we can define similar operators $\tilde{O}_{31},\tilde{O}_{23}$. They are all different operators in the full Hilbert space, but they act in the same way in the code subspace. We will now discuss how this resolves both the puzzles encountered in section \ref{sec:1}
 \section{AdS/CFT as a QECC}
+\subsubsection*{Solution to ABC-puzzle}
+We have just seen how the 3-qutrit model has operators that act the same way in a subspace, but are different operators in the full Hilbert space. Using this we can resolve the ABC puzzle. The idea is to identity 
+\begin{itemize}
+	\item 3 physical qutrits $\sim$ local degrees of freedom in the CFT.
+	\item Logical qutrit $\sim$ bulk operator.
+	\item $\phi_{AB},\phi_{BC},\phi_{CA}\sim \tilde{O}_{12},\tilde{O}_{23},\tilde{O}_{31}$
+\end{itemize}
+This notion is exemplified in Figure \ref{fig:adscftfig5}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\linewidth]{ADS_CFT_Fig5}
 	\caption{}
 	\label{fig:adscftfig5}
 \end{figure}
+Further, in this setup \eqref{eq:2} only has support when states lie in $H_{\text{code}}$, where the code subspace are defines as states that are perturbatively close to the vacuum.
 \begin{equation}
 	\begin{aligned}
 		\langle \tilde \psi |\left[\phi(x),\BO(X)\right]|\tilde \psi\rangle =0,~~~~~~~~\forall~~~~ |\tilde \psi\rangle\in H_{\text{code}}

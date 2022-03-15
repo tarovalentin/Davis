@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  14 MAR 2022 17:13
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  15 MAR 2022 11:24
  restricted system commands enabled.
 **AdS_CFT.tex
 (./AdS_CFT.tex
@@ -1158,76 +1158,4 @@ LaTeX Warning: No positions in optional float specifier.
 <ADS_CFT_Fig4.png, id=97, 453.19313pt x 431.11063pt>
 File: ADS_CFT_Fig4.png Graphic file (type png)
 <use ADS_CFT_Fig4.png>
-Package luatex.def Info: ADS_CFT_Fig4.png  used on input line 145.
-(luatex.def)             Requested size: 110.57327pt x 105.18556pt.
-[4
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.2'
-<./ADS_CFT_Fig2.png>] [5
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.3'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.4'
-<./ADS_CFT_Fig3.png><./ADS_CFT_Fig4.png>]
-<ADS_CFT_Fig5.png, id=118, 851.18pt x 365.86688pt>
-File: ADS_CFT_Fig5.png Graphic file (type png)
-<use ADS_CFT_Fig5.png>
-Package luatex.def Info: ADS_CFT_Fig5.png  used on input line 221.
-(luatex.def)             Requested size: 420.17712pt x 180.6106pt.
- [6]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 230.
-
-<ADS_CFT_Fig6.png, id=133, 743.77875pt x 402.50375pt>
-File: ADS_CFT_Fig6.png Graphic file (type png)
-<use ADS_CFT_Fig6.png>
-Package luatex.def Info: ADS_CFT_Fig6.png  used on input line 232.
-(luatex.def)             Requested size: 309.60384pt x 167.5457pt.
-[7
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.6'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.5'
-<./ADS_CFT_Fig6.png><./ADS_CFT_Fig5.png>] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 309.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 309.
- (./AdS_CFT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 309.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 309.
-Package rerunfilecheck Info: File `AdS_CFT.out' has not changed.
-(rerunfilecheck)             Checksum: D32CFD38CF39808951E65C98F9DE8BAF;918.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 309.
-)
-
-Here is how much of LuaTeX's memory you used:
- 37678 strings out of 480991
- 100000,1373583 words of node,token memory allocated
- 665 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 42 attribute, 57 glue_spec
-, 42 attribute_list, 2 write nodes
-   avail lists: 1:1,2:807,3:119,4:32,5:202,6:15,7:3158,8:57,9:510,10:12,11:226
- 53847 multiletter control sequences out of 65536+200000
- 85 fonts using 7298347 bytes
- 71i,14n,102p,966b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/lm/lmtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/rs
-fs/rsfs10.pfb>
-Output written on AdS_CFT.pdf (9 pages, 1641346 bytes).
-
-PDF statistics: 223 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 131072)
- 64 words of extra memory for PDF output out of 10000 (max. 100000000)
-
+Package luatex.def Info: ADS_CFT_Fig4.png  us
