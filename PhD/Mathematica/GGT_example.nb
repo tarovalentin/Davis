@@ -1,0 +1,3557 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    132236,       3548]
+NotebookOptionsPosition[    122699,       3247]
+NotebookOutlinePosition[    126643,       3359]
+CellTagsIndexPosition[    125610,       3332]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "GGT.m"}]}], "Input",
+ CellChangeTimes->{{3.495944585824813*^9, 3.495944617574991*^9}, {
+   3.495947726406354*^9, 3.4959477265158854`*^9}, 3.495952471773176*^9, {
+   3.495979328959572*^9, 3.495979329247141*^9}, {3.496036436073791*^9, 
+   3.496036437105839*^9}, 3.496037701028104*^9, {3.4960399169095716`*^9, 
+   3.496039917044944*^9}, {3.496040137443508*^9, 3.496040137665872*^9}, {
+   3.496045522718115*^9, 3.496045542979046*^9}, {3.49607387134247*^9, 
+   3.496073871470653*^9}, {3.4961244714550467`*^9, 3.49612447160102*^9}, {
+   3.496141275246705*^9, 3.496141275325696*^9}, {3.496380051509444*^9, 
+   3.496380051797579*^9}, {3.496465238452794*^9, 3.496465238581688*^9}, {
+   3.496472147063511*^9, 3.496472158367373*^9}}],
+
+Cell[BoxData["\<\"\\n-----  Gluon-Gluino-Trees  -----\\n\\nVersion:\\t GGT \
+1.1\\t (3-Nov-2010)\\n\\nAuthors: Lance Dixon, Johannes Henn, Jan Plefka, \
+Theodor Schuster\\n\\nA list of all provided functions is stored in the \
+variable $GGTfunctions\"\>"], "Print",
+ CellChangeTimes->{3.4960455436722527`*^9, 3.496073871974824*^9, 
+  3.496124472112718*^9, 3.4961412765886793`*^9, 3.496380052247448*^9, 
+  3.4964652397027273`*^9, 3.496472159365698*^9, 3.496496912847541*^9, 
+  3.497788357561354*^9, 3.497792366661874*^9, 3.498820136490244*^9, 
+  3.498820994560583*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$GGTfunctions"], "Input",
+ CellChangeTimes->{{3.496036476677092*^9, 3.496036480124136*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GGTfermion\"\>", ",", "\<\"GGTfermionS\"\>", 
+   ",", "\<\"GGTgenvar\"\>", ",", "\<\"GGTgluon\"\>", 
+   ",", "\<\"GGTnmhv2ferm\"\>", ",", "\<\"GGTnmhv4ferm\"\>", 
+   ",", "\<\"GGTnmhv4fermS\"\>", ",", "\<\"GGTnmhv6ferm\"\>", 
+   ",", "\<\"GGTnmhv6fermS\"\>", ",", "\<\"GGTnmhvgluon\"\>", 
+   ",", "\<\"GGTnnmhv2ferm\"\>", ",", "\<\"GGTnnmhv4ferm\"\>", 
+   ",", "\<\"GGTnnmhv4fermS\"\>", ",", "\<\"GGTnnmhv6ferm\"\>", 
+   ",", "\<\"GGTnnmhv6fermS\"\>", ",", "\<\"GGTnnmhvgluon\"\>", 
+   ",", "\<\"GGTnumeric\"\>", ",", "\<\"GGTr\"\>", ",", "\<\"GGTs\"\>", 
+   ",", "\<\"GGTspaa\"\>", ",", "\<\"GGTsuperamp\"\>", 
+   ",", "\<\"GGTtoSpinors\"\>", ",", "\<\"GGTx\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.496036480552648*^9, 3.4960377028232117`*^9, 
+  3.496037853756051*^9, 3.4960380757721033`*^9, 3.4960387091882353`*^9, 
+  3.496039070715023*^9, 3.4960391621328993`*^9, 3.496039192409463*^9, 
+  3.496039918532105*^9, 3.496040144236742*^9, 3.496045550802774*^9, 
+  3.4964721646036863`*^9, 3.496496920070765*^9, 3.497788365375047*^9, 
+  3.498820149740555*^9, 3.498820998761815*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTspaa"}]], "Input",
+ CellChangeTimes->{{3.496038623667162*^9, 3.4960386315176764`*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTspaa[a,\!\(\*SubscriptBox[\\\"p\\\", \
+\\\"1\\\"]\),...,\!\(\*SubscriptBox[\\\"p\\\", \\\"m\\\"]\),b] denotes spinor \
+products <a|\!\(\*SubscriptBox[\\\"p\\\", \
+\\\"1\\\"]\)|...|\!\(\*SubscriptBox[\\\"p\\\", \\\"m\\\"]\)|b>, with m \
+even.\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.49649695043396*^9},
+ CellTags->"Info3496504150-9575102"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTx"}]], "Input",
+ CellChangeTimes->{{3.496038650645793*^9, 3.496038652285569*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTx[i,j]=\!\(\*SubscriptBox[\\\"x\\\", \
+\\\"i\\\"]\)-\!\(\*SubscriptBox[\\\"x\\\", \\\"j\\\"]\) are differences \
+between dual coordinates (or region momenta), defined by \
+\!\(\*SubscriptBox[\\\"x\\\", \\nRowBox[{\\\"i\\\", \\\"+\\\", \
+\\\"1\\\"}]]\)-\!\(\*SubscriptBox[\\\"x\\\", \\\"i\\\"]\)=\!\(\*SubscriptBox[\
+\\\"p\\\", \\\"i\\\"]\). \"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.496496955735173*^9},
+ CellTags->"Info3496504155-2358992"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTs"}]], "Input",
+ CellChangeTimes->{{3.4960387537656307`*^9, 3.496038754805601*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"Mandelstam invariants. \
+GGTs[i,j]=(\!\(\*SubscriptBox[\\\"x\\\", RowBox[{\\\"i\\\", \\\",\\\", \
+\\\"j\\\"}]]\)\!\(\*SuperscriptBox[\\\")\\\", \
+\\\"2\\\"]\)=(\!\(\*SubscriptBox[\\\"p\\\", \
+\\\"i\\\"]\)+\!\(\*SubscriptBox[\\\"p\\\", \\nRowBox[{\\\"i\\\", \\\"+\\\", \
+\\\"1\\\"}]]\)+...+\!\(\*SubscriptBox[\\\"p\\\", \
+\\\"j-1\\\"]\)\!\(\*SuperscriptBox[\\\")\\\", \\\"2\\\"]\)\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.496496957570023*^9},
+ CellTags->"Info3496504157-1433779"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTsuperamp"}]], "Input",
+ CellChangeTimes->{{3.496039226917308*^9, 3.496039229840569*^9}, {
+  3.496472189059146*^9, 3.496472189263584*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTsuperamp[n,k] is the \
+\!\(\*FormBox[SuperscriptBox[\\\"N\\\", \\\"k\\\"],TraditionalForm]\)MHV \
+superamplitude of n superfields, with the MHV superamplitude factored out, in \
+terms of the R invariants.\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.49649696020776*^9},
+ CellTags->"Info3496504159-9034712"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTr"}]], "Input",
+ CellChangeTimes->{{3.496039288481865*^9, 3.496039290326359*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"R invariants. \
+\!\(\*FormBox[RowBox[{SubsuperscriptBox[\\\"R\\\",RowBox[{\\\"n\\\", \
+\\\";\\\", \\\"v\\\", \\\";\\\", RowBox[{\\\"a\\\", \\\" \\\", \\\"b\\\"}]}], \
+RowBox[{\\\"L\\\", \\\";\\\", \\\"U\\\"}]], \\\"=\\\",RowBox[{\\\"GGTr\\\", \
+\\\"[\\\", RowBox[{\\\"n\\\", \\\",\\\", \\\"L\\\", \\\",\\\", \\\"U\\\", \
+\\\",\\\", \\\"v\\\", \\\",\\\", \\\"a\\\", \\\",\\\", \\\"b\\\"}], \
+\\\"]\\\"}]}],TraditionalForm]\)  with \!\(\*FormBox[RowBox[{\\\"L\\\", \\\"=\
+\\\", RowBox[{\\\"{\\\", RowBox[{SubscriptBox[\\\"L\\\", \\\"1\\\"], \
+\\\",\\\", SubscriptBox[\\\"L\\\", \\\"2\\\"], \\\",\\\", \
+\\\"...\\\"}]}]}],TraditionalForm]\)}, \!\(\*FormBox[RowBox[{\\\"U\\\", \\\"=\
+\\\", RowBox[{\\\"{\\\", RowBox[{SubscriptBox[\\\"U\\\", \\\"1\\\"], \
+\\\",\\\", SubscriptBox[\\\"U\\\", \\\"2\\\"], \\\",\\\", \\\" \\\", \
+\\\"...\\\"}]}]}],TraditionalForm]\)}, \!\(\*FormBox[RowBox[{\\\"v\\\", \\\" \
+\\\", \\\"=\\\", \\\" \\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[\\\"v\\\", \\\"1\\\"], \\\",\\\", \\\" \\\", \
+SubscriptBox[\\\"u\\\", \\\"1\\\"]}], \\\"}\\\"}], \\\",\\\", \\\" \\\", \
+RowBox[{\\\"{\\\", RowBox[{SubscriptBox[\\\"v\\\", \\\"2\\\"], \\\",\\\", \
+SubscriptBox[\\\"u\\\", \\\"2\\\"]}]}]}]}]}],TraditionalForm]\)}, ...}\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.496496962314147*^9},
+ CellTags->"Info3496504162-2329912"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTtoSpinors"}]], "Input",
+ CellChangeTimes->{{3.496039299670042*^9, 3.496039304297802*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTtoSpinors[GGTexpression] translates GGT expressions into a \
+form compatible with the S@M package.\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.496496964938966*^9},
+ CellTags->"Info3496504164-1678695"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTgluon"}]], "Input",
+ CellChangeTimes->{{3.496039328762938*^9, 3.496039331784623*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTgluon[n,H] is the n-gluon amplitude with negative helicity \
+gluons at positions \!\(\*FormBox[RowBox[{\\\"H\\\", \
+\\\"=\\\",RowBox[{\\\"{\\\",RowBox[{SubscriptBox[\\\"c\\\", \\\"1\\\"], \\\",\
+\\\", SubscriptBox[\\\"c\\\", \\\"2\\\"], \\\",\\\", SubscriptBox[\\\"c\\\", \
+\\\"3\\\"], \\\",\\\", \\\" \\\", \\\"...\\\"}]}]}],TraditionalForm]\)}.\\nH \
+does not need to be ordered. For compact expressions one should use cyclic \
+symmetry to put one gluon at position n.\"\>", "MSG"]], "Print", "PrintUsage",
+ 
+ CellChangeTimes->{3.496496968023466*^9},
+ CellTags->"Info3496504167-8857766"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTfermion"}]], "Input",
+ CellChangeTimes->{{3.496039387599558*^9, 3.49603939014605*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTfermion\!\(\*\\nStyleBox[\\\"[\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"n\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\",\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"G\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\",\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\"F\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\",\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"aF\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"]\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\" \\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"is\\\", \\\"Text\\\"]\)\!\(\*\
+\\nStyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"the\\\", \\\"Text\
+\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"n\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\"-\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"parton\\\", \\\"Text\\\"]\)\!\
+\(\*\\nStyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"amplitude\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\"with\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\
+\*\\nStyleBox[\\\"negative\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"helicity\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\"gluons\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \\\"Text\\\"]\)\!\
+\(\*\\nStyleBox[\\\"at\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"positions\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[FormBox[\\nRowBox[{\\\"G\\\", \\\"=\\\", \
+\\nRowBox[{\\\"{\\\", \\nRowBox[{SubscriptBox[\\\"c\\\", \\\"1\\\"], \
+\\\",\\\", SubscriptBox[\\\"c\\\", \\\"2\\\"], \\\",\\\", \\\"...\\\", \
+\\\",\\\", SubscriptBox[\\\"c\\\", \\\"m\\\"]}]}]}],\\nTraditionalForm], \
+\\\"Text\\\"]\)}\!\(\*\\nStyleBox[\\\",\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\"positve\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"and\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\"negative\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \\\"Text\\\"]\)\
+\!\(\*\\nStyleBox[\\\"helicity\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \
+\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"gluinos\\\", \\\"Text\\\"]\)\!\(\*\
+\\nStyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"of\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\"flavor\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \\\"Text\\\"]\)\!\
+\(\*SubscriptBox[\\nStyleBox[\\\"A\\\", \\\"Text\\\"], \
+\\\"i\\\"]\),\!\(\*SubscriptBox[\\\"B\\\", \\\"i\\\"]\) at positions \
+\!\(\*SubscriptBox[\\nStyleBox[\\\"q\\\", \\\"Text\\\"], \
+\\\"i\\\"]\),\!\(\*SubscriptBox[OverscriptBox[\\nStyleBox[\\\"q\\\", \\\"Text\
+\\\"], \\\"-\\\"], \\\"i\\\"]\)\!\(\*\\nStyleBox[\\\"   \\\", \\\"Text\\\"]\)\
+\!\(\*\\nStyleBox[\\\"F\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"=\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"{\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\"{\\\", \\\"Text\\\"]\)\!\(\*SubscriptBox[\\nStyleBox[\\\"q\\\", \
+\\\"Text\\\"], \\\"1\\\"]\),\!\(\*SubscriptBox[\\\"A\\\", \
+\\\"1\\\"]\)\!\(\*\\nStyleBox[\\\"}\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\",\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\"...\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\",\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"{\\\", \
+\\\"Text\\\"]\)\!\(\*SubscriptBox[\\nStyleBox[\\\"q\\\", \\\"Text\\\"], \\\"k\
+\\\"]\),\!\(\*SubscriptBox[\\\"A\\\", \
+\\\"k\\\"]\)\!\(\*\\nStyleBox[\\\"}\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"}\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\",\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"aF\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"=\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\
+\\\"{\\\", \\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\"{\\\", \
+\\\"Text\\\"]\)\!\(\*SubscriptBox[OverscriptBox[\\nStyleBox[\\\"q\\\", \
+\\\"Text\\\"], \\\"-\\\"], \\\"1\\\"]\),\!\(\*SubscriptBox[\\\"B\\\", \\\"1\\\
+\"]\)},...,\!\(\*\\nStyleBox[\\\"{\\\", \
+\\\"Text\\\"]\)\!\(\*SubscriptBox[OverscriptBox[\\nStyleBox[\\\"q\\\", \
+\\\"Text\\\"], \\\"-\\\"], \\\"k\\\"]\),\!\(\*SubscriptBox[\\\"B\\\", \\\"k\\\
+\"]\)}\!\(\*\\nStyleBox[\\\"}\\\", \
+\\\"Text\\\"]\)\!\(\*\\nStyleBox[\\\".\\\", \\\"Text\\\"]\)\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.496496969794909*^9},
+ CellTags->"Info3496504169-9813505"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTfermionS"}]], "Input",
+ CellChangeTimes->{3.49603956341446*^9}],
+
+Cell[BoxData[
+ StyleBox["\<\"\*StyleBox[\(GGTf\!\(\*StyleBox[\\\"ermS\\\", \
+\\\"Text\\\"]\)\)]\!\(\*StyleBox[\\\"[\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"n\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\",\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"G\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\",\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"F\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\",\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\"aF\
+\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\"]\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\
+\\\" \\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\"is\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"the\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\" \
+\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\"n\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\
+\\\"-\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\"parton\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"amplitude\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"with\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"negative\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"-\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"helicity\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"gluons\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\"at\
+\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\*StyleBox[\
+\\\"positions\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \\\"Text\\\"]\)\!\
+\(\*StyleBox[FormBox[RowBox[{\\\"G\\\", \\\"=\\\", RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[\\\"c\\\", \\\"1\\\"], \\\",\\\", \
+SubscriptBox[\\\"c\\\", \\\"2\\\"], \\\",\\\", SubscriptBox[\\\"c\\\", \
+\\\"3\\\"], \\\",\\\", \\\" \\\", \\\"...\\\"}]}]}],TraditionalForm], \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"}\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\",\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\" \
+\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\"positve\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"and\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\" \
+\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\"negative\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"helicity\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"fermions\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\"of\
+\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \\\"Text\\\"]\)\!\(\*StyleBox[\
+\\\"equal\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\" \\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"flavor\\\", \\\"Text\\\"]\) at positions  \
+\!\(\*SubscriptBox[StyleBox[\\\"q\\\", \\\"Text\\\"], \
+\\\"i\\\"]\),\!\(\*SubscriptBox[OverscriptBox[StyleBox[\\\"q\\\", \
+\\\"Text\\\"], \\\"-\\\"], \\\"i\\\"]\)\!\(\*StyleBox[\\\"  \\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"F\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"=\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"{\\\", \
+\\\"Text\\\"]\)\!\(\*SubscriptBox[StyleBox[\\\"q\\\", \\\"Text\\\"], \
+\\\"1\\\"]\)\!\(\*StyleBox[\\\",\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\" \
+\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\"...\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"}\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\",\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\" \
+\\\", \\\"Text\\\"]\)\!\(\*StyleBox[\\\"aF\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"=\\\", \
+\\\"Text\\\"]\)\!\(\*StyleBox[\\\"{\\\", \
+\\\"Text\\\"]\)\!\(\*SubscriptBox[OverscriptBox[StyleBox[\\\"q\\\", \
+\\\"Text\\\"], \\\"-\\\"], \\\"1\\\"]\),...\!\(\*StyleBox[\\\"}\\\", \\\"Text\
+\\\"]\)\!\(\*StyleBox[\\\".\\\", \\\"Text\\\"]\)\"\>", "MSG"]], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.496496971500822*^9},
+ CellTags->"Info3496504171-1287450"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnmhvgluon"}]], "Input",
+ CellChangeTimes->{{3.496039576311284*^9, 3.496039581019508*^9}, {
+  3.496472204896002*^9, 3.4964722057275963`*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnmhvgluon[n,a,b] is the simplified n-parton NMHV gluon \
+amplitude\\nwith negative-helicity gluons at positions a,b and n.\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.4964969741393967`*^9},
+ CellTags->"Info3496504173-3029906"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnnmhvgluon"}]], "Input",
+ CellChangeTimes->{3.4964722152343397`*^9}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnnmhvgluon[n,a,b,c] is the simplified n-parton NNMHV gluon \
+amplitude\\nwith negative-helicity gluons at positions a,b,c and n.\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.496496976079337*^9},
+ CellTags->"Info3496504175-1404605"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnmhv2ferm"}]], "Input",
+ CellChangeTimes->{{3.496039593592251*^9, 3.496039596332553*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnmhv2ferm[n,c,a,\!\(\*OverscriptBox[\\\"b\\\", \
+\\\"_\\\"]\)] is the simplified n-parton NMHV two-fermion amplitude with \
+negative-helicity gluons at positions c, n and a fermion/anti-fermion at \
+positions a and \!\(\*OverscriptBox[\\\"b\\\", \\\"_\\\"]\).\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.496496978193884*^9},
+ CellTags->"Info3496504177-2374626"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnmhv4ferm"}]], "Input",
+ CellChangeTimes->{{3.496039725120013*^9, 3.496039726813398*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnmhv4ferm[n,{{\!\(\*SubscriptBox[\\\"a\\\", \\\"1\\\"]\),\!\
+\(\*SubscriptBox[\\\"A\\\", \\\"1\\\"]\)},{\!\(\*SubscriptBox[\\\"a\\\", \
+\\\"2\\\"]\),\!\(\*SubscriptBox[\\\"A\\\", \
+\\\"2\\\"]\)}},{{\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"1\\\"]\),\!\(\*SubscriptBox[\\\"B\\\", \
+\\\"1\\\"]\)},{\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"2\\\"]\),\!\(\*SubscriptBox[\\\"B\\\", \\\"2\\\"]\)}}] is the simplified \
+n-parton NMHV four-fermion amplitude\\nwith a negative-helicity gluon at \
+position n, two gluinos of flavors \!\(\*SubscriptBox[\\\"A\\\", \\\"i\\\"]\) \
+at positions \!\(\*SubscriptBox[\\\"a\\\", \\\"i\\\"]\) and two anti-gluinos \
+of flavors \!\(\*SubscriptBox[\\\"B\\\", \\\"i\\\"]\) at positions \
+\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \\\"i\\\"]\).\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.4964969804354362`*^9},
+ CellTags->"Info3496504180-9235945"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnmhv4fermS"}]], "Input",
+ CellChangeTimes->{{3.4960397891085443`*^9, 3.496039789317424*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnmhv4fermS[n,{\!\(\*SubscriptBox[\\\"a\\\", \\\"1\\\"]\),\!\
+\(\*SubscriptBox[\\\"a\\\", \\\"2\\\"]\)}},{\!\(\*SubscriptBox[OverscriptBox[\
+\\\"b\\\", \\\"_\\\"], \
+\\\"1\\\"]\),\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"2\\\"]\)}] is the simplified n-parton NMHV four-fermion amplitude \\nwith \
+a negative-helicity gluon at position n and equally flavored \
+fermions/anti-fermions positions \!\(\*SubscriptBox[\\\"a\\\", \\\"i\\\"]\) / \
+\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \\\"i\\\"]\).\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.4964969821026506`*^9},
+ CellTags->"Info3496504181-9667318"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnmhv6ferm"}]], "Input",
+ CellChangeTimes->{{3.496039838079793*^9, 3.496039838612781*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnmhv6ferm[n,\!\(\*SubscriptBox[\\\"B\\\", \\\"3\\\"]\),{{\!\
+\(\*SubscriptBox[\\\"a\\\", \\\"1\\\"]\),\!\(\*SubscriptBox[\\\"A\\\", \
+\\\"1\\\"]\)},{\!\(\*SubscriptBox[\\\"a\\\", \\\"2\\\"]\),\!\(\*SubscriptBox[\
+\\\"A\\\", \\\"2\\\"]\)},{\!\(\*SubscriptBox[\\\"a\\\", \
+\\\"3\\\"]\),\!\(\*SubscriptBox[\\\"A\\\", \
+\\\"3\\\"]\)}},{{\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"1\\\"]\),\!\(\*SubscriptBox[\\\"B\\\", \
+\\\"1\\\"]\)},{\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"2\\\"]\),\!\(\*SubscriptBox[\\\"B\\\", \\\"2\\\"]\)}}] is the simplified \
+n-parton NMHV six-fermion amplitude with three gluinos of flavors \
+\!\(\*SubscriptBox[\\\"A\\\", \\\"i\\\"]\) at positions \!\(\*SubscriptBox[\\\
+\"a\\\", \\\"i\\\"]\) and three anti-gluinos of flavors \!\(\*SubscriptBox[\\\
+\"B\\\", \\\"i\\\"]\) at positions \
+\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \\\"i\\\"]\). Note \
+that \!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"3\\\"]\)=n.\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.49649698377348*^9},
+ CellTags->"Info3496504183-2224439"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnmhv6fermS"}]], "Input",
+ CellChangeTimes->{{3.4960398757025537`*^9, 3.4960398762768373`*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnmhv6fermS[n,{\!\(\*SubscriptBox[\\\"a\\\", \\\"1\\\"]\),\!\
+\(\*SubscriptBox[\\\"a\\\", \\\"2\\\"]\),\!\(\*SubscriptBox[\\\"a\\\", \
+\\\"3\\\"]\)},{\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"1\\\"]\),\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"2\\\"]\)}] is the simplified n-parton NMHV six-fermion amplitude\\nwith \
+equally flavored fermions/anti-fermions at positions \!\(\*SubscriptBox[\\\"a\
+\\\", \\\"i\\\"]\) / \!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"i\\\"]\). Note that \!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \
+\\\"_\\\"], \\\"3\\\"]\)=n\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.496496985612526*^9},
+ CellTags->"Info3496504185-5263268"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnnmhv2ferm"}]], "Input",
+ CellChangeTimes->{{3.496045653096095*^9, 3.496045656041752*^9}, {
+   3.4960457303107347`*^9, 3.496045733613326*^9}, 3.49604576788803*^9, {
+   3.496472236668189*^9, 3.49647224254113*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnnmhv2ferm[n,\!\(\*SubscriptBox[\\\"c\\\", \
+\\\"1\\\"]\),\!\(\*SubscriptBox[\\\"c\\\", \
+\\\"2\\\"]\),a,\!\(\*OverscriptBox[\\\"b\\\", \\\"_\\\"]\)] is the simplified \
+n-parton NNMHV two-fermion amplitude with negative-helicity gluons at \
+positions \!\(\*SubscriptBox[\\\"c\\\", \\\"1\\\"]\),\!\(\*SubscriptBox[\\\"c\
+\\\", \\\"2\\\"]\),n and a fermion/anti-fermion at position a / \
+\!\(\*OverscriptBox[\\\"b\\\", \\\"_\\\"]\).\"\>", "MSG"]], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.4964969875023003`*^9},
+ CellTags->"Info3496504187-4136086"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnnmhv4ferm"}]], "Input",
+ CellChangeTimes->{{3.4964652587001543`*^9, 3.4964652637468643`*^9}, {
+  3.4964722544562883`*^9, 3.4964722722272453`*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnnmhv4ferm[n,c,{{\!\(\*SubscriptBox[\\\"a\\\", \
+\\\"1\\\"]\),\!\(\*SubscriptBox[\\\"A\\\", \\\"1\\\"]\)},{\!\(\*SubscriptBox[\
+\\\"a\\\", \\\"2\\\"]\),\!\(\*SubscriptBox[\\\"A\\\", \
+\\\"2\\\"]\)}},{{\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"1\\\"]\),\!\(\*SubscriptBox[\\\"B\\\", \
+\\\"1\\\"]\)},{\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"2\\\"]\),\!\(\*SubscriptBox[\\\"B\\\", \\\"2\\\"]\)}}] is the simplified \
+n-parton NNMHV four-fermion amplitude\\nwith two negative-helicity gluons at \
+positions c,n, two gluinos of flavors \!\(\*SubscriptBox[\\\"A\\\", \
+\\\"i\\\"]\) at positions \!\(\*SubscriptBox[\\\"a\\\", \\\"i\\\"]\) and two \
+anti-gluinos of flavors \!\(\*SubscriptBox[\\\"B\\\", \\\"i\\\"]\) at \
+positions \!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"i\\\"]\).\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.496496989485511*^9},
+ CellTags->"Info3496504189-5000920"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnnmhv4fermS"}]], "Input",
+ CellChangeTimes->{3.496472280184071*^9}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnnmhv4fermS[n,c,{\!\(\*SubscriptBox[\\\"a\\\", \
+\\\"1\\\"]\),\!\(\*SubscriptBox[\\\"a\\\", \
+\\\"2\\\"]\)}},{\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \\\"1\
+\\\"]\),\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"2\\\"]\)}] is the simplified n-parton NNMHV four-fermion amplitude \
+\\nwith two negative-helicity gluons at positions c,n and equally flavored \
+fermions/anti-fermions at positions \!\(\*SubscriptBox[\\\"a\\\", \
+\\\"i\\\"]\) / \!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"i\\\"]\).\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.496496992292302*^9},
+ CellTags->"Info3496504192-2902226"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnnmhv6ferm"}]], "Input",
+ CellChangeTimes->{{3.4964722870950603`*^9, 3.496472287552725*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnnmhv6ferm[n,{{\!\(\*SubscriptBox[\\\"a\\\", \
+\\\"1\\\"]\),\!\(\*SubscriptBox[\\\"A\\\", \\\"1\\\"]\)},{\!\(\*SubscriptBox[\
+\\\"a\\\", \\\"2\\\"]\),\!\(\*SubscriptBox[\\\"A\\\", \
+\\\"2\\\"]\),{\!\(\*SubscriptBox[\\\"a\\\", \
+\\\"3\\\"]\),\!\(\*SubscriptBox[\\\"A\\\", \\\"3\\\"]\)},{\!\(\*SubscriptBox[\
+\\\"a\\\", \\\"3\\\"]\),\!\(\*SubscriptBox[\\\"A\\\", \
+\\\"3\\\"]\)}},{{\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"1\\\"]\),\!\(\*SubscriptBox[\\\"B\\\", \
+\\\"1\\\"]\)},{\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"2\\\"]\),\!\(\*SubscriptBox[\\\"B\\\", \\\"2\\\"]\)}}] is the simplified \
+n-parton NNMHV six-fermion amplitude with one negative-helicity gluon at \
+position n and three gluinos of flavors \!\(\*SubscriptBox[\\\"A\\\", \\\"i\\\
+\"]\) at positions \!\(\*SubscriptBox[\\\"a\\\", \\\"i\\\"]\) and three \
+anti-gluinos of flavors \!\(\*SubscriptBox[\\\"B\\\", \\\"i\\\"]\) at \
+positions \!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"i\\\"]\).\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.496496994078332*^9},
+ CellTags->"Info3496504193-5487338"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnnmhv6fermS"}]], "Input",
+ CellChangeTimes->{{3.496472293219095*^9, 3.4964722949207172`*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnnmhv6fermS[n,{\!\(\*SubscriptBox[\\\"a\\\", \
+\\\"1\\\"]\),\!\(\*SubscriptBox[\\\"a\\\", \\\"2\\\"]\),\!\(\*SubscriptBox[\\\
+\"a\\\", \\\"3\\\"]\)},{\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \
+\\\"_\\\"], \\\"1\\\"]\),\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \
+\\\"_\\\"], \\\"2\\\"]\),\!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \
+\\\"_\\\"], \\\"3\\\"]\)}] is the simplified n-parton NNMHV six-fermion \
+amplitude\\nwith one negative-helicity gluon at position n and equally \
+flavored fermions/anti-fermions at positions \!\(\*SubscriptBox[\\\"a\\\", \\\
+\"i\\\"]\) / \!\(\*SubscriptBox[OverscriptBox[\\\"b\\\", \\\"_\\\"], \
+\\\"i\\\"]\).\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.49649699565106*^9},
+ CellTags->"Info3496504195-9911995"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTgenvar"}]], "Input",
+ CellChangeTimes->{{3.49778890420958*^9, 3.49778890758768*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTgenvar[P] generates the spinors and region momenta for a \
+numerical evaluation of an amplitude at the  phase-space point \
+P={\!\(\*SubscriptBox[\\\"p\\\", \\\"1\\\"]\),\!\(\*SubscriptBox[\\\"p\\\", \
+\\\"2\\\"]\),...,\!\(\*SubscriptBox[\\\"p\\\", \\\"n\\\"]\)}. Does not work \
+for momenta p={E,0,0,-E}!\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.497792391159454*^9},
+ CellTags->"Info3497795990-9095656"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GGTnumeric"}]], "Input",
+ CellChangeTimes->{{3.49778892286271*^9, 3.497788928078061*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"GGTnumeric[expression] gives a numerical value for the GGT \
+expression if GGTgenvar[P] has been applied.\"\>", "MSG"]], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.497788929781175*^9},
+ CellTags->"Info3497792529-8413486"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["GGT examples", "Title",
+ CellChangeTimes->{{3.497790115508259*^9, 3.49779014572569*^9}, {
+  3.497790488160465*^9, 3.497790488328336*^9}, {3.497790520460423*^9, 
+  3.497790528673812*^9}, {3.497790560026733*^9, 3.497790560602637*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[StyleBox["The 7-gluon amplitude with neg. helicity gluons at \
+positions {3,5}",
+ FontSize->24,
+ Background->None]], "Text",
+ CellChangeTimes->{{3.49648062448254*^9, 3.496480649456113*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GGTgluon", "[", 
+  RowBox[{"7", ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "5"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.496480584683559*^9, 3.4964806167321568`*^9}, {
+  3.498823368482884*^9, 3.498823374840873*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox[
+   TagBox[
+    RowBox[{
+    "\[LeftAngleBracket]", "3", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+    DisplayForm], "4"], 
+  RowBox[{
+   TagBox[
+    RowBox[{
+    "\[LeftAngleBracket]", "1", "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+    DisplayForm], " ", 
+   TagBox[
+    RowBox[{
+    "\[LeftAngleBracket]", "2", "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+    DisplayForm], " ", 
+   TagBox[
+    RowBox[{
+    "\[LeftAngleBracket]", "3", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+    DisplayForm], " ", 
+   TagBox[
+    RowBox[{
+    "\[LeftAngleBracket]", "4", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+    DisplayForm], " ", 
+   TagBox[
+    RowBox[{
+    "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", "\[RightAngleBracket]"}],
+    DisplayForm], " ", 
+   TagBox[
+    RowBox[{
+    "\[LeftAngleBracket]", "6", "\<\"|\"\>", "7", "\[RightAngleBracket]"}],
+    DisplayForm], " ", 
+   TagBox[
+    RowBox[{
+    "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+    DisplayForm]}]]], "Output",
+ CellChangeTimes->{{3.496480590005681*^9, 3.496480617174464*^9}, 
+   3.4964969236160183`*^9, 3.497788372514812*^9, 3.497788741724976*^9, 
+   3.498823376577551*^9}]
+}, Open  ]],
+
+Cell[TextData[StyleBox["The 7-gluon amplitude with negative helicity gluons \
+at position {3,5,6}",
+ FontSize->24]], "Text",
+ CellChangeTimes->{{3.496480148688508*^9, 3.4964801665300503`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GGTgluon", "[", 
+  RowBox[{"6", ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "5", ",", "6"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.496479601386218*^9, 3.496479604573415*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "2", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "4", "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["\<\"s\"\>", 
+           RowBox[{"2", ",", "4"}]], " ", 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "6", "\<\"|\"\>", "3", 
+            "\[RightAngleBracket]"}],
+           DisplayForm], " ", 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]}], "+", 
+         RowBox[{
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+            "\[RightAngleBracket]"}],
+           DisplayForm], " ", 
+          TagBox[
+           RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+            SubscriptBox["\<\"x\"\>", 
+             RowBox[{"6", ",", "4"}]], "\<\"|\"\>", 
+            SubscriptBox["\<\"x\"\>", 
+             RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "3", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]}]}], ")"}], "4"]}], 
+     RowBox[{
+      SubscriptBox["\<\"s\"\>", 
+       RowBox[{"2", ",", "4"}]], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"2", ",", "4"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"2", ",", "4"}]], "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "4"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "4"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+       
+       DisplayForm]}]], "+", 
+    FractionBox[
+     RowBox[{
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "2", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "5", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["\<\"s\"\>", 
+           RowBox[{"2", ",", "5"}]], " ", 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "6", "\<\"|\"\>", "3", 
+            "\[RightAngleBracket]"}],
+           DisplayForm], " ", 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]}], "+", 
+         RowBox[{
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+            "\[RightAngleBracket]"}],
+           DisplayForm], " ", 
+          TagBox[
+           RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+            SubscriptBox["\<\"x\"\>", 
+             RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+            SubscriptBox["\<\"x\"\>", 
+             RowBox[{"5", ",", "2"}]], "\<\"|\"\>", "3", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]}]}], ")"}], "4"]}], 
+     RowBox[{
+      SubscriptBox["\<\"s\"\>", 
+       RowBox[{"2", ",", "5"}]], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"2", ",", "5"}]], "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"2", ",", "5"}]], "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"5", ",", "2"}]], "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"5", ",", "2"}]], "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+       
+       DisplayForm]}]], "+", 
+    FractionBox[
+     RowBox[{
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "3", "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "5", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["\<\"s\"\>", 
+           RowBox[{"3", ",", "5"}]], " ", 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "6", "\<\"|\"\>", "3", 
+            "\[RightAngleBracket]"}],
+           DisplayForm], " ", 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]}], "+", 
+         RowBox[{
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+            "\[RightAngleBracket]"}],
+           DisplayForm], " ", 
+          TagBox[
+           RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+            SubscriptBox["\<\"x\"\>", 
+             RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+            SubscriptBox["\<\"x\"\>", 
+             RowBox[{"5", ",", "3"}]], "\<\"|\"\>", "3", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]}]}], ")"}], "4"]}], 
+     RowBox[{
+      SubscriptBox["\<\"s\"\>", 
+       RowBox[{"3", ",", "5"}]], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"3", ",", "5"}]], "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"3", ",", "5"}]], "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"5", ",", "3"}]], "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"5", ",", "3"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+       
+       DisplayForm]}]]}], ")"}], "/", 
+  RowBox[{"(", 
+   RowBox[{
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "1", "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+     DisplayForm], " ", 
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "2", "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+     DisplayForm], " ", 
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "3", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+     DisplayForm], " ", 
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "4", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+     DisplayForm], " ", 
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", "\[RightAngleBracket]"}],
+     DisplayForm], " ", 
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "6", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+     DisplayForm]}], ")"}]}]], "Output",
+ CellChangeTimes->{3.496479605134417*^9, 3.496496926757329*^9, 
+  3.497788744876058*^9}]
+}, Open  ]],
+
+Cell[TextData[StyleBox["The same amplitude in its simpliefed version",
+ FontSize->24]], "Text",
+ CellChangeTimes->{{3.496491089755505*^9, 3.4964911081151037`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GGTnmhvgluon", "[", 
+  RowBox[{"6", ",", "3", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.496491015536521*^9, 3.496491054158024*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "2", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "4", "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      SuperscriptBox[
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+        DisplayForm], "4"], " ", 
+      SuperscriptBox[
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "4"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], "3"]}], 
+     RowBox[{
+      SubscriptBox["\<\"s\"\>", 
+       RowBox[{"2", ",", "4"}]], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"2", ",", "4"}]], "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "4"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "4"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+       
+       DisplayForm]}]], "+", 
+    FractionBox[
+     RowBox[{
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "2", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "5", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      SuperscriptBox[
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+        DisplayForm], "4"], " ", 
+      SuperscriptBox[
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "5"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], "4"]}], 
+     RowBox[{
+      SubscriptBox["\<\"s\"\>", 
+       RowBox[{"2", ",", "5"}]], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"2", ",", "5"}]], "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"2", ",", "5"}]], "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"5", ",", "2"}]], "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"5", ",", "2"}]], "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+       
+       DisplayForm]}]], "+", 
+    FractionBox[
+     RowBox[{
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "3", "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{
+       "\[LeftAngleBracket]", "5", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      SuperscriptBox[
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+        DisplayForm], "4"], " ", 
+      SuperscriptBox[
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"3", ",", "5"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], "4"]}], 
+     RowBox[{
+      SubscriptBox["\<\"s\"\>", 
+       RowBox[{"3", ",", "5"}]], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"3", ",", "5"}]], "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"3", ",", "5"}]], "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"5", ",", "3"}]], "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+       
+       DisplayForm], " ", 
+      TagBox[
+       RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+        SubscriptBox["\<\"x\"\>", 
+         RowBox[{"5", ",", "3"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+       
+       DisplayForm]}]]}], ")"}], "/", 
+  RowBox[{"(", 
+   RowBox[{
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "1", "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+     DisplayForm], " ", 
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "2", "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+     DisplayForm], " ", 
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "3", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+     DisplayForm], " ", 
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "4", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+     DisplayForm], " ", 
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", "\[RightAngleBracket]"}],
+     DisplayForm], " ", 
+    TagBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "6", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+     DisplayForm]}], ")"}]}]], "Output",
+ CellChangeTimes->{{3.4964910247614613`*^9, 3.496491054884891*^9}, 
+   3.496496929845346*^9, 3.497788759776164*^9}]
+}, Open  ]],
+
+Cell["\<\
+The 7-parton amplitude with negative helicity gluons at {1,7}, gluinos at \
+{3,4} and anti-gluinos at {5,6} all of same flavor\
+\>", "Text",
+ CellChangeTimes->{{3.496480181579803*^9, 3.496480246193955*^9}, {
+  3.497788644801473*^9, 3.497788646215235*^9}},
+ FontSize->24,
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GGTfermionS", "[", 
+  RowBox[{"7", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "6"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.496480054433058*^9, 3.496480121200993*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "2", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "4", "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "4", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "2"}]], "\<\"|\"\>", "7", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SubscriptBox["\<\"s\"\>", 
+            RowBox[{"2", ",", "4"}]], " ", 
+           SubscriptBox["\<\"s\"\>", 
+            RowBox[{"4", ",", "6"}]], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "7", "\<\"|\"\>", "5", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "7", "\<\"|\"\>", "6", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}], "+", 
+          RowBox[{
+           SubscriptBox["\<\"s\"\>", 
+            RowBox[{"2", ",", "4"}]], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "7", "\<\"|\"\>", "6", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "4"}]], "\<\"|\"\>", "5", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}]}], ")"}], "3"]}], 
+      RowBox[{
+       SubscriptBox["\<\"s\"\>", 
+        RowBox[{"2", ",", "4"}]], " ", 
+       SubscriptBox["\<\"s\"\>", 
+        RowBox[{"4", ",", "6"}]], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "2"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "4"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "2"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "4"}]], "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"4", ",", "6"}]], "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"4", ",", "6"}]], "\<\"|\"\>", "6", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "2"}]], "\<\"|\"\>", "7", "\[RightAngleBracket]"}],
+        DisplayForm]}]], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SubsuperscriptBox["\<\"s\"\>", 
+         RowBox[{"2", ",", "6"}], "2"], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "2", "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "3", "\<\"|\"\>", "2", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        SuperscriptBox[
+         TagBox[
+          RowBox[{
+          "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+           "\[RightAngleBracket]"}],
+          DisplayForm], "3"], " ", 
+        SuperscriptBox[
+         TagBox[
+          RowBox[{
+          "\[LeftAngleBracket]", "7", "\<\"|\"\>", "6", 
+           "\[RightAngleBracket]"}],
+          DisplayForm], "3"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", 
+            TagBox[
+             RowBox[{
+             "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+              "\[RightAngleBracket]"}],
+             DisplayForm]}], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"2", ",", "3"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"3", ",", "6"}]], "\<\"|\"\>", "3", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}], "+", 
+          RowBox[{
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "3", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"2", ",", "3"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"3", ",", "6"}]], "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}]}], ")"}], " ", 
+        SuperscriptBox[
+         TagBox[
+          RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"2", ",", "3"}]], "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"3", ",", "6"}]], "\<\"|\"\>", "5", 
+           "\[RightAngleBracket]"}],
+          DisplayForm], "2"]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["\<\"s\"\>", 
+         RowBox[{"3", ",", "6"}]], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "6"}]], "\<\"|\"\>", "6", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "2", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "3"}]], "\<\"|\"\>", "2", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "3"}]], "\<\"|\"\>", "3", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "3"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"3", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "2"}]], "\<\"|\"\>", "7", 
+          "\[RightAngleBracket]"}],
+         DisplayForm]}], ")"}]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SubsuperscriptBox["\<\"s\"\>", 
+         RowBox[{"2", ",", "6"}], "2"], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "2", "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "4", "\<\"|\"\>", "3", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        SuperscriptBox[
+         TagBox[
+          RowBox[{
+          "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+           "\[RightAngleBracket]"}],
+          DisplayForm], "3"], " ", 
+        SuperscriptBox[
+         TagBox[
+          RowBox[{
+          "\[LeftAngleBracket]", "7", "\<\"|\"\>", "6", 
+           "\[RightAngleBracket]"}],
+          DisplayForm], "3"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SubscriptBox["\<\"s\"\>", 
+            RowBox[{"4", ",", "6"}]], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "3", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}], "+", 
+          RowBox[{
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "3", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"2", ",", "4"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"4", ",", "6"}]], "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}]}], ")"}], " ", 
+        SuperscriptBox[
+         TagBox[
+          RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"2", ",", "4"}]], "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"4", ",", "6"}]], "\<\"|\"\>", "5", 
+           "\[RightAngleBracket]"}],
+          DisplayForm], "2"]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["\<\"s\"\>", 
+         RowBox[{"4", ",", "6"}]], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "6"}]], "\<\"|\"\>", "6", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "2", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "4"}]], "\<\"|\"\>", "3", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "4"}]], "\<\"|\"\>", "4", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "4"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"4", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "2"}]], "\<\"|\"\>", "7", 
+          "\[RightAngleBracket]"}],
+         DisplayForm]}], ")"}]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SubsuperscriptBox["\<\"s\"\>", 
+         RowBox[{"3", ",", "6"}], "2"], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "3", "\<\"|\"\>", "2", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "4", "\<\"|\"\>", "3", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        SuperscriptBox[
+         TagBox[
+          RowBox[{
+          "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+           "\[RightAngleBracket]"}],
+          DisplayForm], "3"], " ", 
+        SuperscriptBox[
+         TagBox[
+          RowBox[{
+          "\[LeftAngleBracket]", "7", "\<\"|\"\>", "6", 
+           "\[RightAngleBracket]"}],
+          DisplayForm], "3"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SubscriptBox["\<\"s\"\>", 
+            RowBox[{"4", ",", "6"}]], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "3"}]], "\<\"|\"\>", "3", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "3"}]], "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}], "+", 
+          RowBox[{
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "3"}]], "\<\"|\"\>", "3", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"3", ",", "4"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"4", ",", "6"}]], "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}]}], ")"}], " ", 
+        SuperscriptBox[
+         TagBox[
+          RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"3", ",", "4"}]], "\<\"|\"\>", 
+           SubscriptBox["\<\"x\"\>", 
+            RowBox[{"4", ",", "6"}]], "\<\"|\"\>", "5", 
+           "\[RightAngleBracket]"}],
+          DisplayForm], "2"]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["\<\"s\"\>", 
+         RowBox[{"4", ",", "6"}]], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "3"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"3", ",", "6"}]], "\<\"|\"\>", "6", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "3"}]], "\<\"|\"\>", "2", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "3"}]], "\<\"|\"\>", "3", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"3", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "4"}]], "\<\"|\"\>", "3", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"3", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "4"}]], "\<\"|\"\>", "4", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"3", ",", "4"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"4", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"3", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "3"}]], "\<\"|\"\>", "7", 
+          "\[RightAngleBracket]"}],
+         DisplayForm]}], ")"}]}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "1", "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "2", "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "3", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "4", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "6", "\<\"|\"\>", "7", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+      DisplayForm]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{{3.496480091957499*^9, 3.496480122018017*^9}, 
+   3.496496932611854*^9, 3.497788766289125*^9}]
+}, Open  ]],
+
+Cell["\<\
+The same amplitude in  simplified version as NNMHV amplitude with neg. \
+helicity gluon at poisition 7\
+\>", "Text",
+ CellChangeTimes->{{3.496480254618773*^9, 3.496480298074328*^9}},
+ FontSize->24,
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GGTnnmhv4fermS", "[", 
+  RowBox[{"7", ",", "1", ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "6"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SubsuperscriptBox["\<\"s\"\>", 
+        RowBox[{"2", ",", "4"}], "2"], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "2", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "4", "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       SuperscriptBox[
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "6", "\<\"|\"\>", "7", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], "3"], " ", 
+       SuperscriptBox[
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], "4"], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "4", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "2"}]], "\<\"|\"\>", "7", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       SuperscriptBox[
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "4"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"4", ",", "6"}]], "\<\"|\"\>", "5", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], "2"]}], 
+      RowBox[{
+       SubscriptBox["\<\"s\"\>", 
+        RowBox[{"4", ",", "6"}]], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "2"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "4"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "2"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "4"}]], "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"4", ",", "6"}]], "\<\"|\"\>", "6", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "2"}]], "\<\"|\"\>", "7", "\[RightAngleBracket]"}],
+        DisplayForm]}]], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "2", "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            SubsuperscriptBox["\<\"s\"\>", 
+             RowBox[{"2", ",", "6"}], "3"], " ", 
+            TagBox[
+             RowBox[{
+             "\[LeftAngleBracket]", "1", "\<\"|\"\>", "7", 
+              "\[RightAngleBracket]"}],
+             DisplayForm], " ", 
+            TagBox[
+             RowBox[{
+             "\[LeftAngleBracket]", "3", "\<\"|\"\>", "2", 
+              "\[RightAngleBracket]"}],
+             DisplayForm], " ", 
+            TagBox[
+             RowBox[{
+             "\[LeftAngleBracket]", "3", "\<\"|\"\>", "4", 
+              "\[RightAngleBracket]"}],
+             DisplayForm], " ", 
+            SuperscriptBox[
+             TagBox[
+              RowBox[{
+              "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+               "\[RightAngleBracket]"}],
+              DisplayForm], "3"], " ", 
+            SuperscriptBox[
+             TagBox[
+              RowBox[{
+              "\[LeftAngleBracket]", "7", "\<\"|\"\>", "6", 
+               "\[RightAngleBracket]"}],
+              DisplayForm], "3"], " ", 
+            TagBox[
+             RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "2"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"2", ",", "6"}]], "\<\"|\"\>", "5", 
+              "\[RightAngleBracket]"}],
+             DisplayForm], " ", 
+            SuperscriptBox[
+             TagBox[
+              RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+               SubscriptBox["\<\"x\"\>", 
+                RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+               SubscriptBox["\<\"x\"\>", 
+                RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+               SubscriptBox["\<\"x\"\>", 
+                RowBox[{"2", ",", "3"}]], "\<\"|\"\>", 
+               SubscriptBox["\<\"x\"\>", 
+                RowBox[{"3", ",", "6"}]], "\<\"|\"\>", "5", 
+               "\[RightAngleBracket]"}],
+              DisplayForm], "2"], " ", 
+            TagBox[
+             RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"2", ",", "3"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"3", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "6"}]], "\<\"|\"\>", "7", 
+              "\[RightAngleBracket]"}],
+             DisplayForm]}], 
+           RowBox[{
+            SubscriptBox["\<\"s\"\>", 
+             RowBox[{"3", ",", "6"}]], " ", 
+            TagBox[
+             RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"2", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"6", ",", "3"}]], "\<\"|\"\>", "2", 
+              "\[RightAngleBracket]"}],
+             DisplayForm], " ", 
+            TagBox[
+             RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"2", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"6", ",", "3"}]], "\<\"|\"\>", "3", 
+              "\[RightAngleBracket]"}],
+             DisplayForm], " ", 
+            TagBox[
+             RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"2", ",", "3"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"3", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"2", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "2"}]], "\<\"|\"\>", "7", 
+              "\[RightAngleBracket]"}],
+             DisplayForm]}]], "+", 
+          FractionBox[
+           RowBox[{
+            SubsuperscriptBox["\<\"s\"\>", 
+             RowBox[{"2", ",", "6"}], "3"], " ", 
+            TagBox[
+             RowBox[{
+             "\[LeftAngleBracket]", "1", "\<\"|\"\>", "7", 
+              "\[RightAngleBracket]"}],
+             DisplayForm], " ", 
+            TagBox[
+             RowBox[{
+             "\[LeftAngleBracket]", "4", "\<\"|\"\>", "3", 
+              "\[RightAngleBracket]"}],
+             DisplayForm], " ", 
+            SuperscriptBox[
+             TagBox[
+              RowBox[{
+              "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+               "\[RightAngleBracket]"}],
+              DisplayForm], "3"], " ", 
+            SuperscriptBox[
+             TagBox[
+              RowBox[{
+              "\[LeftAngleBracket]", "7", "\<\"|\"\>", "6", 
+               "\[RightAngleBracket]"}],
+              DisplayForm], "3"], " ", 
+            TagBox[
+             RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "2"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"2", ",", "6"}]], "\<\"|\"\>", "5", 
+              "\[RightAngleBracket]"}],
+             DisplayForm], " ", 
+            TagBox[
+             RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "3", 
+              "\[RightAngleBracket]"}],
+             DisplayForm], " ", 
+            SuperscriptBox[
+             TagBox[
+              RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+               SubscriptBox["\<\"x\"\>", 
+                RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+               SubscriptBox["\<\"x\"\>", 
+                RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+               SubscriptBox["\<\"x\"\>", 
+                RowBox[{"2", ",", "4"}]], "\<\"|\"\>", 
+               SubscriptBox["\<\"x\"\>", 
+                RowBox[{"4", ",", "6"}]], "\<\"|\"\>", "5", 
+               "\[RightAngleBracket]"}],
+              DisplayForm], "2"]}], 
+           RowBox[{
+            SubscriptBox["\<\"s\"\>", 
+             RowBox[{"4", ",", "6"}]], " ", 
+            TagBox[
+             RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"2", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"6", ",", "4"}]], "\<\"|\"\>", "3", 
+              "\[RightAngleBracket]"}],
+             DisplayForm], " ", 
+            TagBox[
+             RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"2", ",", "4"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"4", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"2", ",", "6"}]], "\<\"|\"\>", 
+              SubscriptBox["\<\"x\"\>", 
+               RowBox[{"7", ",", "2"}]], "\<\"|\"\>", "7", 
+              "\[RightAngleBracket]"}],
+             DisplayForm]}]]}], ")"}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["\<\"s\"\>", 
+         RowBox[{"2", ",", "6"}]], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "6"}]], "\<\"|\"\>", "5", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "6"}]], "\<\"|\"\>", "6", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", "2", 
+          "\[RightAngleBracket]"}],
+         DisplayForm]}], ")"}]}], "+", 
+     FractionBox[
+      RowBox[{
+       SubsuperscriptBox["\<\"s\"\>", 
+        RowBox[{"3", ",", "6"}], "2"], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "1", "\<\"|\"\>", "7", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "3", "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "4", "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       SuperscriptBox[
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], "3"], " ", 
+       SuperscriptBox[
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "7", "\<\"|\"\>", "6", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], "3"], " ", 
+       SuperscriptBox[
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"3", ",", "4"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"4", ",", "6"}]], "\<\"|\"\>", "5", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], "2"]}], 
+      RowBox[{
+       SubscriptBox["\<\"s\"\>", 
+        RowBox[{"4", ",", "6"}]], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "3"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"3", ",", "6"}]], "\<\"|\"\>", "6", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "3"}]], "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"3", ",", "6"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "4"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "7", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "6"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"3", ",", "4"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"4", ",", "6"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"3", ",", "6"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"7", ",", "3"}]], "\<\"|\"\>", "7", "\[RightAngleBracket]"}],
+        DisplayForm]}]]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "1", "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "2", "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "3", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "4", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "6", "\<\"|\"\>", "7", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "7", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+      DisplayForm]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{3.496479691633835*^9, 3.496496935627987*^9, 
+  3.497788771454913*^9}]
+}, Open  ]],
+
+Cell["\<\
+A 6-parton amplitude with neg. helicity gluon at position 1 and four fermions \
+of varying flavor \
+\>", "Text",
+ CellChangeTimes->{{3.4964803865422697`*^9, 3.49648044728441*^9}},
+ FontSize->24,
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GGTfermion", "[", 
+  RowBox[{"6", ",", 
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"3", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "2"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"5", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "2"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.496480308627483*^9, 3.496480377669322*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        SubsuperscriptBox["\<\"s\"\>", 
+         RowBox[{"2", ",", "4"}], "2"], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "2", "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "4", "\<\"|\"\>", "3", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "5", "\<\"|\"\>", "4", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        SuperscriptBox[
+         TagBox[
+          RowBox[{
+          "\[LeftAngleBracket]", "6", "\<\"|\"\>", "1", 
+           "\[RightAngleBracket]"}],
+          DisplayForm], "4"], " ", 
+        SuperscriptBox[
+         TagBox[
+          RowBox[{
+          "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+           "\[RightAngleBracket]"}],
+          DisplayForm], "3"], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "4"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "3", 
+          "\[RightAngleBracket]"}],
+         DisplayForm]}], 
+       RowBox[{
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "4"}]], "\<\"|\"\>", "3", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"2", ",", "4"}]], "\<\"|\"\>", "4", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "4"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], " ", 
+        TagBox[
+         RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"6", ",", "4"}]], "\<\"|\"\>", 
+          SubscriptBox["\<\"x\"\>", 
+           RowBox[{"4", ",", "2"}]], "\<\"|\"\>", "2", 
+          "\[RightAngleBracket]"}],
+         DisplayForm]}]]}], "-", 
+     FractionBox[
+      RowBox[{
+       SubscriptBox["\<\"s\"\>", 
+        RowBox[{"2", ",", "5"}]], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "2", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "5", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       SuperscriptBox[
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "6", "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], "3"], " ", 
+       SuperscriptBox[
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], "2"], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"5", ",", "2"}]], "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           SubscriptBox["\<\"s\"\>", 
+            RowBox[{"2", ",", "5"}]], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "5", "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "6", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}], 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]], "-", 
+         FractionBox[
+          RowBox[{
+           SubscriptBox["\<\"s\"\>", 
+            RowBox[{"2", ",", "5"}]], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "5", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "6", "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}], 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]], "-", 
+         FractionBox[
+          RowBox[{
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "5", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"5", ",", "2"}]], "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}], 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]]}], ")"}]}], 
+      RowBox[{
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "5"}]], "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "2"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"2", ",", "5"}]], "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"5", ",", "2"}]], "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"5", ",", "2"}]], "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+        DisplayForm]}]], "-", 
+     FractionBox[
+      RowBox[{
+       SubscriptBox["\<\"s\"\>", 
+        RowBox[{"3", ",", "5"}]], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "3", "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{
+        "\[LeftAngleBracket]", "5", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       SuperscriptBox[
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "6", "\<\"|\"\>", "1", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], "3"], " ", 
+       SuperscriptBox[
+        TagBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+          "\[RightAngleBracket]"}],
+         DisplayForm], "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           SubscriptBox["\<\"s\"\>", 
+            RowBox[{"3", ",", "5"}]], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "5", "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "6", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}], 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]], "-", 
+         FractionBox[
+          RowBox[{
+           SubscriptBox["\<\"s\"\>", 
+            RowBox[{"3", ",", "5"}]], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "5", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "6", "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}], 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]], "-", 
+         FractionBox[
+          RowBox[{
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "5", "\<\"|\"\>", "1", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{
+            "\[LeftAngleBracket]", "6", "\<\"|\"\>", "5", 
+             "\[RightAngleBracket]"}],
+            DisplayForm], " ", 
+           TagBox[
+            RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+             SubscriptBox["\<\"x\"\>", 
+              RowBox[{"5", ",", "3"}]], "\<\"|\"\>", "4", 
+             "\[RightAngleBracket]"}],
+            DisplayForm]}], 
+          TagBox[
+           RowBox[{
+           "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", 
+            "\[RightAngleBracket]"}],
+           DisplayForm]]}], ")"}]}], 
+      RowBox[{
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"3", ",", "5"}]], "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "3"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"3", ",", "5"}]], "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+        DisplayForm], " ", 
+       TagBox[
+        RowBox[{"\[LeftAngleBracket]", "6", "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"6", ",", "5"}]], "\<\"|\"\>", 
+         SubscriptBox["\<\"x\"\>", 
+          RowBox[{"5", ",", "3"}]], "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+        DisplayForm]}]]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "1", "\<\"|\"\>", "2", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "2", "\<\"|\"\>", "3", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "3", "\<\"|\"\>", "4", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "4", "\<\"|\"\>", "5", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "5", "\<\"|\"\>", "6", "\[RightAngleBracket]"}],
+      DisplayForm], " ", 
+     TagBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "6", "\<\"|\"\>", "1", "\[RightAngleBracket]"}],
+      DisplayForm]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{3.496480378204711*^9, 3.4964804503990097`*^9, 
+  3.496496939219138*^9, 3.497788776251326*^9}]
+}, Open  ]],
+
+Cell["The NNNMHV superamplitude for 8-partons", "Text",
+ CellChangeTimes->{{3.4964970819443197`*^9, 3.496497101843437*^9}},
+ FontSize->24,
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GGTsuperamp", "[", 
+  RowBox[{"8", ",", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.496497029828117*^9, 3.496497071083838*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{"8", ";", "2", ",", "6"}], ""],
+     Subsuperscript["R", 
+      RowBox[{"8", ";", "2", ",", "6"}], 
+      RowBox[{""}]],
+     Editable->False],
+    DisplayForm], " ", 
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{"8", ";", "6", ",", "2", ",", "3", ",", "6"}], 
+      RowBox[{";", "2", ",", "6"}]],
+     Subsuperscript["R", 
+      RowBox[{"8", ";", "6", ",", "2", ",", "3", ",", "6"}], 
+      RowBox[{";", "2", ",", "6"}]],
+     Editable->False],
+    DisplayForm], " ", 
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{
+      "8", ";", "6", ",", "2", ",", "6", ",", "3", ",", "4", ",", "6"}], 
+      RowBox[{";", "6", ",", "2", ",", "3", ",", "6"}]],
+     Subsuperscript["R", 
+      RowBox[{
+       "8", ";", "6", ",", "2", ",", "6", ",", "3", ",", "4", ",", "6"}], 
+      RowBox[{";", "6", ",", "2", ",", "3", ",", "6"}]],
+     Editable->False],
+    DisplayForm]}], "+", 
+  RowBox[{
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{"8", ";", "3", ",", "7"}], ""],
+     Subsuperscript["R", 
+      RowBox[{"8", ";", "3", ",", "7"}], 
+      RowBox[{""}]],
+     Editable->False],
+    DisplayForm], " ", 
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{"8", ";", "7", ",", "3", ",", "4", ",", "7"}], 
+      RowBox[{";", "3", ",", "7"}]],
+     Subsuperscript["R", 
+      RowBox[{"8", ";", "7", ",", "3", ",", "4", ",", "7"}], 
+      RowBox[{";", "3", ",", "7"}]],
+     Editable->False],
+    DisplayForm], " ", 
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{
+      "8", ";", "7", ",", "3", ",", "7", ",", "4", ",", "5", ",", "7"}], 
+      RowBox[{";", "7", ",", "3", ",", "4", ",", "7"}]],
+     Subsuperscript["R", 
+      RowBox[{
+       "8", ";", "7", ",", "3", ",", "7", ",", "4", ",", "5", ",", "7"}], 
+      RowBox[{";", "7", ",", "3", ",", "4", ",", "7"}]],
+     Editable->False],
+    DisplayForm]}], "+", 
+  RowBox[{
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{"8", ";", "2", ",", "4"}], ""],
+     Subsuperscript["R", 
+      RowBox[{"8", ";", "2", ",", "4"}], 
+      RowBox[{""}]],
+     Editable->False],
+    DisplayForm], " ", 
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{"8", ";", "7", ",", "4", ",", "5", ",", "7"}], 
+      RowBox[{";", "4", ",", "7"}]],
+     Subsuperscript["R", 
+      RowBox[{"8", ";", "7", ",", "4", ",", "5", ",", "7"}], 
+      RowBox[{";", "4", ",", "7"}]],
+     Editable->False],
+    DisplayForm], " ", 
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{"8", ";", "4", ",", "7"}], 
+      RowBox[{"2", ",", "4", ";"}]],
+     Subsuperscript["R", 
+      RowBox[{"8", ";", "4", ",", "7"}], 
+      RowBox[{"2", ",", "4", ";"}]],
+     Editable->False],
+    DisplayForm]}], "+", 
+  RowBox[{
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{"8", ";", "2", ",", "5"}], ""],
+     Subsuperscript["R", 
+      RowBox[{"8", ";", "2", ",", "5"}], 
+      RowBox[{""}]],
+     Editable->False],
+    DisplayForm], " ", 
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{"8", ";", "5", ",", "2", ",", "3", ",", "5"}], 
+      RowBox[{";", "2", ",", "5"}]],
+     Subsuperscript["R", 
+      RowBox[{"8", ";", "5", ",", "2", ",", "3", ",", "5"}], 
+      RowBox[{";", "2", ",", "5"}]],
+     Editable->False],
+    DisplayForm], " ", 
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{"8", ";", "5", ",", "7"}], 
+      RowBox[{"2", ",", "5", ";"}]],
+     Subsuperscript["R", 
+      RowBox[{"8", ";", "5", ",", "7"}], 
+      RowBox[{"2", ",", "5", ";"}]],
+     Editable->False],
+    DisplayForm]}], "+", 
+  RowBox[{
+   TagBox[
+    InterpretationBox[
+     SubsuperscriptBox["\<\"R\"\>", 
+      RowBox[{"8", ";", "2", ",", "7"}], ""],
+     Subsuperscript["R", 
+      RowBox[{"8", ";", "2", ",", "7"}], 
+      RowBox[{""}]],
+     Editable->False],
+    DisplayForm], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubsuperscriptBox["\<\"R\"\>", 
+         RowBox[{"8", ";", "7", ",", "2", ",", "3", ",", "6"}], ""],
+        Subsuperscript["R", 
+         RowBox[{"8", ";", "7", ",", "2", ",", "3", ",", "6"}], 
+         RowBox[{""}]],
+        Editable->False],
+       DisplayForm], " ", 
+      TagBox[
+       InterpretationBox[
+        SubsuperscriptBox["\<\"R\"\>", 
+         RowBox[{
+         "8", ";", "7", ",", "2", ",", "6", ",", "3", ",", "4", ",", "6"}], 
+         RowBox[{";", "7", ",", "2", ",", "3", ",", "6"}]],
+        Subsuperscript["R", 
+         RowBox[{
+          "8", ";", "7", ",", "2", ",", "6", ",", "3", ",", "4", ",", "6"}], 
+         RowBox[{";", "7", ",", "2", ",", "3", ",", "6"}]],
+        Editable->False],
+       DisplayForm]}], "+", 
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubsuperscriptBox["\<\"R\"\>", 
+         RowBox[{"8", ";", "7", ",", "2", ",", "3", ",", "7"}], 
+         RowBox[{";", "2", ",", "7"}]],
+        Subsuperscript["R", 
+         RowBox[{"8", ";", "7", ",", "2", ",", "3", ",", "7"}], 
+         RowBox[{";", "2", ",", "7"}]],
+        Editable->False],
+       DisplayForm], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        TagBox[
+         InterpretationBox[
+          SubsuperscriptBox["\<\"R\"\>", 
+           RowBox[{
+           "8", ";", "7", ",", "2", ",", "7", ",", "3", ",", "4", ",", "6"}], 
+           ""],
+          Subsuperscript["R", 
+           RowBox[{
+            "8", ";", "7", ",", "2", ",", "7", ",", "3", ",", "4", ",", "6"}], 
+           RowBox[{""}]],
+          Editable->False],
+         DisplayForm], "+", 
+        TagBox[
+         InterpretationBox[
+          SubsuperscriptBox["\<\"R\"\>", 
+           RowBox[{
+           "8", ";", "7", ",", "2", ",", "7", ",", "3", ",", "4", ",", "7"}], 
+           
+           RowBox[{";", "7", ",", "2", ",", "3", ",", "7"}]],
+          Subsuperscript["R", 
+           
+           RowBox[{"8", ";", "7", ",", "2", ",", "7", ",", "3", ",", "4", ",",
+              "7"}], 
+           RowBox[{";", "7", ",", "2", ",", "3", ",", "7"}]],
+          Editable->False],
+         DisplayForm], "+", 
+        TagBox[
+         InterpretationBox[
+          SubsuperscriptBox["\<\"R\"\>", 
+           RowBox[{
+           "8", ";", "7", ",", "2", ",", "7", ",", "3", ",", "5", ",", "7"}], 
+           
+           RowBox[{";", "7", ",", "2", ",", "3", ",", "7"}]],
+          Subsuperscript["R", 
+           
+           RowBox[{"8", ";", "7", ",", "2", ",", "7", ",", "3", ",", "5", ",",
+              "7"}], 
+           RowBox[{";", "7", ",", "2", ",", "3", ",", "7"}]],
+          Editable->False],
+         DisplayForm]}], ")"}]}], "+", 
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubsuperscriptBox["\<\"R\"\>", 
+         RowBox[{"8", ";", "7", ",", "2", ",", "4", ",", "7"}], 
+         RowBox[{";", "2", ",", "7"}]],
+        Subsuperscript["R", 
+         RowBox[{"8", ";", "7", ",", "2", ",", "4", ",", "7"}], 
+         RowBox[{";", "2", ",", "7"}]],
+        Editable->False],
+       DisplayForm], " ", 
+      TagBox[
+       InterpretationBox[
+        SubsuperscriptBox["\<\"R\"\>", 
+         RowBox[{
+         "8", ";", "7", ",", "2", ",", "7", ",", "4", ",", "5", ",", "7"}], 
+         RowBox[{";", "7", ",", "2", ",", "4", ",", "7"}]],
+        Subsuperscript["R", 
+         RowBox[{
+          "8", ";", "7", ",", "2", ",", "7", ",", "4", ",", "5", ",", "7"}], 
+         RowBox[{";", "7", ",", "2", ",", "4", ",", "7"}]],
+        Editable->False],
+       DisplayForm]}], "+", 
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubsuperscriptBox["\<\"R\"\>", 
+         RowBox[{"8", ";", "7", ",", "2", ",", "3", ",", "5"}], ""],
+        Subsuperscript["R", 
+         RowBox[{"8", ";", "7", ",", "2", ",", "3", ",", "5"}], 
+         RowBox[{""}]],
+        Editable->False],
+       DisplayForm], " ", 
+      TagBox[
+       InterpretationBox[
+        SubsuperscriptBox["\<\"R\"\>", 
+         RowBox[{"8", ";", "7", ",", "2", ",", "5", ",", "7"}], 
+         RowBox[{"7", ",", "2", ",", "3", ",", "5", ";", "2", ",", "7"}]],
+        Subsuperscript["R", 
+         RowBox[{"8", ";", "7", ",", "2", ",", "5", ",", "7"}], 
+         RowBox[{"7", ",", "2", ",", "3", ",", "5", ";", "2", ",", "7"}]],
+        Editable->False],
+       DisplayForm]}]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{{3.496497036079624*^9, 3.496497072384297*^9}, 
+   3.497788791594182*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Obtaining Numerical Values", "Title",
+ CellChangeTimes->{{3.497790066251031*^9, 3.497790088667557*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "Spinors.m"}]], "Input",
+ CellChangeTimes->{{3.4960399489070807`*^9, 3.4960399530976133`*^9}}],
+
+Cell[BoxData["\"\<\\\\n-------  SPINORS @ MATHEMATICA (S@M)  \
+-------\\\\n\\\\n\\\\n\\\\t\\\\tVersion:  S@M 1.0 (3-APR-2007)\\\\n\\\\n \
+Authors:\\\\n\\\\tDaniel Maitre (SLAC),\\\\n\\\\tPierpaolo Mastrolia \
+(University of Zurich)\\\\nA list of all functions provided by the \
+package\\\\nis stored in the variable\\\\n\\\\t$SpinorsFunctions\\\\n\>\""], \
+"Print",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.49603995373882*^9, 3.4960401645358067`*^9, 3.496045931671753*^9, {
+   3.4960763924871693`*^9, 3.49607640422215*^9}, 3.496480475544735*^9, 
+   3.4964969978124857`*^9, 3.497788942982071*^9, 3.49778959084876*^9}]
+}, Open  ]],
+
+Cell["Generate a phase-space point using S@M", "Text",
+ CellChangeTimes->{{3.496480860434475*^9, 3.4964808834039307`*^9}, {
+  3.497788979785081*^9, 3.497789002680058*^9}, {3.497789594603399*^9, 
+  3.497789616179935*^9}, {3.497790578179593*^9, 3.497790584771404*^9}},
+ FontSize->18,
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GenMomenta", "[", 
+  RowBox[{"Range", "[", "6", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4964809005136957`*^9, 3.4964809007130613`*^9}, {
+  3.497789622401287*^9, 3.497789626354115*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Momenta for the spinors \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\", \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\", \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\", \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\", \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\", \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\" generated.\"\>"}],
+  SequenceForm["Momenta for the spinors ", 
+   Spinors`Sp[1], ", ", 
+   Spinors`Sp[2], ", ", 
+   Spinors`Sp[3], ", ", 
+   Spinors`Sp[4], ", ", 
+   Spinors`Sp[5], ", ", 
+   Spinors`Sp[6], " generated."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.496480901634042*^9, 3.496497009736141*^9, 
+  3.497789626924459*^9}]
+}, Open  ]],
+
+Cell["\<\
+Option 1: Translate the GGT expressions to S@M expressions via \
+GGTtoSpinors[...] and evaluate them numerically\
+\>", "Text",
+ CellChangeTimes->{{3.497789959618348*^9, 3.497790024748286*^9}, {
+  3.497790599364229*^9, 3.497790612236511*^9}, {3.497790713537511*^9, 
+  3.49779073117665*^9}},
+ FontSize->18,
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GGTtoSpinors", "[", 
+   RowBox[{"GGTfermionS", "[", 
+    RowBox[{"6", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "5"}], "}"}]}], "]"}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.496036586939183*^9, 3.496036588361915*^9}, {
+  3.4960459480835752`*^9, 3.4960459602082443`*^9}, {3.496046140157791*^9, 
+  3.496046140579349*^9}, {3.496046289505817*^9, 3.49604628989703*^9}, {
+  3.4960464609785557`*^9, 3.4960465008417273`*^9}, {3.496480673693303*^9, 
+  3.496480706474495*^9}, {3.496480738693576*^9, 3.496480753587593*^9}}],
+
+Cell[BoxData[
+ RowBox[{"0.22581342168954088`", "\[InvisibleSpace]", "+", 
+  RowBox[{"0.48890111025612193`", " ", "\[ImaginaryI]"}]}]], "Output",
+ CellChangeTimes->{{3.496480682746065*^9, 3.496480708347106*^9}, 
+   3.49648075414002*^9, 3.4964809040060997`*^9, 3.496497011871148*^9, 
+   3.497789716923026*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GGTtoSpinors", "[", 
+   RowBox[{"GGTnnmhv4fermS", "[", 
+    RowBox[{"6", ",", "1", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "5"}], "}"}]}], "]"}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.496045966133175*^9, 3.496045977426849*^9}, {
+  3.496046143013338*^9, 3.496046144047626*^9}, {3.4960462923650713`*^9, 
+  3.496046293456975*^9}, {3.496046393018353*^9, 3.4960463943034277`*^9}, {
+  3.49604647416162*^9, 3.4960465075452137`*^9}, {3.496480716109157*^9, 
+  3.496480777059855*^9}}],
+
+Cell[BoxData[
+ RowBox[{"0.225813421689541`", "\[InvisibleSpace]", "+", 
+  RowBox[{"0.48890111025612215`", " ", "\[ImaginaryI]"}]}]], "Output",
+ CellChangeTimes->{{3.496045966841638*^9, 3.496045978314789*^9}, 
+   3.496046145470891*^9, 3.4960463080818357`*^9, 3.496046395375318*^9, 
+   3.496046475767878*^9, 3.4960465086134987`*^9, 3.496073887524802*^9, 
+   3.496480497594347*^9, 3.496480731426763*^9, 3.496480777559486*^9, 
+   3.496480905417328*^9, 3.4964970154615192`*^9, 3.497789725047806*^9}]
+}, Open  ]],
+
+Cell["Option 2 : Use GGTgenvar and GGTnumeric (faster)", "Text",
+ CellChangeTimes->{{3.497790624837658*^9, 3.497790632290982*^9}, {
+  3.497790739982709*^9, 3.497790782713783*^9}, {3.497790872044182*^9, 
+  3.497790882109602*^9}},
+ FontSize->18,
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"P", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Num4V", "[", "i", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "6"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GGTgenvar", "[", "P", "]"}]}], "Input",
+ CellChangeTimes->{{3.497789676400205*^9, 3.497789707526888*^9}, {
+  3.497789746252158*^9, 3.497789755216688*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GGTnumeric", "[", 
+  RowBox[{"GGTfermionS", "[", 
+   RowBox[{"6", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "6"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "4"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "5"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.497789763983962*^9, 3.497789793783668*^9}}],
+
+Cell[BoxData[
+ RowBox[{"0.22581342168954052160023142877`13.842772572804492", "+", 
+  RowBox[{
+  "0.48890111025612236125033589999`14.171223241866182", " ", 
+   "\[ImaginaryI]"}]}]], "Output",
+ CellChangeTimes->{3.497789796766497*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GGTnumeric", "[", 
+  RowBox[{"GGTnnmhv4fermS", "[", 
+   RowBox[{"6", ",", "1", ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "4"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "5"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.497789809505994*^9, 3.497789811414697*^9}, {
+   3.497789870938744*^9, 3.497789874940829*^9}, 3.497789921066629*^9}],
+
+Cell[BoxData[
+ RowBox[{"0.22581342168954052159730071669`13.939133422353471", "+", 
+  RowBox[{
+  "0.48890111025612236125141420393`14.258053965312603", " ", 
+   "\[ImaginaryI]"}]}]], "Output",
+ CellChangeTimes->{3.497789928381043*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1349, 1006},
+WindowMargins->{{Automatic, 45}, {Automatic, 51}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+ShowSelection->True,
+FrontEndVersion->"7.0 for Linux x86 (32-bit) (November 10, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3496504150-9575102"->{
+  Cell[3445, 82, 389, 7, 43, "Print",
+   CellTags->"Info3496504150-9575102"]},
+ "Info3496504155-2358992"->{
+  Cell[3987, 98, 490, 8, 45, "Print",
+   CellTags->"Info3496504155-2358992"]},
+ "Info3496504157-1433779"->{
+  Cell[4632, 115, 528, 10, 48, "Print",
+   CellTags->"Info3496504157-1433779"]},
+ "Info3496504159-9034712"->{
+  Cell[5369, 135, 352, 6, 47, "Print",
+   CellTags->"Info3496504159-9034712"]},
+ "Info3496504162-2329912"->{
+  Cell[5874, 150, 1415, 21, 49, "Print",
+   CellTags->"Info3496504162-2329912"]},
+ "Info3496504164-1678695"->{
+  Cell[7450, 180, 247, 4, 43, "Print",
+   CellTags->"Info3496504164-1678695"]},
+ "Info3496504167-8857766"->{
+  Cell[7854, 193, 621, 10, 64, "Print",
+   CellTags->"Info3496504167-8857766"]},
+ "Info3496504169-9813505"->{
+  Cell[8633, 212, 4498, 69, 67, "Print",
+   CellTags->"Info3496504169-9813505"]},
+ "Info3496504171-1287450"->{
+  Cell[13266, 290, 3709, 65, 67, "Print",
+   CellTags->"Info3496504171-1287450"]},
+ "Info3496504173-3029906"->{
+  Cell[17187, 365, 276, 5, 64, "Print",
+   CellTags->"Info3496504173-3029906"]},
+ "Info3496504175-1404605"->{
+  Cell[17603, 379, 280, 5, 64, "Print",
+   CellTags->"Info3496504175-1404605"]},
+ "Info3496504177-2374626"->{
+  Cell[18044, 393, 411, 7, 45, "Print",
+   CellTags->"Info3496504177-2374626"]},
+ "Info3496504180-9235945"->{
+  Cell[18616, 409, 979, 15, 68, "Print",
+   CellTags->"Info3496504180-9235945"]},
+ "Info3496504181-9667318"->{
+  Cell[19759, 433, 682, 11, 68, "Print",
+   CellTags->"Info3496504181-9667318"]},
+ "Info3496504183-2224439"->{
+  Cell[20602, 453, 1154, 18, 68, "Print",
+   CellTags->"Info3496504183-2224439"]},
+ "Info3496504185-5263268"->{
+  Cell[21922, 480, 759, 11, 68, "Print",
+   CellTags->"Info3496504185-5263268"]},
+ "Info3496504187-4136086"->{
+  Cell[22965, 502, 584, 10, 45, "Print",
+   CellTags->"Info3496504187-4136086"]},
+ "Info3496504189-5000920"->{
+  Cell[23768, 522, 986, 15, 68, "Print",
+   CellTags->"Info3496504189-5000920"]},
+ "Info3496504192-2902226"->{
+  Cell[24893, 546, 692, 11, 68, "Print",
+   CellTags->"Info3496504192-2902226"]},
+ "Info3496504193-5487338"->{
+  Cell[25749, 566, 1165, 18, 68, "Print",
+   CellTags->"Info3496504193-5487338"]},
+ "Info3496504195-9911995"->{
+  Cell[27079, 593, 796, 12, 68, "Print",
+   CellTags->"Info3496504195-9911995"]},
+ "Info3497795990-9095656"->{
+  Cell[28031, 614, 454, 7, 43, "Print",
+   CellTags->"Info3497795990-9095656"]},
+ "Info3497792529-8413486"->{
+  Cell[28643, 630, 253, 5, 43, "Print",
+   CellTags->"Info3497792529-8413486"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3496504150-9575102", 123077, 3260},
+ {"Info3496504155-2358992", 123185, 3263},
+ {"Info3496504157-1433779", 123293, 3266},
+ {"Info3496504159-9034712", 123403, 3269},
+ {"Info3496504162-2329912", 123512, 3272},
+ {"Info3496504164-1678695", 123623, 3275},
+ {"Info3496504167-8857766", 123732, 3278},
+ {"Info3496504169-9813505", 123842, 3281},
+ {"Info3496504171-1287450", 123953, 3284},
+ {"Info3496504173-3029906", 124065, 3287},
+ {"Info3496504175-1404605", 124175, 3290},
+ {"Info3496504177-2374626", 124285, 3293},
+ {"Info3496504180-9235945", 124395, 3296},
+ {"Info3496504181-9667318", 124506, 3299},
+ {"Info3496504183-2224439", 124617, 3302},
+ {"Info3496504185-5263268", 124729, 3305},
+ {"Info3496504187-4136086", 124840, 3308},
+ {"Info3496504189-5000920", 124951, 3311},
+ {"Info3496504192-2902226", 125062, 3314},
+ {"Info3496504193-5487338", 125173, 3317},
+ {"Info3496504195-9911995", 125285, 3320},
+ {"Info3497795990-9095656", 125396, 3323},
+ {"Info3497792529-8413486", 125506, 3326}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 880, 15, 55, "Input"],
+Cell[1450, 39, 567, 8, 165, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2054, 52, 105, 1, 32, "Input"],
+Cell[2162, 55, 1125, 18, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3324, 78, 118, 2, 32, "Input"],
+Cell[3445, 82, 389, 7, 43, "Print",
+ CellTags->"Info3496504150-9575102"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3871, 94, 113, 2, 32, "Input"],
+Cell[3987, 98, 490, 8, 45, "Print",
+ CellTags->"Info3496504155-2358992"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4514, 111, 115, 2, 32, "Input"],
+Cell[4632, 115, 528, 10, 48, "Print",
+ CellTags->"Info3496504157-1433779"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5197, 130, 169, 3, 32, "Input"],
+Cell[5369, 135, 352, 6, 47, "Print",
+ CellTags->"Info3496504159-9034712"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5758, 146, 113, 2, 32, "Input"],
+Cell[5874, 150, 1415, 21, 49, "Print",
+ CellTags->"Info3496504162-2329912"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7326, 176, 121, 2, 32, "Input"],
+Cell[7450, 180, 247, 4, 43, "Print",
+ CellTags->"Info3496504164-1678695"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7734, 189, 117, 2, 32, "Input"],
+Cell[7854, 193, 621, 10, 64, "Print",
+ CellTags->"Info3496504167-8857766"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8512, 208, 118, 2, 32, "Input"],
+Cell[8633, 212, 4498, 69, 67, "Print",
+ CellTags->"Info3496504169-9813505"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13168, 286, 95, 2, 32, "Input"],
+Cell[13266, 290, 3709, 65, 67, "Print",
+ CellTags->"Info3496504171-1287450"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17012, 360, 172, 3, 32, "Input"],
+Cell[17187, 365, 276, 5, 64, "Print",
+ CellTags->"Info3496504173-3029906"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17500, 375, 100, 2, 32, "Input"],
+Cell[17603, 379, 280, 5, 64, "Print",
+ CellTags->"Info3496504175-1404605"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17920, 389, 121, 2, 32, "Input"],
+Cell[18044, 393, 411, 7, 45, "Print",
+ CellTags->"Info3496504177-2374626"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18492, 405, 121, 2, 32, "Input"],
+Cell[18616, 409, 979, 15, 68, "Print",
+ CellTags->"Info3496504180-9235945"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19632, 429, 124, 2, 32, "Input"],
+Cell[19759, 433, 682, 11, 68, "Print",
+ CellTags->"Info3496504181-9667318"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20478, 449, 121, 2, 32, "Input"],
+Cell[20602, 453, 1154, 18, 68, "Print",
+ CellTags->"Info3496504183-2224439"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21793, 476, 126, 2, 32, "Input"],
+Cell[21922, 480, 759, 11, 68, "Print",
+ CellTags->"Info3496504185-5263268"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22718, 496, 244, 4, 32, "Input"],
+Cell[22965, 502, 584, 10, 45, "Print",
+ CellTags->"Info3496504187-4136086"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23586, 517, 179, 3, 32, "Input"],
+Cell[23768, 522, 986, 15, 68, "Print",
+ CellTags->"Info3496504189-5000920"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24791, 542, 99, 2, 32, "Input"],
+Cell[24893, 546, 692, 11, 68, "Print",
+ CellTags->"Info3496504192-2902226"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25622, 562, 124, 2, 32, "Input"],
+Cell[25749, 566, 1165, 18, 68, "Print",
+ CellTags->"Info3496504193-5487338"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26951, 589, 125, 2, 32, "Input"],
+Cell[27079, 593, 796, 12, 68, "Print",
+ CellTags->"Info3496504195-9911995"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27912, 610, 116, 2, 32, "Input"],
+Cell[28031, 614, 454, 7, 43, "Print",
+ CellTags->"Info3497795990-9095656"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28522, 626, 118, 2, 32, "Input"],
+Cell[28643, 630, 253, 5, 43, "Print",
+ CellTags->"Info3497792529-8413486"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28933, 640, 274, 4, 101, "Title"],
+Cell[29210, 646, 239, 5, 61, "Text"],
+Cell[CellGroupData[{
+Cell[29474, 655, 250, 6, 32, "Input"],
+Cell[29727, 663, 1221, 38, 50, "Output"]
+}, Open  ]],
+Cell[30963, 704, 228, 4, 61, "Text"],
+Cell[CellGroupData[{
+Cell[31216, 712, 209, 5, 32, "Input"],
+Cell[31428, 719, 8905, 262, 92, "Output"]
+}, Open  ]],
+Cell[40348, 984, 199, 3, 61, "Text"],
+Cell[CellGroupData[{
+Cell[40572, 991, 164, 3, 32, "Input"],
+Cell[40739, 996, 7044, 203, 92, "Output"]
+}, Open  ]],
+Cell[47798, 1202, 316, 7, 95, "Text"],
+Cell[CellGroupData[{
+Cell[48139, 1213, 320, 9, 32, "Input"],
+Cell[48462, 1224, 25607, 668, 262, "Output"]
+}, Open  ]],
+Cell[74084, 1895, 243, 6, 61, "Text"],
+Cell[CellGroupData[{
+Cell[74352, 1905, 208, 6, 32, "Input"],
+Cell[74563, 1913, 18592, 472, 220, "Output"]
+}, Open  ]],
+Cell[93170, 2388, 240, 6, 61, "Text"],
+Cell[CellGroupData[{
+Cell[93435, 2398, 506, 16, 32, "Input"],
+Cell[93944, 2416, 12814, 366, 183, "Output"]
+}, Open  ]],
+Cell[106773, 2785, 174, 3, 61, "Text"],
+Cell[CellGroupData[{
+Cell[106972, 2792, 153, 3, 32, "Input"],
+Cell[107128, 2797, 8677, 257, 54, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[115854, 3060, 145, 2, 101, "Title"],
+Cell[CellGroupData[{
+Cell[116024, 3066, 123, 2, 32, "Input"],
+Cell[116150, 3070, 649, 11, 265, "Print"]
+}, Open  ]],
+Cell[116814, 3084, 317, 5, 53, "Text"],
+Cell[CellGroupData[{
+Cell[117156, 3093, 214, 4, 32, "Input"],
+Cell[117373, 3099, 802, 18, 24, "Print"]
+}, Open  ]],
+Cell[118190, 3120, 350, 8, 53, "Text"],
+Cell[CellGroupData[{
+Cell[118565, 3132, 693, 15, 32, "Input"],
+Cell[119261, 3149, 307, 5, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119605, 3159, 595, 13, 32, "Input"],
+Cell[120203, 3174, 494, 7, 31, "Output"]
+}, Open  ]],
+Cell[120712, 3184, 279, 5, 53, "Text"],
+Cell[120994, 3191, 393, 10, 55, "Input"],
+Cell[CellGroupData[{
+Cell[121412, 3205, 364, 10, 32, "Input"],
+Cell[121779, 3217, 232, 5, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[122048, 3227, 388, 9, 32, "Input"],
+Cell[122439, 3238, 232, 5, 31, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

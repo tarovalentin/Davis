@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  26 MAY 2021 14:18
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  16 FEB 2022 16:32
  restricted system commands enabled.
 **slides.tex
 (./slides.tex
@@ -1600,16 +1600,20 @@ Package luatex.def Info: kuscience-logo.pdf  used on input line 252.
  [5
 
 ]
-<2.PNG, id=209, 852.68562pt x 262.48062pt>
+<2.PNG, id=209, 439.6425pt x 211.79124pt>
 File: 2.PNG Graphic file (type png)
 <use 2.PNG>
 Package luatex.def Info: 2.PNG  used on input line 267.
-(luatex.def)             Requested size: 284.52756pt x 87.5881pt.
+(luatex.def)             Requested size: 284.52756pt x 137.07127pt.
+
+Overfull \vbox (25.70592pt too high) detected at line 267
+ []
+
 File: kuscience-logo.pdf Graphic file (type pdf)
 <use kuscience-logo.pdf>
 Package luatex.def Info: kuscience-logo.pdf  used on input line 267.
 (luatex.def)             Requested size: 39.83368pt x 39.8327pt.
- [6
+[6
 
 <./2.PNG>]
 <3.png, id=237, 319.1925pt x 194.22563pt>
@@ -1647,7 +1651,7 @@ Package luatex.def Info: kuscience-logo.pdf  used on input line 324.
  [10
 
 ]
-<4.png, id=346, 330.23375pt x 149.55875pt>
+<4.png, id=347, 330.23375pt x 149.55875pt>
 File: 4.png Graphic file (type png)
 <use 4.png>
 Package luatex.def Info: 4.png  used on input line 341.
@@ -1670,7 +1674,7 @@ Package luatex.def Info: kuscience-logo.pdf  used on input line 353.
  [12
 
 ]
-<5.png, id=402, 828.09375pt x 309.155pt>
+<5.png, id=403, 828.09375pt x 309.155pt>
 File: 5.png Graphic file (type png)
 <use 5.png>
 Package luatex.def Info: 5.png  used on input line 369.
@@ -1696,7 +1700,7 @@ Package luatex.def Info: kuscience-logo.pdf  used on input line 403.
  [15
 
 ]
-<6.png, id=482, 670.00313pt x 298.11375pt>
+<6.png, id=483, 670.00313pt x 298.11375pt>
 File: 6.png Graphic file (type png)
 <use 6.png>
 Package luatex.def Info: 6.png  used on input line 425.
@@ -1722,14 +1726,18 @@ Package luatex.def Info: kuscience-logo.pdf  used on input line 459.
  [18
 
 ]
-<7.png, id=566, 729.22438pt x 334.75063pt>
+<7.png, id=567, 233.37187pt x 198.7425pt>
 File: 7.png Graphic file (type png)
 <use 7.png>
 Package luatex.def Info: 7.png  used on input line 469.
-(luatex.def)             Requested size: 341.43306pt x 156.73518pt.
+(luatex.def)             Requested size: 341.43306pt x 290.8015pt.
 
 Overfull \hbox (16.65724pt too wide) in paragraph at lines 469--469
  |  [] 
+ []
+
+
+Overfull \vbox (96.9731pt too high) detected at line 469
  []
 
 File: kuscience-logo.pdf Graphic file (type pdf)
@@ -1739,7 +1747,7 @@ Package luatex.def Info: kuscience-logo.pdf  used on input line 469.
 [19
 
 <./7.png>]
-<8.png, id=594, 643.40375pt x 389.95688pt>
+<8.png, id=595, 643.40375pt x 389.95688pt>
 File: 8.png Graphic file (type png)
 <use 8.png>
 Package luatex.def Info: 8.png  used on input line 481.
@@ -1877,9 +1885,9 @@ y8.pfb><C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/doublestrok
 e/dsrom10.pfb><C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/doub
 lestroke/dsrom12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on slides.pdf (30 pages, 998518 bytes).
+Output written on slides.pdf (30 pages, 904184 bytes).
 
-PDF statistics: 1002 PDF objects out of 1200 (max. 8388607)
+PDF statistics: 1003 PDF objects out of 1200 (max. 8388607)
  70 named destinations out of 1000 (max. 131072)
  218 words of extra memory for PDF output out of 10000 (max. 100000000)
 
