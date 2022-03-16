@@ -52,20 +52,17 @@
 \emailAdd{tvbrown@ucdavis.edu}
 
 
-\abstract{a}
-
+\abstract{We review bulk reconstruction in	AdS/CFT and, in particular, how subregion dualities seemingly violate the time-slice axiom for quantum field theories. Treating the correspondence as a quantum error-correcting code (QECC) resolves these problems, and we give an in-depth description of a QECC toy model known as the 3-qutrit code. Finally, we provide a brief outlook on extensions of the models described.}
 \begin{document} 
 \maketitle
 \flushbottom
 \newpage
 \section{Introduction}
 The AdS/CFT correspondence is a duality relating a
-$(d+1)$-dimensional bulk theory of gravity in anti-de Sitter spacetime (AdS) to a $d$-dimensional boundary conformal field theory (CFT). The importance of the duality can not be understated, as the mathematical structure, and especially ulta-violet (UV) behavior, is not fully understood on the gravity side, as opposed to the framework of CFT's, which has been studied for a long time. The duality therefore gives a path towards a theory of quantum gravity, or at least gives hints on certain properties that such a theory should have.
+$(d+1)$-dimensional bulk theory of gravity or string theory in anti-de Sitter (AdS) spacetime to a $d$-dimensional boundary conformal field theory (CFT). The correspondence provides a dictionary between the CFT and gravity sides. This project focuses on how one relates operators on the boundary to operators in the bulk. This might seem strange at first since the operators on the boundary live in one spacetime dimension lower than the bulks fields, and so one might expect the dictionary only to work in one direction, but as we will show, we are able to \textit{reconstruct} information in the bulk from data on the boundary. Further, one can reconstruct operators using only part of the boundary information. Here we will focus on Rindler reconstruction, as well as general subregion dualities using the causal wedge. 
 
-The correspondence provides a dictionary between the CFT and Gravity sides. The focus of this project is on how one relates operators on the boundary to operators in the bulk. This might seem strange at first, since the operators on the boundary live in one spacetime dimension lower than the bulks ones and so one might expect the dictionary to only work one way, but as we will show, one is able to \textit{reconstruct} information in the bulk from data on the boundary. Further, one can reconstruct operators using only part of the boundary information. Here we will focus on Rindler reconstruction, but other subregion dualities exist. 
-
-Using Rindler reconstruction, some subtleties and puzzles in the prescription appear. We will describe the problems and then show how treating AdS/CFT as a Quantum Error Correcting Code (QECC), resolves the problems. For this purpose we introduce a toy model: the 3 qutrit model. The model is very coarse grained and we give a brief introduction to how to introduce more degrees of freedom by using tensor networks.
-\section{Bulk and Rindler Reconstruction \label{sec:1}}
+Using this reconstruction, some subtleties and puzzles in the prescription appear. We will describe the problems and then show how treating AdS/CFT as a Quantum Error Correcting Code (QECC) resolves the problems. For this purpose, we introduce a toy model: the 3-qutrit model. The model is very coarse-grained, and we give a brief introduction on how to introduce more degrees of freedom by using tensor networks. The project is based mainly on the excellent review \cite{bib1}, while we also want to acknowledge the original papers \cite{bib2,bib3,bib4}. 
+\section{Bulk Reconstruction \label{sec:1}}
 We are going to consider global AdS spacetime with metric
 \begin{equation}
 	\begin{aligned}
@@ -74,9 +71,9 @@ We are going to consider global AdS spacetime with metric
 		=&\omega(\rho)^2\left(-\dd t^2+\dd \rho^2+\sin^2\rho\,\dd\Omega_{d-1}^2 \right),
 	\end{aligned}
 \end{equation}
-where we work in natural units, such that the AdS length $\ell_{\text{AdS}}=1$ and we have defined $r\equiv \tan\rho $ as well as the the conformal factor $\omega(\rho)\equiv \frac{1}{\cos\rho}$ in the second line. This metric is conformally related to the Einstein Static Universe, and its conformal structure can be illustrated on a cylinder. The boundary is located at $r=\infty$ and can be viewed as the cylindrical shell of the global AdS space time.
+where we work in natural units, such that the AdS length $\ell_{\text{AdS}}\equiv 1$ and we have defined $r\equiv \tan\rho $ as well as the conformal factor $\omega(\rho)\equiv \frac{1}{\cos\rho}$ in the second line. This metric is conformally related to the Einstein Static Universe, and it's conformal structure can be illustrated on a cylinder. The boundary is located at $r=\infty$ and can be viewed as a cylindrical shell.
 
-We are going to denote bulk coordinates by $x\equiv (r,t,\Omega)$ and boundary coordinates by $X\equiv (t,\Omega)$. The AdS/CFT duality provides a map between operators on the boundary $\OO(X)$ and operators in the bulk $\phi(x)$. This is illustrated the global AdS cylinder on figure \ref{fig:adscftfig1}.
+We are going to denote bulk coordinates by $x\equiv (r,t,\Omega)$ and boundary coordinates by $X\equiv (t,\Omega)$. The AdS/CFT duality provides a map between operators on the boundary $\OO(X)$ and operators in the bulk $\phi(x)$. This is illustrated using the global AdS cylinder on Figure \ref{fig:adscftfig1}.
 \begin{figure}[]
 	\centering
 	\includegraphics[width=0.6\linewidth]{ADS_CFT_Fig1}
@@ -88,13 +85,14 @@ If one solves the equations of motion of the bulk field $\phi(x)$ near the bound
 	\begin{aligned}
 		\lim_{r\to \infty}r^{\Delta}\phi(x)=\BO(X)	\end{aligned}, \label{eq:1}
 \end{equation}
-where for a generic scalar of mass $m$, $\Delta$ satisfies $\Delta(\Delta-d)=m^2$. This limit seems very natural and one can ask whether it is possible to obtain the bulk solutions if the boundary operator is known. I.e. we are interested in the following 
+where for a generic scalar of mass $m$, $\Delta$ satisfies $\Delta(\Delta-d)=m^2$. Going from the bulk to the boundary seems very natural and one can ask whether it is possible to obtain the full bulk solutions if the boundary operator is known. I.e. we are interested in solving the equations of motion of $\phi(x)$ under the boundary condition \eqref{eq:1}. 
+As is often the case, the solution is a Greens function $ K(x;X)$ relating the boundary and the bulk as follows
 \begin{equation}
 	\begin{aligned}
 		\phi(x)=\int\dd X K(x;X)\BO(X) \label{eq:2}
 	\end{aligned}
 \end{equation}
-under the boundary condition \eqref{eq:1}. Here $ K(x;X)$ is a Greens function, often refered to as the \textit{smearing function}. If one takes a bulk point $x$, then $K(x;X)$ has support on set of boundary points that are spacelike separated from $x$, see Figure \ref{fig:adscftfig2}a. 
+$ K(x;X)$ is often referred to as the \textit{smearing function}. If one takes a bulk point $x$, then $K(x;X)$ has support on set of boundary points that are spacelike separated from $x$, see Figure \ref{fig:adscftfig2}a. 
 
 We are going to focus on constructing operators from boundary subregions. One such subregion is the Rindler wedge, $W$, defined by metric
 \begin{equation}
@@ -102,13 +100,13 @@ We are going to focus on constructing operators from boundary subregions. One su
 		\dd s^2=-(\rho^2-1)\dd \tau^2+(\rho^2-1)^{-1}\dd \rho^2+\rho^2\dd H_{d-1}^2
 	\end{aligned}
 \end{equation}
-with $\dd H^2_{d-1}=\dd \chi^2+\sinh^2\chi\dd \Omega_{d-2}^2$ is the metric on a $d-1$ dimensional hyperbolic ball. The metric has $\rho>1$ and $-\infty <\tau < \infty$ and its embedding in the global AdS cylinder is shown on Figure \ref{fig:adscftfig2}b. Using similar arguments to the global reconstruction, it can be shown explicitly that a bulk field can be reconstructed from a boundary operator if it lies within the Rindler wedge,
+with $\dd H^2_{d-1}=\dd \chi^2+\sinh^2\chi\dd \Omega_{d-2}^2$ being the metric on a $(d-1)$-dimensional hyperbolic ball. The metric has $\rho>1$ and $-\infty <\tau < \infty$ and its embedding in the global AdS cylinder is shown on Figure \ref{fig:adscftfig2}b. Using similar arguments to the global reconstruction, it can be shown explicitly that a bulk field can be reconstructed from a boundary operator if it lies within the Rindler wedge,
 \begin{equation}
 	\begin{aligned}
 		\phi(x)|_{x\in W}=\int_{\partial W}\dd X K(x;X)\BO(X)
 	\end{aligned}
 \end{equation}
-where $K(x;X)$ now only has support on the boundary region of the wedge. Using this as a jumping off point, we can find a version of \eqref{eq:2} for any subregion, using the causal wedge, $W_C$, for any boundary spatial subregion $A$ , defined by 
+where $K(x;X)$ now only has support on the boundary region of the wedge. Using this as our starting point, we can find a version of \eqref{eq:2} for any subregion, using the causal wedge, $W_C$, for any boundary spatial subregion $A$ , defined by 
 \begin{equation}
 	\begin{aligned}
 		W_C[A]=\mathscr{I}^+[D_\partial[A]]\cap\mathscr{I}^-[D_\partial[A]]
@@ -118,12 +116,12 @@ The bulk field can the be reconstructed on the boundary region $A$ as long as it
 \begin{figure}[]
 	\centering
 	\includegraphics[width=0.95\linewidth]{ADS_CFT_Fig2}
-	\caption{}
+	\caption{a) Global reconstruction of bulk point $x$. The smearing function has support on the set of boundary points that are spacelike separated from $x$ which is illustrated in purple on the plot. b) Rindler wedge in global Ads cylinder. c) Constant time-slice  of a general subregion-reconstruction. $\phi(x)$ has support on region $A$, while $\phi(x')$ does not.}
 	\label{fig:adscftfig2}
 \end{figure}
 Using these definitions we arrive at two puzzles, which we will describe below.
 \subsubsection*{Radial Commutivity Puzzle}
-Using the reconstruction procedure just described on a t=0 timeslice with support on a region $A$ that covers almost the whole boundary region, as shown on Figure \ref{fig:adscftfig3}a, one finds that the operator dual to $\phi$ on the boundary, will necessarily commute with an operator $\OO$ that lies in the complement region $A^C$. 
+Using the reconstruction procedure just described on a $t=0$ timeslice with support on a region $A$ that covers almost the whole boundary region, as shown on the first part of Figure \ref{fig:adscftfig3}, one finds that the operator dual to $\phi$ on the boundary, will necessarily commute with an operator $\OO$ that lies in the complement region $A^C$. 
 \begin{equation}
 	\begin{aligned}
 		\left[\phi(x),\BO(X')\right]=0
@@ -133,7 +131,7 @@ Similarly one can pick a different operator $\OO '$ on the boundary and by using
 \begin{figure}[]
 	\centering
 	\includegraphics[width=0.75\linewidth]{ADS_CFT_Fig3}
-	\caption{}
+	\caption{Both figures display a constant time-slice. On the first figure $\phi(x)$ can be reconstructed on the boundary to commute with $\OO(X)$ using the subregion duality. Similarly, the second figure shows how one can reconstruct $\phi(x)$ on the boundary to commute with another operator $\OO(X')$. This procedure holds for all operators and so $\phi(x)$ commutes with all operators on the boundary.}
 	\label{fig:adscftfig3}
 \end{figure}
 This however contradicts a well-known quantum field theory theorem known as the \textit{time-slice axiom}, which states that any operator which commutes with all local operators at a fixes time most be trivial. Since $\phi$ obviously is not trivial this is quite puzzling.
@@ -142,25 +140,27 @@ This however contradicts a well-known quantum field theory theorem known as the 
 The ABC-puzzle is best illustrated through Figure \ref{fig:adscftfig4}. Using the reconstruction procedure $\phi$ can not be reconstructed on regions $A$, $B$, or $C$, it can however be reconstructed from any combination of two regions. So there exists at least 3 representation of $\phi$: $\phi_{AB},\; \phi_{BC},$ and $\phi_{CA}$. The can not be the same operator on the CFT however, and so we get yet another puzzle. 
 \begin{figure}[]
 	\centering
-	\includegraphics[width=0.25\linewidth]{ADS_CFT_Fig4}
-	\caption{}
+	\includegraphics[width=0.3\linewidth]{ADS_CFT_Fig4}
+	\caption{Constant time-slice. $\phi$ can be reconstructed on any
+combination of two regions, i.e. $AB$, $BC$, $CA$.
+}
 	\label{fig:adscftfig4}
 \end{figure}
 
 Both puzzles can however be resolved by interpreting the correspondence as an quantum error correcting code, which we will describe next.
 
 \section{Quantum Error Correction - The Qutrit Model}
-Error correction is the procedure off protecting information from being lost. The type of loss can be manifold, but if one is talking about quantum information it could e.g. be decoherence. 
+Error correction is the procedure off protecting information from being lost. The type of loss depends on the situation, but if one is talking about quantum information it could e.g. be decoherence. 
 
 In classical computers an easy way to protect information is through redundancy - simply sending your information multiple times. In quantum mechanics however, we are not able to procure our quantum bits (or, as we will see below, qutrits) in the same state due to the no-cloning theorem. Instead we have to come up with a new way to protect information. 
 
-For this purpose we are going to define the 3-qutrit model. The qutrit is a 3 dimensional extension of the qubit (i.e. Bell state) and it has the basis $\{\ket{0},\ket{1},\ket{2}\}$. Using these, Alice wants to send a qutrit $\ket{\psi}$ to Bob
+For this purpose we are going to define the 3-qutrit model. The qutrit is a 3 dimensional extension of the qubit (i.e. Bell state) and it has basis $\{\ket{0},\ket{1},\ket{2}\}$. Using these, Alice wants to send a qutrit $\ket{\psi}$ to Bob
 \begin{equation}
 	\begin{aligned}
 		\ket{\psi}=\sum_{k=0}^{2}c_k \ket{k}
 	\end{aligned}
 \end{equation}
-We will refer to this as the \textit{logical qutrit}. She wants to do it in a way that preserves the original qutrit even if part of the information is lost. To do this she writes the information in terms of a 3-qutrit state:
+We will refer to this as the \textit{logical qutrit}. She wants to do it in a way that preserves the original qutrit even if part of the information is lost. To do this she encodes the information in terms of a 3-qutrit state:
 \begin{equation}
 	\begin{aligned}
 		|\tilde \psi\rangle=\sum_{k=0}^{2}c_k \tilde{\ket{k}}
@@ -174,7 +174,7 @@ where the basis vectors now are
 			|\tilde 2\rangle &=\frac{1}{\sqrt{3}}\left(\ket{021}+\ket{102}+\ket{210}\right)\\
 		\end{aligned}
 	\end{equation}
-such that $\left\{|\tilde k\rangle\right\}$ forms a basis for a 3-dimensional subspace, denoted by $H_{\text{code}}$ within the full 27 dimensional Hilbert space of the qutrits. The 3 qutrits encoding the information of the logical qutrit is called \textit{physical qutrits}. 
+such that $\left\{|\tilde k\rangle\right\}$ forms a basis for a 3-dimensional subspace, denoted by $H_{\text{code}}$, within the full 27 dimensional Hilbert space. The 3 qutrits encoding the information of the logical qutrit are called \textit{physical qutrits}. 
 
 Before we move on, let us summarize some important features of the states just defined:
 \begin{itemize}
@@ -189,7 +189,7 @@ is a maximally mixed state.
 \item Any single qutrit has no information about the original state.
 \item Any two of the three qutrits contains complete information about the original state, so even if Bob looses a single qutrit he can still recover the original information. We will describe how this works below.
 \end{itemize}
-To see that the physical qutrits contain all the information from the logical qutrit, we define decoding operators $U_{ij}$, for $\{i,j\}=1,2,3$, $i\neq j$. It is easiest to see how these through an explicit example, so take e.g. $U_{12}$, which has the explicit action of changing the first two qutrits in the following manor,
+To see that the physical qutrits contain all the information from the logical qutrit, we define decoding operators $U_{ij}$, for $\{i,j\}=1,2,3$, $i\neq j$. It is easiest to see how these work through an explicit example, so take e.g. $U_{12}$, which has the explicit action of changing the first two qutrits in the following manor,
 \begin{align}
 	\begin{tabular}{ l c r }
 		$|00\rangle\to|00\rangle$ & $|11\rangle \to |01\rangle$ & $|22\rangle\to |02\rangle$ \\ 
@@ -197,7 +197,7 @@ To see that the physical qutrits contain all the information from the logical qu
 		$|02\rangle\to |21\rangle$ & $|10\rangle\to|22\rangle$ & $|21\rangle \to |20\rangle$ 
 	\end{tabular}.
 \end{align}
-Such that, for instance acting on the $|\tilde 1\rangle$
+Such that, for instance acting on the $|\tilde 1\rangle$ state
 \begin{equation}
 	\begin{aligned}
 		U_{12}|\tilde 1\rangle&=\frac{1}{\sqrt{3}}\left(\ket{122}+\ket{100}+\ket{111}\right)
@@ -239,7 +239,7 @@ An example of such an operator can be build from the decoding operators that we 
 	\end{aligned}
 \end{equation}
 where $O_1$ is an operator acting on the first qutrit.
-This exactly has the intended action, \eqref{eq:3}, and it only acts on the $1,2$ subset and so once again, Bob could loose the third qutrit and still recover the initial information. 
+This exactly has the intended action, i.e. satisfies \eqref{eq:3}, and since it only acts on the $1,2$ subset, once again Bob could loose the third qutrit and still perform his computation. 
 
 Further, we can define similar operators $\tilde{O}_{31},\tilde{O}_{23}$. They are all different operators in the full Hilbert space, but they act in the same way in the code subspace. We will now discuss how this resolves both the puzzles encountered in section \ref{sec:1}
 \section{AdS/CFT as a QECC}
@@ -253,24 +253,86 @@ We have just seen how the 3-qutrit model has operators that act the same way in 
 This notion is exemplified in Figure \ref{fig:adscftfig5}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.95\linewidth]{ADS_CFT_Fig5}
-	\caption{}
+	\includegraphics[width=0.85\linewidth]{ADS_CFT_Fig5}
+	\caption{The ABC puzzle can be resolved by considering 3 local degrees of freedom of the CFT as the 3 physical qutrits.}
 	\label{fig:adscftfig5}
 \end{figure}
-Further, in this setup \eqref{eq:2} only has support when states lie in $H_{\text{code}}$, where the code subspace are defines as states that are perturbatively close to the vacuum.
+Further, in this setup equation \eqref{eq:2} only has support when states lie in $H_{\text{code}}$, where the code subspace are define das states that are perturbatively close to the vacuum.
+\subsubsection*{Solution to Radial Commutivity Puzzle}
+Thinking of AdS/CFT as a QECC also resolves the second puzzle, since the commutator can be zero and still be in agreement with the time-slice axiom if we take it in the code subspace as follows,
 \begin{equation}
 	\begin{aligned}
-		\langle \tilde \psi |\left[\phi(x),\BO(X)\right]|\tilde \psi\rangle =0,~~~~~~~~\forall~~~~ |\tilde \psi\rangle\in H_{\text{code}}
+		\langle \tilde \psi_r |\left[\phi(x),\BO(X)\right]|\tilde \psi_l\rangle =0,~~~~~~~~\forall~~~~ |\tilde \psi\rangle\in H_{\text{code}}
 	\end{aligned}
 \end{equation}
+In terms of the 3-qutrit model, we identify the bulk operators with $\tilde O$, and so we could write it as
+\begin{equation}
+	\begin{aligned}
+		\langle \tilde \psi_r |[\tilde O,Y_i]|\tilde \psi_l\rangle =0,
+	\end{aligned}
+\end{equation}
+where $Y_i$ is an operator acting on the $i$'th qutrit, and we can choose $\tilde O$ in every instance such that it acts on different qutrit pairs and so commutes with all local operators in our subspace.
+\subsubsection*{Perspectives}
+Having addressed the puzzles we are now left with a question - which states are not included in the code subspace? A good guess is a black hole, since states behind the horizon are not accessible by an asymptotic observer. Further, this is in line with the definition of states in the subspace as being asymptotically close to the vacuum, since if we keep increasing the energy of a a state it will naturally create a black hole. This is illustrated on Figure \ref{fig:adscftfig6}.
 \begin{figure}[]
 	\centering
 	\includegraphics[width=0.7\linewidth]{ADS_CFT_Fig6}
-	\caption{}
+	\caption{States not in the code subspace are states inside black holes.}
 	\label{fig:adscftfig6}
 \end{figure}
-\section{Tensor Models}
-\section{Outlook}
+
+Further, we observe that the radial coordinate in this setup, describes how protected a state is to errors. A state placed in the center can for instance have multiple boundary regions erased but still be fine, while a state close to the boundary only needs a small region to be erased, for the state to have an error. This is shown in Figure \ref{fig:adscftfig7}.
+\begin{figure}[]
+	\centering
+	\includegraphics[width=0.9\linewidth]{ADS_CFT_Fig7}
+	\caption{Protection level against erasure depends on the radial coordinate. The 1st qutrit has the largest level of protection.}
+	\label{fig:adscftfig7}
+\end{figure}
+
+Finally the 3-qutrit model is very coarse-grained since it only allows for three degrees of freedom on the CFT. One way to get around this is by considering tensor models. In particular one can consider isometric tensors, that represent linear maps between Hilbert spaces 
+\begin{equation}
+	\begin{aligned}
+		T: H_A\to H_B
+	\end{aligned}
+\end{equation}
+Given a two-dimensional basis the map would e.g. be
+\begin{equation}
+	\begin{aligned}
+		\ket{a}\to \sum_b T_{ab}\ket{b}
+	\end{aligned}
+\end{equation} 
+Which can be illustrated graphically as\\ 
+\begin{center}
+\includegraphics[width=0.25\linewidth]{ADS_CFT_Fig9}.
+\end{center}
+
+If one has tensors with a higher number of indices, there are simply more lines connecting the dot representing $T$. A tensor model of particular interest contains \textit{perfect tensors} which all have the same number of indices and obeys the property that any balanced bipartition $|A|=|A^C|$ of the indices
+into inputs and outputs gives a unitary transformation $T$.
+
+The three qutrit code is an example of such a model, which has 4 indices and a bond dimension (i.e. number of basis-elements) of $D=3$.
+Another model of interest is the 6-index $D=2$ model. Both models are illustrated as tensors in Figure \ref{fig:adscftfig8}.
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.95\linewidth]{ADS_CFT_Fig8}
+	\caption{Depiction of how the 3-qutrit (top) and 5-qubit (bottom) models look as perfec tensor models. The tensor T has a free leg connecting to the logical qubit/qutrit.}
+	\label{fig:adscftfig8}
+\end{figure}
+
+ Using the notion of tensors, one can create tensor networks. Using the 6-index perfect tensor model the authors of \cite{bib3}, created the HaPPY code, which is much less coarse-grained, compared to the toy-model described in this project. We have illustrated this tensor model with 3 levels in Figure \ref{fig:adscftfig10}. Other extensions such as the random tensor model exists. 
+ 
+ There are many other features of the perfect tensor model that we have not discussed and we refer to \cite{bib1} for a more in-depth review.
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.35\linewidth]{ADS_CFT_Fig10}
+ 	\caption{A network of perfect 5-index $D=2$ tensors. Each level has its on color. By adding more levels, one can obtain models with more degrees of freedom both in the bulk and on the boundary.}
+ 	\label{fig:adscftfig10}
+ \end{figure}
+\section{Conclusion}
+In the project we have reviewed how bulk operators can be reconstructed from boundary data in AdS/CFT. In this reconstruction several puzzles arise. We then introduced the notion of Quantum Error Correcting Codes and showed how thinking of the duality as a QECC resolved the puzzles.
+
+Finally we briefly discussed extensions of the QECC toy model introduced using perfect tensor networks. 
+
+The study of the gauge/gravity correspondence is a rich field with many applications outside of high energy theory, and understanding the duality better will hopefully propagate to a understanding various phenomenon in other areas of physics, as well as uncovering basic structures of our universe.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -282,65 +344,38 @@ Further, in this setup \eqref{eq:2} only has support when states lie in $H_{\tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \begin{thebibliography}{99}
-%\cite{Arkani-Hamed:2010zjl}
-\bibitem{amp1}
-N.~Arkani-Hamed, J.~L.~Bourjaily, F.~Cachazo, S.~Caron-Huot and J.~Trnka,
-%``The All-Loop Integrand For Scattering Amplitudes in Planar N=4 SYM,''
-JHEP \textbf{01}, 041 (2011)
-doi:10.1007/JHEP01(2011)041
-[arXiv:1008.2958 [hep-th]].
-%411 citations counted in INSPIRE as of 10 Oct 2021
-%\cite{Elvang:2015rqa}
-\bibitem{Elvang}
-H.~Elvang and Y.~t.~Huang,
-``Scattering Amplitudes in Gauge Theory and Gravity,''
-%18 citations counted in INSPIRE as of 10 Oct 2021
-%\cite{Arkani-Hamed:2012zlh}
-%393 citations counted in INSPIRE as of 10 Oct 2021
-%\cite{Arkani-Hamed:2013jha}
-\bibitem{amp3}
-N.~Arkani-Hamed and J.~Trnka,
-%``The Amplituhedron,''
-JHEP \textbf{10}, 030 (2014)
-doi:10.1007/JHEP10(2014)030
-[arXiv:1312.2007 [hep-th]].
-%352 citations counted in INSPIRE as of 10 Oct 2021
-%\cite{Arkani-Hamed:2013kca}
-\bibitem{amp4}
-N.~Arkani-Hamed and J.~Trnka,
-%``Into the Amplituhedron,''
-JHEP \textbf{12}, 182 (2014)
-doi:10.1007/JHEP12(2014)182
-[arXiv:1312.7878 [hep-th]].
-%133 citations counted in INSPIRE as of 10 Oct 2021
-\bibitem{amp6}
-N.~Arkani-Hamed, A.~Hodges and J.~Trnka,
-%``Positive Amplitudes In The Amplituhedron,''
-JHEP \textbf{08}, 030 (2015)
-doi:10.1007/JHEP08(2015)030
-[arXiv:1412.8478 [hep-th]].
-%70 citations counted in INSPIRE as of 10 Oct 2021
-\bibitem{on1}
-N.~Arkani-Hamed, J.~L.~Bourjaily, F.~Cachazo, A.~Postnikov and J.~Trnka,
-%``On-Shell Structures of MHV Amplitudes Beyond the Planar Limit,''
-JHEP \textbf{06}, 179 (2015)
-doi:10.1007/JHEP06(2015)179
-[arXiv:1412.8475 [hep-th]].
-%68 citations counted in INSPIRE as of 10 Oct 2021
-%\cite{Herrmann:2016qea}
-\bibitem{amp2}
-N.~Arkani-Hamed, J.~L.~Bourjaily, F.~Cachazo, A.~B.~Goncharov, A.~Postnikov and J.~Trnka,
-%``Grassmannian Geometry of Scattering Amplitudes,''
-doi:10.1017/CBO9781316091548
-[arXiv:1212.5605 [hep-th]].
-\bibitem{on2}
-E.~Herrmann and J.~Trnka,
-%``Gravity On-shell Diagrams,''
-JHEP \textbf{11}, 136 (2016)
-doi:10.1007/JHEP11(2016)136
-[arXiv:1604.03479 [hep-th]].
-%42 citations counted in INSPIRE as of 10 Oct 2021
-%\fi
+	%\cite{Harlow:2018fse}
+	\bibitem{bib1}
+	D.~Harlow,
+	%``TASI Lectures on the Emergence of Bulk Physics in AdS/CFT,''
+	PoS \textbf{TASI2017}, 002 (2018)
+%	doi:10.22323/1.305.0002
+	[arXiv:1802.01040 [hep-th]].
+	%106 citations counted in INSPIRE as of 16 Mar 2022	
+	%\cite{Almheiri:2014lwa}
+	\bibitem{bib2}
+	A.~Almheiri, X.~Dong and D.~Harlow,
+	%``Bulk Locality and Quantum Error Correction in AdS/CFT,''
+	JHEP \textbf{04}, 163 (2015)
+%	doi:10.1007/JHEP04(2015)163
+	[arXiv:1411.7041 [hep-th]].
+	%480 citations counted in INSPIRE as of 16 Mar 2022
+	%\cite{Pastawski:2015qua}
+	\bibitem{bib3}
+	F.~Pastawski, B.~Yoshida, D.~Harlow and J.~Preskill,
+	%``Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence,''
+	JHEP \textbf{06}, 149 (2015)
+%	doi:10.1007/JHEP06(2015)149
+	[arXiv:1503.06237 [hep-th]].
+	%508 citations counted in INSPIRE as of 16 Mar 2022
+	%\cite{Dong:2016eik}
+	\bibitem{bib4}
+	X.~Dong, D.~Harlow and A.~C.~Wall,
+	%``Reconstruction of Bulk Operators within the Entanglement Wedge in Gauge-Gravity Duality,''
+	Phys. Rev. Lett. \textbf{117}, no.2, 021601 (2016)
+	%doi:10.1103/PhysRevLett.117.021601
+	[arXiv:1601.05416 [hep-th]].
+	%343 citations counted in INSPIRE as of 16 Mar 2022
 \end{thebibliography}
 \end{document}
 

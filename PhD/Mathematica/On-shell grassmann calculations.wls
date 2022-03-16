@@ -3423,7 +3423,7 @@ sht = s[i_,j_,k_]->Spaa[i,j]Spbb[j,i]+Spaa[i,k]Spbb[k,i]+Spaa[j,k]Spbb[k,j];
 \[Omega] = \[CapitalOmega]6;
 
 
-sing = {Spbb[i_,1]->\[Alpha] Spab[i,P[1]+P[5]+P[6],2]+\[Beta] Spbb[i,j],Spbb[1,i_]->\[Alpha] Spab[2,P[1]+P[5]+P[6],i]+\[Beta] Spbb[j,i]};
+(*sing = {Spbb[i_,1]->\[Alpha] Spab[i,P[1]+P[5]+P[6],2]+\[Beta] Spbb[i,j],Spbb[1,i_]->\[Alpha] Spab[2,P[1]+P[5]+P[6],i]+\[Beta] Spbb[j,i]};*)
 sing = {Spab[2,P[1]+P[5]+P[6],i_]->\[Alpha] Spbb[1,i]+\[Beta] Spbb[i,j]};
 A = \[Omega]//.sing//FullSimplify
 ResA = Residue[(A),{\[Beta],0}]//.Spbb[1,j]->1//FullSimplify

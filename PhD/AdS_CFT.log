@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  15 MAR 2022 11:24
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  16 MAR 2022 17:16
  restricted system commands enabled.
 **AdS_CFT.tex
 (./AdS_CFT.tex
@@ -1010,31 +1010,31 @@ LaTeX Warning: Unused global option(s):
 (./AdS_CFT.aux)
 \openout1 = AdS_CFT.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 57
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 56
 .
  ("C:/Program Files/MiKTeX 2.9/tex/latex/base/ts1cmr.fd"
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
 
 (C:/Users/tarob/AppData/Roaming/MiKTeX/2.9/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1057,7 +1057,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 5.
 )
 \AtBeginShipoutBox=\box75
-Package hyperref Info: Link coloring ON on input line 57.
+Package hyperref Info: Link coloring ON on input line 56.
  ("C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1070,9 +1070,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count326
 )
-LaTeX Info: Redefining \ref on input line 57.
-LaTeX Info: Redefining \pageref on input line 57.
-LaTeX Info: Redefining \nameref on input line 57.
+LaTeX Info: Redefining \ref on input line 56.
+LaTeX Info: Redefining \pageref on input line 56.
+LaTeX Info: Redefining \nameref on input line 56.
  (./AdS_CFT.out) (./AdS_CFT.out)
 \@outlinefile=\write6
 
@@ -1083,32 +1083,32 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 ck labels; missing features). Consider writing \pgfplotsset{compat=1.17} into yo
 ur preamble.
- on input line 57.
+ on input line 56.
 
 \c@lstlisting=\count327
 isodate: babel.sty, (n)german.sty have not been loaded
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 58
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 57
 .
 ("C:/Program Files/MiKTeX 2.9/tex/latex/lm/t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 58.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 57.
 
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/jknappen/ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 58
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 57
 .
 
 ("C:/Program Files/MiKTeX 2.9/tex/latex/lm/t1lmtt.fd"
@@ -1123,90 +1123,129 @@ toc)
  [1]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 80.
+               Default added (so using `tbp') on input line 77.
 
-<ADS_CFT_Fig1.png, id=58, 703.62875pt x 467.24562pt>
+<ADS_CFT_Fig1.png, id=56, 703.62875pt x 467.24562pt>
 File: ADS_CFT_Fig1.png Graphic file (type png)
 <use ADS_CFT_Fig1.png>
-Package luatex.def Info: ADS_CFT_Fig1.png  used on input line 82.
+Package luatex.def Info: ADS_CFT_Fig1.png  used on input line 79.
 (luatex.def)             Requested size: 265.37857pt x 176.22194pt.
 [2] [3
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.1'
 <./ADS_CFT_Fig1.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 118.
+               Default added (so using `tbp') on input line 116.
 
-<ADS_CFT_Fig2.png, id=92, 864.73062pt x 387.4475pt>
+<ADS_CFT_Fig2.png, id=94, 885.80937pt x 408.52625pt>
 File: ADS_CFT_Fig2.png Graphic file (type png)
 <use ADS_CFT_Fig2.png>
-Package luatex.def Info: ADS_CFT_Fig2.png  used on input line 120.
-(luatex.def)             Requested size: 420.17712pt x 188.2606pt.
+Package luatex.def Info: ADS_CFT_Fig2.png  used on input line 118.
+(luatex.def)             Requested size: 420.17712pt x 193.78394pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 133.
+               Default added (so using `tbp') on input line 131.
 
-<ADS_CFT_Fig3.png, id=95, 909.89937pt x 413.04312pt>
+<ADS_CFT_Fig3.png, id=97, 909.89937pt x 413.04312pt>
 File: ADS_CFT_Fig3.png Graphic file (type png)
 <use ADS_CFT_Fig3.png>
-Package luatex.def Info: ADS_CFT_Fig3.png  used on input line 135.
+Package luatex.def Info: ADS_CFT_Fig3.png  used on input line 133.
 (luatex.def)             Requested size: 331.71985pt x 150.57985pt.
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 143.
-
-<ADS_CFT_Fig4.png, id=97, 453.19313pt x 431.11063pt>
-File: ADS_CFT_Fig4.png Graphic file (type png)
-<use ADS_CFT_Fig4.png>
-Package luatex.def Info: ADS_CFT_Fig4.png  used on input line 145.
-(luatex.def)             Requested size: 110.57327pt x 105.18556pt.
 [4
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.2'
-<./ADS_CFT_Fig2.png>] [5
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.3'
+<./ADS_CFT_Fig2.png>]
 
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 141.
+
+<ADS_CFT_Fig4.png, id=110, 453.19313pt x 431.11063pt>
+File: ADS_CFT_Fig4.png Graphic file (type png)
+<use ADS_CFT_Fig4.png>
+Package luatex.def Info: ADS_CFT_Fig4.png  used on input line 143.
+(luatex.def)             Requested size: 132.68929pt x 126.22269pt.
+[5
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.3'
+<./ADS_CFT_Fig3.png>] [6
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.4'
-<./ADS_CFT_Fig3.png><./ADS_CFT_Fig4.png>] [6] [7]
-<ADS_CFT_Fig5.png, id=141, 851.18pt x 365.86688pt>
+<./ADS_CFT_Fig4.png>] [7]
+<ADS_CFT_Fig5.png, id=140, 851.18pt x 365.86688pt>
 File: ADS_CFT_Fig5.png Graphic file (type png)
 <use ADS_CFT_Fig5.png>
 Package luatex.def Info: ADS_CFT_Fig5.png  used on input line 256.
-(luatex.def)             Requested size: 420.17712pt x 180.6106pt.
-
+(luatex.def)             Requested size: 375.95186pt x 161.59601pt.
+ [8]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 266.
+               Default added (so using `tbp') on input line 277.
 
-<ADS_CFT_Fig6.png, id=143, 743.77875pt x 402.50375pt>
+<ADS_CFT_Fig6.png, id=153, 743.77875pt x 402.50375pt>
 File: ADS_CFT_Fig6.png Graphic file (type png)
 <use ADS_CFT_Fig6.png>
-Package luatex.def Info: ADS_CFT_Fig6.png  used on input line 268.
+Package luatex.def Info: ADS_CFT_Fig6.png  used on input line 279.
 (luatex.def)             Requested size: 309.60384pt x 167.5457pt.
-[8
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 285.
+
+<ADS_CFT_Fig7.png, id=155, 882.29625pt x 266.9975pt>
+File: ADS_CFT_Fig7.png Graphic file (type png)
+<use ADS_CFT_Fig7.png>
+Package luatex.def Info: ADS_CFT_Fig7.png  used on input line 287.
+(luatex.def)             Requested size: 398.06111pt x 120.46146pt.
+[9
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.5'
-<./ADS_CFT_Fig5.png>] [9
+<./ADS_CFT_Fig5.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.6'
-<./ADS_CFT_Fig6.png>] [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 345.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 345.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.7'
+<./ADS_CFT_Fig6.png><./ADS_CFT_Fig7.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 303--305
+
+ []
+
+<ADS_CFT_Fig9.png, id=177, 703.62875pt x 209.78375pt>
+File: ADS_CFT_Fig9.png Graphic file (type png)
+<use ADS_CFT_Fig9.png>
+Package luatex.def Info: ADS_CFT_Fig9.png  used on input line 306.
+(luatex.def)             Requested size: 110.57327pt x 32.96428pt.
+<ADS_CFT_Fig8.png, id=179, 512.41437pt x 373.89688pt>
+File: ADS_CFT_Fig8.png Graphic file (type png)
+<use ADS_CFT_Fig8.png>
+Package luatex.def Info: ADS_CFT_Fig8.png  used on input line 316.
+(luatex.def)             Requested size: 420.17712pt x 306.59743pt.
+<ADS_CFT_Fig10.png, id=183, 541.02126pt x 426.09187pt>
+File: ADS_CFT_Fig10.png Graphic file (type png)
+<use ADS_CFT_Fig10.png>
+Package luatex.def Info: ADS_CFT_Fig10.png  used on input line 326.
+(luatex.def)             Requested size: 154.80528pt x 121.91856pt.
+[11
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.9'
+<./ADS_CFT_Fig9.png><./ADS_CFT_Fig10.png>] [12
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.8'
+<./ADS_CFT_Fig8.png>] [13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 380.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 380.
  (./AdS_CFT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 345.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 345.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 380.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 380.
 Package rerunfilecheck Info: File `AdS_CFT.out' has not changed.
-(rerunfilecheck)             Checksum: 56461E042E075E602FAACBFB5A6053E5;926.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 345.
+(rerunfilecheck)             Checksum: 7312D0FD7C2CB956790792A45183E812;763.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 380.
 )
 
 Here is how much of LuaTeX's memory you used:
- 37658 strings out of 480991
+ 37706 strings out of 480991
  100000,1373583 words of node,token memory allocated
- 668 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 44 attribute, 56 glue_spec
-, 44 attribute_list, 2 write nodes
-   avail lists: 1:1,2:522,3:115,4:32,5:205,6:19,7:3159,8:62,9:329,10:12,11:226
- 53823 multiletter control sequences out of 65536+200000
+ 701 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 51 attribute, 57 glue_spec
+, 51 attribute_list, 2 write nodes
+   avail lists: 1:1,2:508,3:94,4:42,5:195,6:18,7:2953,8:59,9:331,10:25,11:207
+ 53841 multiletter control sequences out of 65536+200000
  86 fonts using 7361027 bytes
- 71i,14n,102p,966b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,14n,102p,966b,391s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/MiK
 TeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
@@ -1225,9 +1264,9 @@ C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
 tt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on AdS_CFT.pdf (11 pages, 1651738 bytes).
+Output written on AdS_CFT.pdf (14 pages, 2057441 bytes).
 
-PDF statistics: 243 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 131072)
- 64 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 275 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 131072)
+ 56 words of extra memory for PDF output out of 10000 (max. 100000000)
 
