@@ -8986,17 +8986,18 @@ t\[Lambda][1]={1,3};t\[Lambda][4]={w,r};t\[Lambda][3]={-1,-3};t\[Lambda][2]={1,3
 MA = Sum[Outer[Times,t\[Lambda][i],\[Lambda][i]],{i,1,4}];
 Sol = Solve[{MA[[1]][[1]]==0,MA[[1]][[2]]==0,MA[[2]][[1]]==0,MA[[2]][[2]]==0},{x,y,w,r}];
 \[Lambda][3]=\[Alpha] \[Lambda][1]+\[Beta] (ab[1,4])/(ab[2,4])\[Lambda][2]//.Sol[[1]]//FullSimplify;
-Nn=3;
+Nn=1;
 \[CapitalOmega]4 = (ab[2,4])^(4-Nn)/(ab[1,2]ab[2,3]ab[3,4]ab[4,1])//FullSimplify
 J = ((ab[2,4]ab[1,3])/(ab[1,2]ab[3,4]))//.Sol[[1]]//FullSimplify
 \[CapitalOmega] = \[CapitalOmega]4*J^(Nn-4)//.Sol[[1]]//FullSimplify
 Residue[\[CapitalOmega],{\[Beta],0}]
+(ab[2,4]^(3-Nn))/(ab[1,2]ab[1,4])*(ab[2,4]/(ab[1,2]ab[3,4]))//.Sol[[1]]//.\[Beta]->0//FullSimplify
 
 
-\[Lambda][1]={1,2};\[Lambda][2]={1,-5};\[Lambda][3]={1,-1};\[Lambda][4]={1,y};
-t\[Lambda][1]={1,3};t\[Lambda][4]={w,r};t\[Lambda][3]={-1,-3};t\[Lambda][2]={1,3};
+\[Lambda][1]={1,2};\[Lambda][2]={1,-5};\[Lambda][3]=\[Alpha] \[Lambda][1];\[Lambda][4]={1,y};
+t\[Lambda][1]={1,3};t\[Lambda][4]={r,w};t\[Lambda][3]={-1,-3};t\[Lambda][2]={1,3};
 MA = Sum[Outer[Times,t\[Lambda][i],\[Lambda][i]],{i,1,4}];
-Sol = Solve[{MA[[1]][[1]]==0,MA[[1]][[2]]==0,MA[[2]][[1]]==0,MA[[2]][[2]]==0},{x,y,w,r}];
+Sol2 = Solve[{MA[[1]][[1]]==0,MA[[1]][[2]]==0,MA[[2]][[1]]==0,MA[[2]][[2]]==0},{y,w,r}]
 
 
 
