@@ -4761,6 +4761,16 @@ Sol//.Spab[1,P[1]+P[5]+P[6],2] Spab[2,P[1]+P[5]+P[6],1]->Spab[1,P[1]+P[5]+P[6],2
 
 
 
+
+
+
+
+
+
+
+
+
+
 (* ::Section::Closed:: *)
 (*Singularities *)
 
@@ -6047,7 +6057,7 @@ sing = {Spaa[i_,5]->\[Alpha] Spaa[i,2],Spaa[i_,5]->\[Alpha] Spaa[i,2]};
 \[CapitalOmega]//.sing
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Disconnected graphs*)
 
 
@@ -6055,7 +6065,7 @@ sing = {Spaa[i_,5]->\[Alpha] Spaa[i,2],Spaa[i_,5]->\[Alpha] Spaa[i,2]};
 (*Residue of Box*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*N=3*)
 
 
@@ -6066,7 +6076,7 @@ Cperp = {{1,-a[1]a[2]a[3],0,-a[2]a[3]},{0,-a[1]a[2],1,-a[2]}};
 lambda = {\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4]};
 tlambda = {t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4]};
 
-perpEQ = Cperp . Transpose[lambda]
+perpEQ = Cperp . Transpose[lambda];
 CEQ = CC . Transpose[tlambda];
 eta = {\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4]};
 SEQ = CC . Transpose[eta];
@@ -6123,7 +6133,7 @@ sing = {Spaa[i_,1]->\[Alpha] Spaa[i,3],Spaa[1,i_]->\[Alpha] Spaa[3,i]};
 (*Pentagon*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Before residue*)
 
 
@@ -6224,6 +6234,7 @@ Sol = FullSimplify[Simplify[Solve[{A1==0,A2==0,A5==0,A6==0,A3==0},{a[1],a[2],a[3
 
 
 \[CapitalDelta] = Together[\[Delta]//.Sol[[1]]]//.schoutenA
+Together[1/(1-1/(a[1]a[2]a[3]a[4]a[5]))//.Sol[[1]]]//.schoutenA
 
 
 EE[1] = A1;
@@ -6493,11 +6504,11 @@ a[5]//.Sol
 (**)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Hexagon MHV*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Before residue*)
 
 
@@ -6627,6 +6638,9 @@ Sol = FullSimplify[Simplify[Solve[{A1==0,A2==0,A5==0,A6==0,A3==0,A8==0},{a[1],a[
 Print["\[Delta] solution"]
 \[CapitalDelta] = Together[\[Delta]//.Sol[[1]]]//.schoutenA
 
+Print["inverse \[Delta] solution"]
+\[CapitalDelta] = Together[1/(1-(1/(a[1]a[2]a[3]a[4]a[5]a[6])))//.Sol[[1]]]//.schoutenA
+
 EE[1] = A1;
 EE[2] = A2;
 EE[3] = A3;
@@ -6655,7 +6669,7 @@ Print["N=3 Form:"]
 sing = {Spaa[i_,1]->\[Alpha] Spaa[i,4]+\[Beta] Spaa[i,j],Spaa[1,i_]->\[Alpha] Spaa[4,i]+\[Beta] Spaa[j,i]};
 
 Print["Residue of the form:"]
-(Residue[(\[CapitalOmega]6//.sing),{\[Beta],0}]//.Spaa[4,j]->1)/\[Alpha]
+(Residue[(\[CapitalOmega]6//.sing),{\[Beta],0}]//.Spaa[4,j]->1)
 
 (*Remember here the delta function also changes \[Delta](\[LeftAngleBracket]12\[RightAngleBracket])\[Rule]1/\[Alpha]\[Delta](\[LeftAngleBracket]24\[RightAngleBracket]) *)
 
@@ -6670,7 +6684,7 @@ Print["Residue of the form:"]
 (**)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*after residue*)
 
 
@@ -7373,11 +7387,800 @@ ResA = Residue[(A),{\[Beta],0}]//.Spbb[1,j]->1//FullSimplify
 
 
 
+(* ::Subsection:: *)
+(*Heptagon MHV*)
+
+
+(* ::Subsubsection:: *)
+(*Before residue*)
+
+
+aa = a[4]a[5]a[6]a[7]a[1]\[Delta];
+bb = a[1]a[2]a[3]a[4] \[Delta];
+CC=\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{"1", 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], "\[Delta]"}], 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], "\[Delta]"}], "0", "bb", 
+RowBox[{"bb", " ", 
+RowBox[{"a", "[", "5", "]"}]}], 
+RowBox[{"bb", " ", 
+RowBox[{"a", "[", "5", "]"}], " ", 
+RowBox[{"a", "[", "6", "]"}]}]},
+{"0", "aa", 
+RowBox[{"aa", " ", 
+RowBox[{"a", "[", "2", "]"}]}], "1", 
+RowBox[{
+RowBox[{"a", "[", "4", "]"}], "\[Delta]"}], 
+RowBox[{
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], "\[Delta]"}], 
+RowBox[{
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], "\[Delta]"}]}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+Cperp =\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], "\[Delta]"}], "1", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}], 
+RowBox[{"a", "[", "1", "]"}], "\[Delta]"}], "0", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], "\[Delta]"}], "0", "1", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}], 
+RowBox[{"a", "[", "1", "]"}], "\[Delta]"}], "0", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], " ", "\[Delta]"}], "0", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "4", "]"}]}], "\[Delta]"}], "1", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "5", "]"}]}], 
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], " ", "\[Delta]"}], "0", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{"a", "[", "5", "]"}], "\[Delta]"}], "0", "1", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "5", "]"}]}], " ", 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], " ", "\[Delta]"}], "0", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], "\[Delta]"}], "0", "0", "1"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+lambda={\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6],\[Lambda][7]};
+tlambda={t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6],t\[Lambda][7]};
+CC . Transpose[Cperp]
+perpEQ = Cperp . Transpose[lambda];
+CEQ = CC . Transpose[tlambda];
+eta = {\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5],\[Eta][6],\[Eta][7]};
+SEQ = CC . Transpose[eta];
+
+
+A1 = TensorExpand[(perpEQ[[1]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A2 = TensorExpand[(perpEQ[[1]]) . \[Lambda][4]]//.RB//.RR//FullSimplify;
+A3 = TensorExpand[(perpEQ[[2]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A4 = TensorExpand[(perpEQ[[2]]) . \[Lambda][4]]//.RB//.RR//FullSimplify;
+A5 = TensorExpand[(perpEQ[[3]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A6 = TensorExpand[(perpEQ[[3]]) . \[Lambda][4]]//.RB//.RR//FullSimplify;
+A7 = TensorExpand[(perpEQ[[4]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A8 = TensorExpand[(perpEQ[[4]]) . \[Lambda][4]]//.RB//.RR//FullSimplify;
+A9 = TensorExpand[(perpEQ[[5]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A10 = TensorExpand[(perpEQ[[5]]) . \[Lambda][4]]//.RB//.RR//FullSimplify;
+
+
+\[Delta] = 1/(1-(a[1]a[2]a[3]a[4]a[5]a[6]a[7]));
+Sol = FullSimplify[Simplify[Solve[{A4==0,A3==0,A5==0,A7==0,A8==0,A10==0,A2==0},{a[1],a[2],a[3],a[4],a[5],a[6],a[7]}]//.schoutenA]]//.schoutenA
+
+
+\[CapitalDelta] = Together[\[Delta]//.Sol[[1]]]//.schoutenA
+
+
+EE[1] = A10;
+EE[2] = A2;
+EE[3] = A3;
+EE[4] = A4;
+EE[5] = A5;
+EE[6] = A7;
+EE[7] = A8;
+
+
+FullSimplify[A1*Spaa[3,4]//.Sol]//.schoutenA
+FullSimplify[A6*Spaa[1,6]//.Sol]//.schoutenA
+FullSimplify[A9*Spaa[4,6]//.Sol]//.schoutenA
+
+
+F[i_,j_]:=D[EE[i],a[j]];
+Mat = Table[F[i,j],{i,1,7},{j,1,7}];
+J = FullSimplify[Simplify[1/(Det[Mat])]//.Sol[[1]]]//.schoutenA
+
+
+\[CapitalOmega] = Product[1/a[i],{i,1,7}]*J*Spaa[3,4]*Spaa[1,6]Spaa[4,6]*Spaa[1,4]//.Sol[[1]]//Simplify
+\[CapitalDelta] = Together[\[Delta]//.Sol[[1]]]//.schoutenA//.{Spaa[1,6]->Spaa[1,5]Spaa[3,6]/Spaa[3,5]}
+
+
+(* ::InheritFromParent:: *)
+(*(Spaa[1,6] Spaa[3,4])/(Spaa[1,4] Spaa[3,6])//.{Spaa[1,6]->Spaa[1,5]Spaa[3,6]/Spaa[3,5]}//.{Spaa[3,4]->Spaa[2,4]Spaa[1,3]/Spaa[1,2]}*)
+
+
+(\[CapitalOmega]7 = \[CapitalOmega]*\[CapitalDelta]//Simplify)//.{Spaa[1,6]->Spaa[1,5]Spaa[3,6]/Spaa[3,5]}//.{Spaa[3,4]->Spaa[2,4]Spaa[1,3]/Spaa[1,2]}
+
+
+-(Spaa[1,4]/(Spaa[1,3] Spaa[1,5] Spaa[2,4] Spaa[4,7]))*(Spaa[1,3] Spaa[1,5] Spaa[2,4])/(Spaa[1,2] Spaa[1,4] Spaa[3,5])
+
+
+sing = {Spaa[i_,2]->\[Alpha] Spaa[i,5]+\[Beta] Spaa[i,j],Spaa[2,i_]->\[Alpha] Spaa[5,i]+\[Beta] Spaa[j,i]};
+\[CapitalOmega]7//.sing
+(*Coeffecient from changing the remaining delta functions*)
+(Residue[(\[CapitalOmega]7//.sing),{\[Beta],0}]//.Spaa[5,j]->1)
+
+
+
+(* ::InheritFromParent:: *)
+(**)
+
+
+(* ::Subsubsection::Closed:: *)
+(*after residue*)
+
+
+CC=\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{"1", 
+RowBox[{
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], "0", 
+RowBox[{
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}]}]},
+{"0", 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}]}], "1", 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}]}]}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+Cperp =\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}]}], "1", "0", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}]}], "0", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}]}], "0", "1", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}]}], "0", "0", "0"},
+{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], "0", "0", "1", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}]}], "0", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}]}], "0", "0", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}]}], "1", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}]}], "0", "0", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}]}], "0", "1", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"a", "[", "3", "]"}]}], "0", "0", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}]}], "0", "0", "1"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+lambda={\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6],\[Lambda][7],\[Lambda][8]};
+tlambda={t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6],t\[Lambda][7],t\[Lambda][8]};
+CC . Transpose[Cperp]
+perpEQ = Cperp . Transpose[lambda];
+CEQ = CC . Transpose[tlambda];
+eta = {\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5],\[Eta][6],\[Eta][7],\[Eta][8]};
+SEQ = CC . Transpose[eta];
+A1 = TensorExpand[(perpEQ[[1]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A2 = TensorExpand[(perpEQ[[1]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+A3 = TensorExpand[(perpEQ[[2]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A4 = TensorExpand[(perpEQ[[2]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+A5 = TensorExpand[(perpEQ[[3]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A6 = TensorExpand[(perpEQ[[3]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+A7 = TensorExpand[(perpEQ[[4]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A8 = TensorExpand[(perpEQ[[4]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+A9 = TensorExpand[(perpEQ[[5]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A10 = TensorExpand[(perpEQ[[5]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+A11 = TensorExpand[(perpEQ[[6]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A12 = TensorExpand[(perpEQ[[6]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+
+
+Sol = FullSimplify[Simplify[Solve[{A1==0,A3==0,A6==0,A7==0,A8==0,A9==0,A12==0},{a[1],a[2],a[3],a[4],a[5],a[6],a[7]}]//.schoutenA]]//.schoutenA
+
+
+FullSimplify[A2*Spaa[1,6]//.Sol]//.schoutenA
+FullSimplify[A4*Spaa[1,6]//.Sol]//.schoutenA
+FullSimplify[A5*Spaa[5,6]//.Sol]//.schoutenA
+FullSimplify[A10*Spaa[1,6]//.Sol]//.schoutenA
+FullSimplify[A11*Spaa[5,6]//.Sol]//.schoutenA
+
+
+EE[1] = A1;
+EE[2] = A12;
+EE[3] = A3;
+EE[4] = A6;
+EE[5] = A7;
+EE[6] = A8;
+EE[7] = A9;
+
+F[i_,j_]:=D[EE[i],a[j]];
+Mat = Table[F[i,j],{i,1,7},{j,1,7}];
+J = FullSimplify[Simplify[1/(Det[Mat])]//.Sol[[1]]]//.schoutenA
+
+
+\[CapitalOmega] = Product[1/a[i],{i,1,7}]*J*Spaa[1,6]^3*Spaa[5,6]^2//.Sol[[1]]//Simplify
+\[CapitalOmega]6Res = \[CapitalOmega]//.Spaa[i_,2]->\[Alpha] Spaa[i,6]
+
+
+-((Spaa[1,6] Spaa[5,6])/(\[Alpha] Spaa[1,3] Spaa[1,7] Spaa[4,5] Spaa[5,8]))
+
+
+(* ::Subsection:: *)
+(*Heptagon MHV 1,3*)
+
+
+(* ::Subsubsection::Closed:: *)
+(*Before residue*)
+
+
+
+\!\(\*
+TagBox[
+RowBox[{"CC", " ", "=", " ", 
+RowBox[{"(", "", GridBox[{
+{"1", 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"a", "[", "1", "]"}]}], "0", 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"a", "[", "1", "]"}], " ", 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}]}], 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"a", "[", "1", "]"}], " ", 
+RowBox[{"a", "[", "2", "]"}], " ", 
+RowBox[{"a", "[", "3", "]"}], " ", 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"a", "[", "1", "]"}], " ", 
+RowBox[{"a", "[", "2", "]"}], " ", 
+RowBox[{"a", "[", "3", "]"}], " ", 
+RowBox[{"a", "[", "4", "]"}], " ", 
+RowBox[{"a", "[", "5", "]"}]}], 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"a", "[", "1", "]"}], " ", 
+RowBox[{"a", "[", "2", "]"}], " ", 
+RowBox[{"a", "[", "3", "]"}], " ", 
+RowBox[{"a", "[", "4", "]"}], " ", 
+RowBox[{"a", "[", "5", "]"}], " ", 
+RowBox[{"a", "[", "6", "]"}]}]},
+{"0", 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"a", "[", "1", "]"}], " ", 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], " ", 
+RowBox[{"a", "[", "5", "]"}], " ", 
+RowBox[{"a", "[", "6", "]"}], " ", 
+RowBox[{"a", "[", "7", "]"}]}], "1", 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"a", "[", "3", "]"}]}], 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "3", "]"}]}], 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], " ", 
+RowBox[{"a", "[", "5", "]"}]}], 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], " ", 
+RowBox[{"a", "[", "5", "]"}], " ", 
+RowBox[{"a", "[", "6", "]"}]}]}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], "", ")"}]}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+Cperp =\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], "\[Delta]"}], "1", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}], 
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "3", "]"}], "\[Delta]"}], "0", "0", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], "\[Delta]"}], "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "3", "]"}]}], "\[Delta]"}], "1", "0", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], " ", "\[Delta]"}], "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{"a", "[", "3", "]"}], "\[Delta]"}], "0", "1", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "5", "]"}]}], 
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], " ", "\[Delta]"}], "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "3", "]"}], "\[Delta]"}], "0", "0", "1", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "5", "]"}]}], " ", 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], " ", "\[Delta]"}], "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "3", "]"}], "\[Delta]"}], "0", "0", "0", "1"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+lambda={\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6],\[Lambda][7]};
+tlambda={t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6],t\[Lambda][7]};
+CC . Transpose[Cperp]
+perpEQ = Cperp . Transpose[lambda];
+CEQ = CC . Transpose[tlambda];
+eta = {\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5],\[Eta][6],\[Eta][7]};
+SEQ = CC . Transpose[eta];
+
+
+A1 = TensorExpand[(perpEQ[[1]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A2 = TensorExpand[(perpEQ[[1]]) . \[Lambda][3]]//.RB//.RR//FullSimplify;
+A3 = TensorExpand[(perpEQ[[2]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A4 = TensorExpand[(perpEQ[[2]]) . \[Lambda][3]]//.RB//.RR//FullSimplify;
+A5 = TensorExpand[(perpEQ[[3]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A6 = TensorExpand[(perpEQ[[3]]) . \[Lambda][3]]//.RB//.RR//FullSimplify;
+A7 = TensorExpand[(perpEQ[[4]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A8 = TensorExpand[(perpEQ[[4]]) . \[Lambda][3]]//.RB//.RR//FullSimplify;
+A9 = TensorExpand[(perpEQ[[5]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A10 = TensorExpand[(perpEQ[[5]]) . \[Lambda][3]]//.RB//.RR//FullSimplify;
+
+
+\[Delta] = 1/(1-(a[1]a[2]a[3]a[4]a[5]a[6]a[7]));
+Sol = FullSimplify[Simplify[Solve[{A1==0,A2==0,A3==0,A4==0,A5==0,A7==0,A9==0},{a[1],a[2],a[3],a[4],a[5],a[6],a[7]}]//.schoutenA]]//.schoutenA
+
+
+\[CapitalDelta] = Together[\[Delta]//.Sol[[1]]]//.schoutenA
+
+
+EE[1] = A1;
+EE[2] = A2;
+EE[3] = A3;
+EE[4] = A4;
+EE[5] = A5;
+EE[6] = A7;
+EE[7] = A9;
+
+
+FullSimplify[A6*Spaa[1,4]//.Sol]//.schoutenA
+FullSimplify[A8*Spaa[1,4]//.Sol]//.schoutenA
+FullSimplify[A10*Spaa[1,4]//.Sol]//.schoutenA
+
+
+F[i_,j_]:=D[EE[i],a[j]];
+Mat = Table[F[i,j],{i,1,7},{j,1,7}];
+J = FullSimplify[Simplify[1/(Det[Mat])]//.Sol[[1]]]//.schoutenA
+
+
+\[CapitalOmega] = Product[1/a[i],{i,1,7}]*J*Spaa[1,4]^3*Spaa[1,3]//.Sol[[1]]//Simplify
+
+
+\[CapitalOmega] =Spaa[1,3]/(Spaa[1,2] Spaa[1,6]  Spaa[2,3] Spaa[3,4])
+\[CapitalDelta] = (Spaa[1,6] Spaa[2,3])/(Spaa[1,3] Spaa[2,6])
+
+
+\[CapitalOmega]7 = \[CapitalOmega]*\[CapitalDelta]//Simplify
+
+
+(* ::InheritFromParent:: *)
+(*1/(Spaa[1,2] Spaa[2,4] Spaa[3,4])*)
+
+
+(* ::InheritFromParent:: *)
+(**)
+
+
+(* ::Subsubsection::Closed:: *)
+(*after residue*)
+
+
+CC=\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{"1", 
+RowBox[{
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], "0", 
+RowBox[{
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}]}]},
+{"0", 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}]}], "1", 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}]}], 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}]}]}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+Cperp =\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}]}], "1", "0", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}]}], "0", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}]}], "0", "1", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}]}], "0", "0", "0"},
+{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], "0", "0", "1", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}]}], "0", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}]}], "0", "0", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}]}], "1", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}]}], "0", "0", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}]}], "0", "1", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"a", "[", "3", "]"}]}], "0", "0", "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}]}], "0", "0", "1"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+lambda={\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6],\[Lambda][7],\[Lambda][8]};
+tlambda={t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6],t\[Lambda][7],t\[Lambda][8]};
+CC . Transpose[Cperp]
+perpEQ = Cperp . Transpose[lambda];
+CEQ = CC . Transpose[tlambda];
+eta = {\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5],\[Eta][6],\[Eta][7],\[Eta][8]};
+SEQ = CC . Transpose[eta];
+A1 = TensorExpand[(perpEQ[[1]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A2 = TensorExpand[(perpEQ[[1]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+A3 = TensorExpand[(perpEQ[[2]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A4 = TensorExpand[(perpEQ[[2]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+A5 = TensorExpand[(perpEQ[[3]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A6 = TensorExpand[(perpEQ[[3]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+A7 = TensorExpand[(perpEQ[[4]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A8 = TensorExpand[(perpEQ[[4]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+A9 = TensorExpand[(perpEQ[[5]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A10 = TensorExpand[(perpEQ[[5]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+A11 = TensorExpand[(perpEQ[[6]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A12 = TensorExpand[(perpEQ[[6]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
+
+
+Sol = FullSimplify[Simplify[Solve[{A1==0,A3==0,A6==0,A7==0,A8==0,A9==0,A12==0},{a[1],a[2],a[3],a[4],a[5],a[6],a[7]}]//.schoutenA]]//.schoutenA
+
+
+FullSimplify[A2*Spaa[1,6]//.Sol]//.schoutenA
+FullSimplify[A4*Spaa[1,6]//.Sol]//.schoutenA
+FullSimplify[A5*Spaa[5,6]//.Sol]//.schoutenA
+FullSimplify[A10*Spaa[1,6]//.Sol]//.schoutenA
+FullSimplify[A11*Spaa[5,6]//.Sol]//.schoutenA
+
+
+EE[1] = A1;
+EE[2] = A12;
+EE[3] = A3;
+EE[4] = A6;
+EE[5] = A7;
+EE[6] = A8;
+EE[7] = A9;
+
+F[i_,j_]:=D[EE[i],a[j]];
+Mat = Table[F[i,j],{i,1,7},{j,1,7}];
+J = FullSimplify[Simplify[1/(Det[Mat])]//.Sol[[1]]]//.schoutenA
+
+
+\[CapitalOmega] = Product[1/a[i],{i,1,7}]*J*Spaa[1,6]^3*Spaa[5,6]^2//.Sol[[1]]//Simplify
+\[CapitalOmega]6Res = \[CapitalOmega]//.Spaa[i_,2]->\[Alpha] Spaa[i,6]
+
+
+-((Spaa[1,6] Spaa[5,6])/(\[Alpha] Spaa[1,3] Spaa[1,7] Spaa[4,5] Spaa[5,8]))
+
+
 (* ::Subsection::Closed:: *)
 (*Octagon MHV*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Before residue*)
 
 
@@ -7563,6 +8366,7 @@ Sol = FullSimplify[Simplify[Solve[{A1==0,A2==0,A3==0,A6==0,A7==0,A8==0,A9==0,A12
 
 
 \[CapitalDelta] = Together[\[Delta]//.Sol[[1]]]//.schoutenA
+Together[1/(1-1/(a[1]a[2]a[3]a[4]a[5]a[6]a[7]a[8]))//.Sol[[1]]]//.schoutenA
 
 
 EE[1] = A1;
@@ -7603,7 +8407,7 @@ coeff = 1/Coefficient[Spaa[2,3]Spaa[2,4]Spaa[6,7]Spaa[6,8]//.sing//.\[Beta]->0,S
 (**)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*after residue*)
 
 
@@ -8064,50 +8868,151 @@ AA/BB//FullSimplify//N
 BB/5
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Higher order poles*)
+
+
+(* ::Subsection::Closed:: *)
+(*Residue of Box*)
+
+
+(*4 pt MHV*)
+Nn = 3;
+\[CapitalOmega]bare = Spaa[2,4]^(4-Nn)/(Spaa[1,2]Spaa[2,3]Spaa[3,4]Spaa[4,1]);
+J = ((Spaa[1,2]Spaa[3,4])/(Spaa[2,4]Spaa[1,3]))^(4-Nn);
+\[CapitalOmega] = \[CapitalOmega]bare*J;
+sing ={Spaa[i_,1]->\[Alpha] Spaa[i,3]+\[Beta] \[Gamma] Spaa[i,j],Spaa[1,i_]->\[Alpha] Spaa[3,i]+\[Beta] \[Gamma] Spaa[j,i]};
+\[Omega] = \[CapitalOmega]//.sing//.\[Gamma]->Spaa[1,2]/Spaa[j,2]//.Spaa[i_,j]->Spaa[i,4]
+Together[Residue[(\[CapitalOmega]//.sing//.\[Gamma]->Spaa[1,2]/Spaa[j,2]),{\[Beta],0}]//FullSimplify]//.Spaa[i_,j]->Spaa[i,4]//.schoutenA
+Together[Residue[(J//.sing//.\[Gamma]->Spaa[1,2]/Spaa[j,2]),{\[Beta],0}]//FullSimplify]//.Spaa[i_,j]->Spaa[i,4]//.schoutenA
+
+
+(* ::Subsection::Closed:: *)
+(*Residue of Pentagon*)
+
+
+(*5 pt MHV*)
+Nn = 1;
+\[CapitalOmega]bare = Spaa[1,4]^(4-Nn)/(Spaa[1,3]Spaa[2,4]Spaa[4,5]Spaa[5,1]);
+J = ((Spaa[1,5]Spaa[2,4])/(Spaa[1,4]Spaa[2,5]))^(4-Nn);
+\[CapitalOmega] = \[CapitalOmega]bare*J//FullSimplify;
+sing = {Spaa[i_,5]->\[Alpha] Spaa[i,2]+\[Beta] \[Gamma] Spaa[i,j],Spaa[5,i_]->\[Alpha] Spaa[2,i]+\[Beta] \[Gamma] Spaa[j,i]};
+(\[CapitalOmega]//.sing//.\[Gamma]->Spaa[4,5]/Spaa[4,j])//.Spaa[i_,j]->Spaa[i,1]//Simplify//.schoutenA//Factor;
+resA = Residue[(\[CapitalOmega]//.sing//.\[Gamma]->Spaa[4,5]/Spaa[4,j]),{\[Beta],0}]//.Spaa[i_,j]->Spaa[i,1]//Simplify//.schoutenA
+
+
+(* ::Subsection:: *)
+(*Residue of Hexagon*)
+
+
+(*6 pt MHV*)
+Nn = 1;
+\[CapitalOmega]bare = Spaa[3,6]^(4-Nn)/(Spaa[1,6] Spaa[2,3] Spaa[3,4] Spaa[5,6]);
+J = ((Spaa[1,6] Spaa[3,4])/(Spaa[1,4] Spaa[3,6]))^(4-Nn);
+\[CapitalOmega] = \[CapitalOmega]bare*J
+sing = {Spaa[i_,1]->\[Alpha] Spaa[i,4]+\[Beta] \[Gamma] Spaa[i,j],Spaa[1,i_]->\[Alpha] Spaa[4,i]+\[Beta] \[Gamma] Spaa[j,i]};
+
+resA = Residue[(\[CapitalOmega]//.sing//.\[Gamma]->Spaa[1,6]/Spaa[j,6])//.j->3,{\[Beta],0}]//FullSimplify
+
+
+(* ::Subsection::Closed:: *)
+(*Residue of Heptagon1,3*)
+
+
+(*7 pt MHV*)
+Nn =0;
+\[CapitalOmega]bare =Spaa[1,3]^(4-Nn)/(Spaa[1,2] Spaa[1,6]  Spaa[2,3] Spaa[3,4]) ;
+J = ((Spaa[1,6] Spaa[2,3])/(Spaa[1,3] Spaa[2,6]))^(4-Nn);
+\[CapitalOmega] = \[CapitalOmega]bare*J
+sing = {Spaa[i_,2]->\[Alpha] Spaa[i,6]+\[Beta] \[Gamma] Spaa[i,1],Spaa[2,i_]->\[Alpha] Spaa[6,i]+\[Beta] \[Gamma] Spaa[1,i]};
+gg = \[Gamma]->Spaa[2,3]/Spaa[1,3];
+
+resA = Residue[(\[CapitalOmega]//.sing//.gg),{\[Beta],0}]//FullSimplify
+
+
+(* ::Subsection:: *)
+(*Residue of Heptagon1,4*)
+
+
+(*7 pt MHV*)
+Nn =0;
+\[CapitalOmega]bare =Spaa[1,4]^(4-Nn)/(Spaa[1,3] Spaa[1,5] Spaa[2,4] Spaa[4,7]);
+J = ((Spaa[1,3] Spaa[1,5] Spaa[2,4])/(Spaa[1,2] Spaa[1,4] Spaa[3,5]))^(4-Nn);
+\[CapitalOmega] = \[CapitalOmega]bare*J
+sing = {Spaa[i_,3]->\[Alpha] Spaa[i,5]+\[Beta] \[Gamma] Spaa[i,2],Spaa[3,i_]->\[Alpha] Spaa[5,i]+\[Beta] \[Gamma] Spaa[2,i]};
+gg = \[Gamma]->Spaa[1,3]/Spaa[1,2];
+
+resA = Residue[(\[CapitalOmega]//.sing//.gg),{\[Beta],0}]//FullSimplify
+
+
+(* ::Subsection::Closed:: *)
+(*Residue of Octagon*)
+
+
+(*5 pt MHV*)
+Nn = 1;
+\[CapitalOmega]bare = -(Spaa[1,5]^(4-Nn)/(Spaa[1,3] Spaa[1,7] Spaa[4,5] Spaa[5,8]));
+J = ((Spaa[1,6] Spaa[2,5])/(Spaa[1,5] Spaa[2,6]))^(4-Nn)
+J2 = ((Spaa[1,2] Spaa[5,6])/(Spaa[1,5] Spaa[2,6]))^(4-Nn)
+\[CapitalOmega] = \[CapitalOmega]bare*J
+\[CapitalOmega]2 = \[CapitalOmega]bare*J2;
+sing = {Spaa[i_,6]->\[Alpha] Spaa[i,2]+\[Beta] Spaa[i,j],Spaa[6,i_]->\[Alpha] Spaa[2,i]+\[Beta] Spaa[j,i]};
+resA = (Residue[(\[CapitalOmega]//.sing),{\[Beta],0}]//.Spaa[i_,j]->1//Simplify)1/\[Alpha]^2
+resB = (Residue[(\[CapitalOmega]2//.sing),{\[Beta],0}]//.Spaa[i_,j]->1//Simplify)1/\[Alpha]^2
+
+
+resA = (Residue[(\[CapitalOmega]//.sing),{\[Beta],0}]//.Spaa[i_,j]->1//Simplify)1/\[Alpha]^2
+
+
+-((3 Spaa[1,2] Spaa[2,5]^3)/(\[Alpha] Spaa[1,3] Spaa[1,7] Spaa[4,5] Spaa[5,8]))//.Spaa[4,5]->Spaa[1,4]/Spaa[1,2]Spaa[2,5]
+
+
+Spaa[1,2]^2/(\[Alpha] Spaa[1,3] Spaa[1,7] Spaa[1,4] Spaa[5,8])
+
+
+(* ::Section:: *)
+(*Numerical checks of poles*)
 
 
 (* ::Subsection:: *)
 (*Residue of Box*)
 
 
-(*4 pt MHV*)
-Nn = 0;
-\[CapitalOmega]bare = Spaa[2,4]^(4-Nn)/(Spaa[1,2]Spaa[2,3]Spaa[3,4]Spaa[4,1]);
-J = ((Spaa[1,2]Spaa[3,4])/(Spaa[2,4]Spaa[1,3]))^(4-Nn);
-\[CapitalOmega] = \[CapitalOmega]bare*J;
-sing ={Spaa[i_,1]->\[Alpha] Spaa[i,3]+\[Beta] Spaa[i,j],Spaa[1,i_]->\[Alpha] Spaa[3,i]+\[Beta] Spaa[j,i]};
-\[Omega] = \[CapitalOmega]//.sing;
-Together[Residue[(\[CapitalOmega]//.sing),{\[Beta],0}]//.Spaa[i_,j]->1//FullSimplify]
+ab[i_,j_] := Total [ Total [ LeviCivitaTensor [ 2 ] *Outer [Times , \[Lambda][i] ,\[Lambda][j] ] ] ]
 
 
-(* ::Subsection:: *)
-(*Residue of Pentagon*)
+\[Lambda][1]={1,2};\[Lambda][2]={1,-5};\[Lambda][3]={1,-1};\[Lambda][4]={1,y};
+t\[Lambda][1]={1,3};t\[Lambda][4]={w,r};t\[Lambda][3]={-1,-3};t\[Lambda][2]={1,3};
+MA = Sum[Outer[Times,t\[Lambda][i],\[Lambda][i]],{i,1,4}];
+Sol = Solve[{MA[[1]][[1]]==0,MA[[1]][[2]]==0,MA[[2]][[1]]==0,MA[[2]][[2]]==0},{x,y,w,r}];
+\[Lambda][3]=\[Alpha] \[Lambda][1]+\[Beta] (ab[1,4])/(ab[2,4])\[Lambda][2]//.Sol[[1]]//FullSimplify;
+Nn=3;
+\[CapitalOmega]4 = (ab[2,4])^(4-Nn)/(ab[1,2]ab[2,3]ab[3,4]ab[4,1])//FullSimplify
+J = ((ab[2,4]ab[1,3])/(ab[1,2]ab[3,4]))//.Sol[[1]]//FullSimplify
+\[CapitalOmega] = \[CapitalOmega]4*J^(Nn-4)//.Sol[[1]]//FullSimplify
+Residue[\[CapitalOmega],{\[Beta],0}]
 
 
-(*5 pt MHV*)
-Nn = 0;
-\[CapitalOmega]bare = Spaa[1,4]^(4-Nn)/(Spaa[1,2]Spaa[3,4]Spaa[4,5]Spaa[5,1]);
-J = ((Spaa[1,5]Spaa[2,4])/(Spaa[1,4]Spaa[2,5]))^(4-Nn);
-\[CapitalOmega] = \[CapitalOmega]bare*J;
-sing = {Spaa[i_,5]->\[Alpha] Spaa[i,2]+\[Beta] Spaa[i,j],Spaa[5,i_]->\[Alpha] Spaa[2,i]+\[Beta] Spaa[j,i]};
-resA = Residue[(\[CapitalOmega]//.sing),{\[Beta],0}]//.Spaa[i_,j]->1//Simplify
+\[Lambda][1]={1,2};\[Lambda][2]={1,-5};\[Lambda][3]={1,-1};\[Lambda][4]={1,y};
+t\[Lambda][1]={1,3};t\[Lambda][4]={w,r};t\[Lambda][3]={-1,-3};t\[Lambda][2]={1,3};
+MA = Sum[Outer[Times,t\[Lambda][i],\[Lambda][i]],{i,1,4}];
+Sol = Solve[{MA[[1]][[1]]==0,MA[[1]][[2]]==0,MA[[2]][[1]]==0,MA[[2]][[2]]==0},{x,y,w,r}];
 
 
-(* ::Subsection:: *)
-(*Residue of Pentagon*)
 
 
-(*6 pt MHV*)
-Nn = 3;
-\[CapitalOmega]bare = Spaa[3,6]/(Spaa[1,6] Spaa[2,3] Spaa[3,4] Spaa[5,6]);
-J = ((Spaa[1,3] Spaa[4,6])/(Spaa[1,4] Spaa[3,6]))^(4-Nn);
-\[CapitalOmega] = \[CapitalOmega]bare*J;
-sing = {Spaa[i_,1]->\[Alpha] Spaa[i,4]+\[Beta] Spaa[i,j],Spaa[1,i_]->\[Alpha] Spaa[4,i]+\[Beta] Spaa[j,i]};
-resA = Residue[(\[CapitalOmega]//.sing),{\[Beta],0}]//.Spaa[i_,j]->1//Simplify
+
+\[Lambda][3]=\[Alpha] \[Lambda][1]+\[Beta] (ab[1,4])/(ab[2,4])\[Lambda][2]//.Sol[[1]]//FullSimplify;
 
 
-(Spaa[1,3] Spaa[4,6])/(Spaa[1,4] Spaa[1,6] Spaa[2,3] Spaa[3,4] Spaa[5,6])
-"Residue of the form:"
--(1/(\[Alpha] Spaa[2,3] Spaa[5,6]))
+MA = Sum[Outer[Times,t\[Lambda][i],\[Lambda][i]],{i,1,4}]
+MA//.Sol
+
+
+Sol = Solve[{MA[[1]][[1]]==0,MA[[1]][[2]]==0,MA[[2]][[1]]==0,MA[[2]][[2]]==0},{x,y,w,r}]
+
+
+MA[[2]][[2]]==0
+
+
+

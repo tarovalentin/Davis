@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  3 MAY 2022 11:02
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 2.9.7400 64-bit)  (format=lualatex 2020.5.5)  27 JUL 2022 10:15
  restricted system commands enabled.
 **slides.tex
 (./slides.tex
@@ -1824,7 +1824,7 @@ onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 msfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sy
 mbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/rsfs/rsfs10.pfb
 >
-Output written on slides.pdf (26 pages, 4228573 bytes).
+Output written on slides.pdf (26 pages, 4228622 bytes).
 
 PDF statistics: 857 PDF objects out of 1000 (max. 8388607)
  58 named destinations out of 1000 (max. 131072)
