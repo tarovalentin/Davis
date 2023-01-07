@@ -122,4 +122,11 @@ finalRel = DeleteCases[DeleteDuplicates[Simplify@rel4pt, FullSimplify[# == #2 ||
 finalRel//MatrixForm
 
 
-DeleteDuplicates[Simplify@rel4pt, FullSimplify[# == #2 || -# == #2] &]
+cy := Permute[#, CyclicGroup[Length@#]] &
+list = Complement[Permutations[Range[5]], cy[Range@5]];
+newList = Map[Function[x, RotateLeft[x, Position[x, 1][[1, 1]] - 1]], list];
+newList = DeleteDuplicates[newList];
+removeReversedDuplicates[lst_] :=
+  DeleteDuplicates[    lst,    First[#1] == First[#2] && Reverse[Rest[#1]] == Rest[#2] &
+  ]
+list3 = removeReversedDuplicates[newList]
