@@ -4792,6 +4792,8 @@ Sol//.Spab[1,P[1]+P[5]+P[6],2] Spab[2,P[1]+P[5]+P[6],1]->Spab[1,P[1]+P[5]+P[6],2
 
 
 
+
+
 (* ::Subsubsection::Closed:: *)
 (*Sum of residues numerically*)
 
@@ -8366,6 +8368,8 @@ Residue[\[CapitalOmega],{a[5],0}]//.schoutenA//Simplify
 
 
 
+
+
 (* ::InheritFromParent:: *)
 (**)
 
@@ -8905,6 +8909,8 @@ Res1+Res2
 
 
 
+
+
 (* ::Subsubsection::Closed:: *)
 (*inverse cycle direction*)
 
@@ -9188,6 +9194,8 @@ Res1+Res2
 -((Spaa[1,2] Spaa[3,4])/(Spaa[1,3]^2 Spaa[1,4] Spaa[2,3]))
 
 -((Spaa[1,2]^2 Spaa[3,4]^2)/(Spaa[1,3]^3 Spaa[1,4] Spaa[2,3]))
+
+
 
 
 
