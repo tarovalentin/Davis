@@ -6,7 +6,7 @@ SetDirectory[NotebookDirectory[]];
 <<bcfw.m
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Function that gives the 4 pt amplitude with specified negative helicities a, b*)
 
 
@@ -61,9 +61,6 @@ finalRel = DeleteCases[DeleteDuplicates[Simplify@rel4pt, FullSimplify[# == #2 ||
 finalRel//MatrixForm
 
 
-DeleteDuplicates[Simplify@rel4pt, FullSimplify[# == #2 || -# == #2] &]
-
-
 (* ::Subsection:: *)
 (*Function that gives the 5 pt amplitude with specified negative helicities a, b*)
 
@@ -104,7 +101,7 @@ Chop[s[1,2]Aym5[{1,2},{2,1,3,4,5}]-s[2,3]Aym5[{1,2},{1,3,2,4,5}]-(s[2,3]+s[2,4])
 Chop[Aym5[{1,2},{1,2,3,4,5}]+Aym5[{1,2},{1,3,2,4,5}]+Aym5[{1,2},{1,3,4,2,5}]+Aym5[{1,2},{1,3,4,5,2}]]
 
 
-(*Brute force find of KLT relations*)
+(*Brute force find of BCJ relations*)
 cy := Permute[#, CyclicGroup[Length@#]] &
 cy[Range@4];
 list = Complement[Permutations[Range[4]], cy[Range@4]];
@@ -129,4 +126,30 @@ newList = DeleteDuplicates[newList];
 removeReversedDuplicates[lst_] :=
   DeleteDuplicates[    lst,    First[#1] == First[#2] && Reverse[Rest[#1]] == Rest[#2] &
   ]
-list3 = removeReversedDuplicates[newList]
+list3 = removeReversedDuplicates[newList];
+L = Length[list3];
+A = Table[Aym5[{1,2},list3[[i]]],{i,L}];
+list2 = Subsets[{1, 2, 3, 4, 5}, {2}];
+M = Length[list2];
+s2[{i_,j_}]:=s[i,j]
+s3 = Table[s2[list2[[i]]],{i,M}];
+c1 = {-1,1};
+c2 = {-1,1};
+c3 = {-1,1};
+c4 = {-1,1};
+
+
+(*Below we test whether there are any 2 term identities. Since the rel5pt table only gives 0, then all the identitiess are trivial*)
+table = Table[Table[Table[Table[Table[Table[Chop[c1[[i]]s3[[j]]A[[k]]+c2[[t]]s3[[l]]A[[r]]],{i,1,2}],{j,1,M}],{k,1,L}],{l,1,M}],{r,1,L}],{t,1,2}];
+pos = Position[table,0];
+rel[{t_,i_,j_,k_,l_,r_}]:=c[[r]]*ss[list2[[l]]]Am[list[[k]]]+c[[t]]ss[list2[[j]]]Am[list[[i]]];
+rel5pt = Table[rel[pos[[i]]],{i,240}]//Simplify
+
+
+(*Below we test whether there are any 3 term identities. Since the rel5pt table only gives 0, then all the identitiess are trivial*)
+table = Table[Table[Table[Table[Table[Table[Table[Table[Table[Chop[c1[[i]]s3[[j]]A[[k]]+c2[[t]]s3[[l]]A[[r]]+c3[[q]]s3[[s]]A[[p]]],{i,1,2}],{j,1,3}],{k,1,3}],{l,1,3}],{r,1,3}],{t,1,2}],{q,1,2}],{s,1,3}],{p,1,3}];
+pos = Position[table,0];
+
+
+rel[{t_,i_,j_,k_,l_,r_}]:=c[[r]]*ss[list2[[l]]]Am[list[[k]]]+c[[t]]ss[list2[[j]]]Am[list[[i]]];
+rel5pt = Table[rel[pos[[i]]],{i,18}]//Simplify
