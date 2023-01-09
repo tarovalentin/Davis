@@ -3,10 +3,11 @@
 
 ClearAll["Global`*"]
 SetDirectory[NotebookDirectory[]];
+Needs["CCompilerDriver`"]
 <<bcfw.m
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Function that gives the 4 pt amplitude with specified negative helicities a, b*)
 
 
@@ -101,24 +102,6 @@ Chop[s[1,2]Aym5[{1,2},{2,1,3,4,5}]-s[2,3]Aym5[{1,2},{1,3,2,4,5}]-(s[2,3]+s[2,4])
 Chop[Aym5[{1,2},{1,2,3,4,5}]+Aym5[{1,2},{1,3,2,4,5}]+Aym5[{1,2},{1,3,4,2,5}]+Aym5[{1,2},{1,3,4,5,2}]]
 
 
-(*Brute force find of BCJ relations*)
-cy := Permute[#, CyclicGroup[Length@#]] &
-cy[Range@4];
-list = Complement[Permutations[Range[4]], cy[Range@4]];
-list3 = {{1,2,4,3},{1,3,2,4},{1,2,3,4}};
-A = Table[Aym4[{1,2},list3[[i]]],{i,3}];
-list2 = DeleteDuplicates[Subsets[{1, 2, 3, 4}, {2}]//.{{2,3}->{1,4},{2,4}->{1,3},{3,4}->{1,2}}];
-s2[{i_,j_}]:=s[i,j]
-s3 = Table[s2[list2[[i]]],{i,3}];
-c = {-1,1};
-table = Table[Table[Table[Table[Table[Chop[c[[i]]s3[[j]]A[[k]]+s3[[l]]A[[r]]],{i,1,2}],{j,1,3}],{k,1,3}],{l,1,3}],{r,1,3}];
-pos = Position[table,0];
-rel[{i_,j_,k_,l_,r_}]:=c[[r]]*ss[list2[[l]]]Am[list[[k]]]+ss[list2[[j]]]Am[list[[i]]]//.{ss[{1,2}]->s,ss[{1,4}]->t,ss[{1,3}]->u}
-rel4pt = Table[rel[pos[[i]]],{i,15}];
-finalRel = DeleteCases[DeleteDuplicates[Simplify@rel4pt, FullSimplify[# == #2 || -# == #2] &], 0, Infinity];
-finalRel//MatrixForm
-
-
 cy := Permute[#, CyclicGroup[Length@#]] &
 list = Complement[Permutations[Range[5]], cy[Range@5]];
 newList = Map[Function[x, RotateLeft[x, Position[x, 1][[1, 1]] - 1]], list];
@@ -146,10 +129,27 @@ rel[{t_,i_,j_,k_,l_,r_}]:=c[[r]]*ss[list2[[l]]]Am[list[[k]]]+c[[t]]ss[list2[[j]]
 rel5pt = Table[rel[pos[[i]]],{i,240}]//Simplify
 
 
-(*Below we test whether there are any 3 term identities. Since the rel5pt table only gives 0, then all the identitiess are trivial*)
-table = Table[Table[Table[Table[Table[Table[Table[Table[Table[Chop[c1[[i]]s3[[j]]A[[k]]+c2[[t]]s3[[l]]A[[r]]+c3[[q]]s3[[s]]A[[p]]],{i,1,2}],{j,1,3}],{k,1,3}],{l,1,3}],{r,1,3}],{t,1,2}],{q,1,2}],{s,1,3}],{p,1,3}];
+(*Below we test whether there are any 3 term identities. Since the rel5pt table is empty, there are no such identities*)
+table = Table[Table[Table[Table[Table[Table[Table[Table[Table[Chop[c1[[i]]s3[[j]]A[[k]]+c2[[t]]s3[[l]]A[[r]]+c3[[q]]s3[[s]]A[[p]]],{i,1,2}],{j,1,M}],{k,1,L}],{l,1,M}],{r,1,L}],{t,1,2}],{q,1,2}],{s,1,M}],{p,1,L}];
+pos = Position[table,0]
+
+
+(*Below we test whether there are any 4 term identities.*)
+table = Table[Table[Table[Table[Table[Table[Table[Table[Table[Table[Table[Chop[c1[[i]]s3[[j]]A[[k]]+c2[[t]]s3[[l]]A[[r]]+c3[[q]]s3[[s]]A[[p]]+s3[[aa]]A[[bb]]],{i,1,2}],{j,1,7}],{k,1,7}],{l,1,7}],{r,1,7}],{t,1,2}],{q,1,2}],{s,1,7}],{p,1,7}],{aa,1,7}],{bb,1,7}];
+
+
 pos = Position[table,0];
+Length[pos]
 
 
-rel[{t_,i_,j_,k_,l_,r_}]:=c[[r]]*ss[list2[[l]]]Am[list[[k]]]+c[[t]]ss[list2[[j]]]Am[list[[i]]];
-rel5pt = Table[rel[pos[[i]]],{i,18}]//Simplify
+rel[{p4_,p3_,p2_,p1_,p0_,t_,i_,j_,k_,l_,r_}]:=c1[[r]]*ss[list2[[l]]]Am[list[[k]]]+c2[[t]]ss[list2[[j]]]Am[list[[i]]]+c3[[p0]]ss[list2[[p1]]]Am[list[[p2]]]+ss[list2[[p3]]]Am[list[[p4]]]
+
+
+finalRel = DeleteCases[DeleteDuplicates[Simplify@rel5pt, Simplify[# == #2 || -# == #2] &], 0, Infinity];
+finalRel//Simplify
+
+
+rel5pt = Simplify[Table[rel[pos[[i]]],{i,Length[pos]}]]//.{(ss[{1,2}]+ss[{1,3}]+ss[{1,4}]+ss[{1,5}])->0,ss[{1,2}]+ss[{2,3}]+ss[{2,4}]+ss[{2,5}]->0,Am[{1,2,3,5,4}]+Am[{1,2,5,3,4}]+Am[{1,2,5,4,3}]+Am[{1,3,2,5,4}]->0}//Simplify;
+
+
+
