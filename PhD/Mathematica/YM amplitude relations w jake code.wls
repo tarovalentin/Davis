@@ -3,7 +3,6 @@
 
 ClearAll["Global`*"]
 SetDirectory[NotebookDirectory[]];
-Needs["CCompilerDriver`"]
 <<bcfw.m
 
 
@@ -110,16 +109,22 @@ removeReversedDuplicates[lst_] :=
   DeleteDuplicates[    lst,    First[#1] == First[#2] && Reverse[Rest[#1]] == Rest[#2] &
   ]
 list3 = removeReversedDuplicates[newList];
+
+
+Permutations[{2,3,4}]
+
+
+(*list2 = {{1,2},{1,3},{1,4},{1,5},{2,3}};*)
+list2 = DeleteDuplicates[Subsets[{1, 2, 3, 4, 5}, {2}]];
+list3 = {{1,2,3,4,5},{1,2,4,3,5},{1,3,2,4,5},{1,3,4,2,5},{1,4,2,3,5},{1,4,3,2,5}};
+M = Length[list2];
 L = Length[list3];
 A = Table[Aym5[{1,2},list3[[i]]],{i,L}];
-list2 = Subsets[{1, 2, 3, 4, 5}, {2}];
-M = Length[list2];
 s2[{i_,j_}]:=s[i,j]
 s3 = Table[s2[list2[[i]]],{i,M}];
 c1 = {-1,1};
 c2 = {-1,1};
 c3 = {-1,1};
-c4 = {-1,1};
 
 
 (*Below we test whether there are any 2 term identities. Since the rel5pt table only gives 0, then all the identitiess are trivial*)
@@ -135,21 +140,26 @@ pos = Position[table,0]
 
 
 (*Below we test whether there are any 4 term identities.*)
-table = Table[Table[Table[Table[Table[Table[Table[Table[Table[Table[Table[Chop[c1[[i]]s3[[j]]A[[k]]+c2[[t]]s3[[l]]A[[r]]+c3[[q]]s3[[s]]A[[p]]+s3[[aa]]A[[bb]]],{i,1,2}],{j,1,7}],{k,1,7}],{l,1,7}],{r,1,7}],{t,1,2}],{q,1,2}],{s,1,7}],{p,1,7}],{aa,1,7}],{bb,1,7}];
+table = Table[Table[Table[Table[Table[Table[Table[Table[Table[Table[Table[Chop[c1[[i]]s3[[j]]A[[k]]+c2[[t]]s3[[l]]A[[r]]+c3[[q]]s3[[s]]A[[p]]+s3[[aa]]A[[bb]]],{i,1,2}],{j,1,M}],{k,1,L}],{l,1,M}],{r,1,L}],{t,1,2}],{q,1,2}],{s,1,M}],{p,1,L}],{aa,1,M}],{bb,1,L}];
 
 
 pos = Position[table,0];
 Length[pos]
 
 
-rel[{p4_,p3_,p2_,p1_,p0_,t_,i_,j_,k_,l_,r_}]:=c1[[r]]*ss[list2[[l]]]Am[list[[k]]]+c2[[t]]ss[list2[[j]]]Am[list[[i]]]+c3[[p0]]ss[list2[[p1]]]Am[list[[p2]]]+ss[list2[[p3]]]Am[list[[p4]]]
+rel[{p4_,p3_,p2_,p1_,p0_,t_,i_,j_,k_,l_,r_}]:=c1[[r]]*ss[list2[[l]]]Am[list3[[k]]]+c2[[t]]ss[list2[[j]]]Am[list3[[i]]]+c3[[p0]]ss[list2[[p1]]]Am[list3[[p2]]]+ss[list2[[p3]]]Am[list3[[p4]]]
 
 
+rel5pt = Simplify[Table[rel[pos[[i]]],{i,Length[pos]}]]//.{(ss[{1,2}]+ss[{1,3}]+ss[{1,4}]+ss[{1,5}])->0,ss[{1,2}]+ss[{2,3}]+ss[{2,4}]+ss[{2,5}]->0,(ss[{1,2}]+ss[{1,3}]+ss[{2,3}]-ss[{4,5}])->0,(ss[{1,2}]+ss[{1,4}]+ss[{2,4}]-ss[{3,5}])->0, (ss[{1,2}]+ss[{1,5}]+ss[{2,5}]-ss[{3,4}])->0,(ss[{1,2}]-ss[{3,4}]-ss[{3,5}]-ss[{4,5}])->0,(ss[{1,3}]+ss[{1,4}]-ss[{2,5}]+ss[{3,4}])->0, (ss[{1,3}]+ss[{1,5}]-ss[{2,4}]+ss[{3,5}])->0, (ss[{1,3}]+ss[{2,3}]+ss[{3,4}]+ss[{3,5}])->0,(ss[{1,3}]-ss[{2,4}]-ss[{2,5}]-ss[{4,5}])->0,(ss[{1,4}]+ss[{1,5}]-ss[{2,3}]+ss[{4,5}])->0,(ss[{1,4}]-ss[{2,3}]-ss[{2,5}]-ss[{3,5}])->0,(ss[{1,4}]+ss[{2,4}]+ss[{3,4}]+ss[{4,5}])->0,(ss[{1,5}]-ss[{2,3}]-ss[{2,4}]-ss[{3,4}])->0,(ss[{1,5}]+ss[{2,5}]+ss[{3,5}]+ss[{4,5}])->0,(-ss[{1,3}]+ss[{2,4}]+ss[{2,5}]+ss[{4,5}])->0,(-ss[{1,2}]+ss[{3,4}]+ss[{3,5}]+ss[{4,5}])->0, (-ss[{1,4}]+ss[{2,3}]+ss[{2,5}]+ss[{3,5}])->0,(-ss[{1,5}]+ss[{2,3}]+ss[{2,4}]+ss[{3,4}])->0,-ss[{1,4}]+ss[{2,5}]->ss[{1,3}]+ss[{3,4}]}//Simplify;
 finalRel = DeleteCases[DeleteDuplicates[Simplify@rel5pt, Simplify[# == #2 || -# == #2] &], 0, Infinity];
-finalRel//Simplify
+finalRel//FullSimplify
 
 
 rel5pt = Simplify[Table[rel[pos[[i]]],{i,Length[pos]}]]//.{(ss[{1,2}]+ss[{1,3}]+ss[{1,4}]+ss[{1,5}])->0,ss[{1,2}]+ss[{2,3}]+ss[{2,4}]+ss[{2,5}]->0,Am[{1,2,3,5,4}]+Am[{1,2,5,3,4}]+Am[{1,2,5,4,3}]+Am[{1,3,2,5,4}]->0}//Simplify;
+
+
+Length[finalRel]
+
 
 
 
