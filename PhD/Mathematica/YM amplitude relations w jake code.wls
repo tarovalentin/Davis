@@ -5,6 +5,30 @@ ClearAll["Global`*"]
 SetDirectory[NotebookDirectory[]];
 <<bcfw.m
 
+DefNumSH[a_]:=Module[{},Do[
+					 lam[i, 1] = RandomInteger[{1,100}]/RandomInteger[{1,100}];
+					 lam[i, 2] = RandomInteger[{1,100}]/RandomInteger[{1,100}];
+					 lambar[i, 1] = RandomInteger[{1,100}]/RandomInteger[{1,100}];
+					 lambar[i, 2] = RandomInteger[{1,100}]/RandomInteger[{1,100}];
+					   ,{i,a-2}];
+					   lam[a-1,1]=1;  lam[a,1]=0;
+					   lam[a-1,2]=0;  lam[a,2]=1;
+					   lambar[a-1,1]=-Sum[lam[i,1]*lambar[i,1],{i,a-2}];
+					   lambar[a-1,2]=-Sum[lam[i,1]*lambar[i,2],{i,a-2}];
+					   lambar[a,1]=-Sum[lam[i,2]*lambar[i,1],{i,a-2}];
+					   lambar[a,2]=-Sum[lam[i,2]*lambar[i,2],{i,a-2}];
+					
+					(*If[Sum[lam[j,1]lambar[j,1],{j,a}]==0,Print["Momcon"]]*)
+					
+					]
+NSpinHel:={Spaa[a_,b_]:> (lam[a,1]*lam[b,2]-lam[a,2]*lam[b,1]),
+			Spbb[a_,b_]:> lambar[a,1]*lambar[b,2]-lambar[a,2]*lambar[b,1],
+			s[a_,b_]:> (lam[a,1]lam[b,2]-lam[a,2]lam[b,1])(lambar[b,1]lambar[a,2]-lambar[b,2]lambar[a,1])};
+
+
+(* ::Section::Closed:: *)
+(*Complex numbers, first attempt.*)
+
 
 (* ::Subsection::Closed:: *)
 (*Function that gives the 4 pt amplitude with specified negative helicities a, b*)
@@ -215,7 +239,7 @@ finalRel = DeleteCases[DeleteDuplicates[Simplify@rel5pt, Simplify[# == #2 || -# 
 FullSimplify[finalRel]
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Function that gives the 6 pt amplitude with specified negative helicities a, b, c*)
 
 
@@ -612,3 +636,152 @@ Sum[moms[[i]],{i,6}]
 
 
 moms
+
+
+s
+
+
+(* ::Section:: *)
+(*Real numbers corrected.*)
+
+
+(* ::Subsection:: *)
+(*Function that gives the 5 pt amplitude with specified negative helicities a, b (with real numbers)*)
+
+
+DefNumSH[5];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+setupUsingSpinors[referenceSpinors];
+Aym5[{g_,r_},{a_,b_,c_,d_,ff_}] :=
+	Module[{Am,A,B,s,t,l,q,i,h,f,app},
+		l = a;
+		q = b;
+		i = c;
+		h = d;
+		s = g;
+		t = r;
+		f = ff;
+		A = Position[{l,q,i,h,f},s]; 
+		B = Position[{l,q,i,h,f},t];
+			ref2 = {{taro\[Lambda][l],taro\[Lambda][q],taro\[Lambda][i],taro\[Lambda][h],taro\[Lambda][f]},{tarot\[Lambda][l],tarot\[Lambda][q],tarot\[Lambda][i],tarot\[Lambda][h],tarot\[Lambda][f]}};		
+			setupUsingSpinors[ref2];
+			Am = If[A[[1]][[1]]<B[[1]][[1]],Insert[Insert[{p,p,p},m,A],m,B],Insert[Insert[{p,p,p},m,B],m,A]];
+			app=nAmp[Am[[1]],Am[[2]],Am[[3]],Am[[4]],Am[[5]]];
+				Return[app];
+];
+
+
+(*Show of BCJ 5 point*)
+s2[{1,2}]Aym5[{1,2},{2,1,3,4,5}]-s2[{2,3}]Aym5[{1,2},{1,3,2,4,5}]-(s2[{2,3}]+s2[{2,4}])Aym5[{1,2},{1,3,4,2,5}]
+(*Show of U1 decoupling*)
+Aym5[{1,2},{1,2,3,4,5}]+Aym5[{1,2},{1,3,2,4,5}]+Aym5[{1,2},{1,3,4,2,5}]+Aym5[{1,2},{1,3,4,5,2}]
+
+
+s
+
+
+list1 =  DeleteDuplicates[Subsets[{1, 2, 3, 4, 5}, {2}]]
+list2 = {{1,2},{1,3},{1,4},{1,5},{2,3}};
+list3 = {{1,3,2,4,5},{1,3,4,2,5}};
+
+
+(* ::Subsection:: *)
+(*Function that gives the 6 pt amplitude with specified negative helicities a, b, c (with real numbers)*)
+
+
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+
+setupUsingSpinors[referenceSpinors];
+Aym6[{g_,r_},{a_,b_,c_,d_,ff_,ee_}] :=
+	Module[{Am,A,B,s,t,l,q,i,h,f,a1,app},
+		l = a;
+		q = b;
+		i = c;
+		h = d;
+		s = g;
+		t = r;
+		f = ff;
+		a1 = ee;
+		A = Position[{l,q,i,h,f,a1},s]; 
+		B = Position[{l,q,i,h,f,a1},t];
+		ref2 = {{taro\[Lambda][l],taro\[Lambda][q],taro\[Lambda][i],taro\[Lambda][h],taro\[Lambda][f],taro\[Lambda][a1]},{tarot\[Lambda][l],tarot\[Lambda][q],tarot\[Lambda][i],tarot\[Lambda][h],tarot\[Lambda][f],tarot\[Lambda][a1]}};		
+		setupUsingSpinors[ref2];
+			Am = If[A[[1]][[1]]<B[[1]][[1]],Insert[Insert[{p,p,p,p},m,A],m,B],Insert[Insert[{p,p,p,p},m,B],m,A]];
+			app=nAmp[Am[[1]],Am[[2]],Am[[3]],Am[[4]],Am[[5]],Am[[6]]];
+				Return[app];
+]
+Aym62[{g_,r_,r2_},{a_,b_,c_,d_,ff_,ee_}] :=
+	Module[{Am,A,B,G,s,t,l,q,i,h,f,a1,u,app},
+		l = a;
+		q = b;
+		i = c;
+		h = d;
+		s = g;
+		t = r;
+		f = ff;
+		a1 = ee;
+		u = r2;
+		A = Position[{l,q,i,h,f,a1},s]; 
+		B = Position[{l,q,i,h,f,a1},t];
+		G = Position[{l,q,i,h,f,a1},u];
+		ref2 = {{taro\[Lambda][l],taro\[Lambda][q],taro\[Lambda][i],taro\[Lambda][h],taro\[Lambda][f],taro\[Lambda][a1]},{tarot\[Lambda][l],tarot\[Lambda][q],tarot\[Lambda][i],tarot\[Lambda][h],tarot\[Lambda][f],tarot\[Lambda][a1]}};		
+		setupUsingSpinors[ref2];
+		sorted = Sort[{A[[1]][[1]], B[[1]][[1]], G[[1]][[1]]}];
+            Am = Insert[Insert[Insert[{p, p, p}, m, sorted[[1]]], m, sorted[[2]]], m, sorted[[3]]];
+				app=nAmp[Am[[1]],Am[[2]],Am[[3]],Am[[4]],Am[[5]],Am[[6]]];
+				Return[app];
+]
+(*list1 is a list of all 2 element subsets of 123456*)
+list1 =  DeleteDuplicates[Subsets[{1, 2, 3, 4, 5, 6}, {2}]];
+(*list2 is all minimal basis list of 2 point mandelstams:*)
+list2 = {{1,2},{1,3},{1,4},{1,5},{2,3},{2,4},{2,5},{3,4},{3,5}};
+(*list3 is all minimal basis list 6 point color ordered apmplitudes*)
+list3 = {{1,2,3,4,5,6},{1,2,4,3,5,6},{1,2,4,5,3,6},{1,4,2,3,5,6},{1,4,2,5,3,6},{1,4,5,2,3,6}};
+(*list4 is a list of all 3 element subsets of 123456*)
+list4 =  DeleteDuplicates[Subsets[{1, 2, 3, 4, 5, 6}, {3}]];
+L = Length[list3];
+
+
+Aym62[{1,2,4},{1,2,3,4,5,6}]+Aym62[{1,2,4},{1,3,2,4,5,6}]+Aym62[{1,2,4},{1,3,4,2,5,6}]+Aym62[{1,2,4},{1,3,4,5,2,6}]+Aym62[{1,2,4},{1,3,4,5,6,2}]
+
+
+Mat = {};
+A = {};
+mandel = {};
+ref4 = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+A = Append[A,Table[Aym62[{1,2,3},list3[[i]]],{i,Length[list3]}]];
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]Aym62[{1,2,3},list3[[i]]],{i,Length[list3]},{j,Length[list2]}]//Flatten],
+{n,54}]
+MatrixRank[mandel]
+MatrixRank[A]
+Dimensions[Mat]
+nul = ConstantArray[0,54];
+Mat2 = Transpose[Append[Transpose[Mat], nul]];
+MatrixRank[Mat]
+
+
+vec = Table[x[i],{i,1,54}];
+sol = vec . Mat;
+sols = Solve[vec . Mat==0];
+
+
+sol[[6]]//N
+sols[[1]]//N
+
+
+
