@@ -6,10 +6,10 @@ SetDirectory[NotebookDirectory[]];
 <<bcfw.m
 
 DefNumSH[a_]:=Module[{},Do[
-					 lam[i, 1] = RandomInteger[{1,100}]/RandomInteger[{1,100}];
-					 lam[i, 2] = RandomInteger[{1,100}]/RandomInteger[{1,100}];
-					 lambar[i, 1] = RandomInteger[{1,100}]/RandomInteger[{1,100}];
-					 lambar[i, 2] = RandomInteger[{1,100}]/RandomInteger[{1,100}];
+					 lam[i, 1] = RandomInteger[{1,1000}]/RandomInteger[{1,1000}];
+					 lam[i, 2] = RandomInteger[{1,100}]/RandomInteger[{1,1000}];
+					 lambar[i, 1] = RandomInteger[{1,1000}]/RandomInteger[{1,1000}];
+					 lambar[i, 2] = RandomInteger[{1,1000}]/RandomInteger[{1,1000}];
 					   ,{i,a-2}];
 					   lam[a-1,1]=1;  lam[a,1]=0;
 					   lam[a-1,2]=0;  lam[a,2]=1;
@@ -458,7 +458,7 @@ DefNumSH[6]
 DefNumSH[6]
 kmat[i_]:=\!\(\*
 TagBox[
-RowBox[{"(", "", GridBox[{
+RowBox[{"(", GridBox[{
 {
 RowBox[{" ", 
 RowBox[{
@@ -484,7 +484,7 @@ RowBox[{"lam", "[",
 RowBox[{"i", ",", "2"}], "]"}]}]}
 },
 GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
-GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], "", ")"}],
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
 Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\)
 kmat2 = {({
  { k10+k13, k11-I k12},
@@ -645,14 +645,14 @@ s
 (*Real numbers corrected.*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Function that gives the 5 pt amplitude with specified negative helicities a, b (with real numbers)*)
 
 
 DefNumSH[5];
 taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
 tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
-referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5]}};
 s2[{i_,j_}]:=s[i,j]//.NSpinHel;
 setupUsingSpinors[referenceSpinors];
 Aym5[{g_,r_},{a_,b_,c_,d_,ff_}] :=
@@ -680,12 +680,29 @@ s2[{1,2}]Aym5[{1,2},{2,1,3,4,5}]-s2[{2,3}]Aym5[{1,2},{1,3,2,4,5}]-(s2[{2,3}]+s2[
 Aym5[{1,2},{1,2,3,4,5}]+Aym5[{1,2},{1,3,2,4,5}]+Aym5[{1,2},{1,3,4,2,5}]+Aym5[{1,2},{1,3,4,5,2}]
 
 
-s
-
-
-list1 =  DeleteDuplicates[Subsets[{1, 2, 3, 4, 5}, {2}]]
-list2 = {{1,2},{1,3},{1,4},{1,5},{2,3}};
+list2 = {{1,2},{1,3},{1,4},{2,4},{2,3}};
 list3 = {{1,3,2,4,5},{1,3,4,2,5}};
+
+
+Mat = {};
+A = {};
+mandel = {};
+ref4 = {};
+Do[
+n;
+DefNumSH[5];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+A = Append[A,Table[Aym5[{1,2},list3[[i]]],{i,Length[list3]}]];
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]Aym5[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]}]//Flatten],
+{n,10}]
+MatrixRank[mandel]
+MatrixRank[A]
+Dimensions[Mat]
+MatrixRank[Mat]
 
 
 (* ::Subsection:: *)
@@ -741,7 +758,7 @@ Aym62[{g_,r_,r2_},{a_,b_,c_,d_,ff_,ee_}] :=
 (*list1 is a list of all 2 element subsets of 123456*)
 list1 =  DeleteDuplicates[Subsets[{1, 2, 3, 4, 5, 6}, {2}]];
 (*list2 is all minimal basis list of 2 point mandelstams:*)
-list2 = {{1,2},{1,3},{1,4},{1,5},{2,3},{2,4},{2,5},{3,4},{3,5}};
+list2 = {{1,2},{1,3},{1,4},{1,5},{2,3},{2,4},{2,5},{3,4}};
 (*list3 is all minimal basis list 6 point color ordered apmplitudes*)
 list3 = {{1,2,3,4,5,6},{1,2,4,3,5,6},{1,2,4,5,3,6},{1,4,2,3,5,6},{1,4,2,5,3,6},{1,4,5,2,3,6}};
 (*list4 is a list of all 3 element subsets of 123456*)
@@ -749,39 +766,88 @@ list4 =  DeleteDuplicates[Subsets[{1, 2, 3, 4, 5, 6}, {3}]];
 L = Length[list3];
 
 
-Aym62[{1,2,4},{1,2,3,4,5,6}]+Aym62[{1,2,4},{1,3,2,4,5,6}]+Aym62[{1,2,4},{1,3,4,2,5,6}]+Aym62[{1,2,4},{1,3,4,5,2,6}]+Aym62[{1,2,4},{1,3,4,5,6,2}]
+(* ::Subsubsection:: *)
+(*O(s)*)
 
 
 Mat = {};
-A = {};
 mandel = {};
-ref4 = {};
+check = {};
 Do[
 n;
 DefNumSH[6];
-taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
-tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
+tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
 referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
-s2[{i_,j_}]:=s[i,j]//.NSpinHel;
-A = Append[A,Table[Aym62[{1,2,3},list3[[i]]],{i,Length[list3]}]];
+s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
 mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
 Mat = Append[Mat,Table[mandel[[n]][[j]]Aym62[{1,2,3},list3[[i]]],{i,Length[list3]},{j,Length[list2]}]//Flatten],
-{n,54}]
-MatrixRank[mandel]
-MatrixRank[A]
+{n,48}]
 Dimensions[Mat]
-nul = ConstantArray[0,54];
-Mat2 = Transpose[Append[Transpose[Mat], nul]];
 MatrixRank[Mat]
 
 
-vec = Table[x[i],{i,1,54}];
-sol = vec . Mat;
-sols = Solve[vec . Mat==0];
+(* ::Subsubsection:: *)
+(*O((s^2))*)
 
 
-sol[[6]]//N
-sols[[1]]//N
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
+tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]Aym62[{1,2,3},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]}]//Flatten],
+{n,216}]
+Dimensions[Mat]
+MatrixRank[Mat]
+
+
+(* ::Subsubsection:: *)
+(*O((s^3))*)
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
+tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]Aym62[{1,2,3},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]}]//Flatten],
+{n,720}]
+Dimensions[Mat]
+MatrixRank[Mat]
+
+
+(* ::Subsubsection:: *)
+(*O((s^4))*)
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
+tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]mandel[[n]][[l]]Aym62[{1,2,3},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]},{l,r,Length[list2]}]//Flatten],
+{n,1980}]
+Dimensions[Mat]
+MatrixRank[Mat]
 
 
 
