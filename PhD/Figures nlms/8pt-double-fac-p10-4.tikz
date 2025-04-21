@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=med 2] (0) at (-5, -2) {};
+		\node [style=med 2] (1) at (-2.25, -2) {};
+		\node [style=none] (7) at (-6.25, -0.5) {};
+		\node [style=none] (9) at (-7, -2) {};
+		\node [style=none] (10) at (-6.25, -3.5) {};
+		\node [style=none] (18) at (-3.25, -0.5) {};
+		\node [style=none] (19) at (-1.25, -0.5) {};
+		\node [style=none] (20) at (-0.5, -2) {};
+		\node [style=none] (30) at (-5, -2) {$\mathcal{O}\hspace*{-0.03cm}(\hspace*{-0.01cm}p^{2}\hspace*{-0.02cm})$};
+		\node [style=none] (31) at (-2.25, -2) {$\mathcal{O}\hspace*{-0.03cm}(\hspace*{-0.01cm}p^{2}\hspace*{-0.02cm})$};
+		\node [style=med 2] (32) at (0.5, -2) {};
+		\node [style=none] (33) at (1.75, -0.5) {};
+		\node [style=none] (34) at (1.75, -3.5) {};
+		\node [style=none] (35) at (2.5, -2) {};
+		\node [style=none] (36) at (0.5, -2) {$\mathcal{O}\hspace*{-0.03cm}(\hspace*{-0.01cm}p^{10}\hspace*{-0.02cm})$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=Line, in=180, out=0, looseness=0.75] (0) to (1);
+		\draw [style=Line] (10.center) to (0);
+		\draw [style=Line, in=180, out=0] (9.center) to (0);
+		\draw [style=Line] (7.center) to (0);
+		\draw [style=Line] (18.center) to (1);
+		\draw [style=Line] (20.center) to (1);
+		\draw [style=Line] (19.center) to (1);
+		\draw [style=Line] (33.center) to (32);
+		\draw [style=Line] (35.center) to (32);
+		\draw [style=Line] (34.center) to (32);
+		\draw [style=Line] (36.center) to (31.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

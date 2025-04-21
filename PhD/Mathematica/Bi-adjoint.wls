@@ -98,6 +98,21 @@ shiftS = {Spbb[3,i_]->Spbb[8,i]+z Spbb[2,i],Spbb[i_,3]->Spbb[i,8]+z Spbb[i,2]};
 shiftback = {Spaa[7,i_]->Spaa[2,i],Spaa[i_,7]->Spaa[i,2],Spbb[i_,8]->Spbb[i,3],Spbb[8,i_]->Spbb[3,i]};
 
 
+(*4 pt kernels*)
+LA = Permutations[{2,3}];
+AL[a_] := pt[1,LA[[a]][[1]],LA[[a]][[2]],4];
+AR[a_] := pt[4,LA[[a]][[1]],LA[[a]][[2]],1];
+AymL[a_] := Aym[{1,LA[[a]][[1]],LA[[a]][[2]],4,5}];
+AymR[a_] := Aym[{4,5,LA[[a]][[1]],LA[[a]][[2]],1}];
+
+Mat = Table[chyint[AL[i]AR[j],4],{i,1,2},{j,1,2}];
+Mat//MatrixForm
+Kernel5 = FullSimplify[Inverse[Mat]]
+
+
+
+
+
 Asymptotic[(A5[{1,2,3,4,5}]s[1,2] s[1,3]A5[{4,5,2,3,1}]+A5[{1,3,2,4,5}] A5[{4,5,3,2,1}] s[1,2] s[1,3]+A5[{1,3,2,4,5}] A5[{4,5,2,3,1}] s[1,2] (s[1,3]+s[2,3])//.{s[i_,j_]->Spaa[i,j]Spbb[j,i]}//.shiftA//.shiftS//.shiftback//.NSpinHel),z->\[Infinity]]
 Asymptotic[(s[1,2] (s[1,3]+s[2,3])//.{s[i_,j_]->Spaa[i,j]Spbb[j,i]}//.shiftA//.shiftS//.shiftback//.NSpinHel//FullSimplify),z->\[Infinity]]
 Asymptotic[(A5[{1,2,3,4,5}]//.{s[i_,j_]->Spaa[i,j]Spbb[j,i]}//.shiftA//.shiftS//.shiftback//.NSpinHel//FullSimplify),z->\[Infinity]]
@@ -110,8 +125,8 @@ LA = Permutations[{2,3,4}]
 AL[a_] := pt[1,LA[[a]][[1]],LA[[a]][[2]],LA[[a]][[3]],5,6]
 AR[a_] := pt[5,6,LA[[a]][[1]],LA[[a]][[2]],LA[[a]][[3]],1]
 
-Mat = Table[chyint[AL[i]AR[j],6],{i,1,6},{j,1,6}]//FullSimplify;
-Mat//MatrixForm
+Mat = Table[chyint[AL[i]AR[j],6],{i,1,6},{j,1,6}]/.s[i_,j_]->s[i,j]-m^2/.s[i_,j_,k_]->s[i,j,k]-m^2;
+Mat//MatrixForm//FullSimplify
 Kernel6 = Inverse[Mat]//MatrixForm
 
 
@@ -212,6 +227,4 @@ SoftKernel = FullSimplify[Kernel6//.mandel//.Shift1//.Shift2//.Shift3//.Shiftbac
 SoftKernel//MatrixForm;
 Asymptotic[SoftKernel,\[Epsilon]->0]//MatrixForm
 Asymptotic[DSoftKernel,\[Epsilon]->0]//MatrixForm
-
-
 

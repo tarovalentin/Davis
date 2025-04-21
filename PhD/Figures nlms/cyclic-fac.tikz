@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=medium blob] (0) at (-5, -2) {};
+		\node [style=medium blob] (1) at (-1, -2) {};
+		\node [style=none] (7) at (-6.75, 0) {};
+		\node [style=none] (9) at (-7.5, -2) {};
+		\node [style=none] (10) at (-6.75, -4) {};
+		\node [style=none] (18) at (0.75, 0) {};
+		\node [style=none] (19) at (0.75, -4) {};
+		\node [style=none] (20) at (1.5, -2) {};
+		\node [style=none] (23) at (-5, -0.5) {};
+		\node [style=none] (24) at (-5, 0.5) {};
+		\node [style=none] (25) at (-1, 0.5) {};
+		\node [style=none] (26) at (-1, -0.5) {};
+		\node [style=none] (27) at (-5, 1) {$A_4$};
+		\node [style=none] (28) at (-1, 1) {$A_4$};
+		\node [style=none] (30) at (-5, -2) {$\mathcal{O}\hspace*{-0.03cm}(\hspace*{-0.03cm}p^{2a}\hspace*{-0.03cm})$};
+		\node [style=none] (31) at (-1, -2) {$\mathcal{O}\hspace*{-0.03cm}(\hspace*{-0.03cm}p^{2b}\hspace*{-0.02cm})$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=Line] (0) to (1);
+		\draw [style=Line] (10.center) to (0);
+		\draw [style=Line] (9.center) to (0);
+		\draw [style=Line] (7.center) to (0);
+		\draw [style=Line] (18.center) to (1);
+		\draw [style=Line] (20.center) to (1);
+		\draw [style=Line] (19.center) to (1);
+		\draw [style=Arrow] (24.center) to (23.center);
+		\draw [style=Arrow] (25.center) to (26.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

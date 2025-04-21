@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=medium blob] (0) at (-5, -2) {};
+		\node [style=none] (7) at (-5, 0.25) {};
+		\node [style=none] (9) at (-7, -0.75) {};
+		\node [style=none] (10) at (-7, -3.25) {};
+		\node [style=none] (21) at (-5, -2) {$\mathcal{O}\hspace*{-0.03cm}(\hspace*{-0.03cm}p^{2m}\hspace*{-0.03cm})$};
+		\node [style=none] (23) at (-4.5, -0.75) {};
+		\node [style=none] (24) at (-4, 0.5) {};
+		\node [style=none] (27) at (-4, 1) {contact};
+		\node [style=none] (28) at (-3, -0.75) {};
+		\node [style=none] (29) at (-5, -4.25) {};
+		\node [style=none] (30) at (-3, -3.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=Line] (10.center) to (0);
+		\draw [style=Line] (9.center) to (0);
+		\draw [style=Line] (7.center) to (0);
+		\draw [style=Arrow, in=75, out=-90] (24.center) to (23.center);
+		\draw [style=Line] (28.center) to (21.center);
+		\draw [style=Line] (29.center) to (21.center);
+		\draw [style=Line] (21.center) to (30.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

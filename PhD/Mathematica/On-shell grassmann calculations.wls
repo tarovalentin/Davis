@@ -25,10 +25,10 @@ latexto8 := {"\[Delta]"->"\\delta"};
 latexto5 := {b1->Subscript[\[Beta], 1],b2->Subscript[\[Beta], 2],b3->Subscript[\[Beta], 3],b4->Subscript[\[Beta], 4],b5->Subscript[\[Beta], 5],b6->Subscript[\[Beta], 6],b7->Subscript[\[Beta], 7],b8->Subscript[\[Beta], 8]}
 schoutenC = {Spaa[i_,j_] Spaa[l_,r_] Spbb[i_,k_]+Spaa[j_,r_] Spaa[l_,t_] Spbb[k_,t_]+Spaa[j_,r_] Spaa[l_,r_] Spbb[k_,r_]->Spaa[j,l]Spab[r,P[l]+P[t]+P[r],k]};
 {"chyexp","chyGraph","chyGraphTex","chygravexp","chyint","chytolatex","id","momentumcon","Pf","Psi","pt","red","redPsi","rempol"}
-SPAB = {-Spaa[j_,i_] Spbb[j_,r_]-Spaa[i_,k_] Spbb[r_,k_]-Spaa[i_,l_] Spbb[r_,l_]-Spaa[i_,nn_] Spbb[r_,nn_]->Spab[i,P[j]+P[k]+P[l]+P[nn],r],Spaa[j_,i_] Spbb[j_,r_]+Spaa[k_,i_] Spbb[k_,r_]->-Spab[i,P[j]+P[k],r],Spaa[i_,j_] Spbb[r_,j_]+Spaa[i_,k_] Spbb[r_,k_]->-Spab[i,P[j]+P[k],r],Spaa[j_,i_] Spbb[j_,r_]+Spaa[i_,k_] Spbb[r_,k_]->-Spab[i,P[j]+P[k],r],Spaa[j_,i_] Spbb[r_,j_]+Spaa[k_,i_] Spbb[r_,k_]->Spab[i,P[j]+P[k],r],-Spaa[i_,j_] Spbb[k_,j_]-Spaa[i_,l_] Spbb[k_,l_]->-Spab[i,P[j]+P[l],k],Spaa[i_,j_] Spbb[j_,l_]+Spaa[i_,k_] Spbb[k_,l_]->Spab[i,P[j]+P[k],l],Spaa[j_,i_] Spbb[j_,l_]+Spaa[k_,i_] Spbb[k_,l_]->Spab[i,P[j]+P[k],l],Spaa[j_,i_] Spbb[l_,j_]-Spaa[i_,k_] Spbb[l_,k_]->Spab[i,P[j]+P[k],l],-Spaa[k_,i_] Spbb[k_,j_]+Spaa[i_,l_] Spbb[l_,j_]->Spab[i,P[k]+P[l],j],-Spaa[k_,i_] Spbb[k_,j_]-Spaa[i_,l_] Spbb[j_,l_]->Spab[i,P[k]+P[l],j],Spaa[k_,i_] Spbb[k_,j_]-Spaa[i_,l_] Spbb[l_,j_]->-Spab[i,P[k]+P[l],j],-Spaa[k_,i_] Spbb[j_,k_]+Spaa[i_,l_] Spbb[j_,l_]->-Spab[i,P[k]+P[l],j]};
+SPAB = {-Spaa[j_,i_] Spbb[j_,r_]-Spaa[i_,k_] Spbb[r_,k_]-Spaa[i_,l_] Spbb[r_,l_]-Spaa[i_,nn_] Spbb[r_,nn_]->Spab[i,P[j]+P[k]+P[l]+P[nn],r],Spaa[j_,i_] Spbb[j_,r_]+Spaa[k_,i_] Spbb[k_,r_]->-Spab[i,P[j]+P[k],r],Spaa[i_,j_] Spbb[r_,j_]+Spaa[i_,k_] Spbb[r_,k_]->-Spab[i,P[j]+P[k],r],Spaa[j_,i_] Spbb[j_,r_]+Spaa[i_,k_] Spbb[r_,k_]->-Spab[i,P[j]+P[k],r],Spaa[j_,i_] Spbb[r_,j_]+Spaa[k_,i_] Spbb[r_,k_]->Spab[i,P[j]+P[k],r],-Spaa[i_,j_] Spbb[k_,j_]-Spaa[i_,l_] Spbb[k_,l_]->-Spab[i,P[j]+P[l],k],Spaa[i_,j_] Spbb[j_,l_]+Spaa[i_,k_] Spbb[k_,l_]->Spab[i,P[j]+P[k],l],Spaa[j_,i_] Spbb[j_,l_]+Spaa[k_,i_] Spbb[k_,l_]->Spab[i,P[j]+P[k],l],Spaa[j_,i_] Spbb[l_,j_]-Spaa[i_,k_] Spbb[l_,k_]->Spab[i,P[j]+P[k],l],-Spaa[k_,i_] Spbb[k_,j_]+Spaa[i_,l_] Spbb[l_,j_]->Spab[i,P[k]+P[l],j],-Spaa[k_,i_] Spbb[k_,j_]-Spaa[i_,l_] Spbb[j_,l_]->Spab[i,P[k]+P[l],j],Spaa[k_,i_] Spbb[k_,j_]-Spaa[i_,l_] Spbb[l_,j_]->-Spab[i,P[k]+P[l],j],-Spaa[k_,i_] Spbb[j_,k_]+Spaa[i_,l_] Spbb[j_,l_]->-Spab[i,P[k]+P[l],j],Spaa[i_,j_] Spbb[j_,l_]-Spaa[i_,k_] Spbb[l_,k_]->Spab[i,P[j]+P[k],l],-Spaa[i_,j_] Spbb[j_,l_]+Spaa[i_,k_] Spbb[l_,k_]->-Spab[i,P[j]+P[k],l],Spaa[i_,j_] Spbb[j_,l_]-Spaa[i_,k_] Spbb[l_,k_]->Spab[i,P[j]+P[k],l]};
 
 SPAB2 = {Spab[i_,P[j_],k_]->Spaa[i,j]Spbb[j,k],Spab[i_,P[j_]+P[l_],k_]->Spaa[i,j]Spbb[j,k]+Spaa[i,l]Spbb[l,k]};
-SHtest = {Spab[i_,P[j_]+P[k_]+P[l_],r_]->Spaa[i,j]Spbb[j,r]+Spaa[i,k]Spbb[k,r]+Spaa[i,l]Spbb[l,r],s[i_,j_,k_]->Spaa[i,j]Spbb[j,i]+Spaa[i,k]Spbb[k,i]+Spaa[j,k]Spbb[k,j],Spbbb[i_,(P[j_]+P[k_]) . (P[l_]+P[r_]),m_]->Spbb[i,j]Spaa[j,l]Spbb[l,m]+Spbb[i,j]Spaa[j,r]Spbb[r,m]+Spbb[i,k]Spaa[k,l]Spbb[l,m]+Spbb[i,k]Spaa[k,r]Spbb[r,m],Spaaa[i_,(P[j_]+P[k_]) . (P[l_]+P[r_]),m_]->Spaa[i,j]Spbb[j,l]Spaa[l,m]+Spaa[i,j]Spbb[j,r]Spaa[r,m]+Spaa[i,k]Spbb[k,l]Spaa[l,m]+Spaa[i,k]Spbb[k,r]Spaa[r,m]};
+SHtest = {Spab[i_,P[j_]+P[k_]+P[l_],r_]->Spaa[i,j]Spbb[j,r]+Spaa[i,k]Spbb[k,r]+Spaa[i,l]Spbb[l,r],Spab[i_,P[j_]+P[k_],r_]->Spaa[i,j]Spbb[j,r]+Spaa[i,k]Spbb[k,r],s[i_,j_,k_]->Spaa[i,j]Spbb[j,i]+Spaa[i,k]Spbb[k,i]+Spaa[j,k]Spbb[k,j],Spbbb[i_,(P[j_]+P[k_]) . (P[l_]+P[r_]),m_]->Spbb[i,j]Spaa[j,l]Spbb[l,m]+Spbb[i,j]Spaa[j,r]Spbb[r,m]+Spbb[i,k]Spaa[k,l]Spbb[l,m]+Spbb[i,k]Spaa[k,r]Spbb[r,m],Spaaa[i_,(P[j_]+P[k_]) . (P[l_]+P[r_]),m_]->Spaa[i,j]Spbb[j,l]Spaa[l,m]+Spaa[i,j]Spbb[j,r]Spaa[r,m]+Spaa[i,k]Spbb[k,l]Spaa[l,m]+Spaa[i,k]Spbb[k,r]Spaa[r,m]};
 simSchotenA = {Spaa[j_,k_] \[Lambda][i_]+Spaa[i_,j_] \[Lambda][k_]->Spaa[i,k] \[Lambda][j]};
 schoutenLong={Spab[i_,x___,j_] Spbb[k_,l_]+Spab[i_,x___,k_] Spbb[l_,j_]->Spab[i,x,l] Spbb[k,j],Spaa[k_,l_]Spab[i_,x___,j_]+Spaa[l_,j_]Spab[i_,x___,k_]->Spaa[k,j]Spab[i,x,l],Spab[i_,P[x_]+P[y_]+P[w_],j_] Spab[k_,P[x_]+P[y_]+P[w_],l_]-Spab[k_,P[x_]+P[y_]+P[w_],j_] Spab[i_,P[x_]+P[y_]+P[w_],l_]->Spaa[j,l] Spbb[i,k]s[x,y,w]};
 
@@ -42,6 +42,12 @@ littleGroup = {Spaa[i_,j_]->t[i]t[j]Spaa[i,j],Spbb[i_,j_]->(t[i]t[j])^(-1)Spbb[i
 
 
 SPaaaa[b,(P[i]+P[p]) . (P[j]+P[k]) . (P[l]+P[r]),m]->Spaa[b,i]Spbbb[i,(P[j]+P[k]) . (P[l]+P[r]),m]+Spaa[b,p]Spbbb[p,(P[j]+P[k]) . (P[l]+P[r]),m]
+
+
+PacletInstall@"http://github.com/jkuczm/MathematicaCellsToTeX/releases/download/v0.2.2/CellsToTeX-0.2.2.paclet"
+
+
+Needs@"CellsToTeX`"
 
 
 (* ::Section::Closed:: *)
@@ -703,7 +709,7 @@ a5 = (-Spaa[1,2]+(Spaa[1,5] Spaa[2,3])/(a7 Spaa[2,5]-Spaa[3,5]))/Spaa[2,5];
 a6 = -(Spaa[1,5]/(a7 Spaa[2,5]-Spaa[3,5]));
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*N=0 Calculations*)
 
 
@@ -2365,6 +2371,7 @@ Jac = (Together[FullSimplify[\[Delta]//.Sol]]//.schoutenA//Simplify)^(-1)
 (*5 pt NMHV calculation,  one internal loop*)
 
 
+(*Define the \[Delta] coming from the internal cycle and the C-matrix and C-perp matrix*)
 \[Delta] = 1/(1-a[3] a[5]a[6]);
 CC=\!\(\*
 TagBox[
@@ -2435,53 +2442,52 @@ RowBox[{"a", "[", "5", "]"}]}]}
 GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
 GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
 Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+(*Define \[Lambda], Overscript[\[Lambda], ~], and \[Eta] vectors*)
 lambda={\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5]};
 tlambda={t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5]};
-CC . Transpose[Cperp]
-perpEQ = Cperp . Transpose[lambda];
-CEQ = CC . Transpose[tlambda]
 eta = {\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5]};
+(*Making sure the Cperp is orthogonal to C*)
+CC . Transpose[Cperp];
+(*Getting \[Delta] functions \[Delta](C\[CenterDot]Z)*)
+perpEQ = Cperp . Transpose[lambda];
+CEQ = CC . Transpose[tlambda];
 SEQ = CC . Transpose[eta];
 
 
+(*Automatically defining the equations we need to solve, by expanding the delta functions and contracting with different \[Lambda]'s or Overscript[\[Lambda], ~]'s.*)
+(*A equations are from the \[Delta](C^\[Perpendicular]\[CenterDot]\[Lambda]) and B equations are from (C\[CenterDot]Overscript[\[Lambda], ~])*)
 A1 = TensorExpand[(perpEQ[[1]]) . \[Lambda][2]]//.RB//.RR//FullSimplify;
 A2 = TensorExpand[(perpEQ[[1]]) . \[Lambda][3]]//.RB//.RR//FullSimplify;
 A3 = TensorExpand[(perpEQ[[1]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
 A4 = TensorExpand[(perpEQ[[2]]) . \[Lambda][2]]//.RB//.RR//FullSimplify;
 A5 = TensorExpand[(perpEQ[[2]]) . \[Lambda][3]]//.RB//.RR//FullSimplify;
 A6 = TensorExpand[(perpEQ[[2]]) . \[Lambda][5]]//.RB//.RR//FullSimplify;
-B1 = TensorExpand[(CEQ[[1]]) . t\[Lambda][1]]//.RB//.RR//FullSimplify
-B2 = TensorExpand[(CEQ[[1]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify
-B3 = TensorExpand[(CEQ[[2]]) . t\[Lambda][1]]//.RB//.RR//FullSimplify
-B4 = TensorExpand[(CEQ[[2]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify
-B5 = TensorExpand[(CEQ[[3]]) . t\[Lambda][1]]//.RB//.RR//FullSimplify
-B6 = TensorExpand[(CEQ[[3]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify
-
-
+B1 = TensorExpand[(CEQ[[1]]) . t\[Lambda][1]]//.RB//.RR//FullSimplify;
+B2 = TensorExpand[(CEQ[[1]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify;
+B3 = TensorExpand[(CEQ[[2]]) . t\[Lambda][1]]//.RB//.RR//FullSimplify;
+B4 = TensorExpand[(CEQ[[2]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify;
+B5 = TensorExpand[(CEQ[[3]]) . t\[Lambda][1]]//.RB//.RR//FullSimplify;
+B6 = TensorExpand[(CEQ[[3]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify;
+(*Solving the delta function constraints for the \[Alpha]'s and simplifying the results using schouten identities*)
 Sol = Solve[{B5==0,B6==0,B3==0,B1==0,B4==0,B2==0},{a[4],a[5],a[3],a[6],a[2],a[1]}]//.schoutenA//.schoutenB//.SPAB//.{Spab[5,P[2]+P[4],1]->-Spaa[5,3]Spbb[3,1],Spab[2,P[1]+P[5],4]->-Spaa[2,3]Spbb[3,4]}//FullSimplify
 
 
-(*\[Delta]a = 1/(1-a[3] a[4]);*)
+(*To get the Jacobian, J, from solving the deltafunctions, by taking the determinant of the matrix defined by Subscript[M, ij]=(Subscript[dE, i]/Subscript[d\[Alpha], j])*)
 EE[1] = B1;
 EE[2] = B2;
 EE[3] = B3;
 EE[4] = B4;
 EE[5] = B5;
 EE[6] = B6;
-
-
 F[i_,j_]:=D[EE[i],a[j]];
 Mat = Table[F[i,j],{i,1,6},{j,1,6}];
 J = (FullSimplify[Simplify[1/(Det[Mat])]//.Sol[[1]]]//.schoutenB//Simplify)*Spbb[1,4]^2
+(*Jac is the jacobian from the internal cycle*)
 Jac = Together[(1/\[Delta])//.Sol[[1]]]//.schoutenB
 
-
+(*The form for the diagram is calculated, \[CapitalOmega] is the bare form and \[CapitalOmega]6 includes the Jacobian from trom the internal cycle*)
 \[CapitalOmega] = Product[1/a[i],{i,1,6}]*J//.Sol//Simplify
 \[CapitalOmega]6 = \[CapitalOmega]*Jac^(-1)
-
-
-(* ::InheritFromParent:: *)
-(*{-(Spbb[1,3]/(Spbb[1,2] Spbb[1,5] Spbb[2,3] Spbb[3,4] Spbb[3,5]))}*)
 
 
 (* ::Subsection::Closed:: *)
@@ -4398,7 +4404,7 @@ J = -(1/(a[1] a[3] a[4]^2 a[7]^3 a[8]^3 Spaa[2,3]^3 Spbb[1,4]^2 Spbb[1,6]^3))//F
 \[CapitalOmega] = Product[1/a[i],{i,1,8}]*J*Spbb[1,4]^2/Spaa[2,3]^2*1/Spbb[1,6]^2*(Spaa[2,4]Spbb[5,1])//Simplify
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*6 pt NMHV calculation,  hexagon (3 black/white) with extra parameter*)
 
 
@@ -4712,6 +4718,20 @@ Spab[2,P[1]+P[5]+P[6],1]-\[Alpha] (Spab[1,P[1]+P[5]+P[6],1]+\[Alpha] Spab[1,P[1]
 
 
 Sol//.Spab[1,P[1]+P[5]+P[6],2] Spab[2,P[1]+P[5]+P[6],1]->Spab[1,P[1]+P[5]+P[6],2]^2//FullSimplify
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8372,6 +8392,20 @@ Residue[\[CapitalOmega],{a[5],0}]//.schoutenA//Simplify
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (* ::InheritFromParent:: *)
 (**)
 
@@ -8919,6 +8953,20 @@ Res1+Res2
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (* ::Subsubsection::Closed:: *)
 (*inverse cycle direction*)
 
@@ -9202,6 +9250,20 @@ Res1+Res2
 -((Spaa[1,2] Spaa[3,4])/(Spaa[1,3]^2 Spaa[1,4] Spaa[2,3]))
 
 -((Spaa[1,2]^2 Spaa[3,4]^2)/(Spaa[1,3]^3 Spaa[1,4] Spaa[2,3]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -12584,7 +12646,7 @@ ResA = Residue[(A),{\[Beta],0}]//.Spbb[1,j]->1//FullSimplify
 
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Heptagon MHV*)
 
 
@@ -12970,7 +13032,7 @@ J = FullSimplify[Simplify[1/(Det[Mat])]//.Sol[[1]]]//.schoutenA
 -((Spaa[1,6] Spaa[5,6])/(\[Alpha] Spaa[1,3] Spaa[1,7] Spaa[4,5] Spaa[5,8]))
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Heptagon MHV 1,3*)
 
 
@@ -14863,7 +14925,7 @@ Print["N=3 Forms:"]
 \[CapitalOmega]6 = Factor[\[CapitalOmega]*1/Jc//FullSimplify]
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Five point*)
 
 
@@ -15243,7 +15305,7 @@ s[1,2](Spab[1,P[1]+P[5]+P[6],1]+Spab[2,P[2]+P[5]+P[6],2])-4 Spab[4,P[1]+P[2]+P[3
 -4 s[1,2]s[5,6]//.SHtest//.NSpinHel
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Six point*)
 
 
@@ -15657,11 +15719,11 @@ sing = {Spaa[i_,4]->\[Alpha] Spaa[i,1],Spaa[4,i_]->\[Alpha] Spaa[1,i]};
 \[CapitalOmega][[1]]//.sing
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*five point from notes*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*First orientation*)
 
 
@@ -15835,7 +15897,7 @@ Residue[\[CapitalOmega]3,{z,-(Spaa[2,4]/Spaa[3,4])}]//.schoutenA
 
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Second orientation*)
 
 
@@ -16010,6 +16072,989 @@ Residue[\[CapitalOmega],{a[7],0}]
 
 Together[1/Jc//.a[7]->1/z]//FullSimplify
 \[CapitalOmega]//.a[7]->1/z//FullSimplify
+
+
+(* ::Subsection::Closed:: *)
+(*Six point NMHV test of rule*)
+
+
+(* ::Subsubsection::Closed:: *)
+(*Before residue*)
+
+
+CC=\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{"1", "0", 
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"(", 
+RowBox[{
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}]}], "+", 
+RowBox[{
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}]}]}], ")"}], 
+RowBox[{
+RowBox[{"a", "[", "6", "]"}], "+", 
+RowBox[{
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}]}]}], "0"},
+{"0", "1", 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{
+RowBox[{"a", "[", "3", "]"}], 
+RowBox[{"a", "[", "2", "]"}]}], "0", "0"},
+{"0", "0", "0", 
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "7", "]"}], "1"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+Cperp =\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "1", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}]}], 
+RowBox[{"-", 
+RowBox[{"a", "[", "2", "]"}]}], "1", "0", "0", "0"},
+{
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{
+RowBox[{"a", "[", "1", "]"}], 
+RowBox[{"a", "[", "2", "]"}], 
+RowBox[{"a", "[", "3", "]"}]}], "+", 
+RowBox[{
+RowBox[{"a", "[", "4", "]"}], 
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}]}]}], ")"}]}], 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"a", "[", "3", "]"}]}], 
+RowBox[{"a", "[", "2", "]"}]}], "0", "1", "0", 
+RowBox[{"-", 
+RowBox[{"a", "[", "4", "]"}]}]},
+{
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"a", "[", "6", "]"}], "+", 
+RowBox[{
+RowBox[{"a", "[", "5", "]"}], 
+RowBox[{"a", "[", "6", "]"}], 
+RowBox[{"a", "[", "7", "]"}]}]}], ")"}]}], "0", "0", "0", "1", 
+RowBox[{"-", 
+RowBox[{"a", "[", "7", "]"}]}]}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+lambda={\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]};
+tlambda={t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6]};
+CC . Transpose[Cperp]
+perpEQ = Cperp . Transpose[lambda]
+CEQ = CC . Transpose[tlambda];
+eta = {\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5],\[Eta][6]};
+SEQ = CC . Transpose[eta];
+
+
+A1 = TensorExpand[(perpEQ[[1]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A2 = TensorExpand[(perpEQ[[1]]) . \[Lambda][2]]//.RB//.RR//FullSimplify
+A3 = TensorExpand[(perpEQ[[1]]) . \[Lambda][6]]//.RB//.RR//FullSimplify
+A4 = TensorExpand[(perpEQ[[2]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A5 = TensorExpand[(perpEQ[[2]]) . \[Lambda][2]]//.RB//.RR//FullSimplify
+A6 = TensorExpand[(perpEQ[[2]]) . \[Lambda][6]]//.RB//.RR//FullSimplify
+A7 = TensorExpand[(perpEQ[[3]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A8 = TensorExpand[(perpEQ[[3]]) . \[Lambda][2]]//.RB//.RR//FullSimplify
+A9 = TensorExpand[(perpEQ[[3]]) . \[Lambda][6]]//.RB//.RR//FullSimplify
+
+B1 = TensorExpand[(CEQ[[1]]) . t\[Lambda][3]]//.RB//.RR//FullSimplify
+B2 = TensorExpand[(CEQ[[1]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify
+B3 = TensorExpand[(CEQ[[1]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify
+B4 = TensorExpand[(CEQ[[2]]) . t\[Lambda][3]]//.RB//.RR//FullSimplify
+B5 = TensorExpand[(CEQ[[2]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify
+B6 = TensorExpand[(CEQ[[2]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify
+B7 = TensorExpand[(CEQ[[3]]) . t\[Lambda][3]]//.RB//.RR//FullSimplify
+B8 = TensorExpand[(CEQ[[3]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify
+B9 = TensorExpand[(CEQ[[3]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify
+
+
+Sol = (FullSimplify[Simplify[Solve[{A1==0,A2==0,A4==0,A5==0,B8==0,B9==0,B2==0},{a[1],a[2],a[3],a[4],a[5],a[6],a[7]}]//.schoutenB]]//.schoutenB//.SPAB//FullSimplify)//.SPAB
+
+
+a[1] = -(Spaa[2,3]/Spaa[1,3]);
+a[2] = Spaa[1,3]/Spaa[1,2];
+a[3] = Spab[1,P[1]+P[4]+P[6],5]/(Spaa[1,3] Spbb[4,5]);
+a[4] = Spbb[5,6]/Spbb[4,5];
+a[7] = -(Spbb[4,6]/Spbb[4,5]);
+
+
+
+DefNumSH[6]
+( Spab[2,P[1]+P[5]+P[6],6] )/(Spaa[1,2] Spbb[5,6])//.SHtest//.NSpinHel
+((Spaa[1,4] Spaa[2,3]-Spaa[1,3] Spaa[2,4]) Spbb[4,5] Spbb[4,6]-(Spaa[1,3] (Spab[2,P[3]+P[6],4]-Spaa[1,2] Spbb[1,4])+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6])/(Spaa[1,2] Spaa[1,3] Spbb[4,5] Spbb[5,6])//.SHtest//.NSpinHel
+
+
+1/(Spaa[1,2] Spaa[1,3] Spbb[4,5] Spbb[5,6]) Collect[(Spaa[1,4] Spaa[2,3]-Spaa[1,3] Spaa[2,4]) Spbb[4,5] Spbb[4,6]-(Spaa[1,3] (Spab[2,P[3]+P[6],4]-Spaa[1,2] Spbb[1,4])+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6]//.schoutenA//.FullSPAB//Expand,Spbb[4,6]]
+
+
+(* ::Input:: *)
+(*( Spab[2,P[1]+P[4]+P[6],6] )/(Spaa[1,2] Spbb[5,6])*)
+
+
+DefNumSH[6]
+(Spaa[1,2] Spab[3,P[4]+P[6],5] Spbb[4,5])/(-Spaa[1,2] Spaa[3,4] Spbb[4,5] Spbb[4,6]-(Spaa[1,3] Spaa[2,5] Spbb[4,5]+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6]);
+Collect[-Spaa[1,2] Spaa[3,4] Spbb[4,5] Spbb[4,6]-(Spaa[1,3] Spaa[2,5] Spbb[4,5]+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6]//Expand,Spbb[4,5]]
+
+
+a[6]->((Spaa[1,4] Spaa[2,3]-Spaa[1,3] Spaa[2,4]) Spbb[4,5] Spbb[4,6]-(Spaa[1,3] (Spab[2,P[3]+P[6],4]-Spaa[1,2] Spbb[1,4])+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6])/(Spaa[1,2] Spaa[1,3] Spbb[4,5] Spbb[5,6])//.SPAB
+
+
+(* ::Input:: *)
+(*a[6]->((Spaa[1,4] Spaa[2,3]-Spaa[1,3] Spaa[2,4]) Spbb[4,5] Spbb[4,6]-(Spaa[1,3] (-Spab[2,P[2]+P[4]+P[5],4])+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6])/(Spaa[1,2] Spaa[1,3] Spbb[4,5] Spbb[5,6])//.SHtest*)
+
+
+a[1]=-(Spaa[2,3]/Spaa[1,3]);
+a[2]=Spaa[1,3]/Spaa[1,2];
+a[3]=Spab[1,P[4]+P[6],5]/(Spaa[1,3] Spbb[4,5]);
+a[4]=Spbb[5,6]/Spbb[4,5];
+a[5]=-(Spab[3,P[4]+P[5]+P[6],5]/(Spaa[1,3] Spbb[5,6]));
+a[7]=-(Spbb[4,6]/Spbb[4,5]);
+
+
+DefNumSH[6];
+B2
+
+
+so = (FullSimplify[Simplify[Solve[{B2==0},{a[6]}]//.schoutenB]]//.schoutenB//.SPAB//FullSimplify)//.SPAB//Together
+aa = (Numerator[a[6]//.so[[1]][[1]]]//FullSimplify)//.SPAB//.{Spab[2,P[1]+P[3],4]->-Spab[2,P[4]+P[5]+P[6],4]}//.SHtest
+(Collect[Collect[Collect[aa//Expand,Spbb[4,5]],Spbb[4,6]]//.{(-Spaa[1,2] Spaa[3,4] Spbb[4,5]-Spaa[1,3] Spaa[2,6] Spbb[5,6]+Spaa[1,2] Spaa[3,6] Spbb[5,6])->(-Spaa[1,2] Spaa[3,4] Spbb[4,5]-(Spaa[1,3] Spaa[2,6]-Spaa[1,2] Spaa[3,6]) Spbb[5,6])}//.schoutenA, Spbb[5,6]]//Expand//FullSimplify)//.{Spaa[2,5] Spbb[4,5]->-Spab[2,P[2]+P[4]+P[5],4],Spaa[1,6]Spbb[4,6]->Spab[1,P[2]+P[3]+P[5],4]}
+
+
+\[CapitalDelta] = Together[\[Delta]//.Sol[[1]]]//.schoutenA
+
+Together[1/(1+a[1]a[2]a[3]a[6]^(-1))//.Sol[[1]]]//.schoutenA
+Together[1/(1-a[4]a[5]^(-1)a[6]^(-1))//.Sol[[1]]]//.schoutenA
+
+
+Spaa[1,4] Spaa[3,4]+Spaa[1,5] Spaa[3,5]//.schoutenA
+
+
+EE[1] = A1;
+EE[2] = A2;
+EE[3] = A3;
+EE[4] = A4;
+EE[5] = A5;
+EE[6] = A6;
+
+
+F[i_,j_]:=D[EE[i],a[j]];
+Mat = Table[F[i,j],{i,1,6},{j,1,6}];
+J = FullSimplify[Simplify[1/(Det[Mat])]//.Sol]//.schoutenA
+
+
+Product[1/a[i],{i,1,5}]//.Sol//Simplify;
+\[CapitalOmega] = Product[1/a[i],{i,1,5}]*J*Spaa[2,5]//.Sol//Simplify
+
+
+\[CapitalOmega]5 = \[CapitalOmega]*\[CapitalDelta]//Simplify
+
+sing = {Spaa[i_,5]->\[Alpha] Spaa[i,2]+\[Beta] Spaa[i,j],Spaa[5,i_]->\[Alpha] Spaa[2,i]+\[Beta] Spaa[j,i]};
+\[CapitalOmega]5//.sing
+Residue[(\[CapitalOmega]5[[1]][[1]]//.sing),{\[Beta],0}]//.Spaa[2,j]->1
+
+
+\[CapitalOmega] = Spaa[3,4]^4/(a[5](a[5]Spaa[2,4]-Spaa[3,4])Spaa[1,2]Spaa[2,3]Spaa[1,4])*((a[5] Spaa[2,4]-Spaa[3,4])/Spaa[3,4])^(4)
+Residue[\[CapitalOmega],{a[5],0}]
+
+
+DefNumSH[6]
+s[1,2](Spab[1,P[1]+P[5]+P[6],1]+Spab[2,P[2]+P[5]+P[6],2])-4 Spab[4,P[1]+P[2]+P[3],3]Spab[3,P[1]+P[2]+P[3],4]//.SHtest//.NSpinHel
+-4 s[1,2]s[5,6]//.SHtest//.NSpinHel
+
+
+(* ::Subsection::Closed:: *)
+(*Six point NMHV test of rule (2nd attempt)*)
+
+
+(* ::Subsubsection:: *)
+(*Before residue*)
+
+
+f[x_] := Product[a[i], {i, x}]
+CC=\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "2", "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "3"}], "}"}], "]"}]}], "1", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "4"}], "}"}], "]"}], "0", "0", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "4", ",", "5", ",", "6"}], "}"}], "]"}]},
+{
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"4", ",", "8"}], "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "4", ",", "5", ",", "6"}], "}"}], "]"}]}], "0", 
+RowBox[{"a", "[", "4", "]"}], "1", "0", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"4", ",", "5", ",", "6"}], "}"}], "]"}]},
+{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "6"}], "}"}], "]"}], "0", "0", "0", "1", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "7", "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", "6", "}"}], "]"}]}]}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+Cperp =\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{"1", 
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "2", "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "3"}], "}"}], "]"}]}], ")"}]}], "0", 
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"4", ",", "8"}], "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "4", ",", "5", ",", "6"}], "}"}], "]"}]}], ")"}]}], 
+RowBox[{"-", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "6"}], "}"}], "]"}]}], "0"},
+{"0", 
+RowBox[{"-", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "4"}], "}"}], "]"}]}], "1", 
+RowBox[{"-", 
+RowBox[{"a", "[", "4", "]"}]}], "0", "0"},
+{"0", 
+RowBox[{"-", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "4", ",", "5", ",", "6"}], "}"}], "]"}]}], "0", 
+RowBox[{"-", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"4", ",", "5", ",", "6"}], "}"}], "]"}]}], 
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "7", "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", "6", "}"}], "]"}]}], ")"}]}], "1"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+lambda={\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]};
+tlambda={t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6]};
+CC . Transpose[Cperp]
+perpEQ = Cperp . Transpose[lambda]
+CEQ = CC . Transpose[tlambda];
+eta = {\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5],\[Eta][6]};
+SEQ = CC . Transpose[eta];
+
+
+A1 = TensorExpand[(perpEQ[[1]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A2 = TensorExpand[(perpEQ[[1]]) . \[Lambda][2]]//.RB//.RR//FullSimplify
+A3 = TensorExpand[(perpEQ[[1]]) . \[Lambda][6]]//.RB//.RR//FullSimplify
+A4 = TensorExpand[(perpEQ[[2]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A5 = TensorExpand[(perpEQ[[2]]) . \[Lambda][2]]//.RB//.RR//FullSimplify
+A6 = TensorExpand[(perpEQ[[2]]) . \[Lambda][6]]//.RB//.RR//FullSimplify
+A7 = TensorExpand[(perpEQ[[3]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A8 = TensorExpand[(perpEQ[[3]]) . \[Lambda][2]]//.RB//.RR//FullSimplify
+A9 = TensorExpand[(perpEQ[[3]]) . \[Lambda][6]]//.RB//.RR//FullSimplify
+
+B1 = TensorExpand[(CEQ[[1]]) . t\[Lambda][3]]//.RB//.RR//FullSimplify
+B2 = TensorExpand[(CEQ[[1]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify
+B3 = TensorExpand[(CEQ[[1]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify
+B4 = TensorExpand[(CEQ[[2]]) . t\[Lambda][3]]//.RB//.RR//FullSimplify
+B5 = TensorExpand[(CEQ[[2]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify
+B6 = TensorExpand[(CEQ[[2]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify
+B7 = TensorExpand[(CEQ[[3]]) . t\[Lambda][3]]//.RB//.RR//FullSimplify
+B8 = TensorExpand[(CEQ[[3]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify
+B9 = TensorExpand[(CEQ[[3]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify
+
+
+Sol = (FullSimplify[Simplify[Solve[{A4==0,A5==0,A2==0,A1==0,A8==0,A7==0,B5==0,A6==0},{a[3],a[4],a[1],a[2],a[5],a[6],a[7],a[8]}]//.schoutenA]]//.schoutenB//.SPAB//FullSimplify)//.SPAB
+
+
+a[3] = Spaa[3,4]/Spaa[2,4];
+a[4] = Spaa[2,3]/Spaa[2,4];
+Sol = (FullSimplify[Simplify[Solve[{A1==0,A2==0,A8==0,A3==0,A8==0},{a[1],a[2],a[5],a[6],a[7]}]//.schoutenA]]//.schoutenB//.SPAB//FullSimplify)//.SPAB
+
+
+a[6] = -(Spbb[5,6]/(a[1] Spbb[1,6]));
+a[7] = (-a[1] Spbb[1,5]+Spbb[5,6])/(a[1] Spbb[1,6]);
+Sol = Simplify[Solve[{A8==0,B1==0,A2==0,B6==0},{a[1],a[2],a[5],a[8]}]]//.SPAB
+
+
+DefNumSH[6]
+( Spab[2,P[1]+P[5]+P[6],6] )/(Spaa[1,2] Spbb[5,6])//.SHtest//.NSpinHel
+((Spaa[1,4] Spaa[2,3]-Spaa[1,3] Spaa[2,4]) Spbb[4,5] Spbb[4,6]-(Spaa[1,3] (Spab[2,P[3]+P[6],4]-Spaa[1,2] Spbb[1,4])+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6])/(Spaa[1,2] Spaa[1,3] Spbb[4,5] Spbb[5,6])//.SHtest//.NSpinHel
+
+
+1/(Spaa[1,2] Spaa[1,3] Spbb[4,5] Spbb[5,6]) Collect[(Spaa[1,4] Spaa[2,3]-Spaa[1,3] Spaa[2,4]) Spbb[4,5] Spbb[4,6]-(Spaa[1,3] (Spab[2,P[3]+P[6],4]-Spaa[1,2] Spbb[1,4])+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6]//.schoutenA//.FullSPAB//Expand,Spbb[4,6]]
+
+
+(* ::Input:: *)
+(*( Spab[2,P[1]+P[4]+P[6],6] )/(Spaa[1,2] Spbb[5,6])*)
+
+
+DefNumSH[6]
+(Spaa[1,2] Spab[3,P[4]+P[6],5] Spbb[4,5])/(-Spaa[1,2] Spaa[3,4] Spbb[4,5] Spbb[4,6]-(Spaa[1,3] Spaa[2,5] Spbb[4,5]+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6]);
+Collect[-Spaa[1,2] Spaa[3,4] Spbb[4,5] Spbb[4,6]-(Spaa[1,3] Spaa[2,5] Spbb[4,5]+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6]//Expand,Spbb[4,5]]
+
+
+a[6]->((Spaa[1,4] Spaa[2,3]-Spaa[1,3] Spaa[2,4]) Spbb[4,5] Spbb[4,6]-(Spaa[1,3] (Spab[2,P[3]+P[6],4]-Spaa[1,2] Spbb[1,4])+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6])/(Spaa[1,2] Spaa[1,3] Spbb[4,5] Spbb[5,6])//.SPAB
+
+
+(* ::Input:: *)
+(*a[6]->((Spaa[1,4] Spaa[2,3]-Spaa[1,3] Spaa[2,4]) Spbb[4,5] Spbb[4,6]-(Spaa[1,3] (-Spab[2,P[2]+P[4]+P[5],4])+Spaa[1,6] Spaa[2,3] Spbb[4,6]) Spbb[5,6])/(Spaa[1,2] Spaa[1,3] Spbb[4,5] Spbb[5,6])//.SHtest*)
+
+
+a[1]=-(Spaa[2,3]/Spaa[1,3]);
+a[2]=Spaa[1,3]/Spaa[1,2];
+a[3]=Spab[1,P[4]+P[6],5]/(Spaa[1,3] Spbb[4,5]);
+a[4]=Spbb[5,6]/Spbb[4,5];
+a[5]=-(Spab[3,P[4]+P[5]+P[6],5]/(Spaa[1,3] Spbb[5,6]));
+a[7]=-(Spbb[4,6]/Spbb[4,5]);
+
+
+DefNumSH[6];
+B2
+
+
+so = (FullSimplify[Simplify[Solve[{B2==0},{a[6]}]//.schoutenB]]//.schoutenB//.SPAB//FullSimplify)//.SPAB//Together
+aa = (Numerator[a[6]//.so[[1]][[1]]]//FullSimplify)//.SPAB//.{Spab[2,P[1]+P[3],4]->-Spab[2,P[4]+P[5]+P[6],4]}//.SHtest
+(Collect[Collect[Collect[aa//Expand,Spbb[4,5]],Spbb[4,6]]//.{(-Spaa[1,2] Spaa[3,4] Spbb[4,5]-Spaa[1,3] Spaa[2,6] Spbb[5,6]+Spaa[1,2] Spaa[3,6] Spbb[5,6])->(-Spaa[1,2] Spaa[3,4] Spbb[4,5]-(Spaa[1,3] Spaa[2,6]-Spaa[1,2] Spaa[3,6]) Spbb[5,6])}//.schoutenA, Spbb[5,6]]//Expand//FullSimplify)//.{Spaa[2,5] Spbb[4,5]->-Spab[2,P[2]+P[4]+P[5],4],Spaa[1,6]Spbb[4,6]->Spab[1,P[2]+P[3]+P[5],4]}
+
+
+\[CapitalDelta] = Together[\[Delta]//.Sol[[1]]]//.schoutenA
+
+Together[1/(1+a[1]a[2]a[3]a[6]^(-1))//.Sol[[1]]]//.schoutenA
+Together[1/(1-a[4]a[5]^(-1)a[6]^(-1))//.Sol[[1]]]//.schoutenA
+
+
+Spaa[1,4] Spaa[3,4]+Spaa[1,5] Spaa[3,5]//.schoutenA
+
+
+EE[1] = A1;
+EE[2] = A2;
+EE[3] = A3;
+EE[4] = A4;
+EE[5] = A5;
+EE[6] = A6;
+
+
+F[i_,j_]:=D[EE[i],a[j]];
+Mat = Table[F[i,j],{i,1,6},{j,1,6}];
+J = FullSimplify[Simplify[1/(Det[Mat])]//.Sol]//.schoutenA
+
+
+Product[1/a[i],{i,1,5}]//.Sol//Simplify;
+\[CapitalOmega] = Product[1/a[i],{i,1,5}]*J*Spaa[2,5]//.Sol//Simplify
+
+
+\[CapitalOmega]5 = \[CapitalOmega]*\[CapitalDelta]//Simplify
+
+sing = {Spaa[i_,5]->\[Alpha] Spaa[i,2]+\[Beta] Spaa[i,j],Spaa[5,i_]->\[Alpha] Spaa[2,i]+\[Beta] Spaa[j,i]};
+\[CapitalOmega]5//.sing
+Residue[(\[CapitalOmega]5[[1]][[1]]//.sing),{\[Beta],0}]//.Spaa[2,j]->1
+
+
+\[CapitalOmega] = Spaa[3,4]^4/(a[5](a[5]Spaa[2,4]-Spaa[3,4])Spaa[1,2]Spaa[2,3]Spaa[1,4])*((a[5] Spaa[2,4]-Spaa[3,4])/Spaa[3,4])^(4)
+Residue[\[CapitalOmega],{a[5],0}]
+
+
+DefNumSH[6]
+s[1,2](Spab[1,P[1]+P[5]+P[6],1]+Spab[2,P[2]+P[5]+P[6],2])-4 Spab[4,P[1]+P[2]+P[3],3]Spab[3,P[1]+P[2]+P[3],4]//.SHtest//.NSpinHel
+-4 s[1,2]s[5,6]//.SHtest//.NSpinHel
+
+
+
+
+
+
+(* ::Subsection::Closed:: *)
+(*Six point maximally non planar mhv*)
+
+
+(* ::Subsubsection:: *)
+(*First orientation*)
+
+
+f[x_] := Product[a[i], {i, x}]
+CC=\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{"1", 
+RowBox[{"\[Delta]", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "1", "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "3", ",", "4", ",", "6", ",", "8"}], "}"}], "]"}]}], ")"}]}], "0", 
+RowBox[{"\[Delta]", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "6", ",", "8"}], "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "5", ",", "7"}], "}"}], "]"}]}], ")"}]}], 
+RowBox[{"\[Delta]", 
+RowBox[{"(", 
+RowBox[{"1", "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "4", ",", "6", ",", "8"}], "}"}], "]"}]}], ")"}], 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "5"}], "}"}], "]"}]}], 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "6"}], "}"}], "]"}]},
+{"0", 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "2", ",", "4", ",", "5", ",", "7"}], "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "4", ",", "6", ",", "8"}], "}"}], "]"}]}], ")"}]}], "1", 
+RowBox[{"\[Delta]", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"6", ",", "8"}], "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "5", ",", "7"}], "}"}], "]"}]}], ")"}]}], 
+RowBox[{"\[Delta]", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "4", ",", "5", ",", "6", ",", "8"}], "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "5"}], "}"}], "]"}]}], ")"}]}], 
+RowBox[{"f", "[", 
+RowBox[{"{", "6", "}"}], "]"}]}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+Cperp =\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{
+RowBox[{
+RowBox[{"-", "\[Delta]"}], 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "1", "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "3", ",", "4", ",", "6", ",", "8"}], "}"}], "]"}]}], ")"}]}], "1", 
+RowBox[{
+RowBox[{"-", "\[Delta]"}], 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "2", ",", "4", ",", "5", ",", "7"}], "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "4", ",", "6", ",", "8"}], "}"}], "]"}]}], ")"}]}], "0", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", "\[Delta]"}], " ", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "6", ",", "8"}], "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "5", ",", "7"}], "}"}], "]"}]}], ")"}]}], "0", 
+RowBox[{
+RowBox[{"-", "\[Delta]"}], 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"6", ",", "8"}], "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "5", ",", "7"}], "}"}], "]"}]}], ")"}]}], "1", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", "\[Delta]"}], " ", 
+RowBox[{"(", 
+RowBox[{"1", "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "4", ",", "6", ",", "8"}], "}"}], "]"}]}], ")"}], 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "5"}], "}"}], "]"}]}], "0", 
+RowBox[{
+RowBox[{"-", "\[Delta]"}], 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"1", ",", "4", ",", "5", ",", "6", ",", "8"}], "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "5"}], "}"}], "]"}]}], ")"}]}], "0", "1", "0"},
+{
+RowBox[{"-", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "6"}], "}"}], "]"}]}], "0", 
+RowBox[{"-", 
+RowBox[{"f", "[", 
+RowBox[{"{", "6", "}"}], "]"}]}], "0", "0", "1"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+lambda={\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]};
+tlambda={t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6]};
+CC . Transpose[Cperp]
+perpEQ = Cperp . Transpose[lambda];
+CEQ = CC . Transpose[tlambda];
+eta = {\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5],\[Eta][6]};
+SEQ = CC . Transpose[eta];
+
+
+A1 = TensorExpand[(perpEQ[[1]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A2 = TensorExpand[(perpEQ[[1]]) . \[Lambda][3]]//.RB//.RR//FullSimplify;
+A3 = TensorExpand[(perpEQ[[2]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A4 = TensorExpand[(perpEQ[[2]]) . \[Lambda][3]]//.RB//.RR//FullSimplify;
+A5 = TensorExpand[(perpEQ[[3]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A6 = TensorExpand[(perpEQ[[3]]) . \[Lambda][3]]//.RB//.RR//FullSimplify;
+A7 = TensorExpand[(perpEQ[[4]]) . \[Lambda][1]]//.RB//.RR//FullSimplify;
+A8 = TensorExpand[(perpEQ[[4]]) . \[Lambda][3]]//.RB//.RR//FullSimplify;
+
+B1 = TensorExpand[(CEQ[[1]]) . t\[Lambda][2]]//.RB//.RR//FullSimplify;
+B2 = TensorExpand[(CEQ[[1]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify;
+B3 = TensorExpand[(CEQ[[1]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify;
+B4 = TensorExpand[(CEQ[[1]]) . t\[Lambda][6]]//.RB//.RR//FullSimplify;
+B5 = TensorExpand[(CEQ[[2]]) . t\[Lambda][2]]//.RB//.RR//FullSimplify;
+B6 = TensorExpand[(CEQ[[2]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify;
+B7 = TensorExpand[(CEQ[[2]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify;
+B8 = TensorExpand[(CEQ[[2]]) . t\[Lambda][6]]//.RB//.RR//FullSimplify;
+
+(*\[Delta] = 1/(1-(a[1]a[4]a[5]a[7]));*)
+
+
+
+Sol = Together[FullSimplify[FullSimplify[FullSimplify[Solve[{A1==0,A2==0,A3==0,A4==0,A5==0,A6==0,A7==0,A8==0},{a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8]}]]//.schoutenA]//.schoutenA]]//.schoutenA//FullSimplify
+
+
+Sol = {a[1]->Spaa[2,4]/Spaa[1,4],a[2]->-(Spaa[2,5]/Spaa[3,5]),a[3]->-(Spaa[3,6]/Spaa[1,6]),a[4]->Spaa[1,2]/Spaa[2,4],a[5]->-(Spaa[3,5]/Spaa[2,3]),a[6]->Spaa[1,6]/Spaa[1,3],a[7]->Spaa[4,6]/Spaa[5,6],a[8]->-(Spaa[4,5]/Spaa[5,6])}
+
+
+EE[1] = A1;
+EE[2] = A2;
+EE[3] = A3;
+EE[4] = A4;
+EE[5] = A5;
+EE[6] = A6;
+EE[7] = A7;
+EE[8] = A8;
+
+
+
+
+
+Jc2 = Together[1-(a[1]a[4]a[5]a[7])//.Sol]
+
+
+DefNumSH[6]
+Spaa[1,2] Spaa[3,5] Spaa[4,6]+Spaa[1,4] Spaa[2,3] Spaa[5,6]//.NSpinHel
+Spaa[3,4] Spaa[5,1] Spaa[6,2]+Spaa[1,4] Spaa[2,5] Spaa[6,3]//.NSpinHel
+-Spaa[1,6] Spaa[2,4] Spaa[3,5]-Spaa[1,4] Spaa[2,5] Spaa[6,3]//.NSpinHel
+
+
+(*Shifted *)
+\[CapitalOmega] = (Spaa[1,4]Spaa[2,3]Spaa[5,6])^3/(Spaa[1,2]Spaa[1,3]Spaa[1,4]Spaa[1,6]Spaa[2,3]Spaa[2,5]Spaa[3,6]Spaa[4,5]Spaa[4,6]Spaa[5,6](Spaa[1,6]Spaa[2,4]Spaa[3,5]-Spaa[1,4]Spaa[2,5]Spaa[3,6]));
+shift = {Spaa[4,i_]->(Spaa[4,i]+z Spaa[1,i]),Spaa[i_,4]->(Spaa[i,4]+z Spaa[i,1])};
+\[Omega] = (\[CapitalOmega]/.shift)//FullSimplify
+
+\[Omega]1 = ((Residue[\[Omega],{z,(Spaa[1,6] Spaa[2,4] Spaa[3,5]-Spaa[1,4] Spaa[2,5] Spaa[3,6])/(Spaa[1,2] Spaa[1,6] Spaa[3,5])}]//FullSimplify)//.schoutenA//FullSimplify)//.schoutenA
+\[Omega]1 = -((Spaa[2,3] Spaa[3,5])/(Spaa[1,3]^2 Spaa[1,6] Spaa[2,5]^2 Spaa[3,6]))
+\[Omega]2 = ((Residue[\[Omega],{z,-(Spaa[4,5]/Spaa[1,5])}]//FullSimplify)//.schoutenA//FullSimplify)//.schoutenA//FullSimplify//Factor//.{Spaa[1,5] Spaa[1,6] Spaa[2,4] Spaa[3,5]-Spaa[1,4] Spaa[1,5] Spaa[2,5] Spaa[3,6]+Spaa[1,2] Spaa[1,6] Spaa[3,5] Spaa[4,5]->-Spaa[1,3] Spaa[1,4] Spaa[2,5] Spaa[5,6]};
+\[Omega]2 = (Spaa[1,4] Spaa[1,5] Spaa[2,3]^2 Spaa[5,6])/(Spaa[1,2] Spaa[1,3] Spaa[1,6] Spaa[2,5] Spaa[3,6] (-Spaa[1,3] Spaa[1,4] Spaa[2,5] Spaa[5,6]))
+\[Omega]3 =(((Residue[\[Omega],{z,-(Spaa[4,6]/Spaa[1,6])}]//FullSimplify)//.schoutenA//FullSimplify)//.schoutenA//FullSimplify//Factor)//.schoutenA
+DefNumSH[6]
+\[Omega]1+\[Omega]2+\[Omega]3//.SHtest//.NSpinHel
+(Collect[(Spaa[1,5] (Spaa[1,6] Spaa[2,4] Spaa[3,5]-Spaa[1,4] Spaa[2,5] Spaa[3,6])+Spaa[1,2] Spaa[1,6] Spaa[3,5] Spaa[4,5]),Spaa[1,6] Spaa[3,5]]//.schoutenA//FullSimplify)//.schoutenA
+
+
+FullSimplify[Collect[Spaa[1,5] (Spaa[1,6] Spaa[2,4] Spaa[3,5]-Spaa[1,4] Spaa[2,5] Spaa[3,6])+Spaa[1,2] Spaa[1,6] Spaa[3,5] Spaa[4,5]//Expand,Spaa[1,6] Spaa[3,5]]//.schoutenA]//.schoutenA
+
+(Spaa[1,4] Spaa[2,3] Spaa[3,5] Spaa[5,6])/(Spaa[1,3] Spaa[1,6] Spaa[2,5] Spaa[3,6] (-Spaa[1,3] Spaa[1,4] Spaa[2,5] Spaa[5,6]))
+
+
+(* ::Subsubsection::Closed:: *)
+(*pole at inf diagram*)
+
+
+f[x_] := Product[a[i], {i, x}]
+CC=\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{"1", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "7", "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "3", ",", "4", ",", "5", ",", "6"}], "}"}], "]"}]}], ")"}], "0", 
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"5", ",", "6"}], "}"}], "]"}], ")"}], 
+RowBox[{
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "1", "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "4", ",", "5"}], "}"}], "]"}]}], ")"}], 
+RowBox[{"f", "[", 
+RowBox[{"{", "6", "}"}], "]"}]}], 
+RowBox[{"f", "[", 
+RowBox[{"{", "6", "}"}], "]"}]},
+{"0", 
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "3"}], "}"}], "]"}], ")"}], "1", "0", 
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", "3", "}"}], "]"}], ")"}], "0"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+Cperp =\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "7", "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "3", ",", "4", ",", "5", ",", "6"}], "}"}], "]"}]}], ")"}]}], "1", 
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "3"}], "}"}], "]"}], ")"}]}], "0", "0", "0"},
+{
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"5", ",", "6"}], "}"}], "]"}], ")"}]}], "0", "0", "1", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "1", "}"}], "]"}], "+", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "4", ",", "5"}], "}"}], "]"}]}], ")"}]}], 
+RowBox[{"f", "[", 
+RowBox[{"{", "6", "}"}], "]"}]}], "0", 
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", "3", "}"}], "]"}], ")"}]}], "0", "1", "0"},
+{
+RowBox[{"-", 
+RowBox[{"f", "[", 
+RowBox[{"{", "6", "}"}], "]"}]}], "0", "0", "0", "0", "1"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+lambda={\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]};
+tlambda={t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6]};
+CC . Transpose[Cperp]//Simplify
+perpEQ = Cperp . Transpose[lambda];
+CEQ = CC . Transpose[tlambda];
+eta = {\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5],\[Eta][6]};
+SEQ = CC . Transpose[eta];
+
+
+A1 = TensorExpand[(perpEQ[[1]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A2 = TensorExpand[(perpEQ[[1]]) . \[Lambda][3]]//.RB//.RR//FullSimplify
+A3 = TensorExpand[(perpEQ[[2]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A4 = TensorExpand[(perpEQ[[2]]) . \[Lambda][3]]//.RB//.RR//FullSimplify
+A5 = TensorExpand[(perpEQ[[3]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A6 = TensorExpand[(perpEQ[[3]]) . \[Lambda][3]]//.RB//.RR//FullSimplify
+A7 = TensorExpand[(perpEQ[[4]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A8 = TensorExpand[(perpEQ[[4]]) . \[Lambda][3]]//.RB//.RR//FullSimplify
+
+B1 = TensorExpand[(CEQ[[1]]) . t\[Lambda][2]]//.RB//.RR//FullSimplify;
+B2 = TensorExpand[(CEQ[[1]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify;
+B3 = TensorExpand[(CEQ[[1]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify;
+B4 = TensorExpand[(CEQ[[1]]) . t\[Lambda][6]]//.RB//.RR//FullSimplify;
+B5 = TensorExpand[(CEQ[[2]]) . t\[Lambda][2]]//.RB//.RR//FullSimplify;
+B6 = TensorExpand[(CEQ[[2]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify;
+B7 = TensorExpand[(CEQ[[2]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify;
+B8 = TensorExpand[(CEQ[[2]]) . t\[Lambda][6]]//.RB//.RR//FullSimplify;
+
+
+Sol = (Together[FullSimplify[FullSimplify[FullSimplify[Solve[{A1==0,A2==0,A4==0,A5==0,A6==0,A8==0},{a[6],a[4],a[3],a[5],a[2],a[1]}]]//.schoutenA]//.schoutenA]]//.schoutenA//FullSimplify)//.schoutenA
+
+
+EE[1] = A1;
+EE[2] = A2;
+EE[3] = A4;
+EE[4] = A5;
+EE[5] = A6;
+EE[6] = A8;
+
+
+F[i_,j_]:=D[EE[i],a[j]];
+Mat = Table[F[i,j],{i,1,6},{j,1,6}];
+Print["Jacobian from solving \[Delta] functions:"]
+J = FullSimplify[Simplify[1/(Det[Mat])]//.Sol[[1]]]//.schoutenA//FullSimplify
+Print["Bare form:"]
+\[CapitalOmega] = Product[1/a[i],{i,1,7}]*J*Spaa[1,3]^4//.Sol[[1]]//Simplify
+
+
+Residue[\[CapitalOmega],{a[7],0}]
+
+
+
+
+
+(Spaa[1,4]Spaa[2,3]Spaa[5,6])^3/(Spaa[1,2]Spaa[1,3]Spaa[1,4]Spaa[1,6]Spaa[2,3]Spaa[2,5]Spaa[3,6]Spaa[4,5]Spaa[4,6]Spaa[5,6](Spaa[1,6]Spaa[2,4]Spaa[3,5]+Spaa[1,4]Spaa[2,5]Spaa[3,6]))
+
+
+(* ::Subsubsection:: *)
+(*lower lvl residue diagram*)
+
+
+f[x_] := Product[a[i], {i, x}]
+CC=\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{"1", 
+RowBox[{
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "5", ",", "6", ",", "7"}], "}"}], "]"}], ")"}], "\[Delta]"}], "0", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "8", "}"}], "]"}], "+", 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "6", ",", "7"}], "}"}], "]"}]}]}], ")"}], 
+RowBox[{
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"6", ",", "7"}], "}"}], "]"}], ")"}], "\[Delta]"}], 
+RowBox[{"f", "[", 
+RowBox[{"{", "1", "}"}], "]"}]},
+{"0", 
+RowBox[{
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", "5", "}"}], "]"}], ")"}], "\[Delta]"}], "1", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "5", ",", "7"}], "}"}], "]"}], "\[Delta]"}], 
+RowBox[{
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"5", ",", "7"}], "}"}], "]"}], ")"}], "\[Delta]"}], 
+RowBox[{"f", "[", 
+RowBox[{"{", "4", "}"}], "]"}]}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+Cperp =\!\(\*
+TagBox[
+RowBox[{"(", GridBox[{
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"3", ",", "5", ",", "6", ",", "7"}], "}"}], "]"}], ")"}]}], "\[Delta]"}], "1", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", "5", "}"}], "]"}], ")"}]}], "\[Delta]"}], "0", "0", "0"},
+{
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{
+RowBox[{"f", "[", 
+RowBox[{"{", "8", "}"}], "]"}], "+", 
+RowBox[{"\[Delta]", " ", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "6", ",", "7"}], "}"}], "]"}]}]}], ")"}]}], "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"2", ",", "5", ",", "7"}], "}"}], "]"}]}], "\[Delta]"}], "1", "0", "0"},
+{
+RowBox[{
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"6", ",", "7"}], "}"}], "]"}], ")"}]}], "\[Delta]"}], "0", 
+RowBox[{
+RowBox[{"-", 
+RowBox[{"(", 
+RowBox[{"f", "[", 
+RowBox[{"{", 
+RowBox[{"5", ",", "7"}], "}"}], "]"}], ")"}]}], "\[Delta]"}], "0", "1", "0"},
+{
+RowBox[{"-", 
+RowBox[{"f", "[", 
+RowBox[{"{", "1", "}"}], "]"}]}], "0", 
+RowBox[{"-", 
+RowBox[{"f", "[", 
+RowBox[{"{", "4", "}"}], "]"}]}], "0", "0", "1"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}}], ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
+lambda={\[Lambda][1],\[Lambda][2],\[Lambda][3],\[Lambda][4],\[Lambda][5],\[Lambda][6]};
+tlambda={t\[Lambda][1],t\[Lambda][2],t\[Lambda][3],t\[Lambda][4],t\[Lambda][5],t\[Lambda][6]};
+CC . Transpose[Cperp]//Simplify
+perpEQ = Cperp . Transpose[lambda];
+CEQ = CC . Transpose[tlambda];
+eta = {\[Eta][1],\[Eta][2],\[Eta][3],\[Eta][4],\[Eta][5],\[Eta][6]};
+SEQ = CC . Transpose[eta];
+\[Delta] = 1/(1-f[{3,5,7}])
+
+
+A1 = TensorExpand[(perpEQ[[1]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A2 = TensorExpand[(perpEQ[[1]]) . \[Lambda][3]]//.RB//.RR//FullSimplify
+A3 = TensorExpand[(perpEQ[[2]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A4 = TensorExpand[(perpEQ[[2]]) . \[Lambda][3]]//.RB//.RR//FullSimplify
+A5 = TensorExpand[(perpEQ[[3]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A6 = TensorExpand[(perpEQ[[3]]) . \[Lambda][3]]//.RB//.RR//FullSimplify
+A7 = TensorExpand[(perpEQ[[4]]) . \[Lambda][1]]//.RB//.RR//FullSimplify
+A8 = TensorExpand[(perpEQ[[4]]) . \[Lambda][3]]//.RB//.RR//FullSimplify
+
+B1 = TensorExpand[(CEQ[[1]]) . t\[Lambda][2]]//.RB//.RR//FullSimplify;
+B2 = TensorExpand[(CEQ[[1]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify;
+B3 = TensorExpand[(CEQ[[1]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify;
+B4 = TensorExpand[(CEQ[[1]]) . t\[Lambda][6]]//.RB//.RR//FullSimplify;
+B5 = TensorExpand[(CEQ[[2]]) . t\[Lambda][2]]//.RB//.RR//FullSimplify;
+B6 = TensorExpand[(CEQ[[2]]) . t\[Lambda][4]]//.RB//.RR//FullSimplify;
+B7 = TensorExpand[(CEQ[[2]]) . t\[Lambda][5]]//.RB//.RR//FullSimplify;
+B8 = TensorExpand[(CEQ[[2]]) . t\[Lambda][6]]//.RB//.RR//FullSimplify;
+
+
+Sol = (Together[FullSimplify[FullSimplify[FullSimplify[Solve[{A1==0,A2==0,A3==0,A4==0,A5==0,A6==0,A7==0,A8==0},{a[6],a[4],a[3],a[5],a[2],a[1],a[7],a[8]}]]//.schoutenA]//.schoutenA]]//.schoutenA//FullSimplify)//.schoutenA
+
+
+EE[1] = A1;
+EE[2] = A2;
+EE[3] = A3;
+EE[4] = A4;
+EE[5] = A5;
+EE[6] = A6;
+EE[7] = A7;
+EE[8] = A8;
+
+
+F[i_,j_]:=D[EE[i],a[j]];
+Mat = Table[F[i,j],{i,1,8},{j,1,8}];
+Print["Jacobian from solving \[Delta] functions:"]
+J = FullSimplify[Simplify[1/(Det[Mat])]//.Sol[[1]]]//.schoutenA//FullSimplify
+Print["Bare form:"]
+\[CapitalOmega] = Product[1/a[i],{i,1,7}]*J*Spaa[1,3]^4//.Sol[[1]]//Simplify
+
+
+Residue[\[CapitalOmega],{a[7],0}]
+
+
+
+
+
+(Spaa[1,4]Spaa[2,3]Spaa[5,6])^3/(Spaa[1,2]Spaa[1,3]Spaa[1,4]Spaa[1,6]Spaa[2,3]Spaa[2,5]Spaa[3,6]Spaa[4,5]Spaa[4,6]Spaa[5,6](Spaa[1,6]Spaa[2,4]Spaa[3,5]+Spaa[1,4]Spaa[2,5]Spaa[3,6]))
 
 
 (* ::Section:: *)
@@ -16747,3 +17792,90 @@ Spab[1,P[1]+P[5]+P[6],2]Spab[2,P[1]+P[5]+P[6],1]//.SHtest//.NSpinHel
 
 
 Expand[Spab[1,P[1]+P[5]+P[6],2]Spab[2,P[1]+P[5]+P[6],1]//.SHtest]//.Spaa[2,6]Spaa[1,6] Spbb[1,6] Spbb[2,6]->s[2,6]s[1,6]//.Spaa[1,5] Spaa[2,5] Spbb[1,5] Spbb[2,5]->s[1,5]s[2,5]//.{Spaa[2,6] Spbb[1,6]->-Spab[2,P[6],1],Spaa[2,5] Spbb[1,5]->-Spab[2,P[5],1]}//.{Spaa[1,5]Spbb[2,5]->-Spab[1,P[5],2],Spaa[1,6]Spbb[2,6]->-Spab[1,P[6],2]}
+
+
+DefNumSH[6]
+A[{i_,j_,k_,l_,r_,t_}]:=Spaa[i,j]^4/(Spaa[i,j]Spaa[j,k]Spaa[k,l]Spaa[l,r]Spaa[r,t]Spaa[t,i])
+s[1,6]s[2,3]s[2,3,4]A[{1,2,3,4,5,6}]-s[1,5]s[3,6](s[4,6]-s[2,3])A[{1,2,6,3,4,5}]-s[1,4]s[3,6](s[1,6]+s[5,6])A[{1,2,6,3,5,4}]+s[1,5]s[4,6](s[1,3]+s[3,5])A[{1,2,6,4,3,5}]+s[1,3]s[4,6]s[1,5]A[{1,2,6,4,5,3}]-s[1,4](s[1,6]+s[5,6])(s[3,5]+s[3,6])A[{1,2,6,5,3,4}]+s[1,3](s[1,4]-s[2,3])(s[1,6]+s[5,6])A[{1,2,6,5,4,3}]//.SHtest//.NSpinHel
+
+
+8*(0.09/0.12)
+
+
+Solve[y/Sqrt[y^2+L^2]==m \[Lambda]/a,y]
+
+
+Permutations[{3,4,5,6,7}]
+
+
+POP[{i___},{j___}]:=Flatten[Table[shuffleW[Permutations[{i}][[k]],{j}],{k,1,Length[{i}]}],1]
+S[i_, j_] := If[i < j || j == 1 || j >= 3, s[i, j], 0]
+
+
+Sum[S[k]]
+
+
+
+
+
+S[3,2]
+
+
+S[i_, j_] := If[i < j || j == 1 || j >= 3, s[[i, j]], 0]
+F[k_, beta_, s_, t_] := Module[
+  {m = Length[beta], sumSkp, tk = t[[k]], tkp1, tkm1},
+  tkm1 = If[k > 1, t[[k - 1]], -Infinity]; (* Handling when k = 1 *)
+  tkp1 = If[k < m, t[[k + 1]], Infinity]; (* Handling when k = m *)
+  
+  sumSkp = If[tkm1 < tk,
+    Sum[S[k, p], {p, 1, m - 1}],
+    -Sum[S[k, p], {p, 1, tk}]
+  ];
+  
+  Which[
+    tkm1 < tk < tkp1, sumSkp + s[[2, tk + 1, tk + 2, tk + 3, (* ... until m *)]],
+    tkp1 < tk, sumSkp - s[[2, tk + 1, tk + 2, tk + 3, (* ... until m *)]],
+    True, 0
+  ]
+]
+
+
+
+F[]
+
+
+(* ::Subsubsection:: *)
+(*Before residue*)
+
+
+cc
+
+
+(* ::Subsection:: *)
+(*Top cell residue*)
+
+
+A4cX[i_,j_]:=1/4 i (-i-j) j;
+
+
+A6cX[i_,j_,k_,l_,r_,s_,t_,u_,n_]:=1/16 (-i j k l r-(i k l (i+l) r (k+r))/j-1/u i s n (i+s-u) r (n-u+r)+1/t k^2 l (-l s n-s n^2+t (s n+i r))+1/t k l (-t^2 s n-s^2 n^2+t (s^2 n+s n^2+i r (i+r))+l (-s^2 n+t (s n+i r))))+1/16 k1 (j^2 (s n (s+n-u)+t^2 u-t ((n-u) u+s (n+u)))+i^2 r (l (-t+s)+t (t-s+r))+j ((s n-t u) (s n-t u+l (-n+u)+t r-n r)+k (l ((-2 t+n-u) u+s (n+u))-(s-u) (s n-n r+t (-u+r))))+l (k^2 (l u-(s-u) (u-r))+n (s n-t u) r+k (l u (-n+u)+s n (u-2 r)+u (n r+t (-u+r))))+i (r (l (-2 s n+t (n+u))+t (s n-n r+t (-u+r)))+k (l^2 (n-u)+(s-r) (s n-n r+t (-u+r))+l (s (-2 n+u-2 r)+(-2 n+u) r+t (u+r)))+j (-l (t-s) (n-u)+s n (-s+r)-t^2 (u+r)+t ((n-2 u) r+s (n+u+r)))));
+
+
+A8cX[i_,j_,k_,l_,r_,s_,t_,u_,n_,m_,o_,a_,b_,d_,aa__,bb_,cc_,dd_,ff_,ll_]:=-(1/(128 i j k))l r (i s (l+s-j) j k^2+t (2 i^2 u n j+2 u^2 n (l+n) j+i (s m^2 (l+s-j)-2 u n (l+u+n) j-s m (l+s-j) j)+(2 u n (l+n) j+i (s m (l+s-j)-2 u n j)) t)-k (i (-2 l u n+2 i u n-2 u n^2+s (l+s-j) (m-j)) j+(2 u n (l+n) j+i (s m (l+s-j)+(-2 u n+s (l+s-j)) j)) t)) b (r-k+b)-1/(128 aa a k) u s (u-aa+s) r (aa^2 o a (o-a+r) k+m (2 n a k^2 b+2 n^2 a b (r+b)+k (bb^2 o (o-a+r)-bb o a (o-a+r)-2 n a b (n+r+b))+m (2 n a b (r+b)+k (bb o (o-a+r)-2 n a b)))-aa (a k (o (bb-a) (o-a+r)-2 n r b+2 n k b-2 n b^2)+m (2 n a b (r+b)+k (bb o (o-a+r)+a (o (o-a+r)-2 n b)))))-1/(128 ll d a) u o (ll^2 n d (n-d+o) a+bb (2 l d a^2 r+2 l^2 d r (o+r)+a (cc^2 n (n-d+o)-cc n d (n-d+o)-2 l d r (l+o+r))+bb (2 l d r (o+r)+a (cc n (n-d+o)-2 l d r)))-ll (d a (n (cc-d) (n-d+o)-2 l o r+2 l a r-2 l r^2)+bb (2 l d r (o+r)+a (cc n (n-d+o)+d (n (n-d+o)-2 l r))))) ff (-ll+u+ff)-1/(128 i d dd) n b (cc (2 i d^2 s o+2 i s^2 o (n+o)+d (-2 i s o (n+s+o)-l i (l-i+n) t+l (l-i+n) t^2)+cc (2 i s o (n+o)+d (-2 i s o+l (l-i+n) t)))-(i d (-2 n s o+2 d s o-2 s o^2+l (l-i+n) (-i+t))+cc (2 i s o (n+o)+d (i (l (l-i+n)-2 s o)+l (l-i+n) t))) dd+l i (l-i+n) d dd^2) ff (b-dd+ff)+k2 (-(1/2) ff (-(1/2) b (-(1/16) n (-cc+ll+d-bb) (-u+aa-s) (-n+d-o) o+1/32 n (-i+cc+n-d) (-u+aa-s) o (-d+bb+o-a)+1/32 (-l+i-n) (-u+aa-s) (-n+d-o) o (-d+bb+o-a)-1/32 l (-u+aa-s) o^2 (-d+bb+o-a)+1/32 n (-i+cc+n-d) (-cc+ll+d-bb) o (-aa+s+m-j)+1/32 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) o (-aa+s+m-j)-1/32 l (-cc+ll+d-bb) o^2 (-aa+s+m-j)-1/16 (-l+i-n) (-i+cc+n-d) o (-d+bb+o-a) (-aa+s+m-j)+1/32 n (-i+cc+n-d) (-u+aa-s) (-n+d-o) (-o+a-r)-1/32 (-l+i-n) (-u+aa-s) (-n+d-o)^2 (-o+a-r)+1/32 l (-u+aa-s) (-n+d-o) o (-o+a-r)-1/32 n (-i+cc+n-d)^2 (-aa+s+m-j) (-o+a-r)+1/32 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-aa+s+m-j) (-o+a-r)+1/32 l (-i+cc+n-d) o (-aa+s+m-j) (-o+a-r)-1/32 n^2 (-i+cc+n-d) (-u+aa-s) r+1/32 (-l+i-n) n (-u+aa-s) (-n+d-o) r+1/32 l n (-u+aa-s) o r+1/32 (-l+i-n) n (-i+cc+n-d) (-aa+s+m-j) r-1/32 (-l+i-n)^2 (-n+d-o) (-aa+s+m-j) r+1/32 l (-l+i-n) o (-aa+s+m-j) r+1/32 n (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/32 (-l+i-n) (-cc+ll+d-bb) (-n+d-o)^2 (-m+j+k-t)+1/32 l (-cc+ll+d-bb) (-n+d-o) o (-m+j+k-t)-1/32 n (-i+cc+n-d)^2 (-d+bb+o-a) (-m+j+k-t)+1/32 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)+1/32 l (-i+cc+n-d) o (-d+bb+o-a) (-m+j+k-t)-1/16 l (-i+cc+n-d) (-n+d-o) (-o+a-r) (-m+j+k-t)+1/32 l n (-i+cc+n-d) r (-m+j+k-t)+1/32 l (-l+i-n) (-n+d-o) r (-m+j+k-t)-1/32 l^2 o r (-m+j+k-t)-1/32 n^2 (-i+cc+n-d) (-cc+ll+d-bb) (-k+t+b-dd)+1/32 (-l+i-n) n (-cc+ll+d-bb) (-n+d-o) (-k+t+b-dd)+1/32 l n (-cc+ll+d-bb) o (-k+t+b-dd)+1/32 (-l+i-n) n (-i+cc+n-d) (-d+bb+o-a) (-k+t+b-dd)-1/32 (-l+i-n)^2 (-n+d-o) (-d+bb+o-a) (-k+t+b-dd)+1/32 l (-l+i-n) o (-d+bb+o-a) (-k+t+b-dd)+1/32 l n (-i+cc+n-d) (-o+a-r) (-k+t+b-dd)+1/32 l (-l+i-n) (-n+d-o) (-o+a-r) (-k+t+b-dd)-1/32 l^2 o (-o+a-r) (-k+t+b-dd)-1/16 l (-l+i-n) n r (-k+t+b-dd)+1/32 n^2 (-i+cc+n-d)^2 (-b+dd-ff)-1/16 (-l+i-n) n (-i+cc+n-d) (-n+d-o) (-b+dd-ff)+1/32 (-l+i-n)^2 (-n+d-o)^2 (-b+dd-ff)-1/16 l n (-i+cc+n-d) o (-b+dd-ff)-1/16 l (-l+i-n) (-n+d-o) o (-b+dd-ff)+1/32 l^2 o^2 (-b+dd-ff))+1/2 (-r+k-b) (1/2 (-o+a-r) (1/16 n (-i+cc+n-d) (-u+aa-s) (-d+bb+o-a)-1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-d+bb+o-a)-1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-aa+s+m-j)+1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-aa+s+m-j)+1/16 l (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 l (-i+cc+n-d) (-aa+s+m-j) (-o+a-r)-1/16 l n (-u+aa-s) r-1/16 l (-l+i-n) (-aa+s+m-j) r-1/16 l (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 l (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t)+1/16 l^2 r (-m+j+k-t)+1/16 l n (-cc+ll+d-bb) (-k+t+b-dd)+1/16 l (-l+i-n) (-d+bb+o-a) (-k+t+b-dd)-1/16 l^2 (-o+a-r) (-k+t+b-dd))-1/2 (-d+bb+o-a) (-(1/16) (-l+i-n) (-u+aa-s) o (-d+bb+o-a)+1/16 (-l+i-n) (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 n (-i+cc+n-d) (-u+aa-s) (-o+a-r)+1/16 l (-u+aa-s) o (-o+a-r)+1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-o+a-r)+1/16 (-l+i-n) n (-u+aa-s) r-1/16 (-l+i-n)^2 (-aa+s+m-j) r+1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-m+j+k-t)-1/16 l (-cc+ll+d-bb) o (-m+j+k-t)-1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t)+1/16 l (-l+i-n) r (-m+j+k-t)-1/16 (-l+i-n) n (-cc+ll+d-bb) (-k+t+b-dd)+1/16 (-l+i-n)^2 (-d+bb+o-a) (-k+t+b-dd)-1/16 l (-l+i-n) (-o+a-r) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (-(1/16) n (-u+aa-s) o (-d+bb+o-a)+1/16 n (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 n (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 (-l+i-n) (-n+d-o) (-aa+s+m-j) (-o+a-r)-1/16 l o (-aa+s+m-j) (-o+a-r)+1/16 n^2 (-u+aa-s) r-1/16 (-l+i-n) n (-aa+s+m-j) r+1/16 n (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)+1/16 l o (-d+bb+o-a) (-m+j+k-t)-1/16 l n r (-m+j+k-t)-1/16 n^2 (-cc+ll+d-bb) (-k+t+b-dd)+1/16 (-l+i-n) n (-d+bb+o-a) (-k+t+b-dd)+1/16 l n (-o+a-r) (-k+t+b-dd))+1/2 (1/16 n^2 (-i+cc+n-d) (-cc+ll+d-bb)-1/16 (-l+i-n) n (-cc+ll+d-bb) (-n+d-o)-1/16 l n (-cc+ll+d-bb) o-1/16 (-l+i-n) n (-i+cc+n-d) (-d+bb+o-a)+1/16 (-l+i-n)^2 (-n+d-o) (-d+bb+o-a)-1/16 l (-l+i-n) o (-d+bb+o-a)-1/16 l n (-i+cc+n-d) (-o+a-r)-1/16 l (-l+i-n) (-n+d-o) (-o+a-r)+1/16 l^2 o (-o+a-r)+1/8 l (-l+i-n) n r) (-b+dd-ff))-1/2 (-a+m+r-k) (1/2 r (1/16 n (-i+cc+n-d) (-u+aa-s) (-d+bb+o-a)-1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-d+bb+o-a)-1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-aa+s+m-j)+1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-aa+s+m-j)+1/16 l (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 l (-i+cc+n-d) (-aa+s+m-j) (-o+a-r)-1/16 l n (-u+aa-s) r-1/16 l (-l+i-n) (-aa+s+m-j) r-1/16 l (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 l (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t)+1/16 l^2 r (-m+j+k-t)+1/16 l n (-cc+ll+d-bb) (-k+t+b-dd)+1/16 l (-l+i-n) (-d+bb+o-a) (-k+t+b-dd)-1/16 l^2 (-o+a-r) (-k+t+b-dd))-1/2 (-d+bb+o-a) (1/16 (-i+cc+n-d) (-u+aa-s) o (-d+bb+o-a)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 (-i+cc+n-d) (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 (-i+cc+n-d)^2 (-aa+s+m-j) (-o+a-r)+1/16 (-l+i-n) (-u+aa-s) (-n+d-o) r-1/16 l (-u+aa-s) o r-1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) r+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 (-i+cc+n-d)^2 (-d+bb+o-a) (-m+j+k-t)+1/16 l (-i+cc+n-d) r (-m+j+k-t)-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-k+t+b-dd)+1/16 l (-cc+ll+d-bb) o (-k+t+b-dd)+1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-k+t+b-dd)-1/16 l (-i+cc+n-d) (-o+a-r) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (1/16 (-u+aa-s) (-n+d-o) o (-d+bb+o-a)-1/16 (-cc+ll+d-bb) (-n+d-o) o (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o)^2 (-o+a-r)+1/16 (-i+cc+n-d) (-n+d-o) (-aa+s+m-j) (-o+a-r)+1/16 n (-u+aa-s) (-n+d-o) r-1/16 n (-i+cc+n-d) (-aa+s+m-j) r+1/16 l o (-aa+s+m-j) r+1/16 (-cc+ll+d-bb) (-n+d-o)^2 (-m+j+k-t)-1/16 (-i+cc+n-d) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)-1/16 l (-n+d-o) r (-m+j+k-t)-1/16 n (-cc+ll+d-bb) (-n+d-o) (-k+t+b-dd)+1/16 n (-i+cc+n-d) (-d+bb+o-a) (-k+t+b-dd)-1/16 l o (-d+bb+o-a) (-k+t+b-dd)+1/16 l (-n+d-o) (-o+a-r) (-k+t+b-dd))+1/2 (1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o)-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o)^2+1/16 l (-cc+ll+d-bb) (-n+d-o) o-1/16 n (-i+cc+n-d)^2 (-d+bb+o-a)+1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-d+bb+o-a)+1/16 l (-i+cc+n-d) o (-d+bb+o-a)-1/8 l (-i+cc+n-d) (-n+d-o) (-o+a-r)+1/16 l n (-i+cc+n-d) r+1/16 l (-l+i-n) (-n+d-o) r-1/16 l^2 o r) (-b+dd-ff))+1/2 (-bb+aa+a-m) (1/2 r (-(1/16) (-l+i-n) (-u+aa-s) o (-d+bb+o-a)+1/16 (-l+i-n) (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 n (-i+cc+n-d) (-u+aa-s) (-o+a-r)+1/16 l (-u+aa-s) o (-o+a-r)+1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-o+a-r)+1/16 (-l+i-n) n (-u+aa-s) r-1/16 (-l+i-n)^2 (-aa+s+m-j) r+1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-m+j+k-t)-1/16 l (-cc+ll+d-bb) o (-m+j+k-t)-1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t)+1/16 l (-l+i-n) r (-m+j+k-t)-1/16 (-l+i-n) n (-cc+ll+d-bb) (-k+t+b-dd)+1/16 (-l+i-n)^2 (-d+bb+o-a) (-k+t+b-dd)-1/16 l (-l+i-n) (-o+a-r) (-k+t+b-dd))-1/2 (-o+a-r) (1/16 (-i+cc+n-d) (-u+aa-s) o (-d+bb+o-a)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 (-i+cc+n-d) (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 (-i+cc+n-d)^2 (-aa+s+m-j) (-o+a-r)+1/16 (-l+i-n) (-u+aa-s) (-n+d-o) r-1/16 l (-u+aa-s) o r-1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) r+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 (-i+cc+n-d)^2 (-d+bb+o-a) (-m+j+k-t)+1/16 l (-i+cc+n-d) r (-m+j+k-t)-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-k+t+b-dd)+1/16 l (-cc+ll+d-bb) o (-k+t+b-dd)+1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-k+t+b-dd)-1/16 l (-i+cc+n-d) (-o+a-r) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (1/16 (-u+aa-s) o^2 (-d+bb+o-a)-1/16 (-cc+ll+d-bb) o^2 (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o) o (-o+a-r)+1/16 (-i+cc+n-d) o (-aa+s+m-j) (-o+a-r)-1/16 n (-u+aa-s) o r+1/16 (-l+i-n) o (-aa+s+m-j) r+1/16 (-cc+ll+d-bb) (-n+d-o) o (-m+j+k-t)-1/16 (-i+cc+n-d) o (-d+bb+o-a) (-m+j+k-t)+1/16 n (-i+cc+n-d) r (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) r (-m+j+k-t)+1/16 n (-cc+ll+d-bb) o (-k+t+b-dd)-1/16 (-l+i-n) o (-d+bb+o-a) (-k+t+b-dd)-1/16 n (-i+cc+n-d) (-o+a-r) (-k+t+b-dd)+1/16 (-l+i-n) (-n+d-o) (-o+a-r) (-k+t+b-dd))+1/2 (-(1/16) n (-i+cc+n-d) (-cc+ll+d-bb) o-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) o+1/16 l (-cc+ll+d-bb) o^2+1/8 (-l+i-n) (-i+cc+n-d) o (-d+bb+o-a)+1/16 n (-i+cc+n-d)^2 (-o+a-r)-1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-o+a-r)-1/16 l (-i+cc+n-d) o (-o+a-r)-1/16 (-l+i-n) n (-i+cc+n-d) r+1/16 (-l+i-n)^2 (-n+d-o) r-1/16 l (-l+i-n) o r) (-b+dd-ff))-1/2 (-ll+u+bb-aa) (1/2 r (-(1/16) n (-u+aa-s) o (-d+bb+o-a)+1/16 n (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 n (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 (-l+i-n) (-n+d-o) (-aa+s+m-j) (-o+a-r)-1/16 l o (-aa+s+m-j) (-o+a-r)+1/16 n^2 (-u+aa-s) r-1/16 (-l+i-n) n (-aa+s+m-j) r+1/16 n (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)+1/16 l o (-d+bb+o-a) (-m+j+k-t)-1/16 l n r (-m+j+k-t)-1/16 n^2 (-cc+ll+d-bb) (-k+t+b-dd)+1/16 (-l+i-n) n (-d+bb+o-a) (-k+t+b-dd)+1/16 l n (-o+a-r) (-k+t+b-dd))-1/2 (-o+a-r) (1/16 (-u+aa-s) (-n+d-o) o (-d+bb+o-a)-1/16 (-cc+ll+d-bb) (-n+d-o) o (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o)^2 (-o+a-r)+1/16 (-i+cc+n-d) (-n+d-o) (-aa+s+m-j) (-o+a-r)+1/16 n (-u+aa-s) (-n+d-o) r-1/16 n (-i+cc+n-d) (-aa+s+m-j) r+1/16 l o (-aa+s+m-j) r+1/16 (-cc+ll+d-bb) (-n+d-o)^2 (-m+j+k-t)-1/16 (-i+cc+n-d) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)-1/16 l (-n+d-o) r (-m+j+k-t)-1/16 n (-cc+ll+d-bb) (-n+d-o) (-k+t+b-dd)+1/16 n (-i+cc+n-d) (-d+bb+o-a) (-k+t+b-dd)-1/16 l o (-d+bb+o-a) (-k+t+b-dd)+1/16 l (-n+d-o) (-o+a-r) (-k+t+b-dd))+1/2 (-d+bb+o-a) (1/16 (-u+aa-s) o^2 (-d+bb+o-a)-1/16 (-cc+ll+d-bb) o^2 (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o) o (-o+a-r)+1/16 (-i+cc+n-d) o (-aa+s+m-j) (-o+a-r)-1/16 n (-u+aa-s) o r+1/16 (-l+i-n) o (-aa+s+m-j) r+1/16 (-cc+ll+d-bb) (-n+d-o) o (-m+j+k-t)-1/16 (-i+cc+n-d) o (-d+bb+o-a) (-m+j+k-t)+1/16 n (-i+cc+n-d) r (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) r (-m+j+k-t)+1/16 n (-cc+ll+d-bb) o (-k+t+b-dd)-1/16 (-l+i-n) o (-d+bb+o-a) (-k+t+b-dd)-1/16 n (-i+cc+n-d) (-o+a-r) (-k+t+b-dd)+1/16 (-l+i-n) (-n+d-o) (-o+a-r) (-k+t+b-dd))+1/2 (-(1/8) n (-cc+ll+d-bb) (-n+d-o) o+1/16 n (-i+cc+n-d) o (-d+bb+o-a)+1/16 (-l+i-n) (-n+d-o) o (-d+bb+o-a)-1/16 l o^2 (-d+bb+o-a)+1/16 n (-i+cc+n-d) (-n+d-o) (-o+a-r)-1/16 (-l+i-n) (-n+d-o)^2 (-o+a-r)+1/16 l (-n+d-o) o (-o+a-r)-1/16 n^2 (-i+cc+n-d) r+1/16 (-l+i-n) n (-n+d-o) r+1/16 l n o r) (-b+dd-ff))+1/2 (-(1/16) n (-cc+ll+d-bb)^2 (-n+d-o) o+1/16 n (-i+cc+n-d) (-cc+ll+d-bb) o (-d+bb+o-a)+1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) o (-d+bb+o-a)-1/16 l (-cc+ll+d-bb) o^2 (-d+bb+o-a)-1/16 (-l+i-n) (-i+cc+n-d) o (-d+bb+o-a)^2+1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o) (-o+a-r)-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o)^2 (-o+a-r)+1/16 l (-cc+ll+d-bb) (-n+d-o) o (-o+a-r)-1/16 n (-i+cc+n-d)^2 (-d+bb+o-a) (-o+a-r)+1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-d+bb+o-a) (-o+a-r)+1/16 l (-i+cc+n-d) o (-d+bb+o-a) (-o+a-r)-1/16 l (-i+cc+n-d) (-n+d-o) (-o+a-r)^2-1/16 n^2 (-i+cc+n-d) (-cc+ll+d-bb) r+1/16 (-l+i-n) n (-cc+ll+d-bb) (-n+d-o) r+1/16 l n (-cc+ll+d-bb) o r+1/16 (-l+i-n) n (-i+cc+n-d) (-d+bb+o-a) r-1/16 (-l+i-n)^2 (-n+d-o) (-d+bb+o-a) r+1/16 l (-l+i-n) o (-d+bb+o-a) r+1/16 l n (-i+cc+n-d) (-o+a-r) r+1/16 l (-l+i-n) (-n+d-o) (-o+a-r) r-1/16 l^2 o (-o+a-r) r-1/16 l (-l+i-n) n r^2) ff)+1/2 (-b+dd-ff) (1/2 (-r+k-b) (-(1/2) b (1/16 n^2 (-i+cc+n-d) (-u+aa-s)-1/16 (-l+i-n) n (-u+aa-s) (-n+d-o)-1/16 l n (-u+aa-s) o-1/16 (-l+i-n) n (-i+cc+n-d) (-aa+s+m-j)+1/16 (-l+i-n)^2 (-n+d-o) (-aa+s+m-j)-1/16 l (-l+i-n) o (-aa+s+m-j)-1/16 l n (-i+cc+n-d) (-m+j+k-t)-1/16 l (-l+i-n) (-n+d-o) (-m+j+k-t)+1/16 l^2 o (-m+j+k-t)+1/8 l (-l+i-n) n (-k+t+b-dd))+1/2 (-o+a-r) (1/16 n (-i+cc+n-d) (-u+aa-s) (-bb+aa+a-m)-1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-bb+aa+a-m)-1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-aa+s+m-j)+1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-aa+s+m-j)+1/16 l (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 l (-i+cc+n-d) (-aa+s+m-j) (-a+m+r-k)-1/16 l (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 l (-i+cc+n-d) (-bb+aa+a-m) (-m+j+k-t)-1/16 l n (-u+aa-s) (-r+k-b)-1/16 l (-l+i-n) (-aa+s+m-j) (-r+k-b)+1/16 l^2 (-m+j+k-t) (-r+k-b)+1/16 l n (-ll+u+bb-aa) (-k+t+b-dd)+1/16 l (-l+i-n) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l^2 (-a+m+r-k) (-k+t+b-dd))-1/2 (-d+bb+o-a) (-(1/16) (-l+i-n) (-u+aa-s) o (-bb+aa+a-m)+1/16 (-l+i-n) (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 n (-i+cc+n-d) (-u+aa-s) (-a+m+r-k)+1/16 l (-u+aa-s) o (-a+m+r-k)+1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-a+m+r-k)+1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-m+j+k-t)-1/16 l (-ll+u+bb-aa) o (-m+j+k-t)-1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-m+j+k-t)+1/16 (-l+i-n) n (-u+aa-s) (-r+k-b)-1/16 (-l+i-n)^2 (-aa+s+m-j) (-r+k-b)+1/16 l (-l+i-n) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) n (-ll+u+bb-aa) (-k+t+b-dd)+1/16 (-l+i-n)^2 (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-l+i-n) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (-(1/16) n (-u+aa-s) o (-bb+aa+a-m)+1/16 n (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 n (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 (-l+i-n) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)-1/16 l o (-aa+s+m-j) (-a+m+r-k)+1/16 n (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 l o (-bb+aa+a-m) (-m+j+k-t)+1/16 n^2 (-u+aa-s) (-r+k-b)-1/16 (-l+i-n) n (-aa+s+m-j) (-r+k-b)-1/16 l n (-m+j+k-t) (-r+k-b)-1/16 n^2 (-ll+u+bb-aa) (-k+t+b-dd)+1/16 (-l+i-n) n (-bb+aa+a-m) (-k+t+b-dd)+1/16 l n (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 n^2 (-i+cc+n-d) (-ll+u+bb-aa)-1/16 (-l+i-n) n (-ll+u+bb-aa) (-n+d-o)-1/16 l n (-ll+u+bb-aa) o-1/16 (-l+i-n) n (-i+cc+n-d) (-bb+aa+a-m)+1/16 (-l+i-n)^2 (-n+d-o) (-bb+aa+a-m)-1/16 l (-l+i-n) o (-bb+aa+a-m)-1/16 l n (-i+cc+n-d) (-a+m+r-k)-1/16 l (-l+i-n) (-n+d-o) (-a+m+r-k)+1/16 l^2 o (-a+m+r-k)+1/8 l (-l+i-n) n (-r+k-b)) (-b+dd-ff))-1/2 (-a+m+r-k) (-(1/2) b (1/16 n (-i+cc+n-d) (-u+aa-s) (-n+d-o)-1/16 (-l+i-n) (-u+aa-s) (-n+d-o)^2+1/16 l (-u+aa-s) (-n+d-o) o-1/16 n (-i+cc+n-d)^2 (-aa+s+m-j)+1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-aa+s+m-j)+1/16 l (-i+cc+n-d) o (-aa+s+m-j)-1/8 l (-i+cc+n-d) (-n+d-o) (-m+j+k-t)+1/16 l n (-i+cc+n-d) (-k+t+b-dd)+1/16 l (-l+i-n) (-n+d-o) (-k+t+b-dd)-1/16 l^2 o (-k+t+b-dd))+1/2 r (1/16 n (-i+cc+n-d) (-u+aa-s) (-bb+aa+a-m)-1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-bb+aa+a-m)-1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-aa+s+m-j)+1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-aa+s+m-j)+1/16 l (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 l (-i+cc+n-d) (-aa+s+m-j) (-a+m+r-k)-1/16 l (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 l (-i+cc+n-d) (-bb+aa+a-m) (-m+j+k-t)-1/16 l n (-u+aa-s) (-r+k-b)-1/16 l (-l+i-n) (-aa+s+m-j) (-r+k-b)+1/16 l^2 (-m+j+k-t) (-r+k-b)+1/16 l n (-ll+u+bb-aa) (-k+t+b-dd)+1/16 l (-l+i-n) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l^2 (-a+m+r-k) (-k+t+b-dd))-1/2 (-d+bb+o-a) (1/16 (-i+cc+n-d) (-u+aa-s) o (-bb+aa+a-m)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 (-i+cc+n-d) (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 (-i+cc+n-d)^2 (-aa+s+m-j) (-a+m+r-k)+1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 (-i+cc+n-d)^2 (-bb+aa+a-m) (-m+j+k-t)+1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-r+k-b)-1/16 l (-u+aa-s) o (-r+k-b)-1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-r+k-b)+1/16 l (-i+cc+n-d) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-k+t+b-dd)+1/16 l (-ll+u+bb-aa) o (-k+t+b-dd)+1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-i+cc+n-d) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (1/16 (-u+aa-s) (-n+d-o) o (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o) o (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o)^2 (-a+m+r-k)+1/16 (-i+cc+n-d) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o)^2 (-m+j+k-t)-1/16 (-i+cc+n-d) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 n (-u+aa-s) (-n+d-o) (-r+k-b)-1/16 n (-i+cc+n-d) (-aa+s+m-j) (-r+k-b)+1/16 l o (-aa+s+m-j) (-r+k-b)-1/16 l (-n+d-o) (-m+j+k-t) (-r+k-b)-1/16 n (-ll+u+bb-aa) (-n+d-o) (-k+t+b-dd)+1/16 n (-i+cc+n-d) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l o (-bb+aa+a-m) (-k+t+b-dd)+1/16 l (-n+d-o) (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-n+d-o)-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o)^2+1/16 l (-ll+u+bb-aa) (-n+d-o) o-1/16 n (-i+cc+n-d)^2 (-bb+aa+a-m)+1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-bb+aa+a-m)+1/16 l (-i+cc+n-d) o (-bb+aa+a-m)-1/8 l (-i+cc+n-d) (-n+d-o) (-a+m+r-k)+1/16 l n (-i+cc+n-d) (-r+k-b)+1/16 l (-l+i-n) (-n+d-o) (-r+k-b)-1/16 l^2 o (-r+k-b)) (-b+dd-ff))+1/2 (-bb+aa+a-m) (-(1/2) b (-(1/16) n (-i+cc+n-d) (-u+aa-s) o-1/16 (-l+i-n) (-u+aa-s) (-n+d-o) o+1/16 l (-u+aa-s) o^2+1/8 (-l+i-n) (-i+cc+n-d) o (-aa+s+m-j)+1/16 n (-i+cc+n-d)^2 (-m+j+k-t)-1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-m+j+k-t)-1/16 l (-i+cc+n-d) o (-m+j+k-t)-1/16 (-l+i-n) n (-i+cc+n-d) (-k+t+b-dd)+1/16 (-l+i-n)^2 (-n+d-o) (-k+t+b-dd)-1/16 l (-l+i-n) o (-k+t+b-dd))+1/2 r (-(1/16) (-l+i-n) (-u+aa-s) o (-bb+aa+a-m)+1/16 (-l+i-n) (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 n (-i+cc+n-d) (-u+aa-s) (-a+m+r-k)+1/16 l (-u+aa-s) o (-a+m+r-k)+1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-a+m+r-k)+1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-m+j+k-t)-1/16 l (-ll+u+bb-aa) o (-m+j+k-t)-1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-m+j+k-t)+1/16 (-l+i-n) n (-u+aa-s) (-r+k-b)-1/16 (-l+i-n)^2 (-aa+s+m-j) (-r+k-b)+1/16 l (-l+i-n) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) n (-ll+u+bb-aa) (-k+t+b-dd)+1/16 (-l+i-n)^2 (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-l+i-n) (-a+m+r-k) (-k+t+b-dd))-1/2 (-o+a-r) (1/16 (-i+cc+n-d) (-u+aa-s) o (-bb+aa+a-m)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 (-i+cc+n-d) (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 (-i+cc+n-d)^2 (-aa+s+m-j) (-a+m+r-k)+1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 (-i+cc+n-d)^2 (-bb+aa+a-m) (-m+j+k-t)+1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-r+k-b)-1/16 l (-u+aa-s) o (-r+k-b)-1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-r+k-b)+1/16 l (-i+cc+n-d) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-k+t+b-dd)+1/16 l (-ll+u+bb-aa) o (-k+t+b-dd)+1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-i+cc+n-d) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (1/16 (-u+aa-s) o^2 (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) o^2 (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o) o (-a+m+r-k)+1/16 (-i+cc+n-d) o (-aa+s+m-j) (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o) o (-m+j+k-t)-1/16 (-i+cc+n-d) o (-bb+aa+a-m) (-m+j+k-t)-1/16 n (-u+aa-s) o (-r+k-b)+1/16 (-l+i-n) o (-aa+s+m-j) (-r+k-b)+1/16 n (-i+cc+n-d) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-n+d-o) (-m+j+k-t) (-r+k-b)+1/16 n (-ll+u+bb-aa) o (-k+t+b-dd)-1/16 (-l+i-n) o (-bb+aa+a-m) (-k+t+b-dd)-1/16 n (-i+cc+n-d) (-a+m+r-k) (-k+t+b-dd)+1/16 (-l+i-n) (-n+d-o) (-a+m+r-k) (-k+t+b-dd))+1/2 (-(1/16) n (-i+cc+n-d) (-ll+u+bb-aa) o-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) o+1/16 l (-ll+u+bb-aa) o^2+1/8 (-l+i-n) (-i+cc+n-d) o (-bb+aa+a-m)+1/16 n (-i+cc+n-d)^2 (-a+m+r-k)-1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-a+m+r-k)-1/16 l (-i+cc+n-d) o (-a+m+r-k)-1/16 (-l+i-n) n (-i+cc+n-d) (-r+k-b)+1/16 (-l+i-n)^2 (-n+d-o) (-r+k-b)-1/16 l (-l+i-n) o (-r+k-b)) (-b+dd-ff))-1/2 (-ll+u+bb-aa) (-(1/2) b (-(1/8) n (-u+aa-s) (-n+d-o) o+1/16 n (-i+cc+n-d) o (-aa+s+m-j)+1/16 (-l+i-n) (-n+d-o) o (-aa+s+m-j)-1/16 l o^2 (-aa+s+m-j)+1/16 n (-i+cc+n-d) (-n+d-o) (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o)^2 (-m+j+k-t)+1/16 l (-n+d-o) o (-m+j+k-t)-1/16 n^2 (-i+cc+n-d) (-k+t+b-dd)+1/16 (-l+i-n) n (-n+d-o) (-k+t+b-dd)+1/16 l n o (-k+t+b-dd))+1/2 r (-(1/16) n (-u+aa-s) o (-bb+aa+a-m)+1/16 n (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 n (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 (-l+i-n) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)-1/16 l o (-aa+s+m-j) (-a+m+r-k)+1/16 n (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 l o (-bb+aa+a-m) (-m+j+k-t)+1/16 n^2 (-u+aa-s) (-r+k-b)-1/16 (-l+i-n) n (-aa+s+m-j) (-r+k-b)-1/16 l n (-m+j+k-t) (-r+k-b)-1/16 n^2 (-ll+u+bb-aa) (-k+t+b-dd)+1/16 (-l+i-n) n (-bb+aa+a-m) (-k+t+b-dd)+1/16 l n (-a+m+r-k) (-k+t+b-dd))-1/2 (-o+a-r) (1/16 (-u+aa-s) (-n+d-o) o (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o) o (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o)^2 (-a+m+r-k)+1/16 (-i+cc+n-d) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o)^2 (-m+j+k-t)-1/16 (-i+cc+n-d) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 n (-u+aa-s) (-n+d-o) (-r+k-b)-1/16 n (-i+cc+n-d) (-aa+s+m-j) (-r+k-b)+1/16 l o (-aa+s+m-j) (-r+k-b)-1/16 l (-n+d-o) (-m+j+k-t) (-r+k-b)-1/16 n (-ll+u+bb-aa) (-n+d-o) (-k+t+b-dd)+1/16 n (-i+cc+n-d) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l o (-bb+aa+a-m) (-k+t+b-dd)+1/16 l (-n+d-o) (-a+m+r-k) (-k+t+b-dd))+1/2 (-d+bb+o-a) (1/16 (-u+aa-s) o^2 (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) o^2 (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o) o (-a+m+r-k)+1/16 (-i+cc+n-d) o (-aa+s+m-j) (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o) o (-m+j+k-t)-1/16 (-i+cc+n-d) o (-bb+aa+a-m) (-m+j+k-t)-1/16 n (-u+aa-s) o (-r+k-b)+1/16 (-l+i-n) o (-aa+s+m-j) (-r+k-b)+1/16 n (-i+cc+n-d) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-n+d-o) (-m+j+k-t) (-r+k-b)+1/16 n (-ll+u+bb-aa) o (-k+t+b-dd)-1/16 (-l+i-n) o (-bb+aa+a-m) (-k+t+b-dd)-1/16 n (-i+cc+n-d) (-a+m+r-k) (-k+t+b-dd)+1/16 (-l+i-n) (-n+d-o) (-a+m+r-k) (-k+t+b-dd))+1/2 (-(1/8) n (-ll+u+bb-aa) (-n+d-o) o+1/16 n (-i+cc+n-d) o (-bb+aa+a-m)+1/16 (-l+i-n) (-n+d-o) o (-bb+aa+a-m)-1/16 l o^2 (-bb+aa+a-m)+1/16 n (-i+cc+n-d) (-n+d-o) (-a+m+r-k)-1/16 (-l+i-n) (-n+d-o)^2 (-a+m+r-k)+1/16 l (-n+d-o) o (-a+m+r-k)-1/16 n^2 (-i+cc+n-d) (-r+k-b)+1/16 (-l+i-n) n (-n+d-o) (-r+k-b)+1/16 l n o (-r+k-b)) (-b+dd-ff))+1/2 (-(1/16) n (-cc+ll+d-bb) (-ll+u+bb-aa) (-n+d-o) o+1/32 n (-i+cc+n-d) (-ll+u+bb-aa) o (-d+bb+o-a)+1/32 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) o (-d+bb+o-a)-1/32 l (-ll+u+bb-aa) o^2 (-d+bb+o-a)+1/32 n (-i+cc+n-d) (-cc+ll+d-bb) o (-bb+aa+a-m)+1/32 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) o (-bb+aa+a-m)-1/32 l (-cc+ll+d-bb) o^2 (-bb+aa+a-m)-1/16 (-l+i-n) (-i+cc+n-d) o (-d+bb+o-a) (-bb+aa+a-m)+1/32 n (-i+cc+n-d) (-ll+u+bb-aa) (-n+d-o) (-o+a-r)-1/32 (-l+i-n) (-ll+u+bb-aa) (-n+d-o)^2 (-o+a-r)+1/32 l (-ll+u+bb-aa) (-n+d-o) o (-o+a-r)-1/32 n (-i+cc+n-d)^2 (-bb+aa+a-m) (-o+a-r)+1/32 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-bb+aa+a-m) (-o+a-r)+1/32 l (-i+cc+n-d) o (-bb+aa+a-m) (-o+a-r)-1/32 n^2 (-i+cc+n-d) (-ll+u+bb-aa) r+1/32 (-l+i-n) n (-ll+u+bb-aa) (-n+d-o) r+1/32 l n (-ll+u+bb-aa) o r+1/32 (-l+i-n) n (-i+cc+n-d) (-bb+aa+a-m) r-1/32 (-l+i-n)^2 (-n+d-o) (-bb+aa+a-m) r+1/32 l (-l+i-n) o (-bb+aa+a-m) r+1/32 n (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/32 (-l+i-n) (-cc+ll+d-bb) (-n+d-o)^2 (-a+m+r-k)+1/32 l (-cc+ll+d-bb) (-n+d-o) o (-a+m+r-k)-1/32 n (-i+cc+n-d)^2 (-d+bb+o-a) (-a+m+r-k)+1/32 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)+1/32 l (-i+cc+n-d) o (-d+bb+o-a) (-a+m+r-k)-1/16 l (-i+cc+n-d) (-n+d-o) (-o+a-r) (-a+m+r-k)+1/32 l n (-i+cc+n-d) r (-a+m+r-k)+1/32 l (-l+i-n) (-n+d-o) r (-a+m+r-k)-1/32 l^2 o r (-a+m+r-k)-1/32 n^2 (-i+cc+n-d) (-cc+ll+d-bb) (-r+k-b)+1/32 (-l+i-n) n (-cc+ll+d-bb) (-n+d-o) (-r+k-b)+1/32 l n (-cc+ll+d-bb) o (-r+k-b)+1/32 (-l+i-n) n (-i+cc+n-d) (-d+bb+o-a) (-r+k-b)-1/32 (-l+i-n)^2 (-n+d-o) (-d+bb+o-a) (-r+k-b)+1/32 l (-l+i-n) o (-d+bb+o-a) (-r+k-b)+1/32 l n (-i+cc+n-d) (-o+a-r) (-r+k-b)+1/32 l (-l+i-n) (-n+d-o) (-o+a-r) (-r+k-b)-1/32 l^2 o (-o+a-r) (-r+k-b)-1/16 l (-l+i-n) n r (-r+k-b)+1/32 n^2 (-i+cc+n-d)^2 b-1/16 (-l+i-n) n (-i+cc+n-d) (-n+d-o) b+1/32 (-l+i-n)^2 (-n+d-o)^2 b-1/16 l n (-i+cc+n-d) o b-1/16 l (-l+i-n) (-n+d-o) o b+1/32 l^2 o^2 b) ff)-1/2 (-k+t+b-dd) (1/2 b (-(1/2) b (1/16 n^2 (-i+cc+n-d) (-u+aa-s)-1/16 (-l+i-n) n (-u+aa-s) (-n+d-o)-1/16 l n (-u+aa-s) o-1/16 (-l+i-n) n (-i+cc+n-d) (-aa+s+m-j)+1/16 (-l+i-n)^2 (-n+d-o) (-aa+s+m-j)-1/16 l (-l+i-n) o (-aa+s+m-j)-1/16 l n (-i+cc+n-d) (-m+j+k-t)-1/16 l (-l+i-n) (-n+d-o) (-m+j+k-t)+1/16 l^2 o (-m+j+k-t)+1/8 l (-l+i-n) n (-k+t+b-dd))+1/2 (-o+a-r) (1/16 n (-i+cc+n-d) (-u+aa-s) (-bb+aa+a-m)-1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-bb+aa+a-m)-1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-aa+s+m-j)+1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-aa+s+m-j)+1/16 l (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 l (-i+cc+n-d) (-aa+s+m-j) (-a+m+r-k)-1/16 l (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 l (-i+cc+n-d) (-bb+aa+a-m) (-m+j+k-t)-1/16 l n (-u+aa-s) (-r+k-b)-1/16 l (-l+i-n) (-aa+s+m-j) (-r+k-b)+1/16 l^2 (-m+j+k-t) (-r+k-b)+1/16 l n (-ll+u+bb-aa) (-k+t+b-dd)+1/16 l (-l+i-n) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l^2 (-a+m+r-k) (-k+t+b-dd))-1/2 (-d+bb+o-a) (-(1/16) (-l+i-n) (-u+aa-s) o (-bb+aa+a-m)+1/16 (-l+i-n) (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 n (-i+cc+n-d) (-u+aa-s) (-a+m+r-k)+1/16 l (-u+aa-s) o (-a+m+r-k)+1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-a+m+r-k)+1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-m+j+k-t)-1/16 l (-ll+u+bb-aa) o (-m+j+k-t)-1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-m+j+k-t)+1/16 (-l+i-n) n (-u+aa-s) (-r+k-b)-1/16 (-l+i-n)^2 (-aa+s+m-j) (-r+k-b)+1/16 l (-l+i-n) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) n (-ll+u+bb-aa) (-k+t+b-dd)+1/16 (-l+i-n)^2 (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-l+i-n) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (-(1/16) n (-u+aa-s) o (-bb+aa+a-m)+1/16 n (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 n (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 (-l+i-n) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)-1/16 l o (-aa+s+m-j) (-a+m+r-k)+1/16 n (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 l o (-bb+aa+a-m) (-m+j+k-t)+1/16 n^2 (-u+aa-s) (-r+k-b)-1/16 (-l+i-n) n (-aa+s+m-j) (-r+k-b)-1/16 l n (-m+j+k-t) (-r+k-b)-1/16 n^2 (-ll+u+bb-aa) (-k+t+b-dd)+1/16 (-l+i-n) n (-bb+aa+a-m) (-k+t+b-dd)+1/16 l n (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 n^2 (-i+cc+n-d) (-ll+u+bb-aa)-1/16 (-l+i-n) n (-ll+u+bb-aa) (-n+d-o)-1/16 l n (-ll+u+bb-aa) o-1/16 (-l+i-n) n (-i+cc+n-d) (-bb+aa+a-m)+1/16 (-l+i-n)^2 (-n+d-o) (-bb+aa+a-m)-1/16 l (-l+i-n) o (-bb+aa+a-m)-1/16 l n (-i+cc+n-d) (-a+m+r-k)-1/16 l (-l+i-n) (-n+d-o) (-a+m+r-k)+1/16 l^2 o (-a+m+r-k)+1/8 l (-l+i-n) n (-r+k-b)) (-b+dd-ff))-1/2 (-a+m+r-k) (-(1/2) b (1/16 n (-i+cc+n-d) (-u+aa-s) (-d+bb+o-a)-1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-d+bb+o-a)-1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-aa+s+m-j)+1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-aa+s+m-j)+1/16 l (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 l (-i+cc+n-d) (-aa+s+m-j) (-o+a-r)-1/16 l n (-u+aa-s) r-1/16 l (-l+i-n) (-aa+s+m-j) r-1/16 l (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 l (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t)+1/16 l^2 r (-m+j+k-t)+1/16 l n (-cc+ll+d-bb) (-k+t+b-dd)+1/16 l (-l+i-n) (-d+bb+o-a) (-k+t+b-dd)-1/16 l^2 (-o+a-r) (-k+t+b-dd))-1/2 (-d+bb+o-a) (1/16 (-i+cc+n-d) (-u+aa-s) (-bb+aa+a-m) (-o+a-r)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-aa+s+m-j) (-o+a-r)-1/16 (-l+i-n) (-u+aa-s) (-bb+aa+a-m) r+1/16 (-l+i-n) (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-i+cc+n-d) (-u+aa-s) (-d+bb+o-a) (-a+m+r-k)+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-aa+s+m-j) (-a+m+r-k)+1/16 l (-u+aa-s) r (-a+m+r-k)+1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-d+bb+o-a) (-m+j+k-t)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-bb+aa+a-m) (-m+j+k-t)-1/16 l (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 (-l+i-n) (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)-1/16 l (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 l (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 (-l+i-n) (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)+1/16 l (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 l (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (1/16 (-u+aa-s) (-n+d-o) (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) (-n+d-o) (-aa+s+m-j) (-o+a-r)-1/16 n (-u+aa-s) (-bb+aa+a-m) r+1/16 n (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-u+aa-s) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)-1/16 l (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 l (-bb+aa+a-m) r (-m+j+k-t)+1/16 n (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 n (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)+1/16 l (-aa+s+m-j) (-o+a-r) (-r+k-b)-1/16 l (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 n (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 n (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)+1/16 l (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-d+bb+o-a)-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-d+bb+o-a)-1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-bb+aa+a-m)+1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-bb+aa+a-m)+1/16 l (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 l (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r)-1/16 l n (-ll+u+bb-aa) r-1/16 l (-l+i-n) (-bb+aa+a-m) r-1/16 l (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 l (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k)+1/16 l^2 r (-a+m+r-k)+1/16 l n (-cc+ll+d-bb) (-r+k-b)+1/16 l (-l+i-n) (-d+bb+o-a) (-r+k-b)-1/16 l^2 (-o+a-r) (-r+k-b)) (-b+dd-ff))+1/2 (-bb+aa+a-m) (-(1/2) b (-(1/16) (-l+i-n) (-u+aa-s) o (-d+bb+o-a)+1/16 (-l+i-n) (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 n (-i+cc+n-d) (-u+aa-s) (-o+a-r)+1/16 l (-u+aa-s) o (-o+a-r)+1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-o+a-r)+1/16 (-l+i-n) n (-u+aa-s) r-1/16 (-l+i-n)^2 (-aa+s+m-j) r+1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-m+j+k-t)-1/16 l (-cc+ll+d-bb) o (-m+j+k-t)-1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t)+1/16 l (-l+i-n) r (-m+j+k-t)-1/16 (-l+i-n) n (-cc+ll+d-bb) (-k+t+b-dd)+1/16 (-l+i-n)^2 (-d+bb+o-a) (-k+t+b-dd)-1/16 l (-l+i-n) (-o+a-r) (-k+t+b-dd))-1/2 (-o+a-r) (1/16 (-i+cc+n-d) (-u+aa-s) (-bb+aa+a-m) (-o+a-r)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-aa+s+m-j) (-o+a-r)-1/16 (-l+i-n) (-u+aa-s) (-bb+aa+a-m) r+1/16 (-l+i-n) (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-i+cc+n-d) (-u+aa-s) (-d+bb+o-a) (-a+m+r-k)+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-aa+s+m-j) (-a+m+r-k)+1/16 l (-u+aa-s) r (-a+m+r-k)+1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-d+bb+o-a) (-m+j+k-t)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-bb+aa+a-m) (-m+j+k-t)-1/16 l (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 (-l+i-n) (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)-1/16 l (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 l (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 (-l+i-n) (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)+1/16 l (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 l (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (1/16 (-u+aa-s) o (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) o (-aa+s+m-j) (-o+a-r)-1/16 (-u+aa-s) o (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-a+m+r-k)+1/16 n (-u+aa-s) r (-a+m+r-k)-1/16 (-l+i-n) (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-m+j+k-t)-1/16 n (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-bb+aa+a-m) r (-m+j+k-t)-1/16 n (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 (-l+i-n) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 n (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)+1/16 n (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 (-l+i-n) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 n (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd)+1/16 (-l+i-n) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (-(1/16) (-l+i-n) (-ll+u+bb-aa) o (-d+bb+o-a)+1/16 (-l+i-n) (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-o+a-r)+1/16 l (-ll+u+bb-aa) o (-o+a-r)+1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r)+1/16 (-l+i-n) n (-ll+u+bb-aa) r-1/16 (-l+i-n)^2 (-bb+aa+a-m) r+1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-a+m+r-k)-1/16 l (-cc+ll+d-bb) o (-a+m+r-k)-1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k)+1/16 l (-l+i-n) r (-a+m+r-k)-1/16 (-l+i-n) n (-cc+ll+d-bb) (-r+k-b)+1/16 (-l+i-n)^2 (-d+bb+o-a) (-r+k-b)-1/16 l (-l+i-n) (-o+a-r) (-r+k-b)) (-b+dd-ff))-1/2 (-ll+u+bb-aa) (-(1/2) b (-(1/16) n (-u+aa-s) o (-d+bb+o-a)+1/16 n (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 n (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 (-l+i-n) (-n+d-o) (-aa+s+m-j) (-o+a-r)-1/16 l o (-aa+s+m-j) (-o+a-r)+1/16 n^2 (-u+aa-s) r-1/16 (-l+i-n) n (-aa+s+m-j) r+1/16 n (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)+1/16 l o (-d+bb+o-a) (-m+j+k-t)-1/16 l n r (-m+j+k-t)-1/16 n^2 (-cc+ll+d-bb) (-k+t+b-dd)+1/16 (-l+i-n) n (-d+bb+o-a) (-k+t+b-dd)+1/16 l n (-o+a-r) (-k+t+b-dd))-1/2 (-o+a-r) (1/16 (-u+aa-s) (-n+d-o) (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) (-n+d-o) (-aa+s+m-j) (-o+a-r)-1/16 n (-u+aa-s) (-bb+aa+a-m) r+1/16 n (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-u+aa-s) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)-1/16 l (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 l (-bb+aa+a-m) r (-m+j+k-t)+1/16 n (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 n (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)+1/16 l (-aa+s+m-j) (-o+a-r) (-r+k-b)-1/16 l (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 n (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 n (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)+1/16 l (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (-d+bb+o-a) (1/16 (-u+aa-s) o (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) o (-aa+s+m-j) (-o+a-r)-1/16 (-u+aa-s) o (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-a+m+r-k)+1/16 n (-u+aa-s) r (-a+m+r-k)-1/16 (-l+i-n) (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-m+j+k-t)-1/16 n (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-bb+aa+a-m) r (-m+j+k-t)-1/16 n (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 (-l+i-n) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 n (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)+1/16 n (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 (-l+i-n) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 n (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd)+1/16 (-l+i-n) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (-(1/16) n (-ll+u+bb-aa) o (-d+bb+o-a)+1/16 n (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 n (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 (-l+i-n) (-n+d-o) (-bb+aa+a-m) (-o+a-r)-1/16 l o (-bb+aa+a-m) (-o+a-r)+1/16 n^2 (-ll+u+bb-aa) r-1/16 (-l+i-n) n (-bb+aa+a-m) r+1/16 n (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 (-l+i-n) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)+1/16 l o (-d+bb+o-a) (-a+m+r-k)-1/16 l n r (-a+m+r-k)-1/16 n^2 (-cc+ll+d-bb) (-r+k-b)+1/16 (-l+i-n) n (-d+bb+o-a) (-r+k-b)+1/16 l n (-o+a-r) (-r+k-b)) (-b+dd-ff))+1/2 (1/2 (-o+a-r) (1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-d+bb+o-a)-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-d+bb+o-a)-1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-bb+aa+a-m)+1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-bb+aa+a-m)+1/16 l (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 l (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r)-1/16 l n (-ll+u+bb-aa) r-1/16 l (-l+i-n) (-bb+aa+a-m) r-1/16 l (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 l (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k)+1/16 l^2 r (-a+m+r-k)+1/16 l n (-cc+ll+d-bb) (-r+k-b)+1/16 l (-l+i-n) (-d+bb+o-a) (-r+k-b)-1/16 l^2 (-o+a-r) (-r+k-b))-1/2 (-d+bb+o-a) (-(1/16) (-l+i-n) (-ll+u+bb-aa) o (-d+bb+o-a)+1/16 (-l+i-n) (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-o+a-r)+1/16 l (-ll+u+bb-aa) o (-o+a-r)+1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r)+1/16 (-l+i-n) n (-ll+u+bb-aa) r-1/16 (-l+i-n)^2 (-bb+aa+a-m) r+1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-a+m+r-k)-1/16 l (-cc+ll+d-bb) o (-a+m+r-k)-1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k)+1/16 l (-l+i-n) r (-a+m+r-k)-1/16 (-l+i-n) n (-cc+ll+d-bb) (-r+k-b)+1/16 (-l+i-n)^2 (-d+bb+o-a) (-r+k-b)-1/16 l (-l+i-n) (-o+a-r) (-r+k-b))+1/2 (-cc+ll+d-bb) (-(1/16) n (-ll+u+bb-aa) o (-d+bb+o-a)+1/16 n (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 n (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 (-l+i-n) (-n+d-o) (-bb+aa+a-m) (-o+a-r)-1/16 l o (-bb+aa+a-m) (-o+a-r)+1/16 n^2 (-ll+u+bb-aa) r-1/16 (-l+i-n) n (-bb+aa+a-m) r+1/16 n (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 (-l+i-n) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)+1/16 l o (-d+bb+o-a) (-a+m+r-k)-1/16 l n r (-a+m+r-k)-1/16 n^2 (-cc+ll+d-bb) (-r+k-b)+1/16 (-l+i-n) n (-d+bb+o-a) (-r+k-b)+1/16 l n (-o+a-r) (-r+k-b))+1/2 (1/16 n^2 (-i+cc+n-d) (-cc+ll+d-bb)-1/16 (-l+i-n) n (-cc+ll+d-bb) (-n+d-o)-1/16 l n (-cc+ll+d-bb) o-1/16 (-l+i-n) n (-i+cc+n-d) (-d+bb+o-a)+1/16 (-l+i-n)^2 (-n+d-o) (-d+bb+o-a)-1/16 l (-l+i-n) o (-d+bb+o-a)-1/16 l n (-i+cc+n-d) (-o+a-r)-1/16 l (-l+i-n) (-n+d-o) (-o+a-r)+1/16 l^2 o (-o+a-r)+1/8 l (-l+i-n) n r) b) ff)+1/2 (-m+j+k-t) (1/2 b (-(1/2) b (1/16 n (-i+cc+n-d) (-u+aa-s) (-n+d-o)-1/16 (-l+i-n) (-u+aa-s) (-n+d-o)^2+1/16 l (-u+aa-s) (-n+d-o) o-1/16 n (-i+cc+n-d)^2 (-aa+s+m-j)+1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-aa+s+m-j)+1/16 l (-i+cc+n-d) o (-aa+s+m-j)-1/8 l (-i+cc+n-d) (-n+d-o) (-m+j+k-t)+1/16 l n (-i+cc+n-d) (-k+t+b-dd)+1/16 l (-l+i-n) (-n+d-o) (-k+t+b-dd)-1/16 l^2 o (-k+t+b-dd))+1/2 r (1/16 n (-i+cc+n-d) (-u+aa-s) (-bb+aa+a-m)-1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-bb+aa+a-m)-1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-aa+s+m-j)+1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-aa+s+m-j)+1/16 l (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 l (-i+cc+n-d) (-aa+s+m-j) (-a+m+r-k)-1/16 l (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 l (-i+cc+n-d) (-bb+aa+a-m) (-m+j+k-t)-1/16 l n (-u+aa-s) (-r+k-b)-1/16 l (-l+i-n) (-aa+s+m-j) (-r+k-b)+1/16 l^2 (-m+j+k-t) (-r+k-b)+1/16 l n (-ll+u+bb-aa) (-k+t+b-dd)+1/16 l (-l+i-n) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l^2 (-a+m+r-k) (-k+t+b-dd))-1/2 (-d+bb+o-a) (1/16 (-i+cc+n-d) (-u+aa-s) o (-bb+aa+a-m)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 (-i+cc+n-d) (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 (-i+cc+n-d)^2 (-aa+s+m-j) (-a+m+r-k)+1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 (-i+cc+n-d)^2 (-bb+aa+a-m) (-m+j+k-t)+1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-r+k-b)-1/16 l (-u+aa-s) o (-r+k-b)-1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-r+k-b)+1/16 l (-i+cc+n-d) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-k+t+b-dd)+1/16 l (-ll+u+bb-aa) o (-k+t+b-dd)+1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-i+cc+n-d) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (1/16 (-u+aa-s) (-n+d-o) o (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o) o (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o)^2 (-a+m+r-k)+1/16 (-i+cc+n-d) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o)^2 (-m+j+k-t)-1/16 (-i+cc+n-d) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 n (-u+aa-s) (-n+d-o) (-r+k-b)-1/16 n (-i+cc+n-d) (-aa+s+m-j) (-r+k-b)+1/16 l o (-aa+s+m-j) (-r+k-b)-1/16 l (-n+d-o) (-m+j+k-t) (-r+k-b)-1/16 n (-ll+u+bb-aa) (-n+d-o) (-k+t+b-dd)+1/16 n (-i+cc+n-d) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l o (-bb+aa+a-m) (-k+t+b-dd)+1/16 l (-n+d-o) (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-n+d-o)-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o)^2+1/16 l (-ll+u+bb-aa) (-n+d-o) o-1/16 n (-i+cc+n-d)^2 (-bb+aa+a-m)+1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-bb+aa+a-m)+1/16 l (-i+cc+n-d) o (-bb+aa+a-m)-1/8 l (-i+cc+n-d) (-n+d-o) (-a+m+r-k)+1/16 l n (-i+cc+n-d) (-r+k-b)+1/16 l (-l+i-n) (-n+d-o) (-r+k-b)-1/16 l^2 o (-r+k-b)) (-b+dd-ff))-1/2 (-r+k-b) (-(1/2) b (1/16 n (-i+cc+n-d) (-u+aa-s) (-d+bb+o-a)-1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-d+bb+o-a)-1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-aa+s+m-j)+1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-aa+s+m-j)+1/16 l (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 l (-i+cc+n-d) (-aa+s+m-j) (-o+a-r)-1/16 l n (-u+aa-s) r-1/16 l (-l+i-n) (-aa+s+m-j) r-1/16 l (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 l (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t)+1/16 l^2 r (-m+j+k-t)+1/16 l n (-cc+ll+d-bb) (-k+t+b-dd)+1/16 l (-l+i-n) (-d+bb+o-a) (-k+t+b-dd)-1/16 l^2 (-o+a-r) (-k+t+b-dd))-1/2 (-d+bb+o-a) (1/16 (-i+cc+n-d) (-u+aa-s) (-bb+aa+a-m) (-o+a-r)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-aa+s+m-j) (-o+a-r)-1/16 (-l+i-n) (-u+aa-s) (-bb+aa+a-m) r+1/16 (-l+i-n) (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-i+cc+n-d) (-u+aa-s) (-d+bb+o-a) (-a+m+r-k)+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-aa+s+m-j) (-a+m+r-k)+1/16 l (-u+aa-s) r (-a+m+r-k)+1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-d+bb+o-a) (-m+j+k-t)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-bb+aa+a-m) (-m+j+k-t)-1/16 l (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 (-l+i-n) (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)-1/16 l (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 l (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 (-l+i-n) (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)+1/16 l (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 l (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (1/16 (-u+aa-s) (-n+d-o) (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) (-n+d-o) (-aa+s+m-j) (-o+a-r)-1/16 n (-u+aa-s) (-bb+aa+a-m) r+1/16 n (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-u+aa-s) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)-1/16 l (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 l (-bb+aa+a-m) r (-m+j+k-t)+1/16 n (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 n (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)+1/16 l (-aa+s+m-j) (-o+a-r) (-r+k-b)-1/16 l (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 n (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 n (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)+1/16 l (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-d+bb+o-a)-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-d+bb+o-a)-1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-bb+aa+a-m)+1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-bb+aa+a-m)+1/16 l (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 l (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r)-1/16 l n (-ll+u+bb-aa) r-1/16 l (-l+i-n) (-bb+aa+a-m) r-1/16 l (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 l (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k)+1/16 l^2 r (-a+m+r-k)+1/16 l n (-cc+ll+d-bb) (-r+k-b)+1/16 l (-l+i-n) (-d+bb+o-a) (-r+k-b)-1/16 l^2 (-o+a-r) (-r+k-b)) (-b+dd-ff))+1/2 (-bb+aa+a-m) (-(1/2) b (1/16 (-i+cc+n-d) (-u+aa-s) o (-d+bb+o-a)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 (-i+cc+n-d) (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 (-i+cc+n-d)^2 (-aa+s+m-j) (-o+a-r)+1/16 (-l+i-n) (-u+aa-s) (-n+d-o) r-1/16 l (-u+aa-s) o r-1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) r+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 (-i+cc+n-d)^2 (-d+bb+o-a) (-m+j+k-t)+1/16 l (-i+cc+n-d) r (-m+j+k-t)-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-k+t+b-dd)+1/16 l (-cc+ll+d-bb) o (-k+t+b-dd)+1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-k+t+b-dd)-1/16 l (-i+cc+n-d) (-o+a-r) (-k+t+b-dd))-1/2 r (1/16 (-i+cc+n-d) (-u+aa-s) (-bb+aa+a-m) (-o+a-r)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-aa+s+m-j) (-o+a-r)-1/16 (-l+i-n) (-u+aa-s) (-bb+aa+a-m) r+1/16 (-l+i-n) (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-i+cc+n-d) (-u+aa-s) (-d+bb+o-a) (-a+m+r-k)+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-aa+s+m-j) (-a+m+r-k)+1/16 l (-u+aa-s) r (-a+m+r-k)+1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-d+bb+o-a) (-m+j+k-t)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-bb+aa+a-m) (-m+j+k-t)-1/16 l (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 (-l+i-n) (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)-1/16 l (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 l (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 (-l+i-n) (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)+1/16 l (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 l (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (-(1/16) (-u+aa-s) o (-bb+aa+a-m) r+1/16 (-ll+u+bb-aa) o (-aa+s+m-j) r+1/16 (-u+aa-s) (-n+d-o) r (-a+m+r-k)-1/16 (-i+cc+n-d) (-aa+s+m-j) r (-a+m+r-k)-1/16 (-ll+u+bb-aa) (-n+d-o) r (-m+j+k-t)+1/16 (-i+cc+n-d) (-bb+aa+a-m) r (-m+j+k-t)+1/16 (-u+aa-s) o (-d+bb+o-a) (-r+k-b)-1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-r+k-b)-1/16 (-u+aa-s) (-n+d-o) (-o+a-r) (-r+k-b)+1/16 (-i+cc+n-d) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t) (-r+k-b)-1/16 (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-k+t+b-dd)+1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-k+t+b-dd)+1/16 (-ll+u+bb-aa) (-n+d-o) (-o+a-r) (-k+t+b-dd)-1/16 (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k) (-k+t+b-dd)+1/16 (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 (-i+cc+n-d) (-ll+u+bb-aa) o (-d+bb+o-a)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 (-i+cc+n-d)^2 (-bb+aa+a-m) (-o+a-r)+1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) r-1/16 l (-ll+u+bb-aa) o r-1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) r+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 (-i+cc+n-d)^2 (-d+bb+o-a) (-a+m+r-k)+1/16 l (-i+cc+n-d) r (-a+m+r-k)-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-r+k-b)+1/16 l (-cc+ll+d-bb) o (-r+k-b)+1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-r+k-b)-1/16 l (-i+cc+n-d) (-o+a-r) (-r+k-b)) (-b+dd-ff))-1/2 (-ll+u+bb-aa) (-(1/2) b (1/16 (-u+aa-s) (-n+d-o) o (-d+bb+o-a)-1/16 (-cc+ll+d-bb) (-n+d-o) o (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o)^2 (-o+a-r)+1/16 (-i+cc+n-d) (-n+d-o) (-aa+s+m-j) (-o+a-r)+1/16 n (-u+aa-s) (-n+d-o) r-1/16 n (-i+cc+n-d) (-aa+s+m-j) r+1/16 l o (-aa+s+m-j) r+1/16 (-cc+ll+d-bb) (-n+d-o)^2 (-m+j+k-t)-1/16 (-i+cc+n-d) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)-1/16 l (-n+d-o) r (-m+j+k-t)-1/16 n (-cc+ll+d-bb) (-n+d-o) (-k+t+b-dd)+1/16 n (-i+cc+n-d) (-d+bb+o-a) (-k+t+b-dd)-1/16 l o (-d+bb+o-a) (-k+t+b-dd)+1/16 l (-n+d-o) (-o+a-r) (-k+t+b-dd))-1/2 r (1/16 (-u+aa-s) (-n+d-o) (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) (-n+d-o) (-aa+s+m-j) (-o+a-r)-1/16 n (-u+aa-s) (-bb+aa+a-m) r+1/16 n (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-u+aa-s) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)-1/16 l (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 l (-bb+aa+a-m) r (-m+j+k-t)+1/16 n (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 n (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)+1/16 l (-aa+s+m-j) (-o+a-r) (-r+k-b)-1/16 l (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 n (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 n (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)+1/16 l (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (-d+bb+o-a) (-(1/16) (-u+aa-s) o (-bb+aa+a-m) r+1/16 (-ll+u+bb-aa) o (-aa+s+m-j) r+1/16 (-u+aa-s) (-n+d-o) r (-a+m+r-k)-1/16 (-i+cc+n-d) (-aa+s+m-j) r (-a+m+r-k)-1/16 (-ll+u+bb-aa) (-n+d-o) r (-m+j+k-t)+1/16 (-i+cc+n-d) (-bb+aa+a-m) r (-m+j+k-t)+1/16 (-u+aa-s) o (-d+bb+o-a) (-r+k-b)-1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-r+k-b)-1/16 (-u+aa-s) (-n+d-o) (-o+a-r) (-r+k-b)+1/16 (-i+cc+n-d) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t) (-r+k-b)-1/16 (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-k+t+b-dd)+1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-k+t+b-dd)+1/16 (-ll+u+bb-aa) (-n+d-o) (-o+a-r) (-k+t+b-dd)-1/16 (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k) (-k+t+b-dd)+1/16 (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 (-ll+u+bb-aa) (-n+d-o) o (-d+bb+o-a)-1/16 (-cc+ll+d-bb) (-n+d-o) o (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o)^2 (-o+a-r)+1/16 (-i+cc+n-d) (-n+d-o) (-bb+aa+a-m) (-o+a-r)+1/16 n (-ll+u+bb-aa) (-n+d-o) r-1/16 n (-i+cc+n-d) (-bb+aa+a-m) r+1/16 l o (-bb+aa+a-m) r+1/16 (-cc+ll+d-bb) (-n+d-o)^2 (-a+m+r-k)-1/16 (-i+cc+n-d) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)-1/16 l (-n+d-o) r (-a+m+r-k)-1/16 n (-cc+ll+d-bb) (-n+d-o) (-r+k-b)+1/16 n (-i+cc+n-d) (-d+bb+o-a) (-r+k-b)-1/16 l o (-d+bb+o-a) (-r+k-b)+1/16 l (-n+d-o) (-o+a-r) (-r+k-b)) (-b+dd-ff))+1/2 (1/2 r (1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-d+bb+o-a)-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-d+bb+o-a)-1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-bb+aa+a-m)+1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-bb+aa+a-m)+1/16 l (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 l (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r)-1/16 l n (-ll+u+bb-aa) r-1/16 l (-l+i-n) (-bb+aa+a-m) r-1/16 l (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 l (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k)+1/16 l^2 r (-a+m+r-k)+1/16 l n (-cc+ll+d-bb) (-r+k-b)+1/16 l (-l+i-n) (-d+bb+o-a) (-r+k-b)-1/16 l^2 (-o+a-r) (-r+k-b))-1/2 (-d+bb+o-a) (1/16 (-i+cc+n-d) (-ll+u+bb-aa) o (-d+bb+o-a)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 (-i+cc+n-d)^2 (-bb+aa+a-m) (-o+a-r)+1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) r-1/16 l (-ll+u+bb-aa) o r-1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) r+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 (-i+cc+n-d)^2 (-d+bb+o-a) (-a+m+r-k)+1/16 l (-i+cc+n-d) r (-a+m+r-k)-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-r+k-b)+1/16 l (-cc+ll+d-bb) o (-r+k-b)+1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-r+k-b)-1/16 l (-i+cc+n-d) (-o+a-r) (-r+k-b))+1/2 (-cc+ll+d-bb) (1/16 (-ll+u+bb-aa) (-n+d-o) o (-d+bb+o-a)-1/16 (-cc+ll+d-bb) (-n+d-o) o (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o)^2 (-o+a-r)+1/16 (-i+cc+n-d) (-n+d-o) (-bb+aa+a-m) (-o+a-r)+1/16 n (-ll+u+bb-aa) (-n+d-o) r-1/16 n (-i+cc+n-d) (-bb+aa+a-m) r+1/16 l o (-bb+aa+a-m) r+1/16 (-cc+ll+d-bb) (-n+d-o)^2 (-a+m+r-k)-1/16 (-i+cc+n-d) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)-1/16 l (-n+d-o) r (-a+m+r-k)-1/16 n (-cc+ll+d-bb) (-n+d-o) (-r+k-b)+1/16 n (-i+cc+n-d) (-d+bb+o-a) (-r+k-b)-1/16 l o (-d+bb+o-a) (-r+k-b)+1/16 l (-n+d-o) (-o+a-r) (-r+k-b))+1/2 (1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o)-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o)^2+1/16 l (-cc+ll+d-bb) (-n+d-o) o-1/16 n (-i+cc+n-d)^2 (-d+bb+o-a)+1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-d+bb+o-a)+1/16 l (-i+cc+n-d) o (-d+bb+o-a)-1/8 l (-i+cc+n-d) (-n+d-o) (-o+a-r)+1/16 l n (-i+cc+n-d) r+1/16 l (-l+i-n) (-n+d-o) r-1/16 l^2 o r) b) ff)-1/2 (-aa+s+m-j) (1/2 b (-(1/2) b (-(1/16) n (-i+cc+n-d) (-u+aa-s) o-1/16 (-l+i-n) (-u+aa-s) (-n+d-o) o+1/16 l (-u+aa-s) o^2+1/8 (-l+i-n) (-i+cc+n-d) o (-aa+s+m-j)+1/16 n (-i+cc+n-d)^2 (-m+j+k-t)-1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-m+j+k-t)-1/16 l (-i+cc+n-d) o (-m+j+k-t)-1/16 (-l+i-n) n (-i+cc+n-d) (-k+t+b-dd)+1/16 (-l+i-n)^2 (-n+d-o) (-k+t+b-dd)-1/16 l (-l+i-n) o (-k+t+b-dd))+1/2 r (-(1/16) (-l+i-n) (-u+aa-s) o (-bb+aa+a-m)+1/16 (-l+i-n) (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 n (-i+cc+n-d) (-u+aa-s) (-a+m+r-k)+1/16 l (-u+aa-s) o (-a+m+r-k)+1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-a+m+r-k)+1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-m+j+k-t)-1/16 l (-ll+u+bb-aa) o (-m+j+k-t)-1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-m+j+k-t)+1/16 (-l+i-n) n (-u+aa-s) (-r+k-b)-1/16 (-l+i-n)^2 (-aa+s+m-j) (-r+k-b)+1/16 l (-l+i-n) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) n (-ll+u+bb-aa) (-k+t+b-dd)+1/16 (-l+i-n)^2 (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-l+i-n) (-a+m+r-k) (-k+t+b-dd))-1/2 (-o+a-r) (1/16 (-i+cc+n-d) (-u+aa-s) o (-bb+aa+a-m)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 (-i+cc+n-d) (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 (-i+cc+n-d)^2 (-aa+s+m-j) (-a+m+r-k)+1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 (-i+cc+n-d)^2 (-bb+aa+a-m) (-m+j+k-t)+1/16 (-l+i-n) (-u+aa-s) (-n+d-o) (-r+k-b)-1/16 l (-u+aa-s) o (-r+k-b)-1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-r+k-b)+1/16 l (-i+cc+n-d) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) (-k+t+b-dd)+1/16 l (-ll+u+bb-aa) o (-k+t+b-dd)+1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-i+cc+n-d) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (1/16 (-u+aa-s) o^2 (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) o^2 (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o) o (-a+m+r-k)+1/16 (-i+cc+n-d) o (-aa+s+m-j) (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o) o (-m+j+k-t)-1/16 (-i+cc+n-d) o (-bb+aa+a-m) (-m+j+k-t)-1/16 n (-u+aa-s) o (-r+k-b)+1/16 (-l+i-n) o (-aa+s+m-j) (-r+k-b)+1/16 n (-i+cc+n-d) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-n+d-o) (-m+j+k-t) (-r+k-b)+1/16 n (-ll+u+bb-aa) o (-k+t+b-dd)-1/16 (-l+i-n) o (-bb+aa+a-m) (-k+t+b-dd)-1/16 n (-i+cc+n-d) (-a+m+r-k) (-k+t+b-dd)+1/16 (-l+i-n) (-n+d-o) (-a+m+r-k) (-k+t+b-dd))+1/2 (-(1/16) n (-i+cc+n-d) (-ll+u+bb-aa) o-1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) o+1/16 l (-ll+u+bb-aa) o^2+1/8 (-l+i-n) (-i+cc+n-d) o (-bb+aa+a-m)+1/16 n (-i+cc+n-d)^2 (-a+m+r-k)-1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-a+m+r-k)-1/16 l (-i+cc+n-d) o (-a+m+r-k)-1/16 (-l+i-n) n (-i+cc+n-d) (-r+k-b)+1/16 (-l+i-n)^2 (-n+d-o) (-r+k-b)-1/16 l (-l+i-n) o (-r+k-b)) (-b+dd-ff))-1/2 (-r+k-b) (-(1/2) b (-(1/16) (-l+i-n) (-u+aa-s) o (-d+bb+o-a)+1/16 (-l+i-n) (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 n (-i+cc+n-d) (-u+aa-s) (-o+a-r)+1/16 l (-u+aa-s) o (-o+a-r)+1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) (-o+a-r)+1/16 (-l+i-n) n (-u+aa-s) r-1/16 (-l+i-n)^2 (-aa+s+m-j) r+1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-m+j+k-t)-1/16 l (-cc+ll+d-bb) o (-m+j+k-t)-1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t)+1/16 l (-l+i-n) r (-m+j+k-t)-1/16 (-l+i-n) n (-cc+ll+d-bb) (-k+t+b-dd)+1/16 (-l+i-n)^2 (-d+bb+o-a) (-k+t+b-dd)-1/16 l (-l+i-n) (-o+a-r) (-k+t+b-dd))-1/2 (-o+a-r) (1/16 (-i+cc+n-d) (-u+aa-s) (-bb+aa+a-m) (-o+a-r)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-aa+s+m-j) (-o+a-r)-1/16 (-l+i-n) (-u+aa-s) (-bb+aa+a-m) r+1/16 (-l+i-n) (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-i+cc+n-d) (-u+aa-s) (-d+bb+o-a) (-a+m+r-k)+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-aa+s+m-j) (-a+m+r-k)+1/16 l (-u+aa-s) r (-a+m+r-k)+1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-d+bb+o-a) (-m+j+k-t)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-bb+aa+a-m) (-m+j+k-t)-1/16 l (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 (-l+i-n) (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)-1/16 l (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 l (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 (-l+i-n) (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)+1/16 l (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 l (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (1/16 (-u+aa-s) o (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) o (-aa+s+m-j) (-o+a-r)-1/16 (-u+aa-s) o (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-a+m+r-k)+1/16 n (-u+aa-s) r (-a+m+r-k)-1/16 (-l+i-n) (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-m+j+k-t)-1/16 n (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-bb+aa+a-m) r (-m+j+k-t)-1/16 n (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 (-l+i-n) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 n (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)+1/16 n (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 (-l+i-n) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 n (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd)+1/16 (-l+i-n) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (-(1/16) (-l+i-n) (-ll+u+bb-aa) o (-d+bb+o-a)+1/16 (-l+i-n) (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-o+a-r)+1/16 l (-ll+u+bb-aa) o (-o+a-r)+1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r)+1/16 (-l+i-n) n (-ll+u+bb-aa) r-1/16 (-l+i-n)^2 (-bb+aa+a-m) r+1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-a+m+r-k)-1/16 l (-cc+ll+d-bb) o (-a+m+r-k)-1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k)+1/16 l (-l+i-n) r (-a+m+r-k)-1/16 (-l+i-n) n (-cc+ll+d-bb) (-r+k-b)+1/16 (-l+i-n)^2 (-d+bb+o-a) (-r+k-b)-1/16 l (-l+i-n) (-o+a-r) (-r+k-b)) (-b+dd-ff))+1/2 (-a+m+r-k) (-(1/2) b (1/16 (-i+cc+n-d) (-u+aa-s) o (-d+bb+o-a)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 (-i+cc+n-d) (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 (-i+cc+n-d)^2 (-aa+s+m-j) (-o+a-r)+1/16 (-l+i-n) (-u+aa-s) (-n+d-o) r-1/16 l (-u+aa-s) o r-1/16 (-l+i-n) (-i+cc+n-d) (-aa+s+m-j) r+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 (-i+cc+n-d)^2 (-d+bb+o-a) (-m+j+k-t)+1/16 l (-i+cc+n-d) r (-m+j+k-t)-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-k+t+b-dd)+1/16 l (-cc+ll+d-bb) o (-k+t+b-dd)+1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-k+t+b-dd)-1/16 l (-i+cc+n-d) (-o+a-r) (-k+t+b-dd))-1/2 r (1/16 (-i+cc+n-d) (-u+aa-s) (-bb+aa+a-m) (-o+a-r)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-aa+s+m-j) (-o+a-r)-1/16 (-l+i-n) (-u+aa-s) (-bb+aa+a-m) r+1/16 (-l+i-n) (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-i+cc+n-d) (-u+aa-s) (-d+bb+o-a) (-a+m+r-k)+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-aa+s+m-j) (-a+m+r-k)+1/16 l (-u+aa-s) r (-a+m+r-k)+1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-d+bb+o-a) (-m+j+k-t)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-bb+aa+a-m) (-m+j+k-t)-1/16 l (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 (-l+i-n) (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)-1/16 l (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 l (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 (-l+i-n) (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)+1/16 l (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 l (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd))+1/2 (-cc+ll+d-bb) (-(1/16) (-u+aa-s) o (-bb+aa+a-m) r+1/16 (-ll+u+bb-aa) o (-aa+s+m-j) r+1/16 (-u+aa-s) (-n+d-o) r (-a+m+r-k)-1/16 (-i+cc+n-d) (-aa+s+m-j) r (-a+m+r-k)-1/16 (-ll+u+bb-aa) (-n+d-o) r (-m+j+k-t)+1/16 (-i+cc+n-d) (-bb+aa+a-m) r (-m+j+k-t)+1/16 (-u+aa-s) o (-d+bb+o-a) (-r+k-b)-1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-r+k-b)-1/16 (-u+aa-s) (-n+d-o) (-o+a-r) (-r+k-b)+1/16 (-i+cc+n-d) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t) (-r+k-b)-1/16 (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-k+t+b-dd)+1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-k+t+b-dd)+1/16 (-ll+u+bb-aa) (-n+d-o) (-o+a-r) (-k+t+b-dd)-1/16 (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k) (-k+t+b-dd)+1/16 (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 (-i+cc+n-d) (-ll+u+bb-aa) o (-d+bb+o-a)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 (-i+cc+n-d)^2 (-bb+aa+a-m) (-o+a-r)+1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) r-1/16 l (-ll+u+bb-aa) o r-1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) r+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 (-i+cc+n-d)^2 (-d+bb+o-a) (-a+m+r-k)+1/16 l (-i+cc+n-d) r (-a+m+r-k)-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-r+k-b)+1/16 l (-cc+ll+d-bb) o (-r+k-b)+1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-r+k-b)-1/16 l (-i+cc+n-d) (-o+a-r) (-r+k-b)) (-b+dd-ff))-1/2 (-ll+u+bb-aa) (-(1/2) b (1/16 (-u+aa-s) o^2 (-d+bb+o-a)-1/16 (-cc+ll+d-bb) o^2 (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o) o (-o+a-r)+1/16 (-i+cc+n-d) o (-aa+s+m-j) (-o+a-r)-1/16 n (-u+aa-s) o r+1/16 (-l+i-n) o (-aa+s+m-j) r+1/16 (-cc+ll+d-bb) (-n+d-o) o (-m+j+k-t)-1/16 (-i+cc+n-d) o (-d+bb+o-a) (-m+j+k-t)+1/16 n (-i+cc+n-d) r (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) r (-m+j+k-t)+1/16 n (-cc+ll+d-bb) o (-k+t+b-dd)-1/16 (-l+i-n) o (-d+bb+o-a) (-k+t+b-dd)-1/16 n (-i+cc+n-d) (-o+a-r) (-k+t+b-dd)+1/16 (-l+i-n) (-n+d-o) (-o+a-r) (-k+t+b-dd))-1/2 r (1/16 (-u+aa-s) o (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) o (-aa+s+m-j) (-o+a-r)-1/16 (-u+aa-s) o (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-a+m+r-k)+1/16 n (-u+aa-s) r (-a+m+r-k)-1/16 (-l+i-n) (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-m+j+k-t)-1/16 n (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-bb+aa+a-m) r (-m+j+k-t)-1/16 n (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 (-l+i-n) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 n (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)+1/16 n (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 (-l+i-n) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 n (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd)+1/16 (-l+i-n) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (-o+a-r) (-(1/16) (-u+aa-s) o (-bb+aa+a-m) r+1/16 (-ll+u+bb-aa) o (-aa+s+m-j) r+1/16 (-u+aa-s) (-n+d-o) r (-a+m+r-k)-1/16 (-i+cc+n-d) (-aa+s+m-j) r (-a+m+r-k)-1/16 (-ll+u+bb-aa) (-n+d-o) r (-m+j+k-t)+1/16 (-i+cc+n-d) (-bb+aa+a-m) r (-m+j+k-t)+1/16 (-u+aa-s) o (-d+bb+o-a) (-r+k-b)-1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-r+k-b)-1/16 (-u+aa-s) (-n+d-o) (-o+a-r) (-r+k-b)+1/16 (-i+cc+n-d) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t) (-r+k-b)-1/16 (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-k+t+b-dd)+1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-k+t+b-dd)+1/16 (-ll+u+bb-aa) (-n+d-o) (-o+a-r) (-k+t+b-dd)-1/16 (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k) (-k+t+b-dd)+1/16 (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 (-ll+u+bb-aa) o^2 (-d+bb+o-a)-1/16 (-cc+ll+d-bb) o^2 (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o) o (-o+a-r)+1/16 (-i+cc+n-d) o (-bb+aa+a-m) (-o+a-r)-1/16 n (-ll+u+bb-aa) o r+1/16 (-l+i-n) o (-bb+aa+a-m) r+1/16 (-cc+ll+d-bb) (-n+d-o) o (-a+m+r-k)-1/16 (-i+cc+n-d) o (-d+bb+o-a) (-a+m+r-k)+1/16 n (-i+cc+n-d) r (-a+m+r-k)-1/16 (-l+i-n) (-n+d-o) r (-a+m+r-k)+1/16 n (-cc+ll+d-bb) o (-r+k-b)-1/16 (-l+i-n) o (-d+bb+o-a) (-r+k-b)-1/16 n (-i+cc+n-d) (-o+a-r) (-r+k-b)+1/16 (-l+i-n) (-n+d-o) (-o+a-r) (-r+k-b)) (-b+dd-ff))+1/2 (1/2 r (-(1/16) (-l+i-n) (-ll+u+bb-aa) o (-d+bb+o-a)+1/16 (-l+i-n) (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 n (-i+cc+n-d) (-ll+u+bb-aa) (-o+a-r)+1/16 l (-ll+u+bb-aa) o (-o+a-r)+1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r)+1/16 (-l+i-n) n (-ll+u+bb-aa) r-1/16 (-l+i-n)^2 (-bb+aa+a-m) r+1/16 n (-i+cc+n-d) (-cc+ll+d-bb) (-a+m+r-k)-1/16 l (-cc+ll+d-bb) o (-a+m+r-k)-1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k)+1/16 l (-l+i-n) r (-a+m+r-k)-1/16 (-l+i-n) n (-cc+ll+d-bb) (-r+k-b)+1/16 (-l+i-n)^2 (-d+bb+o-a) (-r+k-b)-1/16 l (-l+i-n) (-o+a-r) (-r+k-b))-1/2 (-o+a-r) (1/16 (-i+cc+n-d) (-ll+u+bb-aa) o (-d+bb+o-a)-1/16 (-i+cc+n-d) (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 (-i+cc+n-d) (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 (-i+cc+n-d)^2 (-bb+aa+a-m) (-o+a-r)+1/16 (-l+i-n) (-ll+u+bb-aa) (-n+d-o) r-1/16 l (-ll+u+bb-aa) o r-1/16 (-l+i-n) (-i+cc+n-d) (-bb+aa+a-m) r+1/16 (-i+cc+n-d) (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 (-i+cc+n-d)^2 (-d+bb+o-a) (-a+m+r-k)+1/16 l (-i+cc+n-d) r (-a+m+r-k)-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) (-r+k-b)+1/16 l (-cc+ll+d-bb) o (-r+k-b)+1/16 (-l+i-n) (-i+cc+n-d) (-d+bb+o-a) (-r+k-b)-1/16 l (-i+cc+n-d) (-o+a-r) (-r+k-b))+1/2 (-cc+ll+d-bb) (1/16 (-ll+u+bb-aa) o^2 (-d+bb+o-a)-1/16 (-cc+ll+d-bb) o^2 (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o) o (-o+a-r)+1/16 (-i+cc+n-d) o (-bb+aa+a-m) (-o+a-r)-1/16 n (-ll+u+bb-aa) o r+1/16 (-l+i-n) o (-bb+aa+a-m) r+1/16 (-cc+ll+d-bb) (-n+d-o) o (-a+m+r-k)-1/16 (-i+cc+n-d) o (-d+bb+o-a) (-a+m+r-k)+1/16 n (-i+cc+n-d) r (-a+m+r-k)-1/16 (-l+i-n) (-n+d-o) r (-a+m+r-k)+1/16 n (-cc+ll+d-bb) o (-r+k-b)-1/16 (-l+i-n) o (-d+bb+o-a) (-r+k-b)-1/16 n (-i+cc+n-d) (-o+a-r) (-r+k-b)+1/16 (-l+i-n) (-n+d-o) (-o+a-r) (-r+k-b))+1/2 (-(1/16) n (-i+cc+n-d) (-cc+ll+d-bb) o-1/16 (-l+i-n) (-cc+ll+d-bb) (-n+d-o) o+1/16 l (-cc+ll+d-bb) o^2+1/8 (-l+i-n) (-i+cc+n-d) o (-d+bb+o-a)+1/16 n (-i+cc+n-d)^2 (-o+a-r)-1/16 (-l+i-n) (-i+cc+n-d) (-n+d-o) (-o+a-r)-1/16 l (-i+cc+n-d) o (-o+a-r)-1/16 (-l+i-n) n (-i+cc+n-d) r+1/16 (-l+i-n)^2 (-n+d-o) r-1/16 l (-l+i-n) o r) b) ff)+1/2 (-u+aa-s) (1/2 b (-(1/2) b (-(1/8) n (-u+aa-s) (-n+d-o) o+1/16 n (-i+cc+n-d) o (-aa+s+m-j)+1/16 (-l+i-n) (-n+d-o) o (-aa+s+m-j)-1/16 l o^2 (-aa+s+m-j)+1/16 n (-i+cc+n-d) (-n+d-o) (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o)^2 (-m+j+k-t)+1/16 l (-n+d-o) o (-m+j+k-t)-1/16 n^2 (-i+cc+n-d) (-k+t+b-dd)+1/16 (-l+i-n) n (-n+d-o) (-k+t+b-dd)+1/16 l n o (-k+t+b-dd))+1/2 r (-(1/16) n (-u+aa-s) o (-bb+aa+a-m)+1/16 n (-ll+u+bb-aa) o (-aa+s+m-j)-1/16 n (-u+aa-s) (-n+d-o) (-a+m+r-k)+1/16 (-l+i-n) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)-1/16 l o (-aa+s+m-j) (-a+m+r-k)+1/16 n (-ll+u+bb-aa) (-n+d-o) (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 l o (-bb+aa+a-m) (-m+j+k-t)+1/16 n^2 (-u+aa-s) (-r+k-b)-1/16 (-l+i-n) n (-aa+s+m-j) (-r+k-b)-1/16 l n (-m+j+k-t) (-r+k-b)-1/16 n^2 (-ll+u+bb-aa) (-k+t+b-dd)+1/16 (-l+i-n) n (-bb+aa+a-m) (-k+t+b-dd)+1/16 l n (-a+m+r-k) (-k+t+b-dd))-1/2 (-o+a-r) (1/16 (-u+aa-s) (-n+d-o) o (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o) o (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o)^2 (-a+m+r-k)+1/16 (-i+cc+n-d) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o)^2 (-m+j+k-t)-1/16 (-i+cc+n-d) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 n (-u+aa-s) (-n+d-o) (-r+k-b)-1/16 n (-i+cc+n-d) (-aa+s+m-j) (-r+k-b)+1/16 l o (-aa+s+m-j) (-r+k-b)-1/16 l (-n+d-o) (-m+j+k-t) (-r+k-b)-1/16 n (-ll+u+bb-aa) (-n+d-o) (-k+t+b-dd)+1/16 n (-i+cc+n-d) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l o (-bb+aa+a-m) (-k+t+b-dd)+1/16 l (-n+d-o) (-a+m+r-k) (-k+t+b-dd))+1/2 (-d+bb+o-a) (1/16 (-u+aa-s) o^2 (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) o^2 (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o) o (-a+m+r-k)+1/16 (-i+cc+n-d) o (-aa+s+m-j) (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o) o (-m+j+k-t)-1/16 (-i+cc+n-d) o (-bb+aa+a-m) (-m+j+k-t)-1/16 n (-u+aa-s) o (-r+k-b)+1/16 (-l+i-n) o (-aa+s+m-j) (-r+k-b)+1/16 n (-i+cc+n-d) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-n+d-o) (-m+j+k-t) (-r+k-b)+1/16 n (-ll+u+bb-aa) o (-k+t+b-dd)-1/16 (-l+i-n) o (-bb+aa+a-m) (-k+t+b-dd)-1/16 n (-i+cc+n-d) (-a+m+r-k) (-k+t+b-dd)+1/16 (-l+i-n) (-n+d-o) (-a+m+r-k) (-k+t+b-dd))+1/2 (-(1/8) n (-ll+u+bb-aa) (-n+d-o) o+1/16 n (-i+cc+n-d) o (-bb+aa+a-m)+1/16 (-l+i-n) (-n+d-o) o (-bb+aa+a-m)-1/16 l o^2 (-bb+aa+a-m)+1/16 n (-i+cc+n-d) (-n+d-o) (-a+m+r-k)-1/16 (-l+i-n) (-n+d-o)^2 (-a+m+r-k)+1/16 l (-n+d-o) o (-a+m+r-k)-1/16 n^2 (-i+cc+n-d) (-r+k-b)+1/16 (-l+i-n) n (-n+d-o) (-r+k-b)+1/16 l n o (-r+k-b)) (-b+dd-ff))-1/2 (-r+k-b) (-(1/2) b (-(1/16) n (-u+aa-s) o (-d+bb+o-a)+1/16 n (-cc+ll+d-bb) o (-aa+s+m-j)-1/16 n (-u+aa-s) (-n+d-o) (-o+a-r)+1/16 (-l+i-n) (-n+d-o) (-aa+s+m-j) (-o+a-r)-1/16 l o (-aa+s+m-j) (-o+a-r)+1/16 n^2 (-u+aa-s) r-1/16 (-l+i-n) n (-aa+s+m-j) r+1/16 n (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)+1/16 l o (-d+bb+o-a) (-m+j+k-t)-1/16 l n r (-m+j+k-t)-1/16 n^2 (-cc+ll+d-bb) (-k+t+b-dd)+1/16 (-l+i-n) n (-d+bb+o-a) (-k+t+b-dd)+1/16 l n (-o+a-r) (-k+t+b-dd))-1/2 (-o+a-r) (1/16 (-u+aa-s) (-n+d-o) (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) (-n+d-o) (-aa+s+m-j) (-o+a-r)-1/16 n (-u+aa-s) (-bb+aa+a-m) r+1/16 n (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-u+aa-s) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)-1/16 l (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 l (-bb+aa+a-m) r (-m+j+k-t)+1/16 n (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 n (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)+1/16 l (-aa+s+m-j) (-o+a-r) (-r+k-b)-1/16 l (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 n (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 n (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)+1/16 l (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (-d+bb+o-a) (1/16 (-u+aa-s) o (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) o (-aa+s+m-j) (-o+a-r)-1/16 (-u+aa-s) o (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-a+m+r-k)+1/16 n (-u+aa-s) r (-a+m+r-k)-1/16 (-l+i-n) (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-m+j+k-t)-1/16 n (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-bb+aa+a-m) r (-m+j+k-t)-1/16 n (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 (-l+i-n) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 n (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)+1/16 n (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 (-l+i-n) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 n (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd)+1/16 (-l+i-n) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (-(1/16) n (-ll+u+bb-aa) o (-d+bb+o-a)+1/16 n (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 n (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 (-l+i-n) (-n+d-o) (-bb+aa+a-m) (-o+a-r)-1/16 l o (-bb+aa+a-m) (-o+a-r)+1/16 n^2 (-ll+u+bb-aa) r-1/16 (-l+i-n) n (-bb+aa+a-m) r+1/16 n (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 (-l+i-n) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)+1/16 l o (-d+bb+o-a) (-a+m+r-k)-1/16 l n r (-a+m+r-k)-1/16 n^2 (-cc+ll+d-bb) (-r+k-b)+1/16 (-l+i-n) n (-d+bb+o-a) (-r+k-b)+1/16 l n (-o+a-r) (-r+k-b)) (-b+dd-ff))+1/2 (-a+m+r-k) (-(1/2) b (1/16 (-u+aa-s) (-n+d-o) o (-d+bb+o-a)-1/16 (-cc+ll+d-bb) (-n+d-o) o (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o)^2 (-o+a-r)+1/16 (-i+cc+n-d) (-n+d-o) (-aa+s+m-j) (-o+a-r)+1/16 n (-u+aa-s) (-n+d-o) r-1/16 n (-i+cc+n-d) (-aa+s+m-j) r+1/16 l o (-aa+s+m-j) r+1/16 (-cc+ll+d-bb) (-n+d-o)^2 (-m+j+k-t)-1/16 (-i+cc+n-d) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)-1/16 l (-n+d-o) r (-m+j+k-t)-1/16 n (-cc+ll+d-bb) (-n+d-o) (-k+t+b-dd)+1/16 n (-i+cc+n-d) (-d+bb+o-a) (-k+t+b-dd)-1/16 l o (-d+bb+o-a) (-k+t+b-dd)+1/16 l (-n+d-o) (-o+a-r) (-k+t+b-dd))-1/2 r (1/16 (-u+aa-s) (-n+d-o) (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) (-n+d-o) (-aa+s+m-j) (-o+a-r)-1/16 n (-u+aa-s) (-bb+aa+a-m) r+1/16 n (-ll+u+bb-aa) (-aa+s+m-j) r-1/16 (-u+aa-s) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) (-n+d-o) (-aa+s+m-j) (-a+m+r-k)-1/16 l (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) (-n+d-o) (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) (-n+d-o) (-bb+aa+a-m) (-m+j+k-t)+1/16 l (-bb+aa+a-m) r (-m+j+k-t)+1/16 n (-u+aa-s) (-d+bb+o-a) (-r+k-b)-1/16 n (-cc+ll+d-bb) (-aa+s+m-j) (-r+k-b)+1/16 l (-aa+s+m-j) (-o+a-r) (-r+k-b)-1/16 l (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 n (-ll+u+bb-aa) (-d+bb+o-a) (-k+t+b-dd)+1/16 n (-cc+ll+d-bb) (-bb+aa+a-m) (-k+t+b-dd)-1/16 l (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)+1/16 l (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (-d+bb+o-a) (-(1/16) (-u+aa-s) o (-bb+aa+a-m) r+1/16 (-ll+u+bb-aa) o (-aa+s+m-j) r+1/16 (-u+aa-s) (-n+d-o) r (-a+m+r-k)-1/16 (-i+cc+n-d) (-aa+s+m-j) r (-a+m+r-k)-1/16 (-ll+u+bb-aa) (-n+d-o) r (-m+j+k-t)+1/16 (-i+cc+n-d) (-bb+aa+a-m) r (-m+j+k-t)+1/16 (-u+aa-s) o (-d+bb+o-a) (-r+k-b)-1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-r+k-b)-1/16 (-u+aa-s) (-n+d-o) (-o+a-r) (-r+k-b)+1/16 (-i+cc+n-d) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t) (-r+k-b)-1/16 (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-k+t+b-dd)+1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-k+t+b-dd)+1/16 (-ll+u+bb-aa) (-n+d-o) (-o+a-r) (-k+t+b-dd)-1/16 (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k) (-k+t+b-dd)+1/16 (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 (-ll+u+bb-aa) (-n+d-o) o (-d+bb+o-a)-1/16 (-cc+ll+d-bb) (-n+d-o) o (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o)^2 (-o+a-r)+1/16 (-i+cc+n-d) (-n+d-o) (-bb+aa+a-m) (-o+a-r)+1/16 n (-ll+u+bb-aa) (-n+d-o) r-1/16 n (-i+cc+n-d) (-bb+aa+a-m) r+1/16 l o (-bb+aa+a-m) r+1/16 (-cc+ll+d-bb) (-n+d-o)^2 (-a+m+r-k)-1/16 (-i+cc+n-d) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)-1/16 l (-n+d-o) r (-a+m+r-k)-1/16 n (-cc+ll+d-bb) (-n+d-o) (-r+k-b)+1/16 n (-i+cc+n-d) (-d+bb+o-a) (-r+k-b)-1/16 l o (-d+bb+o-a) (-r+k-b)+1/16 l (-n+d-o) (-o+a-r) (-r+k-b)) (-b+dd-ff))-1/2 (-bb+aa+a-m) (-(1/2) b (1/16 (-u+aa-s) o^2 (-d+bb+o-a)-1/16 (-cc+ll+d-bb) o^2 (-aa+s+m-j)-1/16 (-u+aa-s) (-n+d-o) o (-o+a-r)+1/16 (-i+cc+n-d) o (-aa+s+m-j) (-o+a-r)-1/16 n (-u+aa-s) o r+1/16 (-l+i-n) o (-aa+s+m-j) r+1/16 (-cc+ll+d-bb) (-n+d-o) o (-m+j+k-t)-1/16 (-i+cc+n-d) o (-d+bb+o-a) (-m+j+k-t)+1/16 n (-i+cc+n-d) r (-m+j+k-t)-1/16 (-l+i-n) (-n+d-o) r (-m+j+k-t)+1/16 n (-cc+ll+d-bb) o (-k+t+b-dd)-1/16 (-l+i-n) o (-d+bb+o-a) (-k+t+b-dd)-1/16 n (-i+cc+n-d) (-o+a-r) (-k+t+b-dd)+1/16 (-l+i-n) (-n+d-o) (-o+a-r) (-k+t+b-dd))-1/2 r (1/16 (-u+aa-s) o (-bb+aa+a-m) (-o+a-r)-1/16 (-ll+u+bb-aa) o (-aa+s+m-j) (-o+a-r)-1/16 (-u+aa-s) o (-d+bb+o-a) (-a+m+r-k)+1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-a+m+r-k)+1/16 n (-u+aa-s) r (-a+m+r-k)-1/16 (-l+i-n) (-aa+s+m-j) r (-a+m+r-k)+1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-m+j+k-t)-1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-m+j+k-t)-1/16 n (-ll+u+bb-aa) r (-m+j+k-t)+1/16 (-l+i-n) (-bb+aa+a-m) r (-m+j+k-t)-1/16 n (-u+aa-s) (-o+a-r) (-r+k-b)+1/16 (-l+i-n) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 n (-cc+ll+d-bb) (-m+j+k-t) (-r+k-b)-1/16 (-l+i-n) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)+1/16 n (-ll+u+bb-aa) (-o+a-r) (-k+t+b-dd)-1/16 (-l+i-n) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 n (-cc+ll+d-bb) (-a+m+r-k) (-k+t+b-dd)+1/16 (-l+i-n) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (-o+a-r) (-(1/16) (-u+aa-s) o (-bb+aa+a-m) r+1/16 (-ll+u+bb-aa) o (-aa+s+m-j) r+1/16 (-u+aa-s) (-n+d-o) r (-a+m+r-k)-1/16 (-i+cc+n-d) (-aa+s+m-j) r (-a+m+r-k)-1/16 (-ll+u+bb-aa) (-n+d-o) r (-m+j+k-t)+1/16 (-i+cc+n-d) (-bb+aa+a-m) r (-m+j+k-t)+1/16 (-u+aa-s) o (-d+bb+o-a) (-r+k-b)-1/16 (-cc+ll+d-bb) o (-aa+s+m-j) (-r+k-b)-1/16 (-u+aa-s) (-n+d-o) (-o+a-r) (-r+k-b)+1/16 (-i+cc+n-d) (-aa+s+m-j) (-o+a-r) (-r+k-b)+1/16 (-cc+ll+d-bb) (-n+d-o) (-m+j+k-t) (-r+k-b)-1/16 (-i+cc+n-d) (-d+bb+o-a) (-m+j+k-t) (-r+k-b)-1/16 (-ll+u+bb-aa) o (-d+bb+o-a) (-k+t+b-dd)+1/16 (-cc+ll+d-bb) o (-bb+aa+a-m) (-k+t+b-dd)+1/16 (-ll+u+bb-aa) (-n+d-o) (-o+a-r) (-k+t+b-dd)-1/16 (-i+cc+n-d) (-bb+aa+a-m) (-o+a-r) (-k+t+b-dd)-1/16 (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k) (-k+t+b-dd)+1/16 (-i+cc+n-d) (-d+bb+o-a) (-a+m+r-k) (-k+t+b-dd))+1/2 (1/16 (-ll+u+bb-aa) o^2 (-d+bb+o-a)-1/16 (-cc+ll+d-bb) o^2 (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o) o (-o+a-r)+1/16 (-i+cc+n-d) o (-bb+aa+a-m) (-o+a-r)-1/16 n (-ll+u+bb-aa) o r+1/16 (-l+i-n) o (-bb+aa+a-m) r+1/16 (-cc+ll+d-bb) (-n+d-o) o (-a+m+r-k)-1/16 (-i+cc+n-d) o (-d+bb+o-a) (-a+m+r-k)+1/16 n (-i+cc+n-d) r (-a+m+r-k)-1/16 (-l+i-n) (-n+d-o) r (-a+m+r-k)+1/16 n (-cc+ll+d-bb) o (-r+k-b)-1/16 (-l+i-n) o (-d+bb+o-a) (-r+k-b)-1/16 n (-i+cc+n-d) (-o+a-r) (-r+k-b)+1/16 (-l+i-n) (-n+d-o) (-o+a-r) (-r+k-b)) (-b+dd-ff))+1/2 (1/2 r (-(1/16) n (-ll+u+bb-aa) o (-d+bb+o-a)+1/16 n (-cc+ll+d-bb) o (-bb+aa+a-m)-1/16 n (-ll+u+bb-aa) (-n+d-o) (-o+a-r)+1/16 (-l+i-n) (-n+d-o) (-bb+aa+a-m) (-o+a-r)-1/16 l o (-bb+aa+a-m) (-o+a-r)+1/16 n^2 (-ll+u+bb-aa) r-1/16 (-l+i-n) n (-bb+aa+a-m) r+1/16 n (-cc+ll+d-bb) (-n+d-o) (-a+m+r-k)-1/16 (-l+i-n) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)+1/16 l o (-d+bb+o-a) (-a+m+r-k)-1/16 l n r (-a+m+r-k)-1/16 n^2 (-cc+ll+d-bb) (-r+k-b)+1/16 (-l+i-n) n (-d+bb+o-a) (-r+k-b)+1/16 l n (-o+a-r) (-r+k-b))-1/2 (-o+a-r) (1/16 (-ll+u+bb-aa) (-n+d-o) o (-d+bb+o-a)-1/16 (-cc+ll+d-bb) (-n+d-o) o (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o)^2 (-o+a-r)+1/16 (-i+cc+n-d) (-n+d-o) (-bb+aa+a-m) (-o+a-r)+1/16 n (-ll+u+bb-aa) (-n+d-o) r-1/16 n (-i+cc+n-d) (-bb+aa+a-m) r+1/16 l o (-bb+aa+a-m) r+1/16 (-cc+ll+d-bb) (-n+d-o)^2 (-a+m+r-k)-1/16 (-i+cc+n-d) (-n+d-o) (-d+bb+o-a) (-a+m+r-k)-1/16 l (-n+d-o) r (-a+m+r-k)-1/16 n (-cc+ll+d-bb) (-n+d-o) (-r+k-b)+1/16 n (-i+cc+n-d) (-d+bb+o-a) (-r+k-b)-1/16 l o (-d+bb+o-a) (-r+k-b)+1/16 l (-n+d-o) (-o+a-r) (-r+k-b))+1/2 (-d+bb+o-a) (1/16 (-ll+u+bb-aa) o^2 (-d+bb+o-a)-1/16 (-cc+ll+d-bb) o^2 (-bb+aa+a-m)-1/16 (-ll+u+bb-aa) (-n+d-o) o (-o+a-r)+1/16 (-i+cc+n-d) o (-bb+aa+a-m) (-o+a-r)-1/16 n (-ll+u+bb-aa) o r+1/16 (-l+i-n) o (-bb+aa+a-m) r+1/16 (-cc+ll+d-bb) (-n+d-o) o (-a+m+r-k)-1/16 (-i+cc+n-d) o (-d+bb+o-a) (-a+m+r-k)+1/16 n (-i+cc+n-d) r (-a+m+r-k)-1/16 (-l+i-n) (-n+d-o) r (-a+m+r-k)+1/16 n (-cc+ll+d-bb) o (-r+k-b)-1/16 (-l+i-n) o (-d+bb+o-a) (-r+k-b)-1/16 n (-i+cc+n-d) (-o+a-r) (-r+k-b)+1/16 (-l+i-n) (-n+d-o) (-o+a-r) (-r+k-b))+1/2 (-(1/8) n (-cc+ll+d-bb) (-n+d-o) o+1/16 n (-i+cc+n-d) o (-d+bb+o-a)+1/16 (-l+i-n) (-n+d-o) o (-d+bb+o-a)-1/16 l o^2 (-d+bb+o-a)+1/16 n (-i+cc+n-d) (-n+d-o) (-o+a-r)-1/16 (-l+i-n) (-n+d-o)^2 (-o+a-r)+1/16 l (-n+d-o) o (-o+a-r)-1/16 n^2 (-i+cc+n-d) r+1/16 (-l+i-n) n (-n+d-o) r+1/16 l n o r) b) ff))-1/(128 aa a j) s o r (o-a+r) (u aa (u-aa+s) a^2 j+m (2 l aa j^2 ff+2 l aa (l+s) ff^2+j (u bb^2 (u-aa+s)-u bb aa (u-aa+s)-2 l aa ff (l+s+ff))+m (2 l aa (l+s) ff+j (u bb (u-aa+s)-2 l aa ff)))-a (aa j (u (bb-aa) (u-aa+s)-2 l^2 ff-2 l s ff+2 l j ff)+m (2 l aa (l+s) ff+j (u bb (u-aa+s)+aa (u (u-aa+s)-2 l ff)))))-1/(128 j k dd) l s (l+s-j) b (j^2 r k (r-k+b) dd+t (2 o k dd^2 ff+2 o^2 k ff (b+ff)+dd (m^2 r (r-k+b)-m r k (r-k+b)-2 o k ff (o+b+ff))+t (2 o k ff (b+ff)+dd (m r (r-k+b)-2 o k ff)))-j (k dd (r (m-k) (r-k+b)-2 o b ff+2 o dd ff-2 o ff^2)+t (2 o k ff (b+ff)+dd (m r (r-k+b)+k (r (r-k+b)-2 o ff)))))-1/(128 ll d aa) u n o (n-d+o) (ll d^2 aa ff (-ll+u+ff)+bb (2 ll aa^2 s b+2 ll s (u+s) b^2+aa (-2 ll s b (u+s+b)+cc^2 ff (-ll+u+ff)-cc ll ff (-ll+u+ff))+bb (2 ll s (u+s) b+aa (-2 ll s b+cc ff (-ll+u+ff))))-d (ll aa (-2 u s b+2 aa s b-2 s^2 b+(cc-ll) ff (-ll+u+ff))+bb (2 ll s (u+s) b+aa (cc ff (-ll+u+ff)+ll (-2 s b+ff (-ll+u+ff))))))-1/(128 i ll dd) l n (l-i+n) ff (i^2 ll b dd (b-dd+ff)+cc (2 ll^2 u r dd+2 u r^2 dd (u+ff)+ll (-2 u r dd (u+r+ff)+t^2 b (b-dd+ff)-t b dd (b-dd+ff))+cc (2 u r dd (u+ff)+ll (-2 u r dd+t b (b-dd+ff))))-i (ll dd (2 ll u r-2 u^2 r-2 u r ff+b (t-dd) (b-dd+ff))+cc (2 u r dd (u+ff)+ll (t b (b-dd+ff)+dd (-2 u r+b (b-dd+ff))))))+k1 (1/(64 k) r (l u n^2 m-2 l u n s m+l u s^2 m-l u n^2 j+u^2 n^2 j+l u n aa j+l u n s j-u^2 n s j-l u aa s j-u n^2 m j+u n s m j+u^2 n j^2+u n^2 j^2-u n aa j^2+i^2 (s m (s+m-j)+aa^2 j-aa ((s-j) j+m (s+j)))+l^2 n aa k-l^2 n s k+l u n s k-l^2 aa s k+l^2 s^2 k-l u s^2 k+l n s m k-l s^2 m k+l u n j k-2 l n aa j k+l u s j k+l n s j k+u n s j k+l aa s j k-n s m j k-u n j^2 k+n aa j^2 k+l^2 s k^2+l s^2 k^2-l s j k^2+i ((s m-aa j) (l aa-l s+s m-aa j+u (-s+j))+n (-((-l s+s m+aa (l-j)) (m-j))+u ((-2 aa+s-j) j+m (s+j)))+(l aa s-l s^2+u (s-j)^2-s m (2 l+s-j)+l aa j+l s j+aa s j-aa j^2) k)+(n ((-l+m) (-l s+s m+aa (l-j))+u^2 (s-j)+u (aa (l+j)+l (-2 s+j)+m (-2 l-2 s+j)))+i (s (l-m) m-u (aa-m) (s-j)-aa^2 (l+j)+aa (l (s-2 j)+m (l+s+j)))+l (aa (-l s+s m+aa (l-j))+u (-2 s m+aa (s+j))+(s (-l+m)+u (s-j)+aa (-l-2 s+j)) k)) t+l (aa (l+aa-m)+u (-aa+m)) t^2) b (r-k+b)+1/(64 aa) u s (u-aa+s) (n bb o^2 r-n aa o^2 r-bb aa o^2 r+aa^2 o^2 r-n d o a r+n aa o a r+d aa o a r-aa^2 o a r-d aa o r^2+aa^2 o r^2+aa o^2 r^2+m^2 r (n (-d+bb)+d (d-bb+r))+(bb o (bb+o-a)+d^2 a-d ((o-a) a+bb (o+a))) k^2-n^2 o a b+n bb o a b+n aa o a b-bb aa o a b+n^2 a^2 b-n d a^2 b-n aa a^2 b+d aa a^2 b-2 n bb o r b+n aa o r b+bb aa o r b+n d a r b+n aa a r b-2 d aa a r b+n o a r b+aa o a r b+d aa r^2 b-aa o r^2 b+n^2 a b^2-n bb a b^2+n a^2 b^2+n bb r b^2-n a r b^2+k ((bb o-d a) (bb o-d a+n (-o+a)+d r-o r)+aa (n (o-a)^2+d o a-d a^2+d o r-o^2 r+d a r+o a r-bb o (o-a+2 r))+(n ((-2 d+o-a) a+bb (o+a))-(bb-a) (bb o-o r+d (-a+r))) b)+m (r (n (-2 bb o+d (o+a))+aa (n (o-a)+o (bb-r)+d (-2 o+a-r))+d (bb o-o r+d (-a+r)))+(-n (d-bb) (o-a)+bb o (-bb+r)-d^2 (a+r)+d ((o-2 a) r+bb (o+a+r))) k+(n^2 (o-a)+(bb-r) (bb o-o r+d (-a+r))+n (bb (-2 o+a-2 r)+(-2 o+a) r+d (a+r))) b))+1/(64 ll) u (l cc n^2 o-l ll n^2 o-cc ll n^2 o+ll^2 n^2 o-l i n d o+l ll n d o+i ll n d o-ll^2 n d o-i ll n o^2+ll^2 n o^2+ll n^2 o^2+bb^2 o (l (-i+cc)+i (i-cc+o))+(cc n (cc+n-d)+i^2 d-i ((n-d) d+cc (n+d))) a^2-l^2 n d r+l cc n d r+l ll n d r-cc ll n d r+l^2 d^2 r-l i d^2 r-l ll d^2 r+i ll d^2 r-2 l cc n o r+l ll n o r+cc ll n o r+l i d o r+l ll d o r-2 i ll d o r+l n d o r+ll n d o r+i ll o^2 r-ll n o^2 r+l^2 d r^2-l cc d r^2+l d^2 r^2+l cc o r^2-l d o r^2+a ((cc n-i d) (cc n-i d+l (-n+d)+i o-n o)+ll (l (n-d)^2+i n d-i d^2+i n o-n^2 o+i d o+n d o-cc n (n-d+2 o))+(l ((-2 i+n-d) d+cc (n+d))-(cc-d) (cc n-n o+i (-d+o))) r)+bb (o (l (-2 cc n+i (n+d))+ll (l (n-d)+n (cc-o)+i (-2 n+d-o))+i (cc n-n o+i (-d+o)))+(-l (i-cc) (n-d)+cc n (-cc+o)-i^2 (d+o)+i ((n-2 d) o+cc (n+d+o))) a+(l^2 (n-d)+(cc-o) (cc n-n o+i (-d+o))+l (cc (-2 n+d-2 o)+(-2 n+d) o+i (d+o))) r)) ff (-ll+u+ff)+1/(64 dd) b (l i n s o-l i s^2 o+i^2 s^2 o+i^2 s o^2-i n s o^2+i s^2 o^2-l i n s j-i^2 s o j+i n s o j+l^2 n s t+l i s o t-2 l n s o t-i s o^2 t+n s o^2 t+cc^2 n (j (n+j-t)+s (-j+t))+d^2 (i j^2+l t (l-i+t)-j ((l-i) i+(l+i) t))+l^2 n^2 dd-l^2 n s dd+l i n s dd+l i n o dd-l n^2 o dd+l i s o dd-i^2 s o dd+l n s o dd+i n s o dd+l i n j dd-l n^2 j dd+i^2 o j dd-2 i n o j dd+n^2 o j dd-l^2 n t dd-l i o t dd+l n o t dd+l^2 n dd^2-l i n dd^2+l n^2 dd^2+d ((-i j+l t) (-l n+(-l+i) s-i j+n j+l t)+o (-((-i+t) (-l n+(-i+n) j+l t))+s (i (l-i-2 j)+(l+i) t))+(-l^2 n+l i n+(l-i)^2 s+l i j-i^2 j+l n j+i n j-l (l-i+2 n) t) dd)+cc (o ((l-i) s^2+(-n+t) (-l n+(-i+n) j+l t)+s ((-2 l+i) n+(i+n) j+(-2 l+i-2 n) t))+d (-((i+n) j^2)-(l-i) s (j-t)+l (n-t) t+j ((l-2 i) n+(l+i+n) t))+n (s ((l+i) j-2 l t)+j (-l n+(-i+n) j+l t)+((l-i) s+(-2 l+i-n) j+l (-n+t)) dd))) ff (b-dd+ff)+1/(64 j) l s (l+s-j) (o m r^2 b-o j r^2 b-m j r^2 b+j^2 r^2 b-o a r k b+o j r k b+a j r k b-j^2 r k b-a j r b^2+j^2 r b^2+j r^2 b^2+t^2 b (o (-a+m)+a (a-m+b))+(m r (m+r-k)+a^2 k-a ((r-k) k+m (r+k))) dd^2-o^2 r k ff+o m r k ff+o j r k ff-m j r k ff+o^2 k^2 ff-o a k^2 ff-o j k^2 ff+a j k^2 ff-2 o m r b ff+o j r b ff+m j r b ff+o a k b ff+o j k b ff-2 a j k b ff+o r k b ff+j r k b ff+a j b^2 ff-j r b^2 ff+o^2 k ff^2-o m k ff^2+o k^2 ff^2+o m b ff^2-o k b ff^2+dd ((m r-a k) (m r-a k+o (-r+k)+a b-r b)+j (o (r-k)^2+a r k-a k^2+a r b-r^2 b+a k b+r k b-m r (r-k+2 b))+(o ((-2 a+r-k) k+m (r+k))-(m-k) (m r-r b+a (-k+b))) ff)+t (b (o (-2 m r+a (r+k))+j (o (r-k)+r (m-b)+a (-2 r+k-b))+a (m r-r b+a (-k+b)))+(-o (a-m) (r-k)+m r (-m+b)-a^2 (k+b)+a ((r-2 k) b+m (r+k+b))) dd+(o^2 (r-k)+(m-b) (m r-r b+a (-k+b))+o (m (-2 r+k-2 b)+(-2 r+k) b+a (k+b))) ff))+1/(64 a) o r (o-a+r) (-l u bb aa a+l ll aa^2 a+l u bb s a-u^2 bb s a-2 l ll aa s a+l u aa s a+ll u aa s a+l ll s^2 a-l u s^2 a-ll u s^2 a+u^2 s^2 a+u^2 s a^2-u aa s a^2+u s^2 a^2+(u bb (u+bb-aa)+ll^2 aa-ll ((u-aa) aa+bb (u+aa))) j^2-l^2 bb aa ff+l u bb aa ff+l^2 aa^2 ff-l ll aa^2 ff+l^2 bb s ff-2 l u bb s ff+u^2 bb s ff-l^2 aa s ff+l ll aa s ff+l u aa s ff-ll u aa s ff+l u aa a ff-l aa^2 a ff+l u s a ff-u^2 s a ff+l aa s a ff+u aa s a ff+l^2 aa ff^2-l u aa ff^2+l aa^2 ff^2+s m^2 (ll (ll-bb+s)+(-ll+bb) ff)+j (a (ll u aa-ll aa^2+ll u s-u^2 s+ll aa s+u aa s-u bb (u-aa+2 s)+(u-aa)^2 ff)+(u bb-ll aa) (u bb-ll aa+ll s-u s+(-u+aa) ff)+l (-((bb-aa) (u bb-u s+ll (-aa+s)))+((-2 ll+u-aa) aa+bb (u+aa)) ff))+m (j (u bb (-bb+s)-ll^2 (aa+s)+ll ((u-2 aa) s+bb (u+aa+s))-(ll-bb) (u-aa) ff)+l ((bb-s) (u bb-u s+ll (-aa+s))+(bb (-2 u+aa-2 s)+(-2 u+aa) s+ll (aa+s)) ff+(u-aa) ff^2)+s (ll (u bb-u s+ll (-aa+s))+(-2 u bb+ll (u+aa)) ff+a (u (bb-s)+ll (-2 u+aa-s)+(u-aa) ff))))+1/(64 d) n o (n-d+o) (-ll^2 d s b+ll u d s b-cc ll s^2 b+ll^2 s^2 b+cc u s^2 b-ll u s^2 b+ll^2 s b^2+ll s^2 b^2+ll^2 d s dd-2 ll u d s dd+u^2 d s dd-ll^2 s b dd+ll u s b dd+u bb^2 (b (cc-dd)+dd (-cc+u+dd))-ll u d^2 ff+u^2 d^2 ff-cc ll d s ff+cc u d s ff+ll u d s ff-u^2 d s ff+ll u d b ff+cc ll s b ff-2 cc u s b ff+ll u s b ff+ll d s b ff+u d s b ff-ll s b^2 ff+ll u d dd ff-u^2 d dd ff-ll u b dd ff-cc u d ff^2+u^2 d ff^2+u d^2 ff^2+cc u b ff^2-u d b ff^2+aa^2 (ll dd^2+cc ff (cc-ll+ff)-dd (ll (-ll+ff)+cc (ll+ff)))+bb (s (b ((ll+u) dd+u (ll-2 ff)+cc (ll-2 u-2 ff))+b^2 (-ll+ff)+(cc-u) ((-ll+u) dd+cc ff-u ff))+u (dd ((-ll+u) dd+cc ff-u ff)+d (dd (ll-u-2 ff)+(cc-u) ff+b (-ll+ff))+b (-2 cc ff+dd (ll+ff)))+aa (-((ll+u) dd^2)+cc (-cc+u) ff-b (-cc+dd) (-ll+ff)+dd (u (-2 ll+ff)+cc (ll+u+ff))))+aa ((-ll dd+cc ff) (-ll dd+u dd+b (ll-ff)+cc ff-u ff)+d (-ll^2 dd+ll u dd+ll u ff+ll dd ff+u dd ff-u ff^2+b (-ll+ff)^2-cc ff (-ll+2 u+ff))+s (-((cc-ll) ((-ll+u) dd+cc ff-u ff))+b (cc (ll+ff)+ll (-ll-2 dd+ff)))))+1/(64 i) l n (l-i+n) (u^2 r^2 dd-u^2 r t dd+i u r b dd-u r^2 b dd-i u t b dd+u r t b dd-i u r dd^2+u^2 r dd^2+u r^2 dd^2+i u k dd^2-u r k dd^2+ll^2 (t b (t+b-dd)+k^2 dd-k ((b-dd) dd+t (b+dd)))+u^2 r t ff+i u r b ff+i u t b ff-2 u r t b ff+i^2 b^2 ff-i r b^2 ff-i t b^2 ff+r t b^2 ff+i u r dd ff-u^2 r dd ff-2 i u k dd ff+u r k dd ff-i^2 b dd ff+i u b dd ff+i r b dd ff+u r b dd ff+i k b dd ff-r k b dd ff+i u k ff^2+i^2 b ff^2-i u b ff^2-i k b ff^2+i b^2 ff^2+cc^2 ff (r (-k+t)+k (k-t+ff))+ll ((t b-k dd) (t b-k dd+r (-b+dd)+k ff-b ff)+i (r (b-dd)^2+k b dd-k dd^2+k b ff-b^2 ff+k dd ff+b dd ff-t b (b-dd+2 ff))+u (r ((-2 k+b-dd) dd+t (b+dd))-(t-dd) (t b-b ff+k (-dd+ff))))+cc (ff (r (-2 t b+k (b+dd))+i (r (b-dd)+b (t-ff)+k (-2 b+dd-ff))+k (t b-b ff+k (-dd+ff)))+u (r^2 (b-dd)+(t-ff) (t b-b ff+k (-dd+ff))+r (t (-2 b+dd-2 ff)+(-2 b+dd) ff+k (dd+ff)))+ll (-r (k-t) (b-dd)+t b (-t+ff)-k^2 (dd+ff)+k ((b-2 dd) ff+t (b+dd+ff))))));
+
+
+
+
+
+A4cX[X[1,3],X[2,8]]
+A6cX[x[3,5],X[3,6],X[3,7],X[4,6],X[4,7],X[4,8],X[5,7],X[5,8],X[6,8]];
+
+
+2m/(r^2(1-2m r))//FullSimplify
+
+
+(* ::Input:: *)
+(*(2m)/(r^2-2 m r^3)*)
+
+
+

@@ -1,0 +1,73 @@
+\ProvidesPackage{taro}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage[T1]{fontenc}
+\usepackage[]{slashed}
+\usepackage[]{bm}
+\usepackage{physics}
+\usepackage{dsfont}
+\usepackage{cases}
+\usepackage{listings}
+\lstloadlanguages{[5.2]Mathematica}
+
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+\newcommand{\dlog}[1]{\frac{\dd #1}{#1}}
+\definecolor{Mathematica}{HTML}{ed192d}
+\newcommand\Mathematica{{\fontspec[Numbers=OldStyle]{Minion Pro}%
+		\textcolor{Mathematica}{Wolfram}
+		\textit{Mathematica}\textregisteblack%
+}}
+
+\DeclareMathOperator\atanh{atanh}
+\usepackage[UKenglish]{isodate}
+\usepackage{float}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\pink}[1]{\textcolor{pink}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{ForestGreen}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+\newcommand{\brown}[1]{\textcolor{brown}{#1}}
+
+\newcommand{\J}{\mathcal{J}}
+
+\newcommand{\ab}[1]{\langle #1 \rangle}
+\newcommand{\sqb}[1]{[ #1 ]}
+\newcommand{\aMs}[3]{\langle #1|#2|#3]}  		% <1|2|3]
+\newcommand{\aMMa}[3]{\langle #1|#2|#3\rangle}		% <1|Q_1.Q_2|3>
+\newcommand{\sab}[1]{s_{#1}}
+\newcommand{\twhite}[1]{\textcolor{white}{#1}}
+
+\def\Tr{{\rm Tr}}
+\def\MHVbar{${\overline{\rm MHV}}$}
+\def\nn{\nonumber}
+\def\NeqFour{${\cal N}=4$}
+\def\Split{{\rm Split}}
+\def\spa#1.#2{\left\langle#1\,#2\right\rangle}
+\def\spb#1.#2{\left[#1\,#2\right]}
+\def\sandmx#1.#2.#3{%
+	\left\langle#1{\vphantom1}\right|{#2}\left|#3\right]}%
+\def\delt#1{\delta^{(#1)}}
+\def\eps{\epsilon}
+\def\Ord{{\cal O}}
+\def\tlambda{\tilde\lambda}
+\def\draftnote#1{{\sl #1}}
+\def\tp{\!+\!}
+\def\sA{{\cal A}}
+\def\Int#1{I^{(#1)}}
+
+
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{positioning,fit}
+\usetikzlibrary{patterns}
+
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\tikzset{cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},
+	%default radius will be 1pt.
+	cross/.default={2pt}}

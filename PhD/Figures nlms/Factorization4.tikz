@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=medium blob] (0) at (-5, -2) {};
+		\node [style=medium blob] (1) at (-2, -2) {};
+		\node [style=none] (7) at (-6.5, -0.25) {};
+		\node [style=none] (9) at (-7.25, -2) {};
+		\node [style=none] (10) at (-6.5, -3.75) {};
+		\node [style=none] (18) at (-0.5, -0.25) {};
+		\node [style=none] (19) at (-0.5, -3.75) {};
+		\node [style=none] (20) at (0.25, -2) {};
+		\node [style=none] (21) at (-5, -2) {\large{$\partial^{2}$}};
+		\node [style=none] (22) at (-2, -2) {\large{$\partial^{6}$}};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=Line] (0) to (1);
+		\draw [style=Line] (10.center) to (0);
+		\draw [style=Line] (9.center) to (0);
+		\draw [style=Line] (7.center) to (0);
+		\draw [style=Line] (18.center) to (1);
+		\draw [style=Line] (20.center) to (1);
+		\draw [style=Line] (19.center) to (1);
+	\end{pgfonlayer}
+\end{tikzpicture}

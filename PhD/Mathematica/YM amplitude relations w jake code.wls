@@ -26,7 +26,28 @@ NSpinHel:={Spaa[a_,b_]:> (lam[a,1]*lam[b,2]-lam[a,2]*lam[b,1]),
 			s[a_,b_]:> (lam[a,1]lam[b,2]-lam[a,2]lam[b,1])(lambar[b,1]lambar[a,2]-lambar[b,2]lambar[a,1])};
 
 
-(* ::Section::Closed:: *)
+DefNumSH[a_]:=Module[{},Do[
+					 lam[i, 1] = RandomReal[{0,1}];
+					 lam[i, 2] =RandomReal[{0,1}];
+					 lambar[i, 1] =RandomReal[{0,1}];
+					 lambar[i, 2] = RandomReal[{0,1}];
+					   ,{i,a-2}];
+					   lam[a-1,1]=1;  lam[a,1]=0;
+					   lam[a-1,2]=0;  lam[a,2]=1;
+					   lambar[a-1,1]=-Sum[lam[i,1]*lambar[i,1],{i,a-2}];
+					   lambar[a-1,2]=-Sum[lam[i,1]*lambar[i,2],{i,a-2}];
+					   lambar[a,1]=-Sum[lam[i,2]*lambar[i,1],{i,a-2}];
+					   lambar[a,2]=-Sum[lam[i,2]*lambar[i,2],{i,a-2}];
+					
+					(*If[Sum[lam[j,1]lambar[j,1],{j,a}]==0,Print["Momcon"]]*)
+					
+					]
+NSpinHel:={Spaa[a_,b_]:> (lam[a,1]*lam[b,2]-lam[a,2]*lam[b,1]),
+			Spbb[a_,b_]:> lambar[a,1]*lambar[b,2]-lambar[a,2]*lambar[b,1],
+			s[a_,b_]:> (lam[a,1]lam[b,2]-lam[a,2]lam[b,1])(lambar[b,1]lambar[a,2]-lambar[b,2]lambar[a,1])};
+
+
+(* ::Section:: *)
 (*Complex numbers, first attempt.*)
 
 
@@ -758,15 +779,43 @@ Aym62[{g_,r_,r2_},{a_,b_,c_,d_,ff_,ee_}] :=
 (*list1 is a list of all 2 element subsets of 123456*)
 list1 =  DeleteDuplicates[Subsets[{1, 2, 3, 4, 5, 6}, {2}]];
 (*list2 is all minimal basis list of 2 point mandelstams:*)
-list2 = {{1,2},{1,3},{1,4},{1,5},{2,3},{2,4},{2,5},{3,4}};
+list2 = {{1,2},{1,3},{1,4},{1,5},{2,3},{2,4},{2,5},{3,4},{3,5}};
 (*list3 is all minimal basis list 6 point color ordered apmplitudes*)
-list3 = {{1,2,3,4,5,6},{1,2,4,3,5,6},{1,2,4,5,3,6},{1,4,2,3,5,6},{1,4,2,5,3,6},{1,4,5,2,3,6}};
+list3 = {{1,2,3,4,5,6},{1,2,4,3,5,6},{1,3,2,4,5,6},{1,3,4,2,5,6},{1,4,2,3,5,6},{1,4,3,2,5,6}};
 (*list4 is a list of all 3 element subsets of 123456*)
 list4 =  DeleteDuplicates[Subsets[{1, 2, 3, 4, 5, 6}, {3}]];
 L = Length[list3];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
+(*O(1)*)
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[Aym6[{1,2},list3[[i]]],{i,Length[list3]}]//Flatten],
+{n,6}]
+Print["Dimensions of NMHV Matrix is: ", Dimensions[Mat]]
+Print["Rank of NMHV Matrix is: ",MatrixRank[Mat]]
+Export["matrix-s0-mhv.csv",N[Mat,1000]];
+
+Vec = Table[x[i],{i,1,6}];
+sys = Vec . Mat;
+sols = Solve[sys==0];
+sys//.sols[[1]]//Simplify
+sols//N;
+
+
+(* ::Subsubsection::Closed:: *)
 (*O(s)*)
 
 
@@ -776,18 +825,59 @@ check = {};
 Do[
 n;
 DefNumSH[6];
-taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
-tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
 referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
-s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
 mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
 Mat = Append[Mat,Table[mandel[[n]][[j]]Aym62[{1,2,3},list3[[i]]],{i,Length[list3]},{j,Length[list2]}]//Flatten],
-{n,48}]
-Dimensions[Mat]
-MatrixRank[Mat]
+{n,54}]
+Print["Dimensions of NMHV Matrix is: ", Dimensions[Mat]]
+Print["Rank of NMHV Matrix is: ",MatrixRank[Mat,Tolerance->10^-10]]
+Export["matrix-s1-nmhv.csv",N[Mat,1000]]
 
 
-(* ::Subsubsection:: *)
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]Aym6[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]}]//Flatten],
+{n,54}]
+Print["Rank of MHV Matrix is: ",MatrixRank[Mat,Tolerance->10^-20]]
+Export["matrix-s1-mhv.csv",N[Mat,1000]]
+
+
+Min[Abs[Mat]]
+Print["Rank of MHV Matrix is: ",MatrixRank[Mat,Tolerance->10^-12]]
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+AMHV[{i_,j_},{k_,l_,m_,r_,t_,p_}] := Spaa[i,j]^4/(Spaa[k,l]Spaa[l,m]Spaa[m,r]Spaa[r,t]Spaa[t,p]Spaa[p,k])//.NSpinHel;
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]AMHV[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]}]//Flatten],
+{n,54}]
+Print["Dimensions of NMHV Matrix is: ", Dimensions[Mat]]
+Print["Rank of NMHV Matrix is: ",MatrixRank[Mat,Tolerance->10^-1]]
+Export["matrix-s1-nmhv.csv",N[Mat,1000]];
+
+
+(* ::Subsubsection::Closed:: *)
 (*O((s^2))*)
 
 
@@ -797,19 +887,18 @@ check = {};
 Do[
 n;
 DefNumSH[6];
-taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
-tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
 referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
-s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
 mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
 Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]Aym62[{1,2,3},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]}]//Flatten],
-{n,216}]
-Dimensions[Mat]
-MatrixRank[Mat]
+{n,270}]
+Print["Dimensions of MHV Matrix is: ",Dimensions[Mat]]
+Export["matrix-s2-nmhv.csv",N[Mat,1000]]
 
 
-(* ::Subsubsection:: *)
-(*O((s^3))*)
+Print["Rank of MHV Matrix is: ",MatrixRank[Mat,Tolerance->10^-25]]
 
 
 Mat = {};
@@ -818,18 +907,109 @@ check = {};
 Do[
 n;
 DefNumSH[6];
-taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
-tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
 referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
-s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
 mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
-Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]Aym62[{1,2,3},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]}]//Flatten],
-{n,720}]
-Dimensions[Mat]
-MatrixRank[Mat]
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]Aym6[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]}]//Flatten],
+{n,270}]
+Print["Dimensions of MHV Matrix is: ",Dimensions[Mat]]
+Print["Rank of MHV Matrix is: ",MatrixRank[Mat,Tolerance->10^-50]]
+Export["matrix-s2-mhv.csv",Mat]
 
 
-(* ::Subsubsection:: *)
+Print["Rank of MHV Matrix is: ",MatrixRank[Mat,Tolerance->10^-25]]
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+AMHV[{i_,j_},{k_,l_,m_,r_,t_,p_}] := Spaa[i,j]^4/(Spaa[k,l]Spaa[l,m]Spaa[m,r]Spaa[r,t]Spaa[t,p]Spaa[p,k])//.NSpinHel;
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]AMHV[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]}]//Flatten],
+{n,270}]
+Print["Dimensions of NMHV Matrix is: ", Dimensions[Mat]]
+
+
+Export["matrix-s2-mhv.h5", {"Data" -> N[Mat, 100]}, "Datasets"]
+
+
+Export["matrix-s2-mhv.csv",N[Mat,100]]
+
+
+(* ::Subsubsection::Closed:: *)
+(*O((s^3))*)
+
+
+Mat = {};
+mandel = {};
+check = {};
+A = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+A = Append[A,Table[Aym6[{1,5},list3[[i]]],{i,Length[list3]}]//Flatten];
+check = Append[check,Chop[Aym6[{1,5},{1,2,3,4,5,6}]+Aym6[{1,5},{1,3,2,4,5,6}]+Aym6[{1,5},{1,3,4,2,5,6}]+Aym6[{1,5},{1,3,4,5,2,6}]+Aym6[{1,5},{1,3,4,5,6,2}]]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]Aym6[{1,5},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]}]//Flatten],
+{n,990}]
+Print["Dimensions of MHV Matrix is: ",Dimensions[Mat]]
+Print["Rank of MHV Matrix is: ",MatrixRank[Mat,Tolerance->10^-30]]
+
+Mat = {};
+mandel = {};
+check = {};
+A = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+A = Append[A,Table[Aym6[{1,5},list3[[i]]],{i,Length[list3]}]//Flatten];
+check = Append[check,Chop[Aym6[{1,5},{1,2,3,4,5,6}]+Aym6[{1,5},{1,3,2,4,5,6}]+Aym6[{1,5},{1,3,4,2,5,6}]+Aym6[{1,5},{1,3,4,5,2,6}]+Aym6[{1,5},{1,3,4,5,6,2}]]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]Aym6[{1,5},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]}]//Flatten],
+{n,990}]
+Print["Dimensions of MHV Matrix is: ",Dimensions[Mat]]
+Print["Rank of MHV Matrix is: ",MatrixRank[Mat,Tolerance->10^-30]]
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+AMHV[{i_,j_},{k_,l_,m_,r_,t_,p_}] := Spaa[i,j]^4/(Spaa[k,l]Spaa[l,m]Spaa[m,r]Spaa[r,t]Spaa[t,p]Spaa[p,k])//.NSpinHel;
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]AMHV[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]}]//Flatten],
+{n,990}]
+Print["Dimensions of NMHV Matrix is: ", Dimensions[Mat]]
+
+
+Export["matrix-s3-mhv.h5", {"Data" -> N[Mat, 100]}, "Datasets"]
+Export["matrix-s3-mhv.csv",N[Mat,100]]
+
+
+(* ::Subsubsection::Closed:: *)
 (*O((s^4))*)
 
 
@@ -850,4 +1030,172 @@ Dimensions[Mat]
 MatrixRank[Mat]
 
 
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
+tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]mandel[[n]][[l]]Aym6[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]},{l,r,Length[list2]}]//Flatten],
+{n,1980}]
+Dimensions[Mat]
+Export["matrix-s4-mhv.csv",Mat]
 
+
+(* ::Subsubsection::Closed:: *)
+(*O((s^5))*)
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
+tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]mandel[[n]][[l]]mandel[[n]][[v]]Aym62[{1,2,3},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]},{l,r,Length[list2]},{v,l,Length[list2]}]//Flatten],
+{n,4752}]
+Dimensions[Mat]
+
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
+tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]mandel[[n]][[l]]mandel[[n]][[v]]Aym6[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]},{l,r,Length[list2]},{v,l,Length[list2]}]//Flatten],
+{n,4752}]
+Dimensions[Mat]
+Export["matrix-s5-mhv.csv",Mat]
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+AMHV[{i_,j_},{k_,l_,m_,r_,t_,p_}] := Spaa[i,j]^4/(Spaa[k,l]Spaa[l,m]Spaa[m,r]Spaa[r,t]Spaa[t,p]Spaa[p,k])//.NSpinHel;
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]mandel[[n]][[l]]mandel[[n]][[v]]AMHV[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]},{l,r,Length[list2]},{v,l,Length[list2]}]//Flatten],
+{n,7722}]
+Print["Dimensions of NMHV Matrix is: ", Dimensions[Mat]]
+
+
+Export["matrix-s5-mhv.h5", {"Data" -> N[Mat, 100]}, "Datasets"]
+
+
+(* ::Subsubsection::Closed:: *)
+(*O((s^6))*)
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
+tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]mandel[[n]][[l]]mandel[[n]][[v]]mandel[[n]][[a]]Aym6[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]},{l,r,Length[list2]},{v,l,Length[list2]},{a,v,Length[list2]}]//Flatten],
+{n,10296}]
+Dimensions[Mat]
+
+
+
+Export["matrix-s6-mhv.csv",Mat]
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+AMHV[{i_,j_},{k_,l_,m_,r_,t_,p_}] := Spaa[i,j]^4/(Spaa[k,l]Spaa[l,m]Spaa[m,r]Spaa[r,t]Spaa[t,p]Spaa[p,k])//.NSpinHel;
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]mandel[[n]][[l]]mandel[[n]][[v]]mandel[[n]][[a]]AMHV[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]},{l,r,Length[list2]},{v,l,Length[list2]},{a,v,Length[list2]}]//Flatten],
+{n,18018}]
+Print["Dimensions of NMHV Matrix is: ", Dimensions[Mat]]
+
+
+Export["matrix-s6-mhv.h5", {"Data" -> N[Mat, 100]}, "Datasets"]
+
+
+(* ::Subsubsection:: *)
+(*O((s^7))*)
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:=N[{lam[i,1],lam[i,2]},100];
+tarot\[Lambda][i_]:=N[{lambar[i,1],lambar[i,2]},100];
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=N[s[i,j]//.NSpinHel,100];
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]mandel[[n]][[l]]mandel[[n]][[v]]mandel[[n]][[a]]mandel[[n]][[b]]Aym6[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]},{l,r,Length[list2]},{v,l,Length[list2]},{a,v,Length[list2]},{b,a,Length[list2]}]//Flatten],
+{n,10}]
+Dimensions[Mat]
+
+
+Export["matrix-s6-mhv.csv",N[Mat,1000]]
+
+
+Mat = {};
+mandel = {};
+check = {};
+Do[
+n;
+DefNumSH[6];
+taro\[Lambda][i_]:={lam[i,1],lam[i,2]};
+tarot\[Lambda][i_]:={lambar[i,1],lambar[i,2]};
+referenceSpinors={{taro\[Lambda][1],taro\[Lambda][2],taro\[Lambda][3],taro\[Lambda][4],taro\[Lambda][5],taro\[Lambda][6]},{tarot\[Lambda][1],tarot\[Lambda][2],tarot\[Lambda][3],tarot\[Lambda][4],tarot\[Lambda][5],tarot\[Lambda][6]}};
+s2[{i_,j_}]:=s[i,j]//.NSpinHel;
+AMHV[{i_,j_},{k_,l_,m_,r_,t_,p_}] := Spaa[i,j]^4/(Spaa[k,l]Spaa[l,m]Spaa[m,r]Spaa[r,t]Spaa[t,p]Spaa[p,k])//.NSpinHel;
+mandel = Append[mandel,Table[s2[list2[[i]]],{i,Length[list2]}]];
+Mat = Append[Mat,Table[mandel[[n]][[j]]mandel[[n]][[k]]mandel[[n]][[r]]mandel[[n]][[l]]mandel[[n]][[v]]mandel[[n]][[a]]mandel[[n]][[b]]AMHV[{1,2},list3[[i]]],{i,Length[list3]},{j,Length[list2]},{k,j,Length[list2]},{r,k,Length[list2]},{l,r,Length[list2]},{v,l,Length[list2]},{a,v,Length[list2]},{b,a,Length[list2]}]//Flatten],
+{n,7722}]
+Print["Dimensions of NMHV Matrix is: ", Dimensions[Mat]]
+
+
+5
+
+
+Export["matrix-s7-mhv-5.h5", {"Data" -> N[Mat, 100]}, "Datasets"]
+
+
+6
+
+
+38610/5*2
